@@ -1,0 +1,145 @@
+
+    @import "../../value/color.less";
+    @import "../../value/dimension.less";
+
+    /*******************************************************************************************************************
+    *   Import Ant Design css framework and override all necessary less variables.
+    *******************************************************************************************************************/
+    @import "../../../../node_modules/antd/dist/antd.less";
+
+    @screen-xs:                 0;
+    @screen-sm:                 0;
+    @screen-md:                 768px;
+    @screen-lg:                 992px;
+    @screen-xl:                 1200px;
+    @screen-xxl:                1600px;
+
+    @primary-color:             @color-project;
+    @disabled-color:            @color-grey;
+    @text-color:                @color-text-fg;
+    @progress-remaining-color:  @color-text-fg;
+    @border-color-base:         @color-text-fg;
+    @border-color-split:        @color-text-fg;
+    @finish-tail-color:         @color-text-fg;
+    @collapse-header-bg:        @color-grey-translucent;
+    @heading-color:             @color-project;
+
+    /*******************************************************************************************************************
+    *   Override specific Ant Design css attributes not procurable by less variables.
+    *******************************************************************************************************************/
+
+    .ant-divider
+    {
+        margin:                 @default-margin 0 @default-margin 0;
+        box-shadow:             1px 1px @color-shadow;
+    }
+
+    .ant-steps-item-icon
+    {
+        margin-right:           0;
+        margin-bottom:          1px;
+        box-shadow:             1px 1px @color-shadow;
+    }
+
+    .ant-steps-item-process .ant-steps-item-icon .ant-steps-icon
+    {
+        text-shadow:            1px 1px @color-shadow;
+    }
+
+    .ant-steps-item-wait .ant-steps-icon
+    {
+        color:                  @color-grey !important;
+    }
+
+    .ant-steps-item-title:after
+    {
+        box-shadow:             1px 1px @color-shadow;
+    }
+
+    .ant-collapse
+    {
+        box-shadow:             1px 1px @color-shadow;
+    }
+
+    .ant-collapse-content.ant-collapse-content-active
+    {
+        background-color:       @color-transparent;
+    }
+
+    .ant-collapse-header
+    {
+        color:                  @color-white !important;
+        text-shadow:            1px 1px @color-shadow;
+    }
+
+    .ant-switch
+    {
+        float:                  left;
+        margin-right:           15px;
+        box-shadow:             1px 1px @color-shadow;
+    }
+
+    .ant-progress-circle
+    {
+        -webkit-filter:         drop-shadow( 1px 1px 0px @color-shadow );
+        filter:                 drop-shadow( 1px 1px 0px @color-shadow );
+    }
+
+    .ant-tabs-tab
+    {
+        text-shadow:            1px 1px @color-shadow;
+    }
+
+    .ant-tabs-bar
+    {
+        box-shadow:             1px 1px @color-shadow;
+        margin-bottom:          1px;
+    }
+
+    .ant-tabs-tabpane h3
+    {
+        color:                  @color-project;
+        text-shadow:            1px 1px @color-shadow;
+        margin:                 10px 0 10px 0;
+        font-size:              20px;
+    }
+
+    .ant-tabs-tab-prev-icon,
+    .ant-tabs-tab-next-icon
+    {
+        color:                  @color-white;
+    }
+
+    .ant-badge
+    {
+        margin:                 0 10px 10px 1px;
+    }
+
+    .ant-badge-count
+    {
+        text-shadow:            1px 1px @color-shadow;
+        box-shadow:             1px 1px @color-shadow;
+    }
+
+    .ant-tag
+    {
+        text-shadow:            1px 1px @color-shadow;
+        box-shadow:             1px 1px @color-shadow;
+    }
+
+    .ant-timeline-item-tail
+    {
+        top:                    0;
+    }
+
+    .ant-timeline-item-content
+    {
+        text-shadow:            1px 1px @color-shadow;
+    }
+
+    .ant-avatar
+    {
+        box-shadow:             1px 1px @color-shadow;
+        float:                  left;
+        margin-right:           15px;
+    }

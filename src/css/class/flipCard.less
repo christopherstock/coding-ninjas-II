@@ -1,0 +1,64 @@
+
+    @import "../value/color.less";
+    @import "../value/dimension.less";
+
+    .card-flip-container
+    {
+        perspective:            1000px;
+    }
+
+    .card-flip-container:hover .card-flipper,
+    .card-flip-container.hover .card-flipper
+    {
+        transform:              rotateY( 180deg );
+    }
+
+    .card-flip-container,
+    .card-front,
+    .card-back
+    {
+        width:                  100%;
+        height:                 200px;
+    }
+
+    .card-flipper
+    {
+        transition:             0.5s;
+        transform-style:        preserve-3d;
+        position:               relative;
+    }
+
+    .card-flipper h3
+    {
+        color:                  #ffffff !important;
+        text-shadow:            1px 1px @color-shadow;
+        margin:                 10px 0 0 20px;
+    }
+
+    .card-front,
+    .card-back
+    {
+        backface-visibility:    hidden;
+        position:               absolute;
+        top:                    0;
+        left:                   0;
+    }
+
+    .card-front
+    {
+        text-align:             left;
+        z-index:                2;
+        transform:              rotateY( 0deg );
+        border:                 1px solid @color-white;
+        background-position:    center;
+    }
+
+    .card-back
+    {
+        text-align:             center;
+        transform:              rotateY( 180deg );
+        background:             #ffffff;
+        color:                  @color-grey;
+        padding-top:            25px;
+        border:                 1px solid @color-grey !important;
+    }

@@ -1,0 +1,16 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# node.js
+node_modules
+
+# macOS
+.DS_Store
+
+# IntelliJ
+.idea
+*.iml
+
+# build and targte paths
+bin
+doc
+/dist/js/

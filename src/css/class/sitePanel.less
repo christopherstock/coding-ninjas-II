@@ -1,0 +1,83 @@
+
+    @import "../value/color.less";
+    @import "../value/dimension.less";
+
+    div.sitePanel.outerAbsoluteContainer
+    {
+        position:           absolute;
+        border:             0;
+        border-radius:      0;
+    }
+
+    div.sitePanel.innerRelativeContainer
+    {
+        position:           relative;
+        text-align:         left;
+    }
+
+    h1.sitePanel.defaultHeadline
+    {
+        width:              100%;
+        text-align:         center;
+        color:              @color-project;
+        padding:            0;
+        margin:             0;
+        text-shadow:        1px 1px @color-shadow;
+    }
+
+    div.sitePanel.defaultImageContainer
+    {
+        padding:            0;
+        margin:             0;
+    }
+
+    p.sitePanel.defaultParagraph
+    {
+        padding:            0;
+        margin:             0;
+        color:              @color-text-fg;
+        font-size:          16px;
+        text-align:         left;
+        text-shadow:        1px 1px @color-shadow;
+        line-height:        20px;
+    }
+
+    p.avatarLine
+    {
+        margin-top:         25px !important;
+        margin-bottom:      25px !important;
+        float:              none;
+    }
+
+    img.sitePanel.defaultImage
+    {
+        width:              100%;
+        height:             auto;
+    }
+
+    div.sitePanel.verticalSpacer
+    {
+        width:              100%;
+        height:             @default-margin;
+    }
+
+    ul.sitePanel
+    {
+        list-style:         none;
+        margin:             0;
+        padding:            0;
+        text-align:         left;
+        display:            inline-block;
+    }
+
+    ul.sitePanel li
+    {
+        padding-left:       1em;
+        text-indent:        -.7em;
+    }
+
+    ul.sitePanel li::before
+    {
+        content:            "\2022 ";
+        color:              @color-project;
+    }
