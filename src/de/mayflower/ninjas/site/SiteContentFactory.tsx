@@ -5,6 +5,8 @@
     import { TooltipPlacement } from "antd/lib/tooltip";
     import { ButtonType       } from "antd/lib/button";
     import { CarouselEffect   } from "antd/lib/carousel";
+    import { FloatProperty    } from "csstype";
+    import { RadioChangeEvent } from "antd/es/radio";
 
     /*******************************************************************************************************************
     *   Creates content components for the factory.
@@ -80,7 +82,7 @@
         *
         *   @return The created JSX element.
         ***************************************************************************************************************/
-        public static createImageFloating( float:string, src:string ) : JSX.Element
+        public static createImageFloating( float:FloatProperty, src:string ) : JSX.Element
         {
             let marginLeft:string  = ( float == "right" ? "10px" : "0" );
             let marginRight:string = ( float == "left"  ? "10px" : "0" );
@@ -402,7 +404,7 @@
             defaultValue :string,
             values       :Array<string>,
             labels       :Array<string>,
-            onChange     :( e:React.ChangeEvent<any> ) => void
+            onChange     :( e:RadioChangeEvent ) => void
         )
         : JSX.Element
         {

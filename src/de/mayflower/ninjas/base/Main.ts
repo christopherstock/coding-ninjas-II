@@ -7,6 +7,8 @@
     *   TODO Ask Lenz: Add file loader via npm.
     *   TODO Ask Lenz: Debug value from outside.
     *
+    *   TODO Remove '@author' and '@version' tags
+    *
     *   TODO requestAnimationFrame tryout .. matter.js - try 60 fps as a constant.
     *   TODO Add jest tests.
     *   TODO Add cucumber tests.
@@ -23,7 +25,7 @@
     *   TODO Create HUD ( for items etc ).
     *   TODO create class HUD with own paint-method.
     *   TODO Create item pickup HUD effect!
-    *   TODO Add event triggers ( for fallinf obstacles etc )
+    *   TODO Add event triggers ( for falling obstacles etc )
     *
     *   @author     Christopher Stock
     *   @version    1.0.0
