@@ -4,9 +4,6 @@
 
     /*******************************************************************************************************************
     *   A react component with the content for the 'company' page.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0.0
     *******************************************************************************************************************/
     export class ContentCompany extends React.Component<any, any>
     {

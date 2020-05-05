@@ -4,9 +4,6 @@
 
     /*******************************************************************************************************************
     *   A react component with the content for the 'services' page.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0.0
     *******************************************************************************************************************/
     export class ContentServices extends React.Component<any, any>
     {

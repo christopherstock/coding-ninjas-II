@@ -4,9 +4,6 @@
 
     /*******************************************************************************************************************
     *   A react component with the content for the 'timeline' page.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0.0
     *******************************************************************************************************************/
     export class ContentTimeline extends React.Component<any, any>
     {

@@ -7,7 +7,6 @@
     *   TODO Ask Lenz: Add file loader via npm.
     *   TODO Ask Lenz: Debug value from outside.
     *
-    *   TODO Remove '@author' and '@version' tags
     *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
     *
     *
@@ -28,9 +27,6 @@
     *   TODO create class HUD with own paint-method.
     *   TODO Create item pickup HUD effect!
     *   TODO Add event triggers ( for falling obstacles etc )
-    *
-    *   @author     Christopher Stock
-    *   @version    1.0.0
     *******************************************************************************************************************/
     export class Main
     {

@@ -4,9 +4,6 @@
 
     /*******************************************************************************************************************
     *   A react component with the content for the 'technology' page.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0.0
     *******************************************************************************************************************/
     export class ContentTechnology extends React.Component<any, any>
     {

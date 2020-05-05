@@ -36,9 +36,6 @@
 
     /*******************************************************************************************************************
     *   The sprite template that specifies images and their meta information.
-    *
-    *   @author     Christopher Stock
-    *   @version    1.0.0
     *******************************************************************************************************************/
     export class SpriteTemplate
     {

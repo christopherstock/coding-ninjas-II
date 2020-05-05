@@ -4,9 +4,6 @@
 
     /*******************************************************************************************************************
     *   A react component with the content for the 'welcome' page.
-    *
-    *   @author  Christopher Stock
-    *   @version 1.0.0
     *******************************************************************************************************************/
     export class ContentWelcome extends React.Component<any, any>
     {
