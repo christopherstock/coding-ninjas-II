@@ -25,7 +25,14 @@
 
                 <div className='card-flip-container'>
                     <div className='card-flipper'>
-                        <div className='card-front' style={ { backgroundImage: 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_OFFICE_WZBG ).src + ' )' } }>
+                        <div className='card-front' style={
+                            {
+                                backgroundImage: 'url( '
+                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_OFFICE_WZBG )
+                                .src
+                                + ' )',
+                            }
+                        }>
                             <h3>Würzburg</h3>
                         </div>
                         <div className='card-back'>
@@ -44,7 +51,13 @@
 
                 <div className='card-flip-container'>
                     <div className='card-flipper'>
-                        <div className='card-front' style={ { backgroundImage: 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_OFFICE_MUC ).src + ' )' } }>
+                        <div className='card-front' style={
+                            {
+                                backgroundImage: 'url( '
+                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_OFFICE_MUC ).src
+                                + ' )',
+                            }
+                            }>
                             <h3>Munich</h3>
                         </div>
                         <div className='card-back'>
@@ -63,7 +76,14 @@
 
                 <div className='card-flip-container'>
                     <div className='card-flipper'>
-                        <div className='card-front' style={ { backgroundImage: 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_OFFICE_BER ).src + ' )' } }>
+                        <div className='card-front' style={
+                            {
+                                backgroundImage: 'url( '
+                                    + ninjas.Main.game.engine.imageSystem.getImage(
+                                        ninjas.Image.IMAGE_SITE_OFFICE_BER ).src
+                                    + ' )',
+                            }
+                        }>
                             <h3>Berlin</h3>
                         </div>
                         <div className='card-back'>
