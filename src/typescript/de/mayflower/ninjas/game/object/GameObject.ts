@@ -38,7 +38,7 @@
         /** ************************************************************************************************************
         *   Renders the current game object.
         ***************************************************************************************************************/
-        public render()
+        public render() : void
         {
             if ( this.sprite != null )
             {
@@ -55,7 +55,7 @@
         *
         *   @param visible The desired visibility.
         ***************************************************************************************************************/
-        public setVisible( visible:boolean )
+        public setVisible( visible:boolean ) : void
         {
             if ( visible )
             {
@@ -72,7 +72,7 @@
         *
         *   @param spriteTemplate The sprite template to use for this new sprite.
         ***************************************************************************************************************/
-        protected setSprite( spriteTemplate:ninjas.SpriteTemplate )
+        protected setSprite( spriteTemplate:ninjas.SpriteTemplate ) : void
         {
             if ( spriteTemplate != null )
             {
@@ -107,7 +107,7 @@
         /** ************************************************************************************************************
         *   Avoids this game object from rotating.
         ***************************************************************************************************************/
-        protected resetRotation()
+        protected resetRotation() : void
         {
             matter.Body.setAngularVelocity( this.shape.body, 0.0 );
             matter.Body.setAngle(           this.shape.body, 0.0 );
@@ -116,7 +116,7 @@
         /** ************************************************************************************************************
         *   Clips this body to the horizontal level bounds.
         ***************************************************************************************************************/
-        protected clipToHorizontalLevelBounds()
+        protected clipToHorizontalLevelBounds() : void
         {
             // clip left bound
             if ( this.shape.body.position.x < this.shape.getWidth() / 2 )

@@ -36,7 +36,7 @@
         ***************************************************************************************************************/
         public onPreloaderSetup=()=>
         {
-            ninjas.Debug.preloader.log( "Preloader setup complete." );
+            ninjas.Debug.preloader.log( 'Preloader setup complete.' );
             this.preloader.setLoadingPercentage( 5 );
 
             this.engine.initImageSystem();
@@ -47,7 +47,7 @@
         ***************************************************************************************************************/
         public start=()=>
         {
-            ninjas.Debug.preloader.log( "Starting the game loop" );
+            ninjas.Debug.preloader.log( 'Starting the game loop' );
             ninjas.Debug.preloader.log();
 
             // set the number of blend panel ticks
@@ -210,7 +210,7 @@
                 {
                     this.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_1 );
 
-                    ninjas.Debug.preloader.log( "Resetting and switching to level 1" );
+                    ninjas.Debug.preloader.log( 'Resetting and switching to level 1' );
                     this.resetAndLaunchLevel( new ninjas.LevelWebsite() );
                 }
 /*
@@ -218,7 +218,7 @@
                 {
                     ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_2 );
 
-                    ninjas.Debug.init.log( "Resetting and switching to level 2" );
+                    ninjas.Debug.init.log( 'Resetting and switching to level 2' );
                     this.resetAndLaunchLevel( new ninjas.LevelAllElements() );
                 }
 
@@ -226,7 +226,7 @@
                 {
                     ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_3 );
 
-                    ninjas.Debug.init.log( "Resetting and switching to level 3" );
+                    ninjas.Debug.init.log( 'Resetting and switching to level 3' );
                     this.resetAndLaunchLevel( new ninjas.LevelEnchantedWoods() );
                 }
 */
@@ -249,7 +249,7 @@
                     0,
                     this.engine.canvasSystem.getWidth(),
                     this.engine.canvasSystem.getHeight(),
-                    "rgba( 0, 0, 0, " + ( this.blendPanelTicks / ninjas.SettingGame.BLEND_PANEL_TICKS ) + " )"
+                    'rgba( 0, 0, 0, ' + ( this.blendPanelTicks / ninjas.SettingGame.BLEND_PANEL_TICKS ) + ' )'
                 );
             }
         }

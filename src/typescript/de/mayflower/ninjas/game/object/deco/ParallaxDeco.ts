@@ -1,6 +1,6 @@
 
     import * as ninjas from '../../../ninjas';
-    import * as matter from "matter-js";
+    import * as matter from 'matter-js';
 
     /** ****************************************************************************************************************
     *   Represents a non-colliding decoration.
@@ -8,7 +8,7 @@
     export class ParallaxDeco extends ninjas.Decoration
     {
         /** The parallax ratio from this game object to the level width. Defaults to 1.0. */
-        private                 parallaxRatio           :number             = 0.0;
+        private     readonly        parallaxRatio           :number             = 0.0;
 
         /** ************************************************************************************************************
         *   Creates a new parallax decoration.

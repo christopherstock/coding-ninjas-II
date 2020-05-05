@@ -62,10 +62,10 @@
         ***************************************************************************************************************/
         private clipRotation() : void
         {
-            const clipAngle = 15.0;
+            const clipAngle :number = 15.0;
 
-            const minAngle = ninjas.MathUtil.angleToRad( -clipAngle );
-            const maxAngle = ninjas.MathUtil.angleToRad( clipAngle  );
+            const minAngle :number = ninjas.MathUtil.angleToRad( -clipAngle );
+            const maxAngle :number = ninjas.MathUtil.angleToRad( clipAngle  );
 
             if ( this.shape.body.angle < minAngle )
             {

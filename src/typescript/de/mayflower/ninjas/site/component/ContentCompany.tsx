@@ -25,7 +25,8 @@
                 {
                     ninjas.SiteContentFactory.createParagraph
                     (
-                        'We <span style=\'color: #ff6666;\'>&#x2764;</span> programming! And particularly we love to create:'
+                        'We <span style=\'color: #ff6666;\'>&#x2764;</span> programming! '
+                        + 'And particularly we love to create:'
                     )
                 }
                 { ninjas.SiteContentFactory.createSpacerVertical() }
@@ -36,16 +37,24 @@
                         true,
                         2500,
                         [
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_DESKTOP ).src + ' )' } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                            + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_DESKTOP
+                            ).src + ' )' } }>
                                 <h3>Desktop &amp; Enterprise Applications</h3>
                             </div>,
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEBSITES ).src + ' )' } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                            + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEBSITES
+                            ).src + ' )' } }>
                                 <h3>Web Design</h3>
                             </div>,
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_MOBILE ).src + ' )' } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                            + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_MOBILE
+                            ).src + ' )' } }>
                                 <h3>Mobile Applications</h3>
                             </div>,
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEB_APPS ).src + ' )' } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                            + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEB_APPS
+                            ).src + ' )' } }>
                                 <h3>Web Applications</h3>
                             </div>,
                         ]
@@ -55,7 +64,8 @@
                 {
                     ninjas.SiteContentFactory.createParagraph
                     (
-                        'Read more about our services on the next site by finding the shrine directly <span style=\'color: #ff6666;\'>above</span> this one.'
+                        'Read more about our services on the next site by finding the shrine directly '
+                        + '<span style=\'color: #ff6666;\'>above</span> this one.'
                     )
                 }
 

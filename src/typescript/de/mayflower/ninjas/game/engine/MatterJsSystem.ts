@@ -1,6 +1,6 @@
 
     import * as matter from 'matter-js';
-    import * as ninjas from "../../ninjas";
+    import * as ninjas from '../../ninjas';
 
     /** ****************************************************************************************************************
     *   Manages the Matter.js engine.
@@ -8,9 +8,9 @@
     export class MatterJsSystem
     {
         /** The Matter.js engine. */
-        private     engine                  :matter.Engine                  = null;
+        private         readonly        engine                  :matter.Engine                  = null;
         /** The Matter.js renderer. */
-        private     renderer                :matter.Render                  = null;
+        private        readonly         renderer                :matter.Render                  = null;
 
         /** ************************************************************************************************************
         *   Creates a new Matter.js engine.

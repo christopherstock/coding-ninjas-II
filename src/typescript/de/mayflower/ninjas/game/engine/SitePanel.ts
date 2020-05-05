@@ -70,34 +70,34 @@
         public updateSizeAndPosition( width:number, height:number ) : void
         {
             // outer container size
-            this.outerAbsoluteContainer.style.width  = width  + "px";
-            this.outerAbsoluteContainer.style.height = height + "px";
+            this.outerAbsoluteContainer.style.width  = String( width  ) + 'px';
+            this.outerAbsoluteContainer.style.height = String( height ) + 'px';
 
-            this.outerAbsoluteContainer.style.backgroundSize  = width  + "px " + height + "px";
+            this.outerAbsoluteContainer.style.backgroundSize  = String( width ) + 'px ' + String( height ) + 'px';
 
             // outer container position
             switch ( this.position )
             {
                 case ninjas.SitePanelPosition.LEFT:
                 {
-                    this.outerAbsoluteContainer.style.left = ninjas.SettingGame.BORDER_SIZE_OUTER + "px";
+                    this.outerAbsoluteContainer.style.left = String( ninjas.SettingGame.BORDER_SIZE_OUTER ) + 'px';
                     break;
                 }
 
                 case ninjas.SitePanelPosition.RIGHT:
                 {
-                    this.outerAbsoluteContainer.style.left = ( ninjas.Main.game.engine.canvasSystem.getWidth() - width - ninjas.SettingGame.BORDER_SIZE_OUTER ) + "px";
+                    this.outerAbsoluteContainer.style.left = String( ( ninjas.Main.game.engine.canvasSystem.getWidth() - width - ninjas.SettingGame.BORDER_SIZE_OUTER ) ) + 'px';
                     break;
                 }
             }
-            this.outerAbsoluteContainer.style.top = ( ( ninjas.Main.game.engine.canvasSystem.getHeight() - height ) / 2 ) + "px";
+            this.outerAbsoluteContainer.style.top = String( ( ( ninjas.Main.game.engine.canvasSystem.getHeight() - height ) / 2 ) ) + 'px';
 
             // inner container size
-            this.innerRelativeContainer.style.width  = ( width - 2 * ninjas.SettingGame.BORDER_SIZE_INNER ) + "px";
+            this.innerRelativeContainer.style.width  = String( ( width - 2 * ninjas.SettingGame.BORDER_SIZE_INNER ) ) + 'px';
 
             // inner container position
-            this.innerRelativeContainer.style.top  = ninjas.SettingGame.BORDER_SIZE_INNER_TOP + "px";
-            this.innerRelativeContainer.style.left = ninjas.SettingGame.BORDER_SIZE_INNER     + "px";
+            this.innerRelativeContainer.style.top  = String( ninjas.SettingGame.BORDER_SIZE_INNER_TOP ) + 'px';
+            this.innerRelativeContainer.style.left = String( ninjas.SettingGame.BORDER_SIZE_INNER )     + 'px';
         }
 
         /** ************************************************************************************************************
@@ -120,13 +120,13 @@
             {
                 case ninjas.SitePanelPosition.LEFT:
                 {
-                    this.outerAbsoluteContainer.className = "sitePanel outerAbsoluteContainer wow bounceInLeft";
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInLeft';
                     break;
                 }
 
                 case ninjas.SitePanelPosition.RIGHT:
                 {
-                    this.outerAbsoluteContainer.className = "sitePanel outerAbsoluteContainer wow bounceInRight";
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInRight';
                     break;
                 }
             }
@@ -142,13 +142,13 @@
             {
                 case ninjas.SitePanelPosition.LEFT:
                 {
-                    this.outerAbsoluteContainer.className = "sitePanel outerAbsoluteContainer wow bounceOutLeft";
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutLeft';
                     break;
                 }
 
                 case ninjas.SitePanelPosition.RIGHT:
                 {
-                    this.outerAbsoluteContainer.className = "sitePanel outerAbsoluteContainer wow bounceOutRight";
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutRight';
                     break;
                 }
             }
@@ -169,16 +169,16 @@
         ***************************************************************************************************************/
         private createOuterAbsoluteContainer() : void
         {
-            this.outerAbsoluteContainer = document.createElement( "div" );
+            this.outerAbsoluteContainer = document.createElement( 'div' );
 
             this.outerAbsoluteContainer.style.backgroundImage = (
-                "url( "
+                'url( '
                 + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_PANEL_BG ).src
-                + ")"
+                + ')'
             );
 
-            this.outerAbsoluteContainer.setAttribute( "data-wow-duration", ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION + "ms" );
-            this.outerAbsoluteContainer.setAttribute( "data-wow-delay",    "0ms" );
+            this.outerAbsoluteContainer.setAttribute( 'data-wow-duration', ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION + 'ms' );
+            this.outerAbsoluteContainer.setAttribute( 'data-wow-delay',    '0ms' );
         }
 
         /** ************************************************************************************************************
@@ -186,9 +186,9 @@
         ***************************************************************************************************************/
         private createInnerRelativeContainer() : void
         {
-            this.innerRelativeContainer = document.createElement( "div" );
-            this.innerRelativeContainer.className = "sitePanel innerRelativeContainer";
+            this.innerRelativeContainer = document.createElement( 'div' );
+            this.innerRelativeContainer.className = 'sitePanel innerRelativeContainer';
 
-            this.innerRelativeContainer.setAttribute( "data-wow-delay",    ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION + "ms" );
+            this.innerRelativeContainer.setAttribute( 'data-wow-delay',    ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION + 'ms' );
         }
     }

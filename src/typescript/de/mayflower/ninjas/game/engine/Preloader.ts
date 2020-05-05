@@ -7,7 +7,7 @@
     export class Preloader
     {
         /** The callback to invoke when the preloader is set up. */
-        private                     onPreloaderSetup                :Function                           = null;
+        private     readonly        onPreloaderSetup                :Function                           = null;
 
         /**  The colorful preloader image. */
         private                     imageGay                        :HTMLImageElement                   = null;
@@ -35,7 +35,7 @@
         ***************************************************************************************************************/
         public preload()
         {
-            ninjas.Debug.preloader.log( "Preloading all game components" );
+            ninjas.Debug.preloader.log( 'Preloading all game components' );
 
             // bring on the canvas and init the resize handler
             ninjas.Main.game.engine.initCanvas();
@@ -45,8 +45,8 @@
             this.imageGay  = new Image();
             this.imageMono = new Image();
 
-            this.imageGay.src  = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + "preloaderGay.png";
-            this.imageMono.src = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + "preloaderMono.png";
+            this.imageGay.src  = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderGay.png';
+            this.imageMono.src = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderMono.png';
 
             this.imageGay.onload  = this.preloaderImageLoaded;
             this.imageMono.onload = this.preloaderImageLoaded;
@@ -57,7 +57,7 @@
         *
         *   @param loadingPercentage The loading percentage to set.
         ***************************************************************************************************************/
-        public setLoadingPercentage( loadingPercentage:number )
+        public setLoadingPercentage( loadingPercentage:number ) : void
         {
             this.loadingPercentage = loadingPercentage;
 
@@ -68,7 +68,7 @@
         /** ************************************************************************************************************
         *   Stops the preloader interval.
         ***************************************************************************************************************/
-        public stopThread()
+        public stopThread() : void
         {
             window.clearInterval( this.preloaderIntervalHandle );
         }
@@ -76,11 +76,11 @@
         /** ************************************************************************************************************
         *   Being invoked when one preloader image has been loaded.
         ***************************************************************************************************************/
-        private preloaderImageLoaded=()=>
+        private preloaderImageLoaded = () :void =>
         {
             if ( ++this.loadedImageCount == 2 )
             {
-                ninjas.Debug.preloader.log( "All preloader images loaded." );
+                ninjas.Debug.preloader.log( 'All preloader images loaded.' );
 
                 this.onPreloaderImageLoadComplete();
             }
@@ -129,11 +129,11 @@
             );
 
             // calc image location
-            let imageX:number = ( ninjas.Main.game.engine.canvasSystem.getWidth()  - this.imageMono.width  ) / 2;
-            let imageY:number = ( ninjas.Main.game.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
+            const imageX :number = ( ninjas.Main.game.engine.canvasSystem.getWidth()  - this.imageMono.width  ) / 2;
+            const imageY :number = ( ninjas.Main.game.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
 
             // calc image width to draw
-            let imageWidthToDraw:number = ( this.imageGay.width * this.loadingPercentage ) / 100;
+            const imageWidthToDraw :number = ( this.imageGay.width * this.loadingPercentage ) / 100;
 
             // draw mono image
             ninjas.Drawing.drawImage

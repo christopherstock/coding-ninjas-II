@@ -52,7 +52,7 @@
         *   @param speedMove        The speed for horizontal movement.
         *   @param jumpPower        The vertical force to apply on jumping.
         ***************************************************************************************************************/
-        public constructor
+        protected constructor
         (
             shape            :ninjas.Shape,
             spriteTemplate   :ninjas.SpriteTemplate,
@@ -132,72 +132,23 @@
         }
 
         /** ************************************************************************************************************
-        *   Lets this character jump.
+        *   Checks if this character is currently falling.
+        *
+        *   @return <code>true</code> if this character is currently falling.
         ***************************************************************************************************************/
-        protected jump() : void
+        public isFalling() : boolean
         {
-            matter.Body.applyForce
-            (
-                this.shape.body,
-                this.shape.body.position,
-                matter.Vector.create( 0.0, this.jumpPower )
-            );
+            return ( this.shape.body.velocity.y > 0.0 && !this.collidesBottom );
         }
 
         /** ************************************************************************************************************
-        *   Requests gliding for the player so the parachute will open on next descending phase.
+        *   Checks if this character is currently ascending.
+        *
+        *   @return <code>true</code> if this character is currently jumping.
         ***************************************************************************************************************/
-        protected requestGliding() : void
+        public isJumping() : boolean
         {
-            ninjas.Debug.character.log( "Character requests gliding" );
-
-            this.glidingRequest = true;
-        }
-
-        /** ************************************************************************************************************
-        *   Checks the state for the parachute and opens or closes it.
-        ***************************************************************************************************************/
-        protected checkParachuteState() : void
-        {
-            if ( this.collidesBottom )
-            {
-                if ( this.gliding )
-                {
-                    this.closeParachute();
-                }
-
-                this.glidingRequest = false;
-            }
-            else
-            {
-                if ( this.glidingRequest && this.isFalling() )
-                {
-                    this.openParachute();
-                    this.glidingRequest = false;
-                }
-            }
-        }
-
-        /** ************************************************************************************************************
-        *   Open character's parachute.
-        ***************************************************************************************************************/
-        protected openParachute() : void
-        {
-            ninjas.Debug.character.log( "Character opens parachute" );
-
-            this.shape.body.frictionAir = ninjas.BodyFrictionAir.GLIDING;
-            this.gliding = true;
-        }
-
-        /** ************************************************************************************************************
-        *   Closes character's parachute.
-        ***************************************************************************************************************/
-        private closeParachute() : void
-        {
-            ninjas.Debug.character.log( "Character closes parachute" );
-
-            this.shape.body.frictionAir = ninjas.BodyFrictionAir.DEFAULT;
-            this.gliding = false;
+            return ( this.shape.body.velocity.y < 0.0 && !this.collidesBottom );
         }
 
         /** ************************************************************************************************************
@@ -235,59 +186,74 @@
         }
 
         /** ************************************************************************************************************
-        *   Checks if this character is currently falling.
-        *
-        *   @return <code>true</code> if this character is currently falling.
+        *   Lets this character jump.
         ***************************************************************************************************************/
-        public isFalling() : boolean
+        protected jump() : void
         {
-            return ( this.shape.body.velocity.y > 0.0 && !this.collidesBottom );
-        }
-
-        /** ************************************************************************************************************
-        *   Checks if this character is currently ascending.
-        *
-        *   @return <code>true</code> if this character is currently jumping.
-        ***************************************************************************************************************/
-        public isJumping() : boolean
-        {
-            return ( this.shape.body.velocity.y < 0.0 && !this.collidesBottom );
-        }
-
-        /** ************************************************************************************************************
-        *   Checks if the character's bottom line currently collides with any other colliding body.
-        ***************************************************************************************************************/
-        private checkBottomCollision() : void
-        {
-            let bodiesToCheck:Array<matter.Body> = [];
-
-            for ( let gameObject of ninjas.Main.game.level.movables )
-            {
-                bodiesToCheck.push( gameObject.shape.body );
-            }
-            for ( let gameObject of ninjas.Main.game.level.obstacles )
-            {
-                bodiesToCheck.push( gameObject.shape.body );
-            }
-            for ( let gameObject of ninjas.Main.game.level.enemies )
-            {
-                bodiesToCheck.push( gameObject.shape.body );
-            }
-
-            // check colliding bodies
-            this.collidesBottom = matter.Query.ray
+            matter.Body.applyForce
             (
-                bodiesToCheck,
-                matter.Vector.create(
-                    this.shape.body.position.x - ( this.shape.getWidth() / 2 ),
-                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
-                ),
-                matter.Vector.create(
-                    this.shape.body.position.x + ( this.shape.getWidth() / 2 ),
-                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
-                )
-            ).length > 0;
+                this.shape.body,
+                this.shape.body.position,
+                matter.Vector.create( 0.0, this.jumpPower )
+            );
         }
+
+        /** ************************************************************************************************************
+        *   Requests gliding for the player so the parachute will open on next descending phase.
+        ***************************************************************************************************************/
+        protected requestGliding() : void
+        {
+            ninjas.Debug.character.log( 'Character requests gliding' );
+
+            this.glidingRequest = true;
+        }
+
+        /** ************************************************************************************************************
+        *   Checks the state for the parachute and opens or closes it.
+        ***************************************************************************************************************/
+        protected checkParachuteState() : void
+        {
+            if ( this.collidesBottom )
+            {
+                if ( this.gliding )
+                {
+                    this.closeParachute();
+                }
+
+                this.glidingRequest = false;
+            }
+            else
+            {
+                if ( this.glidingRequest && this.isFalling() )
+                {
+                    this.openParachute();
+                    this.glidingRequest = false;
+                }
+            }
+        }
+
+        /** ************************************************************************************************************
+        *   Open character's parachute.
+        ***************************************************************************************************************/
+        protected openParachute() : void
+        {
+            ninjas.Debug.character.log( 'Character opens parachute' );
+
+            this.shape.body.frictionAir = ninjas.BodyFrictionAir.GLIDING;
+            this.gliding = true;
+        }
+
+        /** ************************************************************************************************************
+        *   Closes character's parachute.
+        ***************************************************************************************************************/
+        private closeParachute() : void
+        {
+            ninjas.Debug.character.log( 'Character closes parachute' );
+
+            this.shape.body.frictionAir = ninjas.BodyFrictionAir.DEFAULT;
+            this.gliding = false;
+        }
+
 
         /** ************************************************************************************************************
         *   Checks if the requested move for this character is collision free.
@@ -312,6 +278,41 @@
             (
                 bodiesToCheck,
                 this.shape.body.bounds
+            ).length > 0;
+        }
+
+        /** ************************************************************************************************************
+        *   Checks if the character's bottom line currently collides with any other colliding body.
+        ***************************************************************************************************************/
+        private checkBottomCollision() : void
+        {
+            const bodiesToCheck:matter.Body[] = [];
+
+            for ( const gameObject of ninjas.Main.game.level.movables )
+            {
+                bodiesToCheck.push( gameObject.shape.body );
+            }
+            for ( const gameObject of ninjas.Main.game.level.obstacles )
+            {
+                bodiesToCheck.push( gameObject.shape.body );
+            }
+            for ( const gameObject of ninjas.Main.game.level.enemies )
+            {
+                bodiesToCheck.push( gameObject.shape.body );
+            }
+
+            // check colliding bodies
+            this.collidesBottom = matter.Query.ray
+            (
+                bodiesToCheck,
+                matter.Vector.create(
+                    this.shape.body.position.x - ( this.shape.getWidth() / 2 ),
+                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                ),
+                matter.Vector.create(
+                    this.shape.body.position.x + ( this.shape.getWidth() / 2 ),
+                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                )
             ).length > 0;
         }
     }

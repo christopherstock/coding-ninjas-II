@@ -232,7 +232,7 @@
         {
             if ( this.shape.body.position.y - this.shape.getHeight() / 2 > ninjas.Main.game.level.height )
             {
-                ninjas.Debug.character.log( "Character has fallen to dead" );
+                ninjas.Debug.character.log( 'Character has fallen to dead' );
 
                 // remove character body from world
                 ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
@@ -253,7 +253,7 @@
                 // check intersection of the player and the enemy
                 if ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) )
                 {
-                    ninjas.Debug.enemy.log( "Player hit by enemy! Player is punching back now!" );
+                    ninjas.Debug.enemy.log( 'Player hit by enemy! Player is punching back now!' );
 
                     let playerPunchBackDirection:ninjas.CharacterLookingDirection = null;
 
