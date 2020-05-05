@@ -23,7 +23,7 @@
         /** ************************************************************************************************************
         *   Shows the preloader.
         ***************************************************************************************************************/
-        public preload()
+        public preload() : void
         {
             this.preloader = new ninjas.Preloader( this.onPreloaderSetup );
             this.engine    = new ninjas.GameEngine();
@@ -34,7 +34,7 @@
         /** ************************************************************************************************************
         *   Being invoked when the preloader is set up.
         ***************************************************************************************************************/
-        public onPreloaderSetup=()=>
+        public onPreloaderSetup = () : void =>
         {
             ninjas.Debug.preloader.log( 'Preloader setup complete.' );
             this.preloader.setLoadingPercentage( 5 );

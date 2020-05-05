@@ -8,7 +8,7 @@
     export class ShapeFreeForm extends ninjas.Shape
     {
         /** All vertices that build the free form. */
-        public              vertices            :Array<matter.Vector>           = null;
+        public              vertices            :matter.Vector[]        = null;
 
         /** The boundary width. */
         public              boundWidth          :number                 = 0.0;
@@ -94,11 +94,19 @@
 
             for ( let vertex of this.vertices )
             {
-                if ( vertex.x < minimumX ) minimumX = vertex.x;
-                if ( vertex.y < minimumY ) minimumY = vertex.y;
+                if ( vertex.x < minimumX ) {
+                    minimumX = vertex.x;
+                }
+                if ( vertex.y < minimumY ) {
+                    minimumY = vertex.y;
+                }
 
-                if ( vertex.x > maximumX ) maximumX = vertex.x;
-                if ( vertex.y > maximumY ) maximumY = vertex.y;
+                if ( vertex.x > maximumX ) {
+                    maximumX = vertex.x;
+                }
+                if ( vertex.y > maximumY ) {
+                    maximumY = vertex.y;
+                }
             }
 
             this.boundWidth  = maximumX - minimumX;

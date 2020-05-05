@@ -86,14 +86,20 @@
 
                 case ninjas.SitePanelPosition.RIGHT:
                 {
-                    this.outerAbsoluteContainer.style.left = String( ( ninjas.Main.game.engine.canvasSystem.getWidth() - width - ninjas.SettingGame.BORDER_SIZE_OUTER ) ) + 'px';
+                    this.outerAbsoluteContainer.style.left = String(
+                        ( ninjas.Main.game.engine.canvasSystem.getWidth() - width - ninjas.SettingGame.BORDER_SIZE_OUTER
+                        ) ) + 'px';
                     break;
                 }
             }
-            this.outerAbsoluteContainer.style.top = String( ( ( ninjas.Main.game.engine.canvasSystem.getHeight() - height ) / 2 ) ) + 'px';
+            this.outerAbsoluteContainer.style.top = String(
+                ( ( ninjas.Main.game.engine.canvasSystem.getHeight() - height ) / 2 )
+            ) + 'px';
 
             // inner container size
-            this.innerRelativeContainer.style.width  = String( ( width - 2 * ninjas.SettingGame.BORDER_SIZE_INNER ) ) + 'px';
+            this.innerRelativeContainer.style.width  = String(
+                ( width - 2 * ninjas.SettingGame.BORDER_SIZE_INNER )
+            ) + 'px';
 
             // inner container position
             this.innerRelativeContainer.style.top  = String( ninjas.SettingGame.BORDER_SIZE_INNER_TOP ) + 'px';
@@ -177,7 +183,11 @@
                 + ')'
             );
 
-            this.outerAbsoluteContainer.setAttribute( 'data-wow-duration', ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION + 'ms' );
+            this.outerAbsoluteContainer.setAttribute(
+                'data-wow-duration',
+                String( ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION )
+                + 'ms'
+            );
             this.outerAbsoluteContainer.setAttribute( 'data-wow-delay',    '0ms' );
         }
 

@@ -364,8 +364,8 @@
         )
         : void
         {
-            let tileTop    :ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_WATER_TOP;
-            let tileCenter :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_WATER_CENTER );
+            const tileTop    :ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_WATER_TOP;
+            const tileCenter :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_WATER_CENTER );
 
             // draw area
             for ( let tileX:number = 0; tileX < length; ++tileX )
@@ -584,7 +584,7 @@
         )
         : void
         {
-            let deco :ninjas.Decoration = ninjas.GameObjectFactory.createDecorationRect( xLeft, yBottom, ninjas.StaticShape.YES, spriteTemplate );
+            const deco :ninjas.Decoration = ninjas.GameObjectFactory.createDecorationRect( xLeft, yBottom, ninjas.StaticShape.YES, spriteTemplate );
 
             switch ( position )
             {
@@ -623,13 +623,13 @@
         )
         : void
         {
-            let sprtiteBookOpen   :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BOOK_OPEN   );
-            let sprtiteBookClosed :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BOOK_CLOSED );
-            let spriteShrine      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_CONSOLE     );
+            const sprtiteBookOpen   :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BOOK_OPEN   );
+            const sprtiteBookClosed :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BOOK_CLOSED );
+            const spriteShrine      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_CONSOLE     );
 
-            let decoBookOpen      :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft - 5,  yBottom - 118, ninjas.StaticShape.YES, sprtiteBookOpen,   ninjas.DebugColor.COLOR_TRANSPARENT );
-            let decoBookClosed    :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft + 72, yBottom - 114, ninjas.StaticShape.YES, sprtiteBookClosed, ninjas.DebugColor.COLOR_TRANSPARENT );
-            let decoShrine        :ninjas.Shrine         = new ninjas.Shrine
+            const decoBookOpen      :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft - 5,  yBottom - 118, ninjas.StaticShape.YES, sprtiteBookOpen,   ninjas.DebugColor.COLOR_TRANSPARENT );
+            const decoBookClosed    :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft + 72, yBottom - 114, ninjas.StaticShape.YES, sprtiteBookClosed, ninjas.DebugColor.COLOR_TRANSPARENT );
+            const decoShrine        :ninjas.Shrine         = new ninjas.Shrine
             (
                 new ninjas.ShapeRectangle
                 (
@@ -723,7 +723,7 @@
         (
             level   :ninjas.Level,
             xLeft   :number,
-            yBottom :number,
+            yBottom :number
         )
         : void
         {

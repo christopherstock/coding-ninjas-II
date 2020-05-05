@@ -15,6 +15,7 @@
         *   @param  col A stroke color.
         ***************************************************************************************************************/
         public static strokeLine( ctx:CanvasRenderingContext2D, x1:number, y1:number, x2:number, y2:number, col:string )
+        : void
         {
             ctx.strokeStyle = col;
             ctx.lineWidth   = 1.0;
@@ -35,7 +36,10 @@
         *   @param  height     The desired height.
         *   @param  col        A stroke color.
         ***************************************************************************************************************/
-        public static strokeRect( ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string )
+        public static strokeRect(
+            ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
+        )
+        : void
         {
             ctx.strokeStyle = col;
             ctx.lineWidth   = 1.0;
@@ -53,7 +57,10 @@
         *   @param  height  The desired height.
         *   @param  col     A fill color.
         ***************************************************************************************************************/
-        public static fillRect( ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string )
+        public static fillRect(
+            ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
+        )
+        : void
         {
             ctx.fillStyle = col;
             ctx.fillRect( x, y, width, height );
@@ -67,7 +74,7 @@
         *   @param  x           Drawing position x.
         *   @param  y           Drawing position y.
         ***************************************************************************************************************/
-        public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number )
+        public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number ) : void
         {
             Drawing.drawImageScaledClipped( ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height );
         }
@@ -100,6 +107,7 @@
             destWidth   :number,
             destHeight  :number
         )
+        : void
         {
             ctx.drawImage( img, srcX, srcY, srcWidth, srcHeight, destX, destY, destWidth, destHeight );
         }

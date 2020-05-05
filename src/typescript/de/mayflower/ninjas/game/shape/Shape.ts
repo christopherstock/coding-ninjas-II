@@ -53,7 +53,7 @@
                     opacity:     1.0,
                     lineWidth:   1.0,
                 },
-                isStatic:        ( isStatic == ninjas.StaticShape.YES ),
+                isStatic:        ( isStatic === ninjas.StaticShape.YES ),
                 collisionFilter: ninjas.SettingMatterJs.COLLISION_GROUP_COLLIDING,
 
                 friction:        friction,

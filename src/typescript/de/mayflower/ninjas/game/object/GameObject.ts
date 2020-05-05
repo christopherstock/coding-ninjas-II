@@ -40,7 +40,7 @@
         ***************************************************************************************************************/
         public render() : void
         {
-            if ( this.sprite != null )
+            if ( this.sprite !== null )
             {
                 // render sprite and check frame change
                 if ( this.sprite.render() )
@@ -74,10 +74,10 @@
         ***************************************************************************************************************/
         protected setSprite( spriteTemplate:ninjas.SpriteTemplate ) : void
         {
-            if ( spriteTemplate != null )
+            if ( spriteTemplate !== null )
             {
                 // deny setting new sprite if same sprite than existent
-                if ( this.sprite != null && this.sprite.template == spriteTemplate )
+                if ( this.sprite !== null && this.sprite.template === spriteTemplate )
                 {
                     return;
                 }
@@ -125,7 +125,7 @@
                     this.shape.body,
                     {
                         x: this.shape.getWidth() / 2,
-                        y: this.shape.body.position.y
+                        y: this.shape.body.position.y,
                     }
                 );
             }
@@ -137,7 +137,7 @@
                     this.shape.body,
                     {
                         x: ninjas.Main.game.level.width - this.shape.getWidth() / 2,
-                        y: this.shape.body.position.y
+                        y: this.shape.body.position.y,
                     }
                 );
             }

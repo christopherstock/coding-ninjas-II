@@ -69,15 +69,19 @@
                 }
             );
 
-            //set all loaded image as MatterJS texture cache
+            // set all loaded image as MatterJS texture cache
             this.renderer.textures = textureCache;
-            ninjas.Debug.preloader.log( "Assigned [" + Object.keys( this.renderer.textures ).length + "] textures to renderer texture cache " );
+            ninjas.Debug.preloader.log(
+                'Assigned ['
+                + Object.keys( this.renderer.textures ).length
+                + '] textures to renderer texture cache '
+            );
 
             // disables blurry image drawing!
             this.renderer.context.imageSmoothingEnabled = false;
 
             // add drawing callback after rendering
-            matter.Events.on( this.renderer, "afterRender",  () => { callbackAfterRender( this.renderer.context ) } );
+            matter.Events.on( this.renderer, 'afterRender',  () => { callbackAfterRender( this.renderer.context ) } );
         }
 
         /** ************************************************************************************************************

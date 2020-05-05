@@ -21,7 +21,7 @@
                 shape,
                 spriteTemplate,
                 x,
-                y,
+                y
             );
 
             this.shape.body.collisionFilter = ninjas.SettingMatterJs.COLLISION_GROUP_NON_COLLIDING_DECO;

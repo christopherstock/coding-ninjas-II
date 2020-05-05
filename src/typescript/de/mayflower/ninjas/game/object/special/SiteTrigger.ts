@@ -18,9 +18,9 @@
     export class SiteTrigger extends ninjas.Decoration
     {
         /** The site content to show when this trigger is released. */
-        private                         content                         :ninjas.SiteContent             = null;
+        private     readonly            content                         :ninjas.SiteContent             = null;
         /** A fixed position for the panel to popup, if desired. */
-        private                         sitePanelAppearance             :ninjas.SitePanelAppearance     = null;
+        private     readonly            sitePanelAppearance             :ninjas.SitePanelAppearance     = null;
 
         /** Flags if the according site panel is currently displayed. */
         private                         sitePanelActive                 :boolean                        = false;
@@ -70,7 +70,7 @@
                 if ( !this.sitePanelActive )
                 {
                     // get panel popup according to player looking direction
-                    let panelPosition:ninjas.SitePanelPosition = this.determinePanelPosition();
+                    const panelPosition:ninjas.SitePanelPosition = this.determinePanelPosition();
 
                     if ( ninjas.Main.game.engine.siteSystem.show( this.content, panelPosition ) )
                     {
@@ -97,7 +97,9 @@
         ***************************************************************************************************************/
         private checkPlayerCollision() : boolean
         {
-            return ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) );
+            return (
+                matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds )
+            );
         }
 
         /** ************************************************************************************************************

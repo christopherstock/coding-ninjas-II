@@ -17,7 +17,9 @@
         ***************************************************************************************************************/
         public static createWoodenCrate( x:number, yBottom:number ):ninjas.Movable
         {
-            let sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_CRATE_WOOD );
+            const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
+                ninjas.Image.IMAGE_CRATE_WOOD
+            );
 
             return new ninjas.Movable
             (
@@ -55,7 +57,7 @@
         )
         : ninjas.Movable
         {
-            let sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+            const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
 
             return new ninjas.Movable
             (
@@ -95,7 +97,7 @@
         )
         : ninjas.Movable
         {
-            let sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+            const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
 
             return new ninjas.Movable
             (
@@ -138,11 +140,15 @@
         )
         : ninjas.Movable
         {
-            let spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SPHERE );
+            const spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SPHERE );
 
             if ( spriteTemplate.width != spriteTemplate.height )
             {
-                throw new Error( "Non-square sprite template dimensions for circular deco - sprite image [" + spriteTemplate.imageIds[ 0 ] + "]" );
+                throw new Error(
+                    'Non-square sprite template dimensions for circular deco - sprite image ['
+                    + spriteTemplate.imageIds[ 0 ]
+                    + ']'
+                );
             }
 
             return new ninjas.Movable
