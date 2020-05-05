@@ -61,7 +61,7 @@
         ***************************************************************************************************************/
         public handleKeys( keySystem:ninjas.KeySystem ) : void
         {
-            if ( this.punchBackTicks != 0 )
+            if ( this.punchBackTicks !== 0 )
             {
                 return;
             }

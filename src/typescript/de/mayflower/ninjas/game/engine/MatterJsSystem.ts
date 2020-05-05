@@ -23,7 +23,7 @@
         (
             canvas              :HTMLCanvasElement,
             callbackAfterRender :Function,
-            textureCache        :Array<HTMLImageElement>
+            textureCache        :HTMLImageElement[]
         )
         {
             // create engine

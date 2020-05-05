@@ -25,7 +25,7 @@
                 shape,
                 spriteTemplate,
                 x,
-                y,
+                y
             );
 
             this.shape.body.collisionFilter = ninjas.SettingMatterJs.COLLISION_GROUP_NON_COLLIDING_ITEM;
@@ -34,7 +34,7 @@
         /** ************************************************************************************************************
         *   Renders this item.
         ***************************************************************************************************************/
-        public render()
+        public render() : void
         {
             super.render();
 

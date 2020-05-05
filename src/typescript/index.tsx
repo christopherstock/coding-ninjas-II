@@ -1,5 +1,5 @@
 
-    require( "animate.css" );
+    require( 'animate.css' );
     require( './de/mayflower/ninjas/css/custom.less' );
 
     import * as ninjas from './de/mayflower/ninjas/ninjas';
@@ -7,7 +7,7 @@
     /** ****************************************************************************************************************
     *   Being invoked when the page is loaded completely.
     *******************************************************************************************************************/
-    window.onload = function()
+    window.onload = () :void =>
     {
         ninjas.Main.main();
     };
@@ -15,6 +15,6 @@
     /** ****************************************************************************************************************
     *   Being invoked when the page is left.
     *******************************************************************************************************************/
-    window.onunload = function()
+    window.onunload = () :void =>
     {
     };

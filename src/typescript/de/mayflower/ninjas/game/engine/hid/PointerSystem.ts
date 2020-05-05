@@ -18,21 +18,21 @@
         ***************************************************************************************************************/
         public constructor()
         {
-            ninjas.Debug.pointer.log( "Setup pointer system" );
+            ninjas.Debug.pointer.log( 'Setup pointer system' );
 
-            let canvas:HTMLCanvasElement = ninjas.Main.game.engine.canvasSystem.getCanvas();
+            const canvas:HTMLCanvasElement = ninjas.Main.game.engine.canvasSystem.getCanvas();
 
-            canvas.addEventListener( "onpointermove", this.onPointerMove, false );
-            canvas.addEventListener( "onpointerdown", this.onPointerDown, false );
-            window.addEventListener( "onpointerup",   this.onPointerUp,   false );
+            canvas.addEventListener( 'onpointermove', this.onPointerMove, false );
+            canvas.addEventListener( 'onpointerdown', this.onPointerDown, false );
+            window.addEventListener( 'onpointerup',   this.onPointerUp,   false );
 
-            canvas.addEventListener( "pointermove", this.onPointerMove, false );
-            canvas.addEventListener( "pointerdown", this.onPointerDown, false );
-            window.addEventListener( "pointerup",   this.onPointerUp,   false );
+            canvas.addEventListener( 'pointermove', this.onPointerMove, false );
+            canvas.addEventListener( 'pointerdown', this.onPointerDown, false );
+            window.addEventListener( 'pointerup',   this.onPointerUp,   false );
 
-            canvas.addEventListener( "touchmove",   this.onTouchMove, false );
-            canvas.addEventListener( "touchstart",  this.onTouchDown, false );
-            window.addEventListener( "touchend",    this.onTouchUp,   false );
+            canvas.addEventListener( 'touchmove',   this.onTouchMove, false );
+            canvas.addEventListener( 'touchstart',  this.onTouchDown, false );
+            window.addEventListener( 'touchend',    this.onTouchUp,   false );
         }
 
         /** ************************************************************************************************************
@@ -42,7 +42,7 @@
         ***************************************************************************************************************/
         public onPointerMove=( event:Event )=>
         {
-            ninjas.Debug.pointer.log( "pointer move" );
+            ninjas.Debug.pointer.log( 'pointer move' );
 
             event.preventDefault();
         };
@@ -54,7 +54,7 @@
         ***************************************************************************************************************/
         public onPointerDown=( event:any )=>
         {
-            ninjas.Debug.pointer.log( "pointer down" );
+            ninjas.Debug.pointer.log( 'pointer down' );
 
             event.preventDefault();
 
@@ -82,7 +82,7 @@
         ***************************************************************************************************************/
         public onPointerUp=( event:Event )=>
         {
-            ninjas.Debug.pointer.log( "pointer up" );
+            ninjas.Debug.pointer.log( 'pointer up' );
 
             event.preventDefault();
 
@@ -97,7 +97,7 @@
         ***************************************************************************************************************/
         public onTouchMove=( event:Event )=>
         {
-            ninjas.Debug.pointer.log( "touch move" );
+            ninjas.Debug.pointer.log( 'touch move' );
 
             event.preventDefault();
         };
@@ -109,13 +109,13 @@
         ***************************************************************************************************************/
         public onTouchDown=( event:any )=>
         {
-            ninjas.Debug.pointer.log( "touch down" );
+            ninjas.Debug.pointer.log( 'touch down' );
 
             event.preventDefault();
 
             if ( ninjas.Main.game.level != null )
             {
-                let playerCenterX:number = ( ninjas.Main.game.level.player.shape.body.position.x ) - ninjas.Main.game.camera.getOffsetX();
+                const playerCenterX:number = ( ninjas.Main.game.level.player.shape.body.position.x ) - ninjas.Main.game.camera.getOffsetX();
 
                 if ( event.touches[ 0 ].pageX < playerCenterX )
                 {
@@ -137,7 +137,7 @@
         ***************************************************************************************************************/
         public onTouchUp=( event:Event )=>
         {
-            ninjas.Debug.pointer.log( "touch  up" );
+            ninjas.Debug.pointer.log( 'touch  up' );
 
             event.preventDefault();
 

@@ -16,9 +16,9 @@
     export class Obstacle extends ninjas.GameObject
     {
         /** Specifies if the player shall be allowed to jump through this obstacle. */
-        private         jumpPassThrough             :JumpPassThrough                    = null;
+        private     readonly        jumpPassThrough             :JumpPassThrough                    = null;
         /** Specifies if the obstacle currently allows passing through. */
-        private         currentlyAllowPassThrough   :JumpPassThrough                    = null;
+        private     readonly        currentlyAllowPassThrough   :JumpPassThrough                    = null;
 
         /** ************************************************************************************************************
         *   Creates a new obstacle.
@@ -53,7 +53,7 @@
         /** ************************************************************************************************************
         *   Renders this obstacle.
         ***************************************************************************************************************/
-        public render()
+        public render() : void
         {
             super.render();
 /*
@@ -74,7 +74,8 @@
                 else if
                 (
                         this.currentlyAllowPassThrough == JumpPassThrough.YES
-                    &&  !matter.Bounds.overlaps( ninjas.Main.game.level.player.shape.body.bounds, this.shape.body.bounds )
+                    &&  !matter.Bounds.overlaps( ninjas.Main.game.level.player.shape.body.bounds,
+                        this.shape.body.bounds )
                 )
                 {
                     this.currentlyAllowPassThrough = JumpPassThrough.NO;
