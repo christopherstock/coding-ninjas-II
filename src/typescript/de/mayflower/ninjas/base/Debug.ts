@@ -6,14 +6,15 @@
     *******************************************************************************************************************/
     export class Debug
     {
+        /** Debugs the key system. */
+        public      static  readonly    key             :Debug              = new Debug( false  );
+
         /** Debugs the preloading system. */
         public      static  readonly    preloader       :Debug              = new Debug( true  );
         /** Debugs the image system. */
         public      static  readonly    image           :Debug              = new Debug( false );
         /** Debugs the sound system. */
         public      static  readonly    sound           :Debug              = new Debug( true  );
-        /** Debugs the key system. */
-        public      static  readonly    key             :Debug              = new Debug( true  );
         /** Debugs the pointer system. */
         public      static  readonly    pointer         :Debug              = new Debug( true  );
         /** Debugs the pickable game items. */
