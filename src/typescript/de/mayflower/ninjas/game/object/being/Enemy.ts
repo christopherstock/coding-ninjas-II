@@ -31,9 +31,9 @@
         /** The current delay tick between movement phases. */
         private                     currentPhaseDelayTick   :number                     = 0;
         /** Left walking target X. */
-        private                     walkingTargetLeft       :number                     = 0;
+        private     readonly        walkingTargetLeft       :number                     = 0;
         /** Right walking target X. */
-        private                     walkingTargetRight      :number                     = 0;
+        private     readonly        walkingTargetRight      :number                     = 0;
 
         /** ************************************************************************************************************
         *   Creates a new enemy.
@@ -71,7 +71,7 @@
             this.walkingTargetLeft  = walkingTargetLeft;
             this.walkingTargetRight = walkingTargetRight;
 
-            if ( this.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+            if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
             {
                 this.currentPhase = EnemyMovementPhase.WALKING_LEFT;
             }
@@ -108,13 +108,13 @@
         *
         *   @param playerDirection The current direction of the player.
         ***************************************************************************************************************/
-        public onHitByPlayer( playerDirection )
+        public onHitByPlayer( playerDirection :ninjas.CharacterLookingDirection ) : void
         {
             // flag as dying
             this.dying = true;
 
             // face the player
-            if ( playerDirection == ninjas.CharacterLookingDirection.LEFT )
+            if ( playerDirection === ninjas.CharacterLookingDirection.LEFT )
             {
                 this.lookingDirection = ninjas.CharacterLookingDirection.RIGHT;
             }
@@ -137,7 +137,7 @@
         /** ************************************************************************************************************
         *   Moves this enemy according to the current move pattern.
         ***************************************************************************************************************/
-        private moveAccordingToPattern()
+        private moveAccordingToPattern() : void
         {
             switch ( this.currentPhase )
             {
@@ -188,7 +188,7 @@
         /** ************************************************************************************************************
         *   Assigns the current sprite to the enemy according to his current state.
         ***************************************************************************************************************/
-        private assignCurrentSprite()
+        private assignCurrentSprite() : void
         {
             if ( this.dying )
             {
@@ -213,7 +213,7 @@
                 }
                 else
                 {
-                    if ( this.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
                         this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT );
                     }
@@ -248,7 +248,7 @@
         private checkPlayerCollision() : void
         {
             // only if player is not punched back
-            if ( ninjas.Main.game.level.player.punchBackTicks == 0 )
+            if ( ninjas.Main.game.level.player.punchBackTicks === 0 )
             {
                 // check intersection of the player and the enemy
                 if ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) )
@@ -257,7 +257,7 @@
 
                     let playerPunchBackDirection:ninjas.CharacterLookingDirection = null;
 
-                    if ( ninjas.Main.game.level.player.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+                    if ( ninjas.Main.game.level.player.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
                         playerPunchBackDirection = ninjas.CharacterLookingDirection.RIGHT;
                     }
