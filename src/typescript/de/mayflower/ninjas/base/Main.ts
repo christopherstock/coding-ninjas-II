@@ -1,7 +1,7 @@
 
     import * as ninjas from '../ninjas';
 
-    /*******************************************************************************************************************
+    /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
     *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
@@ -26,7 +26,7 @@
         /** The singleton instance of the game engine. */
         public      static          game                    :ninjas.Game                    = null;
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   This method is invoked when the application starts.
         ***************************************************************************************************************/
         public static main() : void

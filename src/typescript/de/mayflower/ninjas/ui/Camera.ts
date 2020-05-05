@@ -2,7 +2,7 @@
     import * as matter from 'matter-js';
     import * as ninjas from '../ninjas';
 
-    /*******************************************************************************************************************
+    /** ****************************************************************************************************************
     *   Manages the camera that calculates the scrolling amounts.
     *******************************************************************************************************************/
     export class Camera
@@ -34,7 +34,7 @@
         /** The height of the canvas. */
         private     canvasHeight                :number                 = 0.0;
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Constructs a new camera.
         *
         *   @param movingSpeed       The moving speed for the camera.
@@ -67,27 +67,27 @@
             this.canvasHeight      = canvasHeight;
         }
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Returns the current camera offset X.
         *
         *   @return Current offset X.
         ***************************************************************************************************************/
-        public getOffsetX()
+        public getOffsetX() : number
         {
             return this.offsetX;
         }
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Returns the current camera offset Y.
         *
         *   @return Current offset X.
         ***************************************************************************************************************/
-        public getOffsetY()
+        public getOffsetY() : number
         {
             return this.offsetY;
         }
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Updates the singleton instance of the camera by reassigning
         *   it's horizontal and vertical offset.
         *
@@ -121,10 +121,10 @@
             );
         }
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Resets the camera targets and offsets to the current player position without buffering.
         ***************************************************************************************************************/
-        public reset()
+        public reset()  : void
         {
             // extract level and player access!
 
@@ -140,7 +140,7 @@
             this.offsetY = this.targetY;
         }
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Assigns the specified camera tarets to the specified subject.
         *
         *   @param subjectX The subject's X to position the camera to.
@@ -155,6 +155,7 @@
             targetX  :number,
             targetY  :number
         )
+        : void
         {
             this.targetX = subjectX - targetX;
             this.targetY = subjectY - targetY;
@@ -162,10 +163,10 @@
             this.clipTargetsToLevelBounds();
         }
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Clips the camera targets X and Y to the current level bounds.
         ***************************************************************************************************************/
-        private clipTargetsToLevelBounds()
+        private clipTargetsToLevelBounds() : void
         {
             // clip camera target x to level bounds
             if ( this.targetX < 0                                  ) this.targetX = 0;
@@ -176,12 +177,12 @@
             if ( this.targetY > this.levelHeight - this.canvasHeight ) this.targetY = this.levelHeight - this.canvasHeight;
         }
 
-        /***************************************************************************************************************
+        /** ************************************************************************************************************
         *   Calculates the new offsets.
         *
         *   @param allowAscendY Specifies if the camera may ascend in this update.
         ***************************************************************************************************************/
-        private calculateOffsets( allowAscendY:boolean )
+        private calculateOffsets( allowAscendY:boolean ) : void
         {
             // move horizontal camera offsets to camera target
             let cameraMoveX:number = 0.0;

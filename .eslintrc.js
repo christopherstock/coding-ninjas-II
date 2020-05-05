@@ -149,12 +149,16 @@ module.exports = {
         'no-unused-labels': 'warn',
         'object-shorthand': 'off',
         'one-var': ['warn', 'never'],
+/*
         'prefer-arrow/prefer-arrow-functions': [
             'warn',
             {
-                disallowPrototype: false
+                disallowPrototype: false,
+                allowNamedFunctions: false,
+                allowUnboundThis: true
             },
         ],
+*/
         'quote-props': 'off',
         radix: 'warn',
         'space-before-function-paren': 'off',
