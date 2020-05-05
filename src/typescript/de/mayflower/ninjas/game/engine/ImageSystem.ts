@@ -7,9 +7,9 @@
     export class ImageSystem
     {
         /** All image file names to load. */
-        private         fileNames                       :Array<string>                  = null;
+        private         fileNames                       :string[]                       = null;
         /** All image file names to mirror. */
-        private         mirroredFileNames               :Array<string>                  = null;
+        private         mirroredFileNames               :string[]                       = null;
 
         /** The method to invoke when all images are loaded. */
         private         onLoadComplete                  :Function                       = null;
@@ -25,9 +25,9 @@
         private         mirroredImageCount              :number                         = 0;
 
         /** All loaded image objects. */
-        private         originalImages                  :Array<HTMLImageElement>        = [];
+        private         originalImages                  :HTMLImageElement[]             = [];
         /** All loaded and mirrored image objects. */
-        private         mirroredImages                  :Array<HTMLImageElement>        = [];
+        private         mirroredImages                  :HTMLImageElement[]             = [];
 
         /** ************************************************************************************************************
         *   Preloads all images into memory.
@@ -36,7 +36,7 @@
         *   @param mirroredFileNames The names of all mirrored image files to load.
         *   @param onLoadComplete    The method to invoke when all image files are loaded.
         ***************************************************************************************************************/
-        public constructor( fileNames:Array<string>, mirroredFileNames:Array<string>, onLoadComplete:Function )
+        public constructor( fileNames:string[], mirroredFileNames:string[], onLoadComplete:Function )
         {
             this.fileNames         = fileNames;
             this.mirroredFileNames = mirroredFileNames;
@@ -144,16 +144,16 @@
         *
         *   @return An associated array of all images. Source attribute is the key.
         ***************************************************************************************************************/
-        public getAll() : Array<HTMLImageElement>
+        public getAll() : HTMLImageElement[]
         {
-            let ret:Array<HTMLImageElement> = [];
+            const ret:HTMLImageElement[] = [];
 
-            for ( let fileName of this.fileNames )
+            for ( const fileName of this.fileNames )
             {
                 ret[ this.getImage( fileName ).src ] = this.getImage( fileName );
             }
 
-            for ( let mirroredFileName of this.mirroredFileNames )
+            for ( const mirroredFileName of this.mirroredFileNames )
             {
                 ret[ this.getMirroredImage( mirroredFileName ).src ] = this.getMirroredImage( mirroredFileName );
             }

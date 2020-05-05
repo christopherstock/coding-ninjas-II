@@ -290,9 +290,9 @@
         ***************************************************************************************************************/
         private isCollidingObstacle() : boolean
         {
-            let bodiesToCheck:Array<matter.Body> = [];
+            const bodiesToCheck:Array<matter.Body> = [];
 
-            for ( let gameObject of ninjas.Main.game.level.obstacles )
+            for ( const gameObject of ninjas.Main.game.level.obstacles )
             {
                 // only consider rectangular obstacles
                 if ( gameObject.shape instanceof ninjas.ShapeRectangle )

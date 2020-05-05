@@ -1,8 +1,6 @@
 
     import * as chai   from 'chai';
-    import * as Enzyme from 'enzyme';
     import * as React from 'react';
-    import { ContentCompany } from '../../../../typescript/de/mayflower/ninjas/site/component/ContentCompany';
 
     describe( 'React component Content', () =>
     {
