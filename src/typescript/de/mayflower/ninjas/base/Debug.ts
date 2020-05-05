@@ -13,7 +13,7 @@
         /** Debugs the sound system. */
         public      static      sound           :Debug              = new Debug( true  );
         /** Debugs the key system. */
-        public      static      key             :Debug              = new Debug( false );
+        public      static      key             :Debug              = new Debug( true  );
         /** Debugs the pointer system. */
         public      static      pointer         :Debug              = new Debug( true  );
         /** Debugs the pickable game items. */

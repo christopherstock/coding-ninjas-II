@@ -189,31 +189,34 @@
         /** ************************************************************************************************************
         *   Checks if an enemy is currently killed by the player (by jumping onto the enemie's head.)
         ***************************************************************************************************************/
-        private checkEnemyKill()
+        private checkEnemyKill() : void
         {
             // check if player collides on bottom and if he's descending
             if ( this.shape.body.velocity.y > 0.0 )
             {
                 // browse all enemies
-                for ( let enemy of ninjas.Main.game.level.enemies )
+                for ( const enemy of ninjas.Main.game.level.enemies )
                 {
                     // skip dead enemies
                     if ( !enemy.dead && !enemy.dying )
                     {
+
                         // check intersection of the player and the enemy
                         if ( matter.Bounds.overlaps( this.shape.body.bounds, enemy.shape.body.bounds ) )
                         {
-                            ninjas.Debug.enemy.log( "Enemy touched by player" );
+                            ninjas.Debug.enemy.log( 'Enemy touched by player' );
 
-                            let playerBottom:number = Math.floor( this.shape.body.position.y  + this.shape.getHeight() / 2 );
-                            let enemyTop:number     = Math.floor( enemy.shape.body.position.y - enemy.shape.getHeight() / 2 );
+                            const playerBottom:number = Math.floor(
+                                this.shape.body.position.y  + this.shape.getHeight() / 2 );
+                            const enemyTop:number     = Math.floor(
+                                enemy.shape.body.position.y - enemy.shape.getHeight() / 2 );
 
-                            ninjas.Debug.enemy.log( " playerBottom [" + playerBottom + "] enemyTop [" + enemyTop + "]" );
+                            ninjas.Debug.enemy.log(
+                                ' playerBottom [' + String(playerBottom) + '] enemyTop [' + String(enemyTop) + ']' );
 
-                            let MAX_SINK_DELTA:number = 10;
+                            const MAX_SINK_DELTA:number = 10;
                             if ( Math.abs( playerBottom - enemyTop ) <= MAX_SINK_DELTA )
                             {
-                                ninjas.Debug.enemy.log( " Enemy hit by player" );
 
                                 enemy.onHitByPlayer( this.lookingDirection );
                             }

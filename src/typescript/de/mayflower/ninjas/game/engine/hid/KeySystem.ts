@@ -7,20 +7,20 @@
     export class KeySystem
     {
         /** All 'pressed' information for all keys. */
-        private             keysPressed         :Array<boolean>                 = [];
+        private             keysPressed         :boolean[]                  = [];
         /** All 'needs release' information for all keys. */
-        private             keysNeedRelease     :Array<boolean>                 = [];
+        private             keysNeedRelease     :boolean[]                  = [];
 
         /** ************************************************************************************************************
         *   Creates a new key system.
         ***************************************************************************************************************/
         public constructor()
         {
-            window.addEventListener( "keydown",     this.onKeyDown, false );
-            window.addEventListener( "keyup",       this.onKeyUp,   false );
+            window.addEventListener( 'keydown',     this.onKeyDown, false );
+            window.addEventListener( 'keyup',       this.onKeyUp,   false );
 
-            window.addEventListener( "onkeydown",   this.onKeyDown, false );
-            window.addEventListener( "onkeyup",     this.onKeyUp,   false );
+            window.addEventListener( 'onkeydown',   this.onKeyDown, false );
+            window.addEventListener( 'onkeyup',     this.onKeyUp,   false );
         }
 
         /** ************************************************************************************************************
@@ -28,14 +28,14 @@
         *
         *   @param event The system's propagated key event.
         ***************************************************************************************************************/
-        public onKeyDown=( event:Event )=>
+        public onKeyDown :( event:Event ) => void =( event:Event )=>
         {
-            let keyCode = ( event as KeyboardEvent ).which;
+            const keyCode :string = ( event as KeyboardEvent ).key;
 
             if ( !this.keysNeedRelease[ keyCode ] ) {
                 this.keysPressed[ keyCode ] = true;
 
-                ninjas.Debug.key.log( "key pressed ["  + keyCode + "]" );
+                ninjas.Debug.key.log( 'key pressed ['  + keyCode + ']' );
             }
         };
 
@@ -44,14 +44,14 @@
         *
         *   @param event The system's propagated key event.
         ***************************************************************************************************************/
-        public onKeyUp=( event:Event )=>
+        public onKeyUp :(event:Event) => void =( event:Event ) :void =>
         {
-            let keyCode = ( event as KeyboardEvent ).which;
+            const keyCode :string = ( event as KeyboardEvent ).key;
 
             this.keysPressed[     keyCode ] = false;
             this.keysNeedRelease[ keyCode ] = false;
 
-            ninjas.Debug.key.log( "key released ["  + keyCode + "]" );
+            ninjas.Debug.key.log( 'key released ['  + keyCode + ']' );
         };
 
         /** ************************************************************************************************************
@@ -62,7 +62,7 @@
         *   @return         <code>true</code> if this key is currently pressed.
         *                   Otherwise <code>false</code>.
         ***************************************************************************************************************/
-        public isPressed( keyCode:number ):boolean
+        public isPressed( keyCode:string ):boolean
         {
             return this.keysPressed[ keyCode ];
         }
@@ -72,7 +72,7 @@
         *
         *   @param keyCode The keyCode of the key to mark as 'needs key release'.
         ***************************************************************************************************************/
-        public setNeedsRelease( keyCode:number )
+        public setNeedsRelease( keyCode:string ) : void
         {
             this.keysNeedRelease[ keyCode ] = true;
             this.keysPressed[     keyCode ] = false;
@@ -81,7 +81,7 @@
         /** ************************************************************************************************************
         *   Flags all keys as released.
         ***************************************************************************************************************/
-        public releaseAllKeys()
+        public releaseAllKeys() : void
         {
             this.keysPressed = [];
         }

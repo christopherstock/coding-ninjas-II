@@ -5,7 +5,7 @@
     export class SettingDebug
     {
         /** The global debug switch. */
-        public  static  readonly    DEBUG_MODE                              :boolean                    = false;
+        public  static  readonly    DEBUG_MODE                              :boolean                    = true;
 
         // noinspection PointlessBooleanExpressionJS
         /** Disables all sounds. */

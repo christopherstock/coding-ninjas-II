@@ -12,25 +12,25 @@
         public      height                  :number                         = 0.0;
 
         /** All parallax bgs. */
-        public      parallaxBgs             :Array<ninjas.ParallaxDeco>     = [];
+        public      parallaxBgs             :ninjas.ParallaxDeco[]          = [];
         /** All decos in bg. */
-        public      decosBg                 :Array<ninjas.Decoration>       = [];
+        public      decosBg                 :ninjas.Decoration[]            = [];
         /** All shrines. */
-        public      shrines                 :Array<ninjas.Shrine>           = [];
+        public      shrines                 :ninjas.Shrine[]                = [];
         /** All site triggers. */
-        public      siteTriggers            :Array<ninjas.SiteTrigger>      = [];
+        public      siteTriggers            :ninjas.SiteTrigger[]           = [];
         /** All obstacles. */
-        public      obstacles               :Array<ninjas.Obstacle>         = [];
+        public      obstacles               :ninjas.Obstacle[]              = [];
         /** All movables. */
-        public      movables                :Array<ninjas.Movable>          = [];
+        public      movables                :ninjas.Movable[]               = [];
         /** All enemies. */
-        public      enemies                 :Array<ninjas.Enemy>            = [];
+        public      enemies                 :ninjas.Enemy[]                 = [];
         /** The player instance. */
         public      player                  :ninjas.Player                  = null;
         /** All decos in fg. */
-        public      decosFg                 :Array<ninjas.Decoration>       = [];
+        public      decosFg                 :ninjas.Decoration[]            = [];
         /** All parallax fgs. */
-        public      parallaxFgs             :Array<ninjas.ParallaxDeco>     = [];
+        public      parallaxFgs             :ninjas.ParallaxDeco[]          = [];
 
         /** ************************************************************************************************************
         *   Sets the player and the game objects.
@@ -40,31 +40,31 @@
         /** ************************************************************************************************************
         *   Inits a new level.
         ***************************************************************************************************************/
-        public init()
+        public init() : void
         {
             this.createGameObjects();
 
-            for ( let gameObject of this.parallaxBgs )
+            for ( const gameObject of this.parallaxBgs )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
-            for ( let gameObject of this.siteTriggers )
+            for ( const gameObject of this.siteTriggers )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
-            for ( let gameObject of this.decosBg )
+            for ( const gameObject of this.decosBg )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
-            for ( let gameObject of this.obstacles )
+            for ( const gameObject of this.obstacles )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
-            for ( let gameObject of this.movables )
+            for ( const gameObject of this.movables )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
-            for ( let gameObject of this.enemies )
+            for ( const gameObject of this.enemies )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
