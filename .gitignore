@@ -1,6 +1,5 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# node.js
+# Node.js
 node_modules
 
 # macOS
@@ -10,10 +9,14 @@ node_modules
 .idea
 *.iml
 
-# build and targte paths
-bin
-doc
+# Distribution path
 /dist/js/
 
-# jest coverage output
+# TypeScript build path
+bin
+
+# TypeDoc output
+doc
+
+# Jest coverage output
 coverage
