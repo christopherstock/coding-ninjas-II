@@ -73,4 +73,4 @@
 
     export * from './util/IO';
     export * from './util/MathUtil';
-    export * from './util/String';
+    export * from './util/StringUtil';

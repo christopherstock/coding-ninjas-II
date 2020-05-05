@@ -51,7 +51,7 @@
         /** ************************************************************************************************************
         *   Renders the current player tick.
         ***************************************************************************************************************/
-        public render()
+        public render() : void
         {
             super.render();
         }
@@ -59,7 +59,7 @@
         /** ************************************************************************************************************
         *   Checks all pressed player keys and performs according actions.
         ***************************************************************************************************************/
-        public handleKeys( keySystem:ninjas.KeySystem )
+        public handleKeys( keySystem:ninjas.KeySystem ) : void
         {
             if ( this.punchBackTicks != 0 )
             {
@@ -114,7 +114,10 @@
             }
         }
 
-        public renderAfterKeys()
+        /** ************************************************************************************************************
+        *   The render tick handling after player keys have been processed.
+        ***************************************************************************************************************/
+        public renderAfterKeys() : void
         {
             this.checkEnemyKill();
             this.clipToHorizontalLevelBounds();
@@ -124,13 +127,13 @@
         /** ************************************************************************************************************
         *   Assigns the current sprite to the player according to his current state.
         ***************************************************************************************************************/
-        private assignCurrentSprite()
+        private assignCurrentSprite() : void
         {
             if ( this.isFalling() )
             {
                 if ( this.gliding )
                 {
-                    if ( this.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
                         this.setSprite( ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_LEFT );
                     }
@@ -141,7 +144,7 @@
                 }
                 else
                 {
-                    if ( this.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
                         this.setSprite( ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_FALL_LEFT );
                     }
@@ -153,7 +156,7 @@
             }
             else if ( this.isJumping() )
             {
-                if ( this.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                 {
                     this.setSprite( ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_LEFT );
                 }
@@ -174,7 +177,7 @@
                 }
                 else
                 {
-                    if ( this.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
                         this.setSprite( ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT );
                     }

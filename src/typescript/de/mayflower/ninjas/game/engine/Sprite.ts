@@ -25,7 +25,7 @@
 
             this.currentTick  = 0;
 
-            if ( template.randomFrames != ninjas.RandomFrames.NO )
+            if ( template.randomFrames !== ninjas.RandomFrames.NO )
             {
                 this.assignRandomFrame();
             }
@@ -49,8 +49,10 @@
             }
 
             // non-looped sprites end on the last frame
-            if ( this.template.loop == ninjas.LoopSprite.NO && this.currentFrame == this.template.imageIds.length - 1 )
-            {
+            if (
+                this.template.loop === ninjas.LoopSprite.NO
+                && this.currentFrame === this.template.imageIds.length - 1
+            ) {
                 return false;
             }
 
@@ -64,7 +66,7 @@
                 this.currentTick = 0;
 
                 // check if random frame shall be assigned
-                if ( this.template.randomFrames == ninjas.RandomFrames.ALL_FRAMES )
+                if ( this.template.randomFrames === ninjas.RandomFrames.ALL_FRAMES )
                 {
                     this.assignRandomFrame();
                 }
@@ -93,9 +95,9 @@
         ***************************************************************************************************************/
         public getCurrentFrameImageUrl() : string
         {
-            let imageId:string = this.template.imageIds[ this.currentFrame ];
+            const imageId:string = this.template.imageIds[ this.currentFrame ];
 
-            if ( this.template.mirrored == ninjas.MirrorImage.YES )
+            if ( this.template.mirrored === ninjas.MirrorImage.YES )
             {
                 return ninjas.Main.game.engine.imageSystem.getMirroredImage( imageId ).src;
             }

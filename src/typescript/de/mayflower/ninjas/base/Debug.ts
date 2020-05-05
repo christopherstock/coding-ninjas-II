@@ -7,30 +7,30 @@
     export class Debug
     {
         /** Debugs the preloading system. */
-        public      static      preloader       :Debug              = new Debug( true  );
+        public      static  readonly    preloader       :Debug              = new Debug( true  );
         /** Debugs the image system. */
-        public      static      image           :Debug              = new Debug( false );
+        public      static  readonly    image           :Debug              = new Debug( false );
         /** Debugs the sound system. */
-        public      static      sound           :Debug              = new Debug( true  );
+        public      static  readonly    sound           :Debug              = new Debug( true  );
         /** Debugs the key system. */
-        public      static      key             :Debug              = new Debug( true  );
+        public      static  readonly    key             :Debug              = new Debug( true  );
         /** Debugs the pointer system. */
-        public      static      pointer         :Debug              = new Debug( true  );
+        public      static  readonly    pointer         :Debug              = new Debug( true  );
         /** Debugs the pickable game items. */
-        public      static      item            :Debug              = new Debug( true  );
+        public      static  readonly    item            :Debug              = new Debug( true  );
         /** Debugs character events. */
-        public      static      character       :Debug              = new Debug( true  );
+        public      static  readonly    character       :Debug              = new Debug( true  );
         /** Debugs enemy events. */
-        public      static      enemy           :Debug              = new Debug( true  );
+        public      static  readonly    enemy           :Debug              = new Debug( true  );
         /** Debugs site events. */
-        public      static      site            :Debug              = new Debug( true  );
+        public      static  readonly    site            :Debug              = new Debug( true  );
         /** Debugs canvas events. */
-        public      static      canvas          :Debug              = new Debug( true  );
+        public      static  readonly    canvas          :Debug              = new Debug( true  );
         /** Debugs react events. */
-        public      static      react           :Debug              = new Debug( true  );
+        public      static  readonly    react           :Debug              = new Debug( true  );
 
         /** The flag that enables or disables logging for this debug group. */
-        private                 debugEnabled    :boolean            = false;
+        private             readonly    debugEnabled    :boolean            = false;
 
         /** ************************************************************************************************************
         *   Constructs a new debug group.
@@ -48,11 +48,12 @@
         *
         *   @param msg The message to log to the default console.
         ***************************************************************************************************************/
-        public log( msg:string = "" ):void
+        public log( msg:string = '' ):void
         {
             if ( ninjas.SettingDebug.DEBUG_MODE && this.debugEnabled )
             {
-                console.log( '[' + ninjas.String.getDateTimeString() + '] ' + msg );
+                // eslint-disable-next-line no-console
+                console.log( '[' + ninjas.StringUtil.getDateTimeString() + '] ' + msg );
             }
         }
     }
