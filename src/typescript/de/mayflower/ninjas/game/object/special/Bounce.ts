@@ -8,7 +8,7 @@
     export class Bounce extends ninjas.GameObject
     {
         /** The constraint that builds the turning point for the bounce. */
-        private                     constraint                      :matter.Constraint                  = null;
+        private         readonly            constraint                      :matter.Constraint                  = null;
 
         /** ************************************************************************************************************
         *   Creates a new bounce.

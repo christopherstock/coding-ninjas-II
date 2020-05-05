@@ -8,10 +8,11 @@
     {
         /** The site content this shrine is connected to. */
         public                      content                 :ninjas.SiteContent                 = null;
+
         /** The decoration of the open book for this shrine. */
-        private                     decoBookOpen            :ninjas.Decoration                  = null;
+        private     readonly        decoBookOpen            :ninjas.Decoration                  = null;
         /** The decoration of the closed book for this shrine. */
-        private                     decoBookClosed          :ninjas.Decoration                  = null;
+        private     readonly        decoBookClosed          :ninjas.Decoration                  = null;
 
         /** ************************************************************************************************************
         *   Creates a new Shrine.
@@ -40,7 +41,7 @@
                 shape,
                 spriteTemplate,
                 x,
-                y,
+                y
             );
 
             this.content = content;

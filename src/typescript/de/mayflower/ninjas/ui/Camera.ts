@@ -8,31 +8,31 @@
     export class Camera
     {
         /** Camera moving speed. */
-        private     movingSpeed                 :number                 = 0.0;
+        private     readonly    movingSpeed                 :number                 = 0.0;
         /** Minimum camera moving speed in px. */
-        private     minimumCameraMove           :number                 = 0.0;
+        private     readonly    minimumCameraMove           :number                 = 0.0;
         /** Maximum camera moving speed in px. */
-        private     maximumCameraMove           :number                 = 0.0;
-
-        /** Current camera target X. */
-        private     targetX                     :number                 = 0.0;
-        /** Current camera target Y. */
-        private     targetY                     :number                 = 0.0;
-
-        /** Current camera offset X. */
-        private     offsetX                     :number                 = 0.0;
-        /** Current camera offset Y. */
-        private     offsetY                     :number                 = 0.0;
+        private     readonly    maximumCameraMove           :number                 = 0.0;
 
         /** The width of the level. */
-        private     levelWidth                  :number                 = 0.0;
+        private     readonly    levelWidth                  :number                 = 0.0;
         /** The height of the level. */
-        private     levelHeight                 :number                 = 0.0;
+        private     readonly    levelHeight                 :number                 = 0.0;
 
         /** The width of the canvas. */
-        private     canvasWidth                 :number                 = 0.0;
+        private     readonly    canvasWidth                 :number                 = 0.0;
         /** The height of the canvas. */
-        private     canvasHeight                :number                 = 0.0;
+        private     readonly    canvasHeight                :number                 = 0.0;
+
+        /** Current camera target X. */
+        private                 targetX                     :number                 = 0.0;
+        /** Current camera target Y. */
+        private                 targetY                     :number                 = 0.0;
+
+        /** Current camera offset X. */
+        private                 offsetX                     :number                 = 0.0;
+        /** Current camera offset Y. */
+        private                 offsetY                     :number                 = 0.0;
 
         /** ************************************************************************************************************
         *   Constructs a new camera.
@@ -116,7 +116,7 @@
             (
                 [
                     { x: this.offsetX,                    y: this.offsetY                     },
-                    { x: this.offsetX + this.canvasWidth, y: this.offsetY + this.canvasHeight }
+                    { x: this.offsetX + this.canvasWidth, y: this.offsetY + this.canvasHeight },
                 ]
             );
         }
@@ -169,12 +169,20 @@
         private clipTargetsToLevelBounds() : void
         {
             // clip camera target x to level bounds
-            if ( this.targetX < 0                                  ) this.targetX = 0;
-            if ( this.targetX > this.levelWidth - this.canvasWidth ) this.targetX = this.levelWidth - this.canvasWidth;
+            if ( this.targetX < 0 ) {
+                this.targetX = 0;
+            }
+            if ( this.targetX > this.levelWidth - this.canvasWidth ) {
+                this.targetX = this.levelWidth - this.canvasWidth;
+            }
 
             // clip camera target y to level bounds
-            if ( this.targetY < 0                                    ) this.targetY = 0;
-            if ( this.targetY > this.levelHeight - this.canvasHeight ) this.targetY = this.levelHeight - this.canvasHeight;
+            if ( this.targetY < 0 ) {
+                this.targetY = 0;
+            }
+            if ( this.targetY > this.levelHeight - this.canvasHeight ) {
+                this.targetY = this.levelHeight - this.canvasHeight;
+            }
         }
 
         /** ************************************************************************************************************
@@ -190,21 +198,33 @@
             {
                 cameraMoveX = ( this.targetX - this.offsetX ) * this.movingSpeed;
 
-                if ( cameraMoveX < this.minimumCameraMove ) cameraMoveX = this.minimumCameraMove;
-                if ( cameraMoveX > this.maximumCameraMove ) cameraMoveX = this.maximumCameraMove;
+                if ( cameraMoveX < this.minimumCameraMove ) {
+                    cameraMoveX = this.minimumCameraMove;
+                }
+                if ( cameraMoveX > this.maximumCameraMove ) {
+                    cameraMoveX = this.maximumCameraMove;
+                }
 
                 this.offsetX += cameraMoveX;
-                if ( this.offsetX > this.targetX ) this.offsetX = this.targetX;
+                if ( this.offsetX > this.targetX ) {
+                    this.offsetX = this.targetX;
+                }
             }
             else if ( this.offsetX > this.targetX )
             {
                 cameraMoveX = ( this.offsetX - this.targetX ) * this.movingSpeed;
 
-                if ( cameraMoveX < this.minimumCameraMove ) cameraMoveX = this.minimumCameraMove;
-                if ( cameraMoveX > this.maximumCameraMove ) cameraMoveX = this.maximumCameraMove;
+                if ( cameraMoveX < this.minimumCameraMove ) {
+                    cameraMoveX = this.minimumCameraMove;
+                }
+                if ( cameraMoveX > this.maximumCameraMove ) {
+                    cameraMoveX = this.maximumCameraMove;
+                }
 
                 this.offsetX -= cameraMoveX;
-                if ( this.offsetX < this.targetX ) this.offsetX = this.targetX;
+                if ( this.offsetX < this.targetX ) {
+                    this.offsetX = this.targetX;
+                }
             }
 
             // buffer camera on ascending, if allowed
@@ -213,9 +233,13 @@
                 if ( this.offsetY > this.targetY )
                 {
                     let cameraMoveY:number = ( this.offsetY - this.targetY ) * this.movingSpeed;
-                    if ( cameraMoveY < this.minimumCameraMove ) cameraMoveY = this.minimumCameraMove;
+                    if ( cameraMoveY < this.minimumCameraMove ) {
+                        cameraMoveY = this.minimumCameraMove;
+                    }
                     this.offsetY -= cameraMoveY;
-                    if ( this.offsetY < this.targetY ) this.offsetY = this.targetY;
+                    if ( this.offsetY < this.targetY ) {
+                        this.offsetY = this.targetY;
+                    }
                 }
             }
 

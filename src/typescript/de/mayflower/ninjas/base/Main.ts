@@ -7,6 +7,7 @@
     *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
     *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Add destroyable movables.
+    *   TODO Try different physics demo elements on the player!
     *   TODO Remove static access on Main.game.
     *   TODO Add 'katana strike' action on ground and in air.
     *   TODO Particle fx smashed crates, startup window etc.
@@ -38,7 +39,7 @@
             ninjas.Debug.preloader.log( ninjas.SettingGame.TITLE );
             ninjas.Debug.preloader.log();
 
-            //init and start the game engine
+            // init and start the game engine
             Main.game = new ninjas.Game();
             Main.game.preload();
         }
