@@ -3,7 +3,7 @@ let path = require('path');
 module.exports = ( env, argv ) => {
 
     let config = {
-        entry: './src/index.tsx',
+        entry: './src/typescript/index.tsx',
         output: {
             filename: 'bundle.js',
             path: __dirname + '/dist/js/'

@@ -1,6 +1,6 @@
 
     require( "animate.css" );
-    require( './css/custom.less' );
+    require( './de/mayflower/ninjas/css/custom.less' );
 
     import * as ninjas from './de/mayflower/ninjas/ninjas';
 
