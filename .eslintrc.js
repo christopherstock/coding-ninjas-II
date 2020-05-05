@@ -152,9 +152,7 @@ module.exports = {
         'prefer-arrow/prefer-arrow-functions': [
             'warn',
             {
-                disallowPrototype: false,
-                singleReturnOnly: true,
-                classPropertiesAllowed: false,
+                disallowPrototype: false
             },
         ],
         'quote-props': 'off',

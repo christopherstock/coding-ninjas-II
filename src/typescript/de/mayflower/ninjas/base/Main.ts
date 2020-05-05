@@ -4,15 +4,9 @@
     /*******************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Ask Lenz: Add file loader via npm.
-    *   TODO Ask Lenz: Debug value from outside.
-    *
     *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
-    *
-    *
-    *   TODO requestAnimationFrame tryout .. matter.js - try 60 fps as a constant.
+    *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Add jest tests.
-    *   TODO Add cucumber tests.
     *
     *   TODO Add destroyable movables.
     *   TODO Add 'katana strike' action on ground and in air.
