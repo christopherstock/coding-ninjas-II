@@ -6,18 +6,17 @@
     *
     *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
     *   TODO One player - many outfits! General player with custom sprite sets.
-    *   TODO Add jest tests.
-    *
     *   TODO Add destroyable movables.
+    *   TODO Remove static access on Main.game.
     *   TODO Add 'katana strike' action on ground and in air.
     *   TODO Particle fx smashed crates, startup window etc.
     *   TODO Add decoration particle effects on smashing objects / windows etc.
-    *   TODO Add Camera joyride on level startup?
     *   TODO Add items and item sprites.
     *   TODO increase player jump speed?
     *   TODO Sound effects for ninja girl and enemies?
     *   TODO Add 'slide' action.
     *   TODO Create HUD ( for items etc ).
+    *   TODO Add Camera joyride on level startup?
     *   TODO create class HUD with own paint-method.
     *   TODO Create item pickup HUD effect!
     *   TODO Add event triggers ( for falling obstacles etc )

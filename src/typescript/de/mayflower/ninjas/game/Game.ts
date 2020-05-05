@@ -144,7 +144,7 @@
             this.handleMenuKey();
 
             // render level
-            this.level.render();
+            this.level.render( this.engine.keySystem );
 
             // update camera
             let cameraBounds:matter.Bounds = this.camera.update(
@@ -206,9 +206,9 @@
         {
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
-                if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_1 ) )
+                if ( this.engine.keySystem.isPressed( ninjas.Key.KEY_1 ) )
                 {
-                    ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_1 );
+                    this.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_1 );
 
                     ninjas.Debug.preloader.log( "Resetting and switching to level 1" );
                     this.resetAndLaunchLevel( new ninjas.LevelWebsite() );

@@ -54,25 +54,21 @@
         public render()
         {
             super.render();
-
-            if ( this.punchBackTicks == 0 )
-            {
-                this.handleKeys();
-            }
-
-            this.checkEnemyKill();
-            this.clipToHorizontalLevelBounds();
-            this.assignCurrentSprite();
         }
 
         /***************************************************************************************************************
         *   Checks all pressed player keys and performs according actions.
         ***************************************************************************************************************/
-        private handleKeys()
+        public handleKeys( keySystem:ninjas.KeySystem )
         {
+            if ( this.punchBackTicks != 0 )
+            {
+                return;
+            }
+
             if
             (
-                    ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_LEFT )
+                    keySystem.isPressed( ninjas.Key.KEY_LEFT )
                 ||  ninjas.Main.game.engine.pointerSystem.leftCanvasHalfPressed
             )
             {
@@ -80,16 +76,16 @@
             }
             else if
             (
-                    ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_RIGHT )
+                    keySystem.isPressed( ninjas.Key.KEY_RIGHT )
                 ||  ninjas.Main.game.engine.pointerSystem.rightCanvasHalfPressed
             )
             {
                 this.moveRight();
             }
 
-            if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_UP ) )
+            if ( keySystem.isPressed( ninjas.Key.KEY_UP ) )
             {
-                ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_UP );
+                keySystem.setNeedsRelease( ninjas.Key.KEY_UP );
 
                 if ( this.collidesBottom )
                 {
@@ -107,15 +103,22 @@
                 }
             }
 
-            if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_SPACE ) )
+            if ( keySystem.isPressed( ninjas.Key.KEY_SPACE ) )
             {
-                ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_SPACE );
+                keySystem.setNeedsRelease( ninjas.Key.KEY_SPACE );
 
                 if ( !this.gliding && !this.glidingRequest && !this.collidesBottom )
                 {
                     this.requestGliding();
                 }
             }
+        }
+
+        public renderAfterKeys()
+        {
+            this.checkEnemyKill();
+            this.clipToHorizontalLevelBounds();
+            this.assignCurrentSprite();
         }
 
         /***************************************************************************************************************

@@ -83,8 +83,10 @@
 
         /***************************************************************************************************************
         *   Renders all level components (except parallax game objects).
+        *
+        *   @param keySystem The keySystem of the engine.
         ***************************************************************************************************************/
-        public render()
+        public render( keySystem:ninjas.KeySystem )
         {
             for ( let gameObject of this.decosBg )
             {
@@ -110,6 +112,8 @@
             }
 
             this.player.render();
+            this.player.handleKeys( keySystem );
+            this.player.renderAfterKeys();
 
             for ( let gameObject of this.enemies )
             {
