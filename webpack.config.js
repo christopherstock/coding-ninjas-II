@@ -1,3 +1,5 @@
+let path = require('path');
+
 module.exports = ( env, argv ) => {
 
     let config = {
@@ -34,7 +36,11 @@ module.exports = ( env, argv ) => {
             {
                 test: /\.js$/,
                 enforce: 'pre',
-                loader: 'source-map-loader'
+                loader: 'source-map-loader',
+                exclude: [
+                    // these packages have problems with their sourcemaps
+                    path.resolve( __dirname, 'node_modules/mutationobserver-shim' ),
+                ]
             },
 
             // all '.css' files will be handled by the style- and css-loader

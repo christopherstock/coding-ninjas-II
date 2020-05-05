@@ -8,6 +8,8 @@
     *   TODO Ask Lenz: Debug value from outside.
     *
     *   TODO Remove '@author' and '@version' tags
+    *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
+    *
     *
     *   TODO requestAnimationFrame tryout .. matter.js - try 60 fps as a constant.
     *   TODO Add jest tests.
