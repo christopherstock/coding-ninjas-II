@@ -71,11 +71,11 @@
 
             ninjas.Main.game.engine.matterJsSystem.addToWorld( this.player.shape.body );
 
-            for ( let gameObject of this.decosFg )
+            for ( const gameObject of this.decosFg )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
-            for ( let gameObject of this.parallaxFgs )
+            for ( const gameObject of this.parallaxFgs )
             {
                 ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
             }
@@ -86,9 +86,9 @@
         *
         *   @param keySystem The keySystem of the engine.
         ***************************************************************************************************************/
-        public render( keySystem:ninjas.KeySystem )
+        public render( keySystem:ninjas.KeySystem ) : void
         {
-            for ( let gameObject of this.decosBg )
+            for ( const gameObject of this.decosBg )
             {
                 gameObject.render();
             }
@@ -98,15 +98,15 @@
                 gameObject.render();
             }
 */
-            for ( let gameObject of this.siteTriggers )
+            for ( const gameObject of this.siteTriggers )
             {
                 gameObject.render();
             }
-            for ( let gameObject of this.obstacles )
+            for ( const gameObject of this.obstacles )
             {
                 gameObject.render();
             }
-            for ( let gameObject of this.movables )
+            for ( const gameObject of this.movables )
             {
                 gameObject.render();
             }
@@ -115,12 +115,12 @@
             this.player.handleKeys( keySystem );
             this.player.renderAfterKeys();
 
-            for ( let gameObject of this.enemies )
+            for ( const gameObject of this.enemies )
             {
                 gameObject.render();
             }
 
-            for ( let gameObject of this.decosFg )
+            for ( const gameObject of this.decosFg )
             {
                 gameObject.render();
             }
@@ -129,14 +129,14 @@
         /** ************************************************************************************************************
         *   Renders all parallax game objects.
         ***************************************************************************************************************/
-        public renderParallaxElements()
+        public renderParallaxElements() : void
         {
-            for ( let gameObject of this.parallaxBgs )
+            for ( const gameObject of this.parallaxBgs )
             {
                 gameObject.render();
             }
 
-            for ( let gameObject of this.parallaxFgs )
+            for ( const gameObject of this.parallaxFgs )
             {
                 gameObject.render();
             }
@@ -148,11 +148,11 @@
         *   @param content The site content of the shrine to toggle the book.
         *   @param open    Specifies if the book shall be opened.
         ***************************************************************************************************************/
-        public setShrineBookOpen( content:ninjas.SiteContent, open:boolean )
+        public setShrineBookOpen( content:ninjas.SiteContent, open:boolean ) : void
         {
-            for ( let gameObject of this.shrines )
+            for ( const gameObject of this.shrines )
             {
-                if ( gameObject.content == content )
+                if ( gameObject.content === content )
                 {
                     if ( open )
                     {

@@ -43,10 +43,10 @@
                     options: {
                         hasBounds:          true,
                         wireframes:         false,
-                        showCollisions:     ( ninjas.SettingDebug.DEBUG_MODE ),
-                        showAxes:           ( ninjas.SettingDebug.DEBUG_MODE ),
-                        showAngleIndicator: ( ninjas.SettingDebug.DEBUG_MODE ),
-                        showVelocity:       ( ninjas.SettingDebug.DEBUG_MODE ),
+                        showCollisions:     ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                        showAxes:           ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                        showAngleIndicator: ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                        showVelocity:       ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
 
                         background:         ninjas.SettingEngine.CANVAS_BG,
 

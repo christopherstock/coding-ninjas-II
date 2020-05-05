@@ -1,4 +1,6 @@
 
+    /* eslint-disable max-len */
+
     import * as ninjas from '../../ninjas';
 
     /** ****************************************************************************************************************
@@ -14,7 +16,7 @@
         /** ************************************************************************************************************
         *   Inits a new level.
         ***************************************************************************************************************/
-        protected createGameObjects()
+        protected createGameObjects() : void
         {
             this.parallaxBgs =
             [
@@ -193,7 +195,7 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16260, 5105, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_GRASS_2 );
 */
             // solid grounds
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,     5000, 18, 10, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,     500, 10, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
 /*
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3584,  4800, 20, 10, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT );

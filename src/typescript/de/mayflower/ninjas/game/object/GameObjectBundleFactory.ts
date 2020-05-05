@@ -135,11 +135,13 @@
             // draw decoration
             for ( let tileX:number = 0; tileX < length; ++tileX )
             {
-                if ( tileX == 0 && ( capEnds == CapHorz.LEFT || capEnds == CapHorz.BOTH ) )
+                if ( tileX === 0 && ( capEnds === CapHorz.LEFT || capEnds === CapHorz.BOTH ) )
                 {
-                    level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + leftTile.height, ninjas.StaticShape.YES, leftTile ) );
+                    level.decosFg.push(
+                        ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH,
+                        drawY + leftTile.height, ninjas.StaticShape.YES, leftTile ) );
                 }
-                else if ( tileX == length - 1 && ( capEnds == CapHorz.RIGHT || capEnds == CapHorz.BOTH ) )
+                else if ( tileX === ( length - 1 ) && ( capEnds === CapHorz.RIGHT || capEnds === CapHorz.BOTH ) )
                 {
                     level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + rightTile.height, ninjas.StaticShape.YES, rightTile ) );
                 }
@@ -192,17 +194,17 @@
         )
         : void
         {
-            let leftTopTile     :ninjas.SpriteTemplate = null;
-            let topTile         :ninjas.SpriteTemplate = null;
-            let rightTopTile    :ninjas.SpriteTemplate = null;
+            let leftTopTile       :ninjas.SpriteTemplate = null;
+            let topTile           :ninjas.SpriteTemplate = null;
+            let rightTopTile      :ninjas.SpriteTemplate = null;
 
-            let leftTile        :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_LEFT         );
-            let centerTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_CENTER       );
-            let rightTile       :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_RIGHT        );
+            const leftTile        :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_LEFT         );
+            const centerTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_CENTER       );
+            const rightTile       :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_RIGHT        );
 
-            let leftBottomTile  :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_LEFT_BOTTOM  );
-            let bottomTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_BOTTOM       );
-            let rightBottomTile :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_RIGHT_BOTTOM );
+            const leftBottomTile  :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_LEFT_BOTTOM  );
+            const bottomTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_BOTTOM       );
+            const rightBottomTile :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_RIGHT_BOTTOM );
 
             let firstLineDrawY  :number = 0.0;
             let firstLineAlt    :number = 0.0;

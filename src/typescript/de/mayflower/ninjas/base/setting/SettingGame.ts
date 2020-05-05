@@ -7,7 +7,11 @@
     export class SettingGame
     {
         /** The application's internal name. */
-        public      static  readonly    TITLE                                       :string                     = "Coding Ninjas, (c) 2018 Mayflower GmbH" + ", " + ninjas.Version.CURRENT_VERSION.getVersionDescriptor();
+        public      static  readonly    TITLE                                       :string                     = (
+            'Coding Ninjas, (c) 2020 Mayflower GmbH'
+            + ', '
+            + ninjas.Version.CURRENT_VERSION.getVersionDescriptor()
+        );
 
         /** The delay delta between ticks in ms. */
         public      static  readonly    TICK_DELAY_DELTA                            :number                     = 10.0;
