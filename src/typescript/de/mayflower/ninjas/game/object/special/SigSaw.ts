@@ -8,7 +8,7 @@
     export class SigSaw extends ninjas.GameObject
     {
         /** The constraint that builds the turning point for the sigsaw. */
-        private                     constraint                      :matter.Constraint                  = null;
+        private     readonly            constraint                      :matter.Constraint                  = null;
 
         /** ************************************************************************************************************
         *   Creates a new sigsaw.
@@ -39,7 +39,7 @@
                         strokeStyle: ninjas.DebugColor.COLOR_DEBUG_SIGSAW_JOINT,
                         lineWidth: 1.0,
                         visible:   true,
-                    }
+                    },
                 }
             );
 
@@ -49,7 +49,7 @@
         /** ************************************************************************************************************
         *   Renders this sigsaw.
         ***************************************************************************************************************/
-        public render()
+        public render() : void
         {
             super.render();
 
@@ -60,7 +60,7 @@
         /** ************************************************************************************************************
         *   Clips the rotation of the sigsaw.
         ***************************************************************************************************************/
-        private clipRotation()
+        private clipRotation() : void
         {
             const clipAngle = 15.0;
 
@@ -82,9 +82,9 @@
         /** ************************************************************************************************************
         *   Clips the rotation speed of the sigsaw.
         ***************************************************************************************************************/
-        private clipRotationSpeed()
+        private clipRotationSpeed() : void
         {
-            const maxRotationSpeed = 0.005;
+            const maxRotationSpeed :number = 0.005;
 
             if ( this.shape.body.angularVelocity < -maxRotationSpeed )
             {

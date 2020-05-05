@@ -36,16 +36,16 @@
                         true,
                         2500,
                         [
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_DESKTOP ).src + ' )', } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_DESKTOP ).src + ' )' } }>
                                 <h3>Desktop &amp; Enterprise Applications</h3>
                             </div>,
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEBSITES ).src + ' )', } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEBSITES ).src + ' )' } }>
                                 <h3>Web Design</h3>
                             </div>,
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_MOBILE ).src + ' )', } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_MOBILE ).src + ' )' } }>
                                 <h3>Mobile Applications</h3>
                             </div>,
-                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEB_APPS ).src + ' )', } }>
+                            <div className='carouselPage' style={ { 'backgroundImage': 'url( ' + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_CAROUSEL_WEB_APPS ).src + ' )' } }>
                                 <h3>Web Applications</h3>
                             </div>,
                         ]

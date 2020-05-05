@@ -23,6 +23,9 @@
         /** Flags if the character currently collides with the bottom sensor. */
         public                          collidesBottom                      :boolean                            = false;
 
+        /** Ticks the character is paralized by being punched back. */
+        public                          punchBackTicks                      :number                             = 0;
+
         /** Flags if this character is gliding. */
         protected                       gliding                             :boolean                            = false;
         /** Flags if this character is requesting gliding while ascending etc. */
@@ -34,12 +37,9 @@
         protected                       movesRight                          :boolean                            = false;
 
         /** The speed for horizontal movements. */
-        private                         speedMove                           :number                             = 0.0;
+        private     readonly            speedMove                           :number                             = 0.0;
         /** The jump power to apply for this character. */
-        private                         jumpPower                           :number                             = 0.0;
-
-        /** Ticks the character is paralized by being punched back. */
-        public                          punchBackTicks                      :number                             = 0;
+        private     readonly            jumpPower                           :number                             = 0.0;
 
         /** ************************************************************************************************************
         *   Creates a new character.
@@ -79,7 +79,7 @@
         /** ************************************************************************************************************
         *   Renders the current character tick.
         ***************************************************************************************************************/
-        public render()
+        public render() : void
         {
             super.render();
 
@@ -278,8 +278,14 @@
             this.collidesBottom = matter.Query.ray
             (
                 bodiesToCheck,
-                matter.Vector.create( this.shape.body.position.x - ( this.shape.getWidth() / 2 ), this.shape.body.position.y + ( this.shape.getHeight() / 2 ) ),
-                matter.Vector.create( this.shape.body.position.x + ( this.shape.getWidth() / 2 ), this.shape.body.position.y + ( this.shape.getHeight() / 2 ) )
+                matter.Vector.create(
+                    this.shape.body.position.x - ( this.shape.getWidth() / 2 ),
+                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                ),
+                matter.Vector.create(
+                    this.shape.body.position.x + ( this.shape.getWidth() / 2 ),
+                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                )
             ).length > 0;
         }
 
@@ -290,7 +296,7 @@
         ***************************************************************************************************************/
         private isCollidingObstacle() : boolean
         {
-            const bodiesToCheck:Array<matter.Body> = [];
+            const bodiesToCheck:matter.Body[] = [];
 
             for ( const gameObject of ninjas.Main.game.level.obstacles )
             {

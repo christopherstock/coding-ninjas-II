@@ -70,7 +70,7 @@
             );
 
             // add to discovered contents if not already discovered
-            if ( this.discoveredContents.indexOf( content ) == -1 )
+            if ( this.discoveredContents.indexOf( content ) === -1 )
             {
                 this.discoveredContents.push( content );
             }
