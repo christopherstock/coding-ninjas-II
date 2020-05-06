@@ -96,6 +96,7 @@ module.exports = ( env, argv ) => {
         'react-dom': 'ReactDOM',
         'react':     'React',
         'antd':      'antd',
+        'fpsmeter':  'FPSMeter',
     }
 
     config.devServer = {
