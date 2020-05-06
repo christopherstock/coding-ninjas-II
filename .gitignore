@@ -9,8 +9,8 @@ node_modules
 .idea
 *.iml
 
-# Distribution path
-/dist/js/
+# Distribution path IS committed
+# /dist/js/
 
 # TypeScript build path
 bin

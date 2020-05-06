@@ -88,12 +88,11 @@ module.exports = ( env, argv ) => {
         };
     }
 
-        config.externals = {
+    config.externals = {
 
-//          'wowjs': 'WOW',
+        // 'wowjs': 'WOW',
 
-        }
-
+    }
 
     config.devServer = {
         host: 'localhost',

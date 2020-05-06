@@ -19,6 +19,7 @@
     *   TODO Add items and item sprites.
     *   TODO increase player jump speed?
     *   TODO Sound effects for ninja girl and enemies?
+    *   TODO Replace window.timeout for main loop?
     *   TODO Add 'slide' action.
     *   TODO Create HUD ( for items etc ).
     *   TODO Add Camera joyride on level startup?
