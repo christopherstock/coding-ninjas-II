@@ -1284,9 +1284,6 @@ var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower
 /** ****************************************************************************************************************
 *   The main class contains the application's points of entry and termination.
 *
-*   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
-*   TODO Rename bundle.js to coding-ninjas-II-v2.0.1.js etc.
-*
 *   TODO One player - many outfits! General player with custom sprite sets.
 *   TODO Add destroyable movables.
 *   TODO Why are edges not soft??
@@ -7548,11 +7545,6 @@ var Sound = /** @class */ (function () {
     }
     /** 'chinese' from 'Graeme Norgate' taken from 'Time Splitters' */
     Sound.BG_CHINESE = ninjas.SettingEngine.PATH_SOUND + 'bgChinese.mp3';
-    /** 'play hard' from 'Graeme Norgate' taken from 'Killer Instict Gold' */
-    /*
-            public      static      BG_PLAY_HARD                    :string                 =
-                ninjas.SettingEngine.PATH_SOUND + "bgPlayHard.mp3";
-    */
     /** An array holding all filenames of all sounds to load. */
     Sound.FILE_NAMES = [
         Sound.BG_CHINESE,

@@ -4,9 +4,6 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
-    *   TODO Rename bundle.js to coding-ninjas-II-v2.0.1.js etc.
-    *
     *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Add destroyable movables.
     *   TODO Why are edges not soft??
