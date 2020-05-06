@@ -1,5 +1,5 @@
 
-    import * as ninjas from '../../ninjas';
+    import * as ninjas from '../ninjas';
 
     /** ****************************************************************************************************************
     *   Handles the whole preloading process for the web app.
