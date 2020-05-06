@@ -97,6 +97,7 @@ module.exports = ( env, argv ) => {
         'react':     'React',
         'antd':      'antd',
         'fpsmeter':  'FPSMeter',
+        'matter-js': 'Matter',
     }
 
     config.devServer = {
