@@ -92,12 +92,10 @@ module.exports = ( env, argv ) => {
 
         // 'wowjs': 'WOW',
 
-
+        'moment':    'moment',
         'react-dom': 'ReactDOM',
         'react':     'React',
-
         'antd':      'antd',
-
     }
 
     config.devServer = {
