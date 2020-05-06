@@ -168,7 +168,7 @@
         ***************************************************************************************************************/
         public static createAvatar( src:string, icon:string ) : JSX.Element
         {
-            return <antd.Avatar src={ src } style={ { backgroundColor: '#ff6666', } } icon={ icon } />;
+            return <antd.Avatar src={ src } style={ { backgroundColor: '#ff6666' } } icon={ icon } />;
         }
 
         /** ************************************************************************************************************
@@ -182,7 +182,7 @@
         ***************************************************************************************************************/
         public static createTag( colorFg:string, colorBg:string, text:string ) : JSX.Element
         {
-            return <antd.Tag color={ colorFg } style={ { backgroundColor: colorBg, } }>{ text }</antd.Tag>;
+            return <antd.Tag color={ colorFg } style={ { backgroundColor: colorBg } }>{ text }</antd.Tag>;
         }
 
         /** ************************************************************************************************************
@@ -196,7 +196,7 @@
         ***************************************************************************************************************/
         public static createBadge( count:string, colorFg:string, colorBg:string ) : JSX.Element
         {
-            return <antd.Badge count={ count } style={ { color: colorFg, backgroundColor: colorBg, } } />;
+            return <antd.Badge count={ count } style={ { color: colorFg, backgroundColor: colorBg } } />;
         }
 
         /** ************************************************************************************************************
@@ -276,11 +276,11 @@
             effect        :CarouselEffect,
             autoplay      :boolean,
             autoplaySpeed :number,
-            pages         :Array<JSX.Element>,
+            pages         :JSX.Element[]
         )
         : JSX.Element
         {
-            let contents:Array<JSX.Element> = [];
+            const contents :JSX.Element[] = [];
 
             for ( let key:number = 0; key < pages.length; ++key )
             {
@@ -302,12 +302,12 @@
         ***************************************************************************************************************/
         public static createAccordion
         (
-            headers :Array<string>,
-            pages   :Array<JSX.Element>,
+            headers :string[],
+            pages   :JSX.Element[]
         )
         : JSX.Element
         {
-            let contents:Array<JSX.Element> = [];
+            const contents :JSX.Element[] = [];
 
             for ( let key:number = 0; key < pages.length; ++key )
             {
@@ -319,7 +319,7 @@
                 );
             }
 
-            return <antd.Collapse accordion defaultActiveKey={ [ "0" ] }>
+            return <antd.Collapse accordion defaultActiveKey={ [ '0' ] }>
                 { contents }
             </antd.Collapse>;
         }
@@ -336,12 +336,12 @@
         public static createTabbedPane
         (
             defaultActiveTab :number,
-            headers          :Array<JSX.Element>,
-            pages            :Array<JSX.Element>
+            headers          :JSX.Element[],
+            pages            :JSX.Element[]
         )
         : JSX.Element
         {
-            let contents:Array<JSX.Element> = [];
+            const contents :JSX.Element[] = [];
 
             for ( let key:number = 0; key < pages.length; ++key )
             {

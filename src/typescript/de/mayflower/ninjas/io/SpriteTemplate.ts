@@ -523,7 +523,7 @@
         );
 
         /** A reference over all sprite templates. */
-        private     static  ALL_SPRITE_TEMPLATES                        :Array<SpriteTemplate>  =
+        private     static  readonly        ALL_SPRITE_TEMPLATES                        :SpriteTemplate[] =
         [
             SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT,
             SpriteTemplate.SPRITE_NINJA_GIRL_STAND_RIGHT,
@@ -551,7 +551,7 @@
         ];
 
         /** All image ids this sprite consists of. */
-        public                  imageIds                                :Array<string>          = null;
+        public                  imageIds                                :string[]               = null;
         /** The number of ticks between frame changes. */
         public                  ticksBetweenFrames                      :number                 = 0;
         /** Specifies if all frames in this sprite should be mirrored. */
@@ -578,12 +578,12 @@
         *   @param ticksBetweenFrames The number of ticks to delay until the frame is changed.
         *   @param mirrored           Specifies if all frames in this sprite should be mirrored.
         *   @param loop               Specifies if the frame animation should be repeated infinitely.
-        *   @param randomFrames       Specifies if this template should use a random start frame or overall random frames.
+        *   @param randomFrames       Specifies if this template should use a random frame sheme.
         *   @param scale              Specifies the scaling factor for drawing this sprite.
         ***************************************************************************************************************/
         private constructor
         (
-            imageIds           :Array<string>,
+            imageIds           :string[],
             ticksBetweenFrames :number,
             mirrored           :MirrorImage,
             loop               :LoopSprite,
@@ -598,67 +598,14 @@
             this.randomFrames       = randomFrames;
             this.scale              = scale;
 
-            this.singleFramed       = ( this.imageIds.length == 1 );
+            this.singleFramed       = ( this.imageIds.length === 1 );
 
-            if ( this.imageIds.length == 0 )
+            if ( this.imageIds.length === 0 )
             {
-                throw new Error( "Fatal! Trying to construct empty sprite!" );
+                throw new Error( 'Fatal! Trying to construct empty sprite!' );
             }
         }
 
-        /** ************************************************************************************************************
-        *   Assigns the image dimensions of the first frame to all sprite templates.
-        ***************************************************************************************************************/
-        public static assignAllImageSizes()
-        {
-            for ( let spriteTemplate of SpriteTemplate.ALL_SPRITE_TEMPLATES )
-            {
-                spriteTemplate.assignImageSizes();
-            }
-        }
-
-        /** ************************************************************************************************************
-        *   Creates a single framed sprite template of the specified image.
-        *
-        *   @param imageId The id of the image to use for this sprite.
-        ***************************************************************************************************************/
-        public static createFromSingleImage( imageId:string )
-        {
-            let spriteTemplate:SpriteTemplate = new SpriteTemplate(
-                [ imageId ],
-                0,
-                MirrorImage.NO,
-                LoopSprite.NO,
-                RandomFrames.NO,
-                ninjas.SettingGame.DEFAULT_SPRITE_SCALE
-            );
-
-            spriteTemplate.width  = ninjas.Main.game.engine.imageSystem.getImage( imageId ).width;
-            spriteTemplate.height = ninjas.Main.game.engine.imageSystem.getImage( imageId ).height;
-
-            return spriteTemplate;
-        }
-
-        /** ************************************************************************************************************
-        *   Assigns the image dimensions of the first frame for this sprite template.
-        ***************************************************************************************************************/
-        private assignImageSizes()
-        {
-            this.width  = ninjas.Main.game.engine.imageSystem.getImage( this.imageIds[ 0 ] ).width;
-            this.height = ninjas.Main.game.engine.imageSystem.getImage( this.imageIds[ 0 ] ).height;
-
-            // browse all frames and alert on differing dimensions
-            for ( let imageId of this.imageIds )
-            {
-                if (
-                       this.width  != ninjas.Main.game.engine.imageSystem.getImage( imageId ).width
-                    || this.height != ninjas.Main.game.engine.imageSystem.getImage( imageId ).height
-                )
-                {
-                    throw new Error( "Differing sprite frame size detected in image id [" + imageId + "]" );
-                }
-            }
-        }
 
         /** ************************************************************************************************************
         *   Returns the sprite scale factor.
@@ -671,19 +618,40 @@
         }
 
         /** ************************************************************************************************************
+        *   Assigns the image dimensions of the first frame for this sprite template.
+        ***************************************************************************************************************/
+        private assignImageSizes() : void
+        {
+            this.width  = ninjas.Main.game.engine.imageSystem.getImage( this.imageIds[ 0 ] ).width;
+            this.height = ninjas.Main.game.engine.imageSystem.getImage( this.imageIds[ 0 ] ).height;
+
+            // browse all frames and alert on differing dimensions
+            for ( const imageId of this.imageIds )
+            {
+                if (
+                       this.width  !== ninjas.Main.game.engine.imageSystem.getImage( imageId ).width
+                    || this.height !== ninjas.Main.game.engine.imageSystem.getImage( imageId ).height
+                )
+                {
+                    throw new Error( 'Differing sprite frame size detected in image id [' + imageId + ']' );
+                }
+            }
+        }
+
+        /** ************************************************************************************************************
         *   Determines and returns an array of filenames for all images that needs to be mirrored.
         *
         *   @return An array with all filenames of images needing to be mirrored.
         ***************************************************************************************************************/
-        public static getAllImagesToMirror() : Array<string>
+        public static getAllImagesToMirror() : string[]
         {
-            let ret:Array<string> = [];
+            const ret:string[] = [];
 
-            for ( let spriteTemplate of SpriteTemplate.ALL_SPRITE_TEMPLATES )
+            for ( const spriteTemplate of SpriteTemplate.ALL_SPRITE_TEMPLATES )
             {
-                if ( spriteTemplate.mirrored == MirrorImage.YES )
+                if ( spriteTemplate.mirrored === MirrorImage.YES )
                 {
-                    for ( let image of spriteTemplate.imageIds )
+                    for ( const image of spriteTemplate.imageIds )
                     {
                         ret.push( image );
                     }
@@ -691,5 +659,40 @@
             }
 
             return ret;
+        }
+
+        /** ************************************************************************************************************
+        *   Assigns the image dimensions of the first frame to all sprite templates.
+        ***************************************************************************************************************/
+        public static assignAllImageSizes() : void
+        {
+            for ( const spriteTemplate of SpriteTemplate.ALL_SPRITE_TEMPLATES )
+            {
+                spriteTemplate.assignImageSizes();
+            }
+        }
+
+        /** ************************************************************************************************************
+        *   Creates a single framed sprite template of the specified image.
+        *
+        *   @param imageId The id of the image to use for this sprite.
+        *
+        *   @return The SpriteTemplate from the specified image.
+        ***************************************************************************************************************/
+        public static createFromSingleImage( imageId:string ) : SpriteTemplate
+        {
+            const spriteTemplate:SpriteTemplate = new SpriteTemplate(
+                [ imageId ],
+                0,
+                MirrorImage.NO,
+                LoopSprite.NO,
+                RandomFrames.NO,
+                ninjas.SettingGame.DEFAULT_SPRITE_SCALE
+            );
+
+            spriteTemplate.width  = ninjas.Main.game.engine.imageSystem.getImage( imageId ).width;
+            spriteTemplate.height = ninjas.Main.game.engine.imageSystem.getImage( imageId ).height;
+
+            return spriteTemplate;
         }
     }
