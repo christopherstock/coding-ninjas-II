@@ -193,6 +193,10 @@
 
             // movables
             ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 150,  160, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  120, ninjas.ImageData.IMAGE_FLASK_1                                   );
 
 
             // bridge and water

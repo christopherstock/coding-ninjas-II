@@ -69,7 +69,7 @@
                     ninjas.StaticShape.NO,
                     0.0,
                     ninjas.BodyFriction.NONE,
-                    ninjas.BodyDensity.MINIMUM,
+                    ninjas.BodyDensity.DEFAULT,
                     ninjas.BodyRestitution.RUBBER
                 ),
                 sprtiteTemplate,
