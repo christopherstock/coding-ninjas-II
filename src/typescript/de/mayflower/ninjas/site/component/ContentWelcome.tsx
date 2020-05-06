@@ -72,7 +72,7 @@
                     (
                         'notification',
                         'poweroff',
-                        !ninjas.IO.isMac(),
+                        !ninjas.ImageUtil.isMac(),
                         ( checked:boolean ) => {
 
                             ninjas.Debug.sound.log( 'Toggle bg music to [' + String( checked ) + ']' );

@@ -1,8 +1,6 @@
 
     /* eslint-disable max-len */
 
-    import * as ninjas from '../../ninjas';
-
     /** ****************************************************************************************************************
     *   All adjustments and balancings for the application.
     *******************************************************************************************************************/
@@ -10,9 +8,7 @@
     {
         /** The application's internal name. */
         public      static  readonly    TITLE                                       :string                     = (
-            'Coding Ninjas II - Back with a Vengeance, (c) 2020 Mayflower GmbH'
-            + ', '
-            + ninjas.Version.CURRENT_VERSION.getVersionDescriptor()
+            'Coding Ninjas II - Back with a Vengeance, (c) 2020 Mayflower GmbH, v2.0.0'
         );
 
         /** The delay delta between ticks in ms. */

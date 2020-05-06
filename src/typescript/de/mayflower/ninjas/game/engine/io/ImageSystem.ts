@@ -97,7 +97,7 @@
             this.imagesToMirrorCount = this.mirroredFileNames.length;
             for ( const mirroredFileName of this.mirroredFileNames )
             {
-                this.mirroredImages[ mirroredFileName ] = ninjas.IO.flipImageHorizontal(
+                this.mirroredImages[ mirroredFileName ] = ninjas.ImageUtil.flipImageHorizontal(
                     this.originalImages[ mirroredFileName ],
                     () => { this.onMirrorImage(); }
                 );

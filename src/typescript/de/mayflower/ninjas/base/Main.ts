@@ -7,7 +7,6 @@
     *   TODO Green water etc.
     *   TODO Why are edges not soft??
     *   TODO Add destroyable movables.
-    *
     *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Fasten game and physics feeling.
     *   TODO Debug Disable Pointer control.

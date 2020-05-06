@@ -84,7 +84,7 @@
                     this.sounds[ fileName ].onloadeddata = () :void => { this.onLoadSound(); };
                     this.sounds[ fileName ].onerror      = () :void => { this.onLoadSoundError(); };
 
-                    if ( ninjas.IO.isMac() )
+                    if ( ninjas.ImageUtil.isMac() )
                     {
                         this.onLoadSound();
                     }
