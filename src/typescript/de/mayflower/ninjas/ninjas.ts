@@ -7,6 +7,8 @@
     export * from './base/setting/SettingGame';
     export * from './base/setting/SettingMatterJs';
 
+    export * from './engine/Engine';
+
     export * from './engine/MatterJsSystem';
     export * from './engine/Preloader';
     export * from './engine/SitePanel';
@@ -28,6 +30,8 @@
     export * from './engine/ui/CanvasSystem';
     export * from './engine/ui/Sprite';
     export * from './engine/ui/SpriteTemplate';
+
+    export * from './game/Game';
 
     export * from './game/level/Level';
     export * from './game/level/LevelWebsite';
@@ -52,9 +56,6 @@
     export * from './game/object/special/Platform';
     export * from './game/object/special/SigSaw';
     export * from './game/object/special/SiteTrigger';
-
-    export * from './game/Game';
-    export * from './engine/Engine';
 
     export * from './data/ImageData';
     export * from './data/SoundData';

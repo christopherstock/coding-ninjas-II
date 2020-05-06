@@ -126,6 +126,8 @@
 
         /** ************************************************************************************************************
         *   Assigns the current sprite to the player according to his current state.
+        *
+        *   TODO extract to superclass and add variable sprites!
         ***************************************************************************************************************/
         private assignCurrentSprite() : void
         {

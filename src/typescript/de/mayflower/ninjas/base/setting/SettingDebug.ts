@@ -10,6 +10,10 @@
         public  static  readonly    DEBUG_MODE                              :boolean                    = true;
 
         // noinspection PointlessBooleanExpressionJS
+        /** Enable color bg for all matter sprites. */
+        public  static  readonly    DEBUG_BG_MATTER_BODY                    :boolean                    = ( false && SettingDebug.DEBUG_MODE );
+
+        // noinspection PointlessBooleanExpressionJS
         /** Disables all sprites. */
         public  static  readonly    DISABLE_SPRITES                         :boolean                    = ( false && SettingDebug.DEBUG_MODE );
         // noinspection PointlessBooleanExpressionJS
@@ -38,7 +42,7 @@
         /** The debug color for a box. */
         COLOR_DEBUG_MOVABLE             = '#ffbf54',
         /** The debug color for an obstacle. */
-        COLOR_DEBUG_OBSTACLE            = '#a6a6a6',
+        COLOR_DEBUG_OBSTACLE            = '#f6ec2d',
         /** The debug color for a sigsaw. */
         COLOR_DEBUG_SIGSAW              = '#c46c9c',
         /** The debug color for a sigsaw joint. */

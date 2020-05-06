@@ -191,8 +191,8 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16260, 5105, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_2 );
 */
             // solid ground
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
 
             // bridge and water
             ninjas.GameObjectBundleFactory.createWaterArea(   this, 640,  660, 5, 4 );
