@@ -9,7 +9,7 @@
         /** All sound file names to load. */
         private     readonly        fileNames                       :string[]                       = null;
         /** The method to invoke when all sounds are loaded. */
-        private     readonly        onLoadComplete                  :Function                       = null;
+        private     readonly        onLoadComplete                  :() => void                     = null;
 
         /** The number of currently loaded sounds. */
         private                     loadedSoundCount                :number                         = 0;
@@ -22,7 +22,7 @@
         *   @param fileNames      The names of all image files to load.
         *   @param onLoadComplete The method to invoke when all image files are loaded.
         ***************************************************************************************************************/
-        public constructor( fileNames:string[], onLoadComplete:Function )
+        public constructor( fileNames:string[], onLoadComplete:() => void )
         {
             this.fileNames      = fileNames;
             this.onLoadComplete = onLoadComplete;

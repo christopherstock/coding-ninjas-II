@@ -11,7 +11,7 @@
         /** All image file names to mirror. */
         private     readonly            mirroredFileNames               :string[]                       = null;
         /** The method to invoke when all images are loaded. */
-        private     readonly            onLoadComplete                  :Function                       = null;
+        private     readonly            onLoadComplete                  :() => void                     = null;
 
         /** The number of images to load. */
         private                         imagesToLoad                    :number                         = 0;
@@ -35,7 +35,7 @@
         *   @param mirroredFileNames The names of all mirrored image files to load.
         *   @param onLoadComplete    The method to invoke when all image files are loaded.
         ***************************************************************************************************************/
-        public constructor( fileNames:string[], mirroredFileNames:string[], onLoadComplete:Function )
+        public constructor( fileNames:string[], mirroredFileNames:string[], onLoadComplete:() => void )
         {
             this.fileNames         = fileNames;
             this.mirroredFileNames = mirroredFileNames;
@@ -123,10 +123,8 @@
 
         /** ************************************************************************************************************
         *   Being invoked when one image was mirrored.
-        *
-        *   @param event The according image event.
         ***************************************************************************************************************/
-        private onMirrorImage=( event:Event ) : void =>
+        private onMirrorImage=() : void =>
         {
             ninjas.Main.game.preloader.setLoadingPercentage(
                 55 + ( 20 * this.mirroredImageCount / this.imagesToMirrorCount )

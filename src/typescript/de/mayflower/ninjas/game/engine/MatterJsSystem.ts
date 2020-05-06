@@ -22,7 +22,7 @@
         public constructor
         (
             canvas              :HTMLCanvasElement,
-            callbackAfterRender :Function,
+            callbackAfterRender :( renderContext:CanvasRenderingContext2D ) => void,
             textureCache        :HTMLImageElement[]
         )
         {

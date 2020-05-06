@@ -7,7 +7,7 @@
     export class Preloader
     {
         /** The callback to invoke when the preloader is set up. */
-        private     readonly        onPreloaderSetup                :Function                           = null;
+        private     readonly        onPreloaderSetup                :() => void                         = null;
 
         /**  The colorful preloader image. */
         private                     imageGay                        :HTMLImageElement                   = null;
@@ -25,7 +25,7 @@
         *
         *   @param onPreloaderSetup The callback to invoke when the preloading is set up.
         ***************************************************************************************************************/
-        public constructor( onPreloaderSetup:Function )
+        public constructor( onPreloaderSetup:() => void )
         {
             this.onPreloaderSetup = onPreloaderSetup;
         }
