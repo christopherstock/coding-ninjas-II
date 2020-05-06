@@ -118,7 +118,7 @@
         private drawPreloader( ctx:CanvasRenderingContext2D ) : void
         {
             // clear canvas
-            ninjas.Drawing.fillRect
+            ninjas.DrawUtil.fillRect
             (
                 ninjas.Main.game.engine.canvasSystem.getCanvasContext(),
                 0,
@@ -136,7 +136,7 @@
             const imageWidthToDraw :number = ( this.imageGay.width * this.loadingPercentage ) / 100;
 
             // draw mono image
-            ninjas.Drawing.drawImage
+            ninjas.DrawUtil.drawImage
             (
                 ninjas.Main.game.engine.canvasSystem.getCanvasContext(),
                 this.imageMono,
@@ -145,7 +145,7 @@
             );
 
             // draw gay image clipped
-            ninjas.Drawing.drawImageScaledClipped
+            ninjas.DrawUtil.drawImageScaledClipped
             (
                 ninjas.Main.game.engine.canvasSystem.getCanvasContext(),
                 this.imageGay,

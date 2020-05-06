@@ -179,7 +179,7 @@
 
             this.outerAbsoluteContainer.style.backgroundImage = (
                 'url( '
-                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_PANEL_BG ).src
+                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG ).src
                 + ')'
             );
 

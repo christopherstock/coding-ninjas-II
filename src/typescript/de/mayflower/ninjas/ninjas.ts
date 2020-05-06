@@ -18,7 +18,6 @@
     export * from './game/engine/SitePanel';
     export * from './game/engine/SiteSystem';
     export * from './game/engine/SoundSystem';
-    export * from './game/engine/Sprite';
 
     export * from './game/level/Level';
     export * from './game/level/LevelWebsite';
@@ -54,9 +53,10 @@
 
     export * from './hid/Key';
 
-    export * from './io/Image';
-    export * from './io/Sound';
-    export * from './io/SpriteTemplate';
+    export * from './data/ImageData';
+    export * from './data/SoundData';
+    export * from './data/SpriteData';
+    export * from './data/SpriteTemplate';
 
     export * from './site/component/ContentCompany';
     export * from './site/component/ContentContact';
@@ -69,8 +69,9 @@
     export * from './site/SiteContentFactory';
 
     export * from './ui/Camera';
-    export * from './ui/Drawing';
+    export * from './ui/Sprite';
 
+    export * from './util/DrawUtil';
     export * from './util/IO';
     export * from './util/MathUtil';
     export * from './util/StringUtil';

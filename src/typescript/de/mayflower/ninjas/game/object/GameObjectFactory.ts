@@ -18,7 +18,7 @@
         public static createWoodenCrate( x:number, yBottom:number ):ninjas.Movable
         {
             const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
-                ninjas.Image.IMAGE_CRATE_WOOD
+                ninjas.ImageData.IMAGE_CRATE_WOOD
             );
 
             return new ninjas.Movable
@@ -141,7 +141,7 @@
         : ninjas.Movable
         {
             const spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
-                ninjas.Image.IMAGE_SPHERE
+                ninjas.ImageData.IMAGE_SPHERE
             );
 
             if ( spriteTemplate.width !== spriteTemplate.height )
@@ -194,7 +194,7 @@
                     ninjas.BodyDensity.INFINITE,
                     ninjas.BodyRestitution.DEFAULT
                 ),
-                ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_ITEM ),
+                ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_ITEM ),
                 x,
                 y
             );

@@ -21,12 +21,12 @@
                 { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_WELCOME ) }
                 { ninjas.SiteContentFactory.createDivider() }
                 { ninjas.SiteContentFactory.createImageFullWidth( ninjas.Main.game.engine.imageSystem.getImage(
-                    ninjas.Image.IMAGE_SITE_LOGO ).src ) }
+                    ninjas.ImageData.IMAGE_SITE_LOGO ).src ) }
                 { ninjas.SiteContentFactory.createSpacerVertical() }
 
                 <a target='_blank' title='Würzburg Web Week' href='https://wueww.de/'>
                     { ninjas.SiteContentFactory.createImageFloating( 'right',
-                        ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_LOGO_WEBWEEK ).src ) }
+                        ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_LOGO_WEBWEEK ).src ) }
                 </a>
 
                 {

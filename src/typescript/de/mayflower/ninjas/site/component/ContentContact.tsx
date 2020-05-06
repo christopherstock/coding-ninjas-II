@@ -28,7 +28,7 @@
                         <div className='card-front' style={
                             {
                                 backgroundImage: 'url( '
-                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_OFFICE_WZBG )
+                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_OFFICE_WZBG )
                                 .src
                                 + ' )',
                             }
@@ -54,7 +54,7 @@
                         <div className='card-front' style={
                             {
                                 backgroundImage: 'url( '
-                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_OFFICE_MUC ).src
+                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_OFFICE_MUC ).src
                                 + ' )',
                             }
                             }>
@@ -80,7 +80,7 @@
                             {
                                 backgroundImage: 'url( '
                                     + ninjas.Main.game.engine.imageSystem.getImage(
-                                        ninjas.Image.IMAGE_SITE_OFFICE_BER ).src
+                                        ninjas.ImageData.IMAGE_SITE_OFFICE_BER ).src
                                     + ' )',
                             }
                         }>

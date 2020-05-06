@@ -41,7 +41,7 @@
                             <div>
                                 { ninjas.SiteContentFactory.createImageFloating(
                                     'right',
-                                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_LOGO_NODE_JS )
+                                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_LOGO_NODE_JS )
                                     .src ) }
                                 { ninjas.SiteContentFactory.createParagraph(
                                     'Node.js is an open-source, cross-platform JavaScript run-time environment for '
@@ -58,7 +58,7 @@
                             <div>
                                 { ninjas.SiteContentFactory.createImageFloating( 'right',
                                     ninjas.Main.game.engine.imageSystem.getImage(
-                                        ninjas.Image.IMAGE_SITE_LOGO_TYPE_SCRIPT ).src ) }
+                                        ninjas.ImageData.IMAGE_SITE_LOGO_TYPE_SCRIPT ).src ) }
                                 { ninjas.SiteContentFactory.createParagraph( 'TypeScript is an open-source programming '
                                     + 'language developed and maintained by Microsoft. It is a strict syntactical '
                                     + 'superset of JavaScript, and adds optional static typing to the language. '
@@ -74,7 +74,7 @@
                             <div>
                                 { ninjas.SiteContentFactory.createImageFloating(
                                     'right',
-                                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.Image.IMAGE_SITE_LOGO_WEBPACK )
+                                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_LOGO_WEBPACK )
                                     .src ) }
                                 { ninjas.SiteContentFactory.createParagraph( 'Webpack is an open-source JavaScript '
                                     + 'module bundler. Webpack takes modules with dependencies and generates static '
@@ -102,7 +102,7 @@
                                 { ninjas.SiteContentFactory.createImageFloating(
                                     'right',
                                     ninjas.Main.game.engine.imageSystem.getImage(
-                                        ninjas.Image.IMAGE_SITE_LOGO_MATTER_JS ).src ) }
+                                        ninjas.ImageData.IMAGE_SITE_LOGO_MATTER_JS ).src ) }
                                 { ninjas.SiteContentFactory.createParagraph( 'Matter.js is a JavaScript 2D rigid body '
                                     + 'physics engine for the web. It features rigid bodies, compound bodies, '
                                     + 'composite bodies, concave and convex hulls, physical properties (mass, area, '
@@ -122,7 +122,7 @@
                                 { ninjas.SiteContentFactory.createImageFloating(
                                     'right',
                                     ninjas.Main.game.engine.imageSystem.getImage(
-                                        ninjas.Image.IMAGE_SITE_LOGO_REACT ).src ) }
+                                        ninjas.ImageData.IMAGE_SITE_LOGO_REACT ).src ) }
                                 { ninjas.SiteContentFactory.createParagraph( 'React is a JavaScript library for '
                                     + 'building user interfaces. React allows developers to create large '
                                     + 'web-applications that use data and can change over time without reloading the '
@@ -145,7 +145,7 @@
                                 { ninjas.SiteContentFactory.createImageFloating(
                                     'right',
                                     ninjas.Main.game.engine.imageSystem.getImage(
-                                        ninjas.Image.IMAGE_SITE_LOGO_ANT_DESIGN ).src ) }
+                                        ninjas.ImageData.IMAGE_SITE_LOGO_ANT_DESIGN ).src ) }
                                 { ninjas.SiteContentFactory.createParagraph( 'An enterprise-class UI design language '
                                     + 'and React-based implementation for desktop applications offering a set of '
                                     + 'high-quality React components out of the box. Written in TypeScript with '

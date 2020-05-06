@@ -2,7 +2,7 @@
     /** ****************************************************************************************************************
     *   Offers orthogonal drawing functionality.
     *******************************************************************************************************************/
-    export class Drawing
+    export class DrawUtil
     {
         /** ************************************************************************************************************
         *   Strokes a line with the specified points color and size.
@@ -76,7 +76,7 @@
         ***************************************************************************************************************/
         public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number ) : void
         {
-            Drawing.drawImageScaledClipped( ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height );
+            DrawUtil.drawImageScaledClipped( ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height );
         }
 
         /** ************************************************************************************************************

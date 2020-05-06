@@ -43,7 +43,7 @@
             ninjas.Debug.preloader.log( 'Initing image system' );
             this.imageSystem = new ninjas.ImageSystem
             (
-                ninjas.Image.FILE_NAMES,
+                ninjas.ImageData.FILE_NAMES,
                 ninjas.SpriteTemplate.getAllImagesToMirror(),
                 () => { this.onImagesLoaded(); }
             );
@@ -84,7 +84,7 @@
             ninjas.Main.game.preloader.setLoadingPercentage( 80 );
 
             ninjas.Debug.preloader.log( 'Initing sound system' );
-            this.soundSystem = new ninjas.SoundSystem( ninjas.Sound.FILE_NAMES, () => { this.onSoundsLoaded(); } );
+            this.soundSystem = new ninjas.SoundSystem( ninjas.SoundData.FILE_NAMES, () => { this.onSoundsLoaded(); } );
             this.soundSystem.loadSounds();
         };
 

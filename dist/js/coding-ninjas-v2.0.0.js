@@ -1284,10 +1284,11 @@ var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower
 /** ****************************************************************************************************************
 *   The main class contains the application's points of entry and termination.
 *
-*   TODO One player - many outfits! General player with custom sprite sets.
-*   TODO Add destroyable movables.
-*   TODO Why are edges not soft??
 *   TODO Green water etc.
+*   TODO Why are edges not soft??
+*   TODO Add destroyable movables.
+*
+*   TODO One player - many outfits! General player with custom sprite sets.
 *   TODO Fasten game and physics feeling.
 *   TODO Debug Disable Pointer control.
 *   TODO Try different physics demo elements on the player!
@@ -1735,6 +1736,1214 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/typescript/de/mayflower/ninjas/data/ImageData.ts":
+/*!**************************************************************!*\
+  !*** ./src/typescript/de/mayflower/ninjas/data/ImageData.ts ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/* eslint-disable max-len */
+Object.defineProperty(exports, "__esModule", { value: true });
+var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
+/** ****************************************************************************************************************
+*   All images the game makes use of.
+*******************************************************************************************************************/
+var ImageData = /** @class */ (function () {
+    function ImageData() {
+    }
+    /** Image resource 'ninja girl stand right frame 1'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/01.png';
+    /** Image resource 'ninja girl stand right frame 2'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/02.png';
+    /** Image resource 'ninja girl stand right frame 3'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/03.png';
+    /** Image resource 'ninja girl stand right frame 4'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/04.png';
+    /** Image resource 'ninja girl stand right frame 5'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/05.png';
+    /** Image resource 'ninja girl stand right frame 6'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/06.png';
+    /** Image resource 'ninja girl stand right frame 7'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/07.png';
+    /** Image resource 'ninja girl stand right frame 8'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/08.png';
+    /** Image resource 'ninja girl stand right frame 9'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/09.png';
+    /** Image resource 'ninja girl stand right frame 10'. */
+    ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/10.png';
+    /** Image resource 'ninja girl walk right frame 1'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/01.png';
+    /** Image resource 'ninja girl walk right frame 2'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/02.png';
+    /** Image resource 'ninja girl walk right frame 3'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/03.png';
+    /** Image resource 'ninja girl walk right frame 4'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/04.png';
+    /** Image resource 'ninja girl walk right frame 5'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/05.png';
+    /** Image resource 'ninja girl walk right frame 6'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/06.png';
+    /** Image resource 'ninja girl walk right frame 7'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/07.png';
+    /** Image resource 'ninja girl walk right frame 8'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/08.png';
+    /** Image resource 'ninja girl walk right frame 9'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/09.png';
+    /** Image resource 'ninja girl walk right frame 10'. */
+    ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/10.png';
+    /** Image resource 'ninja girl jump right frame 1'. */
+    ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'jumpRight/01.png';
+    /** Image resource 'ninja girl jump right frame 2'. */
+    ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'jumpRight/02.png';
+    /** Image resource 'ninja girl jump right frame 3'. */
+    ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'jumpRight/03.png';
+    /** Image resource 'ninja girl fall right frame 1'. */
+    ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'fallRight/01.png';
+    /** Image resource 'ninja girl fall right frame 2'. */
+    ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'fallRight/02.png';
+    /** Image resource 'ninja girl fall right frame 3'. */
+    ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'fallRight/03.png';
+    /** Image resource 'ninja girl glid right frame 1'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/01.png';
+    /** Image resource 'ninja girl glid right frame 2'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/02.png';
+    /** Image resource 'ninja girl glid right frame 3'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/03.png';
+    /** Image resource 'ninja girl glid right frame 4'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/04.png';
+    /** Image resource 'ninja girl glid right frame 5'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/05.png';
+    /** Image resource 'ninja girl glid right frame 6'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/06.png';
+    /** Image resource 'ninja girl glid right frame 7'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/07.png';
+    /** Image resource 'ninja girl glid right frame 8'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/08.png';
+    /** Image resource 'ninja girl glid right frame 9'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/09.png';
+    /** Image resource 'ninja girl glid right frame 10'. */
+    ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/10.png';
+    /** Image resource 'enemy ninja 1 stand right frame 1'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/01.png';
+    /** Image resource 'enemy ninja 1 stand right frame 2'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/02.png';
+    /** Image resource 'enemy ninja 1 stand right frame 3'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/03.png';
+    /** Image resource 'enemy ninja 1 stand right frame 4'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/04.png';
+    /** Image resource 'enemy ninja 1 stand right frame 5'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/05.png';
+    /** Image resource 'enemy ninja 1 stand right frame 6'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/06.png';
+    /** Image resource 'enemy ninja 1 stand right frame 7'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/07.png';
+    /** Image resource 'enemy ninja 1 stand right frame 8'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/08.png';
+    /** Image resource 'enemy ninja 1 stand right frame 9'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/09.png';
+    /** Image resource 'enemy ninja 1 stand right frame 10'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/10.png';
+    /** Image resource 'enemy ninja 1 walk right frame 1'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/01.png';
+    /** Image resource 'enemy ninja 1 walk right frame 2'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/02.png';
+    /** Image resource 'enemy ninja 1 walk right frame 3'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/03.png';
+    /** Image resource 'enemy ninja 1 walk right frame 4'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/04.png';
+    /** Image resource 'enemy ninja 1 walk right frame 5'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/05.png';
+    /** Image resource 'enemy ninja 1 walk right frame 6'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/06.png';
+    /** Image resource 'enemy ninja 1 walk right frame 7'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/07.png';
+    /** Image resource 'enemy ninja 1 walk right frame 8'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/08.png';
+    /** Image resource 'enemy ninja 1 walk right frame 9'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/09.png';
+    /** Image resource 'enemy ninja 1 walk right frame 10'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/10.png';
+    /** Image resource 'enemy ninja 1 die right frame 1'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/01.png';
+    /** Image resource 'enemy ninja 1 die right frame 2'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/02.png';
+    /** Image resource 'enemy ninja 1 die right frame 3'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/03.png';
+    /** Image resource 'enemy ninja 1 die right frame 4'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/04.png';
+    /** Image resource 'enemy ninja 1 die right frame 5'. */
+    ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/05.png';
+    /** Image resource 'wooden crate'. */
+    ImageData.IMAGE_CRATE_WOOD = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
+    /** Image resource 'metal crate'. */
+    ImageData.IMAGE_CRATE_METAL = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateMetal.jpg';
+    /** Image resource 'item'. */
+    ImageData.IMAGE_ITEM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
+    /** Image resource 'sphere'. */
+    ImageData.IMAGE_SPHERE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'sphere.png';
+    /** Image resource 'boulder 1'. */
+    ImageData.IMAGE_BOULDER_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
+    /** Image resource 'fence 1'. */
+    ImageData.IMAGE_FENCE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence1.png';
+    /** Image resource 'fence left'. */
+    ImageData.IMAGE_FENCE_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
+    /** Image resource 'fence center'. */
+    ImageData.IMAGE_FENCE_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
+    /** Image resource 'fence right'. */
+    ImageData.IMAGE_FENCE_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceRight.png';
+    /** Image resource 'bridge 1'. */
+    ImageData.IMAGE_BRIDGE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge.png';
+    /** Image resource 'tree 1'. */
+    ImageData.IMAGE_TREE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
+    /** Image resource 'tree 2'. */
+    ImageData.IMAGE_TREE_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
+    /** Image resource 'console'. */
+    ImageData.IMAGE_CONSOLE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'console.png';
+    /** Image resource 'statue 1'. */
+    ImageData.IMAGE_STATUE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
+    /** Image resource 'statue 2'. */
+    ImageData.IMAGE_STATUE_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
+    /** Image resource 'statue 3'. */
+    ImageData.IMAGE_STATUE_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue3.png';
+    /** Image resource 'statue 4'. */
+    ImageData.IMAGE_STATUE_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue4.png';
+    /** Image resource 'statue 5'. */
+    ImageData.IMAGE_STATUE_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue5.png';
+    /** Image resource 'book closed'. */
+    ImageData.IMAGE_BOOK_CLOSED = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookClosed.png';
+    /** Image resource 'book open'. */
+    ImageData.IMAGE_BOOK_OPEN = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookOpen.png';
+    /** Image resource 'candelabra'. */
+    ImageData.IMAGE_CANDELABRA = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candelabra.png';
+    /** Image resource 'chandelier'. */
+    ImageData.IMAGE_CHANDELIER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
+    /** Image resource 'candle'. */
+    ImageData.IMAGE_CANDLE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
+    /** Image resource 'cage'. */
+    ImageData.IMAGE_CAGE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'cage.png';
+    /** Image resource 'stove'. */
+    ImageData.IMAGE_STOVE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'stove.png';
+    /** Image resource 'bush 1'. */
+    ImageData.IMAGE_BUSH_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
+    /** Image resource 'bush 2'. */
+    ImageData.IMAGE_BUSH_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush2.png';
+    /** Image resource 'goblet'. */
+    ImageData.IMAGE_GOBLET = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'goblet.png';
+    /** Image resource 'flask 1'. */
+    ImageData.IMAGE_FLASK_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask1.png';
+    /** Image resource 'flask 2'. */
+    ImageData.IMAGE_FLASK_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask2.png';
+    /** Image resource 'pot'. */
+    ImageData.IMAGE_POT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'pot.png';
+    /** Image resource 'shrine background 1'. */
+    ImageData.IMAGE_SHRINE_BG_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg1.png';
+    /** Image resource 'shrine background 2'. */
+    ImageData.IMAGE_SHRINE_BG_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg2.png';
+    /** Image resource 'shrine background 3'. */
+    ImageData.IMAGE_SHRINE_BG_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg3.png';
+    /** Image resource 'shrine background 4'. */
+    ImageData.IMAGE_SHRINE_BG_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg4.png';
+    /** Image resource 'shrine background 5'. */
+    ImageData.IMAGE_SHRINE_BG_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg5.png';
+    /** Image resource 'DoJo'. */
+    ImageData.IMAGE_DOJO = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'dojo.jpg';
+    /** Image resource 'grass 1 frame 1'. */
+    ImageData.IMAGE_GRASS_1_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/01.png';
+    /** Image resource 'grass 1 frame 2'. */
+    ImageData.IMAGE_GRASS_1_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/02.png';
+    /** Image resource 'grass 1 frame 3'. */
+    ImageData.IMAGE_GRASS_1_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/03.png';
+    /** Image resource 'grass 1 frame 4'. */
+    ImageData.IMAGE_GRASS_1_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/04.png';
+    /** Image resource 'grass 1 frame 5'. */
+    ImageData.IMAGE_GRASS_1_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/05.png';
+    /** Image resource 'grass 1 frame 6'. */
+    ImageData.IMAGE_GRASS_1_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/06.png';
+    /** Image resource 'grass 1 frame 7'. */
+    ImageData.IMAGE_GRASS_1_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/07.png';
+    /** Image resource 'grass 1 frame 8'. */
+    ImageData.IMAGE_GRASS_1_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/08.png';
+    /** Image resource 'grass 1 frame 9'. */
+    ImageData.IMAGE_GRASS_1_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/09.png';
+    /** Image resource 'grass 1 frame 10'. */
+    ImageData.IMAGE_GRASS_1_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/10.png';
+    /** Image resource 'grass 1 frame 11'. */
+    ImageData.IMAGE_GRASS_1_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/11.png';
+    /** Image resource 'grass 1 frame 12'. */
+    ImageData.IMAGE_GRASS_1_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/12.png';
+    /** Image resource 'grass 2 frame 1'. */
+    ImageData.IMAGE_GRASS_2_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/01.png';
+    /** Image resource 'grass 2 frame 2'. */
+    ImageData.IMAGE_GRASS_2_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/02.png';
+    /** Image resource 'grass 2 frame 3'. */
+    ImageData.IMAGE_GRASS_2_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/03.png';
+    /** Image resource 'grass 2 frame 4'. */
+    ImageData.IMAGE_GRASS_2_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/04.png';
+    /** Image resource 'grass 2 frame 5'. */
+    ImageData.IMAGE_GRASS_2_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/05.png';
+    /** Image resource 'grass 2 frame 6'. */
+    ImageData.IMAGE_GRASS_2_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/06.png';
+    /** Image resource 'grass 2 frame 7'. */
+    ImageData.IMAGE_GRASS_2_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/07.png';
+    /** Image resource 'grass 2 frame 8'. */
+    ImageData.IMAGE_GRASS_2_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/08.png';
+    /** Image resource 'grass 2 frame 9'. */
+    ImageData.IMAGE_GRASS_2_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/09.png';
+    /** Image resource 'grass 2 frame 10'. */
+    ImageData.IMAGE_GRASS_2_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/10.png';
+    /** Image resource 'grass 2 frame 12'. */
+    ImageData.IMAGE_GRASS_2_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/11.png';
+    /** Image resource 'grass 2 frame 12'. */
+    ImageData.IMAGE_GRASS_2_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/12.png';
+    /** Image resource 'grass 3 frame 1'. */
+    ImageData.IMAGE_GRASS_3_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/01.png';
+    /** Image resource 'grass 3 frame 2'. */
+    ImageData.IMAGE_GRASS_3_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/02.png';
+    /** Image resource 'grass 3 frame 3'. */
+    ImageData.IMAGE_GRASS_3_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/03.png';
+    /** Image resource 'grass 3 frame 4'. */
+    ImageData.IMAGE_GRASS_3_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/04.png';
+    /** Image resource 'grass 3 frame 5'. */
+    ImageData.IMAGE_GRASS_3_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/05.png';
+    /** Image resource 'grass 3 frame 6'. */
+    ImageData.IMAGE_GRASS_3_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/06.png';
+    /** Image resource 'grass 3 frame 7'. */
+    ImageData.IMAGE_GRASS_3_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/07.png';
+    /** Image resource 'grass 3 frame 8'. */
+    ImageData.IMAGE_GRASS_3_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/08.png';
+    /** Image resource 'grass 3 frame 9'. */
+    ImageData.IMAGE_GRASS_3_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/09.png';
+    /** Image resource 'grass 3 frame 10'. */
+    ImageData.IMAGE_GRASS_3_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/10.png';
+    /** Image resource 'grass 3 frame 11'. */
+    ImageData.IMAGE_GRASS_3_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/11.png';
+    /** Image resource 'grass 3 frame 12'. */
+    ImageData.IMAGE_GRASS_3_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/12.png';
+    /** Image resource 'grass 4 frame 1'. */
+    ImageData.IMAGE_GRASS_4_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/01.png';
+    /** Image resource 'grass 4 frame 2'. */
+    ImageData.IMAGE_GRASS_4_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/02.png';
+    /** Image resource 'grass 4 frame 3'. */
+    ImageData.IMAGE_GRASS_4_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/03.png';
+    /** Image resource 'grass 4 frame 4'. */
+    ImageData.IMAGE_GRASS_4_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/04.png';
+    /** Image resource 'grass 4 frame 5'. */
+    ImageData.IMAGE_GRASS_4_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/05.png';
+    /** Image resource 'grass 4 frame 6'. */
+    ImageData.IMAGE_GRASS_4_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/06.png';
+    /** Image resource 'grass 4 frame 7'. */
+    ImageData.IMAGE_GRASS_4_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/07.png';
+    /** Image resource 'grass 4 frame 8'. */
+    ImageData.IMAGE_GRASS_4_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/08.png';
+    /** Image resource 'grass 4 frame 9'. */
+    ImageData.IMAGE_GRASS_4_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/09.png';
+    /** Image resource 'grass 4 frame 10'. */
+    ImageData.IMAGE_GRASS_4_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/10.png';
+    /** Image resource 'grass 4 frame 12'. */
+    ImageData.IMAGE_GRASS_4_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/11.png';
+    /** Image resource 'grass 4 frame 12'. */
+    ImageData.IMAGE_GRASS_4_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/12.png';
+    /** Image resource 'flame 1 frame 1'. */
+    ImageData.IMAGE_FLAME_1_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/01.png';
+    /** Image resource 'flame 1 frame 2'. */
+    ImageData.IMAGE_FLAME_1_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/02.png';
+    /** Image resource 'flame 1 frame 3'. */
+    ImageData.IMAGE_FLAME_1_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/03.png';
+    /** Image resource 'flame 1 frame 4'. */
+    ImageData.IMAGE_FLAME_1_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/04.png';
+    /** Image resource 'flame 1 frame 5'. */
+    ImageData.IMAGE_FLAME_1_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/05.png';
+    /** Image resource 'flame 1 frame 6'. */
+    ImageData.IMAGE_FLAME_1_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/06.png';
+    /** Image resource 'flame 1 frame 7'. */
+    ImageData.IMAGE_FLAME_1_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/07.png';
+    /** Image resource 'flame 1 frame 8'. */
+    ImageData.IMAGE_FLAME_1_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/08.png';
+    /** Image resource 'flame 1 frame 9'. */
+    ImageData.IMAGE_FLAME_1_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/09.png';
+    /** Image resource 'flame 1 frame 10'. */
+    ImageData.IMAGE_FLAME_1_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/10.png';
+    /** Image resource 'flame 1 frame 11'. */
+    ImageData.IMAGE_FLAME_1_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/11.png';
+    /** Image resource 'flame 1 frame 12'. */
+    ImageData.IMAGE_FLAME_1_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/12.png';
+    /** Image resource 'flame 1 frame 13'. */
+    ImageData.IMAGE_FLAME_1_FRAME_13 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/13.png';
+    /** Image resource 'flame 1 frame 14'. */
+    ImageData.IMAGE_FLAME_1_FRAME_14 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/14.png';
+    /** Image resource 'tree stub'. */
+    ImageData.IMAGE_TREE_STUB = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'treeStub.png';
+    /** Image resource 'rubble 1'. */
+    ImageData.IMAGE_RUBBLE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble1.png';
+    /** Image resource 'rubble 2'. */
+    ImageData.IMAGE_RUBBLE_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble2.png';
+    /** Image resource 'rubble 3'. */
+    ImageData.IMAGE_RUBBLE_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble3.png';
+    /** Image tile 'water top frame 1'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/01.png';
+    /** Image tile 'water top frame 2'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/02.png';
+    /** Image tile 'water top frame 3'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/03.png';
+    /** Image tile 'water top frame 4'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/04.png';
+    /** Image tile 'water top frame 5'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/05.png';
+    /** Image tile 'water top frame 6'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/06.png';
+    /** Image tile 'water top frame 7'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/07.png';
+    /** Image tile 'water top frame 8'. */
+    ImageData.IMAGE_WATER_TOP_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/08.png';
+    /** Image tile 'water center'. */
+    ImageData.IMAGE_WATER_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterCenter.png';
+    /** Image tile 'flying left'. */
+    ImageData.IMAGE_GROUND_FLYING_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingLeft.png';
+    /** Image tile 'flying center'. */
+    ImageData.IMAGE_GROUND_FLYING_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingCenter.png';
+    /** Image tile 'flying right'. */
+    ImageData.IMAGE_GROUND_FLYING_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingRight.png';
+    /** Image tile 'flying ascending left'. */
+    ImageData.IMAGE_GROUND_FLYING_ASCENDING_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingLeft.png';
+    /** Image tile 'flying ascending center'. */
+    ImageData.IMAGE_GROUND_FLYING_ASCENDING_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingCenter.png';
+    /** Image tile 'flying ascending right'. */
+    ImageData.IMAGE_GROUND_FLYING_ASCENDING_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingRight.png';
+    /** Image tile 'flying descending left'. */
+    ImageData.IMAGE_GROUND_FLYING_DESCENDING_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingLeft.png';
+    /** Image tile 'flying descending center'. */
+    ImageData.IMAGE_GROUND_FLYING_DESCENDING_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingCenter.png';
+    /** Image tile 'flying descending right'. */
+    ImageData.IMAGE_GROUND_FLYING_DESCENDING_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingRight.png';
+    /** Image tile 'solid left'. */
+    ImageData.IMAGE_GROUND_SOLID_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeft.png';
+    /** Image tile 'solid right'. */
+    ImageData.IMAGE_GROUND_SOLID_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRight.png';
+    /** Image tile 'solid top'. */
+    ImageData.IMAGE_GROUND_SOLID_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidTop.png';
+    /** Image tile 'solid bottom'. */
+    ImageData.IMAGE_GROUND_SOLID_BOTTOM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidBottom.png';
+    /** Image tile 'solid left top'. */
+    ImageData.IMAGE_GROUND_SOLID_LEFT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeftTop.png';
+    /** Image tile 'solid right top'. */
+    ImageData.IMAGE_GROUND_SOLID_RIGHT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRightTop.png';
+    /** Image tile 'solid left bottom'. */
+    ImageData.IMAGE_GROUND_SOLID_LEFT_BOTTOM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeftBottom.png';
+    /** Image tile 'solid right bottom'. */
+    ImageData.IMAGE_GROUND_SOLID_RIGHT_BOTTOM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRightBottom.png';
+    /** Image tile 'solid center'. */
+    ImageData.IMAGE_GROUND_SOLID_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidCenter.png';
+    /** Image tile 'solid ascending top'. */
+    ImageData.IMAGE_GROUND_SOLID_ASCENDING_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingTop.png';
+    /** Image tile 'solid descending top'. */
+    ImageData.IMAGE_GROUND_SOLID_DESCENDING_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingTop.png';
+    /** Image tile 'solid ascending left top'. */
+    ImageData.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingLeftTop.png';
+    /** Image tile 'solid descending left top'. */
+    ImageData.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingLeftTop.png';
+    /** Image tile 'solid ascending right top'. */
+    ImageData.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingRightTop.png';
+    /** Image tile 'solid descending right top'. */
+    ImageData.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingRightTop.png';
+    /** A bg image. */
+    ImageData.IMAGE_BG = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
+    /** Site image 'logo'. */
+    ImageData.IMAGE_SITE_LOGO = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logo.png';
+    /** Site image 'site panel bg'. */
+    ImageData.IMAGE_SITE_PANEL_BG = ninjas.SettingEngine.PATH_IMAGE_SITE + 'sitePanelBg.png';
+    /** Site image 'carousel desktop'. */
+    ImageData.IMAGE_SITE_CAROUSEL_DESKTOP = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselDesktop.jpg';
+    /** Site image 'carousel mobile'. */
+    ImageData.IMAGE_SITE_CAROUSEL_MOBILE = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselMobile.jpg';
+    /** Site image 'carousel web apps'. */
+    ImageData.IMAGE_SITE_CAROUSEL_WEB_APPS = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselWebApps.jpg';
+    /** Site image 'carousel websites'. */
+    ImageData.IMAGE_SITE_CAROUSEL_WEBSITES = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselWebsites.jpg';
+    /** Site image 'logo Ant Design'. */
+    ImageData.IMAGE_SITE_LOGO_ANT_DESIGN = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoAntDesign.png';
+    /** Site image 'logo Matter.js'. */
+    ImageData.IMAGE_SITE_LOGO_MATTER_JS = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoMatterJs.png';
+    /** Site image 'logo Node.js'. */
+    ImageData.IMAGE_SITE_LOGO_NODE_JS = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoNodeJs.png';
+    /** Site image 'logo React'. */
+    ImageData.IMAGE_SITE_LOGO_REACT = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoReact.png';
+    /** Site image 'logo TypeScript'. */
+    ImageData.IMAGE_SITE_LOGO_TYPE_SCRIPT = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoTypeScript.png';
+    /** Site image 'logo Webpack'. */
+    ImageData.IMAGE_SITE_LOGO_WEBPACK = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoWebpack.png';
+    /** Site image 'logo WebWeek'. */
+    ImageData.IMAGE_SITE_LOGO_WEBWEEK = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoWebWeek.png';
+    /** Site image 'office wzbg'. */
+    ImageData.IMAGE_SITE_OFFICE_WZBG = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeWzbg.jpg';
+    /** Site image 'office muc'. */
+    ImageData.IMAGE_SITE_OFFICE_MUC = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeMuc.jpg';
+    /** Site image 'office ber'. */
+    ImageData.IMAGE_SITE_OFFICE_BER = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeBer.jpg';
+    /** An array holding all filenames of all images to load. */
+    ImageData.FILE_NAMES = [
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9,
+        ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9,
+        ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10,
+        ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
+        ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2,
+        ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3,
+        ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
+        ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2,
+        ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9,
+        ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
+        ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
+        ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
+        ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
+        ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
+        ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
+        ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
+        ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
+        ImageData.IMAGE_ITEM,
+        ImageData.IMAGE_CRATE_WOOD,
+        ImageData.IMAGE_CRATE_METAL,
+        ImageData.IMAGE_SPHERE,
+        ImageData.IMAGE_BOULDER_1,
+        ImageData.IMAGE_FENCE_1,
+        ImageData.IMAGE_FENCE_LEFT,
+        ImageData.IMAGE_FENCE_CENTER,
+        ImageData.IMAGE_FENCE_RIGHT,
+        ImageData.IMAGE_BRIDGE_1,
+        ImageData.IMAGE_TREE_1,
+        ImageData.IMAGE_TREE_2,
+        ImageData.IMAGE_CONSOLE,
+        ImageData.IMAGE_STATUE_1,
+        ImageData.IMAGE_STATUE_2,
+        ImageData.IMAGE_STATUE_3,
+        ImageData.IMAGE_STATUE_4,
+        ImageData.IMAGE_STATUE_5,
+        ImageData.IMAGE_BOOK_CLOSED,
+        ImageData.IMAGE_BOOK_OPEN,
+        ImageData.IMAGE_CANDELABRA,
+        ImageData.IMAGE_CHANDELIER,
+        ImageData.IMAGE_CANDLE,
+        ImageData.IMAGE_CAGE,
+        ImageData.IMAGE_STOVE,
+        ImageData.IMAGE_BUSH_1,
+        ImageData.IMAGE_BUSH_2,
+        ImageData.IMAGE_GOBLET,
+        ImageData.IMAGE_FLASK_1,
+        ImageData.IMAGE_FLASK_2,
+        ImageData.IMAGE_POT,
+        ImageData.IMAGE_SHRINE_BG_1,
+        ImageData.IMAGE_SHRINE_BG_2,
+        ImageData.IMAGE_SHRINE_BG_3,
+        ImageData.IMAGE_SHRINE_BG_4,
+        ImageData.IMAGE_SHRINE_BG_5,
+        ImageData.IMAGE_DOJO,
+        ImageData.IMAGE_GRASS_1_FRAME_1,
+        ImageData.IMAGE_GRASS_1_FRAME_2,
+        ImageData.IMAGE_GRASS_1_FRAME_3,
+        ImageData.IMAGE_GRASS_1_FRAME_4,
+        ImageData.IMAGE_GRASS_1_FRAME_5,
+        ImageData.IMAGE_GRASS_1_FRAME_6,
+        ImageData.IMAGE_GRASS_1_FRAME_7,
+        ImageData.IMAGE_GRASS_1_FRAME_8,
+        ImageData.IMAGE_GRASS_1_FRAME_9,
+        ImageData.IMAGE_GRASS_1_FRAME_10,
+        ImageData.IMAGE_GRASS_1_FRAME_11,
+        ImageData.IMAGE_GRASS_1_FRAME_12,
+        ImageData.IMAGE_GRASS_2_FRAME_1,
+        ImageData.IMAGE_GRASS_2_FRAME_2,
+        ImageData.IMAGE_GRASS_2_FRAME_3,
+        ImageData.IMAGE_GRASS_2_FRAME_4,
+        ImageData.IMAGE_GRASS_2_FRAME_5,
+        ImageData.IMAGE_GRASS_2_FRAME_6,
+        ImageData.IMAGE_GRASS_2_FRAME_7,
+        ImageData.IMAGE_GRASS_2_FRAME_8,
+        ImageData.IMAGE_GRASS_2_FRAME_9,
+        ImageData.IMAGE_GRASS_2_FRAME_10,
+        ImageData.IMAGE_GRASS_2_FRAME_11,
+        ImageData.IMAGE_GRASS_2_FRAME_12,
+        ImageData.IMAGE_GRASS_3_FRAME_1,
+        ImageData.IMAGE_GRASS_3_FRAME_2,
+        ImageData.IMAGE_GRASS_3_FRAME_3,
+        ImageData.IMAGE_GRASS_3_FRAME_4,
+        ImageData.IMAGE_GRASS_3_FRAME_5,
+        ImageData.IMAGE_GRASS_3_FRAME_6,
+        ImageData.IMAGE_GRASS_3_FRAME_7,
+        ImageData.IMAGE_GRASS_3_FRAME_8,
+        ImageData.IMAGE_GRASS_3_FRAME_9,
+        ImageData.IMAGE_GRASS_3_FRAME_10,
+        ImageData.IMAGE_GRASS_3_FRAME_11,
+        ImageData.IMAGE_GRASS_3_FRAME_12,
+        ImageData.IMAGE_GRASS_4_FRAME_1,
+        ImageData.IMAGE_GRASS_4_FRAME_2,
+        ImageData.IMAGE_GRASS_4_FRAME_3,
+        ImageData.IMAGE_GRASS_4_FRAME_4,
+        ImageData.IMAGE_GRASS_4_FRAME_5,
+        ImageData.IMAGE_GRASS_4_FRAME_6,
+        ImageData.IMAGE_GRASS_4_FRAME_7,
+        ImageData.IMAGE_GRASS_4_FRAME_8,
+        ImageData.IMAGE_GRASS_4_FRAME_9,
+        ImageData.IMAGE_GRASS_4_FRAME_10,
+        ImageData.IMAGE_GRASS_4_FRAME_11,
+        ImageData.IMAGE_GRASS_4_FRAME_12,
+        ImageData.IMAGE_FLAME_1_FRAME_1,
+        ImageData.IMAGE_FLAME_1_FRAME_2,
+        ImageData.IMAGE_FLAME_1_FRAME_3,
+        ImageData.IMAGE_FLAME_1_FRAME_4,
+        ImageData.IMAGE_FLAME_1_FRAME_5,
+        ImageData.IMAGE_FLAME_1_FRAME_6,
+        ImageData.IMAGE_FLAME_1_FRAME_7,
+        ImageData.IMAGE_FLAME_1_FRAME_8,
+        ImageData.IMAGE_FLAME_1_FRAME_9,
+        ImageData.IMAGE_FLAME_1_FRAME_10,
+        ImageData.IMAGE_FLAME_1_FRAME_11,
+        ImageData.IMAGE_FLAME_1_FRAME_12,
+        ImageData.IMAGE_FLAME_1_FRAME_13,
+        ImageData.IMAGE_FLAME_1_FRAME_14,
+        ImageData.IMAGE_TREE_STUB,
+        ImageData.IMAGE_RUBBLE_1,
+        ImageData.IMAGE_RUBBLE_2,
+        ImageData.IMAGE_RUBBLE_3,
+        ImageData.IMAGE_WATER_TOP_FRAME_1,
+        ImageData.IMAGE_WATER_TOP_FRAME_2,
+        ImageData.IMAGE_WATER_TOP_FRAME_3,
+        ImageData.IMAGE_WATER_TOP_FRAME_4,
+        ImageData.IMAGE_WATER_TOP_FRAME_5,
+        ImageData.IMAGE_WATER_TOP_FRAME_6,
+        ImageData.IMAGE_WATER_TOP_FRAME_7,
+        ImageData.IMAGE_WATER_TOP_FRAME_8,
+        ImageData.IMAGE_WATER_CENTER,
+        ImageData.IMAGE_GROUND_FLYING_LEFT,
+        ImageData.IMAGE_GROUND_FLYING_CENTER,
+        ImageData.IMAGE_GROUND_FLYING_RIGHT,
+        ImageData.IMAGE_GROUND_FLYING_ASCENDING_LEFT,
+        ImageData.IMAGE_GROUND_FLYING_ASCENDING_CENTER,
+        ImageData.IMAGE_GROUND_FLYING_ASCENDING_RIGHT,
+        ImageData.IMAGE_GROUND_FLYING_DESCENDING_LEFT,
+        ImageData.IMAGE_GROUND_FLYING_DESCENDING_CENTER,
+        ImageData.IMAGE_GROUND_FLYING_DESCENDING_RIGHT,
+        ImageData.IMAGE_GROUND_SOLID_LEFT,
+        ImageData.IMAGE_GROUND_SOLID_RIGHT,
+        ImageData.IMAGE_GROUND_SOLID_TOP,
+        ImageData.IMAGE_GROUND_SOLID_BOTTOM,
+        ImageData.IMAGE_GROUND_SOLID_LEFT_TOP,
+        ImageData.IMAGE_GROUND_SOLID_RIGHT_TOP,
+        ImageData.IMAGE_GROUND_SOLID_LEFT_BOTTOM,
+        ImageData.IMAGE_GROUND_SOLID_RIGHT_BOTTOM,
+        ImageData.IMAGE_GROUND_SOLID_CENTER,
+        ImageData.IMAGE_GROUND_SOLID_ASCENDING_TOP,
+        ImageData.IMAGE_GROUND_SOLID_DESCENDING_TOP,
+        ImageData.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP,
+        ImageData.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP,
+        ImageData.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP,
+        ImageData.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP,
+        ImageData.IMAGE_BG,
+        ImageData.IMAGE_SITE_LOGO,
+        ImageData.IMAGE_SITE_PANEL_BG,
+        ImageData.IMAGE_SITE_CAROUSEL_DESKTOP,
+        ImageData.IMAGE_SITE_CAROUSEL_MOBILE,
+        ImageData.IMAGE_SITE_CAROUSEL_WEB_APPS,
+        ImageData.IMAGE_SITE_CAROUSEL_WEBSITES,
+        ImageData.IMAGE_SITE_LOGO_ANT_DESIGN,
+        ImageData.IMAGE_SITE_LOGO_MATTER_JS,
+        ImageData.IMAGE_SITE_LOGO_NODE_JS,
+        ImageData.IMAGE_SITE_LOGO_REACT,
+        ImageData.IMAGE_SITE_LOGO_TYPE_SCRIPT,
+        ImageData.IMAGE_SITE_LOGO_WEBPACK,
+        ImageData.IMAGE_SITE_LOGO_WEBWEEK,
+        ImageData.IMAGE_SITE_OFFICE_WZBG,
+        ImageData.IMAGE_SITE_OFFICE_MUC,
+        ImageData.IMAGE_SITE_OFFICE_BER,
+    ];
+    return ImageData;
+}());
+exports.ImageData = ImageData;
+
+
+/***/ }),
+
+/***/ "./src/typescript/de/mayflower/ninjas/data/SoundData.ts":
+/*!**************************************************************!*\
+  !*** ./src/typescript/de/mayflower/ninjas/data/SoundData.ts ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
+/** ****************************************************************************************************************
+*   Specifies all different soundSystem effects being used in the game.
+*******************************************************************************************************************/
+var SoundData = /** @class */ (function () {
+    function SoundData() {
+    }
+    /** 'chinese' from 'Graeme Norgate' taken from 'Time Splitters' */
+    SoundData.BG_CHINESE = (ninjas.SettingEngine.PATH_SOUND + 'bgChinese.mp3');
+    /** An array holding all filenames of all sounds to load. */
+    SoundData.FILE_NAMES = [
+        SoundData.BG_CHINESE,
+    ];
+    return SoundData;
+}());
+exports.SoundData = SoundData;
+
+
+/***/ }),
+
+/***/ "./src/typescript/de/mayflower/ninjas/data/SpriteTemplate.ts":
+/*!*******************************************************************!*\
+  !*** ./src/typescript/de/mayflower/ninjas/data/SpriteTemplate.ts ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __values = (this && this.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
+/** ****************************************************************************************************************
+*   Possible decisions for mirroring an image.
+*******************************************************************************************************************/
+var MirrorImage;
+(function (MirrorImage) {
+    MirrorImage[MirrorImage["YES"] = 0] = "YES";
+    MirrorImage[MirrorImage["NO"] = 1] = "NO";
+})(MirrorImage = exports.MirrorImage || (exports.MirrorImage = {}));
+/** ****************************************************************************************************************
+*   Possible decisions for looping a sprite.
+*******************************************************************************************************************/
+var LoopSprite;
+(function (LoopSprite) {
+    /* Yes. */
+    LoopSprite[LoopSprite["YES"] = 0] = "YES";
+    /* No. */
+    LoopSprite[LoopSprite["NO"] = 1] = "NO";
+})(LoopSprite = exports.LoopSprite || (exports.LoopSprite = {}));
+/** ****************************************************************************************************************
+*   Specifies if this template should start with a random frame instead of frame 0 or use totally random frames.
+*******************************************************************************************************************/
+var RandomFrames;
+(function (RandomFrames) {
+    /* No. */
+    RandomFrames[RandomFrames["NO"] = 0] = "NO";
+    /* Use random start frame instead of frame 0. */
+    RandomFrames[RandomFrames["ONLY_START_FRAME"] = 1] = "ONLY_START_FRAME";
+    /** Assign random frame on each frame change. */
+    RandomFrames[RandomFrames["ALL_FRAMES"] = 2] = "ALL_FRAMES";
+})(RandomFrames = exports.RandomFrames || (exports.RandomFrames = {}));
+/** ****************************************************************************************************************
+*   The sprite template that specifies images and their meta information.
+*
+*   TODO extract to Data class!
+*******************************************************************************************************************/
+var SpriteTemplate = /** @class */ (function () {
+    /** ************************************************************************************************************
+    *   Creates a new sprite.
+    *
+    *   @param imageIds           All image ids this sprite consists of.
+    *   @param ticksBetweenFrames The number of ticks to delay until the frame is changed.
+    *   @param mirrored           Specifies if all frames in this sprite should be mirrored.
+    *   @param loop               Specifies if the frame animation should be repeated infinitely.
+    *   @param randomFrames       Specifies if this template should use a random frame sheme.
+    *   @param scale              Specifies the scaling factor for drawing this sprite.
+    ***************************************************************************************************************/
+    function SpriteTemplate(imageIds, ticksBetweenFrames, mirrored, loop, randomFrames, scale) {
+        /** All image ids this sprite consists of. */
+        this.imageIds = null;
+        /** The number of ticks between frame changes. */
+        this.ticksBetweenFrames = 0;
+        /** Specifies if all frames in this sprite should be mirrored. */
+        this.mirrored = null;
+        /** Specifies if the frame animation should be repeated infinitely. */
+        this.loop = null;
+        /** Specifies random behaviour in frame assignment. */
+        this.randomFrames = null;
+        /** The scale factor for drawing this sprite. Defaults to 1.0. */
+        this.scale = 0;
+        /** Flags if this sprite has only one frame. */
+        this.singleFramed = false;
+        /** The width of all images in this sprite. */
+        this.width = 0;
+        /** The height of all images in this sprite. */
+        this.height = 0;
+        this.imageIds = imageIds;
+        this.ticksBetweenFrames = ticksBetweenFrames;
+        this.mirrored = mirrored;
+        this.loop = loop;
+        this.randomFrames = randomFrames;
+        this.scale = scale;
+        this.singleFramed = (this.imageIds.length === 1);
+        if (this.imageIds.length === 0) {
+            throw new Error('Fatal! Trying to construct empty sprite!');
+        }
+    }
+    /** ************************************************************************************************************
+    *   Returns the sprite scale factor.
+    *
+    *   @return The sprite scale factor. Default is 1.0, which is 'no scale'.
+    ***************************************************************************************************************/
+    SpriteTemplate.prototype.getScale = function () {
+        return this.scale;
+    };
+    /** ************************************************************************************************************
+    *   Assigns the image dimensions of the first frame for this sprite template.
+    ***************************************************************************************************************/
+    SpriteTemplate.prototype.assignImageSizes = function () {
+        var e_1, _a;
+        this.width = ninjas.Main.game.engine.imageSystem.getImage(this.imageIds[0]).width;
+        this.height = ninjas.Main.game.engine.imageSystem.getImage(this.imageIds[0]).height;
+        try {
+            // browse all frames and alert on differing dimensions
+            for (var _b = __values(this.imageIds), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var imageId = _c.value;
+                if (this.width !== ninjas.Main.game.engine.imageSystem.getImage(imageId).width
+                    || this.height !== ninjas.Main.game.engine.imageSystem.getImage(imageId).height) {
+                    throw new Error('Differing sprite frame size detected in image id [' + imageId + ']');
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+    };
+    /** ************************************************************************************************************
+    *   Determines and returns an array of filenames for all images that needs to be mirrored.
+    *
+    *   @return An array with all filenames of images needing to be mirrored.
+    ***************************************************************************************************************/
+    SpriteTemplate.getAllImagesToMirror = function () {
+        var e_2, _a, e_3, _b;
+        var ret = [];
+        try {
+            for (var _c = __values(SpriteTemplate.ALL_SPRITE_TEMPLATES), _d = _c.next(); !_d.done; _d = _c.next()) {
+                var spriteTemplate = _d.value;
+                if (spriteTemplate.mirrored === MirrorImage.YES) {
+                    try {
+                        for (var _e = (e_3 = void 0, __values(spriteTemplate.imageIds)), _f = _e.next(); !_f.done; _f = _e.next()) {
+                            var image = _f.value;
+                            ret.push(image);
+                        }
+                    }
+                    catch (e_3_1) { e_3 = { error: e_3_1 }; }
+                    finally {
+                        try {
+                            if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
+                        }
+                        finally { if (e_3) throw e_3.error; }
+                    }
+                }
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+            }
+            finally { if (e_2) throw e_2.error; }
+        }
+        return ret;
+    };
+    /** ************************************************************************************************************
+    *   Assigns the image dimensions of the first frame to all sprite templates.
+    ***************************************************************************************************************/
+    SpriteTemplate.assignAllImageSizes = function () {
+        var e_4, _a;
+        try {
+            for (var _b = __values(SpriteTemplate.ALL_SPRITE_TEMPLATES), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var spriteTemplate = _c.value;
+                spriteTemplate.assignImageSizes();
+            }
+        }
+        catch (e_4_1) { e_4 = { error: e_4_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            }
+            finally { if (e_4) throw e_4.error; }
+        }
+    };
+    /** ************************************************************************************************************
+    *   Creates a single framed sprite template of the specified image.
+    *
+    *   @param imageId The id of the image to use for this sprite.
+    *
+    *   @return The SpriteTemplate from the specified image.
+    ***************************************************************************************************************/
+    SpriteTemplate.createFromSingleImage = function (imageId) {
+        var spriteTemplate = new SpriteTemplate([imageId], 0, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+        spriteTemplate.width = ninjas.Main.game.engine.imageSystem.getImage(imageId).width;
+        spriteTemplate.height = ninjas.Main.game.engine.imageSystem.getImage(imageId).height;
+        return spriteTemplate;
+    };
+    /** Sprite 'ninja girl stand left'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10,
+    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl stand right'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_STAND_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10,
+    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl walk left'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_WALK_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10,
+    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl walk right'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_WALK_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10,
+    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl jump left'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3,
+    ], 8, MirrorImage.YES, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl jump right'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3,
+    ], 8, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl fall left'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_FALL_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3,
+    ], 8, MirrorImage.YES, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl fall right'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_FALL_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3,
+    ], 8, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl glide left'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10,
+    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'ninja girl glide right'. */
+    SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10,
+    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'enemy ninja 1 stand left'. */
+    SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
+    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'enemy ninja 1 stand right'. */
+    SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
+    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'enemy ninja 1 walk left'. */
+    SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
+    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'enemy ninja 1 walk right'. */
+    SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
+    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'enemy ninja 1 die left'. */
+    SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_LEFT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
+    ], 16, MirrorImage.YES, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'enemy ninja 1 die right'. */
+    SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_RIGHT = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
+        ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
+    ], 16, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'water top'. */
+    SpriteTemplate.SPRITE_WATER_TOP = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_1,
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_2,
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_3,
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_4,
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_5,
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_6,
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_7,
+        ninjas.ImageData.IMAGE_WATER_TOP_FRAME_8,
+    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'grass 1'. */
+    SpriteTemplate.SPRITE_GRASS_1 = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_1,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_2,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_3,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_4,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_5,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_6,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_7,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_8,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_9,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_10,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_11,
+        ninjas.ImageData.IMAGE_GRASS_1_FRAME_12,
+    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'grass 2'. */
+    SpriteTemplate.SPRITE_GRASS_2 = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_1,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_2,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_3,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_4,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_5,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_6,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_7,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_8,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_9,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_10,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_11,
+        ninjas.ImageData.IMAGE_GRASS_2_FRAME_12,
+    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'grass 3'. */
+    SpriteTemplate.SPRITE_GRASS_3 = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_1,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_2,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_3,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_4,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_5,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_6,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_7,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_8,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_9,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_10,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_11,
+        ninjas.ImageData.IMAGE_GRASS_3_FRAME_12,
+    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'grass 4'. */
+    SpriteTemplate.SPRITE_GRASS_4 = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_1,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_2,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_3,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_4,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_5,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_6,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_7,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_8,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_9,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_10,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_11,
+        ninjas.ImageData.IMAGE_GRASS_4_FRAME_12,
+    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'flame 1 big'. */
+    SpriteTemplate.SPRITE_FLAME_1_BIG = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_1,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_2,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_3,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_4,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_5,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_6,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_7,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_8,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_9,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_10,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_11,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_12,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_13,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_14,
+    ], 16, MirrorImage.NO, LoopSprite.YES, RandomFrames.ALL_FRAMES, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
+    /** Sprite 'flame 1 small'. */
+    SpriteTemplate.SPRITE_FLAME_1_SMALL = new SpriteTemplate([
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_1,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_2,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_3,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_4,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_5,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_6,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_7,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_8,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_9,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_10,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_11,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_12,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_13,
+        ninjas.ImageData.IMAGE_FLAME_1_FRAME_14,
+    ], 16, MirrorImage.NO, LoopSprite.YES, RandomFrames.ALL_FRAMES, 0.7);
+    /** A reference over all sprite templates. */
+    SpriteTemplate.ALL_SPRITE_TEMPLATES = [
+        SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_STAND_RIGHT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_WALK_LEFT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_WALK_RIGHT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_LEFT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_RIGHT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_FALL_LEFT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_FALL_RIGHT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_LEFT,
+        SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_RIGHT,
+        SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
+        SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
+        SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
+        SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
+        SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
+        SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
+        SpriteTemplate.SPRITE_WATER_TOP,
+        SpriteTemplate.SPRITE_GRASS_1,
+        SpriteTemplate.SPRITE_GRASS_2,
+        SpriteTemplate.SPRITE_GRASS_3,
+        SpriteTemplate.SPRITE_GRASS_4,
+        SpriteTemplate.SPRITE_FLAME_1_BIG,
+        SpriteTemplate.SPRITE_FLAME_1_SMALL,
+    ];
+    return SpriteTemplate;
+}());
+exports.SpriteTemplate = SpriteTemplate;
+
+
+/***/ }),
+
 /***/ "./src/typescript/de/mayflower/ninjas/game/Game.ts":
 /*!*********************************************************!*\
   !*** ./src/typescript/de/mayflower/ninjas/game/Game.ts ***!
@@ -1799,7 +3008,7 @@ var Game = /** @class */ (function () {
         // set the number of blend panel ticks
         this.blendPanelTicks = ninjas.SettingGame.BLEND_PANEL_TICKS;
         // play bg sound
-        this.bgMusic = this.engine.soundSystem.playSound(ninjas.Sound.BG_CHINESE, true);
+        this.bgMusic = this.engine.soundSystem.playSound(ninjas.SoundData.BG_CHINESE, true);
         // launch initial level
         this.resetAndLaunchLevel(new ninjas.LevelWebsite());
         // start the renderer
@@ -1984,7 +3193,7 @@ var GameEngine = /** @class */ (function () {
     GameEngine.prototype.initImageSystem = function () {
         var _this = this;
         ninjas.Debug.preloader.log('Initing image system');
-        this.imageSystem = new ninjas.ImageSystem(ninjas.Image.FILE_NAMES, ninjas.SpriteTemplate.getAllImagesToMirror(), function () { _this.onImagesLoaded(); });
+        this.imageSystem = new ninjas.ImageSystem(ninjas.ImageData.FILE_NAMES, ninjas.SpriteTemplate.getAllImagesToMirror(), function () { _this.onImagesLoaded(); });
         this.imageSystem.loadImages();
     };
     /** ************************************************************************************************************
@@ -2010,7 +3219,7 @@ var GameEngine = /** @class */ (function () {
         ninjas.SpriteTemplate.assignAllImageSizes();
         ninjas.Main.game.preloader.setLoadingPercentage(80);
         ninjas.Debug.preloader.log('Initing sound system');
-        this.soundSystem = new ninjas.SoundSystem(ninjas.Sound.FILE_NAMES, function () { _this.onSoundsLoaded(); });
+        this.soundSystem = new ninjas.SoundSystem(ninjas.SoundData.FILE_NAMES, function () { _this.onSoundsLoaded(); });
         this.soundSystem.loadSounds();
     };
     ;
@@ -2760,7 +3969,7 @@ var SitePanel = /** @class */ (function () {
     SitePanel.prototype.createOuterAbsoluteContainer = function () {
         this.outerAbsoluteContainer = document.createElement('div');
         this.outerAbsoluteContainer.style.backgroundImage = ('url( '
-            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_PANEL_BG).src
+            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_PANEL_BG).src
             + ')');
         this.outerAbsoluteContainer.setAttribute('data-wow-duration', String(ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION)
             + 'ms');
@@ -3085,106 +4294,6 @@ var SoundSystem = /** @class */ (function () {
     return SoundSystem;
 }());
 exports.SoundSystem = SoundSystem;
-
-
-/***/ }),
-
-/***/ "./src/typescript/de/mayflower/ninjas/game/engine/Sprite.ts":
-/*!******************************************************************!*\
-  !*** ./src/typescript/de/mayflower/ninjas/game/engine/Sprite.ts ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var ninjas = __webpack_require__(/*! ../../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
-/** ****************************************************************************************************************
-*   Represents one game sprite.
-*******************************************************************************************************************/
-var Sprite = /** @class */ (function () {
-    /** ************************************************************************************************************
-    *   Creates a new sprite.
-    *
-    *   @param template The template for this sprite.
-    ***************************************************************************************************************/
-    function Sprite(template) {
-        /** The sprite template for this sprite. */
-        this.template = null;
-        /** The id of the current frame for this sprite. */
-        this.currentFrame = 0;
-        /** The current tick since last frame change. */
-        this.currentTick = 0;
-        this.template = template;
-        this.currentTick = 0;
-        if (template.randomFrames !== ninjas.RandomFrames.NO) {
-            this.assignRandomFrame();
-        }
-        else {
-            this.currentFrame = 0;
-        }
-    }
-    /** ************************************************************************************************************
-    *   Sets the next frame for this sprite.
-    *
-    *   @return If the frame actually changed.
-    ***************************************************************************************************************/
-    Sprite.prototype.render = function () {
-        // no changes for single framed sprites
-        if (this.template.singleFramed) {
-            return false;
-        }
-        // non-looped sprites end on the last frame
-        if (this.template.loop === ninjas.LoopSprite.NO
-            && this.currentFrame === this.template.imageIds.length - 1) {
-            return false;
-        }
-        // increase tick
-        ++this.currentTick;
-        // check if the delay is reached
-        if (this.currentTick >= this.template.ticksBetweenFrames) {
-            // reset tick count
-            this.currentTick = 0;
-            // check if random frame shall be assigned
-            if (this.template.randomFrames === ninjas.RandomFrames.ALL_FRAMES) {
-                this.assignRandomFrame();
-            }
-            else {
-                // next frame
-                ++this.currentFrame;
-                // reset frame on reaching upper bound
-                if (this.currentFrame >= this.template.imageIds.length) {
-                    this.currentFrame = 0;
-                }
-            }
-            return true;
-        }
-        return false;
-    };
-    /** ************************************************************************************************************
-    *   Returns the image url ( or data url for flipped images ) of the current frame.
-    *
-    *   @return The image url of the currently active frame.
-    ***************************************************************************************************************/
-    Sprite.prototype.getCurrentFrameImageUrl = function () {
-        var imageId = this.template.imageIds[this.currentFrame];
-        if (this.template.mirrored === ninjas.MirrorImage.YES) {
-            return ninjas.Main.game.engine.imageSystem.getMirroredImage(imageId).src;
-        }
-        else {
-            return ninjas.Main.game.engine.imageSystem.getImage(imageId).src;
-        }
-    };
-    /** ************************************************************************************************************
-    *   Assigns a random frame as the current frame.
-    ***************************************************************************************************************/
-    Sprite.prototype.assignRandomFrame = function () {
-        this.currentFrame = ninjas.MathUtil.getRandomInt(0, (this.template.imageIds.length - 1));
-    };
-    return Sprite;
-}());
-exports.Sprite = Sprite;
 
 
 /***/ }),
@@ -3783,7 +4892,7 @@ var LevelWebsite = /** @class */ (function (_super) {
         this.player = ninjas.GameObjectFactory.createPlayer(ninjas.SettingGame.PLAYER_START_POSITION_X, ninjas.SettingGame.PLAYER_START_POSITION_Y, ninjas.CharacterLookingDirection.RIGHT, true);
         this.siteTriggers =
             [
-                ninjas.GameObjectFactory.createSiteTrigger(2000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_SHRINE_BG_4)),
+                ninjas.GameObjectFactory.createSiteTrigger(2000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_SHRINE_BG_4)),
             ];
         this.parallaxFgs =
             [];
@@ -4153,18 +5262,18 @@ var GameObjectBundleFactory = /** @class */ (function () {
         switch (slope) {
             case Slope.ASCENDING:
                 {
-                    leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_ASCENDING_LEFT);
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_ASCENDING_CENTER);
-                    rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_ASCENDING_RIGHT);
+                    leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_LEFT);
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_CENTER);
+                    rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_RIGHT);
                     drawY = yTop - GameObjectBundleFactory.ALTITUDE;
                     alt = -GameObjectBundleFactory.ALTITUDE;
                     break;
                 }
             case Slope.DESCENDING:
                 {
-                    leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_DESCENDING_LEFT);
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_DESCENDING_CENTER);
-                    rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_DESCENDING_RIGHT);
+                    leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_LEFT);
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_CENTER);
+                    rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_RIGHT);
                     drawY = yTop;
                     alt = GameObjectBundleFactory.ALTITUDE;
                     break;
@@ -4172,9 +5281,9 @@ var GameObjectBundleFactory = /** @class */ (function () {
             case Slope.NONE:
             default:
                 {
-                    leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_LEFT);
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_CENTER);
-                    rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_FLYING_RIGHT);
+                    leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_LEFT);
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_CENTER);
+                    rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_FLYING_RIGHT);
                     drawY = yTop;
                     alt = 0;
                     break;
@@ -4223,38 +5332,38 @@ var GameObjectBundleFactory = /** @class */ (function () {
         var leftTopTile = null;
         var topTile = null;
         var rightTopTile = null;
-        var leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_LEFT);
-        var centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_CENTER);
-        var rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_RIGHT);
-        var leftBottomTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_LEFT_BOTTOM);
-        var bottomTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_BOTTOM);
-        var rightBottomTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_RIGHT_BOTTOM);
+        var leftTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT);
+        var centerTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_CENTER);
+        var rightTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT);
+        var leftBottomTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT_BOTTOM);
+        var bottomTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_BOTTOM);
+        var rightBottomTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT_BOTTOM);
         var firstLineDrawY = 0.0;
         var firstLineAlt = 0.0;
         switch (slope) {
             case Slope.NONE:
                 {
-                    leftTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_LEFT_TOP);
-                    topTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_TOP);
-                    rightTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_RIGHT_TOP);
+                    leftTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT_TOP);
+                    topTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_TOP);
+                    rightTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT_TOP);
                     firstLineDrawY = yTop;
                     firstLineAlt = 0.0;
                     break;
                 }
             case Slope.ASCENDING:
                 {
-                    leftTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP);
-                    topTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_ASCENDING_TOP);
-                    rightTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP);
+                    leftTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP);
+                    topTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_TOP);
+                    rightTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP);
                     firstLineDrawY = yTop;
                     firstLineAlt = -GameObjectBundleFactory.ALTITUDE;
                     break;
                 }
             case Slope.DESCENDING:
                 {
-                    leftTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP);
-                    topTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_DESCENDING_TOP);
-                    rightTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP);
+                    leftTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP);
+                    topTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_TOP);
+                    rightTopTile = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP);
                     firstLineDrawY = yTop + GameObjectBundleFactory.ALTITUDE;
                     firstLineAlt = GameObjectBundleFactory.ALTITUDE;
                     break;
@@ -4341,7 +5450,7 @@ var GameObjectBundleFactory = /** @class */ (function () {
     ***************************************************************************************************************/
     GameObjectBundleFactory.createWaterArea = function (level, xLeft, yTop, length, height) {
         var tileTop = ninjas.SpriteTemplate.SPRITE_WATER_TOP;
-        var tileCenter = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_WATER_CENTER);
+        var tileCenter = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_WATER_CENTER);
         // draw area
         for (var tileX = 0; tileX < length; ++tileX) {
             for (var tileY = 0; tileY < height; ++tileY) {
@@ -4389,7 +5498,7 @@ var GameObjectBundleFactory = /** @class */ (function () {
         // level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft, yBottom, WIDTH_SLOPE, 10, -ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
         // level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft + WIDTH_TOTAL - WIDTH_SLOPE, yBottom - ALTITUDE, WIDTH_SLOPE, 10, ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
         // add deco
-        var sprtiteTemplate = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_BRIDGE_1);
+        var sprtiteTemplate = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_BRIDGE_1);
         level.decosFg.push(ninjas.GameObjectFactory.createDecorationRect(xLeft - 115, yBottom + 121, ninjas.StaticShape.YES, sprtiteTemplate));
     };
     /** ************************************************************************************************************
@@ -4479,9 +5588,9 @@ var GameObjectBundleFactory = /** @class */ (function () {
     *   @param content     The level content associated with this shrine.
     ***************************************************************************************************************/
     GameObjectBundleFactory.createShrine = function (level, xLeft, yBottom, candleLeft, candleRight, content) {
-        var sprtiteBookOpen = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_BOOK_OPEN);
-        var sprtiteBookClosed = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_BOOK_CLOSED);
-        var spriteShrine = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_CONSOLE);
+        var sprtiteBookOpen = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_BOOK_OPEN);
+        var sprtiteBookClosed = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_BOOK_CLOSED);
+        var spriteShrine = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_CONSOLE);
         var decoBookOpen = ninjas.GameObjectFactory.createDecorationRect(xLeft - 5, yBottom - 118, ninjas.StaticShape.YES, sprtiteBookOpen, ninjas.DebugColor.COLOR_TRANSPARENT);
         var decoBookClosed = ninjas.GameObjectFactory.createDecorationRect(xLeft + 72, yBottom - 114, ninjas.StaticShape.YES, sprtiteBookClosed, ninjas.DebugColor.COLOR_TRANSPARENT);
         var decoShrine = new ninjas.Shrine(new ninjas.ShapeRectangle(spriteShrine.width, spriteShrine.height, ninjas.DebugColor.COLOR_DEBUG_SHRINE, ninjas.StaticShape.YES, 0.0, ninjas.BodyFriction.DEFAULT, ninjas.BodyDensity.RUBBER, ninjas.BodyRestitution.RUBBER), spriteShrine, xLeft, yBottom - spriteShrine.height, content, decoBookOpen, decoBookClosed);
@@ -4490,13 +5599,13 @@ var GameObjectBundleFactory = /** @class */ (function () {
         level.decosBg.push(decoBookClosed);
         level.shrines.push(decoShrine);
         if (candleLeft) {
-            GameObjectBundleFactory.createDecoImage(level, xLeft - 80, yBottom, ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CANDELABRA);
+            GameObjectBundleFactory.createDecoImage(level, xLeft - 80, yBottom, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDELABRA);
             GameObjectBundleFactory.createDecoSprite(level, xLeft - 88, yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_BIG);
             GameObjectBundleFactory.createDecoSprite(level, xLeft - 68, yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL);
             GameObjectBundleFactory.createDecoSprite(level, xLeft - 106, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL);
         }
         if (candleRight) {
-            GameObjectBundleFactory.createDecoImage(level, xLeft + 164, yBottom, ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CANDELABRA);
+            GameObjectBundleFactory.createDecoImage(level, xLeft + 164, yBottom, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDELABRA);
             GameObjectBundleFactory.createDecoSprite(level, xLeft + 156, yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_BIG);
             GameObjectBundleFactory.createDecoSprite(level, xLeft + 176, yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL);
             GameObjectBundleFactory.createDecoSprite(level, xLeft + 138, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL);
@@ -4515,13 +5624,13 @@ var GameObjectBundleFactory = /** @class */ (function () {
             var imageId = null;
             switch (ninjas.MathUtil.getRandomInt(0, 2)) {
                 case 0:
-                    imageId = ninjas.Image.IMAGE_RUBBLE_1;
+                    imageId = ninjas.ImageData.IMAGE_RUBBLE_1;
                     break;
                 case 1:
-                    imageId = ninjas.Image.IMAGE_RUBBLE_2;
+                    imageId = ninjas.ImageData.IMAGE_RUBBLE_2;
                     break;
                 case 2:
-                    imageId = ninjas.Image.IMAGE_RUBBLE_3;
+                    imageId = ninjas.ImageData.IMAGE_RUBBLE_3;
                     break;
             }
             ninjas.GameObjectBundleFactory.createMovableCircular(level, xLeft + (i * 50), yBottom, imageId, ninjas.MathUtil.getRandomInt(0, 359));
@@ -4535,7 +5644,7 @@ var GameObjectBundleFactory = /** @class */ (function () {
     *   @param yBottom     Anchor for bottom Y.
     ***************************************************************************************************************/
     GameObjectBundleFactory.createCandle = function (level, xLeft, yBottom) {
-        ninjas.GameObjectBundleFactory.createDecoImage(level, xLeft, yBottom, ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CANDLE);
+        ninjas.GameObjectBundleFactory.createDecoImage(level, xLeft, yBottom, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDLE);
         ninjas.GameObjectBundleFactory.createDecoSprite(level, xLeft - 17, yBottom - 153, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_BIG);
     };
     /** The collision height of the flying ground. */
@@ -4580,7 +5689,7 @@ var GameObjectFactory = /** @class */ (function () {
     *   @return The created box.
     ***************************************************************************************************************/
     GameObjectFactory.createWoodenCrate = function (x, yBottom) {
-        var sprtiteTemplate = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_CRATE_WOOD);
+        var sprtiteTemplate = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_CRATE_WOOD);
         return new ninjas.Movable(new ninjas.ShapeRectangle(sprtiteTemplate.width, sprtiteTemplate.height, ninjas.DebugColor.COLOR_DEBUG_MOVABLE, ninjas.StaticShape.NO, 0.0, ninjas.BodyFriction.NONE, ninjas.BodyDensity.WOOD, ninjas.BodyRestitution.WOOD), sprtiteTemplate, x, (yBottom - sprtiteTemplate.height));
     };
     /** ************************************************************************************************************
@@ -4624,7 +5733,7 @@ var GameObjectFactory = /** @class */ (function () {
     *   @throws An error if the dimensions of the assigned sprite are not square.
     ***************************************************************************************************************/
     GameObjectFactory.createSphere = function (x, yBottom, friction, density, restitution) {
-        var spriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_SPHERE);
+        var spriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_SPHERE);
         if (spriteTemplate.width !== spriteTemplate.height) {
             throw new Error('Non-square sprite template dimensions for circular deco - sprite image ['
                 + spriteTemplate.imageIds[0]
@@ -4641,7 +5750,7 @@ var GameObjectFactory = /** @class */ (function () {
     *   @return The created item.
     ***************************************************************************************************************/
     GameObjectFactory.createItem = function (x, y) {
-        return new ninjas.Item(new ninjas.ShapeRectangle(30.0, 52.0, ninjas.DebugColor.COLOR_DEBUG_ITEM, ninjas.StaticShape.YES, 0.0, ninjas.BodyFriction.DEFAULT, ninjas.BodyDensity.INFINITE, ninjas.BodyRestitution.DEFAULT), ninjas.SpriteTemplate.createFromSingleImage(ninjas.Image.IMAGE_ITEM), x, y);
+        return new ninjas.Item(new ninjas.ShapeRectangle(30.0, 52.0, ninjas.DebugColor.COLOR_DEBUG_ITEM, ninjas.StaticShape.YES, 0.0, ninjas.BodyFriction.DEFAULT, ninjas.BodyDensity.INFINITE, ninjas.BodyRestitution.DEFAULT), ninjas.SpriteTemplate.createFromSingleImage(ninjas.ImageData.IMAGE_ITEM), x, y);
     };
     /** ************************************************************************************************************
     *   Creates an rectangular obstacle with a specified sprite.
@@ -6856,1212 +7965,6 @@ exports.Key = Key;
 
 /***/ }),
 
-/***/ "./src/typescript/de/mayflower/ninjas/io/Image.ts":
-/*!********************************************************!*\
-  !*** ./src/typescript/de/mayflower/ninjas/io/Image.ts ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/* eslint-disable max-len */
-Object.defineProperty(exports, "__esModule", { value: true });
-var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
-/** ****************************************************************************************************************
-*   All images the game makes use of.
-*******************************************************************************************************************/
-var Image = /** @class */ (function () {
-    function Image() {
-    }
-    /** Image resource 'ninja girl stand right frame 1'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/01.png';
-    /** Image resource 'ninja girl stand right frame 2'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/02.png';
-    /** Image resource 'ninja girl stand right frame 3'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/03.png';
-    /** Image resource 'ninja girl stand right frame 4'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/04.png';
-    /** Image resource 'ninja girl stand right frame 5'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/05.png';
-    /** Image resource 'ninja girl stand right frame 6'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/06.png';
-    /** Image resource 'ninja girl stand right frame 7'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/07.png';
-    /** Image resource 'ninja girl stand right frame 8'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/08.png';
-    /** Image resource 'ninja girl stand right frame 9'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/09.png';
-    /** Image resource 'ninja girl stand right frame 10'. */
-    Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'standRight/10.png';
-    /** Image resource 'ninja girl walk right frame 1'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/01.png';
-    /** Image resource 'ninja girl walk right frame 2'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/02.png';
-    /** Image resource 'ninja girl walk right frame 3'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/03.png';
-    /** Image resource 'ninja girl walk right frame 4'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/04.png';
-    /** Image resource 'ninja girl walk right frame 5'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/05.png';
-    /** Image resource 'ninja girl walk right frame 6'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/06.png';
-    /** Image resource 'ninja girl walk right frame 7'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/07.png';
-    /** Image resource 'ninja girl walk right frame 8'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/08.png';
-    /** Image resource 'ninja girl walk right frame 9'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/09.png';
-    /** Image resource 'ninja girl walk right frame 10'. */
-    Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'walkRight/10.png';
-    /** Image resource 'ninja girl jump right frame 1'. */
-    Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'jumpRight/01.png';
-    /** Image resource 'ninja girl jump right frame 2'. */
-    Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'jumpRight/02.png';
-    /** Image resource 'ninja girl jump right frame 3'. */
-    Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'jumpRight/03.png';
-    /** Image resource 'ninja girl fall right frame 1'. */
-    Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'fallRight/01.png';
-    /** Image resource 'ninja girl fall right frame 2'. */
-    Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'fallRight/02.png';
-    /** Image resource 'ninja girl fall right frame 3'. */
-    Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'fallRight/03.png';
-    /** Image resource 'ninja girl glid right frame 1'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/01.png';
-    /** Image resource 'ninja girl glid right frame 2'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/02.png';
-    /** Image resource 'ninja girl glid right frame 3'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/03.png';
-    /** Image resource 'ninja girl glid right frame 4'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/04.png';
-    /** Image resource 'ninja girl glid right frame 5'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/05.png';
-    /** Image resource 'ninja girl glid right frame 6'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/06.png';
-    /** Image resource 'ninja girl glid right frame 7'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/07.png';
-    /** Image resource 'ninja girl glid right frame 8'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/08.png';
-    /** Image resource 'ninja girl glid right frame 9'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/09.png';
-    /** Image resource 'ninja girl glid right frame 10'. */
-    Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_PLAYER + 'glideRight/10.png';
-    /** Image resource 'enemy ninja 1 stand right frame 1'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/01.png';
-    /** Image resource 'enemy ninja 1 stand right frame 2'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/02.png';
-    /** Image resource 'enemy ninja 1 stand right frame 3'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/03.png';
-    /** Image resource 'enemy ninja 1 stand right frame 4'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/04.png';
-    /** Image resource 'enemy ninja 1 stand right frame 5'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/05.png';
-    /** Image resource 'enemy ninja 1 stand right frame 6'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/06.png';
-    /** Image resource 'enemy ninja 1 stand right frame 7'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/07.png';
-    /** Image resource 'enemy ninja 1 stand right frame 8'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/08.png';
-    /** Image resource 'enemy ninja 1 stand right frame 9'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/09.png';
-    /** Image resource 'enemy ninja 1 stand right frame 10'. */
-    Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/standRight/10.png';
-    /** Image resource 'enemy ninja 1 walk right frame 1'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/01.png';
-    /** Image resource 'enemy ninja 1 walk right frame 2'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/02.png';
-    /** Image resource 'enemy ninja 1 walk right frame 3'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/03.png';
-    /** Image resource 'enemy ninja 1 walk right frame 4'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/04.png';
-    /** Image resource 'enemy ninja 1 walk right frame 5'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/05.png';
-    /** Image resource 'enemy ninja 1 walk right frame 6'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/06.png';
-    /** Image resource 'enemy ninja 1 walk right frame 7'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/07.png';
-    /** Image resource 'enemy ninja 1 walk right frame 8'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/08.png';
-    /** Image resource 'enemy ninja 1 walk right frame 9'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/09.png';
-    /** Image resource 'enemy ninja 1 walk right frame 10'. */
-    Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/walkRight/10.png';
-    /** Image resource 'enemy ninja 1 die right frame 1'. */
-    Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/01.png';
-    /** Image resource 'enemy ninja 1 die right frame 2'. */
-    Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/02.png';
-    /** Image resource 'enemy ninja 1 die right frame 3'. */
-    Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/03.png';
-    /** Image resource 'enemy ninja 1 die right frame 4'. */
-    Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/04.png';
-    /** Image resource 'enemy ninja 1 die right frame 5'. */
-    Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_ENEMY + 'ninja1/dieRight/05.png';
-    /** Image resource 'wooden crate'. */
-    Image.IMAGE_CRATE_WOOD = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
-    /** Image resource 'metal crate'. */
-    Image.IMAGE_CRATE_METAL = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateMetal.jpg';
-    /** Image resource 'item'. */
-    Image.IMAGE_ITEM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
-    /** Image resource 'sphere'. */
-    Image.IMAGE_SPHERE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'sphere.png';
-    /** Image resource 'boulder 1'. */
-    Image.IMAGE_BOULDER_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
-    /** Image resource 'fence 1'. */
-    Image.IMAGE_FENCE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence1.png';
-    /** Image resource 'fence left'. */
-    Image.IMAGE_FENCE_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
-    /** Image resource 'fence center'. */
-    Image.IMAGE_FENCE_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
-    /** Image resource 'fence right'. */
-    Image.IMAGE_FENCE_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceRight.png';
-    /** Image resource 'bridge 1'. */
-    Image.IMAGE_BRIDGE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge.png';
-    /** Image resource 'tree 1'. */
-    Image.IMAGE_TREE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
-    /** Image resource 'tree 2'. */
-    Image.IMAGE_TREE_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
-    /** Image resource 'console'. */
-    Image.IMAGE_CONSOLE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'console.png';
-    /** Image resource 'statue 1'. */
-    Image.IMAGE_STATUE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
-    /** Image resource 'statue 2'. */
-    Image.IMAGE_STATUE_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
-    /** Image resource 'statue 3'. */
-    Image.IMAGE_STATUE_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue3.png';
-    /** Image resource 'statue 4'. */
-    Image.IMAGE_STATUE_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue4.png';
-    /** Image resource 'statue 5'. */
-    Image.IMAGE_STATUE_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue5.png';
-    /** Image resource 'book closed'. */
-    Image.IMAGE_BOOK_CLOSED = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookClosed.png';
-    /** Image resource 'book open'. */
-    Image.IMAGE_BOOK_OPEN = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookOpen.png';
-    /** Image resource 'candelabra'. */
-    Image.IMAGE_CANDELABRA = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candelabra.png';
-    /** Image resource 'chandelier'. */
-    Image.IMAGE_CHANDELIER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
-    /** Image resource 'candle'. */
-    Image.IMAGE_CANDLE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
-    /** Image resource 'cage'. */
-    Image.IMAGE_CAGE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'cage.png';
-    /** Image resource 'stove'. */
-    Image.IMAGE_STOVE = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'stove.png';
-    /** Image resource 'bush 1'. */
-    Image.IMAGE_BUSH_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
-    /** Image resource 'bush 2'. */
-    Image.IMAGE_BUSH_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush2.png';
-    /** Image resource 'goblet'. */
-    Image.IMAGE_GOBLET = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'goblet.png';
-    /** Image resource 'flask 1'. */
-    Image.IMAGE_FLASK_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask1.png';
-    /** Image resource 'flask 2'. */
-    Image.IMAGE_FLASK_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask2.png';
-    /** Image resource 'pot'. */
-    Image.IMAGE_POT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'pot.png';
-    /** Image resource 'shrine background 1'. */
-    Image.IMAGE_SHRINE_BG_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg1.png';
-    /** Image resource 'shrine background 2'. */
-    Image.IMAGE_SHRINE_BG_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg2.png';
-    /** Image resource 'shrine background 3'. */
-    Image.IMAGE_SHRINE_BG_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg3.png';
-    /** Image resource 'shrine background 4'. */
-    Image.IMAGE_SHRINE_BG_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg4.png';
-    /** Image resource 'shrine background 5'. */
-    Image.IMAGE_SHRINE_BG_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg5.png';
-    /** Image resource 'DoJo'. */
-    Image.IMAGE_DOJO = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'dojo.jpg';
-    /** Image resource 'grass 1 frame 1'. */
-    Image.IMAGE_GRASS_1_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/01.png';
-    /** Image resource 'grass 1 frame 2'. */
-    Image.IMAGE_GRASS_1_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/02.png';
-    /** Image resource 'grass 1 frame 3'. */
-    Image.IMAGE_GRASS_1_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/03.png';
-    /** Image resource 'grass 1 frame 4'. */
-    Image.IMAGE_GRASS_1_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/04.png';
-    /** Image resource 'grass 1 frame 5'. */
-    Image.IMAGE_GRASS_1_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/05.png';
-    /** Image resource 'grass 1 frame 6'. */
-    Image.IMAGE_GRASS_1_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/06.png';
-    /** Image resource 'grass 1 frame 7'. */
-    Image.IMAGE_GRASS_1_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/07.png';
-    /** Image resource 'grass 1 frame 8'. */
-    Image.IMAGE_GRASS_1_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/08.png';
-    /** Image resource 'grass 1 frame 9'. */
-    Image.IMAGE_GRASS_1_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/09.png';
-    /** Image resource 'grass 1 frame 10'. */
-    Image.IMAGE_GRASS_1_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/10.png';
-    /** Image resource 'grass 1 frame 11'. */
-    Image.IMAGE_GRASS_1_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/11.png';
-    /** Image resource 'grass 1 frame 12'. */
-    Image.IMAGE_GRASS_1_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/12.png';
-    /** Image resource 'grass 2 frame 1'. */
-    Image.IMAGE_GRASS_2_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/01.png';
-    /** Image resource 'grass 2 frame 2'. */
-    Image.IMAGE_GRASS_2_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/02.png';
-    /** Image resource 'grass 2 frame 3'. */
-    Image.IMAGE_GRASS_2_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/03.png';
-    /** Image resource 'grass 2 frame 4'. */
-    Image.IMAGE_GRASS_2_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/04.png';
-    /** Image resource 'grass 2 frame 5'. */
-    Image.IMAGE_GRASS_2_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/05.png';
-    /** Image resource 'grass 2 frame 6'. */
-    Image.IMAGE_GRASS_2_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/06.png';
-    /** Image resource 'grass 2 frame 7'. */
-    Image.IMAGE_GRASS_2_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/07.png';
-    /** Image resource 'grass 2 frame 8'. */
-    Image.IMAGE_GRASS_2_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/08.png';
-    /** Image resource 'grass 2 frame 9'. */
-    Image.IMAGE_GRASS_2_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/09.png';
-    /** Image resource 'grass 2 frame 10'. */
-    Image.IMAGE_GRASS_2_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/10.png';
-    /** Image resource 'grass 2 frame 12'. */
-    Image.IMAGE_GRASS_2_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/11.png';
-    /** Image resource 'grass 2 frame 12'. */
-    Image.IMAGE_GRASS_2_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/12.png';
-    /** Image resource 'grass 3 frame 1'. */
-    Image.IMAGE_GRASS_3_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/01.png';
-    /** Image resource 'grass 3 frame 2'. */
-    Image.IMAGE_GRASS_3_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/02.png';
-    /** Image resource 'grass 3 frame 3'. */
-    Image.IMAGE_GRASS_3_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/03.png';
-    /** Image resource 'grass 3 frame 4'. */
-    Image.IMAGE_GRASS_3_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/04.png';
-    /** Image resource 'grass 3 frame 5'. */
-    Image.IMAGE_GRASS_3_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/05.png';
-    /** Image resource 'grass 3 frame 6'. */
-    Image.IMAGE_GRASS_3_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/06.png';
-    /** Image resource 'grass 3 frame 7'. */
-    Image.IMAGE_GRASS_3_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/07.png';
-    /** Image resource 'grass 3 frame 8'. */
-    Image.IMAGE_GRASS_3_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/08.png';
-    /** Image resource 'grass 3 frame 9'. */
-    Image.IMAGE_GRASS_3_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/09.png';
-    /** Image resource 'grass 3 frame 10'. */
-    Image.IMAGE_GRASS_3_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/10.png';
-    /** Image resource 'grass 3 frame 11'. */
-    Image.IMAGE_GRASS_3_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/11.png';
-    /** Image resource 'grass 3 frame 12'. */
-    Image.IMAGE_GRASS_3_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/12.png';
-    /** Image resource 'grass 4 frame 1'. */
-    Image.IMAGE_GRASS_4_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/01.png';
-    /** Image resource 'grass 4 frame 2'. */
-    Image.IMAGE_GRASS_4_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/02.png';
-    /** Image resource 'grass 4 frame 3'. */
-    Image.IMAGE_GRASS_4_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/03.png';
-    /** Image resource 'grass 4 frame 4'. */
-    Image.IMAGE_GRASS_4_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/04.png';
-    /** Image resource 'grass 4 frame 5'. */
-    Image.IMAGE_GRASS_4_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/05.png';
-    /** Image resource 'grass 4 frame 6'. */
-    Image.IMAGE_GRASS_4_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/06.png';
-    /** Image resource 'grass 4 frame 7'. */
-    Image.IMAGE_GRASS_4_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/07.png';
-    /** Image resource 'grass 4 frame 8'. */
-    Image.IMAGE_GRASS_4_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/08.png';
-    /** Image resource 'grass 4 frame 9'. */
-    Image.IMAGE_GRASS_4_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/09.png';
-    /** Image resource 'grass 4 frame 10'. */
-    Image.IMAGE_GRASS_4_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/10.png';
-    /** Image resource 'grass 4 frame 12'. */
-    Image.IMAGE_GRASS_4_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/11.png';
-    /** Image resource 'grass 4 frame 12'. */
-    Image.IMAGE_GRASS_4_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/12.png';
-    /** Image resource 'flame 1 frame 1'. */
-    Image.IMAGE_FLAME_1_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/01.png';
-    /** Image resource 'flame 1 frame 2'. */
-    Image.IMAGE_FLAME_1_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/02.png';
-    /** Image resource 'flame 1 frame 3'. */
-    Image.IMAGE_FLAME_1_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/03.png';
-    /** Image resource 'flame 1 frame 4'. */
-    Image.IMAGE_FLAME_1_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/04.png';
-    /** Image resource 'flame 1 frame 5'. */
-    Image.IMAGE_FLAME_1_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/05.png';
-    /** Image resource 'flame 1 frame 6'. */
-    Image.IMAGE_FLAME_1_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/06.png';
-    /** Image resource 'flame 1 frame 7'. */
-    Image.IMAGE_FLAME_1_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/07.png';
-    /** Image resource 'flame 1 frame 8'. */
-    Image.IMAGE_FLAME_1_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/08.png';
-    /** Image resource 'flame 1 frame 9'. */
-    Image.IMAGE_FLAME_1_FRAME_9 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/09.png';
-    /** Image resource 'flame 1 frame 10'. */
-    Image.IMAGE_FLAME_1_FRAME_10 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/10.png';
-    /** Image resource 'flame 1 frame 11'. */
-    Image.IMAGE_FLAME_1_FRAME_11 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/11.png';
-    /** Image resource 'flame 1 frame 12'. */
-    Image.IMAGE_FLAME_1_FRAME_12 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/12.png';
-    /** Image resource 'flame 1 frame 13'. */
-    Image.IMAGE_FLAME_1_FRAME_13 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/13.png';
-    /** Image resource 'flame 1 frame 14'. */
-    Image.IMAGE_FLAME_1_FRAME_14 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/14.png';
-    /** Image resource 'tree stub'. */
-    Image.IMAGE_TREE_STUB = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'treeStub.png';
-    /** Image resource 'rubble 1'. */
-    Image.IMAGE_RUBBLE_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble1.png';
-    /** Image resource 'rubble 2'. */
-    Image.IMAGE_RUBBLE_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble2.png';
-    /** Image resource 'rubble 3'. */
-    Image.IMAGE_RUBBLE_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble3.png';
-    /** Image tile 'water top frame 1'. */
-    Image.IMAGE_WATER_TOP_FRAME_1 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/01.png';
-    /** Image tile 'water top frame 2'. */
-    Image.IMAGE_WATER_TOP_FRAME_2 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/02.png';
-    /** Image tile 'water top frame 3'. */
-    Image.IMAGE_WATER_TOP_FRAME_3 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/03.png';
-    /** Image tile 'water top frame 4'. */
-    Image.IMAGE_WATER_TOP_FRAME_4 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/04.png';
-    /** Image tile 'water top frame 5'. */
-    Image.IMAGE_WATER_TOP_FRAME_5 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/05.png';
-    /** Image tile 'water top frame 6'. */
-    Image.IMAGE_WATER_TOP_FRAME_6 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/06.png';
-    /** Image tile 'water top frame 7'. */
-    Image.IMAGE_WATER_TOP_FRAME_7 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/07.png';
-    /** Image tile 'water top frame 8'. */
-    Image.IMAGE_WATER_TOP_FRAME_8 = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterTop/08.png';
-    /** Image tile 'water center'. */
-    Image.IMAGE_WATER_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'waterCenter.png';
-    /** Image tile 'flying left'. */
-    Image.IMAGE_GROUND_FLYING_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingLeft.png';
-    /** Image tile 'flying center'. */
-    Image.IMAGE_GROUND_FLYING_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingCenter.png';
-    /** Image tile 'flying right'. */
-    Image.IMAGE_GROUND_FLYING_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingRight.png';
-    /** Image tile 'flying ascending left'. */
-    Image.IMAGE_GROUND_FLYING_ASCENDING_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingLeft.png';
-    /** Image tile 'flying ascending center'. */
-    Image.IMAGE_GROUND_FLYING_ASCENDING_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingCenter.png';
-    /** Image tile 'flying ascending right'. */
-    Image.IMAGE_GROUND_FLYING_ASCENDING_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingRight.png';
-    /** Image tile 'flying descending left'. */
-    Image.IMAGE_GROUND_FLYING_DESCENDING_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingLeft.png';
-    /** Image tile 'flying descending center'. */
-    Image.IMAGE_GROUND_FLYING_DESCENDING_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingCenter.png';
-    /** Image tile 'flying descending right'. */
-    Image.IMAGE_GROUND_FLYING_DESCENDING_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingRight.png';
-    /** Image tile 'solid left'. */
-    Image.IMAGE_GROUND_SOLID_LEFT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeft.png';
-    /** Image tile 'solid right'. */
-    Image.IMAGE_GROUND_SOLID_RIGHT = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRight.png';
-    /** Image tile 'solid top'. */
-    Image.IMAGE_GROUND_SOLID_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidTop.png';
-    /** Image tile 'solid bottom'. */
-    Image.IMAGE_GROUND_SOLID_BOTTOM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidBottom.png';
-    /** Image tile 'solid left top'. */
-    Image.IMAGE_GROUND_SOLID_LEFT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeftTop.png';
-    /** Image tile 'solid right top'. */
-    Image.IMAGE_GROUND_SOLID_RIGHT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRightTop.png';
-    /** Image tile 'solid left bottom'. */
-    Image.IMAGE_GROUND_SOLID_LEFT_BOTTOM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeftBottom.png';
-    /** Image tile 'solid right bottom'. */
-    Image.IMAGE_GROUND_SOLID_RIGHT_BOTTOM = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRightBottom.png';
-    /** Image tile 'solid center'. */
-    Image.IMAGE_GROUND_SOLID_CENTER = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidCenter.png';
-    /** Image tile 'solid ascending top'. */
-    Image.IMAGE_GROUND_SOLID_ASCENDING_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingTop.png';
-    /** Image tile 'solid descending top'. */
-    Image.IMAGE_GROUND_SOLID_DESCENDING_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingTop.png';
-    /** Image tile 'solid ascending left top'. */
-    Image.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingLeftTop.png';
-    /** Image tile 'solid descending left top'. */
-    Image.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingLeftTop.png';
-    /** Image tile 'solid ascending right top'. */
-    Image.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingRightTop.png';
-    /** Image tile 'solid descending right top'. */
-    Image.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingRightTop.png';
-    /** A bg image. */
-    Image.IMAGE_BG = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
-    /** Site image 'logo'. */
-    Image.IMAGE_SITE_LOGO = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logo.png';
-    /** Site image 'site panel bg'. */
-    Image.IMAGE_SITE_PANEL_BG = ninjas.SettingEngine.PATH_IMAGE_SITE + 'sitePanelBg.png';
-    /** Site image 'carousel desktop'. */
-    Image.IMAGE_SITE_CAROUSEL_DESKTOP = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselDesktop.jpg';
-    /** Site image 'carousel mobile'. */
-    Image.IMAGE_SITE_CAROUSEL_MOBILE = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselMobile.jpg';
-    /** Site image 'carousel web apps'. */
-    Image.IMAGE_SITE_CAROUSEL_WEB_APPS = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselWebApps.jpg';
-    /** Site image 'carousel websites'. */
-    Image.IMAGE_SITE_CAROUSEL_WEBSITES = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselWebsites.jpg';
-    /** Site image 'logo Ant Design'. */
-    Image.IMAGE_SITE_LOGO_ANT_DESIGN = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoAntDesign.png';
-    /** Site image 'logo Matter.js'. */
-    Image.IMAGE_SITE_LOGO_MATTER_JS = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoMatterJs.png';
-    /** Site image 'logo Node.js'. */
-    Image.IMAGE_SITE_LOGO_NODE_JS = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoNodeJs.png';
-    /** Site image 'logo React'. */
-    Image.IMAGE_SITE_LOGO_REACT = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoReact.png';
-    /** Site image 'logo TypeScript'. */
-    Image.IMAGE_SITE_LOGO_TYPE_SCRIPT = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoTypeScript.png';
-    /** Site image 'logo Webpack'. */
-    Image.IMAGE_SITE_LOGO_WEBPACK = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoWebpack.png';
-    /** Site image 'logo WebWeek'. */
-    Image.IMAGE_SITE_LOGO_WEBWEEK = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoWebWeek.png';
-    /** Site image 'office wzbg'. */
-    Image.IMAGE_SITE_OFFICE_WZBG = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeWzbg.jpg';
-    /** Site image 'office muc'. */
-    Image.IMAGE_SITE_OFFICE_MUC = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeMuc.jpg';
-    /** Site image 'office ber'. */
-    Image.IMAGE_SITE_OFFICE_BER = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeBer.jpg';
-    /** An array holding all filenames of all images to load. */
-    Image.FILE_NAMES = [
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9,
-        Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9,
-        Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10,
-        Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
-        Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2,
-        Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3,
-        Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
-        Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2,
-        Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9,
-        Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
-        Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
-        Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
-        Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
-        Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
-        Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
-        Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
-        Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
-        Image.IMAGE_ITEM,
-        Image.IMAGE_CRATE_WOOD,
-        Image.IMAGE_CRATE_METAL,
-        Image.IMAGE_SPHERE,
-        Image.IMAGE_BOULDER_1,
-        Image.IMAGE_FENCE_1,
-        Image.IMAGE_FENCE_LEFT,
-        Image.IMAGE_FENCE_CENTER,
-        Image.IMAGE_FENCE_RIGHT,
-        Image.IMAGE_BRIDGE_1,
-        Image.IMAGE_TREE_1,
-        Image.IMAGE_TREE_2,
-        Image.IMAGE_CONSOLE,
-        Image.IMAGE_STATUE_1,
-        Image.IMAGE_STATUE_2,
-        Image.IMAGE_STATUE_3,
-        Image.IMAGE_STATUE_4,
-        Image.IMAGE_STATUE_5,
-        Image.IMAGE_BOOK_CLOSED,
-        Image.IMAGE_BOOK_OPEN,
-        Image.IMAGE_CANDELABRA,
-        Image.IMAGE_CHANDELIER,
-        Image.IMAGE_CANDLE,
-        Image.IMAGE_CAGE,
-        Image.IMAGE_STOVE,
-        Image.IMAGE_BUSH_1,
-        Image.IMAGE_BUSH_2,
-        Image.IMAGE_GOBLET,
-        Image.IMAGE_FLASK_1,
-        Image.IMAGE_FLASK_2,
-        Image.IMAGE_POT,
-        Image.IMAGE_SHRINE_BG_1,
-        Image.IMAGE_SHRINE_BG_2,
-        Image.IMAGE_SHRINE_BG_3,
-        Image.IMAGE_SHRINE_BG_4,
-        Image.IMAGE_SHRINE_BG_5,
-        Image.IMAGE_DOJO,
-        Image.IMAGE_GRASS_1_FRAME_1,
-        Image.IMAGE_GRASS_1_FRAME_2,
-        Image.IMAGE_GRASS_1_FRAME_3,
-        Image.IMAGE_GRASS_1_FRAME_4,
-        Image.IMAGE_GRASS_1_FRAME_5,
-        Image.IMAGE_GRASS_1_FRAME_6,
-        Image.IMAGE_GRASS_1_FRAME_7,
-        Image.IMAGE_GRASS_1_FRAME_8,
-        Image.IMAGE_GRASS_1_FRAME_9,
-        Image.IMAGE_GRASS_1_FRAME_10,
-        Image.IMAGE_GRASS_1_FRAME_11,
-        Image.IMAGE_GRASS_1_FRAME_12,
-        Image.IMAGE_GRASS_2_FRAME_1,
-        Image.IMAGE_GRASS_2_FRAME_2,
-        Image.IMAGE_GRASS_2_FRAME_3,
-        Image.IMAGE_GRASS_2_FRAME_4,
-        Image.IMAGE_GRASS_2_FRAME_5,
-        Image.IMAGE_GRASS_2_FRAME_6,
-        Image.IMAGE_GRASS_2_FRAME_7,
-        Image.IMAGE_GRASS_2_FRAME_8,
-        Image.IMAGE_GRASS_2_FRAME_9,
-        Image.IMAGE_GRASS_2_FRAME_10,
-        Image.IMAGE_GRASS_2_FRAME_11,
-        Image.IMAGE_GRASS_2_FRAME_12,
-        Image.IMAGE_GRASS_3_FRAME_1,
-        Image.IMAGE_GRASS_3_FRAME_2,
-        Image.IMAGE_GRASS_3_FRAME_3,
-        Image.IMAGE_GRASS_3_FRAME_4,
-        Image.IMAGE_GRASS_3_FRAME_5,
-        Image.IMAGE_GRASS_3_FRAME_6,
-        Image.IMAGE_GRASS_3_FRAME_7,
-        Image.IMAGE_GRASS_3_FRAME_8,
-        Image.IMAGE_GRASS_3_FRAME_9,
-        Image.IMAGE_GRASS_3_FRAME_10,
-        Image.IMAGE_GRASS_3_FRAME_11,
-        Image.IMAGE_GRASS_3_FRAME_12,
-        Image.IMAGE_GRASS_4_FRAME_1,
-        Image.IMAGE_GRASS_4_FRAME_2,
-        Image.IMAGE_GRASS_4_FRAME_3,
-        Image.IMAGE_GRASS_4_FRAME_4,
-        Image.IMAGE_GRASS_4_FRAME_5,
-        Image.IMAGE_GRASS_4_FRAME_6,
-        Image.IMAGE_GRASS_4_FRAME_7,
-        Image.IMAGE_GRASS_4_FRAME_8,
-        Image.IMAGE_GRASS_4_FRAME_9,
-        Image.IMAGE_GRASS_4_FRAME_10,
-        Image.IMAGE_GRASS_4_FRAME_11,
-        Image.IMAGE_GRASS_4_FRAME_12,
-        Image.IMAGE_FLAME_1_FRAME_1,
-        Image.IMAGE_FLAME_1_FRAME_2,
-        Image.IMAGE_FLAME_1_FRAME_3,
-        Image.IMAGE_FLAME_1_FRAME_4,
-        Image.IMAGE_FLAME_1_FRAME_5,
-        Image.IMAGE_FLAME_1_FRAME_6,
-        Image.IMAGE_FLAME_1_FRAME_7,
-        Image.IMAGE_FLAME_1_FRAME_8,
-        Image.IMAGE_FLAME_1_FRAME_9,
-        Image.IMAGE_FLAME_1_FRAME_10,
-        Image.IMAGE_FLAME_1_FRAME_11,
-        Image.IMAGE_FLAME_1_FRAME_12,
-        Image.IMAGE_FLAME_1_FRAME_13,
-        Image.IMAGE_FLAME_1_FRAME_14,
-        Image.IMAGE_TREE_STUB,
-        Image.IMAGE_RUBBLE_1,
-        Image.IMAGE_RUBBLE_2,
-        Image.IMAGE_RUBBLE_3,
-        Image.IMAGE_WATER_TOP_FRAME_1,
-        Image.IMAGE_WATER_TOP_FRAME_2,
-        Image.IMAGE_WATER_TOP_FRAME_3,
-        Image.IMAGE_WATER_TOP_FRAME_4,
-        Image.IMAGE_WATER_TOP_FRAME_5,
-        Image.IMAGE_WATER_TOP_FRAME_6,
-        Image.IMAGE_WATER_TOP_FRAME_7,
-        Image.IMAGE_WATER_TOP_FRAME_8,
-        Image.IMAGE_WATER_CENTER,
-        Image.IMAGE_GROUND_FLYING_LEFT,
-        Image.IMAGE_GROUND_FLYING_CENTER,
-        Image.IMAGE_GROUND_FLYING_RIGHT,
-        Image.IMAGE_GROUND_FLYING_ASCENDING_LEFT,
-        Image.IMAGE_GROUND_FLYING_ASCENDING_CENTER,
-        Image.IMAGE_GROUND_FLYING_ASCENDING_RIGHT,
-        Image.IMAGE_GROUND_FLYING_DESCENDING_LEFT,
-        Image.IMAGE_GROUND_FLYING_DESCENDING_CENTER,
-        Image.IMAGE_GROUND_FLYING_DESCENDING_RIGHT,
-        Image.IMAGE_GROUND_SOLID_LEFT,
-        Image.IMAGE_GROUND_SOLID_RIGHT,
-        Image.IMAGE_GROUND_SOLID_TOP,
-        Image.IMAGE_GROUND_SOLID_BOTTOM,
-        Image.IMAGE_GROUND_SOLID_LEFT_TOP,
-        Image.IMAGE_GROUND_SOLID_RIGHT_TOP,
-        Image.IMAGE_GROUND_SOLID_LEFT_BOTTOM,
-        Image.IMAGE_GROUND_SOLID_RIGHT_BOTTOM,
-        Image.IMAGE_GROUND_SOLID_CENTER,
-        Image.IMAGE_GROUND_SOLID_ASCENDING_TOP,
-        Image.IMAGE_GROUND_SOLID_DESCENDING_TOP,
-        Image.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP,
-        Image.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP,
-        Image.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP,
-        Image.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP,
-        Image.IMAGE_BG,
-        Image.IMAGE_SITE_LOGO,
-        Image.IMAGE_SITE_PANEL_BG,
-        Image.IMAGE_SITE_CAROUSEL_DESKTOP,
-        Image.IMAGE_SITE_CAROUSEL_MOBILE,
-        Image.IMAGE_SITE_CAROUSEL_WEB_APPS,
-        Image.IMAGE_SITE_CAROUSEL_WEBSITES,
-        Image.IMAGE_SITE_LOGO_ANT_DESIGN,
-        Image.IMAGE_SITE_LOGO_MATTER_JS,
-        Image.IMAGE_SITE_LOGO_NODE_JS,
-        Image.IMAGE_SITE_LOGO_REACT,
-        Image.IMAGE_SITE_LOGO_TYPE_SCRIPT,
-        Image.IMAGE_SITE_LOGO_WEBPACK,
-        Image.IMAGE_SITE_LOGO_WEBWEEK,
-        Image.IMAGE_SITE_OFFICE_WZBG,
-        Image.IMAGE_SITE_OFFICE_MUC,
-        Image.IMAGE_SITE_OFFICE_BER,
-    ];
-    return Image;
-}());
-exports.Image = Image;
-
-
-/***/ }),
-
-/***/ "./src/typescript/de/mayflower/ninjas/io/Sound.ts":
-/*!********************************************************!*\
-  !*** ./src/typescript/de/mayflower/ninjas/io/Sound.ts ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
-/** ****************************************************************************************************************
-*   Specifies all different soundSystem effects being used in the game.
-*******************************************************************************************************************/
-var Sound = /** @class */ (function () {
-    function Sound() {
-    }
-    /** 'chinese' from 'Graeme Norgate' taken from 'Time Splitters' */
-    Sound.BG_CHINESE = ninjas.SettingEngine.PATH_SOUND + 'bgChinese.mp3';
-    /** An array holding all filenames of all sounds to load. */
-    Sound.FILE_NAMES = [
-        Sound.BG_CHINESE,
-    ];
-    return Sound;
-}());
-exports.Sound = Sound;
-
-
-/***/ }),
-
-/***/ "./src/typescript/de/mayflower/ninjas/io/SpriteTemplate.ts":
-/*!*****************************************************************!*\
-  !*** ./src/typescript/de/mayflower/ninjas/io/SpriteTemplate.ts ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __values = (this && this.__values) || function(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
-/** ****************************************************************************************************************
-*   Possible decisions for mirroring an image.
-*******************************************************************************************************************/
-var MirrorImage;
-(function (MirrorImage) {
-    MirrorImage[MirrorImage["YES"] = 0] = "YES";
-    MirrorImage[MirrorImage["NO"] = 1] = "NO";
-})(MirrorImage = exports.MirrorImage || (exports.MirrorImage = {}));
-/** ****************************************************************************************************************
-*   Possible decisions for looping a sprite.
-*******************************************************************************************************************/
-var LoopSprite;
-(function (LoopSprite) {
-    /* Yes. */
-    LoopSprite[LoopSprite["YES"] = 0] = "YES";
-    /* No. */
-    LoopSprite[LoopSprite["NO"] = 1] = "NO";
-})(LoopSprite = exports.LoopSprite || (exports.LoopSprite = {}));
-/** ****************************************************************************************************************
-*   Specifies if this template should start with a random frame instead of frame 0 or use totally random frames.
-*******************************************************************************************************************/
-var RandomFrames;
-(function (RandomFrames) {
-    /* No. */
-    RandomFrames[RandomFrames["NO"] = 0] = "NO";
-    /* Use random start frame instead of frame 0. */
-    RandomFrames[RandomFrames["ONLY_START_FRAME"] = 1] = "ONLY_START_FRAME";
-    /** Assign random frame on each frame change. */
-    RandomFrames[RandomFrames["ALL_FRAMES"] = 2] = "ALL_FRAMES";
-})(RandomFrames = exports.RandomFrames || (exports.RandomFrames = {}));
-/** ****************************************************************************************************************
-*   The sprite template that specifies images and their meta information.
-*******************************************************************************************************************/
-var SpriteTemplate = /** @class */ (function () {
-    /** ************************************************************************************************************
-    *   Creates a new sprite.
-    *
-    *   @param imageIds           All image ids this sprite consists of.
-    *   @param ticksBetweenFrames The number of ticks to delay until the frame is changed.
-    *   @param mirrored           Specifies if all frames in this sprite should be mirrored.
-    *   @param loop               Specifies if the frame animation should be repeated infinitely.
-    *   @param randomFrames       Specifies if this template should use a random frame sheme.
-    *   @param scale              Specifies the scaling factor for drawing this sprite.
-    ***************************************************************************************************************/
-    function SpriteTemplate(imageIds, ticksBetweenFrames, mirrored, loop, randomFrames, scale) {
-        /** All image ids this sprite consists of. */
-        this.imageIds = null;
-        /** The number of ticks between frame changes. */
-        this.ticksBetweenFrames = 0;
-        /** Specifies if all frames in this sprite should be mirrored. */
-        this.mirrored = null;
-        /** Specifies if the frame animation should be repeated infinitely. */
-        this.loop = null;
-        /** Specifies random behaviour in frame assignment. */
-        this.randomFrames = null;
-        /** The scale factor for drawing this sprite. Defaults to 1.0. */
-        this.scale = 0;
-        /** Flags if this sprite has only one frame. */
-        this.singleFramed = false;
-        /** The width of all images in this sprite. */
-        this.width = 0;
-        /** The height of all images in this sprite. */
-        this.height = 0;
-        this.imageIds = imageIds;
-        this.ticksBetweenFrames = ticksBetweenFrames;
-        this.mirrored = mirrored;
-        this.loop = loop;
-        this.randomFrames = randomFrames;
-        this.scale = scale;
-        this.singleFramed = (this.imageIds.length === 1);
-        if (this.imageIds.length === 0) {
-            throw new Error('Fatal! Trying to construct empty sprite!');
-        }
-    }
-    /** ************************************************************************************************************
-    *   Returns the sprite scale factor.
-    *
-    *   @return The sprite scale factor. Default is 1.0, which is 'no scale'.
-    ***************************************************************************************************************/
-    SpriteTemplate.prototype.getScale = function () {
-        return this.scale;
-    };
-    /** ************************************************************************************************************
-    *   Assigns the image dimensions of the first frame for this sprite template.
-    ***************************************************************************************************************/
-    SpriteTemplate.prototype.assignImageSizes = function () {
-        var e_1, _a;
-        this.width = ninjas.Main.game.engine.imageSystem.getImage(this.imageIds[0]).width;
-        this.height = ninjas.Main.game.engine.imageSystem.getImage(this.imageIds[0]).height;
-        try {
-            // browse all frames and alert on differing dimensions
-            for (var _b = __values(this.imageIds), _c = _b.next(); !_c.done; _c = _b.next()) {
-                var imageId = _c.value;
-                if (this.width !== ninjas.Main.game.engine.imageSystem.getImage(imageId).width
-                    || this.height !== ninjas.Main.game.engine.imageSystem.getImage(imageId).height) {
-                    throw new Error('Differing sprite frame size detected in image id [' + imageId + ']');
-                }
-            }
-        }
-        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-        finally {
-            try {
-                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-            }
-            finally { if (e_1) throw e_1.error; }
-        }
-    };
-    /** ************************************************************************************************************
-    *   Determines and returns an array of filenames for all images that needs to be mirrored.
-    *
-    *   @return An array with all filenames of images needing to be mirrored.
-    ***************************************************************************************************************/
-    SpriteTemplate.getAllImagesToMirror = function () {
-        var e_2, _a, e_3, _b;
-        var ret = [];
-        try {
-            for (var _c = __values(SpriteTemplate.ALL_SPRITE_TEMPLATES), _d = _c.next(); !_d.done; _d = _c.next()) {
-                var spriteTemplate = _d.value;
-                if (spriteTemplate.mirrored === MirrorImage.YES) {
-                    try {
-                        for (var _e = (e_3 = void 0, __values(spriteTemplate.imageIds)), _f = _e.next(); !_f.done; _f = _e.next()) {
-                            var image = _f.value;
-                            ret.push(image);
-                        }
-                    }
-                    catch (e_3_1) { e_3 = { error: e_3_1 }; }
-                    finally {
-                        try {
-                            if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
-                        }
-                        finally { if (e_3) throw e_3.error; }
-                    }
-                }
-            }
-        }
-        catch (e_2_1) { e_2 = { error: e_2_1 }; }
-        finally {
-            try {
-                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
-            }
-            finally { if (e_2) throw e_2.error; }
-        }
-        return ret;
-    };
-    /** ************************************************************************************************************
-    *   Assigns the image dimensions of the first frame to all sprite templates.
-    ***************************************************************************************************************/
-    SpriteTemplate.assignAllImageSizes = function () {
-        var e_4, _a;
-        try {
-            for (var _b = __values(SpriteTemplate.ALL_SPRITE_TEMPLATES), _c = _b.next(); !_c.done; _c = _b.next()) {
-                var spriteTemplate = _c.value;
-                spriteTemplate.assignImageSizes();
-            }
-        }
-        catch (e_4_1) { e_4 = { error: e_4_1 }; }
-        finally {
-            try {
-                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-            }
-            finally { if (e_4) throw e_4.error; }
-        }
-    };
-    /** ************************************************************************************************************
-    *   Creates a single framed sprite template of the specified image.
-    *
-    *   @param imageId The id of the image to use for this sprite.
-    *
-    *   @return The SpriteTemplate from the specified image.
-    ***************************************************************************************************************/
-    SpriteTemplate.createFromSingleImage = function (imageId) {
-        var spriteTemplate = new SpriteTemplate([imageId], 0, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-        spriteTemplate.width = ninjas.Main.game.engine.imageSystem.getImage(imageId).width;
-        spriteTemplate.height = ninjas.Main.game.engine.imageSystem.getImage(imageId).height;
-        return spriteTemplate;
-    };
-    /** Sprite 'ninja girl stand left'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10,
-    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl stand right'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_STAND_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_10,
-    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl walk left'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_WALK_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10,
-    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl walk right'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_WALK_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_10,
-    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl jump left'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3,
-    ], 8, MirrorImage.YES, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl jump right'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_3,
-    ], 8, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl fall left'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_FALL_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3,
-    ], 8, MirrorImage.YES, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl fall right'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_FALL_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3,
-    ], 8, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl glide left'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10,
-    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'ninja girl glide right'. */
-    SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10,
-    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'enemy ninja 1 stand left'. */
-    SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
-    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'enemy ninja 1 stand right'. */
-    SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
-    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'enemy ninja 1 walk left'. */
-    SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
-    ], 8, MirrorImage.YES, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'enemy ninja 1 walk right'. */
-    SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
-    ], 8, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'enemy ninja 1 die left'. */
-    SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_LEFT = new SpriteTemplate([
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
-    ], 16, MirrorImage.YES, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'enemy ninja 1 die right'. */
-    SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_RIGHT = new SpriteTemplate([
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
-        ninjas.Image.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
-    ], 16, MirrorImage.NO, LoopSprite.NO, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'water top'. */
-    SpriteTemplate.SPRITE_WATER_TOP = new SpriteTemplate([
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_1,
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_2,
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_3,
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_4,
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_5,
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_6,
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_7,
-        ninjas.Image.IMAGE_WATER_TOP_FRAME_8,
-    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.NO, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'grass 1'. */
-    SpriteTemplate.SPRITE_GRASS_1 = new SpriteTemplate([
-        ninjas.Image.IMAGE_GRASS_1_FRAME_1,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_2,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_3,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_4,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_5,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_6,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_7,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_8,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_9,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_10,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_11,
-        ninjas.Image.IMAGE_GRASS_1_FRAME_12,
-    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'grass 2'. */
-    SpriteTemplate.SPRITE_GRASS_2 = new SpriteTemplate([
-        ninjas.Image.IMAGE_GRASS_2_FRAME_1,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_2,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_3,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_4,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_5,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_6,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_7,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_8,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_9,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_10,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_11,
-        ninjas.Image.IMAGE_GRASS_2_FRAME_12,
-    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'grass 3'. */
-    SpriteTemplate.SPRITE_GRASS_3 = new SpriteTemplate([
-        ninjas.Image.IMAGE_GRASS_3_FRAME_1,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_2,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_3,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_4,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_5,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_6,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_7,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_8,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_9,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_10,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_11,
-        ninjas.Image.IMAGE_GRASS_3_FRAME_12,
-    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'grass 4'. */
-    SpriteTemplate.SPRITE_GRASS_4 = new SpriteTemplate([
-        ninjas.Image.IMAGE_GRASS_4_FRAME_1,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_2,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_3,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_4,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_5,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_6,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_7,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_8,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_9,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_10,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_11,
-        ninjas.Image.IMAGE_GRASS_4_FRAME_12,
-    ], 12, MirrorImage.NO, LoopSprite.YES, RandomFrames.ONLY_START_FRAME, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'flame 1 big'. */
-    SpriteTemplate.SPRITE_FLAME_1_BIG = new SpriteTemplate([
-        ninjas.Image.IMAGE_FLAME_1_FRAME_1,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_2,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_3,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_4,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_5,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_6,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_7,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_8,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_9,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_10,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_11,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_12,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_13,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_14,
-    ], 16, MirrorImage.NO, LoopSprite.YES, RandomFrames.ALL_FRAMES, ninjas.SettingGame.DEFAULT_SPRITE_SCALE);
-    /** Sprite 'flame 1 small'. */
-    SpriteTemplate.SPRITE_FLAME_1_SMALL = new SpriteTemplate([
-        ninjas.Image.IMAGE_FLAME_1_FRAME_1,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_2,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_3,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_4,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_5,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_6,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_7,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_8,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_9,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_10,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_11,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_12,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_13,
-        ninjas.Image.IMAGE_FLAME_1_FRAME_14,
-    ], 16, MirrorImage.NO, LoopSprite.YES, RandomFrames.ALL_FRAMES, 0.7);
-    /** A reference over all sprite templates. */
-    SpriteTemplate.ALL_SPRITE_TEMPLATES = [
-        SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_WALK_LEFT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_WALK_RIGHT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_LEFT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_JUMP_RIGHT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_FALL_LEFT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_FALL_RIGHT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_LEFT,
-        SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_RIGHT,
-        SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
-        SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
-        SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
-        SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
-        SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
-        SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
-        SpriteTemplate.SPRITE_WATER_TOP,
-        SpriteTemplate.SPRITE_GRASS_1,
-        SpriteTemplate.SPRITE_GRASS_2,
-        SpriteTemplate.SPRITE_GRASS_3,
-        SpriteTemplate.SPRITE_GRASS_4,
-        SpriteTemplate.SPRITE_FLAME_1_BIG,
-        SpriteTemplate.SPRITE_FLAME_1_SMALL,
-    ];
-    return SpriteTemplate;
-}());
-exports.SpriteTemplate = SpriteTemplate;
-
-
-/***/ }),
-
 /***/ "./src/typescript/de/mayflower/ninjas/ninjas.ts":
 /*!******************************************************!*\
   !*** ./src/typescript/de/mayflower/ninjas/ninjas.ts ***!
@@ -8091,7 +7994,7 @@ __export(__webpack_require__(/*! ./game/engine/Preloader */ "./src/typescript/de
 __export(__webpack_require__(/*! ./game/engine/SitePanel */ "./src/typescript/de/mayflower/ninjas/game/engine/SitePanel.ts"));
 __export(__webpack_require__(/*! ./game/engine/SiteSystem */ "./src/typescript/de/mayflower/ninjas/game/engine/SiteSystem.ts"));
 __export(__webpack_require__(/*! ./game/engine/SoundSystem */ "./src/typescript/de/mayflower/ninjas/game/engine/SoundSystem.ts"));
-__export(__webpack_require__(/*! ./game/engine/Sprite */ "./src/typescript/de/mayflower/ninjas/game/engine/Sprite.ts"));
+__export(__webpack_require__(/*! ./ui/Sprite */ "./src/typescript/de/mayflower/ninjas/ui/Sprite.ts"));
 __export(__webpack_require__(/*! ./game/level/Level */ "./src/typescript/de/mayflower/ninjas/game/level/Level.ts"));
 __export(__webpack_require__(/*! ./game/level/LevelWebsite */ "./src/typescript/de/mayflower/ninjas/game/level/LevelWebsite.ts"));
 __export(__webpack_require__(/*! ./game/object/GameObject */ "./src/typescript/de/mayflower/ninjas/game/object/GameObject.ts"));
@@ -8117,9 +8020,9 @@ __export(__webpack_require__(/*! ./game/shape/ShapeFreeForm */ "./src/typescript
 __export(__webpack_require__(/*! ./game/Game */ "./src/typescript/de/mayflower/ninjas/game/Game.ts"));
 __export(__webpack_require__(/*! ./game/GameEngine */ "./src/typescript/de/mayflower/ninjas/game/GameEngine.ts"));
 __export(__webpack_require__(/*! ./hid/Key */ "./src/typescript/de/mayflower/ninjas/hid/Key.ts"));
-__export(__webpack_require__(/*! ./io/Image */ "./src/typescript/de/mayflower/ninjas/io/Image.ts"));
-__export(__webpack_require__(/*! ./io/Sound */ "./src/typescript/de/mayflower/ninjas/io/Sound.ts"));
-__export(__webpack_require__(/*! ./io/SpriteTemplate */ "./src/typescript/de/mayflower/ninjas/io/SpriteTemplate.ts"));
+__export(__webpack_require__(/*! ./data/ImageData */ "./src/typescript/de/mayflower/ninjas/data/ImageData.ts"));
+__export(__webpack_require__(/*! ./data/SoundData */ "./src/typescript/de/mayflower/ninjas/data/SoundData.ts"));
+__export(__webpack_require__(/*! ./data/SpriteTemplate */ "./src/typescript/de/mayflower/ninjas/data/SpriteTemplate.ts"));
 __export(__webpack_require__(/*! ./site/component/ContentCompany */ "./src/typescript/de/mayflower/ninjas/site/component/ContentCompany.tsx"));
 __export(__webpack_require__(/*! ./site/component/ContentContact */ "./src/typescript/de/mayflower/ninjas/site/component/ContentContact.tsx"));
 __export(__webpack_require__(/*! ./site/component/ContentTechnology */ "./src/typescript/de/mayflower/ninjas/site/component/ContentTechnology.tsx"));
@@ -8582,16 +8485,16 @@ var ContentCompany = /** @class */ (function (_super) {
             ninjas.SiteContentFactory.createSpacerVertical(),
             ninjas.SiteContentFactory.createCarousel('fade', true, 2500, [
                 React.createElement("div", { className: 'carouselPage', style: { 'backgroundImage': 'url( '
-                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_CAROUSEL_DESKTOP).src + ' )' } },
+                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_CAROUSEL_DESKTOP).src + ' )' } },
                     React.createElement("h3", null, "Desktop & Enterprise Applications")),
                 React.createElement("div", { className: 'carouselPage', style: { 'backgroundImage': 'url( '
-                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_CAROUSEL_WEBSITES).src + ' )' } },
+                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_CAROUSEL_WEBSITES).src + ' )' } },
                     React.createElement("h3", null, "Web Design")),
                 React.createElement("div", { className: 'carouselPage', style: { 'backgroundImage': 'url( '
-                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_CAROUSEL_MOBILE).src + ' )' } },
+                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_CAROUSEL_MOBILE).src + ' )' } },
                     React.createElement("h3", null, "Mobile Applications")),
                 React.createElement("div", { className: 'carouselPage', style: { 'backgroundImage': 'url( '
-                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_CAROUSEL_WEB_APPS).src + ' )' } },
+                            + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_CAROUSEL_WEB_APPS).src + ' )' } },
                     React.createElement("h3", null, "Web Applications")),
             ]),
             ninjas.SiteContentFactory.createSpacerVertical(),
@@ -8654,7 +8557,7 @@ var ContentContact = /** @class */ (function (_super) {
                 React.createElement("div", { className: 'card-flipper' },
                     React.createElement("div", { className: 'card-front', style: {
                             backgroundImage: 'url( '
-                                + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_OFFICE_WZBG)
+                                + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_OFFICE_WZBG)
                                     .src
                                 + ' )',
                         } },
@@ -8678,7 +8581,7 @@ var ContentContact = /** @class */ (function (_super) {
                 React.createElement("div", { className: 'card-flipper' },
                     React.createElement("div", { className: 'card-front', style: {
                             backgroundImage: 'url( '
-                                + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_OFFICE_MUC).src
+                                + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_OFFICE_MUC).src
                                 + ' )',
                         } },
                         React.createElement("h3", null, "Munich")),
@@ -8701,7 +8604,7 @@ var ContentContact = /** @class */ (function (_super) {
                 React.createElement("div", { className: 'card-flipper' },
                     React.createElement("div", { className: 'card-front', style: {
                             backgroundImage: 'url( '
-                                + ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_OFFICE_BER).src
+                                + ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_OFFICE_BER).src
                                 + ' )',
                         } },
                         React.createElement("h3", null, "Berlin")),
@@ -8902,7 +8805,7 @@ var ContentTechnology = /** @class */ (function (_super) {
                 'Ant Design',
             ], [
                 React.createElement("div", null,
-                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO_NODE_JS)
+                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO_NODE_JS)
                         .src),
                     ninjas.SiteContentFactory.createParagraph('Node.js is an open-source, cross-platform JavaScript run-time environment for '
                         + 'executing JavaScript code server-side. Historically, JavaScript was used '
@@ -8913,7 +8816,7 @@ var ContentTechnology = /** @class */ (function (_super) {
                     ninjas.SiteContentFactory.createTag('lime', 'transparent', 'yarn init -y'),
                     ninjas.SiteContentFactory.createTag('lime', 'transparent', 'Creates a new Node.js project with default settings')),
                 React.createElement("div", null,
-                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO_TYPE_SCRIPT).src),
+                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO_TYPE_SCRIPT).src),
                     ninjas.SiteContentFactory.createParagraph('TypeScript is an open-source programming '
                         + 'language developed and maintained by Microsoft. It is a strict syntactical '
                         + 'superset of JavaScript, and adds optional static typing to the language. '
@@ -8924,7 +8827,7 @@ var ContentTechnology = /** @class */ (function (_super) {
                     ninjas.SiteContentFactory.createTag('blue', 'transparent', 'yarn add typescript --dev'),
                     ninjas.SiteContentFactory.createTag('blue', 'transparent', 'Installs the TypeScript compiler as a dev dependency')),
                 React.createElement("div", null,
-                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO_WEBPACK)
+                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO_WEBPACK)
                         .src),
                     ninjas.SiteContentFactory.createParagraph('Webpack is an open-source JavaScript '
                         + 'module bundler. Webpack takes modules with dependencies and generates static '
@@ -8942,7 +8845,7 @@ var ContentTechnology = /** @class */ (function (_super) {
                     ninjas.SiteContentFactory.createTag('cyan', 'transparent', 'yarn add awesome-typescript-loader --dev'),
                     ninjas.SiteContentFactory.createTag('cyan', 'transparent', 'Installs the TS loader for webpack')),
                 React.createElement("div", null,
-                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO_MATTER_JS).src),
+                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO_MATTER_JS).src),
                     ninjas.SiteContentFactory.createParagraph('Matter.js is a JavaScript 2D rigid body '
                         + 'physics engine for the web. It features rigid bodies, compound bodies, '
                         + 'composite bodies, concave and convex hulls, physical properties (mass, area, '
@@ -8956,7 +8859,7 @@ var ContentTechnology = /** @class */ (function (_super) {
                     ninjas.SiteContentFactory.createTag('gold', 'transparent', 'yarn add @types/matter-js --dev'),
                     ninjas.SiteContentFactory.createTag('gold', 'transparent', 'Installs the TypeScript definitions for Matter.js')),
                 React.createElement("div", null,
-                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO_REACT).src),
+                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO_REACT).src),
                     ninjas.SiteContentFactory.createParagraph('React is a JavaScript library for '
                         + 'building user interfaces. React allows developers to create large '
                         + 'web-applications that use data and can change over time without reloading the '
@@ -8971,7 +8874,7 @@ var ContentTechnology = /** @class */ (function (_super) {
                     ninjas.SiteContentFactory.createTag('volcano', 'transparent', 'yarn add @types/react --dev'),
                     ninjas.SiteContentFactory.createTag('volcano', 'transparent', 'Installs the TypeScript definitions for React')),
                 React.createElement("div", null,
-                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO_ANT_DESIGN).src),
+                    ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO_ANT_DESIGN).src),
                     ninjas.SiteContentFactory.createParagraph('An enterprise-class UI design language '
                         + 'and React-based implementation for desktop applications offering a set of '
                         + 'high-quality React components out of the box. Written in TypeScript with '
@@ -9104,9 +9007,9 @@ var ContentWelcome = /** @class */ (function (_super) {
         return React.createElement("div", null,
             ninjas.SiteContentFactory.createStepIndicator(ninjas.SiteContent.CONTENT_WELCOME),
             ninjas.SiteContentFactory.createDivider(),
-            ninjas.SiteContentFactory.createImageFullWidth(ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO).src),
+            ninjas.SiteContentFactory.createImageFullWidth(ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO).src),
             ninjas.SiteContentFactory.createSpacerVertical(),
-            React.createElement("a", { target: '_blank', title: 'W\u00FCrzburg Web Week', href: 'https://wueww.de/' }, ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.Image.IMAGE_SITE_LOGO_WEBWEEK).src)),
+            React.createElement("a", { target: '_blank', title: 'W\u00FCrzburg Web Week', href: 'https://wueww.de/' }, ninjas.SiteContentFactory.createImageFloating('right', ninjas.Main.game.engine.imageSystem.getImage(ninjas.ImageData.IMAGE_SITE_LOGO_WEBWEEK).src)),
             ninjas.SiteContentFactory.createParagraph('This site serves as an example Node.js project for the '
                 + '<a target=\'_blank\' title=\'Developer Camp 2018\' '
                 + 'href=\'https://developercamp.io/\'>Developer Camp 2018</a> '
@@ -9436,6 +9339,106 @@ var Drawing = /** @class */ (function () {
     return Drawing;
 }());
 exports.Drawing = Drawing;
+
+
+/***/ }),
+
+/***/ "./src/typescript/de/mayflower/ninjas/ui/Sprite.ts":
+/*!*********************************************************!*\
+  !*** ./src/typescript/de/mayflower/ninjas/ui/Sprite.ts ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower/ninjas/ninjas.ts");
+/** ****************************************************************************************************************
+*   Represents one game sprite.
+*******************************************************************************************************************/
+var Sprite = /** @class */ (function () {
+    /** ************************************************************************************************************
+    *   Creates a new sprite.
+    *
+    *   @param template The template for this sprite.
+    ***************************************************************************************************************/
+    function Sprite(template) {
+        /** The sprite template for this sprite. */
+        this.template = null;
+        /** The id of the current frame for this sprite. */
+        this.currentFrame = 0;
+        /** The current tick since last frame change. */
+        this.currentTick = 0;
+        this.template = template;
+        this.currentTick = 0;
+        if (template.randomFrames !== ninjas.RandomFrames.NO) {
+            this.assignRandomFrame();
+        }
+        else {
+            this.currentFrame = 0;
+        }
+    }
+    /** ************************************************************************************************************
+    *   Sets the next frame for this sprite.
+    *
+    *   @return If the frame actually changed.
+    ***************************************************************************************************************/
+    Sprite.prototype.render = function () {
+        // no changes for single framed sprites
+        if (this.template.singleFramed) {
+            return false;
+        }
+        // non-looped sprites end on the last frame
+        if (this.template.loop === ninjas.LoopSprite.NO
+            && this.currentFrame === this.template.imageIds.length - 1) {
+            return false;
+        }
+        // increase tick
+        ++this.currentTick;
+        // check if the delay is reached
+        if (this.currentTick >= this.template.ticksBetweenFrames) {
+            // reset tick count
+            this.currentTick = 0;
+            // check if random frame shall be assigned
+            if (this.template.randomFrames === ninjas.RandomFrames.ALL_FRAMES) {
+                this.assignRandomFrame();
+            }
+            else {
+                // next frame
+                ++this.currentFrame;
+                // reset frame on reaching upper bound
+                if (this.currentFrame >= this.template.imageIds.length) {
+                    this.currentFrame = 0;
+                }
+            }
+            return true;
+        }
+        return false;
+    };
+    /** ************************************************************************************************************
+    *   Returns the image url ( or data url for flipped images ) of the current frame.
+    *
+    *   @return The image url of the currently active frame.
+    ***************************************************************************************************************/
+    Sprite.prototype.getCurrentFrameImageUrl = function () {
+        var imageId = this.template.imageIds[this.currentFrame];
+        if (this.template.mirrored === ninjas.MirrorImage.YES) {
+            return ninjas.Main.game.engine.imageSystem.getMirroredImage(imageId).src;
+        }
+        else {
+            return ninjas.Main.game.engine.imageSystem.getImage(imageId).src;
+        }
+    };
+    /** ************************************************************************************************************
+    *   Assigns a random frame as the current frame.
+    ***************************************************************************************************************/
+    Sprite.prototype.assignRandomFrame = function () {
+        this.currentFrame = ninjas.MathUtil.getRandomInt(0, (this.template.imageIds.length - 1));
+    };
+    return Sprite;
+}());
+exports.Sprite = Sprite;
 
 
 /***/ }),

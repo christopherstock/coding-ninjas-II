@@ -71,7 +71,7 @@
             this.blendPanelTicks = ninjas.SettingGame.BLEND_PANEL_TICKS;
 
             // play bg sound
-            this.bgMusic = this.engine.soundSystem.playSound( ninjas.Sound.BG_CHINESE, true );
+            this.bgMusic = this.engine.soundSystem.playSound( ninjas.SoundData.BG_CHINESE, true );
 
             // launch initial level
             this.resetAndLaunchLevel( new ninjas.LevelWebsite() );
@@ -242,7 +242,7 @@
         {
             if ( this.blendPanelTicks > 0 )
             {
-                ninjas.Drawing.fillRect
+                ninjas.DrawUtil.fillRect
                 (
                     context,
                     0,

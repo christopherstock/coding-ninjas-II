@@ -4,15 +4,17 @@
     /** ****************************************************************************************************************
     *   Specifies all different soundSystem effects being used in the game.
     *******************************************************************************************************************/
-    export class Sound
+    export class SoundData
     {
         /** 'chinese' from 'Graeme Norgate' taken from 'Time Splitters' */
         public      static      BG_CHINESE                      :string                 =
-            ninjas.SettingEngine.PATH_SOUND + 'bgChinese.mp3';
+        (
+            ninjas.SettingEngine.PATH_SOUND + 'bgChinese.mp3'
+        );
 
         /** An array holding all filenames of all sounds to load. */
         public      static      FILE_NAMES                      :string[]               =
         [
-            Sound.BG_CHINESE,
+            SoundData.BG_CHINESE,
         ];
     }

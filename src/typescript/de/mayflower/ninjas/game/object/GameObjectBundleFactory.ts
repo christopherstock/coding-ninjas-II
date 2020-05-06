@@ -99,9 +99,9 @@
             {
                 case Slope.ASCENDING:
                 {
-                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_ASCENDING_LEFT   );
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_ASCENDING_CENTER );
-                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_ASCENDING_RIGHT  );
+                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_LEFT   );
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_CENTER );
+                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_RIGHT  );
 
                     drawY      = yTop - GameObjectBundleFactory.ALTITUDE;
                     alt        = -GameObjectBundleFactory.ALTITUDE;
@@ -111,9 +111,9 @@
 
                 case Slope.DESCENDING:
                 {
-                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_DESCENDING_LEFT   );
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_DESCENDING_CENTER );
-                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_DESCENDING_RIGHT  );
+                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_LEFT   );
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_CENTER );
+                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_RIGHT  );
 
                     drawY      = yTop;
                     alt        = GameObjectBundleFactory.ALTITUDE;
@@ -124,9 +124,9 @@
                 case Slope.NONE:
                 default:
                 {
-                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_LEFT   );
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_CENTER );
-                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_RIGHT  );
+                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_LEFT   );
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_CENTER );
+                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_RIGHT  );
 
                     drawY      = yTop;
                     alt        = 0;
@@ -201,13 +201,13 @@
             let topTile           :ninjas.SpriteTemplate = null;
             let rightTopTile      :ninjas.SpriteTemplate = null;
 
-            const leftTile        :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_LEFT         );
-            const centerTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_CENTER       );
-            const rightTile       :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_RIGHT        );
+            const leftTile        :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT         );
+            const centerTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_CENTER       );
+            const rightTile       :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT        );
 
-            const leftBottomTile  :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_LEFT_BOTTOM  );
-            const bottomTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_BOTTOM       );
-            const rightBottomTile :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_RIGHT_BOTTOM );
+            const leftBottomTile  :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT_BOTTOM  );
+            const bottomTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_BOTTOM       );
+            const rightBottomTile :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT_BOTTOM );
 
             let firstLineDrawY  :number = 0.0;
             let firstLineAlt    :number = 0.0;
@@ -216,9 +216,9 @@
             {
                 case Slope.NONE:
                 {
-                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_LEFT_TOP  );
-                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_TOP       );
-                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_RIGHT_TOP );
+                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT_TOP  );
+                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_TOP       );
+                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT_TOP );
 
                     firstLineDrawY = yTop;
                     firstLineAlt   = 0.0;
@@ -228,9 +228,9 @@
 
                 case Slope.ASCENDING:
                 {
-                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP  );
-                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_ASCENDING_TOP       );
-                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP );
+                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP  );
+                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_TOP       );
+                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP );
 
                     firstLineDrawY = yTop;
                     firstLineAlt   = -GameObjectBundleFactory.ALTITUDE;
@@ -240,9 +240,9 @@
 
                 case Slope.DESCENDING:
                 {
-                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP  );
-                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_DESCENDING_TOP       );
-                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP );
+                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP  );
+                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_TOP       );
+                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP );
 
                     firstLineDrawY = yTop + GameObjectBundleFactory.ALTITUDE;
                     firstLineAlt   = GameObjectBundleFactory.ALTITUDE;
@@ -368,7 +368,7 @@
         : void
         {
             const tileTop    :ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_WATER_TOP;
-            const tileCenter :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_WATER_CENTER );
+            const tileCenter :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_WATER_CENTER );
 
             // draw area
             for ( let tileX:number = 0; tileX < length; ++tileX )
@@ -443,7 +443,7 @@
             // level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft + WIDTH_TOTAL - WIDTH_SLOPE, yBottom - ALTITUDE, WIDTH_SLOPE, 10, ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
 
             // add deco
-            const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BRIDGE_1 );
+            const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BRIDGE_1 );
             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft - 115, yBottom + 121, ninjas.StaticShape.YES, sprtiteTemplate ) );
         }
 
@@ -626,9 +626,9 @@
         )
         : void
         {
-            const sprtiteBookOpen   :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BOOK_OPEN   );
-            const sprtiteBookClosed :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BOOK_CLOSED );
-            const spriteShrine      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_CONSOLE     );
+            const sprtiteBookOpen   :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BOOK_OPEN   );
+            const sprtiteBookClosed :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BOOK_CLOSED );
+            const spriteShrine      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_CONSOLE     );
 
             const decoBookOpen      :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft - 5,  yBottom - 118, ninjas.StaticShape.YES, sprtiteBookOpen,   ninjas.DebugColor.COLOR_TRANSPARENT );
             const decoBookClosed    :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft + 72, yBottom - 114, ninjas.StaticShape.YES, sprtiteBookClosed, ninjas.DebugColor.COLOR_TRANSPARENT );
@@ -661,7 +661,7 @@
 
             if ( candleLeft  )
             {
-                GameObjectBundleFactory.createDecoImage(  level, xLeft - 80,  yBottom,       ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CANDELABRA              );
+                GameObjectBundleFactory.createDecoImage(  level, xLeft - 80,  yBottom,       ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDELABRA              );
                 GameObjectBundleFactory.createDecoSprite( level, xLeft - 88,  yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_BIG   );
                 GameObjectBundleFactory.createDecoSprite( level, xLeft - 68,  yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL );
                 GameObjectBundleFactory.createDecoSprite( level, xLeft - 106, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL );
@@ -669,7 +669,7 @@
 
             if ( candleRight )
             {
-                GameObjectBundleFactory.createDecoImage(  level, xLeft + 164, yBottom,       ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CANDELABRA              );
+                GameObjectBundleFactory.createDecoImage(  level, xLeft + 164, yBottom,       ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDELABRA              );
                 GameObjectBundleFactory.createDecoSprite( level, xLeft + 156, yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_BIG   );
                 GameObjectBundleFactory.createDecoSprite( level, xLeft + 176, yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL );
                 GameObjectBundleFactory.createDecoSprite( level, xLeft + 138, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_SMALL );
@@ -699,9 +699,9 @@
 
                 switch ( ninjas.MathUtil.getRandomInt( 0, 2 ) )
                 {
-                    case 0: imageId = ninjas.Image.IMAGE_RUBBLE_1;      break;
-                    case 1: imageId = ninjas.Image.IMAGE_RUBBLE_2;      break;
-                    case 2: imageId = ninjas.Image.IMAGE_RUBBLE_3;      break;
+                    case 0: imageId = ninjas.ImageData.IMAGE_RUBBLE_1;      break;
+                    case 1: imageId = ninjas.ImageData.IMAGE_RUBBLE_2;      break;
+                    case 2: imageId = ninjas.ImageData.IMAGE_RUBBLE_3;      break;
                 }
 
                 ninjas.GameObjectBundleFactory.createMovableCircular
@@ -730,7 +730,7 @@
         )
         : void
         {
-            ninjas.GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CANDLE                );
+            ninjas.GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDLE                );
             ninjas.GameObjectBundleFactory.createDecoSprite( level, xLeft - 17, yBottom - 153, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_FLAME_1_BIG );
         }
     }

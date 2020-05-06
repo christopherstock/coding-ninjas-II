@@ -10,7 +10,7 @@
     {
         /** The application's internal name. */
         public      static  readonly    TITLE                                       :string                     = (
-            'Coding Ninjas II, (c) 2020 Mayflower GmbH'
+            'Coding Ninjas II - Back with a Vengeance, (c) 2020 Mayflower GmbH'
             + ', '
             + ninjas.Version.CURRENT_VERSION.getVersionDescriptor()
         );
