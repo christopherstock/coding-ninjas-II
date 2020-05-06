@@ -742,7 +742,7 @@
         : ninjas.ShapeFreeForm
         {
             const gapSizeX :number = ( spriteTemplate.width / 2 );
-            const gapSizeY :number = ninjas.SettingMatterJs.PLAYER_EDGE_GAP_Y;
+            const gapSizeY :number = ninjas.SettingMatter.PLAYER_EDGE_GAP_Y;
 
             const vertices :matter.Vector[] = [];
 

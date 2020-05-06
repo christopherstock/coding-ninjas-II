@@ -13,8 +13,6 @@
 
         /** The delay delta between ticks in ms. */
         public      static  readonly    TICK_DELAY_DELTA                            :number                     = 10.0;
-        /** The rendering delta between render ticks. */
-        public      static  readonly    RENDER_DELTA                                :number                     = 10.0;
 
         /** The outer border size for the site panel and all HUD elements in px. */
         public      static  readonly    BORDER_SIZE_OUTER                           :number                     = 20;

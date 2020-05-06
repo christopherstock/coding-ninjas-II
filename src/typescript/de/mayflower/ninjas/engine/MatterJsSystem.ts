@@ -30,7 +30,7 @@
             this.engine = matter.Engine.create();
             this.engine.world.gravity = {
                 x: 0.0,
-                y: ninjas.SettingMatterJs.DEFAULT_GRAVITY_Y,
+                y: ninjas.SettingMatter.DEFAULT_GRAVITY_Y,
                 scale: 0.001,
             };
             this.engine.timing.timeScale = 1.0;

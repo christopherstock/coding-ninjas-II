@@ -92,8 +92,7 @@
         private onPreloaderImageLoadComplete() : void
         {
             // start the preloading thread
-            this.preloaderIntervalHandle = window.setInterval
-            (
+            this.preloaderIntervalHandle = window.setInterval(
                 () => { this.tickPreloader(); },
                 ninjas.SettingGame.TICK_DELAY_DELTA
             );

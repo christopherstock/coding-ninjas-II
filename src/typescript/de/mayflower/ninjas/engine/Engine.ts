@@ -93,7 +93,7 @@
         {
             ninjas.SpriteTemplate.assignAllImageSizes();
 
-            ninjas.Main.game.preloader.setLoadingPercentage( 80 );
+            this.game.preloader.setLoadingPercentage( 80 );
 
             ninjas.Debug.init.log( 'Initing sound system' );
             this.soundSystem = new ninjas.SoundSystem( ninjas.SoundData.FILE_NAMES, () => { this.onSoundsLoaded(); } );
@@ -105,7 +105,7 @@
         ***************************************************************************************************************/
         private onSoundsLoaded() : void
         {
-            ninjas.Main.game.preloader.setLoadingPercentage( 90 );
+            this.game.preloader.setLoadingPercentage( 90 );
 
             // init matterJS
             this.initMatterJS();
@@ -131,12 +131,12 @@
 
             ninjas.Debug.init.log( 'Initing game engine completed' );
 
-            ninjas.Main.game.preloader.setLoadingPercentage( 100 );
+            this.game.preloader.setLoadingPercentage( 100 );
 
             // start the game loop in one second ??
             window.setTimeout
             (
-                () => { ninjas.Main.game.start(); },
+                () => { this.game.start(); },
                 ( ninjas.SettingDebug.DEBUG_MODE ? 0 : 500 )
             );
         };
@@ -151,7 +151,7 @@
             this.matterJsSystem = new ninjas.MatterJsSystem
             (
                 this.canvasSystem.getCanvas(),
-                ( renderContext:CanvasRenderingContext2D ) => { ninjas.Main.game.paintHUD(  renderContext ); },
+                ( renderContext:CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
                 this.imageSystem.getAll()
             );
         }

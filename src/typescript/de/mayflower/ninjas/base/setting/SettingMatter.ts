@@ -4,8 +4,11 @@
     /** ****************************************************************************************************************
     *   All adjustments and balancings for the Matter.js engine.
     *******************************************************************************************************************/
-    export class SettingMatterJs
+    export class SettingMatter
     {
+        /** The rendering delta between render ticks. */
+        public  static  readonly    RENDER_DELTA                                :number                     = 10.0;
+
         /** The default jump power. */
         public  static  readonly    PLAYER_JUMP_POWER                           :number                     = -2.75;
         /** The player's speed in world coordinate per tick. */

@@ -34,8 +34,8 @@
                 x,
                 y,
                 lookingDirection,
-                ninjas.SettingMatterJs.PLAYER_SPEED_MOVE,
-                ninjas.SettingMatterJs.PLAYER_JUMP_POWER
+                ninjas.SettingMatter.PLAYER_SPEED_MOVE,
+                ninjas.SettingMatter.PLAYER_JUMP_POWER
             );
 
             if ( initialFloat )

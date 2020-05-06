@@ -56,7 +56,7 @@
                     lineWidth:   1.0,
                 },
                 isStatic:        ( isStatic === ninjas.StaticShape.YES ),
-                collisionFilter: ninjas.SettingMatterJs.COLLISION_GROUP_COLLIDING,
+                collisionFilter: ninjas.SettingMatter.COLLISION_GROUP_COLLIDING,
 
                 friction:        friction,
                 frictionAir:     ninjas.BodyFrictionAir.DEFAULT,

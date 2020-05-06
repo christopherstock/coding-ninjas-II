@@ -83,10 +83,16 @@
             this.preloader.stopThread();
 
             // invoke engine ticks repeatedly
+            window.requestAnimationFrame(
+                () => { this.tickGame(); }
+            );
+/*
+            // invoke engine ticks repeatedly
             window.setInterval(
                 () => { this.tickGame(); },
                 ninjas.SettingGame.TICK_DELAY_DELTA
             );
+*/
         };
 
         /** ************************************************************************************************************
@@ -159,13 +165,17 @@
             this.render();
 
             // update MatterJS 2d engine
-            this.engine.matterJsSystem.updateEngine( ninjas.SettingGame.RENDER_DELTA );
+            this.engine.matterJsSystem.updateEngine( ninjas.SettingMatter.RENDER_DELTA );
 
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
                 // stop fpsMetet tick
                 this.engine.fpsMeter.tick();
             }
+
+            window.requestAnimationFrame(
+                () => { this.tickGame(); }
+            );
         }
 
         /** ************************************************************************************************************

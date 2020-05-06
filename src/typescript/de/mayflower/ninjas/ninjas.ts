@@ -5,7 +5,7 @@
     export * from './base/setting/SettingDebug';
     export * from './base/setting/SettingEngine';
     export * from './base/setting/SettingGame';
-    export * from './base/setting/SettingMatterJs';
+    export * from './base/setting/SettingMatter';
 
     export * from './engine/Engine';
 

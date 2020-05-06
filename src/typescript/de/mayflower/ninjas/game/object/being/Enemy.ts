@@ -64,7 +64,7 @@
                 x,
                 y,
                 lookingDirection,
-                ninjas.SettingMatterJs.ENEMY_SPEED_MOVE,
+                ninjas.SettingMatter.ENEMY_SPEED_MOVE,
                 0
             );
 
@@ -124,7 +124,7 @@
             }
 
             // disable body collisions
-            this.shape.body.collisionFilter = ninjas.SettingMatterJs.COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY;
+            this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY;
 
             // bring body to forefround
             ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );

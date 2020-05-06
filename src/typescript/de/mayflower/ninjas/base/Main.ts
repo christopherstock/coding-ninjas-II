@@ -12,6 +12,7 @@
     *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Fasten game and physics feeling.
     *   TODO Add items and item sprites.
+    *   TODO Remove enemy flickering on startup..! :p
     *   TODO Add decoration particle effects on smashing objects / windows etc.
     *   TODO Debug Disable Pointer control.
     *   TODO Try different physics demo elements on the player!
