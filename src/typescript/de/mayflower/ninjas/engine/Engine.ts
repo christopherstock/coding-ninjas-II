@@ -5,10 +5,8 @@
 
     /** ****************************************************************************************************************
     *   Specifies the game engine and its systems.
-    *
-    *   TODO to package engine?
     *******************************************************************************************************************/
-    export class GameEngine
+    export class Engine
     {
         /** The canvas element. */
         public      canvasSystem            :ninjas.CanvasSystem            = null;

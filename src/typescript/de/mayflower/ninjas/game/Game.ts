@@ -10,7 +10,7 @@
         /** The preloader instance. */
         public      preloader               :ninjas.Preloader               = null;
         /** The game engine. */
-        public      engine                  :ninjas.GameEngine              = null;
+        public      engine                  :ninjas.Engine                  = null;
         /** The custom camera system. */
         public      camera                  :ninjas.Camera                  = null;
         /** The custom level. */
@@ -26,7 +26,7 @@
         public preload() : void
         {
             this.preloader = new ninjas.Preloader( () => { this.onPreloaderSetup(); } );
-            this.engine    = new ninjas.GameEngine();
+            this.engine    = new ninjas.Engine();
 
             this.preloader.preload();
         }

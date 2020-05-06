@@ -54,7 +54,7 @@
     export * from './game/object/special/SiteTrigger';
 
     export * from './game/Game';
-    export * from './game/GameEngine';
+    export * from './engine/Engine';
 
     export * from './data/ImageData';
     export * from './data/SoundData';
