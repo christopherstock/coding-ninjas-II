@@ -194,32 +194,32 @@
             {
                 if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                 {
-                    this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_LEFT );
+                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT );
                 }
                 else
                 {
-                    this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_RIGHT );
+                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT );
                 }
             }
             else
             {
                 if ( this.movesLeft )
                 {
-                    this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_LEFT );
+                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT );
                 }
                 else if ( this.movesRight )
                 {
-                    this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_WALK_RIGHT );
+                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT );
                 }
                 else
                 {
                     if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
-                        this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT );
+                        this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT );
                     }
                     else
                     {
-                        this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_RIGHT );
+                        this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT );
                     }
                 }
             }

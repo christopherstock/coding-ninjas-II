@@ -19,6 +19,8 @@
     export * from './game/engine/SiteSystem';
     export * from './game/engine/SoundSystem';
 
+    export * from './game/engine/ui/SpriteTemplate';
+
     export * from './game/level/Level';
     export * from './game/level/LevelWebsite';
 
@@ -56,7 +58,6 @@
     export * from './data/ImageData';
     export * from './data/SoundData';
     export * from './data/SpriteData';
-    export * from './data/SpriteTemplate';
 
     export * from './site/component/ContentCompany';
     export * from './site/component/ContentContact';
