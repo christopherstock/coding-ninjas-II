@@ -5,7 +5,7 @@ module.exports = ( env, argv ) => {
     let config = {
         entry: './src/typescript/index.tsx',
         output: {
-            filename: 'bundle.js',
+            filename: 'coding-ninjas-v2.0.0.js',
             path: __dirname + '/dist/js/'
         },
         resolve: {

@@ -12555,13 +12555,14 @@ var ninjas = __webpack_require__(/*! ../ninjas */ "./src/typescript/de/mayflower
 *   The main class contains the application's points of entry and termination.
 *
 *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
+*   TODO Rename bundle.js to coding-ninjas-II-v2.0.1.js etc.
+*
 *   TODO One player - many outfits! General player with custom sprite sets.
 *   TODO Add destroyable movables.
 *   TODO Why are edges not soft??
 *   TODO Green water etc.
 *   TODO Fasten game and physics feeling.
 *   TODO Debug Disable Pointer control.
-*   TODO Rename bundle.js to coding-ninjas-II-v2.0.1.js etc.
 *   TODO Try different physics demo elements on the player!
 *   TODO Remove static access on Main.game.
 *   TODO Add 'katana strike' action on ground and in air.
@@ -20958,4 +20959,4 @@ module.exports = ReactDOM;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=coding-ninjas-v2.0.0.js.map
