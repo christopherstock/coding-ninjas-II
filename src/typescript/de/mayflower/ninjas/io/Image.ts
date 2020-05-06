@@ -476,7 +476,7 @@
         public      static      IMAGE_SITE_OFFICE_BER                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeBer.jpg';
 
         /** An array holding all filenames of all images to load. */
-        public      static      FILE_NAMES                                  :Array<string>  =
+        public      static      FILE_NAMES                                  :string[]       =
         [
             Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
             Image.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_2,

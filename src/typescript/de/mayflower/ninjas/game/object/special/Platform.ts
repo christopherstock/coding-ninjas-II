@@ -40,7 +40,7 @@
             shape          :ninjas.Shape,
             spriteTemplate :ninjas.SpriteTemplate,
             speed          :number,
-            waypoints      :Array<matter.Vector>,
+            waypoints      :matter.Vector[]
         )
         {
             super
@@ -48,12 +48,12 @@
                 shape,
                 spriteTemplate,
                 0.0,
-                0.0,
+                0.0
             );
 
-            if ( waypoints.length == 0 )
+            if ( waypoints.length === 0 )
             {
-                throw new Error( "Platform requires at least one waypoint to be specified!" );
+                throw new Error( 'Platform requires at least one waypoint to be specified!' );
             }
 
             this.waypoints            = waypoints;
@@ -65,52 +65,11 @@
             this.shape.body.frictionStatic = Infinity;
         }
 
-        /** ************************************************************************************************************
-        *   Assigns the next waypoint to aim to.
-        ***************************************************************************************************************/
-        private assignNextWaypoint()
-        {
-            // increase index for current wp
-            ++this.currentWaypointIndex;
-
-            // assign current wp
-            if ( this.currentWaypointIndex >= this.waypoints.length ) this.currentWaypointIndex = 0;
-            let currentWaypoint:matter.Vector = matter.Vector.create
-            (
-                this.waypoints[ this.currentWaypointIndex ].x + ( this.shape.getWidth()  / 2 ),
-                this.waypoints[ this.currentWaypointIndex ].y + ( this.shape.getHeight() / 2 )
-            );
-
-            // assign next wp
-            let nextWaypointIndex = this.currentWaypointIndex + 1;
-            if ( nextWaypointIndex >= this.waypoints.length ) nextWaypointIndex = 0;
-            let nextWaypoint:matter.Vector = matter.Vector.create
-            (
-                this.waypoints[ nextWaypointIndex ].x + ( this.shape.getWidth()  / 2 ),
-                this.waypoints[ nextWaypointIndex ].y + ( this.shape.getHeight() / 2 )
-            );
-
-            // set platform to starting wp
-            matter.Body.setPosition( this.shape.body, currentWaypoint );
-
-            // get deltas
-            let deltaX:number      = Math.abs( nextWaypoint.x - currentWaypoint.x );
-            let deltaY:number      = Math.abs( nextWaypoint.y - currentWaypoint.y );
-            let deltaDirect:number = Math.sqrt( ( deltaX * deltaX ) + ( deltaY * deltaY ) );
-
-            // reset steps and calculate number of steps for reaching the next waypoint
-            this.currentStep = 0;
-            this.stepsTillNextWaypoint = deltaDirect / this.speed;
-
-            // calculate step size
-            this.stepSizeX = ( nextWaypoint.x - currentWaypoint.x ) / this.stepsTillNextWaypoint;
-            this.stepSizeY = ( nextWaypoint.y - currentWaypoint.y ) / this.stepsTillNextWaypoint;
-        }
 
         /** ************************************************************************************************************
         *   Renders this obstacle.
         ***************************************************************************************************************/
-        public render()
+        public render() : void
         {
             super.render();
 
@@ -123,5 +82,51 @@
             // move platform
             matter.Body.setVelocity( this.shape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
             matter.Body.translate(   this.shape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
+        }
+
+        /** ************************************************************************************************************
+        *   Assigns the next waypoint to aim to.
+        ***************************************************************************************************************/
+        private assignNextWaypoint() : void
+        {
+            // increase index for current wp
+            ++this.currentWaypointIndex;
+
+            // assign current wp
+            if ( this.currentWaypointIndex >= this.waypoints.length ) {
+                this.currentWaypointIndex = 0;
+            }
+            const currentWaypoint:matter.Vector = matter.Vector.create
+            (
+                this.waypoints[ this.currentWaypointIndex ].x + ( this.shape.getWidth()  / 2 ),
+                this.waypoints[ this.currentWaypointIndex ].y + ( this.shape.getHeight() / 2 )
+            );
+
+            // assign next wp
+            let nextWaypointIndex :number = this.currentWaypointIndex + 1;
+            if ( nextWaypointIndex >= this.waypoints.length ) {
+                nextWaypointIndex = 0;
+            }
+            const nextWaypoint:matter.Vector = matter.Vector.create
+            (
+                this.waypoints[ nextWaypointIndex ].x + ( this.shape.getWidth()  / 2 ),
+                this.waypoints[ nextWaypointIndex ].y + ( this.shape.getHeight() / 2 )
+            );
+
+            // set platform to starting wp
+            matter.Body.setPosition( this.shape.body, currentWaypoint );
+
+            // get deltas
+            const deltaX:number      = Math.abs( nextWaypoint.x - currentWaypoint.x );
+            const deltaY:number      = Math.abs( nextWaypoint.y - currentWaypoint.y );
+            const deltaDirect:number = Math.sqrt( ( deltaX * deltaX ) + ( deltaY * deltaY ) );
+
+            // reset steps and calculate number of steps for reaching the next waypoint
+            this.currentStep = 0;
+            this.stepsTillNextWaypoint = deltaDirect / this.speed;
+
+            // calculate step size
+            this.stepSizeX = ( nextWaypoint.x - currentWaypoint.x ) / this.stepsTillNextWaypoint;
+            this.stepSizeY = ( nextWaypoint.y - currentWaypoint.y ) / this.stepsTillNextWaypoint;
         }
     }

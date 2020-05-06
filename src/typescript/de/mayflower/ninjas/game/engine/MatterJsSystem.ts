@@ -31,7 +31,7 @@
             this.engine.world.gravity = {
                 x: 0.0,
                 y: ninjas.SettingMatterJs.DEFAULT_GRAVITY_Y,
-                scale: 0.001
+                scale: 0.001,
             };
             this.engine.timing.timeScale = 1.0;
 
@@ -73,7 +73,7 @@
             this.renderer.textures = textureCache;
             ninjas.Debug.preloader.log(
                 'Assigned ['
-                + Object.keys( this.renderer.textures ).length
+                + String( Object.keys( this.renderer.textures ).length )
                 + '] textures to renderer texture cache '
             );
 
@@ -123,7 +123,7 @@
             this.renderer.options.width  = newWidth;
             this.renderer.options.height = newHeight;
 
-            ninjas.Debug.canvas.log( "Updated matter.js engine dimensions according to canvas." );
+            ninjas.Debug.canvas.log( 'Updated matter.js engine dimensions according to canvas.' );
         }
 
         /** ************************************************************************************************************

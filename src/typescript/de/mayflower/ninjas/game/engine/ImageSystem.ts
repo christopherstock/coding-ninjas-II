@@ -7,27 +7,26 @@
     export class ImageSystem
     {
         /** All image file names to load. */
-        private         fileNames                       :string[]                       = null;
+        private     readonly            fileNames                       :string[]                       = null;
         /** All image file names to mirror. */
-        private         mirroredFileNames               :string[]                       = null;
-
+        private     readonly            mirroredFileNames               :string[]                       = null;
         /** The method to invoke when all images are loaded. */
-        private         onLoadComplete                  :Function                       = null;
+        private     readonly            onLoadComplete                  :Function                       = null;
 
         /** The number of images to load. */
-        private         imagesToLoad                    :number                         = 0;
+        private                         imagesToLoad                    :number                         = 0;
         /** The number of currently loaded images. */
-        private         loadedImageCount                :number                         = 0;
+        private                         loadedImageCount                :number                         = 0;
 
         /** The number of images that need to be mirrored. */
-        private         imagesToMirror                  :number                         = 0;
+        private                         imagesToMirrorCount             :number                         = 0;
         /** The number of currently mirrored images. */
-        private         mirroredImageCount              :number                         = 0;
+        private                         mirroredImageCount              :number                         = 0;
 
         /** All loaded image objects. */
-        private         originalImages                  :HTMLImageElement[]             = [];
+        private                         originalImages                  :HTMLImageElement[]             = [];
         /** All loaded and mirrored image objects. */
-        private         mirroredImages                  :HTMLImageElement[]             = [];
+        private                         mirroredImages                  :HTMLImageElement[]             = [];
 
         /** ************************************************************************************************************
         *   Preloads all images into memory.
@@ -54,7 +53,7 @@
         {
             if ( !this.originalImages[ id ] )
             {
-                throw new Error( "The image id [" + id + "] doesn't exist in the image array stack." );
+                throw new Error( 'The image id [' + id + '] doesn\'t exist in the image array stack.' );
             }
 
             return this.originalImages[ id ];
@@ -95,8 +94,8 @@
             ninjas.Debug.image.log( "Mirroring [" + this.mirroredFileNames.length + "] images" );
 
             // mirror determined images
-            this.imagesToMirror = this.mirroredFileNames.length;
-            for ( let mirroredFileName of this.mirroredFileNames )
+            this.imagesToMirrorCount = this.mirroredFileNames.length;
+            for ( const mirroredFileName of this.mirroredFileNames )
             {
                 this.mirroredImages[ mirroredFileName ] = ninjas.IO.flipImageHorizontal(
                     this.originalImages[ mirroredFileName ],
@@ -129,11 +128,13 @@
         ***************************************************************************************************************/
         private onMirrorImage=( event:Event ) : void =>
         {
-            ninjas.Main.game.preloader.setLoadingPercentage( 55 + ( 20 * this.mirroredImageCount / this.imagesToMirror ) );
+            ninjas.Main.game.preloader.setLoadingPercentage(
+                55 + ( 20 * this.mirroredImageCount / this.imagesToMirrorCount )
+            );
 
-            if ( ++this.mirroredImageCount == this.imagesToMirror )
+            if ( ++this.mirroredImageCount === this.imagesToMirrorCount )
             {
-                ninjas.Debug.image.log( "All [" + this.imagesToMirror + "] images mirrored" );
+                ninjas.Debug.image.log( 'All [' + String( this.imagesToMirrorCount ) + '] images mirrored' );
 
                 this.onLoadComplete();
             }

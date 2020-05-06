@@ -84,7 +84,7 @@
 
             // invoke engine ticks repeatedly
             window.setInterval(
-                this.tick,
+                this.tickGame,
                 ninjas.SettingGame.TICK_DELAY_DELTA
             );
         };
@@ -147,7 +147,7 @@
         /** ************************************************************************************************************
         *   Being invoked each tick of the game loop in order to render the game.
         ***************************************************************************************************************/
-        private tick :() => void = () :void =>
+        private tickGame :() => void = () :void =>
         {
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {

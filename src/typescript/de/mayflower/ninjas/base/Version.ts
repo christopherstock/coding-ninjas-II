@@ -6,11 +6,15 @@
     *******************************************************************************************************************/
     export class Version
     {
+        /** The project's version v.1.1.1. */
+        public      static  readonly                V_1_1_1                 :Version            = new Version( '1.1.1', 'SECOND-TRY',    '05.05.2020, 19:22:00 GMT+1' );
+        /** The project's version v.1.0.0. */
+        public      static  readonly                V_1_0_0                 :Version            = new Version( '1.0.0', 'CODING-NINJAS', '10.03.2018, 10:42:00 GMT+1' );
         /** The project's version v.0.0.1. */
-        public      static  readonly                V_0_0_1                 :Version            = new Version( '0.0.1', 'PRIMAL', '26.01.2018, 16:00:00 GMT+1' );
+        public      static  readonly                V_0_0_1                 :Version            = new Version( '0.0.1', 'PRIMAL',        '26.01.2018, 16:00:00 GMT+1' );
 
         /** The project's current version. */
-        public      static  readonly                CURRENT_VERSION         :Version            = Version.V_0_0_1;
+        public      static  readonly                CURRENT_VERSION         :Version            = Version.V_1_1_1;
 
         /** This version's specifier. */
         private             readonly                 version                 :string             = null;

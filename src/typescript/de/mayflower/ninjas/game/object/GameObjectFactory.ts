@@ -301,7 +301,10 @@
         *
         *   @return The created obstacle.
         ***************************************************************************************************************/
-        public static createFreeForm( x:number, y:number, vertices:Array<matter.Vector>, angle:number, spriteTemplate:ninjas.SpriteTemplate ):ninjas.Obstacle
+        public static createFreeForm(
+            x:number, y:number, vertices:matter.Vector[], angle:number, spriteTemplate:ninjas.SpriteTemplate
+        )
+        : ninjas.Obstacle
         {
             return new ninjas.Obstacle
             (
@@ -347,7 +350,7 @@
         )
         : ninjas.Obstacle
         {
-            let vertices:Array<matter.Vector> = [];
+            const vertices :matter.Vector[] = [];
 
             // shape ramp
             vertices.push( matter.Vector.create( 0.0,   0.0             ) );
@@ -626,7 +629,10 @@
         *
         *   @return The created decoration.
         ***************************************************************************************************************/
-        public static createSigsaw( x:number, y:number, width:number, height:number, spriteTemplate:ninjas.SpriteTemplate ):ninjas.SigSaw
+        public static createSigsaw(
+            x:number, y:number, width:number, height:number, spriteTemplate:ninjas.SpriteTemplate
+        )
+        : ninjas.SigSaw
         {
             return new ninjas.SigSaw
             (
@@ -664,7 +670,7 @@
             height         :number,
             spriteTemplate :ninjas.SpriteTemplate,
             speed          :number,
-            waypoints      :Array<matter.Vector>
+            waypoints      :matter.Vector[]
         )
         :ninjas.Platform
         {
@@ -683,22 +689,25 @@
                 ),
                 spriteTemplate,
                 speed,
-                waypoints,
+                waypoints
             );
         }
 
         /** ************************************************************************************************************
-         *   Creates a bounce.
-         *
-         *   @param x              Anchor X.
-         *   @param y              Anchor Y.
-         *   @param width          Object width.
-         *   @param height         Object height.
-         *   @param spriteTemplate The decoration sprite.
-         *
-         *   @return The created decoration.
-         ***************************************************************************************************************/
-        public static createBounce( x:number, y:number, width:number, height:number, spriteTemplate:ninjas.SpriteTemplate ):ninjas.Bounce
+        *   Creates a bounce.
+        *
+        *   @param x              Anchor X.
+        *   @param y              Anchor Y.
+        *   @param width          Object width.
+        *   @param height         Object height.
+        *   @param spriteTemplate The decoration sprite.
+        *
+        *   @return The created decoration.
+        ***************************************************************************************************************/
+        public static createBounce(
+            x:number, y:number, width:number, height:number, spriteTemplate:ninjas.SpriteTemplate
+        )
+        : ninjas.Bounce
         {
             return new ninjas.Bounce
             (
