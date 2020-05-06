@@ -179,6 +179,7 @@
                     left:     'auto',
                     margin:   '0',
                     heat:     1,
+                    theme:    'dark',
                 }
             );
         }

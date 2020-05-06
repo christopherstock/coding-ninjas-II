@@ -104,7 +104,7 @@
         {
             if ( ++this.loadedSoundCount >= this.fileNames.length )
             {
-                ninjas.Debug.sound.log( 'All [' + this.fileNames.length + '] sounds loaded' );
+                ninjas.Debug.sound.log( 'All [' + String( this.fileNames.length ) + '] sounds loaded' );
 
                 this.onLoadComplete();
             }

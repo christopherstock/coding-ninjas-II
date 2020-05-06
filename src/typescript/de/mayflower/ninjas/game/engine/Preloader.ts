@@ -78,7 +78,7 @@
         ***************************************************************************************************************/
         private preloaderImageLoaded = () :void =>
         {
-            if ( ++this.loadedImageCount == 2 )
+            if ( ++this.loadedImageCount === 2 )
             {
                 ninjas.Debug.preloader.log( 'All preloader images loaded.' );
 

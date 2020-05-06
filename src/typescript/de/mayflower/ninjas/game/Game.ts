@@ -119,7 +119,7 @@
                 if ( enable )
                 {
                     // noinspection JSIgnoredPromiseFromCall
-                    this.bgMusic.play();
+                    this.bgMusic.play().then().catch( ( e :Error ) => { return e; } );
                 }
                 else
                 {

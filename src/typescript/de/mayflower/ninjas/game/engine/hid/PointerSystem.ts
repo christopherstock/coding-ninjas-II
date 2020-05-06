@@ -60,7 +60,9 @@
 
             if ( ninjas.Main.game.level != null )
             {
-                let playerCenterX:number = ( ninjas.Main.game.level.player.shape.body.position.x ) - ninjas.Main.game.camera.getOffsetX();
+                const playerCenterX :number = (
+                    ninjas.Main.game.level.player.shape.body.position.x
+                ) - ninjas.Main.game.camera.getOffsetX();
 
                 if ( event.clientX < playerCenterX )
                 {

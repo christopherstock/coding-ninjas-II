@@ -74,11 +74,11 @@
         ***************************************************************************************************************/
         public loadImages() : void
         {
-            ninjas.Debug.image.log( "Loading [" + this.fileNames.length + "] images" );
+            ninjas.Debug.image.log( 'Loading [' + String( this.fileNames.length ) + '] images' );
 
             // load all images
             this.imagesToLoad = this.fileNames.length;
-            for ( let fileName of this.fileNames )
+            for ( const fileName of this.fileNames )
             {
                 this.originalImages[ fileName ]        = new Image();
                 this.originalImages[ fileName ].src    = fileName;
@@ -91,7 +91,7 @@
         ***************************************************************************************************************/
         public mirrorImages() : void
         {
-            ninjas.Debug.image.log( "Mirroring [" + this.mirroredFileNames.length + "] images" );
+            ninjas.Debug.image.log( 'Mirroring [' + String( this.mirroredFileNames.length ) + '] images' );
 
             // mirror determined images
             this.imagesToMirrorCount = this.mirroredFileNames.length;
@@ -113,9 +113,9 @@
         {
             ninjas.Main.game.preloader.setLoadingPercentage( 5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
 
-            if ( ++this.loadedImageCount == this.imagesToLoad )
+            if ( ++this.loadedImageCount === this.imagesToLoad )
             {
-                ninjas.Debug.image.log( "All [" + this.imagesToLoad + "] images loaded" );
+                ninjas.Debug.image.log( 'All [' + String( this.imagesToLoad ) + '] images loaded' );
 
                 this.mirrorImages();
             }
