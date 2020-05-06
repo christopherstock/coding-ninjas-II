@@ -92,8 +92,9 @@ module.exports = ( env, argv ) => {
 
         // 'wowjs': 'WOW',
         // 'antd':      'antd',
-        // 'react':     'react',
-        //  'react-dom': 'reactDOM',
+
+        // 'react-dom': 'ReactDOM',
+        'react':     'React',
 
     }
 
