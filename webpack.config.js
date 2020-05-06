@@ -91,6 +91,9 @@ module.exports = ( env, argv ) => {
     config.externals = {
 
         // 'wowjs': 'WOW',
+        // 'antd':      'antd',
+        // 'react':     'react',
+        //  'react-dom': 'reactDOM',
 
     }
 
