@@ -9,28 +9,40 @@
     export class Engine
     {
         /** The canvas element. */
-        public      canvasSystem            :ninjas.CanvasSystem            = null;
+        public              canvasSystem            :ninjas.CanvasSystem            = null;
         /** The image system. */
-        public      imageSystem             :ninjas.ImageSystem             = null;
+        public              imageSystem             :ninjas.ImageSystem             = null;
         /** The soundSystem system. */
-        public      soundSystem             :ninjas.SoundSystem             = null;
+        public              soundSystem             :ninjas.SoundSystem             = null;
         /** The matterJS engine. */
-        public      matterJsSystem          :ninjas.MatterJsSystem          = null;
+        public              matterJsSystem          :ninjas.MatterJsSystem          = null;
         /** The site system. */
-        public      siteSystem              :ninjas.SiteSystem              = null;
+        public              siteSystem              :ninjas.SiteSystem              = null;
         /** The custom key system. */
-        public      keySystem               :ninjas.KeySystem               = null;
+        public              keySystem               :ninjas.KeySystem               = null;
         /** The custom pointer system. */
-        public      pointerSystem           :ninjas.PointerSystem           = null;
+        public              pointerSystem           :ninjas.PointerSystem           = null;
         /** The FPS counter. */
-        public      fpsMeter                :FPSMeter                       = null;
+        public              fpsMeter                :FPSMeter                       = null;
+
+        /** The parent game instance. */
+        private readonly    game                    :ninjas.Game                    = null;
+
+        /** ************************************************************************************************************
+        *   Creates a new game engine.
+        *
+        *   @param game The parent game instance that uses this game engine.
+        ***************************************************************************************************************/
+        public constructor( game:ninjas.Game ) {
+            this.game = game;
+        }
 
         /** ************************************************************************************************************
         *   Inits the canvas of the game engine.
         ***************************************************************************************************************/
         public initCanvas() : void
         {
-            ninjas.Debug.preloader.log( 'Initing canvas system' );
+            ninjas.Debug.init.log( 'Initing canvas system' );
             this.canvasSystem = new ninjas.CanvasSystem();
             this.canvasSystem.updateDimensions();
         }
@@ -40,7 +52,7 @@
         ***************************************************************************************************************/
         public initImageSystem() : void
         {
-            ninjas.Debug.preloader.log( 'Initing image system' );
+            ninjas.Debug.init.log( 'Initing image system' );
             this.imageSystem = new ninjas.ImageSystem
             (
                 ninjas.ImageData.FILE_NAMES,
@@ -55,7 +67,7 @@
         ***************************************************************************************************************/
         public initWindowResizeHandler() : void
         {
-            ninjas.Debug.preloader.log( 'Initing window resize handler' );
+            ninjas.Debug.init.log( 'Initing window resize handler' );
 
             window.onresize = ( event:Event ) :void => {
 
@@ -83,7 +95,7 @@
 
             ninjas.Main.game.preloader.setLoadingPercentage( 80 );
 
-            ninjas.Debug.preloader.log( 'Initing sound system' );
+            ninjas.Debug.init.log( 'Initing sound system' );
             this.soundSystem = new ninjas.SoundSystem( ninjas.SoundData.FILE_NAMES, () => { this.onSoundsLoaded(); } );
             this.soundSystem.loadSounds();
         };
@@ -99,13 +111,13 @@
             this.initMatterJS();
 
             // init site system
-            ninjas.Debug.preloader.log( 'Initing site system' );
+            ninjas.Debug.init.log( 'Initing site system' );
             this.siteSystem = new ninjas.SiteSystem();
 
             // init key and pointer system
-            ninjas.Debug.preloader.log( 'Initing key system' );
+            ninjas.Debug.init.log( 'Initing key system' );
             this.keySystem = new ninjas.KeySystem();
-            ninjas.Debug.preloader.log( 'Initing pointer system' );
+            ninjas.Debug.init.log( 'Initing pointer system' );
             this.pointerSystem = new ninjas.PointerSystem();
 
             // init window blur handler
@@ -117,7 +129,7 @@
                 this.initFpsCounter();
             }
 
-            ninjas.Debug.preloader.log( 'Initing game engine completed' );
+            ninjas.Debug.init.log( 'Initing game engine completed' );
 
             ninjas.Main.game.preloader.setLoadingPercentage( 100 );
 
@@ -134,7 +146,7 @@
         ***************************************************************************************************************/
         private initMatterJS() : void
         {
-            ninjas.Debug.preloader.log( 'Initing 2D physics engine' );
+            ninjas.Debug.init.log( 'Initing 2D physics engine' );
 
             this.matterJsSystem = new ninjas.MatterJsSystem
             (
@@ -149,7 +161,7 @@
         ***************************************************************************************************************/
         private initWindowBlurHandler() : void
         {
-            ninjas.Debug.preloader.log( 'Initing window blur handler' );
+            ninjas.Debug.init.log( 'Initing window blur handler' );
 
             window.onblur = ( event:Event ) :void => {
 
@@ -164,7 +176,7 @@
         ***************************************************************************************************************/
         private initFpsCounter() : void
         {
-            ninjas.Debug.preloader.log( 'Initing FPS counter' );
+            ninjas.Debug.init.log( 'Initing FPS counter' );
 
             this.fpsMeter = new FPSMeter(
                 null,

@@ -41,8 +41,8 @@
             document.title = ninjas.SettingGame.TITLE;
 
             // acclaim debug console
-            ninjas.Debug.preloader.log( ninjas.SettingGame.TITLE );
-            ninjas.Debug.preloader.log();
+            ninjas.Debug.init.log( ninjas.SettingGame.TITLE );
+            ninjas.Debug.init.log();
 
             // init and start the game engine
             Main.game = new ninjas.Game();

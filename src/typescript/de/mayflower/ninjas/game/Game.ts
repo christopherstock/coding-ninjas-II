@@ -26,7 +26,7 @@
         public preload() : void
         {
             this.preloader = new ninjas.Preloader( () => { this.onPreloaderSetup(); } );
-            this.engine    = new ninjas.Engine();
+            this.engine    = new ninjas.Engine( this );
 
             this.preloader.preload();
         }
@@ -53,7 +53,7 @@
         ***************************************************************************************************************/
         public onPreloaderSetup() : void
         {
-            ninjas.Debug.preloader.log( 'Preloader setup complete.' );
+            ninjas.Debug.init.log( 'Preloader setup complete.' );
             this.preloader.setLoadingPercentage( 5 );
 
             this.engine.initImageSystem();
@@ -64,8 +64,8 @@
         ***************************************************************************************************************/
         public start() : void
         {
-            ninjas.Debug.preloader.log( 'Starting the game loop' );
-            ninjas.Debug.preloader.log();
+            ninjas.Debug.init.log( 'Starting the game loop' );
+            ninjas.Debug.init.log();
 
             // set the number of blend panel ticks
             this.blendPanelTicks = ninjas.SettingGame.BLEND_PANEL_TICKS;
@@ -210,7 +210,7 @@
                 {
                     this.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_1 );
 
-                    ninjas.Debug.preloader.log( 'Resetting and switching to level 1' );
+                    ninjas.Debug.init.log( 'Resetting and switching to level 1' );
                     this.resetAndLaunchLevel( new ninjas.LevelWebsite() );
                 }
 /*

@@ -35,7 +35,7 @@
         ***************************************************************************************************************/
         public preload() : void
         {
-            ninjas.Debug.preloader.log( 'Preloading all game components' );
+            ninjas.Debug.init.log( 'Preloading all game components' );
 
             // bring on the canvas and init the resize handler
             ninjas.Main.game.engine.initCanvas();
@@ -80,7 +80,7 @@
         {
             if ( ++this.loadedImageCount === 2 )
             {
-                ninjas.Debug.preloader.log( 'All preloader images loaded.' );
+                ninjas.Debug.init.log( 'All preloader images loaded.' );
 
                 this.onPreloaderImageLoadComplete();
             }

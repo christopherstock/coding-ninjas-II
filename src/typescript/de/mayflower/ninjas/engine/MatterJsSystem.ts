@@ -71,7 +71,7 @@
 
             // set all loaded image as MatterJS texture cache
             this.renderer.textures = textureCache;
-            ninjas.Debug.preloader.log(
+            ninjas.Debug.init.log(
                 'Assigned ['
                 + String( Object.keys( this.renderer.textures ).length )
                 + '] textures to renderer texture cache '

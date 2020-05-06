@@ -211,7 +211,7 @@
         ***************************************************************************************************************/
         private initWowSystem() : void
         {
-            ninjas.Debug.preloader.log( 'Initing WOW animations' );
+            ninjas.Debug.init.log( 'Initing WOW animations' );
 
             this.wowSystem = new wow.WOW(
                 {

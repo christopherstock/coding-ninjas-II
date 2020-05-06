@@ -9,8 +9,8 @@
         /** Debugs the key system. */
         public      static  readonly    key             :Debug              = new Debug( false  );
 
-        /** Debugs the preloading system. */
-        public      static  readonly    preloader       :Debug              = new Debug( true  );
+        /** Debugs the init / preloading system. */
+        public      static  readonly    init            :Debug              = new Debug( true  );
         /** Debugs the image system. */
         public      static  readonly    image           :Debug              = new Debug( false );
         /** Debugs the sound system. */
