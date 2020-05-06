@@ -15,13 +15,13 @@
         /** ************************************************************************************************************
         *   Creates a new Matter.js engine.
         *
-        *   @param canvas              The canvas to use.
+        *   @param canvasSystem        The canvasSystem to use.
         *   @param callbackAfterRender The function to invoke after  the engine has been rendered and drawed.
         *   @param textureCache        All cached textures to use.
         ***************************************************************************************************************/
         public constructor
         (
-            canvas              :HTMLCanvasElement,
+            canvasSystem        :ninjas.CanvasSystem,
             callbackAfterRender :( renderContext:CanvasRenderingContext2D ) => void,
             textureCache        :HTMLImageElement[]
         )
@@ -38,7 +38,7 @@
             // create renderer
             this.renderer = matter.Render.create(
                 {
-                    canvas:  canvas,
+                    canvas:  canvasSystem.getCanvas(),
                     engine:  this.engine,
                     options: {
                         hasBounds:          true,
@@ -50,8 +50,8 @@
 
                         background:         ninjas.SettingEngine.CANVAS_BG,
 
-                        width:              ninjas.Main.game.engine.canvasSystem.getWidth(),
-                        height:             ninjas.Main.game.engine.canvasSystem.getHeight(),
+                        width:              canvasSystem.getWidth(),
+                        height:             canvasSystem.getHeight(),
 /*
                         showSleeping:       true,
                         showDebug:          true,

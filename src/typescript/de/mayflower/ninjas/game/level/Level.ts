@@ -39,45 +39,47 @@
 
         /** ************************************************************************************************************
         *   Inits a new level.
+        *
+        *   @param matterJsSystem The matter.js instance to add all elements to.
         ***************************************************************************************************************/
-        public init() : void
+        public init( matterJsSystem:ninjas.MatterJsSystem ) : void
         {
             this.createGameObjects();
 
             for ( const parallaxBg of this.parallaxBgs )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( parallaxBg.shape.body );
+                matterJsSystem.addToWorld( parallaxBg.shape.body );
             }
             for ( const siteTrigger of this.siteTriggers )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( siteTrigger.shape.body );
+                matterJsSystem.addToWorld( siteTrigger.shape.body );
             }
             for ( const decoBg of this.decosBg )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( decoBg.shape.body );
+                matterJsSystem.addToWorld( decoBg.shape.body );
             }
             for ( const obstacle of this.obstacles )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( obstacle.shape.body );
+                matterJsSystem.addToWorld( obstacle.shape.body );
             }
             for ( const movable of this.movables )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( movable.shape.body );
+                matterJsSystem.addToWorld( movable.shape.body );
             }
             for ( const enemy of this.enemies )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( enemy.shape.body );
+                matterJsSystem.addToWorld( enemy.shape.body );
             }
 
-            ninjas.Main.game.engine.matterJsSystem.addToWorld( this.player.shape.body );
+            matterJsSystem.addToWorld( this.player.shape.body );
 
             for ( const gameObject of this.decosFg )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                matterJsSystem.addToWorld( gameObject.shape.body );
             }
             for ( const gameObject of this.parallaxFgs )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                matterJsSystem.addToWorld( gameObject.shape.body );
             }
         }
 

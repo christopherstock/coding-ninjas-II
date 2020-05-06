@@ -81,7 +81,7 @@
                         this.canvasSystem.getHeight()
                     );
                     this.siteSystem.updatePanelSizeAndPosition();
-                    ninjas.Main.game.resetCamera();
+                    this.game.resetCamera();
                 }
             };
         }
@@ -91,7 +91,7 @@
         ***************************************************************************************************************/
         private onImagesLoaded() : void
         {
-            ninjas.SpriteTemplate.assignAllImageSizes();
+            ninjas.SpriteTemplate.assignAllImageSizes( this.imageSystem );
 
             this.game.preloader.setLoadingPercentage( 80 );
 
@@ -150,7 +150,7 @@
 
             this.matterJsSystem = new ninjas.MatterJsSystem
             (
-                this.canvasSystem.getCanvas(),
+                this.canvasSystem,
                 ( renderContext:CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
                 this.imageSystem.getAll()
             );

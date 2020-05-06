@@ -108,18 +108,20 @@
 
         /** ************************************************************************************************************
         *   Assigns the image dimensions of the first frame for this sprite template.
+        *
+        *   @param imageSystem The image system to use.
         ***************************************************************************************************************/
-        private assignImageSizes() : void
+        private assignImageSizes( imageSystem:ninjas.ImageSystem ) : void
         {
-            this.width  = ninjas.Main.game.engine.imageSystem.getImage( this.imageIds[ 0 ] ).width;
-            this.height = ninjas.Main.game.engine.imageSystem.getImage( this.imageIds[ 0 ] ).height;
+            this.width  = imageSystem.getImage( this.imageIds[ 0 ] ).width;
+            this.height = imageSystem.getImage( this.imageIds[ 0 ] ).height;
 
             // browse all frames and alert on differing dimensions
             for ( const imageId of this.imageIds )
             {
                 if (
-                       this.width  !== ninjas.Main.game.engine.imageSystem.getImage( imageId ).width
-                    || this.height !== ninjas.Main.game.engine.imageSystem.getImage( imageId ).height
+                       this.width  !== imageSystem.getImage( imageId ).width
+                    || this.height !== imageSystem.getImage( imageId ).height
                 )
                 {
                     throw new Error( 'Differing sprite frame size detected in image id [' + imageId + ']' );
@@ -152,12 +154,14 @@
 
         /** ************************************************************************************************************
         *   Assigns the image dimensions of the first frame to all sprite templates.
+        *
+        *   @param imageSystem The image system to use.
         ***************************************************************************************************************/
-        public static assignAllImageSizes() : void
+        public static assignAllImageSizes( imageSystem:ninjas.ImageSystem ) : void
         {
             for ( const spriteTemplate of ninjas.SpriteData.ALL_SPRITE_TEMPLATES )
             {
-                spriteTemplate.assignImageSizes();
+                spriteTemplate.assignImageSizes( imageSystem );
             }
         }
 

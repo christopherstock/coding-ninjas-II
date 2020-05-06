@@ -45,7 +45,7 @@
                 this.engine.canvasSystem.getWidth(),
                 this.engine.canvasSystem.getHeight()
             );
-            this.camera.reset();
+            this.camera.reset( this );
         }
 
         /** ************************************************************************************************************
@@ -102,10 +102,6 @@
         ***************************************************************************************************************/
         public paintHUD( context:CanvasRenderingContext2D ) : void
         {
-/*
-            let testHudWidth:number  = 150;
-            let testHudHeight:number = 50;
-*/
             // paint blend overlay
             if ( !ninjas.SettingDebug.DISABLE_BLEND_PANEL )
             {
@@ -144,7 +140,7 @@
 
             // assign and init level
             this.level = levelToLaunch;
-            this.level.init();
+            this.level.init( this.engine.matterJsSystem );
 
             // reset camera
             this.resetCamera();

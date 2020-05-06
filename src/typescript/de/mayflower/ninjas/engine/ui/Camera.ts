@@ -124,16 +124,14 @@
         /** ************************************************************************************************************
         *   Resets the camera targets and offsets to the current player position without buffering.
         ***************************************************************************************************************/
-        public reset()  : void
+        public reset( game:ninjas.Game )  : void
         {
-            // extract level and player access!
-
             this.assignTargets
             (
-                ninjas.Main.game.level.player.shape.body.position.x,
-                ninjas.Main.game.level.player.shape.body.position.y,
-                ninjas.Main.game.engine.siteSystem.getCameraTargetX(),
-                ninjas.Main.game.engine.canvasSystem.getHeight() * ninjas.SettingEngine.CAMERA_RATIO_Y
+                game.level.player.shape.body.position.x,
+                game.level.player.shape.body.position.y,
+                game.engine.siteSystem.getCameraTargetX(),
+                game.engine.canvasSystem.getHeight() * ninjas.SettingEngine.CAMERA_RATIO_Y
             );
 
             this.offsetX = this.targetX;
