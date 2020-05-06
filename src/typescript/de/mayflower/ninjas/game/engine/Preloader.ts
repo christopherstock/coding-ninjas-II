@@ -48,8 +48,8 @@
             this.imageGay.src  = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderGay.png';
             this.imageMono.src = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderMono.png';
 
-            this.imageGay.onload  = () => { this.preloaderImageLoaded(); };
-            this.imageMono.onload = () => { this.preloaderImageLoaded(); }
+            this.imageGay.onload  = () :void => { this.preloaderImageLoaded(); };
+            this.imageMono.onload = () :void => { this.preloaderImageLoaded(); };
         }
 
         /** ************************************************************************************************************

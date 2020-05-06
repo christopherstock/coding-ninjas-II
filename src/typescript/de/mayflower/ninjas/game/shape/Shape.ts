@@ -35,7 +35,7 @@
         *   @param density     The object's body density.
         *   @param restitution The object's body restitution.
         ***************************************************************************************************************/
-        public constructor
+        protected constructor
         (
             debugColor  :ninjas.DebugColor,
             isStatic    :ninjas.StaticShape,

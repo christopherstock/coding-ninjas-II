@@ -44,29 +44,29 @@
         {
             this.createGameObjects();
 
-            for ( const gameObject of this.parallaxBgs )
+            for ( const parallaxBg of this.parallaxBgs )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                ninjas.Main.game.engine.matterJsSystem.addToWorld( parallaxBg.shape.body );
             }
-            for ( const gameObject of this.siteTriggers )
+            for ( const siteTrigger of this.siteTriggers )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                ninjas.Main.game.engine.matterJsSystem.addToWorld( siteTrigger.shape.body );
             }
-            for ( const gameObject of this.decosBg )
+            for ( const decoBg of this.decosBg )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                ninjas.Main.game.engine.matterJsSystem.addToWorld( decoBg.shape.body );
             }
-            for ( const gameObject of this.obstacles )
+            for ( const obstacle of this.obstacles )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                ninjas.Main.game.engine.matterJsSystem.addToWorld( obstacle.shape.body );
             }
-            for ( const gameObject of this.movables )
+            for ( const movable of this.movables )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                ninjas.Main.game.engine.matterJsSystem.addToWorld( movable.shape.body );
             }
-            for ( const gameObject of this.enemies )
+            for ( const enemy of this.enemies )
             {
-                ninjas.Main.game.engine.matterJsSystem.addToWorld( gameObject.shape.body );
+                ninjas.Main.game.engine.matterJsSystem.addToWorld( enemy.shape.body );
             }
 
             ninjas.Main.game.engine.matterJsSystem.addToWorld( this.player.shape.body );

@@ -1,4 +1,6 @@
 
+    /* eslint-disable max-len */
+
     import * as ninjas from '../../ninjas';
 
     /** ****************************************************************************************************************
@@ -26,7 +28,7 @@
         public      static  readonly    BORDER_SIZE_INNER_TOP                       :number                     = 75;
 
         /** The player's start position X. */
-        public      static  readonly    PLAYER_START_POSITION_X                     :number                     = 0;
+        public      static  readonly    PLAYER_START_POSITION_X                     :number                     = 600;
         /** The player's start position Y. */
         public      static  readonly    PLAYER_START_POSITION_Y                     :number                     = 0;
 

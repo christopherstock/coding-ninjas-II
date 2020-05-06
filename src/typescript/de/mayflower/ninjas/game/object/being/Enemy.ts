@@ -255,7 +255,7 @@
                 {
                     ninjas.Debug.enemy.log( 'Player hit by enemy! Player is punching back now!' );
 
-                    let playerPunchBackDirection:ninjas.CharacterLookingDirection = null;
+                    let playerPunchBackDirection:ninjas.CharacterLookingDirection;
 
                     if ( ninjas.Main.game.level.player.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {

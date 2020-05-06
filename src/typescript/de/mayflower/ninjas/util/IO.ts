@@ -12,7 +12,9 @@
         *
         *   @return The newly created but not already loaded mirrored image.
         ***************************************************************************************************************/
-        public static flipImageHorizontal( original:HTMLImageElement, onLoadCallack:() => void ) : HTMLImageElement
+        public static flipImageHorizontal( original:HTMLImageElement, onLoadCallack:() => void )
+        :
+        HTMLImageElement
         {
             const canvas:HTMLCanvasElement = document.createElement( 'canvas' );
             canvas.width  = original.width;

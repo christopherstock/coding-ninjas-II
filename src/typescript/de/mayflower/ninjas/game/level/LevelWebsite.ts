@@ -35,7 +35,7 @@
             (
                 ninjas.SettingGame.PLAYER_START_POSITION_X,
                 ninjas.SettingGame.PLAYER_START_POSITION_Y,
-                ninjas.CharacterLookingDirection.LEFT,
+                ninjas.CharacterLookingDirection.RIGHT,
                 true
             );
 

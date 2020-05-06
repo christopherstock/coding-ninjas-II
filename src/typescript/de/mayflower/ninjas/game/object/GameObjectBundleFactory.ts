@@ -88,12 +88,12 @@
         )
         : void
         {
-            let leftTile   :ninjas.SpriteTemplate = null;
-            let centerTile :ninjas.SpriteTemplate = null;
-            let rightTile  :ninjas.SpriteTemplate = null;
+            let leftTile   :ninjas.SpriteTemplate;
+            let centerTile :ninjas.SpriteTemplate;
+            let rightTile  :ninjas.SpriteTemplate;
 
-            let drawY      :number = 0;
-            let alt        :number = 0;
+            let drawY      :number;
+            let alt        :number;
 
             switch ( slope )
             {
