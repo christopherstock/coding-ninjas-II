@@ -259,7 +259,7 @@
                     // add top line
                     let drawY:number = firstLineDrawY;
 
-                    for ( let tileX:number = 0; tileX < lengthHorz; ++tileX )
+                    for ( let tileX :number = 0; tileX < lengthHorz; ++tileX )
                     {
                         if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) )
                         {
@@ -280,7 +280,7 @@
                 else if ( tileY === lengthVert - 1 )
                 {
                     // add bottom line
-                    let drawY:number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
+                    let drawY :number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
 
                     for ( let tileX:number = 0; tileX < lengthHorz; ++tileX )
                     {

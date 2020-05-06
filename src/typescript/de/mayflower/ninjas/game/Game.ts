@@ -84,7 +84,7 @@
 
             // invoke engine ticks repeatedly
             window.setInterval(
-                this.tickGame,
+                () => { this.tickGame(); },
                 ninjas.SettingGame.TICK_DELAY_DELTA
             );
         };
@@ -147,7 +147,7 @@
         /** ************************************************************************************************************
         *   Being invoked each tick of the game loop in order to render the game.
         ***************************************************************************************************************/
-        private tickGame :() => void = () :void =>
+        private tickGame() : void
         {
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
@@ -166,7 +166,7 @@
                 // stop fpsMetet tick
                 this.engine.fpsMeter.tick();
             }
-        };
+        }
 
         /** ************************************************************************************************************
         *   Renders all game components.
