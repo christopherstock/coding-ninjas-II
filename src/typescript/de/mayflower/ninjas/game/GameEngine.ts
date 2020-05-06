@@ -45,7 +45,7 @@
             (
                 ninjas.Image.FILE_NAMES,
                 ninjas.SpriteTemplate.getAllImagesToMirror(),
-                this.onImagesLoaded
+                () => { this.onImagesLoaded(); }
             );
             this.imageSystem.loadImages();
         }
@@ -77,21 +77,21 @@
         /** ************************************************************************************************************
         *   Being invoked when all images are loaded.
         ***************************************************************************************************************/
-        private onImagesLoaded :() => void = () : void =>
+        private onImagesLoaded() : void
         {
             ninjas.SpriteTemplate.assignAllImageSizes();
 
             ninjas.Main.game.preloader.setLoadingPercentage( 80 );
 
             ninjas.Debug.preloader.log( 'Initing sound system' );
-            this.soundSystem = new ninjas.SoundSystem( ninjas.Sound.FILE_NAMES, this.onSoundsLoaded );
+            this.soundSystem = new ninjas.SoundSystem( ninjas.Sound.FILE_NAMES, () => { this.onSoundsLoaded(); } );
             this.soundSystem.loadSounds();
         };
 
         /** ************************************************************************************************************
         *   Being invoked when all sounds are loaded.
         ***************************************************************************************************************/
-        private onSoundsLoaded=() : void =>
+        private onSoundsLoaded() : void
         {
             ninjas.Main.game.preloader.setLoadingPercentage( 90 );
 
@@ -170,7 +170,7 @@
                 null,
                 {
                     graph:    1,
-                    decimals: 1,
+                    decimals: 0, // 1 > stressy xp
                     position: 'absolute',
                     zIndex:   10,
                     top:      'auto',

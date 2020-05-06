@@ -82,7 +82,7 @@
             {
                 this.originalImages[ fileName ]        = new Image();
                 this.originalImages[ fileName ].src    = fileName;
-                this.originalImages[ fileName ].onload = this.onLoadImage;
+                this.originalImages[ fileName ].onload = ( event:Event ) :void => { this.onLoadImage( event ); };
             }
         }
 
@@ -99,44 +99,10 @@
             {
                 this.mirroredImages[ mirroredFileName ] = ninjas.IO.flipImageHorizontal(
                     this.originalImages[ mirroredFileName ],
-                    this.onMirrorImage
+                    () => { this.onMirrorImage(); }
                 );
             }
         }
-
-        /** ************************************************************************************************************
-        *   Being invoked when one image was loaded completely.
-        *
-        *   @param event The according image event.
-        ***************************************************************************************************************/
-        private onLoadImage=( event:Event ) : void =>
-        {
-            ninjas.Main.game.preloader.setLoadingPercentage( 5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
-
-            if ( ++this.loadedImageCount === this.imagesToLoad )
-            {
-                ninjas.Debug.image.log( 'All [' + String( this.imagesToLoad ) + '] images loaded' );
-
-                this.mirrorImages();
-            }
-        };
-
-        /** ************************************************************************************************************
-        *   Being invoked when one image was mirrored.
-        ***************************************************************************************************************/
-        private onMirrorImage=() : void =>
-        {
-            ninjas.Main.game.preloader.setLoadingPercentage(
-                55 + ( 20 * this.mirroredImageCount / this.imagesToMirrorCount )
-            );
-
-            if ( ++this.mirroredImageCount === this.imagesToMirrorCount )
-            {
-                ninjas.Debug.image.log( 'All [' + String( this.imagesToMirrorCount ) + '] images mirrored' );
-
-                this.onLoadComplete();
-            }
-        };
 
         /** ************************************************************************************************************
         *   Delivers an associated array with all images where the src is the key.
@@ -158,5 +124,39 @@
             }
 
             return ret;
+        }
+
+        /** ************************************************************************************************************
+        *   Being invoked when one image was loaded completely.
+        *
+        *   @param event The according image event.
+        ***************************************************************************************************************/
+        private onLoadImage( event:Event ) : void
+        {
+            ninjas.Main.game.preloader.setLoadingPercentage( 5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
+
+            if ( ++this.loadedImageCount === this.imagesToLoad )
+            {
+                ninjas.Debug.image.log( 'All [' + String( this.imagesToLoad ) + '] images loaded' );
+
+                this.mirrorImages();
+            }
+        }
+
+        /** ************************************************************************************************************
+        *   Being invoked when one image was mirrored.
+        ***************************************************************************************************************/
+        private onMirrorImage() : void
+        {
+            ninjas.Main.game.preloader.setLoadingPercentage(
+                55 + ( 20 * this.mirroredImageCount / this.imagesToMirrorCount )
+            );
+
+            if ( ++this.mirroredImageCount === this.imagesToMirrorCount )
+            {
+                ninjas.Debug.image.log( 'All [' + String( this.imagesToMirrorCount ) + '] images mirrored' );
+
+                this.onLoadComplete();
+            }
         }
     }

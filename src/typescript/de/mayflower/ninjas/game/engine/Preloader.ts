@@ -48,8 +48,8 @@
             this.imageGay.src  = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderGay.png';
             this.imageMono.src = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderMono.png';
 
-            this.imageGay.onload  = this.preloaderImageLoaded;
-            this.imageMono.onload = this.preloaderImageLoaded;
+            this.imageGay.onload  = () => { this.preloaderImageLoaded(); };
+            this.imageMono.onload = () => { this.preloaderImageLoaded(); }
         }
 
         /** ************************************************************************************************************
@@ -76,7 +76,7 @@
         /** ************************************************************************************************************
         *   Being invoked when one preloader image has been loaded.
         ***************************************************************************************************************/
-        private preloaderImageLoaded = () :void =>
+        private preloaderImageLoaded() :void
         {
             if ( ++this.loadedImageCount === 2 )
             {
@@ -84,7 +84,7 @@
 
                 this.onPreloaderImageLoadComplete();
             }
-        };
+        }
 
         /** ************************************************************************************************************
         *   Being invoked when all preloader images have been loaded completely.
@@ -94,7 +94,7 @@
             // start the preloading thread
             this.preloaderIntervalHandle = window.setInterval
             (
-                this.tickPreloader,
+                () => { this.tickPreloader(); },
                 ninjas.SettingGame.TICK_DELAY_DELTA
             );
 
@@ -105,10 +105,10 @@
         /** ************************************************************************************************************
         *   Performs one tick of the preloading thread.
         ***************************************************************************************************************/
-        private tickPreloader = ()=>
+        private tickPreloader() : void
         {
             this.drawPreloader( ninjas.Main.game.engine.canvasSystem.getCanvasContext() );
-        };
+        }
 
         /** ************************************************************************************************************
         *   Draws the preloader onto the canvas.

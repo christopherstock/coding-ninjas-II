@@ -81,8 +81,8 @@
                 {
                     this.sounds[ fileName ]              = new Audio();
                     this.sounds[ fileName ].src          = fileName;
-                    this.sounds[ fileName ].onloadeddata = this.onLoadSound;
-                    this.sounds[ fileName ].onerror      = this.onLoadSoundError;
+                    this.sounds[ fileName ].onloadeddata = () :void => { this.onLoadSound(); };
+                    this.sounds[ fileName ].onerror      = () :void => { this.onLoadSoundError(); };
 
                     if ( ninjas.IO.isMac() )
                     {
@@ -100,7 +100,7 @@
         /** ************************************************************************************************************
         *   Being invoked when one sound was loaded completely.
         ***************************************************************************************************************/
-        private onLoadSound=() : void =>
+        private onLoadSound() : void
         {
             if ( ++this.loadedSoundCount >= this.fileNames.length )
             {
@@ -108,15 +108,15 @@
 
                 this.onLoadComplete();
             }
-        };
+        }
 
         /** ************************************************************************************************************
         *   Being invoked when one sound was loaded completely.
         ***************************************************************************************************************/
-        private onLoadSoundError=() : void =>
+        private onLoadSoundError() : void
         {
             ninjas.Debug.sound.log( 'ERROR on loading audio element!' );
 
             this.onLoadSound();
-        };
+        }
     }
