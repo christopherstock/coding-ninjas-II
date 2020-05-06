@@ -7,12 +7,12 @@
     export class SettingMatter
     {
         /** The rendering delta between render ticks. */
-        public  static  readonly    RENDER_DELTA                                :number                     = 10.0;
+        public  static  readonly    RENDER_DELTA                                :number                     = 20.0;
 
         /** The default jump power. */
-        public  static  readonly    PLAYER_JUMP_POWER                           :number                     = -2.75;
+        public  static  readonly    PLAYER_JUMP_POWER                           :number                     = -1.50;
         /** The player's speed in world coordinate per tick. */
-        public  static  readonly    PLAYER_SPEED_MOVE                           :number                     = 7.5;
+        public  static  readonly    PLAYER_SPEED_MOVE                           :number                     = 12.5;
         /** The player's gap size y of it's physical body corners. */
         public  static  readonly    PLAYER_EDGE_GAP_Y                           :number                     = 12.5;
 
@@ -20,7 +20,7 @@
         public  static  readonly    ENEMY_SPEED_MOVE                            :number                     = 3.0;
 
         /** The default vertical gravity for all objects. */
-        public  static  readonly    DEFAULT_GRAVITY_Y                           :number                     = 1.0;
+        public  static  readonly    DEFAULT_GRAVITY_Y                           :number                     = 2.0;
 
         /** The default collision group for all game objects. */
         public  static  readonly    COLLISION_GROUP_COLLIDING                   :matter.ICollisionFilter    =

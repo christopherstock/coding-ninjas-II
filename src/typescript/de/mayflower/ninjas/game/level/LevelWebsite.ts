@@ -25,8 +25,8 @@
 */
             ];
 
-            ninjas.GameObjectBundleFactory.createEnemy( this, 100,  200, ninjas.CharacterLookingDirection.RIGHT, 2100,  3600  );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 300,  400, ninjas.CharacterLookingDirection.RIGHT, 6150,  7100  );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 750,  200, ninjas.CharacterLookingDirection.RIGHT, 2100,  3600  );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 1000, 400, ninjas.CharacterLookingDirection.RIGHT, 6150,  7100  );
 /*
             ninjas.GameObjectBundleFactory.createEnemy( this, 12300, 4200, ninjas.CharacterLookingDirection.RIGHT, 12300, 12800 );
             ninjas.GameObjectBundleFactory.createEnemy( this, 11250, 5100, ninjas.CharacterLookingDirection.RIGHT, 11250, 12000 );
@@ -190,13 +190,19 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16150, 5100, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_3 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16260, 5105, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_2 );
 */
-            // solid ground
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
+
+            // movables
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
+
 
             // bridge and water
-            ninjas.GameObjectBundleFactory.createWaterArea(   this, 640,  660, 5, 4 );
+            ninjas.GameObjectBundleFactory.createWaterArea(   this, 512,  660, 7, 4 );
             ninjas.GameObjectBundleFactory.createBridge(      this, 640,  500       );
+
+            // solid ground
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT  );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
+
 /*
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3584,  4800, 20, 10, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT );

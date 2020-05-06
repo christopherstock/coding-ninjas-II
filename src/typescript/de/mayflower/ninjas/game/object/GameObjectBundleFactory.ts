@@ -544,6 +544,8 @@
         *   @param lookingDirection   The enemies initial looking and walking direction.
         *   @param walkingTargetLeft  Left walking target X.
         *   @param walkingTargetRight Right walking target X.
+        *
+        *   TODO must return the enemy!
         ***************************************************************************************************************/
         public static createEnemy
         (
