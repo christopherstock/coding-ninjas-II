@@ -1,8 +1,8 @@
 
-    import * as ninjas from '../../ninjas';
+    import * as ninjas from '../../../ninjas';
 
     /** ****************************************************************************************************************
-    *   All images the game makes use of.
+    *   The system realizes dynamic image loading.
     *******************************************************************************************************************/
     export class ImageSystem
     {

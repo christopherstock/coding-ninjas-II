@@ -1,22 +1,24 @@
 
     import * as matter from 'matter-js';
-    import * as ninjas from '../../ninjas';
+    import * as ninjas from '../../../ninjas';
 
     /** ****************************************************************************************************************
-    *   Represents the shape of a game object.
+    *   A free form shape for a game object.
     *******************************************************************************************************************/
-    export class ShapeRectangle extends ninjas.Shape
+    export class ShapeFreeForm extends ninjas.Shape
     {
-        /** The rectangle's width. */
-        public              width           :number                 = 0.0;
-        /** The rectangle's height. */
-        public              height          :number                 = 0.0;
+        /** All vertices that build the free form. */
+        public              vertices            :matter.Vector[]        = null;
+
+        /** The boundary width. */
+        public              boundWidth          :number                 = 0.0;
+        /** The boundary height. */
+        public              boundHeight         :number                 = 0.0;
 
         /** ************************************************************************************************************
-        *   Creates a new rectangle shape.
+        *   Creates a new free formed shape.
         *
-        *   @param width       The rectangle's width.
-        *   @param height      The rectangle's height.
+        *   @param vertices    All vertices that make up the entire free form shape.
         *   @param debugColor  The color for the debug object.
         *   @param isStatic    Specifies that this object has a fixed position.
         *   @param angle       The rotation of this body in degrees.
@@ -26,8 +28,7 @@
         ***************************************************************************************************************/
         public constructor
         (
-            width       :number,
-            height      :number,
+            vertices    :matter.Vector[],
             debugColor  :ninjas.DebugColor,
             isStatic    :ninjas.StaticShape,
             angle       :number,
@@ -38,10 +39,11 @@
         {
             super( debugColor, isStatic, angle, friction, density, restitution );
 
-            this.width  = width;
-            this.height = height;
+            this.vertices = vertices;
 
-            this.body   = this.createBody();
+            this.determineBoundDimensions();
+
+            this.body = this.createBody();
         }
 
         /** ************************************************************************************************************
@@ -51,11 +53,10 @@
         ***************************************************************************************************************/
         public createBody() : matter.Body
         {
-            return matter.Bodies.rectangle(
-                ( this.width  / 2 ),
-                ( this.height / 2 ),
-                this.width,
-                this.height,
+            return matter.Bodies.fromVertices(
+                ( this.boundWidth  / 2 ),
+                ( this.boundHeight / 2 ),
+                [ this.vertices ],
                 this.options
             );
         }
@@ -67,7 +68,7 @@
         ***************************************************************************************************************/
         public getWidth() : number
         {
-            return this.width;
+            return this.boundWidth;
         }
 
         /** ************************************************************************************************************
@@ -77,6 +78,38 @@
         ***************************************************************************************************************/
         public getHeight() : number
         {
-            return this.height;
+            return this.boundHeight;
+        }
+
+        /** ************************************************************************************************************
+        *   Calculates the width and height of this shapes bounds.
+        ***************************************************************************************************************/
+        private determineBoundDimensions() : void
+        {
+            let minimumX:number = Infinity;
+            let minimumY:number = Infinity;
+
+            let maximumX:number = -Infinity;
+            let maximumY:number = -Infinity;
+
+            for ( const vertex of this.vertices )
+            {
+                if ( vertex.x < minimumX ) {
+                    minimumX = vertex.x;
+                }
+                if ( vertex.y < minimumY ) {
+                    minimumY = vertex.y;
+                }
+
+                if ( vertex.x > maximumX ) {
+                    maximumX = vertex.x;
+                }
+                if ( vertex.y > maximumY ) {
+                    maximumY = vertex.y;
+                }
+            }
+
+            this.boundWidth  = maximumX - minimumX;
+            this.boundHeight = maximumY - minimumY;
         }
     }

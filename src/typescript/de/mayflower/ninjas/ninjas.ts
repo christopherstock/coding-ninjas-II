@@ -11,13 +11,13 @@
     export * from './game/engine/hid/KeySystem';
     export * from './game/engine/hid/PointerSystem';
 
-    export * from './game/engine/CanvasSystem';
-    export * from './game/engine/ImageSystem';
+    export * from './game/engine/ui/CanvasSystem';
+    export * from './game/engine/io/ImageSystem';
     export * from './game/engine/MatterJsSystem';
     export * from './game/engine/Preloader';
     export * from './game/engine/SitePanel';
     export * from './game/engine/SiteSystem';
-    export * from './game/engine/SoundSystem';
+    export * from './game/engine/io/SoundSystem';
 
     export * from './game/engine/ui/SpriteTemplate';
 
@@ -45,15 +45,15 @@
     export * from './game/object/special/SigSaw';
     export * from './game/object/special/SiteTrigger';
 
-    export * from './game/shape/Shape';
-    export * from './game/shape/ShapeRectangle';
-    export * from './game/shape/ShapeCircle';
-    export * from './game/shape/ShapeFreeForm';
+    export * from './game/engine/shape/Shape';
+    export * from './game/engine/shape/ShapeRectangle';
+    export * from './game/engine/shape/ShapeCircle';
+    export * from './game/engine/shape/ShapeFreeForm';
 
     export * from './game/Game';
     export * from './game/GameEngine';
 
-    export * from './hid/Key';
+    export * from './game/engine/hid/Key';
 
     export * from './data/ImageData';
     export * from './data/SoundData';
