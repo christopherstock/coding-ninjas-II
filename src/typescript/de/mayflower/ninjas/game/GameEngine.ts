@@ -121,11 +121,11 @@
 
             ninjas.Main.game.preloader.setLoadingPercentage( 100 );
 
-            // hang on a sec
+            // start the game loop in one second ??
             window.setTimeout
             (
-                ninjas.Main.game.start,
-                ( ninjas.SettingDebug.DEBUG_MODE ? 0 : 1000 )
+                () => { ninjas.Main.game.start(); },
+                ( ninjas.SettingDebug.DEBUG_MODE ? 0 : 500 )
             );
         };
 

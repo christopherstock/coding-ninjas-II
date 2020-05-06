@@ -119,8 +119,8 @@
 
             window.setTimeout(
                 () => {
-                    this.sitePanel.removeFromDom();
                     this.animationState = ninjas.SitePanelAnimation.HIDDEN;
+                    this.sitePanel.removeFromDom();
                 },
                 ( ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION / 2 )
             );

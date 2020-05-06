@@ -41,7 +41,7 @@
 
             this.siteTriggers =
             [
-                ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_4 ) ),
+                ninjas.GameObjectFactory.createSiteTrigger( 2000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_4 ) ),
 /*
                 ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),
                 ninjas.GameObjectFactory.createSiteTrigger( 3530,  4060, ninjas.SiteContent.CONTENT_SERVICES,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_3 ) ),
@@ -192,15 +192,11 @@
 */
             // solid ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
 
             // bridge and water
             ninjas.GameObjectBundleFactory.createWaterArea(   this, 640,  660, 5, 4 );
             ninjas.GameObjectBundleFactory.createBridge(      this, 640,  500       );
-
-
-
-
 /*
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3584,  4800, 20, 10, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT );

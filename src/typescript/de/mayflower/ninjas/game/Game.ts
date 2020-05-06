@@ -25,7 +25,7 @@
         ***************************************************************************************************************/
         public preload() : void
         {
-            this.preloader = new ninjas.Preloader( this.onPreloaderSetup );
+            this.preloader = new ninjas.Preloader( () => { this.onPreloaderSetup(); } );
             this.engine    = new ninjas.GameEngine();
 
             this.preloader.preload();
@@ -51,7 +51,7 @@
         /** ************************************************************************************************************
         *   Being invoked when the preloader is set up.
         ***************************************************************************************************************/
-        public onPreloaderSetup :() => void = () : void =>
+        public onPreloaderSetup() : void
         {
             ninjas.Debug.preloader.log( 'Preloader setup complete.' );
             this.preloader.setLoadingPercentage( 5 );
@@ -62,7 +62,7 @@
         /** ************************************************************************************************************
         *   Starts the game loop.
         ***************************************************************************************************************/
-        public start :() => void = () :void =>
+        public start() : void
         {
             ninjas.Debug.preloader.log( 'Starting the game loop' );
             ninjas.Debug.preloader.log();

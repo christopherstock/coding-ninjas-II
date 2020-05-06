@@ -15,7 +15,7 @@
         /** Disables all sounds. */
         public  static  readonly    DISABLE_SOUNDS                          :boolean                    = ( true && SettingDebug.DEBUG_MODE );
         /** Disables the initial blend panel. */
-        public  static  readonly    DISABLE_BLEND_PANEL                     :boolean                    = ( false && SettingDebug.DEBUG_MODE );
+        public  static  readonly    DISABLE_BLEND_PANEL                     :boolean                    = ( true && SettingDebug.DEBUG_MODE );
         /** Shows Matter.js indicators. */
         public  static  readonly    MATTERJS_DEBUG_VIEWS                    :boolean                    = ( false && SettingDebug.DEBUG_MODE );
     }
