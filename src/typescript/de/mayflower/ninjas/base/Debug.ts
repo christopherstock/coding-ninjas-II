@@ -16,7 +16,7 @@
         /** Debugs the sound system. */
         public      static  readonly    sound           :Debug              = new Debug( true  );
         /** Debugs the pointer system. */
-        public      static  readonly    pointer         :Debug              = new Debug( true  );
+        public      static  readonly    pointer         :Debug              = new Debug( false );
         /** Debugs the pickable game items. */
         public      static  readonly    item            :Debug              = new Debug( true  );
         /** Debugs character events. */

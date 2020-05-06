@@ -2,11 +2,11 @@
     import * as React           from 'react';
     import * as antd            from 'antd';
     import * as ninjas          from '../ninjas';
-    import { TooltipPlacement } from "antd/lib/tooltip";
-    import { ButtonType       } from "antd/lib/button";
-    import { CarouselEffect   } from "antd/lib/carousel";
-    import { FloatProperty    } from "csstype";
-    import { RadioChangeEvent } from "antd/es/radio";
+    import { TooltipPlacement } from 'antd/lib/tooltip';
+    import { ButtonType       } from 'antd/lib/button';
+    import { CarouselEffect   } from 'antd/lib/carousel';
+    import { FloatProperty    } from 'csstype';
+    import { RadioChangeEvent } from 'antd/es/radio';
 
     /** ****************************************************************************************************************
     *   Creates content components for the factory.
@@ -22,7 +22,9 @@
         ***************************************************************************************************************/
         public static createStepIndicator( content:ninjas.SiteContent ) : JSX.Element
         {
-            let index = ninjas.Main.game.engine.siteSystem.contentSystem.discoveredContents.indexOf( content );
+            const index :number = ninjas.Main.game.engine.siteSystem.contentSystem.discoveredContents.indexOf(
+                content
+            );
 
             return <antd.Steps size="small" current={ index } status="process">
                 <antd.Steps.Step title="" description="" />
@@ -82,8 +84,8 @@
         ***************************************************************************************************************/
         public static createImageFloating( float:FloatProperty, src:string ) : JSX.Element
         {
-            let marginLeft:string  = ( float == "right" ? "10px" : "0" );
-            let marginRight:string = ( float == "left"  ? "10px" : "0" );
+            const marginLeft  :string = ( float === 'right' ? '10px' : '0' );
+            const marginRight :string = ( float === 'left'  ? '10px' : '0' );
 
             return <img
                 style={
@@ -91,7 +93,7 @@
                         float:        float,
                         marginLeft:   marginLeft,
                         marginRight:  marginRight,
-                        marginBottom: "10px",
+                        marginBottom: '10px',
                     }
                 }
                 src={ src }
@@ -108,7 +110,7 @@
         ***************************************************************************************************************/
         public static createHeadline( text:string ) : JSX.Element
         {
-            let className:string = "sitePanel defaultHeadline";
+            const className:string = 'sitePanel defaultHeadline';
 
             return <h1 className={ className }>
                 { text }
@@ -123,11 +125,11 @@
         *
         *   @return The created JSX element.
         ***************************************************************************************************************/
-        public static createParagraph( text:string, className:string = "sitePanel defaultParagraph" ) : JSX.Element
+        public static createParagraph( text:string, className:string = 'sitePanel defaultParagraph' ) : JSX.Element
         {
             return <p
                 className={ className }
-                dangerouslySetInnerHTML={ { __html: text, } }
+                dangerouslySetInnerHTML={ { __html: text } }
             />
         }
 
@@ -366,12 +368,12 @@
         ***************************************************************************************************************/
         public static createTimeline
         (
-            colors :Array<string>,
-            items  :Array<JSX.Element>
+            colors :string[],
+            items  :JSX.Element[]
         )
         : JSX.Element
         {
-            let contents:Array<JSX.Element> = [];
+            const contents:JSX.Element[] = [];
 
             for ( let key:number = 0; key < items.length; ++key )
             {
@@ -401,13 +403,13 @@
         public static createButtonGroup
         (
             defaultValue :string,
-            values       :Array<string>,
-            labels       :Array<string>,
+            values       :string[],
+            labels       :string[],
             onChange     :( e:RadioChangeEvent ) => void
         )
         : JSX.Element
         {
-            let contents:Array<JSX.Element> = [];
+            const contents :JSX.Element[] = [];
 
             for ( let key:number = 0; key < values.length; ++key )
             {

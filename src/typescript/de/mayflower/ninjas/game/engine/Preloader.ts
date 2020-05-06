@@ -33,7 +33,7 @@
         /** ************************************************************************************************************
         *   Shows the preloader and starts preloading all initialization contents.
         ***************************************************************************************************************/
-        public preload()
+        public preload() : void
         {
             ninjas.Debug.preloader.log( 'Preloading all game components' );
 
@@ -89,7 +89,7 @@
         /** ************************************************************************************************************
         *   Being invoked when all preloader images have been loaded completely.
         ***************************************************************************************************************/
-        private onPreloaderImageLoadComplete()
+        private onPreloaderImageLoadComplete() : void
         {
             // start the preloading thread
             this.preloaderIntervalHandle = window.setInterval
@@ -105,7 +105,7 @@
         /** ************************************************************************************************************
         *   Performs one tick of the preloading thread.
         ***************************************************************************************************************/
-        private tickPreloader=()=>
+        private tickPreloader = ()=>
         {
             this.drawPreloader( ninjas.Main.game.engine.canvasSystem.getCanvasContext() );
         };
@@ -115,7 +115,7 @@
         *
         *   @param ctx The canvas rendering context to draw onto.
         ***************************************************************************************************************/
-        private drawPreloader( ctx:CanvasRenderingContext2D )
+        private drawPreloader( ctx:CanvasRenderingContext2D ) : void
         {
             // clear canvas
             ninjas.Drawing.fillRect

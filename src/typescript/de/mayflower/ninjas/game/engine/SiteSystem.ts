@@ -1,6 +1,6 @@
 
     import * as ninjas from '../../ninjas';
-    const wow = require( 'wowjs' );
+    const wow :any = require( 'wowjs' );
 
     /** ****************************************************************************************************************
     *   Specifies the current site panel animation state.
@@ -23,27 +23,28 @@
     export class SiteSystem
     {
         /** The content system. */
-        public              contentSystem               :ninjas.SiteContentSystem       = null;
-        /** The active site panel. */
-        private             sitePanel                   :ninjas.SitePanel               = null;
+        public                  contentSystem               :ninjas.SiteContentSystem       = null;
         /** The current animation of the site panel. */
-        private             animationState              :ninjas.SitePanelAnimation      = SitePanelAnimation.HIDDEN;
+        private                 animationState              :ninjas.SitePanelAnimation      = SitePanelAnimation.HIDDEN;
 
         /** The current width of the panel. */
-        private             panelWidth                  :number                         = 0;
+        private                 panelWidth                  :number                         = 0;
         /** The current height of the panel. */
-        private             panelHeight                 :number                         = 0;
+        private                 panelHeight                 :number                         = 0;
 
         /** The current width of the panel including border size. */
-        private             panelAndBorderWidth         :number                         = 0;
+        private                 panelAndBorderWidth         :number                         = 0;
 
         /** The left camera target X if the border is shown right. */
-        private             leftCameraTargetX           :number                         = 0;
+        private                 leftCameraTargetX           :number                         = 0;
         /** The right camera target X if the border is shown left. */
-        private             rightCameraTargetX          :number                         = 0;
+        private                 rightCameraTargetX          :number                         = 0;
 
         /** The WOW animation system. */
-        private             wowSystem                   :any                            = null;
+        private                 wowSystem                   :any                            = null;
+
+        /** The active site panel. */
+        private     readonly    sitePanel                   :ninjas.SitePanel               = null;
 
         /** ************************************************************************************************************
         *   Creates a new site system.
@@ -70,12 +71,12 @@
         public show( content:ninjas.SiteContent, position:ninjas.SitePanelPosition ) : boolean
         {
             // only show if hidden
-            if ( this.animationState != ninjas.SitePanelAnimation.HIDDEN )
+            if ( this.animationState !== ninjas.SitePanelAnimation.HIDDEN )
             {
                 return false;
             }
 
-            ninjas.Debug.site.log( "Showing site panel" );
+            ninjas.Debug.site.log( 'Showing site panel' );
             this.animationState = ninjas.SitePanelAnimation.SHOWING;
 
             // set content for site panel
@@ -105,12 +106,12 @@
         ***************************************************************************************************************/
         public hide() : boolean
         {
-            if ( this.animationState != ninjas.SitePanelAnimation.PRESENT )
+            if ( this.animationState !== ninjas.SitePanelAnimation.PRESENT )
             {
                 return false;
             }
 
-            ninjas.Debug.site.log( "Hiding site panel" );
+            ninjas.Debug.site.log( 'Hiding site panel' );
             this.animationState = ninjas.SitePanelAnimation.HIDING;
 
             this.sitePanel.animateOut();
@@ -130,15 +131,19 @@
         /** ************************************************************************************************************
         *   Being invoked when the panel size should be set according to the current canvas size.
         ***************************************************************************************************************/
-        public updatePanelSizeAndPosition()
+        public updatePanelSizeAndPosition() : void
         {
             // calculate panel size
-            this.panelWidth = ( ninjas.Main.game.engine.canvasSystem.getWidth() / 2 - ninjas.SettingGame.BORDER_SIZE_OUTER );
+            this.panelWidth = (
+                ninjas.Main.game.engine.canvasSystem.getWidth() / 2 - ninjas.SettingGame.BORDER_SIZE_OUTER
+            );
             if ( this.panelWidth > ninjas.SettingGame.SITE_PANEL_MAX_WIDTH )
             {
                 this.panelWidth = ninjas.SettingGame.SITE_PANEL_MAX_WIDTH;
             }
-            this.panelHeight = ( ninjas.Main.game.engine.canvasSystem.getHeight() - 2 * ninjas.SettingGame.BORDER_SIZE_OUTER );
+            this.panelHeight = (
+                ninjas.Main.game.engine.canvasSystem.getHeight() - 2 * ninjas.SettingGame.BORDER_SIZE_OUTER
+            );
             if ( this.panelHeight > ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT )
             {
                 this.panelHeight = ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT;
@@ -146,8 +151,13 @@
 
             // calculate panel size including border and left and right position
             this.panelAndBorderWidth = this.panelWidth + ninjas.SettingGame.BORDER_SIZE_OUTER;
-            this.leftCameraTargetX   = ( this.panelAndBorderWidth + ( ( ninjas.Main.game.engine.canvasSystem.getWidth() - this.panelAndBorderWidth ) / 2 ) );
-            this.rightCameraTargetX  = ( ( ninjas.Main.game.engine.canvasSystem.getWidth() - this.panelAndBorderWidth ) / 2 );
+            this.leftCameraTargetX   = (
+                this.panelAndBorderWidth
+                + ( ( ninjas.Main.game.engine.canvasSystem.getWidth() - this.panelAndBorderWidth ) / 2 )
+            );
+            this.rightCameraTargetX  = (
+                 ( ninjas.Main.game.engine.canvasSystem.getWidth() - this.panelAndBorderWidth ) / 2
+            );
 
             // update panel size and position
             this.sitePanel.updateSizeAndPosition
@@ -164,8 +174,10 @@
         ***************************************************************************************************************/
         public getCameraTargetX() : number
         {
-            if ( this.animationState == ninjas.SitePanelAnimation.HIDDEN || this.animationState == ninjas.SitePanelAnimation.HIDING )
-            {
+            if (
+                this.animationState === ninjas.SitePanelAnimation.HIDDEN
+                || this.animationState === ninjas.SitePanelAnimation.HIDING
+            ) {
                 switch ( ninjas.Main.game.level.player.lookingDirection )
                 {
                     case ninjas.CharacterLookingDirection.LEFT:
@@ -199,17 +211,19 @@
         ***************************************************************************************************************/
         private initWowSystem() : void
         {
-            ninjas.Debug.preloader.log( "Initing WOW animations" );
+            ninjas.Debug.preloader.log( 'Initing WOW animations' );
 
             this.wowSystem = new wow.WOW(
                 {
                     boxClass:        'wow',              // animated element css class (default is wow)
                     animateClass:    'animated',         // animation css class (default is animated)
-                    offset:          0,                  // distance to the element when triggering the animation (default is 0)
+                    offset:          0,                  // distance to the element when triggering the animation
+                                                         // (defaults to 0)
                     mobile:          true,               // trigger animations on mobile devices (default is true)
                     scrollContainer: null,               // optional scroll container selector, otherwise use window
                     live:            true,               // act on asynchronously loaded content (default is true)
-                    // callback:     function( box ) {}, // the callback is fired every time an animation is started the argument that is passed in is the DOM node being animated
+                    // callback:     function( box ) {}, // the callback is fired every time an animation is started
+                                                         // the argument that is passed in is the animated DOM node
                 }
             );
             this.wowSystem.init();

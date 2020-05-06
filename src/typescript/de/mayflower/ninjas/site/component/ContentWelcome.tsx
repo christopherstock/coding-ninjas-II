@@ -75,7 +75,7 @@
                         !ninjas.IO.isMac(),
                         ( checked:boolean ) => {
 
-                            ninjas.Debug.sound.log( 'Toggle bg music to [' + checked + ']' );
+                            ninjas.Debug.sound.log( 'Toggle bg music to [' + String( checked ) + ']' );
 
                             ninjas.Main.game.toggleBgMusic( checked );
                         }

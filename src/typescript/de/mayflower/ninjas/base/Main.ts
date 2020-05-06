@@ -7,6 +7,7 @@
     *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
     *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Add destroyable movables.
+    *   TODO Fasten game and physics feeling.
     *   TODO Try different physics demo elements on the player!
     *   TODO Remove static access on Main.game.
     *   TODO Add 'katana strike' action on ground and in air.

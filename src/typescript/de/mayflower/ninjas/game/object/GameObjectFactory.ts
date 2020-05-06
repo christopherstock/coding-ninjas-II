@@ -140,9 +140,11 @@
         )
         : ninjas.Movable
         {
-            const spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SPHERE );
+            const spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
+                ninjas.Image.IMAGE_SPHERE
+            );
 
-            if ( spriteTemplate.width != spriteTemplate.height )
+            if ( spriteTemplate.width !== spriteTemplate.height )
             {
                 throw new Error(
                     'Non-square sprite template dimensions for circular deco - sprite image ['
@@ -396,8 +398,8 @@
         )
         : ninjas.Player
         {
-            let dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT;
-            let firstSprite     :ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_LEFT;
+            const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_STAND_LEFT;
+            const firstSprite     :ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_NINJA_GIRL_GLIDE_LEFT;
 
             return new ninjas.Player
             (
@@ -431,7 +433,7 @@
         )
         : ninjas.Enemy
         {
-            let diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
+            const diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
 
             return new ninjas.Enemy
             (
@@ -506,9 +508,12 @@
         )
         : ninjas.Decoration
         {
-            if ( spriteTemplate.width != spriteTemplate.height )
+            if ( spriteTemplate.width !== spriteTemplate.height )
             {
-                throw new Error( "Non-square sprite template dimensions for circular deco - sprite image [" + spriteTemplate.imageIds[ 0 ] + "]" );
+                throw new Error( 'Non-square sprite template dimensions for circular deco - sprite image ['
+                    + String( spriteTemplate.imageIds[ 0 ] )
+                    + ']'
+                );
             }
 
             return new ninjas.Decoration
@@ -722,12 +727,15 @@
         *
         *   @return The created diamond shape.
         ***************************************************************************************************************/
-        private static createCharacterDiamondShape(spriteTemplate:ninjas.SpriteTemplate, debugColor:ninjas.DebugColor )
+        private static createCharacterDiamondShape(
+            spriteTemplate:ninjas.SpriteTemplate, debugColor:ninjas.DebugColor
+        )
+        : ninjas.ShapeFreeForm
         {
-            let gapSizeX:number = ( spriteTemplate.width / 2 );
-            let gapSizeY:number = ninjas.SettingMatterJs.PLAYER_EDGE_GAP_Y;
+            const gapSizeX :number = ( spriteTemplate.width / 2 );
+            const gapSizeY :number = ninjas.SettingMatterJs.PLAYER_EDGE_GAP_Y;
 
-            let vertices:Array<matter.Vector> = [];
+            const vertices :matter.Vector[] = [];
 
             // draw diamond path
             vertices.push( matter.Vector.create( gapSizeX,                        0.0                              ) );

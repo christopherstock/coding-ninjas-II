@@ -109,10 +109,6 @@
             ninjas.GameObjectBundleFactory.createDecoSprite(  this, 5230, 4430, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_GRASS_2  );
             ninjas.GameObjectBundleFactory.createDecoSprite(  this, 5330, 4430, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_GRASS_3  );
 
-            // bridge and water
-            ninjas.GameObjectBundleFactory.createWaterArea( this, 6100,  4960, 6, 10 );
-            ninjas.GameObjectBundleFactory.createBridge(    this, 6185,  4800        );
-
             // nature below shrine 4
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 6950, 4800, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_GRASS_2 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 7100, 4800, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_GRASS_3 );
@@ -194,8 +190,17 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16150, 5100, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_GRASS_3 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16260, 5105, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.SPRITE_GRASS_2 );
 */
-            // solid grounds
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,     500, 10, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
+            // solid ground
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
+
+            // bridge and water
+            ninjas.GameObjectBundleFactory.createWaterArea(   this, 640,  660, 5, 4 );
+            ninjas.GameObjectBundleFactory.createBridge(      this, 640,  500       );
+
+
+
+
 /*
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3584,  4800, 20, 10, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT );

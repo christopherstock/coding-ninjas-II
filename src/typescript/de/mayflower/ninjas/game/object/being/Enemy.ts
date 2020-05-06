@@ -192,7 +192,7 @@
         {
             if ( this.dying )
             {
-                if ( this.lookingDirection == ninjas.CharacterLookingDirection.LEFT )
+                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                 {
                     this.setSprite( ninjas.SpriteTemplate.SPRITE_ENEMY_NINJA_1_DIE_LEFT );
                 }

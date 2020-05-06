@@ -47,11 +47,11 @@
         /** ************************************************************************************************************
         *   Checks if this item is picked up in this frame.
         ***************************************************************************************************************/
-        private checkPicked()
+        private checkPicked() : void
         {
             if ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) )
             {
-                ninjas.Debug.item.log( "Player picked item" );
+                ninjas.Debug.item.log( 'Player picked item' );
 
                 this.pick();
             }
@@ -60,7 +60,7 @@
         /** ************************************************************************************************************
         *   Picks up this item.
         ***************************************************************************************************************/
-        private pick()
+        private pick() : void
         {
             // flag as picked
             this.picked = true;

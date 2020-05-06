@@ -28,7 +28,7 @@
         ***************************************************************************************************************/
         public constructor
         (
-            vertices    :Array<matter.Vector>,
+            vertices    :matter.Vector[],
             debugColor  :ninjas.DebugColor,
             isStatic    :ninjas.StaticShape,
             angle       :number,
@@ -92,7 +92,7 @@
             let maximumX:number = -Infinity;
             let maximumY:number = -Infinity;
 
-            for ( let vertex of this.vertices )
+            for ( const vertex of this.vertices )
             {
                 if ( vertex.x < minimumX ) {
                     minimumX = vertex.x;

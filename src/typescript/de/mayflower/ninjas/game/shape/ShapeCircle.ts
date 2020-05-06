@@ -43,21 +43,6 @@
         }
 
         /** ************************************************************************************************************
-        *   Creates this shapes body.
-        *
-        *   @return The body for this shape.
-        ***************************************************************************************************************/
-        protected createBody() : matter.Body
-        {
-            return matter.Bodies.circle(
-                ( this.diameter / 2 ),
-                ( this.diameter / 2 ),
-                ( this.diameter / 2 ),
-                this.options
-            );
-        }
-
-        /** ************************************************************************************************************
         *   Returns the width of this shape's boundaries.
         *
         *   @return The shape's boundaries width.
@@ -75,5 +60,20 @@
         public getHeight() : number
         {
             return this.diameter;
+        }
+
+        /** ************************************************************************************************************
+        *   Creates this shapes body.
+        *
+        *   @return The body for this shape.
+        ***************************************************************************************************************/
+        protected createBody() : matter.Body
+        {
+            return matter.Bodies.circle(
+                ( this.diameter / 2 ),
+                ( this.diameter / 2 ),
+                ( this.diameter / 2 ),
+                this.options
+            );
         }
     }

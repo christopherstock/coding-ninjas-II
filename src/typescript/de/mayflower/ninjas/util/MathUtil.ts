@@ -22,7 +22,7 @@
         *   @param max
         *   @return {number}
         ***************************************************************************************************************/
-        public static getRandomInt( min:number, max:number )
+        public static getRandomInt( min:number, max:number ) : number
         {
             return Math.floor( ( Math.random() * ( max + 1 - min ) ) + min );
         }

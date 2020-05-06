@@ -1,4 +1,6 @@
 
+    /* eslint-disable max-len */
+
     import * as ninjas from '../../ninjas';
 
     /** ****************************************************************************************************************
@@ -95,18 +97,6 @@
 
             switch ( slope )
             {
-                case Slope.NONE:
-                {
-                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_LEFT   );
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_CENTER );
-                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_RIGHT  );
-
-                    drawY      = yTop;
-                    alt        = 0;
-
-                    break;
-                }
-
                 case Slope.ASCENDING:
                 {
                     leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_ASCENDING_LEFT   );
@@ -127,6 +117,19 @@
 
                     drawY      = yTop;
                     alt        = GameObjectBundleFactory.ALTITUDE;
+
+                    break;
+                }
+
+                case Slope.NONE:
+                default:
+                {
+                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_LEFT   );
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_CENTER );
+                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_GROUND_FLYING_RIGHT  );
+
+                    drawY      = yTop;
+                    alt        = 0;
 
                     break;
                 }
@@ -251,18 +254,18 @@
             // browse lines
             for ( let tileY:number = 0; tileY < lengthVert; ++tileY )
             {
-                if ( tileY == 0 )
+                if ( tileY === 0 )
                 {
                     // add top line
                     let drawY:number = firstLineDrawY;
 
                     for ( let tileX:number = 0; tileX < lengthHorz; ++tileX )
                     {
-                        if ( tileX == 0 && ( capHorz == CapHorz.LEFT || capHorz == CapHorz.BOTH ) )
+                        if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) )
                         {
                             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, ninjas.StaticShape.YES, leftTopTile ) );
                         }
-                        else if ( tileX == lengthHorz - 1 && ( capHorz == CapHorz.RIGHT || capHorz == CapHorz.BOTH ) )
+                        else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) )
                         {
                             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, ninjas.StaticShape.YES, rightTopTile ) );
                         }
@@ -274,18 +277,18 @@
                         drawY += firstLineAlt;
                     }
                 }
-                else if ( tileY == lengthVert - 1 )
+                else if ( tileY === lengthVert - 1 )
                 {
                     // add bottom line
                     let drawY:number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
 
                     for ( let tileX:number = 0; tileX < lengthHorz; ++tileX )
                     {
-                        if ( tileX == 0 && ( capHorz == CapHorz.LEFT || capHorz == CapHorz.BOTH ) )
+                        if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) )
                         {
                             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, ninjas.StaticShape.YES, leftBottomTile ) );
                         }
-                        else if ( tileX == lengthHorz - 1 && ( capHorz == CapHorz.RIGHT || capHorz == CapHorz.BOTH ) )
+                        else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) )
                         {
                             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, ninjas.StaticShape.YES, rightBottomTile ) );
                         }
@@ -300,15 +303,15 @@
                 else
                 {
                     // add middle lines
-                    let drawY:number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
+                    let drawY :number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
 
                     for ( let tileX:number = 0; tileX < lengthHorz; ++tileX )
                     {
-                        if ( tileX == 0 && ( capHorz == CapHorz.LEFT || capHorz == CapHorz.BOTH ) )
+                        if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) )
                         {
                             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, ninjas.StaticShape.YES, leftTile ) );
                         }
-                        else if ( tileX == lengthHorz - 1 && ( capHorz == CapHorz.RIGHT || capHorz == CapHorz.BOTH ) )
+                        else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) )
                         {
                             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, ninjas.StaticShape.YES, rightTile ) );
                         }
@@ -372,7 +375,7 @@
             {
                 for ( let tileY:number = 0; tileY < height; ++tileY )
                 {
-                    if ( tileY == 0 )
+                    if ( tileY === 0 )
                     {
                         level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, ninjas.StaticShape.YES, tileTop ) );
                     }
@@ -430,7 +433,7 @@
         )
         : void
         {
-            let WIDTH_TOTAL :number = 700;
+            const WIDTH_TOTAL :number = 700;
             // let WIDTH_SLOPE :number = 128;
             // let ALTITUDE    :number = 30;
 
@@ -440,7 +443,7 @@
             // level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft + WIDTH_TOTAL - WIDTH_SLOPE, yBottom - ALTITUDE, WIDTH_SLOPE, 10, ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
 
             // add deco
-            let sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BRIDGE_1 );
+            const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BRIDGE_1 );
             level.decosFg.push( ninjas.GameObjectFactory.createDecorationRect( xLeft - 115, yBottom + 121, ninjas.StaticShape.YES, sprtiteTemplate ) );
         }
 
@@ -461,7 +464,7 @@
         )
         : void
         {
-            let movable:ninjas.Movable = ninjas.GameObjectFactory.createMovableRect
+            const movable:ninjas.Movable = ninjas.GameObjectFactory.createMovableRect
             (
                 xLeft,
                 yBottom,
@@ -490,7 +493,7 @@
         )
         : void
         {
-            let movable:ninjas.Movable = ninjas.GameObjectFactory.createMovableCircular
+            const movable:ninjas.Movable = ninjas.GameObjectFactory.createMovableCircular
             (
                 xLeft,
                 yBottom,
@@ -520,7 +523,7 @@
         )
         : void
         {
-            let spriteTemplate :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+            const spriteTemplate :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
 
             GameObjectBundleFactory.createDecoSprite
             (
@@ -553,7 +556,7 @@
         )
         : void
         {
-            let enemy :ninjas.Enemy = ninjas.GameObjectFactory.createEnemy
+            const enemy :ninjas.Enemy = ninjas.GameObjectFactory.createEnemy
             (
                 xLeft,
                 yBottom,

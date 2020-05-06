@@ -8,24 +8,24 @@
     export class Platform extends ninjas.GameObject
     {
         /** Medium moving speed. */
-        public  static      SPEED_NORMAL            :number                         = 1.0;
+        public  static              SPEED_NORMAL            :number                         = 1.0;
 
         /** The waypoints for this platform to move. */
-        private             waypoints               :Array<matter.Vector>           = null;
+        private         readonly    waypoints               :matter.Vector[]                = null;
         /** The number of ticks till the next waypoint is reached. */
-        private             speed                   :number                         = 0.0;
+        private         readonly    speed                   :number                         = 0.0;
         /** The current waypoint to move to. */
-        private             currentWaypointIndex    :number                         = 0;
+        private                     currentWaypointIndex    :number                         = 0;
 
         /** The number of animation steps till the next waypoint. */
-        private             stepsTillNextWaypoint   :number                         = 0;
+        private                     stepsTillNextWaypoint   :number                         = 0;
         /** A counter for the current step to the next waypoint. */
-        private             currentStep             :number                         = 0;
+        private                     currentStep             :number                         = 0;
 
         /** Step size X per tick in px. */
-        private             stepSizeX               :number                         = 0.0;
+        private                     stepSizeX               :number                         = 0.0;
         /** Step size Y per tick in px. */
-        private             stepSizeY               :number                         = 0.0;
+        private                     stepSizeY               :number                         = 0.0;
 
         /** ************************************************************************************************************
         *   Creates a new platform. Initial position is the first waypoint.

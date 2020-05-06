@@ -199,6 +199,10 @@
             this.innerRelativeContainer = document.createElement( 'div' );
             this.innerRelativeContainer.className = 'sitePanel innerRelativeContainer';
 
-            this.innerRelativeContainer.setAttribute( 'data-wow-delay',    ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION + 'ms' );
+            this.innerRelativeContainer.setAttribute(
+                'data-wow-delay',
+                String( ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION )
+                + 'ms'
+            );
         }
     }

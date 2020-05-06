@@ -28,7 +28,7 @@
     export class SiteContentSystem
     {
         /** All already discovered contents. */
-        public                  discoveredContents          :Array<ninjas.SiteContent>      = [];
+        public                  discoveredContents          :ninjas.SiteContent[]           = [];
 
         /** The site content for the 'welcome' page. */
         private                 contentWelcome              :JSX.Element                    = null;
@@ -70,7 +70,7 @@
             );
 
             // add to discovered contents if not already discovered
-            if ( this.discoveredContents.indexOf( content ) === -1 )
+            if ( !this.discoveredContents.includes( content ) )
             {
                 this.discoveredContents.push( content );
             }

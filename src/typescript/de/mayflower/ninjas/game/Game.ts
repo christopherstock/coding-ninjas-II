@@ -32,9 +32,26 @@
         }
 
         /** ************************************************************************************************************
+        *   Resets the camera.
+        ***************************************************************************************************************/
+        public resetCamera() : void
+        {
+            this.camera = new ninjas.Camera(
+                ninjas.SettingEngine.CAMERA_MOVING_SPEED,
+                ninjas.SettingEngine.CAMERA_MOVING_MINIMUM,
+                ninjas.SettingEngine.CAMERA_MOVING_MAXIMUM,
+                this.level.width,
+                this.level.height,
+                this.engine.canvasSystem.getWidth(),
+                this.engine.canvasSystem.getHeight()
+            );
+            this.camera.reset();
+        }
+
+        /** ************************************************************************************************************
         *   Being invoked when the preloader is set up.
         ***************************************************************************************************************/
-        public onPreloaderSetup = () : void =>
+        public onPreloaderSetup :() => void = () : void =>
         {
             ninjas.Debug.preloader.log( 'Preloader setup complete.' );
             this.preloader.setLoadingPercentage( 5 );
@@ -45,7 +62,7 @@
         /** ************************************************************************************************************
         *   Starts the game loop.
         ***************************************************************************************************************/
-        public start=()=>
+        public start :() => void = () :void =>
         {
             ninjas.Debug.preloader.log( 'Starting the game loop' );
             ninjas.Debug.preloader.log();
@@ -73,9 +90,48 @@
         };
 
         /** ************************************************************************************************************
+        *   Paints all overlays after Matter.js completed rendering the scene.
+        *
+        *   @param context The 2D rendering context to draw onto.
+        ***************************************************************************************************************/
+        public paintHUD( context:CanvasRenderingContext2D ) : void
+        {
+/*
+            let testHudWidth:number  = 150;
+            let testHudHeight:number = 50;
+*/
+            // paint blend overlay
+            if ( !ninjas.SettingDebug.DISABLE_BLEND_PANEL )
+            {
+                this.paintBlendPanel( context );
+            }
+        }
+
+        /** ************************************************************************************************************
+        *   Pauses or resumes the background music.
+        *
+        *   @param enable Specifies if the background music shall be enabled or not.
+        ***************************************************************************************************************/
+        public toggleBgMusic( enable:boolean ) : void
+        {
+            if ( this.bgMusic !== null )
+            {
+                if ( enable )
+                {
+                    // noinspection JSIgnoredPromiseFromCall
+                    this.bgMusic.play();
+                }
+                else
+                {
+                    this.bgMusic.pause();
+                }
+            }
+        }
+
+        /** ************************************************************************************************************
         *   Inits the level.
         ***************************************************************************************************************/
-        private resetAndLaunchLevel( levelToLaunch:ninjas.Level )
+        private resetAndLaunchLevel( levelToLaunch:ninjas.Level ) : void
         {
             // clear world
             this.engine.matterJsSystem.resetWorld();
@@ -89,26 +145,9 @@
         }
 
         /** ************************************************************************************************************
-        *   Resets the camera.
-        ***************************************************************************************************************/
-        public resetCamera()
-        {
-            this.camera = new ninjas.Camera(
-                ninjas.SettingEngine.CAMERA_MOVING_SPEED,
-                ninjas.SettingEngine.CAMERA_MOVING_MINIMUM,
-                ninjas.SettingEngine.CAMERA_MOVING_MAXIMUM,
-                this.level.width,
-                this.level.height,
-                this.engine.canvasSystem.getWidth(),
-                this.engine.canvasSystem.getHeight()
-            );
-            this.camera.reset();
-        }
-
-        /** ************************************************************************************************************
         *   Being invoked each tick of the game loop in order to render the game.
         ***************************************************************************************************************/
-        private tick=()=>
+        private tick :() => void = () :void =>
         {
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
@@ -132,7 +171,7 @@
         /** ************************************************************************************************************
         *   Renders all game components.
         ***************************************************************************************************************/
-        private render()
+        private render() : void
         {
             // hide blend panel if active
             if ( this.blendPanelTicks > 0 )
@@ -147,7 +186,7 @@
             this.level.render( this.engine.keySystem );
 
             // update camera
-            let cameraBounds:matter.Bounds = this.camera.update(
+            const cameraBounds :matter.Bounds = this.camera.update(
                 this.level.player.shape.body.position.x,
                 this.level.player.shape.body.position.y,
                 this.level.player.collidesBottom,
@@ -161,48 +200,9 @@
         }
 
         /** ************************************************************************************************************
-        *   Paints all overlays after Matter.js completed rendering the scene.
-        *
-        *   @param context The 2D rendering context to draw onto.
-        ***************************************************************************************************************/
-        public paintHUD( context:CanvasRenderingContext2D )
-        {
-/*
-            let testHudWidth:number  = 150;
-            let testHudHeight:number = 50;
-*/
-            // paint blend overlay
-            if ( !ninjas.SettingDebug.DISABLE_BLEND_PANEL )
-            {
-                this.paintBlendPanel( context );
-            }
-        }
-
-        /** ************************************************************************************************************
-        *   Pauses or resumes the background music.
-        *
-        *   @param enable Specifies if the background music shall be enabled or not.
-        ***************************************************************************************************************/
-        public toggleBgMusic( enable:boolean )
-        {
-            if ( this.bgMusic != null )
-            {
-                if ( enable )
-                {
-                    // noinspection JSIgnoredPromiseFromCall
-                    this.bgMusic.play();
-                }
-                else
-                {
-                    this.bgMusic.pause();
-                }
-            }
-        }
-
-        /** ************************************************************************************************************
         *   Handles pressed menu keys.
         ***************************************************************************************************************/
-        private handleMenuKey()
+        private handleMenuKey() : void
         {
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
@@ -238,7 +238,7 @@
         *
         *   @param context The 2D rendering context to draw onto.
         ***************************************************************************************************************/
-        private paintBlendPanel( context:CanvasRenderingContext2D )
+        private paintBlendPanel( context:CanvasRenderingContext2D ) : void
         {
             if ( this.blendPanelTicks > 0 )
             {
@@ -249,7 +249,9 @@
                     0,
                     this.engine.canvasSystem.getWidth(),
                     this.engine.canvasSystem.getHeight(),
-                    'rgba( 0, 0, 0, ' + ( this.blendPanelTicks / ninjas.SettingGame.BLEND_PANEL_TICKS ) + ' )'
+                    'rgba( 0, 0, 0, '
+                    + String( this.blendPanelTicks / ninjas.SettingGame.BLEND_PANEL_TICKS )
+                    + ' )'
                 );
             }
         }
