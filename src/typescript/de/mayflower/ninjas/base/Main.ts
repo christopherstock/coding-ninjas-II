@@ -7,6 +7,7 @@
     *   TODO Move libs (matter-js and ant design) out of bundle.js and into html!
     *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Add destroyable movables.
+    *   TODO Why are edges not soft??
     *   TODO Green water etc.
     *   TODO Fasten game and physics feeling.
     *   TODO Debug Disable Pointer control.
