@@ -4,6 +4,7 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO Improve image sequence handling in ImageData?
     *   TODO Green water etc.
     *   TODO Add destroyable movables.
     *   TODO One player - many outfits! General player with custom sprite sets.
