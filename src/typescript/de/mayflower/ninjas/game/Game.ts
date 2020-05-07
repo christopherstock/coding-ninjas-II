@@ -25,7 +25,7 @@
         ***************************************************************************************************************/
         public preload() : void
         {
-            this.preloader = new ninjas.Preloader( () => { this.onPreloaderSetup(); } );
+            this.preloader = new ninjas.Preloader( this, () => { this.onPreloaderSetup(); } );
             this.engine    = new ninjas.Engine( this );
 
             this.preloader.preload();

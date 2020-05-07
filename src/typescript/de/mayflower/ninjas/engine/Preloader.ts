@@ -6,6 +6,8 @@
     *******************************************************************************************************************/
     export class Preloader
     {
+        /** The parent game instance. */
+        private     readonly        game                            :ninjas.Game                        = null;
         /** The callback to invoke when the preloader is set up. */
         private     readonly        onPreloaderSetup                :() => void                         = null;
 
@@ -23,10 +25,12 @@
         /** ************************************************************************************************************
         *   Creates a new preloading system.
         *
+        *   @param game             The parent game instance.
         *   @param onPreloaderSetup The callback to invoke when the preloading is set up.
         ***************************************************************************************************************/
-        public constructor( onPreloaderSetup:() => void )
+        public constructor( game:ninjas.Game, onPreloaderSetup:() => void )
         {
+            this.game             = game;
             this.onPreloaderSetup = onPreloaderSetup;
         }
 
@@ -38,8 +42,8 @@
             ninjas.Debug.init.log( 'Preloading all game components' );
 
             // bring on the canvas and init the resize handler
-            ninjas.Main.game.engine.initCanvas();
-            ninjas.Main.game.engine.initWindowResizeHandler();
+            this.game.engine.initCanvas();
+            this.game.engine.initWindowResizeHandler();
 
             // load preloader images
             this.imageGay  = new Image();
@@ -62,7 +66,7 @@
             this.loadingPercentage = loadingPercentage;
 
             // force an immediate draw
-            this.drawPreloader( ninjas.Main.game.engine.canvasSystem.getCanvasContext() );
+            this.drawPreloader();
         }
 
         /** ************************************************************************************************************
@@ -106,30 +110,28 @@
         ***************************************************************************************************************/
         private tickPreloader() : void
         {
-            this.drawPreloader( ninjas.Main.game.engine.canvasSystem.getCanvasContext() );
+            this.drawPreloader();
         }
 
         /** ************************************************************************************************************
         *   Draws the preloader onto the canvas.
-        *
-        *   @param ctx The canvas rendering context to draw onto.
         ***************************************************************************************************************/
-        private drawPreloader( ctx:CanvasRenderingContext2D ) : void
+        private drawPreloader() : void
         {
             // clear canvas
             ninjas.DrawUtil.fillRect
             (
-                ninjas.Main.game.engine.canvasSystem.getCanvasContext(),
+                this.game.engine.canvasSystem.getCanvasContext(),
                 0,
                 0,
-                ninjas.Main.game.engine.canvasSystem.getWidth(),
-                ninjas.Main.game.engine.canvasSystem.getHeight(),
+                this.game.engine.canvasSystem.getWidth(),
+                this.game.engine.canvasSystem.getHeight(),
                 ninjas.SettingEngine.CANVAS_BG
             );
 
             // calc image location
-            const imageX :number = ( ninjas.Main.game.engine.canvasSystem.getWidth()  - this.imageMono.width  ) / 2;
-            const imageY :number = ( ninjas.Main.game.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
+            const imageX :number = ( this.game.engine.canvasSystem.getWidth()  - this.imageMono.width  ) / 2;
+            const imageY :number = ( this.game.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
 
             // calc image width to draw
             const imageWidthToDraw :number = ( this.imageGay.width * this.loadingPercentage ) / 100;
@@ -137,7 +139,7 @@
             // draw mono image
             ninjas.DrawUtil.drawImage
             (
-                ninjas.Main.game.engine.canvasSystem.getCanvasContext(),
+                this.game.engine.canvasSystem.getCanvasContext(),
                 this.imageMono,
                 imageX,
                 imageY
@@ -146,7 +148,7 @@
             // draw gay image clipped
             ninjas.DrawUtil.drawImageScaledClipped
             (
-                ninjas.Main.game.engine.canvasSystem.getCanvasContext(),
+                this.game.engine.canvasSystem.getCanvasContext(),
                 this.imageGay,
                 0,
                 0,

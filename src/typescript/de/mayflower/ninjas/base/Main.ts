@@ -12,6 +12,7 @@
     *   TODO Remove enemy flickering on startup..! :p
     *   TODO Fix flickering for side-panel before 1st popup.
     *   TODO Add 'katana strike' action on ground and in air.
+    *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib.
     *   TODO Add decoration particle effects on smashing objects / windows etc.
     *   TODO Add event triggers ( for falling obstacles, new enemies etc )
     *   TODO Debug Disable Pointer control.
