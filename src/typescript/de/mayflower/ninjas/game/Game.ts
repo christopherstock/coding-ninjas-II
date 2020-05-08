@@ -25,7 +25,7 @@
         ***************************************************************************************************************/
         public preload() : void
         {
-            this.preloader = new ninjas.Preloader( this, () => { this.onPreloaderSetup(); } );
+            this.preloader = new ninjas.Preloader( this, () => { this.onPreloaderInitComplete(); } );
             this.engine    = new ninjas.Engine( this );
 
             this.preloader.preload();
@@ -51,7 +51,7 @@
         /** ************************************************************************************************************
         *   Being invoked when the preloader is set up.
         ***************************************************************************************************************/
-        public onPreloaderSetup() : void
+        public onPreloaderInitComplete() : void
         {
             ninjas.Debug.init.log( 'Preloader setup complete.' );
             this.preloader.setLoadingPercentage( 5 );
@@ -78,9 +78,6 @@
 
             // start the renderer
             this.engine.matterJsSystem.startRenderer();
-
-            // end the preloader thread
-            this.preloader.stopThread();
 
             // invoke engine ticks repeatedly
             window.requestAnimationFrame(

@@ -19,8 +19,6 @@
         private                     loadedImageCount                :number                             = 0;
         /**  The percentage of all loaded game contents. */
         private                     loadingPercentage               :number                             = 0;
-        /**  The handle to the preloader timeout. */
-        private                     preloaderIntervalHandle         :number                             = 0;
 
         /** ************************************************************************************************************
         *   Creates a new preloading system.
@@ -70,14 +68,6 @@
         }
 
         /** ************************************************************************************************************
-        *   Stops the preloader interval.
-        ***************************************************************************************************************/
-        public stopThread() : void
-        {
-            window.clearInterval( this.preloaderIntervalHandle );
-        }
-
-        /** ************************************************************************************************************
         *   Being invoked when one preloader image has been loaded.
         ***************************************************************************************************************/
         private preloaderImageLoaded() :void
@@ -95,22 +85,11 @@
         ***************************************************************************************************************/
         private onPreloaderImageLoadComplete() : void
         {
-            // start the preloading thread
-            this.preloaderIntervalHandle = window.setInterval(
-                () => { this.tickPreloader(); },
-                ninjas.SettingGame.TICK_DELAY_DELTA
-            );
+            // draw the empty preloader
+            this.drawPreloader();
 
             // notify that the preloader is set up
             this.onPreloaderSetup();
-        }
-
-        /** ************************************************************************************************************
-        *   Performs one tick of the preloading thread.
-        ***************************************************************************************************************/
-        private tickPreloader() : void
-        {
-            this.drawPreloader();
         }
 
         /** ************************************************************************************************************

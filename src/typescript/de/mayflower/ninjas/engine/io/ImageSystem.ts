@@ -133,7 +133,8 @@
         ***************************************************************************************************************/
         private onLoadImage( event:Event ) : void
         {
-            ninjas.Main.game.preloader.setLoadingPercentage( 5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
+            ninjas.Main.game.preloader.setLoadingPercentage(
+                5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
 
             if ( ++this.loadedImageCount === this.imagesToLoad )
             {
