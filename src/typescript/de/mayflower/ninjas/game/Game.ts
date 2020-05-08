@@ -7,8 +7,6 @@
     *******************************************************************************************************************/
     export class Game
     {
-        /** The preloader instance. TODO to Engine! */
-        public      preloader               :ninjas.Preloader               = null;
         /** The game engine. */
         public      engine                  :ninjas.Engine                  = null;
         /** The custom camera system. */
@@ -23,15 +21,15 @@
         /** ************************************************************************************************************
         *   Shows the preloader.
         ***************************************************************************************************************/
-        public preload() : void
+        public launch() : void
         {
-            this.preloader = new ninjas.Preloader( this, () => { this.onPreloaderInitComplete(); } );
-            this.engine    = new ninjas.Engine( this );
+            // create the game engine
+            this.engine = new ninjas.Engine( this );
 
             // start the preloader after a short delay .. runs smoother for the user
             window.setTimeout
             (
-                () => { this.preloader.preload(); },
+                () => { this.engine.launch(); },
                 ( ninjas.SettingDebug.DEBUG_NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
             );
         }
@@ -52,17 +50,6 @@
             );
             this.camera.reset( this );
         }
-
-        /** ************************************************************************************************************
-        *   Being invoked when the preloader is set up.
-        ***************************************************************************************************************/
-        public onPreloaderInitComplete() : void
-        {
-            ninjas.Debug.init.log( 'Preloader setup complete.' );
-            this.preloader.setLoadingPercentage( 5 );
-
-            this.engine.initImageSystem();
-        };
 
         /** ************************************************************************************************************
         *   Starts the game loop.

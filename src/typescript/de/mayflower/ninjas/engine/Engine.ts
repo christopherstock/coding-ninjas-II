@@ -25,6 +25,8 @@
         /** The FPS counter. */
         public              fpsMeter                :FPSMeter                       = null;
 
+        /** The preloader instance. */
+        public  readonly    preloader               :ninjas.Preloader               = null;
         /** The parent game instance. */
         private readonly    game                    :ninjas.Game                    = null;
 
@@ -35,6 +37,20 @@
         ***************************************************************************************************************/
         public constructor( game:ninjas.Game ) {
             this.game = game;
+            this.preloader = new ninjas.Preloader(
+                game,
+                () => {
+                    this.onPreloaderInitComplete();
+                }
+            );
+        }
+
+        /** ************************************************************************************************************
+        *   Launches the game engine and starts with showing the preloader.
+        ***************************************************************************************************************/
+        public launch() : void
+        {
+            this.preloader.preload()
         }
 
         /** ************************************************************************************************************
@@ -87,13 +103,24 @@
         }
 
         /** ************************************************************************************************************
+        *   Being invoked when the preloader is set up.
+        ***************************************************************************************************************/
+        public onPreloaderInitComplete() : void
+        {
+            ninjas.Debug.init.log( 'Preloader initialization complete. Preloading all contents now.' );
+            this.preloader.setLoadingPercentage( 5 );
+
+            this.initImageSystem();
+        };
+
+        /** ************************************************************************************************************
         *   Being invoked when all images are loaded.
         ***************************************************************************************************************/
         private onImagesLoaded() : void
         {
             ninjas.SpriteTemplate.assignAllImageSizes( this.imageSystem );
 
-            this.game.preloader.setLoadingPercentage( 80 );
+            this.preloader.setLoadingPercentage( 80 );
 
             ninjas.Debug.init.log( 'Initing sound system' );
             this.soundSystem = new ninjas.SoundSystem( ninjas.SoundData.FILE_NAMES, () => { this.onSoundsLoaded(); } );
@@ -105,7 +132,7 @@
         ***************************************************************************************************************/
         private onSoundsLoaded() : void
         {
-            this.game.preloader.setLoadingPercentage( 90 );
+            this.preloader.setLoadingPercentage( 90 );
 
             // init matterJS
             this.initMatterJS();
@@ -131,7 +158,7 @@
 
             ninjas.Debug.init.log( 'Initing game engine completed' );
 
-            this.game.preloader.setLoadingPercentage( 100 );
+            this.preloader.setLoadingPercentage( 100 );
 
             // start the game loop after a short delay .. runs smoother for the user
             window.setTimeout

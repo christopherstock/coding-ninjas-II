@@ -133,7 +133,7 @@
         ***************************************************************************************************************/
         private onLoadImage( event:Event ) : void
         {
-            ninjas.Main.game.preloader.setLoadingPercentage(
+            ninjas.Main.game.engine.preloader.setLoadingPercentage(
                 5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
 
             if ( ++this.loadedImageCount === this.imagesToLoad )
@@ -149,7 +149,7 @@
         ***************************************************************************************************************/
         private onMirrorImage() : void
         {
-            ninjas.Main.game.preloader.setLoadingPercentage(
+            ninjas.Main.game.engine.preloader.setLoadingPercentage(
                 55 + ( 20 * this.mirroredImageCount / this.imagesToMirrorCount )
             );
 

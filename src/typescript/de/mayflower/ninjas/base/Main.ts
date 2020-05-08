@@ -45,6 +45,6 @@
 
             // init and start the game engine
             Main.game = new ninjas.Game();
-            Main.game.preload();
+            Main.game.launch();
         }
     }
