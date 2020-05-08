@@ -56,8 +56,6 @@
             ];
 /*
             // shrine 1
-            ninjas.GameObjectBundleFactory.createDecoImage( this, 1180,  5000, ninjas.DecoPosition.BG, ninjas.Image.IMAGE_BUSH_1   );
-            ninjas.GameObjectBundleFactory.createDecoImage( this, 720,   5000, ninjas.DecoPosition.BG, ninjas.Image.IMAGE_STATUE_3 );
             ninjas.GameObjectBundleFactory.createShrine(    this, 1110,  5000, true, true, ninjas.SiteContent.CONTENT_WELCOME      );
 
             // shrine 1 nature
@@ -198,6 +196,9 @@
             ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  120, ninjas.ImageData.IMAGE_FLASK_1                                   );
 
+            // statue and bush
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 1270, 500, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1   );
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 1400, 500, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
 
             // bridge and water
             ninjas.GameObjectBundleFactory.createWaterArea(   this, 512,  660, 7, 4 );
