@@ -48,6 +48,11 @@
         /** The jump power to apply for this character. */
         private     readonly            jumpPower                           :number                             = 0.0;
 
+        private     readonly            spriteStandLeft                     :ninjas.SpriteTemplate              = null;
+        private     readonly            spriteStandRight                    :ninjas.SpriteTemplate              = null;
+        private     readonly            spriteWalkLeft                      :ninjas.SpriteTemplate              = null;
+        private     readonly            spriteWalkRight                     :ninjas.SpriteTemplate              = null;
+
         /** ************************************************************************************************************
         *   Creates a new character.
         *
@@ -67,7 +72,12 @@
             y                :number,
             lookingDirection :ninjas.CharacterLookingDirection,
             speedMove        :number,
-            jumpPower        :number
+            jumpPower        :number,
+
+            spriteStandLeft  :ninjas.SpriteTemplate,
+            spriteStandRight :ninjas.SpriteTemplate,
+            spriteWalkLeft   :ninjas.SpriteTemplate,
+            spriteWalkRight  :ninjas.SpriteTemplate
         )
         {
             super
@@ -81,6 +91,11 @@
             this.lookingDirection = lookingDirection;
             this.speedMove        = speedMove;
             this.jumpPower        = jumpPower;
+
+            this.spriteStandLeft  = spriteStandLeft;
+            this.spriteStandRight = spriteStandRight;
+            this.spriteWalkLeft   = spriteWalkLeft;
+            this.spriteWalkRight  = spriteWalkRight;
         }
 
         /** ************************************************************************************************************
@@ -306,21 +321,21 @@
             {
                 if ( this.movesLeft )
                 {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_LEFT );
+                    this.setSprite( this.spriteWalkLeft );
                 }
                 else if ( this.movesRight )
                 {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_RIGHT );
+                    this.setSprite( this.spriteWalkRight );
                 }
                 else
                 {
                     if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_LEFT );
+                        this.setSprite( this.spriteStandLeft );
                     }
                     else
                     {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_RIGHT );
+                        this.setSprite( this.spriteStandRight );
                     }
                 }
             }

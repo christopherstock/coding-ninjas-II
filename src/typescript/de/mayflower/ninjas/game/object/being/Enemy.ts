@@ -61,7 +61,12 @@
                 y,
                 lookingDirection,
                 ninjas.SettingMatter.ENEMY_SPEED_MOVE,
-                0
+                0,
+
+                ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
+                ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
+                ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
+                ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT
             );
 
             this.walkingTargetLeft  = walkingTargetLeft;
@@ -181,34 +186,6 @@
             }
         }
 
-        /** ************************************************************************************************************
-        *   Assigns the current sprite to the enemy according to his current state.
-        ***************************************************************************************************************/
-/*
-        private assignCurrentSprite() : void
-        {
-                if ( this.movesLeft )
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT );
-                }
-                else if ( this.movesRight )
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT );
-                }
-                else
-                {
-                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT );
-                    }
-                    else
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT );
-                    }
-                }
-            }
-        }
- */
         /** ************************************************************************************************************
         *   Check if the enemy falls to death by falling out of the level.
         ***************************************************************************************************************/

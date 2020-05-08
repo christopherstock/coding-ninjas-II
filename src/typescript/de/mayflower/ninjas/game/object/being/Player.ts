@@ -35,7 +35,12 @@
                 y,
                 lookingDirection,
                 ninjas.SettingMatter.PLAYER_SPEED_MOVE,
-                ninjas.SettingMatter.PLAYER_JUMP_POWER
+                ninjas.SettingMatter.PLAYER_JUMP_POWER,
+
+                ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_LEFT,
+                ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_RIGHT,
+                ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_LEFT,
+                ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_RIGHT
             );
 
             if ( initialFloat )
