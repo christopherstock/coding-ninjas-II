@@ -44,6 +44,7 @@
         *   @param walkingTargetLeft  Left walking target X.
         *   @param walkingTargetRight Right walking target X.
         *   @param spriteTemplate     The sprite template to use for this game object.
+        *   @param characterSpriteSet The sprite set to use for this character.
         ***************************************************************************************************************/
         public constructor
         (
@@ -53,7 +54,8 @@
             walkingTargetLeft  :number,
             walkingTargetRight :number,
             lookingDirection   :ninjas.CharacterLookingDirection,
-            spriteTemplate     :ninjas.SpriteTemplate
+            spriteTemplate     :ninjas.SpriteTemplate,
+            characterSpriteSet :ninjas.CharacterSpriteSet
         )
         {
             super
@@ -65,22 +67,7 @@
                 lookingDirection,
                 ninjas.SettingMatter.ENEMY_SPEED_MOVE,
                 0,
-
-                // TODO extract
-                new ninjas.CharacterSpriteSet(
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
-                    ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT
-                )
+                characterSpriteSet
             );
 
             this.walkingTargetLeft  = walkingTargetLeft;

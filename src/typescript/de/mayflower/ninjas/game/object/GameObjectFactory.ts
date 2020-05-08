@@ -423,6 +423,7 @@
         *   @param lookingDirection   The enemies initial looking and walking direction.
         *   @param walkingTargetLeft  Left walking target X.
         *   @param walkingTargetRight Right walking target X.
+        *   @param characterSpriteSet The sprite set to use for this enemy.
         *
         *   @return The created enemy.
         ***************************************************************************************************************/
@@ -432,7 +433,8 @@
             yBottom            :number,
             lookingDirection   :ninjas.CharacterLookingDirection,
             walkingTargetLeft  :number,
-            walkingTargetRight :number
+            walkingTargetRight :number,
+            characterSpriteSet :ninjas.CharacterSpriteSet
         )
         : ninjas.Enemy
         {
@@ -446,7 +448,8 @@
                 walkingTargetLeft,
                 walkingTargetRight,
                 lookingDirection,
-                diamondSprite
+                diamondSprite,
+                characterSpriteSet
             );
         }
 

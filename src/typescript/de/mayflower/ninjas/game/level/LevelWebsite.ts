@@ -25,8 +25,8 @@
 */
             ];
 
-            ninjas.GameObjectBundleFactory.createEnemy( this, 750,  200, ninjas.CharacterLookingDirection.RIGHT, 2100,  3600  );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 1000, 400, ninjas.CharacterLookingDirection.RIGHT, 6150,  7100  );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 750,  200, ninjas.CharacterLookingDirection.RIGHT, 2100,  3600, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 1000, 400, ninjas.CharacterLookingDirection.RIGHT, 6150,  7100, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
 /*
             ninjas.GameObjectBundleFactory.createEnemy( this, 12300, 4200, ninjas.CharacterLookingDirection.RIGHT, 12300, 12800 );
             ninjas.GameObjectBundleFactory.createEnemy( this, 11250, 5100, ninjas.CharacterLookingDirection.RIGHT, 11250, 12000 );

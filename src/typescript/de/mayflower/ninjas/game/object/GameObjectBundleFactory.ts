@@ -544,8 +544,9 @@
         *   @param lookingDirection   The enemies initial looking and walking direction.
         *   @param walkingTargetLeft  Left walking target X.
         *   @param walkingTargetRight Right walking target X.
+        *   @param characterSpriteSet The sprite set to use for this enemy.
         *
-        *   TODO must return the enemy!
+        *   TODO must return the enemy!?
         ***************************************************************************************************************/
         public static createEnemy
         (
@@ -554,7 +555,8 @@
             yBottom            :number,
             lookingDirection   :ninjas.CharacterLookingDirection,
             walkingTargetLeft  :number,
-            walkingTargetRight :number
+            walkingTargetRight :number,
+            characterSpriteSet :ninjas.CharacterSpriteSet
         )
         : void
         {
@@ -564,7 +566,8 @@
                 yBottom,
                 lookingDirection,
                 walkingTargetLeft,
-                walkingTargetRight
+                walkingTargetRight,
+                characterSpriteSet
             );
 
             level.enemies.push( enemy );

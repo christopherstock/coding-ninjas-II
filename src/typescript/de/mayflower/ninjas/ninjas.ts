@@ -61,6 +61,7 @@
     export * from './data/ImageData';
     export * from './data/SoundData';
     export * from './data/SpriteData';
+    export * from './data/CharacterSpriteData';
 
     export * from './site/component/ContentCompany';
     export * from './site/component/ContentContact';
