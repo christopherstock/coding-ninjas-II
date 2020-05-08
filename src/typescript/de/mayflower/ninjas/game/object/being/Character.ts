@@ -27,7 +27,7 @@
         public                          punchBackTicks                      :number                             = 0;
 
         /** Flags if this character is gliding. */
-        protected                       gliding                             :boolean                            = false;
+        protected                       isGliding                           :boolean                            = false;
         /** Flags if this character is requesting gliding while ascending etc. */
         protected                       glidingRequest                      :boolean                            = false;
 
@@ -215,7 +215,7 @@
         {
             if ( this.collidesBottom )
             {
-                if ( this.gliding )
+                if ( this.isGliding )
                 {
                     this.closeParachute();
                 }
@@ -240,7 +240,72 @@
             ninjas.Debug.character.log( 'Character opens parachute' );
 
             this.shape.body.frictionAir = ninjas.BodyFrictionAir.GLIDING;
-            this.gliding = true;
+            this.isGliding = true;
+        }
+
+        /** ************************************************************************************************************
+        *   Assigns the current sprite to the player according to his current state.
+        ***************************************************************************************************************/
+        protected assignCurrentSprite() : void
+        {
+            if ( this.isFalling() )
+            {
+                if ( this.isGliding )
+                {
+                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    {
+                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_GLIDE_LEFT );
+                    }
+                    else
+                    {
+                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_GLIDE_RIGHT );
+                    }
+                }
+                else
+                {
+                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    {
+                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_FALL_LEFT );
+                    }
+                    else
+                    {
+                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_FALL_RIGHT );
+                    }
+                }
+            }
+            else if ( this.isJumping() )
+            {
+                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                {
+                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_LEFT );
+                }
+                else
+                {
+                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_RIGHT );
+                }
+            }
+            else
+            {
+                if ( this.movesLeft )
+                {
+                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_LEFT );
+                }
+                else if ( this.movesRight )
+                {
+                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_RIGHT );
+                }
+                else
+                {
+                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    {
+                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_LEFT );
+                    }
+                    else
+                    {
+                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_RIGHT );
+                    }
+                }
+            }
         }
 
         /** ************************************************************************************************************
@@ -251,7 +316,7 @@
             ninjas.Debug.character.log( 'Character closes parachute' );
 
             this.shape.body.frictionAir = ninjas.BodyFrictionAir.DEFAULT;
-            this.gliding = false;
+            this.isGliding = false;
         }
 
 

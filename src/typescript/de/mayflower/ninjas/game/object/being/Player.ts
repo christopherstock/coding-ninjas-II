@@ -107,7 +107,7 @@
             {
                 keySystem.setNeedsRelease( ninjas.Key.KEY_SPACE );
 
-                if ( !this.gliding && !this.glidingRequest && !this.collidesBottom )
+                if ( !this.isGliding && !this.glidingRequest && !this.collidesBottom )
                 {
                     this.requestGliding();
                 }
@@ -122,73 +122,6 @@
             this.checkEnemyKill();
             this.clipToHorizontalLevelBounds();
             this.assignCurrentSprite();
-        }
-
-        /** ************************************************************************************************************
-        *   Assigns the current sprite to the player according to his current state.
-        *
-        *   TODO extract to superclass and add variable sprites!
-        ***************************************************************************************************************/
-        private assignCurrentSprite() : void
-        {
-            if ( this.isFalling() )
-            {
-                if ( this.gliding )
-                {
-                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_GLIDE_LEFT );
-                    }
-                    else
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_GLIDE_RIGHT );
-                    }
-                }
-                else
-                {
-                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_FALL_LEFT );
-                    }
-                    else
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_FALL_RIGHT );
-                    }
-                }
-            }
-            else if ( this.isJumping() )
-            {
-                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_LEFT );
-                }
-                else
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_RIGHT );
-                }
-            }
-            else
-            {
-                if ( this.movesLeft )
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_LEFT );
-                }
-                else if ( this.movesRight )
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_RIGHT );
-                }
-                else
-                {
-                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_LEFT );
-                    }
-                    else
-                    {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_RIGHT );
-                    }
-                }
-            }
         }
 
         /** ************************************************************************************************************
