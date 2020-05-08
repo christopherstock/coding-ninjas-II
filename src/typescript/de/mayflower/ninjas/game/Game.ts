@@ -35,23 +35,6 @@
         }
 
         /** ************************************************************************************************************
-        *   Resets the camera.
-        ***************************************************************************************************************/
-        public resetCamera() : void
-        {
-            this.camera = new ninjas.Camera(
-                ninjas.SettingEngine.CAMERA_MOVING_SPEED,
-                ninjas.SettingEngine.CAMERA_MOVING_MINIMUM,
-                ninjas.SettingEngine.CAMERA_MOVING_MAXIMUM,
-                this.level.width,
-                this.level.height,
-                this.engine.canvasSystem.getWidth(),
-                this.engine.canvasSystem.getHeight()
-            );
-            this.camera.reset( this );
-        }
-
-        /** ************************************************************************************************************
         *   Starts the game loop.
         ***************************************************************************************************************/
         public start() : void
@@ -238,6 +221,23 @@
                     + ' )'
                 );
             }
+        }
+
+        /** ************************************************************************************************************
+        *   Resets the camera.
+        ***************************************************************************************************************/
+        public resetCamera() : void
+        {
+            this.camera = new ninjas.Camera(
+                ninjas.SettingEngine.CAMERA_MOVING_SPEED,
+                ninjas.SettingEngine.CAMERA_MOVING_MINIMUM,
+                ninjas.SettingEngine.CAMERA_MOVING_MAXIMUM,
+                this.level.width,
+                this.level.height,
+                this.engine.canvasSystem.getWidth(),
+                this.engine.canvasSystem.getHeight()
+            );
+            this.camera.reset( this );
         }
 
         /** ************************************************************************************************************
