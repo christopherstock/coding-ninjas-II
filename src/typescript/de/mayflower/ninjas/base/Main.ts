@@ -7,10 +7,9 @@
     *   TODO Improve image sequence handling in ImageData?
     *   TODO Green water etc.
     *   TODO Add destroyable movables.
-    *   TODO One player - many outfits! General player with custom sprite sets.
     *   TODO Add pickable items and item sprites.
-    *   TODO Remove enemy flickering on startup..! :p
     *   TODO Fix flickering for side-panel before 1st popup.
+    *   TODO Improved preloader.
     *   TODO Add 'katana strike' action on ground and in air.
     *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib.
     *   TODO Add decoration particle effects on smashing objects / windows etc.
@@ -29,7 +28,7 @@
     *******************************************************************************************************************/
     export class Main
     {
-        /** The singleton instance of the game engine. */
+        /** The singleton game instance. */
         public      static          game                    :ninjas.Game                    = null;
 
         /** ************************************************************************************************************

@@ -7,7 +7,7 @@
     *******************************************************************************************************************/
     export class Game
     {
-        /** The preloader instance. */
+        /** The preloader instance. TODO to Engine! */
         public      preloader               :ninjas.Preloader               = null;
         /** The game engine. */
         public      engine                  :ninjas.Engine                  = null;
@@ -75,6 +75,9 @@
 
             // launch initial level
             this.resetAndLaunchLevel( new ninjas.LevelWebsite() );
+
+            // update camera bounds
+            this.updateAndAssignCamera();
 
             // start the renderer
             this.engine.matterJsSystem.startRenderer();
@@ -181,15 +184,8 @@
             // render level
             this.level.render( this.engine.keySystem );
 
-            // update camera
-            const cameraBounds :matter.Bounds = this.camera.update(
-                this.level.player.shape.body.position.x,
-                this.level.player.shape.body.position.y,
-                this.level.player.collidesBottom,
-                this.engine.siteSystem.getCameraTargetX(),
-                this.engine.canvasSystem.getHeight() * ninjas.SettingEngine.CAMERA_RATIO_Y
-            );
-            this.engine.matterJsSystem.setRenderBounds( cameraBounds );
+            // update camera bounds
+            this.updateAndAssignCamera();
 
             // render parallax elements
             this.level.renderParallaxElements();
@@ -250,5 +246,21 @@
                     + ' )'
                 );
             }
+        }
+
+        /** ************************************************************************************************************
+        *   Updates the level camera and then assigns it onto the player.
+        *   by updating the rendered bounds of the camera onto the matter.js rendering engine.
+        ***************************************************************************************************************/
+        private updateAndAssignCamera() : void
+        {
+            const cameraBounds :matter.Bounds = this.camera.update(
+                this.level.player.shape.body.position.x,
+                this.level.player.shape.body.position.y,
+                this.level.player.collidesBottom,
+                this.engine.siteSystem.getCameraTargetX(),
+                this.engine.canvasSystem.getHeight() * ninjas.SettingEngine.CAMERA_RATIO_Y
+            );
+            this.engine.matterJsSystem.setRenderBounds( cameraBounds );
         }
     }

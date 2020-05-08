@@ -147,7 +147,7 @@
         /** ************************************************************************************************************
         *   Sets the bounds of the world to render onto the canvas.
         *
-        *   @param bounds The bounds to set for the renderer..
+        *   @param bounds The bounds to set for the renderer.
         ***************************************************************************************************************/
         public setRenderBounds( bounds:matter.Bounds ) : void
         {
