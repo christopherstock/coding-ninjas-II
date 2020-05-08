@@ -48,10 +48,32 @@
         /** The jump power to apply for this character. */
         private     readonly            jumpPower                           :number                             = 0.0;
 
+        // TODO bundle Character SpriteSets
+
+        /** The sprite to use for standing left. */
         private     readonly            spriteStandLeft                     :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for standing right. */
         private     readonly            spriteStandRight                    :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for walking left. */
         private     readonly            spriteWalkLeft                      :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for walking right. */
         private     readonly            spriteWalkRight                     :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for gliding left. */
+        private     readonly            spriteGlideLeft                     :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for gliding right. */
+        private     readonly            spriteGlideRight                    :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for falling left. */
+        private     readonly            spriteFallLeft                      :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for falling right. */
+        private     readonly            spriteFallRight                     :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for jumping left. */
+        private     readonly            spriteJumpLeft                      :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for jumping right. */
+        private     readonly            spriteJumpRight                     :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for dying left. */
+        private     readonly            spriteDieLeft                       :ninjas.SpriteTemplate              = null;
+        /** The sprite to use for dying right. */
+        private     readonly            spriteDieRight                      :ninjas.SpriteTemplate              = null;
 
         /** ************************************************************************************************************
         *   Creates a new character.
@@ -63,6 +85,19 @@
         *   @param lookingDirection The initial looking direction.
         *   @param speedMove        The speed for horizontal movement.
         *   @param jumpPower        The vertical force to apply on jumping.
+        *
+        *   @param spriteStandLeft  The sprite to use for standing left.
+        *   @param spriteStandRight The sprite to use for standing right.
+        *   @param spriteWalkLeft   The sprite to use for walking left.
+        *   @param spriteWalkRight  The sprite to use for walking right.
+        *   @param spriteGlideLeft  The sprite to use for gliding left.
+        *   @param spriteGlideRight The sprite to use for gliding right.
+        *   @param spriteFallLeft   The sprite to use for falling left.
+        *   @param spriteFallRight  The sprite to use for falling right.
+        *   @param spriteJumpLeft   The sprite to use for jumping left.
+        *   @param spriteJumpRight  The sprite to use for jumping right.
+        *   @param spriteDieLeft    The sprite to use for dying left.
+        *   @param spriteDieRight   The sprite to use for dying right.
         ***************************************************************************************************************/
         protected constructor
         (
@@ -77,7 +112,15 @@
             spriteStandLeft  :ninjas.SpriteTemplate,
             spriteStandRight :ninjas.SpriteTemplate,
             spriteWalkLeft   :ninjas.SpriteTemplate,
-            spriteWalkRight  :ninjas.SpriteTemplate
+            spriteWalkRight  :ninjas.SpriteTemplate,
+            spriteGlideLeft  :ninjas.SpriteTemplate,
+            spriteGlideRight :ninjas.SpriteTemplate,
+            spriteFallLeft   :ninjas.SpriteTemplate,
+            spriteFallRight  :ninjas.SpriteTemplate,
+            spriteJumpLeft   :ninjas.SpriteTemplate,
+            spriteJumpRight  :ninjas.SpriteTemplate,
+            spriteDieLeft    :ninjas.SpriteTemplate,
+            spriteDieRight   :ninjas.SpriteTemplate
         )
         {
             super
@@ -96,6 +139,16 @@
             this.spriteStandRight = spriteStandRight;
             this.spriteWalkLeft   = spriteWalkLeft;
             this.spriteWalkRight  = spriteWalkRight;
+            this.spriteGlideLeft  = spriteGlideLeft;
+            this.spriteGlideRight = spriteGlideRight;
+            this.spriteFallLeft   = spriteFallLeft;
+            this.spriteFallRight  = spriteFallRight;
+            this.spriteJumpLeft   = spriteJumpLeft;
+            this.spriteJumpRight  = spriteJumpRight;
+            this.spriteDieLeft    = spriteDieLeft;
+            this.spriteDieRight   = spriteDieRight;
+
+            this.assignCurrentSprite();
         }
 
         /** ************************************************************************************************************
@@ -277,6 +330,8 @@
 
         /** ************************************************************************************************************
         *   Assigns the current sprite to the player according to his current state.
+        *
+        *   TODO Extract all sprite states!
         ***************************************************************************************************************/
         protected assignCurrentSprite() : void
         {
@@ -286,22 +341,22 @@
                 {
                     if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_GLIDE_LEFT );
+                        this.setSprite( this.spriteGlideLeft );
                     }
                     else
                     {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_GLIDE_RIGHT );
+                        this.setSprite( this.spriteGlideRight );
                     }
                 }
                 else
                 {
                     if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                     {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_FALL_LEFT );
+                        this.setSprite( this.spriteFallLeft );
                     }
                     else
                     {
-                        this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_FALL_RIGHT );
+                        this.setSprite( this.spriteFallRight );
                     }
                 }
             }
@@ -309,22 +364,22 @@
             {
                 if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                 {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_LEFT );
+                    this.setSprite( this.spriteJumpLeft );
                 }
                 else
                 {
-                    this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_RIGHT );
+                    this.setSprite( this.spriteJumpRight );
                 }
             }
             else if ( this.isDying )
             {
                 if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
                 {
-                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT );
+                    this.setSprite( this.spriteDieLeft );
                 }
                 else
                 {
-                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT );
+                    this.setSprite( this.spriteDieRight );
                 }
             }
             else
