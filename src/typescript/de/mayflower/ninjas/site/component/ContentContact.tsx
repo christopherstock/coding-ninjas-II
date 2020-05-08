@@ -28,8 +28,9 @@
                         <div className='card-front' style={
                             {
                                 backgroundImage: 'url( '
-                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_OFFICE_WZBG )
-                                .src
+                                + ninjas.Main.game.engine.imageSystem.getImage(
+                                    ninjas.ImageData.IMAGE_SITE_OFFICE_WZBG
+                                ).src
                                 + ' )',
                             }
                         }>
@@ -54,10 +55,12 @@
                         <div className='card-front' style={
                             {
                                 backgroundImage: 'url( '
-                                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_OFFICE_MUC ).src
+                                + ninjas.Main.game.engine.imageSystem.getImage(
+                                    ninjas.ImageData.IMAGE_SITE_OFFICE_MUC
+                                ).src
                                 + ' )',
                             }
-                            }>
+                        }>
                             <h3>Munich</h3>
                         </div>
                         <div className='card-back'>
@@ -79,9 +82,10 @@
                         <div className='card-front' style={
                             {
                                 backgroundImage: 'url( '
-                                    + ninjas.Main.game.engine.imageSystem.getImage(
-                                        ninjas.ImageData.IMAGE_SITE_OFFICE_BER ).src
-                                    + ' )',
+                                + ninjas.Main.game.engine.imageSystem.getImage(
+                                    ninjas.ImageData.IMAGE_SITE_OFFICE_BER
+                                ).src
+                                + ' )',
                             }
                         }>
                             <h3>Berlin</h3>

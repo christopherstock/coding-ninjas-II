@@ -66,6 +66,7 @@
                 ninjas.SettingMatter.ENEMY_SPEED_MOVE,
                 0,
 
+                // TODO enrich all sprites!
                 ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
                 ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
                 ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT,

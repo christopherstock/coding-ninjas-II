@@ -101,7 +101,7 @@
                 ninjas.SettingGame.TICK_DELAY_DELTA
             );
 
-            // notify that the preloader is setup
+            // notify that the preloader is set up
             this.onPreloaderSetup();
         }
 

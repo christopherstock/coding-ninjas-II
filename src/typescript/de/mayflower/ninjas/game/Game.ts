@@ -86,13 +86,6 @@
             window.requestAnimationFrame(
                 () => { this.tickGame(); }
             );
-/*
-            // invoke engine ticks repeatedly
-            window.setInterval(
-                () => { this.tickGame(); },
-                ninjas.SettingGame.TICK_DELAY_DELTA
-            );
-*/
         };
 
         /** ************************************************************************************************************
@@ -165,7 +158,7 @@
 
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
-                // stop fpsMetet tick
+                // stop fpsMeter tick
                 this.engine.fpsMeter.tick();
             }
 

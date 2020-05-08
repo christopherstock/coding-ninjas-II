@@ -37,6 +37,7 @@
                 ninjas.SettingMatter.PLAYER_SPEED_MOVE,
                 ninjas.SettingMatter.PLAYER_JUMP_POWER,
 
+                // TODO enrich all sprites!
                 ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_LEFT,
                 ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_RIGHT,
                 ninjas.SpriteData.SPRITE_NINJA_GIRL_WALK_LEFT,

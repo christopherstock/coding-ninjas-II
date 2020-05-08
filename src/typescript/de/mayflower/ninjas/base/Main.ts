@@ -18,6 +18,7 @@
     *   TODO Debug Disable Pointer control.
     *   TODO Try different physics demo elements on the player!
     *   TODO Remove static access on Main.game.
+    *   TODO Bots that help you and talk to you?
     *   TODO Particle fx smashed crates, startup window etc.
     *   TODO Sound effects for ninja girl and enemies?
     *   TODO Add 'slide' action.
