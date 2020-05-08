@@ -19,6 +19,9 @@
 
     /** ****************************************************************************************************************
     *   Represents an enemy being controlled by the system.
+    *
+    *   TODO rename to 'Bot'.
+    *   TODO add BotMind.ENEMY, etc.
     *******************************************************************************************************************/
     export class Enemy extends ninjas.Character
     {

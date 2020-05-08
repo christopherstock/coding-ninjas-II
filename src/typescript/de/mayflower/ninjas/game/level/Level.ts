@@ -90,41 +90,41 @@
         ***************************************************************************************************************/
         public render( keySystem:ninjas.KeySystem ) : void
         {
-            for ( const gameObject of this.decosBg )
+            for ( const decoBg of this.decosBg )
             {
-                gameObject.render();
+                decoBg.render();
             }
 /*
-            for ( let gameObject of this.shrines )
+            for ( let shrine of this.shrines )
             {
-                gameObject.render();
+                shrine.render();
             }
 */
-            for ( const gameObject of this.siteTriggers )
+            for ( const siteTrigger of this.siteTriggers )
             {
-                gameObject.render();
+                siteTrigger.render();
             }
-            for ( const gameObject of this.obstacles )
+            for ( const obstacle of this.obstacles )
             {
-                gameObject.render();
+                obstacle.render();
             }
-            for ( const gameObject of this.movables )
+            for ( const movable of this.movables )
             {
-                gameObject.render();
+                movable.render();
             }
 
             this.player.render();
             this.player.handleKeys( keySystem );
             this.player.renderAfterKeys();
 
-            for ( const gameObject of this.enemies )
+            for ( const enemy of this.enemies )
             {
-                gameObject.render();
+                enemy.render();
             }
 
-            for ( const gameObject of this.decosFg )
+            for ( const decoFg of this.decosFg )
             {
-                gameObject.render();
+                decoFg.render();
             }
         }
 

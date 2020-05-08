@@ -34,9 +34,9 @@
         // TODO to AliveState
 
         /** Flags if this character is dying but not already dead. */
-        public                          isDying                             :boolean                            = false;
+        protected                       isDying                             :boolean                            = false;
         /** Flags if this character is dead. */
-        public                          isDead                              :boolean                            = false;
+        protected                       isDead                              :boolean                            = false;
 
         /** Flags if the character is currently moving left. */
         protected                       movesLeft                           :boolean                            = false;
@@ -171,6 +171,16 @@
         public isJumping() : boolean
         {
             return ( this.shape.body.velocity.y < 0.0 && !this.collidesBottom );
+        }
+
+        /** ************************************************************************************************************
+        *   Checks if this character is alive. That means that he is not dead and is not currently dying.
+        *
+        *   @return <code>true</code> if this character is alive.
+        ***************************************************************************************************************/
+        public isAlive() : boolean
+        {
+            return ( !this.isDead && !this.isDying );
         }
 
         /** ************************************************************************************************************

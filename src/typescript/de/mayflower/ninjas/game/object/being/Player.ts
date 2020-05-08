@@ -59,6 +59,8 @@
         public render() : void
         {
             super.render();
+
+            // TODO invoke handleKeys and renderAfterKeys here!
         }
 
         /** ************************************************************************************************************
@@ -141,7 +143,7 @@
                 for ( const enemy of ninjas.Main.game.level.enemies )
                 {
                     // skip dead enemies
-                    if ( !enemy.isDead && !enemy.isDying )
+                    if ( enemy.isAlive() )
                     {
                         // check intersection of the player and the enemy
                         if ( matter.Bounds.overlaps( this.shape.body.bounds, enemy.shape.body.bounds ) )
