@@ -22,10 +22,6 @@
     *******************************************************************************************************************/
     export class Enemy extends ninjas.Character
     {
-        /** Flags if this enemy is dying but not already dead. */
-        public                      dying                   :boolean                    = false;
-        /** Flags if this character is dead. */
-        public                      dead                    :boolean                    = false;
         /** The enemies' current movement phase. */
         private                     currentPhase            :EnemyMovementPhase         = null;
         /** The current delay tick between movement phases. */
@@ -88,11 +84,11 @@
         {
             super.render();
 
-            if ( !this.dead )
+            if ( !this.isDead )
             {
                 this.checkFallingDead();
 
-                if ( !this.dying )
+                if ( !this.isDying )
                 {
                     this.moveAccordingToPattern();
                     this.clipToHorizontalLevelBounds();
@@ -111,7 +107,7 @@
         public onHitByPlayer( playerDirection :ninjas.CharacterLookingDirection ) : void
         {
             // flag as dying
-            this.dying = true;
+            this.isDying = true;
 
             // face the player
             if ( playerDirection === ninjas.CharacterLookingDirection.LEFT )
@@ -188,21 +184,9 @@
         /** ************************************************************************************************************
         *   Assigns the current sprite to the enemy according to his current state.
         ***************************************************************************************************************/
+/*
         private assignCurrentSprite() : void
         {
-            if ( this.dying )
-            {
-                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT );
-                }
-                else
-                {
-                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT );
-                }
-            }
-            else
-            {
                 if ( this.movesLeft )
                 {
                     this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT );
@@ -224,7 +208,7 @@
                 }
             }
         }
-
+ */
         /** ************************************************************************************************************
         *   Check if the enemy falls to death by falling out of the level.
         ***************************************************************************************************************/
@@ -238,7 +222,7 @@
                 ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
 
                 // fkag as dead
-                this.dead = true;
+                this.isDead = true;
             }
         }
 

@@ -136,9 +136,8 @@
                 for ( const enemy of ninjas.Main.game.level.enemies )
                 {
                     // skip dead enemies
-                    if ( !enemy.dead && !enemy.dying )
+                    if ( !enemy.isDead && !enemy.isDying )
                     {
-
                         // check intersection of the player and the enemy
                         if ( matter.Bounds.overlaps( this.shape.body.bounds, enemy.shape.body.bounds ) )
                         {

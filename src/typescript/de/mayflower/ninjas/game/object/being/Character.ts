@@ -31,6 +31,13 @@
         /** Flags if this character is requesting gliding while ascending etc. */
         protected                       glidingRequest                      :boolean                            = false;
 
+        // TODO to AliveState
+
+        /** Flags if this character is dying but not already dead. */
+        public                          isDying                             :boolean                            = false;
+        /** Flags if this character is dead. */
+        public                          isDead                              :boolean                            = false;
+
         /** Flags if the character is currently moving left. */
         protected                       movesLeft                           :boolean                            = false;
         /** Flags if the character is currently moving right. */
@@ -282,6 +289,17 @@
                 else
                 {
                     this.setSprite( ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_RIGHT );
+                }
+            }
+            else if ( this.isDying )
+            {
+                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                {
+                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT );
+                }
+                else
+                {
+                    this.setSprite( ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT );
                 }
             }
             else
