@@ -28,7 +28,12 @@
             this.preloader = new ninjas.Preloader( this, () => { this.onPreloaderInitComplete(); } );
             this.engine    = new ninjas.Engine( this );
 
-            this.preloader.preload();
+            // start the preloader after a short delay .. runs smoother for the user
+            window.setTimeout
+            (
+                () => { this.preloader.preload(); },
+                ( ninjas.SettingDebug.DEBUG_NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
+            );
         }
 
         /** ************************************************************************************************************

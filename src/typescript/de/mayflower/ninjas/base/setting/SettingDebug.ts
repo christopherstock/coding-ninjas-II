@@ -15,7 +15,7 @@
 
         // noinspection PointlessBooleanExpressionJS
         /** No delay after preloader if enabled. */
-        public  static  readonly    DEBUG_NO_DELAY_AFTER_PRELOADER          :boolean                    = ( false && SettingDebug.DEBUG_MODE );
+        public  static  readonly    DEBUG_NO_DELAY_AROUND_PRELOADER          :boolean                    = ( false && SettingDebug.DEBUG_MODE );
 
         // noinspection PointlessBooleanExpressionJS
         /** Disables all sprites. */

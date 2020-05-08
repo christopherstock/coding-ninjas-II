@@ -133,11 +133,11 @@
 
             this.game.preloader.setLoadingPercentage( 100 );
 
-            // start the game loop in one second ??
+            // start the game loop after a short delay .. runs smoother for the user
             window.setTimeout
             (
                 () => { this.game.start(); },
-                ( ninjas.SettingDebug.DEBUG_NO_DELAY_AFTER_PRELOADER ? 0 : 500 )
+                ( ninjas.SettingDebug.DEBUG_NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
             );
         };
 
