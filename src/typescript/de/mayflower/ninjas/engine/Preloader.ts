@@ -6,8 +6,8 @@
     *******************************************************************************************************************/
     export class Preloader
     {
-        /** The parent game instance. */
-        private     readonly        game                            :ninjas.Game                        = null;
+        /** The parent engine instance. */
+        private     readonly        engine                            :ninjas.Engine                    = null;
         /** The callback to invoke when the preloader is set up. */
         private     readonly        onPreloaderSetup                :() => void                         = null;
 
@@ -23,12 +23,12 @@
         /** ************************************************************************************************************
         *   Creates a new preloading system.
         *
-        *   @param game             The parent game instance.
+        *   @param engine           The parent game engine.
         *   @param onPreloaderSetup The callback to invoke when the preloading is set up.
         ***************************************************************************************************************/
-        public constructor( game:ninjas.Game, onPreloaderSetup:() => void )
+        public constructor( engine:ninjas.Engine, onPreloaderSetup:() => void )
         {
-            this.game             = game;
+            this.engine           = engine;
             this.onPreloaderSetup = onPreloaderSetup;
         }
 
@@ -40,8 +40,8 @@
             ninjas.Debug.init.log( 'Preloading all game components' );
 
             // bring on the canvas and init the resize handler
-            this.game.engine.initCanvas();
-            this.game.engine.initWindowResizeHandler();
+            this.engine.initCanvas();
+            this.engine.initWindowResizeHandler();
 
             // load preloader images
             this.imageGay  = new Image();
@@ -100,17 +100,17 @@
             // clear canvas
             ninjas.DrawUtil.fillRect
             (
-                this.game.engine.canvasSystem.getCanvasContext(),
+                this.engine.canvasSystem.getCanvasContext(),
                 0,
                 0,
-                this.game.engine.canvasSystem.getWidth(),
-                this.game.engine.canvasSystem.getHeight(),
+                this.engine.canvasSystem.getWidth(),
+                this.engine.canvasSystem.getHeight(),
                 ninjas.SettingEngine.CANVAS_BG
             );
 
             // calc image location
-            const imageX :number = ( this.game.engine.canvasSystem.getWidth()  - this.imageMono.width  ) / 2;
-            const imageY :number = ( this.game.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
+            const imageX :number = ( this.engine.canvasSystem.getWidth()  - this.imageMono.width  ) / 2;
+            const imageY :number = ( this.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
 
             // calc image width to draw
             const imageWidthToDraw :number = ( this.imageGay.width * this.loadingPercentage ) / 100;
@@ -118,7 +118,7 @@
             // draw mono image
             ninjas.DrawUtil.drawImage
             (
-                this.game.engine.canvasSystem.getCanvasContext(),
+                this.engine.canvasSystem.getCanvasContext(),
                 this.imageMono,
                 imageX,
                 imageY
@@ -127,7 +127,7 @@
             // draw gay image clipped
             ninjas.DrawUtil.drawImageScaledClipped
             (
-                this.game.engine.canvasSystem.getCanvasContext(),
+                this.engine.canvasSystem.getCanvasContext(),
                 this.imageGay,
                 0,
                 0,

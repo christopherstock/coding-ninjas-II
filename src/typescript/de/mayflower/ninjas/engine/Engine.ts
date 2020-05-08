@@ -38,7 +38,7 @@
         public constructor( game:ninjas.Game ) {
             this.game = game;
             this.preloader = new ninjas.Preloader(
-                game,
+                this,
                 () => {
                     this.onPreloaderInitComplete();
                 }
