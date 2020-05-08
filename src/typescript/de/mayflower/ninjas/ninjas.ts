@@ -41,6 +41,7 @@
     export * from './game/object/GameObjectFactory';
 
     export * from './game/object/being/Character';
+    export * from './game/object/being/CharacterSpriteSet';
     export * from './game/object/being/Enemy';
     export * from './game/object/being/Player';
 
