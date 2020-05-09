@@ -26,6 +26,9 @@
         /** Ticks the character is paralized by being punched back. */
         public                          punchBackTicks                      :number                             = 0;
 
+        /** Ticks the character is currently attacking. */
+        public                          attackingTicks                      :number                             = 0;
+
         /** Flags if this character is gliding. */
         protected                       isGliding                           :boolean                            = false;
         /** Flags if this character is requesting gliding while ascending etc. */
@@ -107,6 +110,10 @@
             {
                 --this.punchBackTicks;
             }
+            if ( this.attackingTicks > 0 )
+            {
+                --this.attackingTicks;
+            }
 
             this.resetRotation();
             this.checkBottomCollision();
@@ -166,6 +173,16 @@
         public isJumping() : boolean
         {
             return ( this.shape.body.velocity.y < 0.0 && !this.collidesBottom );
+        }
+
+        /** ************************************************************************************************************
+        *   Checks if this character is currently attacking.
+        *
+        *   @return <code>true</code> if this character is currently attacking.
+        ***************************************************************************************************************/
+        public isAttacking() : boolean
+        {
+            return ( this.attackingTicks > 0 );
         }
 
         /** ************************************************************************************************************
@@ -233,6 +250,16 @@
             ninjas.Debug.character.log( 'Character requests gliding' );
 
             this.glidingRequest = true;
+        }
+
+        /** ************************************************************************************************************
+        *   Requests attacking for the player.
+        ***************************************************************************************************************/
+        protected requestAttack() : void
+        {
+            ninjas.Debug.character.log( 'Character requests attack' );
+
+            this.attackingTicks = 100;
         }
 
         /** ************************************************************************************************************
@@ -322,6 +349,17 @@
                 else
                 {
                     this.setSprite( this.spriteSet.spriteDieRight );
+                }
+            }
+            else if ( this.isAttacking() )
+            {
+                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                {
+                    this.setSprite( this.spriteSet.spriteAttackLeft );
+                }
+                else
+                {
+                    this.setSprite( this.spriteSet.spriteAttackRight );
                 }
             }
             else

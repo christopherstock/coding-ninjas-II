@@ -21,7 +21,9 @@
             ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_LEFT,
             ninjas.SpriteData.SPRITE_NINJA_GIRL_JUMP_RIGHT,
             ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
-            ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT
+            ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
+            ninjas.SpriteData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
+            ninjas.SpriteData.SPRITE_NINJA_GIRL_ATTACK_RIGHT
         );
 
         /** The character sprite set for the 'Blue Ninja Guy'. */
@@ -37,10 +39,8 @@
             ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
             ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
             ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
-            ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT
+            ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
+            ninjas.SpriteData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
+            ninjas.SpriteData.SPRITE_NINJA_GIRL_ATTACK_RIGHT
         );
-
-
-
-
     }

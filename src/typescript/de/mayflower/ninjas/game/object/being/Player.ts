@@ -115,6 +115,16 @@
                     this.requestGliding();
                 }
             }
+
+            if ( keySystem.isPressed( ninjas.Key.KEY_META ) )
+            {
+                keySystem.setNeedsRelease( ninjas.Key.KEY_META );
+
+                if ( this.attackingTicks === 0 )
+                {
+                    this.requestAttack();
+                }
+            }
         }
 
         /** ************************************************************************************************************

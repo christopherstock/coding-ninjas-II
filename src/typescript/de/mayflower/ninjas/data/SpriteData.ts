@@ -96,6 +96,50 @@
             ninjas.SettingGame.DEFAULT_SPRITE_SCALE
         );
 
+        /** Sprite 'ninja girl attack left'. */
+        public      static  SPRITE_NINJA_GIRL_ATTACK_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+        (
+            [
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_1,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_2,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_3,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_4,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_5,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_6,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_7,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_8,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_9,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_10,
+            ],
+            8,
+            ninjas.MirrorImage.YES,
+            ninjas.LoopSprite.YES,
+            ninjas.RandomFrames.NO,
+            ninjas.SettingGame.DEFAULT_SPRITE_SCALE
+        );
+
+        /** Sprite 'ninja girl attack right'. */
+        public      static  SPRITE_NINJA_GIRL_ATTACK_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+        (
+            [
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_1,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_2,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_3,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_4,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_5,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_6,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_7,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_8,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_9,
+                ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_10,
+            ],
+            8,
+            ninjas.MirrorImage.NO,
+            ninjas.LoopSprite.YES,
+            ninjas.RandomFrames.NO,
+            ninjas.SettingGame.DEFAULT_SPRITE_SCALE
+        );
+
         /** Sprite 'ninja girl jump left'. */
         public      static  SPRITE_NINJA_GIRL_JUMP_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
         (
@@ -498,6 +542,8 @@
             SpriteData.SPRITE_NINJA_GIRL_STAND_RIGHT,
             SpriteData.SPRITE_NINJA_GIRL_WALK_LEFT,
             SpriteData.SPRITE_NINJA_GIRL_WALK_RIGHT,
+            SpriteData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
+            SpriteData.SPRITE_NINJA_GIRL_ATTACK_RIGHT,
             SpriteData.SPRITE_NINJA_GIRL_JUMP_LEFT,
             SpriteData.SPRITE_NINJA_GIRL_JUMP_RIGHT,
             SpriteData.SPRITE_NINJA_GIRL_FALL_LEFT,
