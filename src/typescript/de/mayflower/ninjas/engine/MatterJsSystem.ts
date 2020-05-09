@@ -48,7 +48,7 @@
                         showAngleIndicator: ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
                         showVelocity:       ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
 
-                        background:         ninjas.SettingEngine.CANVAS_BG,
+                        background:         ninjas.SettingEngine.BACKGROUND_MATTER_JS,
 
                         width:              canvasSystem.getWidth(),
                         height:             canvasSystem.getHeight(),

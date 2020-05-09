@@ -10,8 +10,10 @@
         public  static  readonly    CANVAS_MIN_WIDTH                        :number             = 800;
         /** The minimum canvas2D height. */
         public  static  readonly    CANVAS_MIN_HEIGHT                       :number             = 600;
-        /** The color of the canvas bg. */
-        public  static  readonly    CANVAS_BG                               :string             = '#000000';
+        /** The color of the matter.js canvas bg. */
+        public  static  readonly    BACKGROUND_MATTER_JS                    :string             = '#000000';
+        /** The color of the preloader canvas bg. */
+        public  static  readonly    BACKGROUND_PRELOADER                    :string             = '#ffffff';
 
         /** The camera ration for the vertical axis. */
         public  static  readonly    CAMERA_RATIO_Y                          :number             = 0.6;
