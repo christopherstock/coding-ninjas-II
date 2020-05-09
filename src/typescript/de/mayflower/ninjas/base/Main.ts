@@ -4,13 +4,15 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Improve image sequence handling in ImageData?
+    *   TODO Improved preloader.
+    *
     *   TODO Green water etc.
     *   TODO Add destroyable movables.
     *   TODO Add pickable items and item sprites.
     *   TODO Fix flickering for side-panel before 1st popup.
-    *   TODO Improved preloader.
+    *   TODO Remove flickering of SidePanels' Ant-Design components .. (preload them?)
     *   TODO Add 'katana strike' action on ground and in air.
+    *   TODO Improve image sequence handling in ImageData?
     *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib.
     *   TODO Add decoration particle effects on smashing objects / windows etc.
     *   TODO Add event triggers ( for falling obstacles, new enemies etc )

@@ -351,24 +351,26 @@
         /** ************************************************************************************************************
         *   Creates a water area.
         *
-        *   @param level       The level to add the flying ground to.
-        *   @param xLeft       Anchor for left X.
-        *   @param yTop        Anchor for top Y.
-        *   @param length      The length of the area.
-        *   @param height      The height of the area.
+        *   @param level           The level to add the flying ground to.
+        *   @param xLeft           Anchor for left X.
+        *   @param yTop            Anchor for top Y.
+        *   @param length          The length of the area.
+        *   @param height          The height of the area.
+        *   @param tileCenterImage Tile for water area's center.
         ***************************************************************************************************************/
         public static createWaterArea
         (
-            level       :ninjas.Level,
-            xLeft       :number,
-            yTop        :number,
-            length      :number,
-            height      :number
+            level           :ninjas.Level,
+            xLeft           :number,
+            yTop            :number,
+            length          :number,
+            height          :number,
+            tileCenterImage :string
         )
         : void
         {
             const tileTop    :ninjas.SpriteTemplate = ninjas.SpriteData.SPRITE_WATER_TOP;
-            const tileCenter :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_WATER_CENTER );
+            const tileCenter :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( tileCenterImage );
 
             // draw area
             for ( let tileX:number = 0; tileX < length; ++tileX )

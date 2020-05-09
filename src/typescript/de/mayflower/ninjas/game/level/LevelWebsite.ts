@@ -200,13 +200,18 @@
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1270, 500, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1   );
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1400, 500, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
 
-            // bridge and water
-            ninjas.GameObjectBundleFactory.createWaterArea(   this, 512,  660, 7, 4 );
+            // bridge and water BLUE
+            ninjas.GameObjectBundleFactory.createWaterArea(   this, 512,  660, 7, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
+            ninjas.GameObjectBundleFactory.createBridge(      this, 640,  500       );
+
+            // bridge and water GREEN
+            ninjas.GameObjectBundleFactory.createWaterArea(   this, 512,  660, 7, 4, ninjas.ImageData.IMAGE_ACID1_CENTER );
             ninjas.GameObjectBundleFactory.createBridge(      this, 640,  500       );
 
             // solid ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT  );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
+
 
 /*
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );
