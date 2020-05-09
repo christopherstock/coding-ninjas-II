@@ -77,7 +77,7 @@
                 + '] textures to renderer texture cache '
             );
 
-            // disables blurry image drawing!
+            // disable blurry image drawing!
             this.renderer.context.imageSmoothingEnabled = false;
 
             // add drawing callback after rendering

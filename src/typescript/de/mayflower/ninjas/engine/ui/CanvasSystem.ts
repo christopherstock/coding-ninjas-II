@@ -26,6 +26,9 @@
             // reference 2d rendering context
             this.canvasContext = this.canvas.getContext( '2d' );
 
+            // sharp images please!
+            this.canvasContext.imageSmoothingEnabled = false;
+
             // append to body
             document.body.appendChild( this.canvas );
         }

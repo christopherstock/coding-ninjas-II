@@ -64,26 +64,47 @@
         /** Image resource 'ninja girl fall right frame 3'. */
         public      static      IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_3         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/fallRight/03.png';
 
-        /** Image resource 'ninja girl glid right frame 1'. */
+        /** Image resource 'ninja girl glide right frame 1'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/01.png';
-        /** Image resource 'ninja girl glid right frame 2'. */
+        /** Image resource 'ninja girl glide right frame 2'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_2        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/02.png';
-        /** Image resource 'ninja girl glid right frame 3'. */
+        /** Image resource 'ninja girl glide right frame 3'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_3        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/03.png';
-        /** Image resource 'ninja girl glid right frame 4'. */
+        /** Image resource 'ninja girl glide right frame 4'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_4        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/04.png';
-        /** Image resource 'ninja girl glid right frame 5'. */
+        /** Image resource 'ninja girl glide right frame 5'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_5        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/05.png';
-        /** Image resource 'ninja girl glid right frame 6'. */
+        /** Image resource 'ninja girl glide right frame 6'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_6        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/06.png';
-        /** Image resource 'ninja girl glid right frame 7'. */
+        /** Image resource 'ninja girl glide right frame 7'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_7        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/07.png';
-        /** Image resource 'ninja girl glid right frame 8'. */
+        /** Image resource 'ninja girl glide right frame 8'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/08.png';
-        /** Image resource 'ninja girl glid right frame 9'. */
+        /** Image resource 'ninja girl glide right frame 9'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/09.png';
-        /** Image resource 'ninja girl glid right frame 10'. */
+        /** Image resource 'ninja girl glide right frame 10'. */
         public      static      IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/glideRight/10.png';
+
+        /** Image resource 'ninja girl attack right frame 1'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_1       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/01.png';
+        /** Image resource 'ninja girl attack right frame 2'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_2       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/02.png';
+        /** Image resource 'ninja girl attack right frame 3'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_3       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/03.png';
+        /** Image resource 'ninja girl attack right frame 4'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_4       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/04.png';
+        /** Image resource 'ninja girl attack right frame 5'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_5       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/05.png';
+        /** Image resource 'ninja girl attack right frame 6'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_6       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/06.png';
+        /** Image resource 'ninja girl attack right frame 7'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_7       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/07.png';
+        /** Image resource 'ninja girl attack right frame 8'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_8       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/08.png';
+        /** Image resource 'ninja girl attack right frame 9'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_9       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/09.png';
+        /** Image resource 'ninja girl attack right frame 10'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_10      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attackRight/10.png';
 
         /** Image resource 'enemy ninja 1 stand right frame 1'. */
         public      static      IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blueNinjaGuy/standRight/01.png';
@@ -521,6 +542,17 @@
             ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_8,
             ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_9,
             ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_10,
+
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_1,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_2,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_3,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_4,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_5,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_6,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_7,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_8,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_9,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_10,
 
             ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
             ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,

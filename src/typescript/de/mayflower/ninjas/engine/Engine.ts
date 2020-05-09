@@ -36,7 +36,7 @@
         *   @param game The parent game instance that uses this game engine.
         ***************************************************************************************************************/
         public constructor( game:ninjas.Game ) {
-            this.game = game;
+            this.game      = game;
             this.preloader = new ninjas.Preloader(
                 this,
                 () => {
@@ -123,7 +123,10 @@
             this.preloader.setLoadingPercentage( 80 );
 
             ninjas.Debug.init.log( 'Initing sound system' );
-            this.soundSystem = new ninjas.SoundSystem( ninjas.SoundData.FILE_NAMES, () => { this.onSoundsLoaded(); } );
+            this.soundSystem = new ninjas.SoundSystem(
+                ninjas.SoundData.FILE_NAMES,
+                () => { this.onSoundsLoaded(); }
+            );
             this.soundSystem.loadSounds();
         };
 
@@ -159,6 +162,7 @@
             ninjas.Debug.init.log( 'Initing game engine completed' );
 
             this.preloader.setLoadingPercentage( 100 );
+if ( true ) return;
 
             // start the game loop after a short delay .. runs smoother for the user
             window.setTimeout
