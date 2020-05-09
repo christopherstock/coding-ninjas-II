@@ -4,15 +4,12 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Add 'katana strike' action on ground and in air.
     *   TODO Particle fx smashed crates, startup window etc.
-    *
-    *   TODO Rearrange res/image/sprites structure!
+    *   TODO Add 'katana strike' action on ground and in air.
     *   TODO Add new ninja sprites.
-    *   TODO Improved preloader.
-    *   TODO Add event triggers ( for falling obstacles, new enemies etc )
-    *
+    *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
     *   TODO Remove static access on Main.game.
+    *   TODO Green bubbling water etc.
     *   TODO Sound effects for ninja girl and enemies?
     *   TODO Add 'slide' action.
     *   TODO Try different physics demo elements on the player!
@@ -22,10 +19,9 @@
     *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib?
     *   TODO Add destroyable movables.
     *   TODO Add pickable items and item sprites.
-    *   TODO Green water etc.
     *   TODO Fix flickering for side-panel antd-comps before 1st popup (preload?).
     *   TODO Add decoration particle effects on smashing objects / windows etc.
-    *   TODO Create HUD ( for items etc ).
+    *   TODO Create HUD ( for items etc )?
     *   TODO create class HUD with own paint-method.
     *   TODO Create item pickup HUD effect?
     *   TODO Add Camera joyride on level startup?

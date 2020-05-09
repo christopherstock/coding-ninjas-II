@@ -113,11 +113,52 @@
             if ( this.attackingTicks > 0 )
             {
                 --this.attackingTicks;
+                if ( this.attackingTicks === 7 )
+                {
+                    this.performSmash();
+                }
             }
 
             this.resetRotation();
             this.checkBottomCollision();
             this.checkParachuteState();
+        }
+
+        public performSmash() : void
+        {
+            // const bodiesToCheck:matter.Body[] = [];
+
+            // this.shape.body.bounds.
+
+            const smashBounds :matter.Bounds = matter.Bounds.create(
+                matter.Vertices.create(
+                    [
+                        matter.Vector.add( matter.Vector.clone( this.shape.body.bounds.min ), matter.Vector.create( 50, 0 ) ),
+                        matter.Vector.add( matter.Vector.clone( this.shape.body.bounds.max ), matter.Vector.create( 50, 0 ) ),
+                    ],
+                    this.shape.body
+                )
+            );
+
+            for ( const gameObject of ninjas.Main.game.level.movables )
+            {
+                // bodiesToCheck.push( gameObject.shape.body );
+
+                if (
+                    matter.Query.region(
+                        [ gameObject.shape.body ],
+                        smashBounds
+                    ).length > 0
+                ) {
+                    console.log( ">> HIT movable!" );
+
+                    matter.Body.setVelocity
+                    (
+                        gameObject.shape.body,
+                        matter.Vector.create( 50.5, -10.0 )
+                    );
+                }
+            }
         }
 
         /** ************************************************************************************************************
