@@ -1,19 +1,21 @@
-# ![Coding Ninjas](https://github.com/christopherstock/coding-ninjas/raw/master/dist/res/image/promo/promo.jpg)
+# ![Coding Ninjas II - Back with a Vengeance](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/promo.png)
 # Coding Ninjas II - Back with a Vengeance
 
-## Installing all Node.js packages
+## System Requirements
+- Node.js v.12.13.1
+
+## Install all Node.js packages
 ```
 npm install
 ```
 
-## Building the project
+## Start the Webpack Dev Server and build the project
 ```
-npm start
+npm webpack:devserver
 ```
 
-## Running the app
-x
-Run the following file on your webserver: 
+## Run the app
+Visit the following URL in your browser:
 ```
-dist/index.html
+http://localhost:1234
 ```
