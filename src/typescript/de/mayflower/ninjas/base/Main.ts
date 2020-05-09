@@ -4,13 +4,14 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO Add 'katana strike' action on ground and in air.
+    *   TODO Particle fx smashed crates, startup window etc.
+    *
     *   TODO Rearrange res/image/sprites structure!
     *   TODO Add new ninja sprites.
     *   TODO Improved preloader.
-    *   TODO Add 'katana strike' action on ground and in air.
     *   TODO Add event triggers ( for falling obstacles, new enemies etc )
     *
-    *   TODO Particle fx smashed crates, startup window etc.
     *   TODO Remove static access on Main.game.
     *   TODO Sound effects for ninja girl and enemies?
     *   TODO Add 'slide' action.
