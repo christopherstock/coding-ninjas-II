@@ -35,7 +35,7 @@
         /** The relative path from index.html where all background images reside. */
         public  static  readonly    PATH_IMAGE_LEVEL_BG                     :string             = SettingEngine.PATH_IMAGE_LEVEL + 'bg/';
         /** The relative path from index.html where all level ground images reside. */
-        public  static  readonly    PATH_IMAGE_LEVEL_GROUND                 :string             = SettingEngine.PATH_IMAGE_LEVEL + 'ground/';
+        public  static  readonly    PATH_IMAGE_LEVEL_GROUND                 :string             = SettingEngine.PATH_IMAGE_LEVEL + 'tile/darkGround/';
         /** The relative path from index.html where all level movable images reside. */
         public  static  readonly    PATH_IMAGE_LEVEL_MOVABLE                :string             = SettingEngine.PATH_IMAGE_LEVEL + 'movable/';
         /** The relative path from index.html where all level pickable images reside. */

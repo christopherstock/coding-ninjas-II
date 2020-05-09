@@ -9,7 +9,7 @@
         /** 'chinese' from 'Graeme Norgate' taken from 'Time Splitters' */
         public      static      BG_CHINESE                      :string                 =
         (
-            ninjas.SettingEngine.PATH_SOUND + 'bgChinese.mp3'
+            ninjas.SettingEngine.PATH_SOUND + 'bg/chinese.mp3'
         );
 
         /** An array holding all filenames of all sounds to load. */

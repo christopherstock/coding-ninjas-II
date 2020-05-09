@@ -4,25 +4,26 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO Rearrange res/image/sprites structure!
+    *   TODO Add new ninja sprites.
     *   TODO Improved preloader.
-    *
-    *   TODO Green water etc.
-    *   TODO Add destroyable movables.
-    *   TODO Add pickable items and item sprites.
-    *   TODO Fix flickering for side-panel before 1st popup.
-    *   TODO Remove flickering of SidePanels' Ant-Design components .. (preload them?)
     *   TODO Add 'katana strike' action on ground and in air.
-    *   TODO Improve image sequence handling in ImageData?
-    *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib.
-    *   TODO Add decoration particle effects on smashing objects / windows etc.
     *   TODO Add event triggers ( for falling obstacles, new enemies etc )
-    *   TODO Debug Disable Pointer control.
-    *   TODO Try different physics demo elements on the player!
-    *   TODO Remove static access on Main.game.
-    *   TODO Bots that help you and talk to you?
+    *
     *   TODO Particle fx smashed crates, startup window etc.
+    *   TODO Remove static access on Main.game.
     *   TODO Sound effects for ninja girl and enemies?
     *   TODO Add 'slide' action.
+    *   TODO Try different physics demo elements on the player!
+    *   TODO Bots that help you and talk to you?
+    *   TODO Debug Disable Pointer control.
+    *   TODO Improve image sequence handling in ImageData?
+    *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib?
+    *   TODO Add destroyable movables.
+    *   TODO Add pickable items and item sprites.
+    *   TODO Green water etc.
+    *   TODO Fix flickering for side-panel antd-comps before 1st popup (preload?).
+    *   TODO Add decoration particle effects on smashing objects / windows etc.
     *   TODO Create HUD ( for items etc ).
     *   TODO create class HUD with own paint-method.
     *   TODO Create item pickup HUD effect?

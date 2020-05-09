@@ -4,7 +4,7 @@
     import * as ninjas from '../ninjas';
 
     /** ****************************************************************************************************************
-    *   All images the game makes use of.
+    *   All image resource files the game makes use of.
     *******************************************************************************************************************/
     export class ImageData
     {
@@ -366,24 +366,24 @@
         public      static      IMAGE_RUBBLE_3                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble3.png';
 
         /** Image tile 'water top frame 1'. */
-        public      static      IMAGE_WATER_TOP_FRAME_1                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/01.png';
+        public      static      IMAGE_WATER_TOP_FRAME_1                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/01.png';
         /** Image tile 'water top frame 2'. */
-        public      static      IMAGE_WATER_TOP_FRAME_2                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/02.png';
+        public      static      IMAGE_WATER_TOP_FRAME_2                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/02.png';
         /** Image tile 'water top frame 3'. */
-        public      static      IMAGE_WATER_TOP_FRAME_3                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/03.png';
+        public      static      IMAGE_WATER_TOP_FRAME_3                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/03.png';
         /** Image tile 'water top frame 4'. */
-        public      static      IMAGE_WATER_TOP_FRAME_4                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/04.png';
+        public      static      IMAGE_WATER_TOP_FRAME_4                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/04.png';
         /** Image tile 'water top frame 5'. */
-        public      static      IMAGE_WATER_TOP_FRAME_5                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/05.png';
+        public      static      IMAGE_WATER_TOP_FRAME_5                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/05.png';
         /** Image tile 'water top frame 6'. */
-        public      static      IMAGE_WATER_TOP_FRAME_6                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/06.png';
+        public      static      IMAGE_WATER_TOP_FRAME_6                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/06.png';
         /** Image tile 'water top frame 7'. */
-        public      static      IMAGE_WATER_TOP_FRAME_7                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/07.png';
+        public      static      IMAGE_WATER_TOP_FRAME_7                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/07.png';
         /** Image tile 'water top frame 8'. */
-        public      static      IMAGE_WATER_TOP_FRAME_8                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterTop/08.png';
+        public      static      IMAGE_WATER_TOP_FRAME_8                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/08.png';
 
         /** Image tile 'water center'. */
-        public      static      IMAGE_WATER_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'water1/waterCenter.png';
+        public      static      IMAGE_WATER_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterCenter.png';
 
         /** Image tile 'acid1 center'. */
         public      static      IMAGE_ACID1_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/acid1/center.png';
