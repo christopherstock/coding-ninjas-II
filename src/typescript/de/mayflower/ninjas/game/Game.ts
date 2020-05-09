@@ -45,6 +45,9 @@
             // set the number of blend panel ticks
             this.blendPanelTicks = ninjas.SettingGame.BLEND_PANEL_TICKS;
 
+            // init matter.js engine
+            this.engine.initMatterJS();
+
             // play bg sound
             this.bgMusic = this.engine.soundSystem.playSound( ninjas.SoundData.BG_CHINESE, true );
 

@@ -114,6 +114,21 @@
         };
 
         /** ************************************************************************************************************
+        *   Inits the 2D engine.
+        ***************************************************************************************************************/
+        public initMatterJS() : void
+        {
+            ninjas.Debug.init.log( 'Initing 2D physics engine' );
+
+            this.matterJsSystem = new ninjas.MatterJsSystem
+            (
+                this.canvasSystem,
+                ( renderContext:CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
+                this.imageSystem.getAll()
+            );
+        }
+
+        /** ************************************************************************************************************
         *   Being invoked when all images are loaded.
         ***************************************************************************************************************/
         private onImagesLoaded() : void
@@ -137,9 +152,6 @@
         {
             this.preloader.setLoadingPercentage( 90 );
 
-            // init matterJS
-            this.initMatterJS();
-
             // init site system
             ninjas.Debug.init.log( 'Initing site system' );
             this.siteSystem = new ninjas.SiteSystem();
@@ -162,7 +174,6 @@
             ninjas.Debug.init.log( 'Initing game engine completed' );
 
             this.preloader.setLoadingPercentage( 100 );
-if ( true ) return;
 
             // start the game loop after a short delay .. runs smoother for the user
             window.setTimeout
@@ -171,21 +182,6 @@ if ( true ) return;
                 ( ninjas.SettingDebug.DEBUG_NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
             );
         };
-
-        /** ************************************************************************************************************
-        *   Inits the 2D engine.
-        ***************************************************************************************************************/
-        private initMatterJS() : void
-        {
-            ninjas.Debug.init.log( 'Initing 2D physics engine' );
-
-            this.matterJsSystem = new ninjas.MatterJsSystem
-            (
-                this.canvasSystem,
-                ( renderContext:CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
-                this.imageSystem.getAll()
-            );
-        }
 
         /** ************************************************************************************************************
         *   Inits the window blur handler.

@@ -113,35 +113,24 @@
             const imageY :number = ( this.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
 
             // calc image width to draw
-            let imageWidthToDraw :number = ( this.imageGay.width * this.loadingPercentage ) / 100;
+            const gayImageWidth  :number = ( this.imageGay.width * this.loadingPercentage ) / 100;
+            const monoImageWidth :number = ( this.imageMono.width - gayImageWidth );
 
-imageWidthToDraw = this.imageGay.width;
-
-            // draw mono image
-            ninjas.DrawUtil.drawImage
-            (
-                this.engine.canvasSystem.getCanvasContext(),
-                this.imageMono,
-                imageX,
-                imageY
-            );
-/*
             // draw mono image
             ninjas.DrawUtil.drawImageScaledClipped
             (
                 this.engine.canvasSystem.getCanvasContext(),
                 this.imageMono,
+                gayImageWidth,
                 0,
-                0,
-                imageWidthToDraw,
+                monoImageWidth,
                 this.imageMono.height,
-                imageX,
+                imageX + gayImageWidth,
                 imageY,
-                imageWidthToDraw,
+                monoImageWidth,
                 this.imageMono.height
             );
- */
-/*
+
             // draw gay image clipped
             ninjas.DrawUtil.drawImageScaledClipped
             (
@@ -149,13 +138,12 @@ imageWidthToDraw = this.imageGay.width;
                 this.imageGay,
                 0,
                 0,
-                imageWidthToDraw,
+                gayImageWidth,
                 this.imageGay.height,
                 imageX,
                 imageY,
-                imageWidthToDraw,
+                gayImageWidth,
                 this.imageGay.height
             );
-*/
         }
     }

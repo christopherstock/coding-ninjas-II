@@ -52,6 +52,8 @@
 
                         width:              canvasSystem.getWidth(),
                         height:             canvasSystem.getHeight(),
+
+                        // pixelRatio:         1,
 /*
                         showSleeping:       true,
                         showDebug:          true,
