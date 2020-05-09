@@ -22,8 +22,12 @@
         /** The maximum camera moving speed in px per move. */
         public  static  readonly    CAMERA_MOVING_MAXIMUM                   :number             = 20.0;
 
+        /** The relative path from index.html where all resources reside. */
+        public  static  readonly    PATH_RESOURCES                          :string             = 'res/';
+        /** The relative path from index.html where all sounds reside. */
+        public  static  readonly    PATH_SOUND                              :string             = SettingEngine.PATH_RESOURCES + 'sound/';
         /** The relative path from index.html where all images reside. */
-        public  static  readonly    PATH_IMAGE                              :string             = 'res/image/';
+        public  static  readonly    PATH_IMAGE                              :string             = SettingEngine.PATH_RESOURCES +'image/';
         /** The relative path from index.html where all level images reside. */
         public  static  readonly    PATH_IMAGE_LEVEL                        :string             = SettingEngine.PATH_IMAGE + 'level/';
         /** The relative path from index.html where all background images reside. */
@@ -44,6 +48,4 @@
         public  static  readonly    PATH_IMAGE_SITE                         :string             = SettingEngine.PATH_IMAGE + 'site/';
         /** The relative path from index.html where all preloader images reside. */
         public  static  readonly    PATH_IMAGE_PRELOADER                    :string             = SettingEngine.PATH_IMAGE + 'preloader/';
-        /** The relative path from index.html where all sounds reside. */
-        public  static  readonly    PATH_SOUND                              :string             = 'res/sound/';
     }
