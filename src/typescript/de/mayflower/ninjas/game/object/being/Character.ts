@@ -259,7 +259,7 @@
         {
             ninjas.Debug.character.log( 'Character requests attack' );
 
-            this.attackingTicks = 100;
+            this.attackingTicks = 15;
         }
 
         /** ************************************************************************************************************

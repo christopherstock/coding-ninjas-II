@@ -105,6 +105,16 @@
         public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_9       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/09.png';
         /** Image resource 'ninja girl attack right frame 10'. */
         public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_10      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/10.png';
+        /** Image resource 'ninja girl attack right frame 11'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_11      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/11.png';
+        /** Image resource 'ninja girl attack right frame 12'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_12      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/12.png';
+        /** Image resource 'ninja girl attack right frame 13'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_13      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/13.png';
+        /** Image resource 'ninja girl attack right frame 14'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_14      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/14.png';
+        /** Image resource 'ninja girl attack right frame 15'. */
+        public      static      IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_15      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/15.png';
 
         /** Image resource 'enemy ninja 1 stand right frame 1'. */
         public      static      IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blueNinjaGuy/stand/01.png';
@@ -553,6 +563,11 @@
             ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_8,
             ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_9,
             ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_10,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_11,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_12,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_13,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_14,
+            ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_15,
 
             ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
             ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
