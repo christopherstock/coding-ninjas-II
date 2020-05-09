@@ -98,7 +98,12 @@
                 {
                     this.moveAccordingToPattern();
                     this.clipToHorizontalLevelBounds();
-                    this.checkPlayerCollision();
+
+                    // enemies shall not interfer with the Player by now
+                    if ( false ) {
+                        this.checkPlayerCollision();
+                    }
+
                 }
             }
 

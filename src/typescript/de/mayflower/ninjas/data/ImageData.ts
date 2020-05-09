@@ -445,38 +445,38 @@
         public      static      IMAGE_BG                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
 
         /** Site image 'logo'. */
-        public      static      IMAGE_SITE_LOGO                             :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logo.png';
+        public      static      IMAGE_SITE_LOGO                             :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logo.png';
         /** Site image 'site panel bg'. */
-        public      static      IMAGE_SITE_PANEL_BG                         :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'sitePanelBg.png';
+        public      static      IMAGE_SITE_PANEL_BG                         :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'sitePanelBg.png';
         /** Site image 'carousel desktop'. */
-        public      static      IMAGE_SITE_CAROUSEL_DESKTOP                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselDesktop.jpg';
+        public      static      IMAGE_SITE_CAROUSEL_DESKTOP                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
         /** Site image 'carousel mobile'. */
-        public      static      IMAGE_SITE_CAROUSEL_MOBILE                  :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselMobile.jpg';
+        public      static      IMAGE_SITE_CAROUSEL_MOBILE                  :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselMobile.jpg';
         /** Site image 'carousel web apps'. */
-        public      static      IMAGE_SITE_CAROUSEL_WEB_APPS                :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselWebApps.jpg';
+        public      static      IMAGE_SITE_CAROUSEL_WEB_APPS                :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebApps.jpg';
         /** Site image 'carousel websites'. */
-        public      static      IMAGE_SITE_CAROUSEL_WEBSITES                :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'carouselWebsites.jpg';
+        public      static      IMAGE_SITE_CAROUSEL_WEBSITES                :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebsites.jpg';
         /** Site image 'logo Ant Design'. */
-        public      static      IMAGE_SITE_LOGO_ANT_DESIGN                  :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoAntDesign.png';
+        public      static      IMAGE_SITE_LOGO_ANT_DESIGN                  :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoAntDesign.png';
         /** Site image 'logo Matter.js'. */
-        public      static      IMAGE_SITE_LOGO_MATTER_JS                   :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoMatterJs.png';
+        public      static      IMAGE_SITE_LOGO_MATTER_JS                   :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoMatterJs.png';
         /** Site image 'logo Node.js'. */
-        public      static      IMAGE_SITE_LOGO_NODE_JS                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoNodeJs.png';
+        public      static      IMAGE_SITE_LOGO_NODE_JS                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoNodeJs.png';
         /** Site image 'logo React'. */
-        public      static      IMAGE_SITE_LOGO_REACT                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoReact.png';
+        public      static      IMAGE_SITE_LOGO_REACT                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoReact.png';
         /** Site image 'logo TypeScript'. */
-        public      static      IMAGE_SITE_LOGO_TYPE_SCRIPT                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoTypeScript.png';
+        public      static      IMAGE_SITE_LOGO_TYPE_SCRIPT                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoTypeScript.png';
         /** Site image 'logo Webpack'. */
-        public      static      IMAGE_SITE_LOGO_WEBPACK                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoWebpack.png';
+        public      static      IMAGE_SITE_LOGO_WEBPACK                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebpack.png';
         /** Site image 'logo WebWeek'. */
-        public      static      IMAGE_SITE_LOGO_WEBWEEK                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'logoWebWeek.png';
+        public      static      IMAGE_SITE_LOGO_WEBWEEK                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebWeek.png';
 
         /** Site image 'office wzbg'. */
-        public      static      IMAGE_SITE_OFFICE_WZBG                      :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeWzbg.jpg';
+        public      static      IMAGE_SITE_OFFICE_WZBG                      :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeWzbg.jpg';
         /** Site image 'office muc'. */
-        public      static      IMAGE_SITE_OFFICE_MUC                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeMuc.jpg';
+        public      static      IMAGE_SITE_OFFICE_MUC                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeMuc.jpg';
         /** Site image 'office ber'. */
-        public      static      IMAGE_SITE_OFFICE_BER                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE + 'officeBer.jpg';
+        public      static      IMAGE_SITE_OFFICE_BER                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeBer.jpg';
 
         /** An array holding all filenames of all images to load. */
         public      static      FILE_NAMES                                  :string[]       =

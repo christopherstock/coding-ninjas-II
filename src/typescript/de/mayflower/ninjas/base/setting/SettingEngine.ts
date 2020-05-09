@@ -47,7 +47,7 @@
         /** The relative path from index.html where all enemy images reside. */
         public  static  readonly    PATH_IMAGE_LEVEL_ENEMY                  :string             = SettingEngine.PATH_IMAGE_LEVEL + 'enemy/';
         /** The relative path from index.html where all site images reside. */
-        public  static  readonly    PATH_IMAGE_SITE                         :string             = SettingEngine.PATH_IMAGE + 'site/';
+        public  static  readonly    PATH_IMAGE_SITE_PANEL                   :string             = SettingEngine.PATH_IMAGE + 'sitePanel/';
         /** The relative path from index.html where all preloader images reside. */
         public  static  readonly    PATH_IMAGE_PRELOADER                    :string             = SettingEngine.PATH_IMAGE + 'preloader/';
     }
