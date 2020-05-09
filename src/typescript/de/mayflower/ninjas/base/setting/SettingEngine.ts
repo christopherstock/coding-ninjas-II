@@ -42,10 +42,8 @@
         public  static  readonly    PATH_IMAGE_LEVEL_PICKABLE               :string             = SettingEngine.PATH_IMAGE_LEVEL + 'pickable/';
         /** The relative path from index.html where all level deco images reside. */
         public  static  readonly    PATH_IMAGE_LEVEL_DECO                   :string             = SettingEngine.PATH_IMAGE_LEVEL + 'deco/';
-        /** The relative path from index.html where all player images reside. */
-        public  static  readonly    PATH_IMAGE_LEVEL_PLAYER                 :string             = SettingEngine.PATH_IMAGE_LEVEL + 'player/';
-        /** The relative path from index.html where all enemy images reside. */
-        public  static  readonly    PATH_IMAGE_LEVEL_ENEMY                  :string             = SettingEngine.PATH_IMAGE_LEVEL + 'enemy/';
+        /** The relative path from index.html where all character images reside. */
+        public  static  readonly    PATH_IMAGE_LEVEL_CHARACTER              :string             = SettingEngine.PATH_IMAGE_LEVEL + 'character/';
         /** The relative path from index.html where all site images reside. */
         public  static  readonly    PATH_IMAGE_SITE_PANEL                   :string             = SettingEngine.PATH_IMAGE + 'sitePanel/';
         /** The relative path from index.html where all preloader images reside. */
