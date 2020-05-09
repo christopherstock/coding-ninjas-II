@@ -379,7 +379,7 @@
                 ninjas.ImageData.IMAGE_WATER_TOP_FRAME_7,
                 ninjas.ImageData.IMAGE_WATER_TOP_FRAME_8,
             ],
-            8,
+            4,
             ninjas.MirrorImage.NO,
             ninjas.LoopSprite.YES,
             ninjas.RandomFrames.NO,
