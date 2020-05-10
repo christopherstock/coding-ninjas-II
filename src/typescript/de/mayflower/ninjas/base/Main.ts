@@ -7,6 +7,7 @@
     *   TODO Add 'katana strike' action on ground and in air.
     *   TODO Add destroyable obstacles.
     *   TODO Add new ninja sprites.
+    *   TODO Create different ground tilesets.
     *   TODO Debug switch for Light or dark preloader.
     *   TODO Disable Right+Meta.
     *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
@@ -15,6 +16,7 @@
     *   TODO Sound effects for ninja girl and enemies?
     *   TODO Add 'slide' action.
     *   TODO Particle fx smashed crates, startup window etc.
+    *   TODO More cool flask images.
     *   TODO Enum 'wearpon' with according damage values.
     *   TODO Try different physics demo elements on the player!
     *   TODO Bots that help you and talk to you?
