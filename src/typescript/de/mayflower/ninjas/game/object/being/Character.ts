@@ -124,17 +124,37 @@
             this.checkParachuteState();
         }
 
+        /** ************************************************************************************************************
+        *   Lets this character perform a smash/attack into the level.
+        ***************************************************************************************************************/
         public performSmash() : void
         {
             // const bodiesToCheck:matter.Body[] = [];
 
             // this.shape.body.bounds.
 
+            // the bounds of the smash depend on character bound and looking direction
+            const attackRange :number = (
+                this.lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                ? -ninjas.SettingGame.PLAYER_ATTACK_RANGE
+                : ninjas.SettingGame.PLAYER_ATTACK_RANGE
+            );
+            const damageForce :number = (
+                this.lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                ? -ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
+                : ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
+            );
             const smashBounds :matter.Bounds = matter.Bounds.create(
                 matter.Vertices.create(
                     [
-                        matter.Vector.add( matter.Vector.clone( this.shape.body.bounds.min ), matter.Vector.create( 50, 0 ) ),
-                        matter.Vector.add( matter.Vector.clone( this.shape.body.bounds.max ), matter.Vector.create( 50, 0 ) ),
+                        matter.Vector.add(
+                            matter.Vector.clone( this.shape.body.bounds.min ),
+                            matter.Vector.create( attackRange, 0 )
+                        ),
+                        matter.Vector.add(
+                            matter.Vector.clone( this.shape.body.bounds.max ),
+                            matter.Vector.create( attackRange, 0 )
+                        ),
                     ],
                     this.shape.body
                 )
@@ -150,12 +170,12 @@
                         smashBounds
                     ).length > 0
                 ) {
-                    console.log( ">> HIT movable!" );
+                    ninjas.Debug.character.log( 'Character hits a level object' );
 
                     matter.Body.setVelocity
                     (
                         gameObject.shape.body,
-                        matter.Vector.create( 50.5, -10.0 )
+                        matter.Vector.create( damageForce, -10.0 )
                     );
                 }
             }
@@ -166,7 +186,7 @@
         *
         *   @param punchBackDirection The direction in which to punch back.
         ***************************************************************************************************************/
-        public punchBack( punchBackDirection:ninjas.CharacterLookingDirection ) : void
+        public receivePunchBack( punchBackDirection:ninjas.CharacterLookingDirection ) : void
         {
             const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 11.5 );
             const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 15.0 );

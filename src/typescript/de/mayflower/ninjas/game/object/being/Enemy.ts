@@ -138,7 +138,7 @@
             ninjas.Main.game.engine.matterJsSystem.addToWorld(      this.shape.body );
 
             // punch the enemy out of the screen in the player's direction
-            this.punchBack( playerDirection );
+            this.receivePunchBack( playerDirection );
         }
 
         /** ************************************************************************************************************
@@ -234,7 +234,7 @@
                     }
 
                     // punch back the player into the player's opposite direction!
-                    ninjas.Main.game.level.player.punchBack( playerPunchBackDirection );
+                    ninjas.Main.game.level.player.receivePunchBack( playerPunchBackDirection );
 
                     // flag player as punched back
                     ninjas.Main.game.level.player.punchBackTicks = ninjas.SettingGame.PUNCH_BACK_TICKS;

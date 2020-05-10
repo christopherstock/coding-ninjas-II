@@ -26,6 +26,11 @@
         /** The player's start position Y. */
         public      static  readonly    PLAYER_START_POSITION_Y                     :number                     = 0;
 
+        /** The distance the player can reach with an attack of his katana. */
+        public      static  readonly    PLAYER_ATTACK_RANGE                         :number                     = 60;
+        /** The force the player dispenses on  with an attack of his katana. */
+        public      static  readonly    PLAYER_ATTACK_DAMAGE                        :number                     = 50;
+
         /** The player's ticks being paralized on being punched back. */
         public      static  readonly    PUNCH_BACK_TICKS                            :number                     = 75;
 
