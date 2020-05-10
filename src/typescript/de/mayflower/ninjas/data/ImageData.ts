@@ -244,15 +244,15 @@
         /** Image resource 'pot'. */
         public      static      IMAGE_POT                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'pot.png';
 
-        /** Image resource 'shrine background 1'. */
+        /** Image resource 'shrine bg 1'. */
         public      static      IMAGE_SHRINE_BG_1                           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg1.png';
-        /** Image resource 'shrine background 2'. */
+        /** Image resource 'shrine bg 2'. */
         public      static      IMAGE_SHRINE_BG_2                           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg2.png';
-        /** Image resource 'shrine background 3'. */
+        /** Image resource 'shrine bg 3'. */
         public      static      IMAGE_SHRINE_BG_3                           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg3.png';
-        /** Image resource 'shrine background 4'. */
+        /** Image resource 'shrine bg 4'. */
         public      static      IMAGE_SHRINE_BG_4                           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg4.png';
-        /** Image resource 'shrine background 5'. */
+        /** Image resource 'shrine bg 5'. */
         public      static      IMAGE_SHRINE_BG_5                           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg5.png';
         /** Image resource 'DoJo'. */
         public      static      IMAGE_DOJO                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'dojo.jpg';
@@ -276,11 +276,11 @@
         /** Image resource 'grass 1 frame 9'. */
         public      static      IMAGE_GRASS_1_FRAME_9                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/09.png';
         /** Image resource 'grass 1 frame 10'. */
-        public      static      IMAGE_GRASS_1_FRAME_10                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/10.png';
+        public      static      IMAGE_GRASS_1_FRAME_10                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/10.png';
         /** Image resource 'grass 1 frame 11'. */
-        public      static      IMAGE_GRASS_1_FRAME_11                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/11.png';
+        public      static      IMAGE_GRASS_1_FRAME_11                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/11.png';
         /** Image resource 'grass 1 frame 12'. */
-        public      static      IMAGE_GRASS_1_FRAME_12                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/12.png';
+        public      static      IMAGE_GRASS_1_FRAME_12                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/12.png';
 
         /** Image resource 'grass 2 frame 1'. */
         public      static      IMAGE_GRASS_2_FRAME_1                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/01.png';
@@ -301,11 +301,11 @@
         /** Image resource 'grass 2 frame 9'. */
         public      static      IMAGE_GRASS_2_FRAME_9                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/09.png';
         /** Image resource 'grass 2 frame 10'. */
-        public      static      IMAGE_GRASS_2_FRAME_10                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/10.png';
+        public      static      IMAGE_GRASS_2_FRAME_10                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/10.png';
         /** Image resource 'grass 2 frame 12'. */
-        public      static      IMAGE_GRASS_2_FRAME_11                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/11.png';
+        public      static      IMAGE_GRASS_2_FRAME_11                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/11.png';
         /** Image resource 'grass 2 frame 12'. */
-        public      static      IMAGE_GRASS_2_FRAME_12                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/12.png';
+        public      static      IMAGE_GRASS_2_FRAME_12                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/12.png';
 
         /** Image resource 'grass 3 frame 1'. */
         public      static      IMAGE_GRASS_3_FRAME_1                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/01.png';
@@ -326,11 +326,11 @@
         /** Image resource 'grass 3 frame 9'. */
         public      static      IMAGE_GRASS_3_FRAME_9                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/09.png';
         /** Image resource 'grass 3 frame 10'. */
-        public      static      IMAGE_GRASS_3_FRAME_10                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/10.png';
+        public      static      IMAGE_GRASS_3_FRAME_10                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/10.png';
         /** Image resource 'grass 3 frame 11'. */
-        public      static      IMAGE_GRASS_3_FRAME_11                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/11.png';
+        public      static      IMAGE_GRASS_3_FRAME_11                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/11.png';
         /** Image resource 'grass 3 frame 12'. */
-        public      static      IMAGE_GRASS_3_FRAME_12                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/12.png';
+        public      static      IMAGE_GRASS_3_FRAME_12                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass3/12.png';
 
         /** Image resource 'grass 4 frame 1'. */
         public      static      IMAGE_GRASS_4_FRAME_1                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass4/01.png';
@@ -397,117 +397,113 @@
         public      static      IMAGE_RUBBLE_3                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble3.png';
 
         /** Image tile 'water top frame 1'. */
-        public      static      IMAGE_WATER_TOP_FRAME_1                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/01.png';
+        public      static      IMAGE_WATER_TOP_FRAME_1                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/01.png';
         /** Image tile 'water top frame 2'. */
-        public      static      IMAGE_WATER_TOP_FRAME_2                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/02.png';
+        public      static      IMAGE_WATER_TOP_FRAME_2                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/02.png';
         /** Image tile 'water top frame 3'. */
-        public      static      IMAGE_WATER_TOP_FRAME_3                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/03.png';
+        public      static      IMAGE_WATER_TOP_FRAME_3                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/03.png';
         /** Image tile 'water top frame 4'. */
-        public      static      IMAGE_WATER_TOP_FRAME_4                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/04.png';
+        public      static      IMAGE_WATER_TOP_FRAME_4                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/04.png';
         /** Image tile 'water top frame 5'. */
-        public      static      IMAGE_WATER_TOP_FRAME_5                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/05.png';
+        public      static      IMAGE_WATER_TOP_FRAME_5                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/05.png';
         /** Image tile 'water top frame 6'. */
-        public      static      IMAGE_WATER_TOP_FRAME_6                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/06.png';
+        public      static      IMAGE_WATER_TOP_FRAME_6                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/06.png';
         /** Image tile 'water top frame 7'. */
-        public      static      IMAGE_WATER_TOP_FRAME_7                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/07.png';
+        public      static      IMAGE_WATER_TOP_FRAME_7                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/07.png';
         /** Image tile 'water top frame 8'. */
-        public      static      IMAGE_WATER_TOP_FRAME_8                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterTop/08.png';
+        public      static      IMAGE_WATER_TOP_FRAME_8                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/08.png';
 
         /** Image tile 'water center'. */
-        public      static      IMAGE_WATER_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/water1/waterCenter.png';
+        public      static      IMAGE_WATER_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterCenter.png';
 
         /** Image tile 'acid1 center'. */
-        public      static      IMAGE_ACID1_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL + 'tile/acid1/center.png';
+        public      static      IMAGE_ACID1_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'acid1/center.png';
 
         /** Image tile 'flying left'. */
-        public      static      IMAGE_GROUND_FLYING_LEFT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingLeft.png';
+        public      static      IMAGE_GROUND_FLYING_LEFT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingLeft.png';
         /** Image tile 'flying center'. */
-        public      static      IMAGE_GROUND_FLYING_CENTER                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingCenter.png';
+        public      static      IMAGE_GROUND_FLYING_CENTER                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingCenter.png';
         /** Image tile 'flying right'. */
-        public      static      IMAGE_GROUND_FLYING_RIGHT                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingRight.png';
-
+        public      static      IMAGE_GROUND_FLYING_RIGHT                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingRight.png';
         /** Image tile 'flying ascending left'. */
-        public      static      IMAGE_GROUND_FLYING_ASCENDING_LEFT          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingLeft.png';
+        public      static      IMAGE_GROUND_FLYING_ASCENDING_LEFT          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingLeft.png';
         /** Image tile 'flying ascending center'. */
-        public      static      IMAGE_GROUND_FLYING_ASCENDING_CENTER        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingCenter.png';
+        public      static      IMAGE_GROUND_FLYING_ASCENDING_CENTER        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingCenter.png';
         /** Image tile 'flying ascending right'. */
-        public      static      IMAGE_GROUND_FLYING_ASCENDING_RIGHT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingAscendingRight.png';
-
+        public      static      IMAGE_GROUND_FLYING_ASCENDING_RIGHT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingRight.png';
         /** Image tile 'flying descending left'. */
-        public      static      IMAGE_GROUND_FLYING_DESCENDING_LEFT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingLeft.png';
+        public      static      IMAGE_GROUND_FLYING_DESCENDING_LEFT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingLeft.png';
         /** Image tile 'flying descending center'. */
-        public      static      IMAGE_GROUND_FLYING_DESCENDING_CENTER       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingCenter.png';
+        public      static      IMAGE_GROUND_FLYING_DESCENDING_CENTER       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingCenter.png';
         /** Image tile 'flying descending right'. */
-        public      static      IMAGE_GROUND_FLYING_DESCENDING_RIGHT        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'flyingDescendingRight.png';
-
+        public      static      IMAGE_GROUND_FLYING_DESCENDING_RIGHT        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingRight.png';
         /** Image tile 'solid left'. */
-        public      static      IMAGE_GROUND_SOLID_LEFT                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeft.png';
+        public      static      IMAGE_GROUND_SOLID_LEFT                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidLeft.png';
         /** Image tile 'solid right'. */
-        public      static      IMAGE_GROUND_SOLID_RIGHT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRight.png';
+        public      static      IMAGE_GROUND_SOLID_RIGHT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidRight.png';
         /** Image tile 'solid top'. */
-        public      static      IMAGE_GROUND_SOLID_TOP                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidTop.png';
+        public      static      IMAGE_GROUND_SOLID_TOP                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidTop.png';
         /** Image tile 'solid bottom'. */
-        public      static      IMAGE_GROUND_SOLID_BOTTOM                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidBottom.png';
+        public      static      IMAGE_GROUND_SOLID_BOTTOM                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidBottom.png';
         /** Image tile 'solid left top'. */
-        public      static      IMAGE_GROUND_SOLID_LEFT_TOP                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeftTop.png';
+        public      static      IMAGE_GROUND_SOLID_LEFT_TOP                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidLeftTop.png';
         /** Image tile 'solid right top'. */
-        public      static      IMAGE_GROUND_SOLID_RIGHT_TOP                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRightTop.png';
+        public      static      IMAGE_GROUND_SOLID_RIGHT_TOP                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidRightTop.png';
         /** Image tile 'solid left bottom'. */
-        public      static      IMAGE_GROUND_SOLID_LEFT_BOTTOM              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidLeftBottom.png';
+        public      static      IMAGE_GROUND_SOLID_LEFT_BOTTOM              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidLeftBottom.png';
         /** Image tile 'solid right bottom'. */
-        public      static      IMAGE_GROUND_SOLID_RIGHT_BOTTOM             :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidRightBottom.png';
+        public      static      IMAGE_GROUND_SOLID_RIGHT_BOTTOM             :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidRightBottom.png';
         /** Image tile 'solid center'. */
-        public      static      IMAGE_GROUND_SOLID_CENTER                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidCenter.png';
-
+        public      static      IMAGE_GROUND_SOLID_CENTER                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidCenter.png';
         /** Image tile 'solid ascending top'. */
-        public      static      IMAGE_GROUND_SOLID_ASCENDING_TOP            :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingTop.png';
+        public      static      IMAGE_GROUND_SOLID_ASCENDING_TOP            :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidAscendingTop.png';
         /** Image tile 'solid descending top'. */
-        public      static      IMAGE_GROUND_SOLID_DESCENDING_TOP           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingTop.png';
+        public      static      IMAGE_GROUND_SOLID_DESCENDING_TOP           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidDescendingTop.png';
         /** Image tile 'solid ascending left top'. */
-        public      static      IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingLeftTop.png';
+        public      static      IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidAscendingLeftTop.png';
         /** Image tile 'solid descending left top'. */
-        public      static      IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingLeftTop.png';
+        public      static      IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidDescendingLeftTop.png';
         /** Image tile 'solid ascending right top'. */
-        public      static      IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidAscendingRightTop.png';
+        public      static      IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidAscendingRightTop.png';
         /** Image tile 'solid descending right top'. */
-        public      static      IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_GROUND + 'solidDescendingRightTop.png';
+        public      static      IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidDescendingRightTop.png';
 
         /** A bg image. */
         public      static      IMAGE_BG                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
 
         /** Site image 'logo'. */
-        public      static      IMAGE_SITE_LOGO                             :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logo.png';
+        public      static      IMAGE_SITE_PANEL_LOGO                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logo.png';
         /** Site image 'site panel bg'. */
         public      static      IMAGE_SITE_PANEL_BG                         :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'sitePanelBg.png';
         /** Site image 'carousel desktop'. */
-        public      static      IMAGE_SITE_CAROUSEL_DESKTOP                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
+        public      static      IMAGE_SITE_PANEL_CAROUSEL_DESKTOP           :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
         /** Site image 'carousel mobile'. */
-        public      static      IMAGE_SITE_CAROUSEL_MOBILE                  :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselMobile.jpg';
+        public      static      IMAGE_SITE_PANEL_CAROUSEL_MOBILE            :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselMobile.jpg';
         /** Site image 'carousel web apps'. */
-        public      static      IMAGE_SITE_CAROUSEL_WEB_APPS                :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebApps.jpg';
+        public      static      IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS          :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebApps.jpg';
         /** Site image 'carousel websites'. */
-        public      static      IMAGE_SITE_CAROUSEL_WEBSITES                :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebsites.jpg';
+        public      static      IMAGE_SITE_PANEL_CAROUSEL_WEBSITES          :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebsites.jpg';
         /** Site image 'logo Ant Design'. */
-        public      static      IMAGE_SITE_LOGO_ANT_DESIGN                  :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoAntDesign.png';
+        public      static      IMAGE_SITE_PANEL_LOGO_ANT_DESIGN            :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoAntDesign.png';
         /** Site image 'logo Matter.js'. */
-        public      static      IMAGE_SITE_LOGO_MATTER_JS                   :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoMatterJs.png';
+        public      static      IMAGE_SITE_PANEL_LOGO_MATTER_JS             :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoMatterJs.png';
         /** Site image 'logo Node.js'. */
-        public      static      IMAGE_SITE_LOGO_NODE_JS                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoNodeJs.png';
+        public      static      IMAGE_SITE_PANEL_LOGO_NODE_JS               :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoNodeJs.png';
         /** Site image 'logo React'. */
-        public      static      IMAGE_SITE_LOGO_REACT                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoReact.png';
+        public      static      IMAGE_SITE_PANEL_LOGO_REACT                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoReact.png';
         /** Site image 'logo TypeScript'. */
-        public      static      IMAGE_SITE_LOGO_TYPE_SCRIPT                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoTypeScript.png';
+        public      static      IMAGE_SITE_PANEL_LOGO_TYPE_SCRIPT           :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoTypeScript.png';
         /** Site image 'logo Webpack'. */
-        public      static      IMAGE_SITE_LOGO_WEBPACK                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebpack.png';
+        public      static      IMAGE_SITE_PANEL_LOGO_WEBPACK               :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebpack.png';
         /** Site image 'logo WebWeek'. */
-        public      static      IMAGE_SITE_LOGO_WEBWEEK                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebWeek.png';
+        public      static      IMAGE_SITE_PANEL_LOGO_WEBWEEK               :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebWeek.png';
 
         /** Site image 'office wzbg'. */
-        public      static      IMAGE_SITE_OFFICE_WZBG                      :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeWzbg.jpg';
+        public      static      IMAGE_SITE_PANEL_OFFICE_WZBG                :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeWzbg.jpg';
         /** Site image 'office muc'. */
-        public      static      IMAGE_SITE_OFFICE_MUC                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeMuc.jpg';
+        public      static      IMAGE_SITE_PANEL_OFFICE_MUC                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeMuc.jpg';
         /** Site image 'office ber'. */
-        public      static      IMAGE_SITE_OFFICE_BER                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeBer.jpg';
+        public      static      IMAGE_SITE_PANEL_OFFICE_BER                 :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeBer.jpg';
 
         /** An array holding all filenames of all images to load. */
         public      static      FILE_NAMES                                  :string[]       =
@@ -765,23 +761,23 @@
 
             ImageData.IMAGE_BG,
 
-            ImageData.IMAGE_SITE_LOGO,
+            ImageData.IMAGE_SITE_PANEL_LOGO,
             ImageData.IMAGE_SITE_PANEL_BG,
-            ImageData.IMAGE_SITE_CAROUSEL_DESKTOP,
-            ImageData.IMAGE_SITE_CAROUSEL_MOBILE,
-            ImageData.IMAGE_SITE_CAROUSEL_WEB_APPS,
-            ImageData.IMAGE_SITE_CAROUSEL_WEBSITES,
+            ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP,
+            ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE,
+            ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS,
+            ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES,
 
-            ImageData.IMAGE_SITE_LOGO_ANT_DESIGN,
-            ImageData.IMAGE_SITE_LOGO_MATTER_JS,
-            ImageData.IMAGE_SITE_LOGO_NODE_JS,
-            ImageData.IMAGE_SITE_LOGO_REACT,
-            ImageData.IMAGE_SITE_LOGO_TYPE_SCRIPT,
-            ImageData.IMAGE_SITE_LOGO_WEBPACK,
-            ImageData.IMAGE_SITE_LOGO_WEBWEEK,
+            ImageData.IMAGE_SITE_PANEL_LOGO_ANT_DESIGN,
+            ImageData.IMAGE_SITE_PANEL_LOGO_MATTER_JS,
+            ImageData.IMAGE_SITE_PANEL_LOGO_NODE_JS,
+            ImageData.IMAGE_SITE_PANEL_LOGO_REACT,
+            ImageData.IMAGE_SITE_PANEL_LOGO_TYPE_SCRIPT,
+            ImageData.IMAGE_SITE_PANEL_LOGO_WEBPACK,
+            ImageData.IMAGE_SITE_PANEL_LOGO_WEBWEEK,
 
-            ImageData.IMAGE_SITE_OFFICE_WZBG,
-            ImageData.IMAGE_SITE_OFFICE_MUC,
-            ImageData.IMAGE_SITE_OFFICE_BER,
+            ImageData.IMAGE_SITE_PANEL_OFFICE_WZBG,
+            ImageData.IMAGE_SITE_PANEL_OFFICE_MUC,
+            ImageData.IMAGE_SITE_PANEL_OFFICE_BER,
         ];
     }

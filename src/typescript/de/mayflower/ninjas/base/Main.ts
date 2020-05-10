@@ -4,21 +4,21 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Add 'katana strike' action on ground and in air.
+    *   TODO Create different ground tilesets.
+    *   TODO Add 'katana strike' action in air.
     *   TODO Add destroyable obstacles.
     *   TODO Add new ninja sprites.
-    *   TODO Create different ground tilesets.
     *   TODO Debug switch for Light or dark preloader.
-    *   TODO Disable Right+Meta.
-    *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
-    *   TODO Remove static access on Main.game.
-    *   TODO Green bubbling water etc.
-    *   TODO Sound effects for ninja girl and enemies?
-    *   TODO Add 'slide' action.
-    *   TODO Particle fx smashed crates, startup window etc.
+    *   TODO Disable Right+Meta interference in browser.
     *   TODO More cool flask images.
+    *   TODO Add 'slide' action.
+    *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
+    *   TODO Green bubbling water etc.
+    *   TODO Sound effects for ninja girl actions and enemies
+    *   TODO Particle fx smashed crates, startup window etc.
     *   TODO Enum 'wearpon' with according damage values.
     *   TODO Try different physics demo elements on the player!
+    *   TODO Remove static access on Main.game.
     *   TODO Bots that help you and talk to you?
     *   TODO Player shooting or throwing objects?
     *   TODO Debug Disable Pointer control.

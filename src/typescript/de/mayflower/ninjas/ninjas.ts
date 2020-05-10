@@ -30,6 +30,7 @@
     export * from './engine/ui/CanvasSystem';
     export * from './engine/ui/Sprite';
     export * from './engine/ui/SpriteTemplate';
+    export * from './engine/ui/TilesetTemplate';
 
     export * from './game/Game';
 
@@ -62,6 +63,7 @@
     export * from './data/SoundData';
     export * from './data/SpriteData';
     export * from './data/CharacterSpriteData';
+    export * from './data/TilesetData';
 
     export * from './site/component/ContentCompany';
     export * from './site/component/ContentContact';

@@ -29,7 +29,7 @@
                             {
                                 backgroundImage: 'url( '
                                 + ninjas.Main.game.engine.imageSystem.getImage(
-                                    ninjas.ImageData.IMAGE_SITE_OFFICE_WZBG
+                                    ninjas.ImageData.IMAGE_SITE_PANEL_OFFICE_WZBG
                                 ).src
                                 + ' )',
                             }
@@ -56,7 +56,7 @@
                             {
                                 backgroundImage: 'url( '
                                 + ninjas.Main.game.engine.imageSystem.getImage(
-                                    ninjas.ImageData.IMAGE_SITE_OFFICE_MUC
+                                    ninjas.ImageData.IMAGE_SITE_PANEL_OFFICE_MUC
                                 ).src
                                 + ' )',
                             }
@@ -83,7 +83,7 @@
                             {
                                 backgroundImage: 'url( '
                                 + ninjas.Main.game.engine.imageSystem.getImage(
-                                    ninjas.ImageData.IMAGE_SITE_OFFICE_BER
+                                    ninjas.ImageData.IMAGE_SITE_PANEL_OFFICE_BER
                                 ).src
                                 + ' )',
                             }
