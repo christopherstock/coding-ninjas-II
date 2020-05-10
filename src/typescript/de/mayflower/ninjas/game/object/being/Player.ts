@@ -56,13 +56,19 @@
         {
             super.render();
 
-            // TODO invoke handleKeys and renderAfterKeys here!
+            this.handleKeys( ninjas.Main.game.engine.keySystem );
+
+            this.checkEnemyKill();
+            this.clipToHorizontalLevelBounds();
+            this.assignCurrentSprite();
         }
 
         /** ************************************************************************************************************
         *   Checks all pressed player keys and performs according actions.
+        *
+        *   @param keySystem The keySystem that holds current pressed key information.
         ***************************************************************************************************************/
-        public handleKeys( keySystem:ninjas.KeySystem ) : void
+        private handleKeys( keySystem:ninjas.KeySystem ) : void
         {
             if ( this.punchBackTicks !== 0 )
             {
@@ -120,21 +126,11 @@
             {
                 keySystem.setNeedsRelease( ninjas.Key.KEY_META );
 
-                if ( this.attackingTicks === 0 )
+                if ( !this.isAttacking() )
                 {
-                    this.requestAttack();
+                    this.attack();
                 }
             }
-        }
-
-        /** ************************************************************************************************************
-        *   The render tick handling after player keys have been processed.
-        ***************************************************************************************************************/
-        public renderAfterKeys() : void
-        {
-            this.checkEnemyKill();
-            this.clipToHorizontalLevelBounds();
-            this.assignCurrentSprite();
         }
 
         /** ************************************************************************************************************

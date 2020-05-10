@@ -316,7 +316,7 @@
         /** ************************************************************************************************************
         *   Requests attacking for the player.
         ***************************************************************************************************************/
-        protected requestAttack() : void
+        protected attack() : void
         {
             ninjas.Debug.character.log( 'Character requests attack' );
 
@@ -360,8 +360,6 @@
 
         /** ************************************************************************************************************
         *   Assigns the current sprite to the player according to his current state.
-        *
-        *   TODO Extract all sprite states!
         ***************************************************************************************************************/
         protected assignCurrentSprite() : void
         {

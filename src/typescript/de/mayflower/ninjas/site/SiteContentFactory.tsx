@@ -168,7 +168,7 @@
         ***************************************************************************************************************/
         public static createAvatar( src:string, icon:string ) : JSX.Element
         {
-            return <antd.Avatar src={ src } style={ { backgroundColor: '#ff6666' } } icon={ icon } />;
+            return <antd.Avatar src={ src } style={ { backgroundColor: ninjas.SettingEngine.COLOR_PRIMARY_CSS } } icon={ icon } />;
         }
 
         /** ************************************************************************************************************

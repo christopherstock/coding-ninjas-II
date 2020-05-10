@@ -114,8 +114,6 @@
             }
 
             this.player.render();
-            this.player.handleKeys( keySystem );
-            this.player.renderAfterKeys();
 
             for ( const enemy of this.enemies )
             {

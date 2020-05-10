@@ -105,7 +105,7 @@
                 0,
                 this.engine.canvasSystem.getWidth(),
                 this.engine.canvasSystem.getHeight(),
-                ninjas.SettingEngine.BACKGROUND_PRELOADER
+                ninjas.SettingEngine.COLOR_BG_PRELOADER_CSS
             );
 
             // calc image location

@@ -191,10 +191,16 @@
 
             // movables
             ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  180, ninjas.ImageData.IMAGE_FLASK_2                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 150,  160, ninjas.ImageData.IMAGE_FLASK_1                                   );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  140, ninjas.ImageData.IMAGE_FLASK_2                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  120, ninjas.ImageData.IMAGE_FLASK_1                                   );
+
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 600,  200, ninjas.ImageData.IMAGE_FLASK_2                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 650,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 750,  160, ninjas.ImageData.IMAGE_FLASK_2                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 700,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 650,  100, ninjas.ImageData.IMAGE_FLASK_2                                   );
 
             // statue and bush
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1270, 500, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1   );
