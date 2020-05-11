@@ -419,24 +419,6 @@
         /** Image tile 'acid1 center'. */
         public      static      IMAGE_ACID1_CENTER                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'acid1/center.png';
 
-        /** Image tile 'flying left'. */
-        public      static      IMAGE_GROUND_FLYING_LEFT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingLeft.png';
-        /** Image tile 'flying center'. */
-        public      static      IMAGE_GROUND_FLYING_CENTER                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingCenter.png';
-        /** Image tile 'flying right'. */
-        public      static      IMAGE_GROUND_FLYING_RIGHT                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingRight.png';
-        /** Image tile 'flying ascending left'. */
-        public      static      IMAGE_GROUND_FLYING_ASCENDING_LEFT          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingLeft.png';
-        /** Image tile 'flying ascending center'. */
-        public      static      IMAGE_GROUND_FLYING_ASCENDING_CENTER        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingCenter.png';
-        /** Image tile 'flying ascending right'. */
-        public      static      IMAGE_GROUND_FLYING_ASCENDING_RIGHT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingRight.png';
-        /** Image tile 'flying descending left'. */
-        public      static      IMAGE_GROUND_FLYING_DESCENDING_LEFT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingLeft.png';
-        /** Image tile 'flying descending center'. */
-        public      static      IMAGE_GROUND_FLYING_DESCENDING_CENTER       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingCenter.png';
-        /** Image tile 'flying descending right'. */
-        public      static      IMAGE_GROUND_FLYING_DESCENDING_RIGHT        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingRight.png';
         /** Image tile 'solid left'. */
         public      static      IMAGE_GROUND_SOLID_LEFT                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidLeft.png';
         /** Image tile 'solid right'. */
@@ -467,6 +449,24 @@
         public      static      IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidAscendingRightTop.png';
         /** Image tile 'solid descending right top'. */
         public      static      IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'solidDescendingRightTop.png';
+        /** Image tile 'flying left'. */
+        public      static      IMAGE_GROUND_FLYING_LEFT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingLeft.png';
+        /** Image tile 'flying center'. */
+        public      static      IMAGE_GROUND_FLYING_CENTER                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingCenter.png';
+        /** Image tile 'flying right'. */
+        public      static      IMAGE_GROUND_FLYING_RIGHT                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingRight.png';
+        /** Image tile 'flying ascending left'. */
+        public      static      IMAGE_GROUND_FLYING_ASCENDING_LEFT          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingLeft.png';
+        /** Image tile 'flying ascending center'. */
+        public      static      IMAGE_GROUND_FLYING_ASCENDING_CENTER        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingCenter.png';
+        /** Image tile 'flying ascending right'. */
+        public      static      IMAGE_GROUND_FLYING_ASCENDING_RIGHT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingAscendingRight.png';
+        /** Image tile 'flying descending left'. */
+        public      static      IMAGE_GROUND_FLYING_DESCENDING_LEFT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingLeft.png';
+        /** Image tile 'flying descending center'. */
+        public      static      IMAGE_GROUND_FLYING_DESCENDING_CENTER       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingCenter.png';
+        /** Image tile 'flying descending right'. */
+        public      static      IMAGE_GROUND_FLYING_DESCENDING_RIGHT        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'darkGround/' + 'flyingDescendingRight.png';
 
         /** A bg image. */
         public      static      IMAGE_BG                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
@@ -730,18 +730,6 @@
             ImageData.IMAGE_WATER_CENTER,
             ImageData.IMAGE_ACID1_CENTER,
 
-            ImageData.IMAGE_GROUND_FLYING_LEFT,
-            ImageData.IMAGE_GROUND_FLYING_CENTER,
-            ImageData.IMAGE_GROUND_FLYING_RIGHT,
-
-            ImageData.IMAGE_GROUND_FLYING_ASCENDING_LEFT,
-            ImageData.IMAGE_GROUND_FLYING_ASCENDING_CENTER,
-            ImageData.IMAGE_GROUND_FLYING_ASCENDING_RIGHT,
-
-            ImageData.IMAGE_GROUND_FLYING_DESCENDING_LEFT,
-            ImageData.IMAGE_GROUND_FLYING_DESCENDING_CENTER,
-            ImageData.IMAGE_GROUND_FLYING_DESCENDING_RIGHT,
-
             ImageData.IMAGE_GROUND_SOLID_LEFT,
             ImageData.IMAGE_GROUND_SOLID_RIGHT,
             ImageData.IMAGE_GROUND_SOLID_TOP,
@@ -751,13 +739,21 @@
             ImageData.IMAGE_GROUND_SOLID_LEFT_BOTTOM,
             ImageData.IMAGE_GROUND_SOLID_RIGHT_BOTTOM,
             ImageData.IMAGE_GROUND_SOLID_CENTER,
-
             ImageData.IMAGE_GROUND_SOLID_ASCENDING_TOP,
             ImageData.IMAGE_GROUND_SOLID_DESCENDING_TOP,
             ImageData.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP,
             ImageData.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP,
             ImageData.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP,
             ImageData.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP,
+            ImageData.IMAGE_GROUND_FLYING_LEFT,
+            ImageData.IMAGE_GROUND_FLYING_CENTER,
+            ImageData.IMAGE_GROUND_FLYING_RIGHT,
+            ImageData.IMAGE_GROUND_FLYING_ASCENDING_LEFT,
+            ImageData.IMAGE_GROUND_FLYING_ASCENDING_CENTER,
+            ImageData.IMAGE_GROUND_FLYING_ASCENDING_RIGHT,
+            ImageData.IMAGE_GROUND_FLYING_DESCENDING_LEFT,
+            ImageData.IMAGE_GROUND_FLYING_DESCENDING_CENTER,
+            ImageData.IMAGE_GROUND_FLYING_DESCENDING_RIGHT,
 
             ImageData.IMAGE_BG,
 

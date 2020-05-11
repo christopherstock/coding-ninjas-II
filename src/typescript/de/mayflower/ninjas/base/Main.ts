@@ -13,7 +13,7 @@
     *   TODO More cool flask images.
     *   TODO Add 'slide' action.
     *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
-    *   TODO Green bubbling water etc.
+    *   TODO Green bubbling water - fix tiles. etc.
     *   TODO Sound effects for ninja girl actions and enemies
     *   TODO Particle fx smashed crates, startup window etc.
     *   TODO Enum 'wearpon' with according damage values.

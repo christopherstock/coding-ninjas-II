@@ -6,13 +6,13 @@
     /** ****************************************************************************************************************
     *   All concrete tilesets the game makes use of.
     *******************************************************************************************************************/
-    export class TilesetData
+    export class GroundData
     {
         /** Tileset 'dark ground'. */
-        public      static  TILESET_DARK_GROUND                         :ninjas.TilesetTemplate             = new ninjas.TilesetTemplate
-        (
+        public      static  TILESET_DARK_GROUND                         :ninjas.GroundImageSet             = null; // new ninjas.GroundImageSet
+//        (
 
 
 
-        );
+//        );
     }
