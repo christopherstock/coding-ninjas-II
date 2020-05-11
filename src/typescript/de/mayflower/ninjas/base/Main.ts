@@ -11,6 +11,7 @@
     *   TODO Debug switch for Light or dark preloader.
     *   TODO Disable Right+Meta interference in browser.
     *   TODO More cool flask images.
+    *   TODO Group all deco images into subfolders.
     *   TODO Add 'slide' action.
     *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
     *   TODO Green bubbling water - fix tiles. etc.
