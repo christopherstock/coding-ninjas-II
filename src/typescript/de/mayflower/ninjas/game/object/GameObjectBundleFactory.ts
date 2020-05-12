@@ -184,6 +184,7 @@
         *   @param lengthVert   The number of vertical elements.
         *   @param slope        Specifies the slope for this ground.
         *   @param capHorz      Specifies horizontal end cappings.
+        *   @param ground       The set of ground tiles to use.
         ***************************************************************************************************************/
         public static createSolidGround
         (
@@ -193,7 +194,8 @@
             lengthHorz :number,
             lengthVert :number,
             slope      :Slope,
-            capHorz    :CapHorz
+            capHorz    :CapHorz,
+            ground     :ninjas.GroundImageSet
         )
         : void
         {
@@ -201,13 +203,13 @@
             let topTile           :ninjas.SpriteTemplate = null;
             let rightTopTile      :ninjas.SpriteTemplate = null;
 
-            const leftTile        :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT         );
-            const centerTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_CENTER       );
-            const rightTile       :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT        );
+            const leftTile        :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ground.solidLeft   );
+            const centerTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ground.solidCenter );
+            const rightTile       :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ground.solidRight  );
 
-            const leftBottomTile  :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT_BOTTOM  );
-            const bottomTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_BOTTOM       );
-            const rightBottomTile :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT_BOTTOM );
+            const leftBottomTile  :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ground.solidLeftBottom  );
+            const bottomTile      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ground.solidBottom      );
+            const rightBottomTile :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ground.solidRightBottom );
 
             let firstLineDrawY  :number = 0.0;
             let firstLineAlt    :number = 0.0;
@@ -216,9 +218,9 @@
             {
                 case Slope.NONE:
                 {
-                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_LEFT_TOP  );
-                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_TOP       );
-                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_RIGHT_TOP );
+                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidLeftTop  );
+                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidTop      );
+                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidRightTop );
 
                     firstLineDrawY = yTop;
                     firstLineAlt   = 0.0;
@@ -228,9 +230,9 @@
 
                 case Slope.ASCENDING:
                 {
-                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_LEFT_TOP  );
-                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_TOP       );
-                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_ASCENDING_RIGHT_TOP );
+                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingLeftTop  );
+                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingTop      );
+                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingRightTop );
 
                     firstLineDrawY = yTop;
                     firstLineAlt   = -GameObjectBundleFactory.ALTITUDE;
@@ -240,9 +242,9 @@
 
                 case Slope.DESCENDING:
                 {
-                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_LEFT_TOP  );
-                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_TOP       );
-                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_SOLID_DESCENDING_RIGHT_TOP );
+                    leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingLeftTop  );
+                    topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingTop      );
+                    rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingRightTop );
 
                     firstLineDrawY = yTop + GameObjectBundleFactory.ALTITUDE;
                     firstLineAlt   = GameObjectBundleFactory.ALTITUDE;

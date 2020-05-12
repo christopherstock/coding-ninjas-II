@@ -27,6 +27,9 @@
         /** Disables the initial blend panel. */
         public  static  readonly    DISABLE_BLEND_PANEL                     :boolean                    = ( true && SettingDebug.DEBUG_MODE );
         // noinspection PointlessBooleanExpressionJS
+        /** Disables pointer controls. */
+        public  static  readonly    DISABLE_POINTER                         :boolean                    = ( true && SettingDebug.DEBUG_MODE );
+        // noinspection PointlessBooleanExpressionJS
         /** Shows Matter.js indicators. */
         public  static  readonly    MATTERJS_DEBUG_VIEWS                    :boolean                    = ( false && SettingDebug.DEBUG_MODE );
     }

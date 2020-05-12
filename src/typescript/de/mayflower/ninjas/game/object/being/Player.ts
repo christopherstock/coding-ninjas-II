@@ -77,16 +77,22 @@
 
             if
             (
-                    keySystem.isPressed( ninjas.Key.KEY_LEFT )
-                ||  ninjas.Main.game.engine.pointerSystem.leftCanvasHalfPressed
+                keySystem.isPressed( ninjas.Key.KEY_LEFT )
+                || (
+                        !ninjas.SettingDebug.DISABLE_POINTER
+                        && ninjas.Main.game.engine.pointerSystem.leftCanvasHalfPressed
+                )
             )
             {
                 this.moveLeft();
             }
             else if
             (
-                    keySystem.isPressed( ninjas.Key.KEY_RIGHT )
-                ||  ninjas.Main.game.engine.pointerSystem.rightCanvasHalfPressed
+                keySystem.isPressed( ninjas.Key.KEY_RIGHT )
+                || (
+                        !ninjas.SettingDebug.DISABLE_POINTER
+                        && ninjas.Main.game.engine.pointerSystem.rightCanvasHalfPressed
+                )
             )
             {
                 this.moveRight();
@@ -102,8 +108,10 @@
                 }
             }
 
-            if ( ninjas.Main.game.engine.pointerSystem.canvasTabbed )
-            {
+            if (
+                !ninjas.SettingDebug.DISABLE_POINTER
+                && ninjas.Main.game.engine.pointerSystem.canvasTabbed
+            ) {
                 ninjas.Main.game.engine.pointerSystem.canvasTabbed = false;
 
                 if ( this.collidesBottom )

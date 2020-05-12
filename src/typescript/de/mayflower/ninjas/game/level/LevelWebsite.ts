@@ -217,9 +217,9 @@
             ninjas.GameObjectBundleFactory.createBridge(      this, 3200,  500       );
 
             // solid ground
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5, 2, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 3840, 500, 15, 2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 0,    500, 5,  2, ninjas.Slope.NONE, ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_DARK_GROUND );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 3840, 500, 15, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
 
 
 /*

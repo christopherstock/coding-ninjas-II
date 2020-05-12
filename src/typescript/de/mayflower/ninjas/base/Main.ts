@@ -5,10 +5,10 @@
     *   The main class contains the application's points of entry and termination.
     *
     *   TODO Create different ground tilesets.
+    *   TODO Setting for light or dark preloader.
     *   TODO Add 'katana strike' action in air.
     *   TODO Add destroyable obstacles.
     *   TODO Add new ninja sprites.
-    *   TODO Debug switch for Light or dark preloader.
     *   TODO Disable Right+Meta interference in browser.
     *   TODO More cool flask images.
     *   TODO Group all deco images into subfolders.
@@ -20,8 +20,8 @@
     *   TODO Enum 'wearpon' with according damage values.
     *   TODO Try different physics demo elements on the player!
     *   TODO Remove static access on Main.game.
-    *   TODO Bots that help you and talk to you?
-    *   TODO Player shooting or throwing objects?
+    *   TODO Bots that help you and talk to you.
+    *   TODO Player shooting or throwing objects.
     *   TODO Debug Disable Pointer control.
     *   TODO Improve image sequence handling in ImageData?
     *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib?
