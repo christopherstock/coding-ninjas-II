@@ -14,15 +14,15 @@
         /** Debugs the image system. */
         public      static  readonly    image           :Debug              = new Debug( false );
         /** Debugs the sound system. */
-        public      static  readonly    sound           :Debug              = new Debug( true  );
+        public      static  readonly    sound           :Debug              = new Debug( false );
         /** Debugs the pointer system. */
         public      static  readonly    pointer         :Debug              = new Debug( false );
         /** Debugs the pickable game items. */
-        public      static  readonly    item            :Debug              = new Debug( true  );
+        public      static  readonly    item            :Debug              = new Debug( false );
         /** Debugs character events. */
-        public      static  readonly    character       :Debug              = new Debug( true  );
+        public      static  readonly    character       :Debug              = new Debug( false );
         /** Debugs enemy events. */
-        public      static  readonly    enemy           :Debug              = new Debug( true  );
+        public      static  readonly    enemy           :Debug              = new Debug( false );
         /** Debugs site events. */
         public      static  readonly    site            :Debug              = new Debug( true  );
         /** Debugs canvas events. */

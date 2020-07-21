@@ -42,7 +42,7 @@
         /** The maximum height for the site panel. */
         public      static  readonly    SITE_PANEL_MAX_HEIGHT                       :number                     = 888;
         /** The duration for showing and hiding the site panel in ms. */
-        public      static  readonly    SITE_PANEL_ANIMATION_DURATION               :number                     = 1000;
+        public      static  readonly    SITE_PANEL_ANIMATION_DURATION               :number                     = 3000;
 
         /** The number of ticks for the initial blend panel to disappear. */
         public      static  readonly    BLEND_PANEL_TICKS                           :number                     = 250;

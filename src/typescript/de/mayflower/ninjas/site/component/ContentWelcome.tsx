@@ -58,12 +58,12 @@
                 {
                     ninjas.SiteContentFactory.createParagraph
                     (
-                        'Use the <span style=\'color: #ff6666;\'>arrow keys</span> to move and jump around.<br>'
-                        + 'Use the <span style=\'color: #ff6666;\'>space bar</span> to open your parachute '
+                        'Use the <span style=\'color: #b42157;\'>arrow keys</span> to move and jump around.<br>'
+                        + 'Use the <span style=\'color: #b42157;\'>space bar</span> to open your parachute '
                         + 'while in air.<br>'
-                        + 'The user interfaces can be operated using <span style=\'color: #ff6666;\'>'
+                        + 'The user interfaces can be operated using <span style=\'color: #b42157;\'>'
                         + 'your mouse</span>.<br>'
-                        + 'Can you find all <span style=\'color: #ff6666;\'>six shrines?</span>.<br>'
+                        + 'Can you find all <span style=\'color: #b42157;\'>six shrines?</span>.<br>'
                     )
                 }
                 { ninjas.SiteContentFactory.createDivider() }
