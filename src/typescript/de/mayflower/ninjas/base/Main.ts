@@ -4,6 +4,8 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO Fix flickering for side-panel antd-comps before 1st popup (preload? hide and show?).
+    *
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.
     *   TODO Add 'katana strike' action in air.
@@ -27,7 +29,6 @@
     *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib?
     *   TODO Add destroyable movables.
     *   TODO Add pickable items and item sprites.
-    *   TODO Fix flickering for side-panel antd-comps before 1st popup (preload?).
     *   TODO Add decoration particle effects on smashing objects / windows etc.
     *   TODO Create HUD ( for items etc )?
     *   TODO create class HUD with own paint-method.

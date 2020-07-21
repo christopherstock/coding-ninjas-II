@@ -133,16 +133,20 @@
         ***************************************************************************************************************/
         public updatePanelSizeAndPosition() : void
         {
-            // calculate panel size
+            // calculate and clip panel size
             this.panelWidth = (
-                ninjas.Main.game.engine.canvasSystem.getWidth() / 2 - ninjas.SettingGame.BORDER_SIZE_OUTER
+                ninjas.Main.game.engine.canvasSystem.getWidth() / 2 - ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
             );
-            if ( this.panelWidth > ninjas.SettingGame.SITE_PANEL_MAX_WIDTH )
+            if ( this.panelWidth < ninjas.SettingGame.SITE_PANEL_MIN_WIDTH )
+            {
+                this.panelWidth = ninjas.SettingGame.SITE_PANEL_MIN_WIDTH;
+            } else if ( this.panelWidth > ninjas.SettingGame.SITE_PANEL_MAX_WIDTH )
             {
                 this.panelWidth = ninjas.SettingGame.SITE_PANEL_MAX_WIDTH;
             }
+
             this.panelHeight = (
-                ninjas.Main.game.engine.canvasSystem.getHeight() - 2 * ninjas.SettingGame.BORDER_SIZE_OUTER
+                ninjas.Main.game.engine.canvasSystem.getHeight() - 2 * ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
             );
             if ( this.panelHeight > ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT )
             {
@@ -150,7 +154,7 @@
             }
 
             // calculate panel size including border and left and right position
-            this.panelAndBorderWidth = this.panelWidth + ninjas.SettingGame.BORDER_SIZE_OUTER;
+            this.panelAndBorderWidth = this.panelWidth + ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER;
             this.leftCameraTargetX   = (
                 this.panelAndBorderWidth
                 + ( ( ninjas.Main.game.engine.canvasSystem.getWidth() - this.panelAndBorderWidth ) / 2 )

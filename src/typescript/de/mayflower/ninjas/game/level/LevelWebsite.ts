@@ -43,7 +43,7 @@
 
             this.siteTriggers =
             [
-                ninjas.GameObjectFactory.createSiteTrigger( 2000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
+                ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
 /*
                 ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),
                 ninjas.GameObjectFactory.createSiteTrigger( 3530,  4060, ninjas.SiteContent.CONTENT_SERVICES,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_3 ) ),
@@ -58,7 +58,7 @@
             ];
 
             // shrine 1
-            ninjas.GameObjectBundleFactory.createShrine(    this, 2000,  500, true, true, ninjas.SiteContent.CONTENT_WELCOME      );
+            ninjas.GameObjectBundleFactory.createShrine(    this, 1000,  500, true, true, ninjas.SiteContent.CONTENT_WELCOME      );
 /*
             // shrine 1 nature
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 75,    5000, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_1 );
@@ -197,13 +197,13 @@
             ninjas.GameObjectBundleFactory.createMovableRect( this, 150,  160, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  120, ninjas.ImageData.IMAGE_FLASK_1                                   );
-
+/*
             ninjas.GameObjectBundleFactory.createMovableRect( this, 900,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 950,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 850,  160, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 900,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 950,  120, ninjas.ImageData.IMAGE_FLASK_1                                   );
-
+*/
             // statue and bush
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1270, 500, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1   );
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1400, 500, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );

@@ -75,20 +75,30 @@
 
             this.outerAbsoluteContainer.style.backgroundSize  = String( width ) + 'px ' + String( height ) + 'px';
 
+            // debug offset ..
+            const OFFSET :number = -100;
+
             // outer container position
             switch ( this.position )
             {
                 case ninjas.SitePanelPosition.LEFT:
                 {
-                    this.outerAbsoluteContainer.style.left = String( ninjas.SettingGame.BORDER_SIZE_OUTER ) + 'px';
+                    this.outerAbsoluteContainer.style.left = String(
+                        ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER + OFFSET
+                    ) + 'px';
                     break;
                 }
 
                 case ninjas.SitePanelPosition.RIGHT:
                 {
                     this.outerAbsoluteContainer.style.left = String(
-                        ( ninjas.Main.game.engine.canvasSystem.getWidth() - width - ninjas.SettingGame.BORDER_SIZE_OUTER
-                        ) ) + 'px';
+                        (
+                            ninjas.Main.game.engine.canvasSystem.getWidth()
+                            - OFFSET
+                            - width
+                            - ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
+                        )
+                    ) + 'px';
                     break;
                 }
             }
@@ -98,12 +108,12 @@
 
             // inner container size
             this.innerRelativeContainer.style.width  = String(
-                ( width - 2 * ninjas.SettingGame.BORDER_SIZE_INNER )
+                ( width - 2 * ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER )
             ) + 'px';
 
             // inner container position
-            this.innerRelativeContainer.style.top  = String( ninjas.SettingGame.BORDER_SIZE_INNER_TOP ) + 'px';
-            this.innerRelativeContainer.style.left = String( ninjas.SettingGame.BORDER_SIZE_INNER )     + 'px';
+            this.innerRelativeContainer.style.top  = String( ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER_TOP ) + 'px';
+            this.innerRelativeContainer.style.left = String( ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER )     + 'px';
         }
 
         /** ************************************************************************************************************
