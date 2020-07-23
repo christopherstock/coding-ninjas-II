@@ -65,7 +65,7 @@
         /** The debug color for a shrine. */
         COLOR_DEBUG_SHRINE              = '#adbfff',
         /** The debug color for a site trigger. */
-        COLOR_DEBUG_SITE_TRIGGER        = '#deffd9',
+        COLOR_DEBUG_SITE_TRIGGER        = '#deffd9',  // 'rgba( 222, 255, 217, 0.25 )',
         /** The debug color for a platform. */
         COLOR_DEBUG_PLATFORM            = '#d2d2d2',
     }

@@ -35,7 +35,6 @@
     export * from './game/Game';
 
     export * from './game/level/Level';
-    export * from './game/level/LevelWebsite';
 
     export * from './game/object/GameObject';
     export * from './game/object/GameObjectBundleFactory';
@@ -64,6 +63,7 @@
     export * from './data/SpriteData';
     export * from './data/CharacterSpriteData';
     export * from './data/GroundData';
+    export * from './data/LevelData';
 
     export * from './site/component/ContentCompany';
     export * from './site/component/ContentContact';

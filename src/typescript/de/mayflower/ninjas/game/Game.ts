@@ -52,7 +52,7 @@
             this.bgMusic = this.engine.soundSystem.playSound( ninjas.SoundData.BG_CHINESE, true );
 
             // launch initial level
-            this.resetAndLaunchLevel( new ninjas.LevelWebsite() );
+            this.resetAndLaunchLevel( new ninjas.LevelData() );
 
             // update camera bounds
             this.updateAndAssignCamera();
@@ -181,7 +181,7 @@
                     this.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_1 );
 
                     ninjas.Debug.init.log( 'Resetting and switching to level 1' );
-                    this.resetAndLaunchLevel( new ninjas.LevelWebsite() );
+                    this.resetAndLaunchLevel( new ninjas.LevelData() );
                 }
 /*
                 if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_2 ) )

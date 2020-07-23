@@ -1,12 +1,12 @@
 
     /* eslint-disable max-len */
 
-    import * as ninjas from '../../ninjas';
+    import * as ninjas from '../ninjas';
 
     /** ****************************************************************************************************************
     *   The level set for the dev level.
     *******************************************************************************************************************/
-    export class LevelWebsite extends ninjas.Level
+    export class LevelData extends ninjas.Level
     {
         /** The width of this level. */
         public      width                   :number                     = 10000.0;
