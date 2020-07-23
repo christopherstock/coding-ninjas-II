@@ -11,6 +11,7 @@
     *   TODO Add 'katana strike' action in air.
     *   TODO Add destroyable obstacles.
     *   TODO Add new ninja sprites.
+    *   TODO Debug rects bg + sprite?
     *   TODO Disable Right+Meta interference in browser.
     *   TODO More cool flask images.
     *   TODO Group all deco images into subfolders.

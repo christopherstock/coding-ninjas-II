@@ -41,8 +41,6 @@
                     canvas:  canvasSystem.getCanvas(),
                     engine:  this.engine,
                     options: {
-                        hasBounds:          true,
-                        wireframes:         false,
                         showCollisions:     ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
                         showAxes:           ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
                         showAngleIndicator: ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
@@ -52,6 +50,9 @@
 
                         width:              canvasSystem.getWidth(),
                         height:             canvasSystem.getHeight(),
+
+                        hasBounds:          true,
+                        wireframes:         false,
 
                         // pixelRatio:         1,
 /*

@@ -11,7 +11,7 @@
 
         // noinspection PointlessBooleanExpressionJS
         /** Enable color bg for all matter sprites. */
-        public  static  readonly    DEBUG_BG_MATTER_BODY                    :boolean                    = ( false && SettingDebug.DEBUG_MODE );
+        public  static  readonly    DEBUG_BG_FOR_MATTER_BODY                :boolean                    = ( true && SettingDebug.DEBUG_MODE );
 
         // noinspection PointlessBooleanExpressionJS
         /** No delay after preloader if enabled. */
