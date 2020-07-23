@@ -178,7 +178,16 @@
         ***************************************************************************************************************/
         public getCameraTargetX() : number
         {
+            return (
+                (
+                    ninjas.Main.game.engine.canvasSystem.getWidth()
+                    - ninjas.Main.game.level.player.sprite.template.width
+                ) / 2
+            );
+
             if (
+
+                // currently disable cam targetting for panel
                 this.animationState === ninjas.SitePanelAnimation.HIDDEN
                 || this.animationState === ninjas.SitePanelAnimation.HIDING
             ) {

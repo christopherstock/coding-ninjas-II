@@ -84,7 +84,7 @@
                 case ninjas.SitePanelPosition.LEFT:
                 {
                     this.outerAbsoluteContainer.style.left = String(
-                        ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER + OFFSET
+                        ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
                     ) + 'px';
                     break;
                 }
@@ -94,7 +94,6 @@
                     this.outerAbsoluteContainer.style.left = String(
                         (
                             ninjas.Main.game.engine.canvasSystem.getWidth()
-                            - OFFSET
                             - width
                             - ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
                         )
@@ -112,8 +111,12 @@
             ) + 'px';
 
             // inner container position
-            this.innerRelativeContainer.style.top  = String( ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER_TOP ) + 'px';
-            this.innerRelativeContainer.style.left = String( ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER )     + 'px';
+            this.innerRelativeContainer.style.top  = String(
+                ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER_TOP
+            ) + 'px';
+            this.innerRelativeContainer.style.left = String(
+                ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER
+            ) + 'px';
         }
 
         /** ************************************************************************************************************
@@ -136,13 +139,15 @@
             {
                 case ninjas.SitePanelPosition.LEFT:
                 {
-                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInLeft';
+                    // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInLeft';
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
                     break;
                 }
 
                 case ninjas.SitePanelPosition.RIGHT:
                 {
-                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInRight';
+                    // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInRight';
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
                     break;
                 }
             }
@@ -158,13 +163,15 @@
             {
                 case ninjas.SitePanelPosition.LEFT:
                 {
-                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutLeft';
+                    // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutLeft';
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
                     break;
                 }
 
                 case ninjas.SitePanelPosition.RIGHT:
                 {
-                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutRight';
+                    // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutRight';
+                    this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
                     break;
                 }
             }

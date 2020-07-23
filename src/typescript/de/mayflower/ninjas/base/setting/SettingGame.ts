@@ -28,13 +28,13 @@
         public      static  readonly    ENEMY_TICKS_STANDING_DEFAULT                :number                     = 250;
 
         /** The minimum width for the site panel. */
-        public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 700;
+        public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 500;
         /** The maximum width for the site panel. */
-        public      static  readonly    SITE_PANEL_MAX_WIDTH                        :number                     = 800;
+        public      static  readonly    SITE_PANEL_MAX_WIDTH                        :number                     = 500;
         /** The maximum height for the site panel. */
         public      static  readonly    SITE_PANEL_MAX_HEIGHT                       :number                     = 858;
         /** The duration for showing and hiding the site panel in ms. */
-        public      static  readonly    SITE_PANEL_ANIMATION_DURATION               :number                     = 3000;
+        public      static  readonly    SITE_PANEL_ANIMATION_DURATION               :number                     = 500;
         /** The outer border size for the site panel and all HUD elements in px. */
         public      static  readonly    SITE_PANEL_BORDER_SIZE_OUTER                :number                     = 0;
         /** The inner border size for the inner site panel container. */

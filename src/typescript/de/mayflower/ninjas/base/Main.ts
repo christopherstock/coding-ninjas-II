@@ -5,6 +5,8 @@
     *   The main class contains the application's points of entry and termination.
     *
     *   TODO Fix flickering for side-panel antd-comps before 1st popup (preload? hide and show?).
+    *   TODO Panel left AND right!
+    *   TODO Try y-overlapping image for flasks??
     *
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.
