@@ -130,9 +130,9 @@
                 }
             }
 
-            if ( keySystem.isPressed( ninjas.Key.KEY_META ) )
+            if ( keySystem.isPressed( ninjas.Key.KEY_ALT ) )
             {
-                keySystem.setNeedsRelease( ninjas.Key.KEY_META );
+                keySystem.setNeedsRelease( ninjas.Key.KEY_ALT );
 
                 if ( !this.isAttacking() )
                 {

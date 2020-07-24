@@ -4,8 +4,6 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Disable Right+Meta interference in browser.
-    *
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.
     *   TODO Panel left AND right!

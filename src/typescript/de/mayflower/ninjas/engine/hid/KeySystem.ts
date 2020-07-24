@@ -17,10 +17,10 @@
         public constructor()
         {
             window.addEventListener( 'keydown',     ( event :Event ) => { this.onKeyDown( event ); }, false );
-            window.addEventListener( 'keyup',       ( event :Event ) => { this.onKeyUp(   event ); },   false );
+            window.addEventListener( 'keyup',       ( event :Event ) => { this.onKeyUp(   event ); }, false );
 
             window.addEventListener( 'onkeydown',   ( event :Event ) => { this.onKeyDown( event ); }, false );
-            window.addEventListener( 'onkeyup',     ( event :Event ) => { this.onKeyUp(   event ); },   false );
+            window.addEventListener( 'onkeyup',     ( event :Event ) => { this.onKeyUp(   event ); }, false );
         }
 
         /** ************************************************************************************************************
@@ -30,12 +30,14 @@
         ***************************************************************************************************************/
         public onKeyDown( event:Event ) : void
         {
-            const keyCode :string = ( event as KeyboardEvent ).key;
+            // event.preventDefault();
 
-            if ( !this.keysNeedRelease[ keyCode ] ) {
-                this.keysPressed[ keyCode ] = true;
+            const keyID :string = ( event as KeyboardEvent ).key;
 
-                ninjas.Debug.key.log( 'key pressed ['  + keyCode + ']' );
+            if ( !this.keysNeedRelease[ keyID ] && !this.keysPressed[ keyID ] ) {
+                this.keysPressed[ keyID ] = true;
+
+                ninjas.Debug.key.log( 'key pressed ['  + keyID + ']' );
             }
         }
 
@@ -46,12 +48,14 @@
         ***************************************************************************************************************/
         public onKeyUp( event:Event ) : void
         {
-            const keyCode :string = ( event as KeyboardEvent ).key;
+            // event.preventDefault();
 
-            this.keysPressed[     keyCode ] = false;
-            this.keysNeedRelease[ keyCode ] = false;
+            const keyID :string = ( event as KeyboardEvent ).key;
 
-            ninjas.Debug.key.log( 'key released ['  + keyCode + ']' );
+            this.keysPressed[     keyID ] = false;
+            this.keysNeedRelease[ keyID ] = false;
+
+            ninjas.Debug.key.log( 'key released ['  + keyID + ']' );
         }
 
         /** ************************************************************************************************************
