@@ -51,6 +51,8 @@
         {
             this.createGameObjects();
 
+            // order affects z layer
+
             for ( const parallaxBg of this.parallaxBgs )
             {
                 matterJsSystem.addToWorld( parallaxBg.shape.body );
@@ -76,8 +78,6 @@
                 matterJsSystem.addToWorld( enemy.shape.body );
             }
 
-            matterJsSystem.addToWorld( this.player.shape.body );
-
             for ( const gameObject of this.decosFg )
             {
                 matterJsSystem.addToWorld( gameObject.shape.body );
@@ -86,6 +86,9 @@
             {
                 matterJsSystem.addToWorld( gameObject.shape.body );
             }
+
+            // player last - highest Z layer
+            matterJsSystem.addToWorld( this.player.shape.body );
         }
 
         /** ************************************************************************************************************
