@@ -20,6 +20,8 @@
 
         /** The camera ration for the vertical axis. */
         public  static  readonly    CAMERA_ALWAYS_CENTER_X                  :boolean            = true;
+        /** The camera ration for the horizontal axis. */
+        public  static  readonly    CAMERA_RATIO_X                          :number             = 0.4;
         /** The camera ration for the vertical axis. */
         public  static  readonly    CAMERA_RATIO_Y                          :number             = 0.6;
         /** The camera moving speed X from 0.0 to 1.0. */
