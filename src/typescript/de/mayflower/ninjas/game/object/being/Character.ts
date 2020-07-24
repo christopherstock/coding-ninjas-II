@@ -93,7 +93,7 @@
 
             this.spriteSet        = spriteSet;
 
-            this.assignCurrentSprite();
+            this.setSprite( spriteTemplate );
         }
 
         /** ************************************************************************************************************

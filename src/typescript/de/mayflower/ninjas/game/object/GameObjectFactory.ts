@@ -402,7 +402,19 @@
         : ninjas.Player
         {
             const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT;
-            const firstSprite     :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT;
+            const firstSprite     :ninjas.SpriteTemplate = (
+                initialFloat
+                ? (
+                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                    ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT
+                    : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT
+                )
+                : (
+                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                    ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT
+                    : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT
+                )
+            );
 
             return new ninjas.Player
             (
