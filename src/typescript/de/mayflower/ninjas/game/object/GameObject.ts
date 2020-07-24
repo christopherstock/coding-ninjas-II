@@ -76,7 +76,7 @@
         {
             if ( spriteTemplate !== null )
             {
-                // deny setting new sprite if same sprite than existent
+                // only set new sprite if it differs from current sprite
                 if ( this.sprite !== null && this.sprite.template === spriteTemplate )
                 {
                     return;

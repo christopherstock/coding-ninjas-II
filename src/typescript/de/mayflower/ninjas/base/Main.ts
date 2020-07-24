@@ -9,6 +9,8 @@
     *   TODO Try y-overlapping image for flasks??
     *   TODO camera X ratio.
     *   TODO Disable re-jump on plain vertical walls!
+    *   TODO Add canvas max width.
+    *   TODO Fix 1st player sprite on gliding !!
     *
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.

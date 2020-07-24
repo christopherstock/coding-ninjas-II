@@ -18,7 +18,7 @@
     export class SitePanel
     {
         /** The outer container div. */
-        private                 outerAbsoluteContainer          :HTMLDivElement             = null;
+        public                  outerAbsoluteContainer          :HTMLDivElement             = null;
         /** The inner container div. */
         private                 innerRelativeContainer          :HTMLDivElement             = null;
 

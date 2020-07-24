@@ -22,6 +22,9 @@
     *******************************************************************************************************************/
     export class SiteSystem
     {
+        /** Flags if the panel is shown for the 1st time. */
+        private                 firstShow                   :boolean                        = true;
+
         /** The content system. */
         public                  contentSystem               :ninjas.SiteContentSystem       = null;
         /** The current animation of the site panel. */
@@ -85,8 +88,22 @@
             this.sitePanel.setPosition( position );
             this.updatePanelSizeAndPosition();
 
+            if ( this.firstShow )
+            {
+                this.firstShow = false;
+
+                // set visibility to 'hidden' fixes unanimated flickering the panel on 1st creation!
+                this.sitePanel.outerAbsoluteContainer.style.visibility = 'hidden';
+            }
+            else
+            {
+                // set visibility to 'visible' fixes unanimated flickering the panel on 1st creation!
+                this.sitePanel.outerAbsoluteContainer.style.visibility = 'visible';
+            }
+
             this.sitePanel.animateIn();
             this.sitePanel.addToDom();
+
             this.wowSystem.sync();
 
             window.setTimeout(
