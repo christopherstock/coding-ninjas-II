@@ -11,9 +11,9 @@
         /** Player start position X. */
         public      playerStartX            :number                     = 2200;
         /** Player start position Y. */
-        public      playerStartY            :number                     = 2000;
+        public      playerStartY            :number                     = 1000;
         /** Player starts with an open parachute. */
-        public      playerInitialFloat      :boolean                    = false;
+        public      playerInitialFloat      :boolean                    = true;
 
         /** The width of this level. */
         public      width                   :number                     = 10000;
@@ -50,7 +50,7 @@
 
             this.siteTriggers =
             [
-                ninjas.GameObjectFactory.createSiteTrigger( 0, 500, 2650, 500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, null ),
+                ninjas.GameObjectFactory.createSiteTrigger( 2000, 2000, 500, 400, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, null ),
 /*
                 ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
                 ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),

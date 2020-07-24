@@ -131,6 +131,9 @@
             this.level = levelToLaunch;
             this.level.init( this.engine.matterJsSystem );
 
+            // reset panel
+            this.engine.siteSystem.hide();
+
             // reset camera
             this.resetCamera();
         }
