@@ -11,11 +11,6 @@
             'Coding Ninjas II - Back with a Vengeance, (c) 2020 Mayflower GmbH, v2.0.0'
         );
 
-        /** The player's start position X. */
-        public      static  readonly    PLAYER_START_POSITION_X                     :number                     = 600;
-        /** The player's start position Y. */
-        public      static  readonly    PLAYER_START_POSITION_Y                     :number                     = 0;
-
         /** The distance the player can reach with an attack of his katana. */
         public      static  readonly    PLAYER_ATTACK_RANGE                         :number                     = 60;
         /** The force the player dispenses on  with an attack of his katana. */
@@ -26,6 +21,12 @@
 
         /** Enemy ticks for standing phases. */
         public      static  readonly    ENEMY_TICKS_STANDING_DEFAULT                :number                     = 250;
+
+        /** The number of ticks for the initial blend panel to disappear. */
+        public      static  readonly    BLEND_PANEL_TICKS                           :number                     = 250;
+
+        /** The default scale factor for all sprites. */
+        public      static  readonly    DEFAULT_SPRITE_SCALE                        :number                     = 1.0;
 
         /** The minimum width for the site panel. */
         public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 500;
@@ -41,10 +42,4 @@
         public      static  readonly    SITE_PANEL_BORDER_SIZE_INNER                :number                     = 50;
         /** The inner border size to the top for the inner site panel container. */
         public      static  readonly    SITE_PANEL_BORDER_SIZE_INNER_TOP            :number                     = 75;
-
-        /** The number of ticks for the initial blend panel to disappear. */
-        public      static  readonly    BLEND_PANEL_TICKS                           :number                     = 250;
-
-        /** The default scale factor for all sprites. */
-        public      static  readonly    DEFAULT_SPRITE_SCALE                        :number                     = 1.0;
     }

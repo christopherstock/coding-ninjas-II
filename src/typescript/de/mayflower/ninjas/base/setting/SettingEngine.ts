@@ -19,6 +19,8 @@
         public  static  readonly    COLOR_PRIMARY_CSS                       :string             = '#b42157';
 
         /** The camera ration for the vertical axis. */
+        public  static  readonly    CAMERA_ALWAYS_CENTER_X                  :boolean            = true;
+        /** The camera ration for the vertical axis. */
         public  static  readonly    CAMERA_RATIO_Y                          :number             = 0.6;
         /** The camera moving speed from 0.0 to 1.0. */
         public  static  readonly    CAMERA_MOVING_SPEED                     :number             = 0.1;

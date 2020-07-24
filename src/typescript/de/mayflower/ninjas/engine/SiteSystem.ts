@@ -178,16 +178,20 @@
         ***************************************************************************************************************/
         public getCameraTargetX() : number
         {
-            return (
-                (
-                    ninjas.Main.game.engine.canvasSystem.getWidth()
-                    - ninjas.Main.game.level.player.sprite.template.width
-                ) / 2
-            );
+            // center camera X if desired
+            if ( ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X )
+            {
+                return (
+                    (
+                        ninjas.Main.game.engine.canvasSystem.getWidth()
+                        // - ninjas.Main.game.level.player.sprite.template.width
+                        - ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT.width
+                    ) / 2
+                );
+            }
 
+            // target according to looking direction
             if (
-
-                // currently disable cam targetting for panel
                 this.animationState === ninjas.SitePanelAnimation.HIDDEN
                 || this.animationState === ninjas.SitePanelAnimation.HIDING
             ) {
@@ -205,6 +209,7 @@
                 }
             }
 
+            // target according to active site panel
             switch ( this.sitePanel.getPosition() )
             {
                 case ninjas.SitePanelPosition.LEFT:

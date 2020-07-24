@@ -6,6 +6,11 @@
     *******************************************************************************************************************/
     export abstract class Level
     {
+        /** Player start position X. */
+        public      playerStartX            :number                         = 0.0;
+        /** Player start position Y. */
+        public      playerStartY            :number                         = 0.0;
+
         /** The width of this level. */
         public      width                   :number                         = 0.0;
         /** The height of this level. */
@@ -94,12 +99,10 @@
             {
                 decoBg.render();
             }
-/*
-            for ( let shrine of this.shrines )
+            for ( const shrine of this.shrines )
             {
                 shrine.render();
             }
-*/
             for ( const siteTrigger of this.siteTriggers )
             {
                 siteTrigger.render();

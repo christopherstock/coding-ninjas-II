@@ -8,10 +8,17 @@
     *******************************************************************************************************************/
     export class LevelData extends ninjas.Level
     {
+        /** Player start position X. */
+        public      playerStartX            :number                     = 2000;
+        /** Player start position Y. */
+        public      playerStartY            :number                     = 2000;
+        /** Player starts with an open parachute. */
+        public      playerInitialFloat      :boolean                    = false;
+
         /** The width of this level. */
-        public      width                   :number                     = 10000.0;
+        public      width                   :number                     = 10000;
         /** The height of this level. */
-        public      height                  :number                     = 10000.0;
+        public      height                  :number                     = 10000;
 
         /** ************************************************************************************************************
         *   Inits a new level.
@@ -35,10 +42,10 @@
 */
             this.player = ninjas.GameObjectFactory.createPlayer
             (
-                ninjas.SettingGame.PLAYER_START_POSITION_X,
-                ninjas.SettingGame.PLAYER_START_POSITION_Y,
+                this.playerStartX,
+                this.playerStartY,
                 ninjas.CharacterLookingDirection.RIGHT,
-                true
+                this.playerInitialFloat
             );
 
             this.siteTriggers =
@@ -222,6 +229,7 @@
             ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3840, 500, 15, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
 
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
 
 /*
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );

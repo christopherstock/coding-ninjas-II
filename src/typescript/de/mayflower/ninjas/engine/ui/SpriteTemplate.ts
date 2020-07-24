@@ -138,7 +138,7 @@
         {
             const ret:string[] = [];
 
-            for ( const spriteTemplate of ninjas.SpriteData.ALL_SPRITE_TEMPLATES )
+            for ( const spriteTemplate of ninjas.SpriteTemplateData.ALL_SPRITE_TEMPLATES )
             {
                 if ( spriteTemplate.mirrored === MirrorImage.YES )
                 {
@@ -159,7 +159,7 @@
         ***************************************************************************************************************/
         public static assignAllImageSizes( imageSystem:ninjas.ImageSystem ) : void
         {
-            for ( const spriteTemplate of ninjas.SpriteData.ALL_SPRITE_TEMPLATES )
+            for ( const spriteTemplate of ninjas.SpriteTemplateData.ALL_SPRITE_TEMPLATES )
             {
                 spriteTemplate.assignImageSizes( imageSystem );
             }

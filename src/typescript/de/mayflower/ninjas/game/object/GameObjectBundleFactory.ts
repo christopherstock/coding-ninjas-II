@@ -371,7 +371,7 @@
         )
         : void
         {
-            const tileTop    :ninjas.SpriteTemplate = ninjas.SpriteData.SPRITE_WATER_TOP;
+            const tileTop    :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_WATER_TOP;
             const tileCenter :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( tileCenterImage );
 
             // draw area
@@ -671,17 +671,17 @@
             if ( candleLeft  )
             {
                 GameObjectBundleFactory.createDecoImage(  level, xLeft - 80,  yBottom,       ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDELABRA              );
-                GameObjectBundleFactory.createDecoSprite( level, xLeft - 88,  yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG   );
-                GameObjectBundleFactory.createDecoSprite( level, xLeft - 68,  yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_SMALL );
-                GameObjectBundleFactory.createDecoSprite( level, xLeft - 106, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_SMALL );
+                GameObjectBundleFactory.createDecoSprite( level, xLeft - 88,  yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG   );
+                GameObjectBundleFactory.createDecoSprite( level, xLeft - 68,  yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_SMALL );
+                GameObjectBundleFactory.createDecoSprite( level, xLeft - 106, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_SMALL );
             }
 
             if ( candleRight )
             {
                 GameObjectBundleFactory.createDecoImage(  level, xLeft + 164, yBottom,       ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDELABRA              );
-                GameObjectBundleFactory.createDecoSprite( level, xLeft + 156, yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG   );
-                GameObjectBundleFactory.createDecoSprite( level, xLeft + 176, yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_SMALL );
-                GameObjectBundleFactory.createDecoSprite( level, xLeft + 138, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_SMALL );
+                GameObjectBundleFactory.createDecoSprite( level, xLeft + 156, yBottom - 222, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG   );
+                GameObjectBundleFactory.createDecoSprite( level, xLeft + 176, yBottom - 178, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_SMALL );
+                GameObjectBundleFactory.createDecoSprite( level, xLeft + 138, yBottom - 182, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_SMALL );
             }
         }
 
@@ -740,6 +740,6 @@
         : void
         {
             ninjas.GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDLE                );
-            ninjas.GameObjectBundleFactory.createDecoSprite( level, xLeft - 17, yBottom - 153, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoSprite( level, xLeft - 17, yBottom - 153, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
         }
     }

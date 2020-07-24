@@ -6,7 +6,7 @@
     /** ****************************************************************************************************************
     *   All concrete sprites the game makes use of.
     *******************************************************************************************************************/
-    export class SpriteData
+    export class SpriteTemplateData
     {
         /** Sprite 'ninja girl stand left'. */
         public      static  SPRITE_NINJA_GIRL_STAND_LEFT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
@@ -548,30 +548,30 @@
         /** A reference over all sprite templates. */
         public      static  readonly        ALL_SPRITE_TEMPLATES                        :ninjas.SpriteTemplate[] =
         [
-            SpriteData.SPRITE_NINJA_GIRL_STAND_LEFT,
-            SpriteData.SPRITE_NINJA_GIRL_STAND_RIGHT,
-            SpriteData.SPRITE_NINJA_GIRL_WALK_LEFT,
-            SpriteData.SPRITE_NINJA_GIRL_WALK_RIGHT,
-            SpriteData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
-            SpriteData.SPRITE_NINJA_GIRL_ATTACK_RIGHT,
-            SpriteData.SPRITE_NINJA_GIRL_JUMP_LEFT,
-            SpriteData.SPRITE_NINJA_GIRL_JUMP_RIGHT,
-            SpriteData.SPRITE_NINJA_GIRL_FALL_LEFT,
-            SpriteData.SPRITE_NINJA_GIRL_FALL_RIGHT,
-            SpriteData.SPRITE_NINJA_GIRL_GLIDE_LEFT,
-            SpriteData.SPRITE_NINJA_GIRL_GLIDE_RIGHT,
-            SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
-            SpriteData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
-            SpriteData.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
-            SpriteData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
-            SpriteData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
-            SpriteData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
-            SpriteData.SPRITE_WATER_TOP,
-            SpriteData.SPRITE_GRASS_1,
-            SpriteData.SPRITE_GRASS_2,
-            SpriteData.SPRITE_GRASS_3,
-            SpriteData.SPRITE_GRASS_4,
-            SpriteData.SPRITE_FLAME_1_BIG,
-            SpriteData.SPRITE_FLAME_1_SMALL,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_WALK_LEFT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_WALK_RIGHT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_RIGHT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_JUMP_LEFT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_JUMP_RIGHT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_FALL_LEFT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_FALL_RIGHT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT,
+            SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT,
+            SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
+            SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
+            SpriteTemplateData.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
+            SpriteTemplateData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
+            SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
+            SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
+            SpriteTemplateData.SPRITE_WATER_TOP,
+            SpriteTemplateData.SPRITE_GRASS_1,
+            SpriteTemplateData.SPRITE_GRASS_2,
+            SpriteTemplateData.SPRITE_GRASS_3,
+            SpriteTemplateData.SPRITE_GRASS_4,
+            SpriteTemplateData.SPRITE_FLAME_1_BIG,
+            SpriteTemplateData.SPRITE_FLAME_1_SMALL,
         ];
     }

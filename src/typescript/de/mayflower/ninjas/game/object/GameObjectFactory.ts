@@ -401,8 +401,8 @@
         )
         : ninjas.Player
         {
-            const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteData.SPRITE_NINJA_GIRL_STAND_LEFT;
-            const firstSprite     :ninjas.SpriteTemplate = ninjas.SpriteData.SPRITE_NINJA_GIRL_GLIDE_LEFT;
+            const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT;
+            const firstSprite     :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT;
 
             return new ninjas.Player
             (
@@ -438,7 +438,7 @@
         )
         : ninjas.Enemy
         {
-            const diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteData.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
+            const diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
 
             return new ninjas.Enemy
             (

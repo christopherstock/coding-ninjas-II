@@ -12,6 +12,7 @@
     *   TODO Setting for light or dark preloader.
     *   TODO Add 'katana strike' action in air.
     *   TODO Add destroyable obstacles.
+    *   TODO Much more air friction for parachute.
     *   TODO Add new ninja sprites.
     *   TODO Debug rects bg + sprite?
     *   TODO Disable Right+Meta interference in browser.

@@ -60,7 +60,7 @@
 
     export * from './data/ImageData';
     export * from './data/SoundData';
-    export * from './data/SpriteData';
+    export * from './data/SpriteTemplateData';
     export * from './data/CharacterSpriteData';
     export * from './data/GroundData';
     export * from './data/LevelData';
