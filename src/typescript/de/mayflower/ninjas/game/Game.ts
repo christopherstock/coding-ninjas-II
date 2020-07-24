@@ -108,7 +108,8 @@
         public resetCamera() : void
         {
             this.camera = new ninjas.Camera(
-                ninjas.SettingEngine.CAMERA_MOVING_SPEED,
+                ninjas.SettingEngine.CAMERA_MOVING_SPEED_X,
+                ninjas.SettingEngine.CAMERA_MOVING_SPEED_Y,
                 ninjas.SettingEngine.CAMERA_MOVING_MINIMUM,
                 ninjas.SettingEngine.CAMERA_MOVING_MAXIMUM,
                 this.level.width,

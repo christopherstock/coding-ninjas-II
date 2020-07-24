@@ -221,17 +221,17 @@
         ***************************************************************************************************************/
         public getCameraTargetX() : number
         {
-            // center camera X if desired
-            if ( ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X )
-            {
-                return ( ninjas.Main.game.engine.canvasSystem.getWidth() / 2 );
-            }
-
             // target according to looking direction
             if (
                 this.animationState === ninjas.SitePanelAnimation.HIDDEN
                 || this.animationState === ninjas.SitePanelAnimation.HIDING
             ) {
+                // center camera X if desired
+                if ( ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X )
+                {
+                    return ( ninjas.Main.game.engine.canvasSystem.getWidth() / 2 );
+                }
+
                 switch ( ninjas.Main.game.level.player.lookingDirection )
                 {
                     case ninjas.CharacterLookingDirection.LEFT:

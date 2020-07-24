@@ -7,8 +7,10 @@
     *******************************************************************************************************************/
     export class Camera
     {
-        /** Camera moving speed. */
-        private     readonly    movingSpeed                 :number                 = 0.0;
+        /** Camera moving speed X. */
+        private     readonly    movingSpeedX                :number                 = 0.0;
+        /** Camera moving speed Y. */
+        private     readonly    movingSpeedY                :number                 = 0.0;
         /** Minimum camera moving speed in px. */
         private     readonly    minimumCameraMove           :number                 = 0.0;
         /** Maximum camera moving speed in px. */
@@ -37,7 +39,8 @@
         /** ************************************************************************************************************
         *   Constructs a new camera.
         *
-        *   @param movingSpeed       The moving speed for the camera.
+        *   @param movingSpeedX      The moving speed X for the camera.
+        *   @param movingSpeedY      The moving speed Y for the camera.
         *   @param minimumCameraMove The minimum camera movement step in px.
         *   @param maximumCameraMove The maximum camera movement step in px.
         *   @param levelWidth        The width of the level.
@@ -47,7 +50,8 @@
         ***************************************************************************************************************/
         public constructor
         (
-            movingSpeed       :number,
+            movingSpeedX       :number,
+            movingSpeedY       :number,
             minimumCameraMove :number,
             maximumCameraMove :number,
             levelWidth        :number,
@@ -56,7 +60,8 @@
             canvasHeight      :number
         )
         {
-            this.movingSpeed       = movingSpeed;
+            this.movingSpeedX      = movingSpeedX;
+            this.movingSpeedY      = movingSpeedY;
             this.minimumCameraMove = minimumCameraMove;
             this.maximumCameraMove = maximumCameraMove;
 
@@ -194,7 +199,7 @@
             let cameraMoveX:number = 0.0;
             if ( this.offsetX < this.targetX )
             {
-                cameraMoveX = ( this.targetX - this.offsetX ) * this.movingSpeed;
+                cameraMoveX = ( this.targetX - this.offsetX ) * this.movingSpeedX;
 
                 if ( cameraMoveX < this.minimumCameraMove ) {
                     cameraMoveX = this.minimumCameraMove;
@@ -210,7 +215,7 @@
             }
             else if ( this.offsetX > this.targetX )
             {
-                cameraMoveX = ( this.offsetX - this.targetX ) * this.movingSpeed;
+                cameraMoveX = ( this.offsetX - this.targetX ) * this.movingSpeedX;
 
                 if ( cameraMoveX < this.minimumCameraMove ) {
                     cameraMoveX = this.minimumCameraMove;
@@ -230,7 +235,7 @@
             {
                 if ( this.offsetY > this.targetY )
                 {
-                    let cameraMoveY:number = ( this.offsetY - this.targetY ) * this.movingSpeed;
+                    let cameraMoveY:number = ( this.offsetY - this.targetY ) * this.movingSpeedY;
                     if ( cameraMoveY < this.minimumCameraMove ) {
                         cameraMoveY = this.minimumCameraMove;
                     }
