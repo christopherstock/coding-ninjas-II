@@ -40,9 +40,9 @@
         *   @param shape              The shape for this object.
         *   @param x                  Startup position X.
         *   @param y                  Startup position Y.
-        *   @param lookingDirection   The initial looking direction of this character.
         *   @param walkingTargetLeft  Left walking target X.
         *   @param walkingTargetRight Right walking target X.
+        *   @param lookingDirection   The initial looking direction of this character.
         *   @param spriteTemplate     The sprite template to use for this game object.
         *   @param characterSpriteSet The sprite set to use for this character.
         ***************************************************************************************************************/

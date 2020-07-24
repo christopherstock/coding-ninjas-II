@@ -108,12 +108,21 @@
 
             window.setTimeout(
                 () => {
-                    this.animationState = ninjas.SitePanelAnimation.PRESENT;
+                    if ( this.animationState === ninjas.SitePanelAnimation.SHOWING )
+                    {
+                        this.animationState = ninjas.SitePanelAnimation.PRESENT;
+                    }
                 },
                 ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION
             );
 
             return true;
+        }
+
+        public reset() : void
+        {
+            this.animationState = ninjas.SitePanelAnimation.HIDDEN;
+            this.sitePanel.removeFromDom();
         }
 
         /** ************************************************************************************************************

@@ -51,6 +51,7 @@
             this.siteTriggers =
             [
                 ninjas.GameObjectFactory.createSiteTrigger( 2000, 2000, 500, 400, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, null ),
+                ninjas.GameObjectFactory.createSiteTrigger( 3480, 1700, 500, 400, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.LEFT,  null ),
 /*
                 ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
                 ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),
@@ -66,7 +67,7 @@
             ];
 
             // shrine 1
-            ninjas.GameObjectBundleFactory.createShrine(    this, 1000,  500, true, true, ninjas.SiteContent.CONTENT_WELCOME      );
+            // ninjas.GameObjectBundleFactory.createShrine(    this, 1000,  500, true, true, ninjas.SiteContent.CONTENT_WELCOME      );
 /*
             // shrine 1 nature
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 75,    5000, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_1 );
@@ -200,11 +201,7 @@
 */
 
             // movables
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 150,  160, ninjas.ImageData.IMAGE_FLASK_1                                   );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 200,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 250,  120, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 4020,  1700, ninjas.ImageData.IMAGE_FLASK_1                                   );
 /*
             ninjas.GameObjectBundleFactory.createMovableRect( this, 900,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 950,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );
@@ -227,8 +224,7 @@
             // solid ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 2, ninjas.Slope.NONE, ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_DARK_GROUND );
             ninjas.GameObjectBundleFactory.createObstacle(    this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
-
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 3280, 1700, 7, 7, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 3280, 1700, 20, 7, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
 
 
 

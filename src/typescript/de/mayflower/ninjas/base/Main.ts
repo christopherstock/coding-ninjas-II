@@ -4,18 +4,17 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Panel left AND right!
     *   TODO Try y-overlapping image for flasks??
-    *   TODO camera X ratio.
-    *   TODO Disable re-jump on plain vertical walls!
+    *   TODO Different bg image for left panel.
+    *   TODO camera X centering ratio.
     *   TODO Add canvas max width.
-    *
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.
     *   TODO Add 'katana strike' action in air.
     *   TODO Add destroyable obstacles.
     *   TODO Much more air friction for parachute.
     *   TODO Add new ninja sprites.
+    *   TODO Panel left AND right!
     *   TODO Debug rects bg + sprite?
     *   TODO Disable Right+Meta interference in browser.
     *   TODO More cool flask images.

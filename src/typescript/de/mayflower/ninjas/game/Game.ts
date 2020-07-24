@@ -132,7 +132,7 @@
             this.level.init( this.engine.matterJsSystem );
 
             // reset panel
-            this.engine.siteSystem.hide();
+            this.engine.siteSystem.reset();
 
             // reset camera
             this.resetCamera();
