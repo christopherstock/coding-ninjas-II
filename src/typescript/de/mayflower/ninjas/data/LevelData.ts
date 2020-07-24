@@ -202,6 +202,7 @@
 
             // movables
             ninjas.GameObjectBundleFactory.createMovableRect( this, 4020,  1700, ninjas.ImageData.IMAGE_FLASK_1                                   );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 4080,  1700, ninjas.ImageData.IMAGE_FLASK_2                                   );
 /*
             ninjas.GameObjectBundleFactory.createMovableRect( this, 900,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 950,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );

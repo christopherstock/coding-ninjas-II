@@ -207,13 +207,7 @@
             // center camera X if desired
             if ( ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X )
             {
-                return (
-                    (
-                        ninjas.Main.game.engine.canvasSystem.getWidth()
-                        // - ninjas.Main.game.level.player.sprite.template.width
-                        - ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT.width
-                    ) / 2
-                );
+                return ( ninjas.Main.game.engine.canvasSystem.getWidth() / 2 );
             }
 
             // target according to looking direction

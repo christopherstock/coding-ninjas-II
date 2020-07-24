@@ -418,7 +418,10 @@
 
             return new ninjas.Player
             (
-                GameObjectFactory.createCharacterDiamondShape( dimensionSprite, ninjas.DebugColor.COLOR_DEBUG_PLAYER ),
+                GameObjectFactory.createCharacterDiamondShape(
+                    dimensionSprite,
+                    ninjas.DebugColor.COLOR_DEBUG_PLAYER
+                ),
                 x,
                 ( yBottom - dimensionSprite.height ),
                 lookingDirection,
@@ -756,7 +759,8 @@
         *   @return The created diamond shape.
         ***************************************************************************************************************/
         private static createCharacterDiamondShape(
-            spriteTemplate:ninjas.SpriteTemplate, debugColor:ninjas.DebugColor
+            spriteTemplate :ninjas.SpriteTemplate,
+            debugColor     :ninjas.DebugColor
         )
         : ninjas.ShapeFreeForm
         {

@@ -4,7 +4,6 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Fix camera centering X.
     *   TODO Draw player on highest Z layer!
     *
     *   TODO Different bg image for left panel.
