@@ -4,7 +4,9 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Try y-overlapping image for flasks??
+    *   TODO Fix camera centering X.
+    *   TODO Draw player on highest Z layer!
+    *
     *   TODO Different bg image for left panel.
     *   TODO camera X centering ratio.
     *   TODO Add canvas max width.
