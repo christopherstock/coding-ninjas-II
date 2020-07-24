@@ -18,6 +18,7 @@
     *   TODO Add canvas max width?
     *   TODO Fix falling/standing-flickering when player lands on flask.
     *   TODO Add canvas upscaling / downscaling?
+    *   TODO Add BotMind.ENEMY, etc.
     *   TODO Add destroyable obstacles.
     *   TODO Add destroyable movables.
     *   TODO Add decoration particle effects on smashing objects / windows etc.

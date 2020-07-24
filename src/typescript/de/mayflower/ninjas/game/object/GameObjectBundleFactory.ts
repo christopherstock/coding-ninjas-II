@@ -590,7 +590,7 @@
         )
         : void
         {
-            const enemy :ninjas.Enemy = ninjas.GameObjectFactory.createEnemy
+            const enemy :ninjas.Bot = ninjas.GameObjectFactory.createEnemy
             (
                 xLeft,
                 yBottom,

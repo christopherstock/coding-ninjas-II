@@ -451,11 +451,11 @@
             walkingTargetRight :number,
             characterSpriteSet :ninjas.CharacterSpriteSet
         )
-        : ninjas.Enemy
+        : ninjas.Bot
         {
             const diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
 
-            return new ninjas.Enemy
+            return new ninjas.Bot
             (
                 GameObjectFactory.createCharacterDiamondShape( diamondSprite, ninjas.DebugColor.COLOR_DEBUG_ENEMY ),
                 x,

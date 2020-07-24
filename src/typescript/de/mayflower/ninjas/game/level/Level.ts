@@ -29,7 +29,7 @@
         /** All movables. */
         public      movables                :ninjas.Movable[]               = [];
         /** All enemies. */
-        public      enemies                 :ninjas.Enemy[]                 = [];
+        public      enemies                 :ninjas.Bot[]                 = [];
         /** The player instance. */
         public      player                  :ninjas.Player                  = null;
         /** All decos in fg. */

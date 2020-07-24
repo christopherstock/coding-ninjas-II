@@ -42,7 +42,7 @@
 
     export * from './game/object/being/Character';
     export * from './game/object/being/CharacterSpriteSet';
-    export * from './game/object/being/Enemy';
+    export * from './game/object/being/Bot';
     export * from './game/object/being/Player';
 
     export * from './game/object/deco/Decoration';
