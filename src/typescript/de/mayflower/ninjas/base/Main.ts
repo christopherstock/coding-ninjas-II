@@ -4,43 +4,49 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Create different ground tilesets.
-    *   TODO Setting for light or dark preloader.
-    *   TODO Panel left AND right!
-    *   TODO Doors that warp.
-    *   TODO Add 'katana strike' action in air.
-    *   TODO Add destroyable obstacles.
-    *   TODO Add 'crouch' action.
-    *   TODO Add 'crouch slide' action.
-    *   TODO Add 'shuriken throw' action.
-    *
-    *   TODO Selectable panel animations.
-    *   TODO Much more air friction for parachute.
-    *   TODO Add new ninja sprites.
-    *   TODO More cool flask images.
+    *   CLEANUP
+    *   =======
+    *   TODO Fix all Code Inspections
     *   TODO Group all deco images into subfolders.
-    *   TODO Add 'slide' action.
-    *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
-    *   TODO Green bubbling water - fix tiles. etc.
+    *   TODO Remove static access on Main.game.
+    *   TODO Improve image sequence handling in ImageData (ALL_IMAGES) by class access?
+    *
+    *   NEW ENGINE FEATURES
+    *   ===================
+    *   TODO Debug Disable Pointer control.
     *   TODO Add canvas max width?
     *   TODO Add canvas upscaling / downscaling?
-    *   TODO Sound effects for ninja girl actions and enemies
-    *   TODO Particle fx smashed crates, startup window etc.
-    *   TODO Enum 'wearpon' with according damage values.
-    *   TODO Try different physics demo elements on the player!
-    *   TODO Remove static access on Main.game.
-    *   TODO Bots that help you and talk to you.
-    *   TODO Player shooting or throwing objects.
-    *   TODO Debug Disable Pointer control.
-    *   TODO Improve image sequence handling in ImageData?
-    *   TODO Replace obsolete wow lib with Ant Design RC-Anim Lib?
+    *   TODO Add destroyable obstacles.
     *   TODO Add destroyable movables.
-    *   TODO Add pickable items and item sprites.
     *   TODO Add decoration particle effects on smashing objects / windows etc.
+    *   TODO Panel left AND right?
+    *   TODO Selectable panel animations.
+    *   TODO Setting for light or dark preloader.
+    *   TODO Enum 'wearpon' with according damage values.
+    *   TODO Try different elements from the Matter.js "physics demos" to face the player?
+    *   TODO Add Camera joyride on level startup?
     *   TODO Create HUD ( for items etc )?
     *   TODO create class HUD with own paint-method.
+    *
+    *   NEW GAME FEATURES
+    *   =================
+    *   TODO Green bubbling water - fix tiles. etc.
+    *   TODO Create different ground tilesets.
+    *   TODO Doors that warp.
+    *   TODO Add 'katana strike' action in air.
+    *   TODO More cool flask images.
+    *   TODO Particle fx smashed crates, startup window etc.
+    *   TODO Add new ninja sprites.
+    *   TODO Add 'crouch' action.
+    *   TODO Add 'crouch slide' action.
+    *   TODO Much more air friction for parachute.
+    *   TODO Add 'shuriken throw' action.
+    *   TODO Bots that help you and talk to you.
+    *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
+    *   TODO Sound effects for ninja girl actions and enemies
+    *   TODO Player shooting or throwing objects.
+    *   TODO Collectables
     *   TODO Create item pickup HUD effect?
-    *   TODO Add Camera joyride on level startup?
     *******************************************************************************************************************/
     export class Main
     {
