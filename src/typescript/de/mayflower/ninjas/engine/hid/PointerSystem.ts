@@ -22,17 +22,20 @@
 
             const canvas:HTMLCanvasElement = ninjas.Main.game.engine.canvasSystem.getCanvas();
 
-            canvas.addEventListener( 'onpointermove', ( event:Event ) => { this.onPointerMove( event ); }, false );
-            canvas.addEventListener( 'onpointerdown', ( event:Event ) => { this.onPointerDown( event ); }, false );
-            window.addEventListener( 'onpointerup',   ( event:Event ) => { this.onPointerUp(   event ); }, false );
+            // eslint-disable-next-line max-len
+            canvas.addEventListener( 'onpointermove', ( event:Event ) => { this.onPointerMove( event as PointerEvent ); }, false );
+            // eslint-disable-next-line max-len
+            canvas.addEventListener( 'onpointerdown', ( event:Event ) => { this.onPointerDown( event as PointerEvent ); }, false );
+            // eslint-disable-next-line max-len
+            window.addEventListener( 'onpointerup',   ( event:Event ) => { this.onPointerUp(   event as PointerEvent ); }, false );
 
-            canvas.addEventListener( 'pointermove', ( event:Event ) => { this.onPointerMove( event ); }, false );
-            canvas.addEventListener( 'pointerdown', ( event:Event ) => { this.onPointerDown( event ); }, false );
-            window.addEventListener( 'pointerup',   ( event:Event ) => { this.onPointerUp(   event ); }, false );
+            canvas.addEventListener( 'pointermove', ( event:PointerEvent ) => { this.onPointerMove( event ); }, false );
+            canvas.addEventListener( 'pointerdown', ( event:PointerEvent ) => { this.onPointerDown( event ); }, false );
+            window.addEventListener( 'pointerup',   ( event:PointerEvent ) => { this.onPointerUp(   event ); }, false );
 
-            canvas.addEventListener( 'touchmove',   ( event:Event ) => { this.onTouchMove( event ); }, false );
-            canvas.addEventListener( 'touchstart',  ( event:Event ) => { this.onTouchDown( event ); }, false );
-            window.addEventListener( 'touchend',    ( event:Event ) => { this.onTouchUp(   event ); }, false );
+            canvas.addEventListener( 'touchmove',   ( event:TouchEvent ) => { this.onTouchMove( event ); }, false );
+            canvas.addEventListener( 'touchstart',  ( event:TouchEvent ) => { this.onTouchDown( event ); }, false );
+            window.addEventListener( 'touchend',    ( event:TouchEvent ) => { this.onTouchUp(   event ); }, false );
         }
 
         /** ************************************************************************************************************
@@ -40,7 +43,7 @@
         *
         *   @param event The system's propagated pointer event.
         ***************************************************************************************************************/
-        public onPointerMove( event:Event ) : void
+        public onPointerMove( event:PointerEvent ) : void
         {
             ninjas.Debug.pointer.log( 'pointer move' );
 
@@ -52,7 +55,7 @@
         *
         *   @param event The system's propagated pointer event.
         ***************************************************************************************************************/
-        public onPointerDown( event:any ) : void
+        public onPointerDown( event:PointerEvent ) : void
         {
             ninjas.Debug.pointer.log( 'pointer down' );
 
@@ -82,7 +85,7 @@
         *
         *   @param event The system's propagated pointer event.
         ***************************************************************************************************************/
-        public onPointerUp( event:Event ) : void
+        public onPointerUp( event:PointerEvent ) : void
         {
             ninjas.Debug.pointer.log( 'pointer up' );
 
@@ -97,7 +100,7 @@
         *
         *   @param event The system's propagated touch event.
         ***************************************************************************************************************/
-        public onTouchMove( event:Event ) : void
+        public onTouchMove( event:TouchEvent ) : void
         {
             ninjas.Debug.pointer.log( 'touch move' );
 
@@ -109,7 +112,7 @@
         *
         *   @param event The system's propagated touch  event.
         ***************************************************************************************************************/
-        public onTouchDown( event:any ) : void
+        public onTouchDown( event:TouchEvent ) : void
         {
             ninjas.Debug.pointer.log( 'touch down' );
 
@@ -139,7 +142,7 @@
         *
         *   @param event The system's propagated touch  event.
         ***************************************************************************************************************/
-        public onTouchUp( event:Event ) : void
+        public onTouchUp( event:TouchEvent ) : void
         {
             ninjas.Debug.pointer.log( 'touch  up' );
 

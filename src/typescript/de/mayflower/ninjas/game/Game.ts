@@ -64,7 +64,7 @@
             window.requestAnimationFrame(
                 () => { this.tickGame(); }
             );
-        };
+        }
 
         /** ************************************************************************************************************
         *   Paints all overlays after Matter.js completed rendering the scene.

@@ -25,6 +25,7 @@
         ***************************************************************************************************************/
         protected createGameObjects() : void
         {
+            // TODO unify - don't return!
             this.parallaxBgs =
             [
 /*
@@ -40,6 +41,7 @@
             ninjas.GameObjectBundleFactory.createEnemy( this, 12300, 4200, ninjas.CharacterLookingDirection.RIGHT, 12300, 12800 );
             ninjas.GameObjectBundleFactory.createEnemy( this, 11250, 5100, ninjas.CharacterLookingDirection.RIGHT, 11250, 12000 );
 */
+            // TODO unify - don't return the player!
             this.player = ninjas.GameObjectFactory.createPlayer
             (
                 this.playerStartX,
@@ -48,6 +50,7 @@
                 this.playerInitialFloat
             );
 
+            // TODO unify - don't return the siteTriggers!
             this.siteTriggers =
             [
                 ninjas.GameObjectFactory.createSiteTrigger( 2000, 2000, 500, 400, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, null ),
@@ -62,6 +65,7 @@
 */
             ];
 
+            // TODO unify - don't return!
             this.parallaxFgs =
             [
             ];

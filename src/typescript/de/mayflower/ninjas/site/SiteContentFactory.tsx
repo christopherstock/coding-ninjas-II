@@ -7,6 +7,7 @@
     import { CarouselEffect   } from 'antd/lib/carousel';
     import { FloatProperty    } from 'csstype';
     import { RadioChangeEvent } from 'antd/es/radio';
+    import { ProgressType     } from 'antd/es/progress/progress';
 
     /** ****************************************************************************************************************
     *   Creates content components for the factory.
@@ -22,10 +23,12 @@
         ***************************************************************************************************************/
         public static createStepIndicator( content:ninjas.SiteContent ) : JSX.Element
         {
-            const index :number = ninjas.Main.game.engine.siteSystem.contentSystem.discoveredContents.indexOf(
+            const index :number = 2;
+/*
+            ninjas.Main.game.engine.siteSystem.contentSystem.discoveredContents.indexOf(
                 content
             );
-
+*/
             return <antd.Steps size="small" current={ index } status="process">
                 <antd.Steps.Step title="" description="" />
                 <antd.Steps.Step title="" description="" />
@@ -141,7 +144,7 @@
         *
         *   @return The created JSX element.
         ***************************************************************************************************************/
-        public static createProgress( type:any, percent:number ) : JSX.Element
+        public static createProgress( type:ProgressType, percent:number ) : JSX.Element
         {
             return <antd.Progress type={ type } percent={ percent } />;
         }
@@ -168,7 +171,11 @@
         ***************************************************************************************************************/
         public static createAvatar( src:string, icon:string ) : JSX.Element
         {
-            return <antd.Avatar src={ src } style={ { backgroundColor: ninjas.SettingEngine.COLOR_PRIMARY_CSS } } icon={ icon } />;
+            return <antd.Avatar
+                src={ src }
+                style={ { backgroundColor: ninjas.SettingEngine.COLOR_PRIMARY_CSS } }
+                icon={ icon }
+            />;
         }
 
         /** ************************************************************************************************************
@@ -244,7 +251,7 @@
             toolTipTitle     :string,
             buttonType       :ButtonType,
             icon             :string,
-            onClick          :any,
+            onClick          :React.MouseEventHandler<HTMLElement>,
             caption          :string
         )
         : JSX.Element

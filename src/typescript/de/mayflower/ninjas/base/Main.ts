@@ -6,15 +6,17 @@
     *
     *   CLEANUP
     *   =======
-    *   TODO Fix all Code Inspections
+    *   TODO Fix all TODOs outside this class.
     *   TODO Group all deco images into subfolders.
     *   TODO Remove static access on Main.game.
     *   TODO Improve image sequence handling in ImageData (ALL_IMAGES) by class access?
+    *   TODO AliveState for character (alive, dying, dead)
     *
     *   NEW ENGINE FEATURES
     *   ===================
     *   TODO Debug Disable Pointer control.
     *   TODO Add canvas max width?
+    *   TODO Fix falling/standing-flickering when player lands on flask.
     *   TODO Add canvas upscaling / downscaling?
     *   TODO Add destroyable obstacles.
     *   TODO Add destroyable movables.

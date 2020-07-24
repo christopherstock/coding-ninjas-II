@@ -22,13 +22,15 @@
     *******************************************************************************************************************/
     export class SiteSystem
     {
-        /** Flags if the panel is shown for the 1st time. */
-        private                 firstShow                   :boolean                        = true;
-
         /** The content system. */
-        public                  contentSystem               :ninjas.SiteContentSystem       = null;
+        private     readonly    contentSystem               :ninjas.SiteContentSystem       = null;
+        /** The active site panel. */
+        private     readonly    sitePanel                   :ninjas.SitePanel               = null;
+
         /** The current animation of the site panel. */
         private                 animationState              :ninjas.SitePanelAnimation      = SitePanelAnimation.HIDDEN;
+        /** Flags if the panel is shown for the 1st time. */
+        private                 firstShow                   :boolean                        = true;
 
         /** The current width of the panel. */
         private                 panelWidth                  :number                         = 0;
@@ -45,9 +47,6 @@
 
         /** The WOW animation system. */
         private                 wowSystem                   :any                            = null;
-
-        /** The active site panel. */
-        private     readonly    sitePanel                   :ninjas.SitePanel               = null;
 
         /** ************************************************************************************************************
         *   Creates a new site system.
@@ -136,6 +135,9 @@
             return true;
         }
 
+        /** ************************************************************************************************************
+        *   Immediately hides and removes the panel, no matter which state it currently is in.
+        ***************************************************************************************************************/
         public reset() : void
         {
             this.animationState = ninjas.SitePanelAnimation.HIDDEN;
@@ -232,12 +234,18 @@
                 {
                     case ninjas.CharacterLookingDirection.LEFT:
                     {
-                        return ( ninjas.Main.game.engine.canvasSystem.getWidth() * ( 1.0 - ninjas.SettingEngine.CAMERA_RATIO_X ) );
+                        return (
+                            ninjas.Main.game.engine.canvasSystem.getWidth()
+                            * ( 1.0 - ninjas.SettingEngine.CAMERA_RATIO_X )
+                        );
                     }
 
                     case ninjas.CharacterLookingDirection.RIGHT:
                     {
-                        return ( ninjas.Main.game.engine.canvasSystem.getWidth() * ninjas.SettingEngine.CAMERA_RATIO_X );
+                        return (
+                            ninjas.Main.game.engine.canvasSystem.getWidth()
+                            * ninjas.SettingEngine.CAMERA_RATIO_X
+                        );
                     }
                 }
 

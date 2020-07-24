@@ -41,8 +41,9 @@
                             <div>
                                 { ninjas.SiteContentFactory.createImageFloating(
                                     'right',
-                                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_NODE_JS )
-                                    .src ) }
+                                    ninjas.Main.game.engine.imageSystem.getImage(
+                                        ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_NODE_JS
+                                    ).src ) }
                                 { ninjas.SiteContentFactory.createParagraph(
                                     'Node.js is an open-source, cross-platform JavaScript run-time environment for '
                                     + 'executing JavaScript code server-side. Historically, JavaScript was used '
@@ -74,8 +75,9 @@
                             <div>
                                 { ninjas.SiteContentFactory.createImageFloating(
                                     'right',
-                                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_WEBPACK )
-                                    .src ) }
+                                    ninjas.Main.game.engine.imageSystem.getImage(
+                                        ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_WEBPACK
+                                    ).src ) }
                                 { ninjas.SiteContentFactory.createParagraph( 'Webpack is an open-source JavaScript '
                                     + 'module bundler. Webpack takes modules with dependencies and generates static '
                                     + 'assets representing those modules. It takes the dependencies and generates a '

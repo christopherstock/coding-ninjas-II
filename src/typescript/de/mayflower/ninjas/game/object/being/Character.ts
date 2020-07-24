@@ -34,8 +34,6 @@
         /** Flags if this character is requesting gliding while ascending etc. */
         protected                       glidingRequest                      :boolean                            = false;
 
-        // TODO to AliveState
-
         /** Flags if this character is dying but not already dead. */
         protected                       isDying                             :boolean                            = false;
         /** Flags if this character is dead. */

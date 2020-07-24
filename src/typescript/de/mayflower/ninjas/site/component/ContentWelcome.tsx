@@ -25,8 +25,14 @@
                 { ninjas.SiteContentFactory.createSpacerVertical() }
 
                 <a target='_blank' title='Würzburg Web Week' href='https://wueww.de/'>
-                    { ninjas.SiteContentFactory.createImageFloating( 'right',
-                        ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_WEBWEEK ).src ) }
+                    {
+                        ninjas.SiteContentFactory.createImageFloating(
+                            'right',
+                            ninjas.Main.game.engine.imageSystem.getImage(
+                                ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_WEBWEEK
+                            ).src
+                        )
+                    }
                 </a>
 
                 {

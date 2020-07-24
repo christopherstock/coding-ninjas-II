@@ -111,7 +111,7 @@
             this.preloader.setLoadingPercentage( 5 );
 
             this.initImageSystem();
-        };
+        }
 
         /** ************************************************************************************************************
         *   Inits the 2D engine.
@@ -143,7 +143,7 @@
                 () => { this.onSoundsLoaded(); }
             );
             this.soundSystem.loadSounds();
-        };
+        }
 
         /** ************************************************************************************************************
         *   Being invoked when all sounds are loaded.
@@ -181,7 +181,7 @@
                 () => { this.game.start(); },
                 ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
             );
-        };
+        }
 
         /** ************************************************************************************************************
         *   Inits the window blur handler.
