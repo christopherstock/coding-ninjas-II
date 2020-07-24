@@ -204,7 +204,7 @@
         *   Creates an rectangular obstacle with a specified sprite.
         *
         *   @param xLeft           Anchor for left X.
-        *   @param yTop            Anchor for top Y.
+        *   @param yBottom         Anchor for top Y.
         *   @param spriteTemplate  The sprite template to use for this obstacle.
         *   @param angle           The initial rotation.
         *   @param jumpPassThrough Specifies if the player can jump through this obstacle.
@@ -217,13 +217,13 @@
         public static createObstacleSpriteful
         (
             xLeft           :number,
-            yTop            :number,
+            yBottom         :number,
             spriteTemplate  :ninjas.SpriteTemplate,
-            angle           :number,
-            jumpPassThrough :ninjas.JumpPassThrough,
-            staticShape     :ninjas.StaticShape,
-            density         :ninjas.BodyDensity,
-            restitution     :ninjas.BodyRestitution
+            angle           :number = 0,
+            jumpPassThrough :ninjas.JumpPassThrough = ninjas.JumpPassThrough.NO,
+            staticShape     :ninjas.StaticShape = ninjas.StaticShape.YES,
+            density         :ninjas.BodyDensity = ninjas.BodyDensity.DEFAULT,
+            restitution     :ninjas.BodyRestitution = ninjas.BodyRestitution.DEFAULT
         )
         : ninjas.Obstacle
         {
@@ -241,7 +241,7 @@
                     restitution
                 ),
                 xLeft,
-                yTop,
+                ( yBottom - spriteTemplate.height ),
                 spriteTemplate,
                 jumpPassThrough
             );

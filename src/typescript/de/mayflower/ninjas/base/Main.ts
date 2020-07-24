@@ -7,6 +7,8 @@
     *   TODO Fix flickering for side-panel antd-comps before 1st popup (preload? hide and show?).
     *   TODO Panel left AND right!
     *   TODO Try y-overlapping image for flasks??
+    *   TODO camera X ratio.
+    *   TODO Disable re-jump on plain vertical walls!
     *
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.

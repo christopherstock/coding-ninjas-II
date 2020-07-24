@@ -9,7 +9,7 @@
     export class LevelData extends ninjas.Level
     {
         /** Player start position X. */
-        public      playerStartX            :number                     = 2000;
+        public      playerStartX            :number                     = 2200;
         /** Player start position Y. */
         public      playerStartY            :number                     = 2000;
         /** Player starts with an open parachute. */
@@ -229,7 +229,14 @@
             ninjas.GameObjectBundleFactory.createSolidGround( this, 1280, 500, 15, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3840, 500, 15, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
 
+
+
+
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 2, ninjas.Slope.NONE, ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_DARK_GROUND );
+            ninjas.GameObjectBundleFactory.createObstacle(    this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
+
+
+
 
 /*
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );

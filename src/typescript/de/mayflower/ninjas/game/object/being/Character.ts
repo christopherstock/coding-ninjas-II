@@ -503,16 +503,18 @@
                 bodiesToCheck.push( gameObject.shape.body );
             }
 
+            const MARGIN_X :number = 10;
+
             // check colliding bodies
             this.collidesBottom = matter.Query.ray
             (
                 bodiesToCheck,
                 matter.Vector.create(
-                    this.shape.body.position.x - ( this.shape.getWidth() / 2 ),
+                    this.shape.body.position.x - ( this.shape.getWidth() / 2 ) + MARGIN_X,
                     this.shape.body.position.y + ( this.shape.getHeight() / 2 )
                 ),
                 matter.Vector.create(
-                    this.shape.body.position.x + ( this.shape.getWidth() / 2 ),
+                    this.shape.body.position.x + ( this.shape.getWidth() / 2 ) - MARGIN_X,
                     this.shape.body.position.y + ( this.shape.getHeight() / 2 )
                 )
             ).length > 0;

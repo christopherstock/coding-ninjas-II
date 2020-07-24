@@ -30,7 +30,7 @@
             window.setTimeout
             (
                 () => { this.engine.launch(); },
-                ( ninjas.SettingDebug.DEBUG_NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
+                ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
             );
         }
 

@@ -49,9 +49,9 @@
                 render:
                 {
                     fillStyle:   (
-                        ninjas.SettingDebug.DEBUG_BG_FOR_MATTER_BODY ? debugColor : ninjas.DebugColor.COLOR_TRANSPARENT ),
+                        ninjas.SettingDebug.BG_FOR_MATTER_BODY ? debugColor : ninjas.DebugColor.COLOR_TRANSPARENT ),
                     strokeStyle: (
-                        ninjas.SettingDebug.DEBUG_BG_FOR_MATTER_BODY ? debugColor : ninjas.DebugColor.COLOR_TRANSPARENT ),
+                        ninjas.SettingDebug.BG_FOR_MATTER_BODY ? debugColor : ninjas.DebugColor.COLOR_TRANSPARENT ),
                     opacity:     1.0,
                     lineWidth:   1.0,
                 },

@@ -540,6 +540,34 @@
         }
 
         /** ************************************************************************************************************
+        *   Creates an obstacle from a single image.
+        *
+        *   @param level    The level to add the wall to.
+        *   @param xLeft    Anchor for left X.
+        *   @param yBottom  Anchor for bottom Y.
+        *   @param imageId  The id of the image.
+        ***************************************************************************************************************/
+        public static createObstacle
+        (
+            level   :ninjas.Level,
+            xLeft   :number,
+            yBottom :number,
+            imageId :string
+        )
+        : void
+        {
+            const spriteTemplate :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+
+            const obstacle :ninjas.Obstacle = ninjas.GameObjectFactory.createObstacleSpriteful(
+                xLeft,
+                yBottom,
+                spriteTemplate
+            );
+
+            level.obstacles.push( obstacle );
+        }
+
+        /** ************************************************************************************************************
         *   Creates an enemy and adds it to the level stack.
         *
         *   @param level              The level to add the enemy to.
