@@ -61,13 +61,13 @@
             {
                 matterJsSystem.addToWorld( siteTrigger.shape.body );
             }
-            for ( const decoBg of this.decosBg )
-            {
-                matterJsSystem.addToWorld( decoBg.shape.body );
-            }
             for ( const obstacle of this.obstacles )
             {
                 matterJsSystem.addToWorld( obstacle.shape.body );
+            }
+            for ( const decoBg of this.decosBg )
+            {
+                matterJsSystem.addToWorld( decoBg.shape.body );
             }
             for ( const movable of this.movables )
             {
@@ -78,6 +78,9 @@
                 matterJsSystem.addToWorld( enemy.shape.body );
             }
 
+            // player last - highest Z layer
+            matterJsSystem.addToWorld( this.player.shape.body );
+
             for ( const gameObject of this.decosFg )
             {
                 matterJsSystem.addToWorld( gameObject.shape.body );
@@ -86,9 +89,6 @@
             {
                 matterJsSystem.addToWorld( gameObject.shape.body );
             }
-
-            // player last - highest Z layer
-            matterJsSystem.addToWorld( this.player.shape.body );
         }
 
         /** ************************************************************************************************************
