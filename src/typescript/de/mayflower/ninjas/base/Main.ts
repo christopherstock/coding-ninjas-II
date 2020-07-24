@@ -4,18 +4,18 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Draw player on highest Z layer!
-    *
     *   TODO Different bg image for left panel.
+    *
     *   TODO camera X centering ratio.
     *   TODO Add canvas max width.
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.
+    *   TODO Panel left AND right!
+    *   TODO Doors that warp.
     *   TODO Add 'katana strike' action in air.
     *   TODO Add destroyable obstacles.
     *   TODO Much more air friction for parachute.
     *   TODO Add new ninja sprites.
-    *   TODO Panel left AND right!
     *   TODO Debug rects bg + sprite?
     *   TODO Disable Right+Meta interference in browser.
     *   TODO More cool flask images.

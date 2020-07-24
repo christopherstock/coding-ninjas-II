@@ -101,6 +101,23 @@
                 this.sitePanel.outerAbsoluteContainer.style.visibility = 'visible';
             }
 
+            if ( position === ninjas.SitePanelPosition.RIGHT )
+            {
+                this.sitePanel.outerAbsoluteContainer.style.backgroundImage = (
+                    'url( '
+                    + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_RIGHT ).src
+                    + ')'
+                );
+            }
+            else
+            {
+                this.sitePanel.outerAbsoluteContainer.style.backgroundImage = (
+                    'url( '
+                    + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_LEFT ).src
+                    + ')'
+                );
+            }
+
             this.sitePanel.animateIn();
             this.sitePanel.addToDom();
 

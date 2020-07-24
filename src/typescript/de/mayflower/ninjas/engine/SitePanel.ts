@@ -17,7 +17,7 @@
     *******************************************************************************************************************/
     export class SitePanel
     {
-        /** The outer container div. */
+        /** The outer container div. TODO private! */
         public                  outerAbsoluteContainer          :HTMLDivElement             = null;
         /** The inner container div. */
         private                 innerRelativeContainer          :HTMLDivElement             = null;
@@ -193,12 +193,6 @@
         private createOuterAbsoluteContainer() : void
         {
             this.outerAbsoluteContainer = document.createElement( 'div' );
-
-            this.outerAbsoluteContainer.style.backgroundImage = (
-                'url( '
-                + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG ).src
-                + ')'
-            );
 
             this.outerAbsoluteContainer.setAttribute(
                 'data-wow-duration',

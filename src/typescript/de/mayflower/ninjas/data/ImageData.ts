@@ -473,8 +473,10 @@
 
         /** Site image 'logo'. */
         public      static      IMAGE_SITE_PANEL_LOGO                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logo.png';
-        /** Site image 'site panel bg'. */
-        public      static      IMAGE_SITE_PANEL_BG                         :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'sitePanelBg.png';
+        /** Site image 'site panel bg left'. */
+        public      static      IMAGE_SITE_PANEL_BG_LEFT                    :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
+        /** Site image 'site panel bg right'. */
+        public      static      IMAGE_SITE_PANEL_BG_RIGHT                   :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight.png';
         /** Site image 'carousel desktop'. */
         public      static      IMAGE_SITE_PANEL_CAROUSEL_DESKTOP           :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
         /** Site image 'carousel mobile'. */
@@ -758,7 +760,8 @@
             ImageData.IMAGE_BG,
 
             ImageData.IMAGE_SITE_PANEL_LOGO,
-            ImageData.IMAGE_SITE_PANEL_BG,
+            ImageData.IMAGE_SITE_PANEL_BG_LEFT,
+            ImageData.IMAGE_SITE_PANEL_BG_RIGHT,
             ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP,
             ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE,
             ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS,
