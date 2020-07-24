@@ -223,23 +223,21 @@
         {
             // target according to looking direction
             if (
-                this.animationState === ninjas.SitePanelAnimation.HIDDEN
+                ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X
+                || this.animationState === ninjas.SitePanelAnimation.HIDDEN
                 || this.animationState === ninjas.SitePanelAnimation.HIDING
             ) {
                 // center camera X if desired
-                if ( ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X )
+                switch ( ninjas.Main.game.level.player.lookingDirection )
                 {
-                    switch ( ninjas.Main.game.level.player.lookingDirection )
+                    case ninjas.CharacterLookingDirection.LEFT:
                     {
-                        case ninjas.CharacterLookingDirection.RIGHT:
-                        {
-                            return ( ninjas.Main.game.engine.canvasSystem.getWidth() * ninjas.SettingEngine.CAMERA_RATIO_X );
-                        }
+                        return ( ninjas.Main.game.engine.canvasSystem.getWidth() * ( 1.0 - ninjas.SettingEngine.CAMERA_RATIO_X ) );
+                    }
 
-                        case ninjas.CharacterLookingDirection.LEFT:
-                        {
-                            return ( ninjas.Main.game.engine.canvasSystem.getWidth() * ( 1.0 - ninjas.SettingEngine.CAMERA_RATIO_X ) );
-                        }
+                    case ninjas.CharacterLookingDirection.RIGHT:
+                    {
+                        return ( ninjas.Main.game.engine.canvasSystem.getWidth() * ninjas.SettingEngine.CAMERA_RATIO_X );
                     }
                 }
 

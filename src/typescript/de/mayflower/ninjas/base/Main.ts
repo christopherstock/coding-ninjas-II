@@ -4,9 +4,7 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO camera X centering ratio.
-    *
-    *   TODO Add canvas max width.
+    *   TODO Disable Right+Meta interference in browser.
     *
     *   TODO Create different ground tilesets.
     *   TODO Setting for light or dark preloader.
@@ -14,16 +12,20 @@
     *   TODO Doors that warp.
     *   TODO Add 'katana strike' action in air.
     *   TODO Add destroyable obstacles.
+    *   TODO Add 'crouch' action.
+    *   TODO Add 'crouch slide' action.
+    *   TODO Add 'shuriken throw' action.
+    *
     *   TODO Selectable panel animations.
     *   TODO Much more air friction for parachute.
     *   TODO Add new ninja sprites.
-    *   TODO Debug rects bg + sprite?
-    *   TODO Disable Right+Meta interference in browser.
     *   TODO More cool flask images.
     *   TODO Group all deco images into subfolders.
     *   TODO Add 'slide' action.
     *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
     *   TODO Green bubbling water - fix tiles. etc.
+    *   TODO Add canvas max width?
+    *   TODO Add canvas upscaling / downscaling?
     *   TODO Sound effects for ninja girl actions and enemies
     *   TODO Particle fx smashed crates, startup window etc.
     *   TODO Enum 'wearpon' with according damage values.
