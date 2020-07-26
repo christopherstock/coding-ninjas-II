@@ -17,8 +17,8 @@
     *******************************************************************************************************************/
     export class SitePanel
     {
-        /** The outer container div. TODO private! */
-        public                  outerAbsoluteContainer          :HTMLDivElement             = null;
+        /** The outer container div. */
+        private                 outerAbsoluteContainer          :HTMLDivElement             = null;
         /** The inner container div. */
         private                 innerRelativeContainer          :HTMLDivElement             = null;
 
@@ -43,6 +43,26 @@
         public setPosition( position:ninjas.SitePanelPosition ) : void
         {
             this.position = position;
+        }
+
+        /** ************************************************************************************************************
+        *   Sets the visibility of the panel.
+        *
+        *   @param visible Flags if the panel shall be visible.
+        ***************************************************************************************************************/
+        public setVisible( visible:boolean ) : void
+        {
+            this.outerAbsoluteContainer.style.visibility = ( visible ? 'visible' : 'hidden' );
+        }
+
+        /** ************************************************************************************************************
+        *   Sets the background image for the panel.
+        *
+        *   @param src The source of the background image to set.
+        ***************************************************************************************************************/
+        public setPanelBgImage( src:string ) : void
+        {
+            this.outerAbsoluteContainer.style.backgroundImage = ( 'url( ' + src + ')' );
         }
 
         /** ************************************************************************************************************

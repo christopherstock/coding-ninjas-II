@@ -92,28 +92,24 @@
                 this.firstShow = false;
 
                 // set visibility to 'hidden' fixes unanimated flickering the panel on 1st creation!
-                this.sitePanel.outerAbsoluteContainer.style.visibility = 'hidden';
+                this.sitePanel.setVisible( false );
             }
             else
             {
                 // set visibility to 'visible' fixes unanimated flickering the panel on 1st creation!
-                this.sitePanel.outerAbsoluteContainer.style.visibility = 'visible';
+                this.sitePanel.setVisible( true );
             }
 
             if ( position === ninjas.SitePanelPosition.RIGHT )
             {
-                this.sitePanel.outerAbsoluteContainer.style.backgroundImage = (
-                    'url( '
-                    + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_RIGHT ).src
-                    + ')'
+                this.sitePanel.setPanelBgImage(
+                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_RIGHT ).src
                 );
             }
             else
             {
-                this.sitePanel.outerAbsoluteContainer.style.backgroundImage = (
-                    'url( '
-                    + ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_LEFT ).src
-                    + ')'
+                this.sitePanel.setPanelBgImage(
+                    ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_LEFT ).src
                 );
             }
 

@@ -11,6 +11,7 @@
     *   TODO Remove static access on Main.game.
     *   TODO Improve image sequence handling in ImageData (ALL_IMAGES) by class access?
     *   TODO AliveState for character (alive, dying, dead)
+    *   TODO React Components to React Hooks.
     *
     *   NEW ENGINE FEATURES
     *   ===================
