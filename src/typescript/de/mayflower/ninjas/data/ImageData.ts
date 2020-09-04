@@ -419,54 +419,75 @@
         /** Image tile 'acid1 center'. */
         public      static      IMAGE_ACID1_CENTER                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'acid1/center.png';
 
-        /** Image tile 'solid left'. */
+        /** Image tile 'ground dark solid left'. */
         public      static      IMAGE_GROUND_DARK_SOLID_LEFT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidLeft.png';
-        /** Image tile 'solid right'. */
+        /** Image tile 'ground dark solid right'. */
         public      static      IMAGE_GROUND_DARK_SOLID_RIGHT                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidRight.png';
-        /** Image tile 'solid top'. */
+        /** Image tile 'ground dark solid top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_TOP                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidTop.png';
-        /** Image tile 'solid bottom'. */
+        /** Image tile 'ground dark solid bottom'. */
         public      static      IMAGE_GROUND_DARK_SOLID_BOTTOM                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidBottom.png';
-        /** Image tile 'solid left top'. */
+        /** Image tile 'ground dark solid left top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_LEFT_TOP                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidLeftTop.png';
-        /** Image tile 'solid right top'. */
+        /** Image tile 'ground dark solid right top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_RIGHT_TOP               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidRightTop.png';
-        /** Image tile 'solid left bottom'. */
+        /** Image tile 'ground dark solid left bottom'. */
         public      static      IMAGE_GROUND_DARK_SOLID_LEFT_BOTTOM             :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidLeftBottom.png';
-        /** Image tile 'solid right bottom'. */
+        /** Image tile 'ground dark solid right bottom'. */
         public      static      IMAGE_GROUND_DARK_SOLID_RIGHT_BOTTOM            :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidRightBottom.png';
-        /** Image tile 'solid center'. */
+        /** Image tile 'ground dark solid center'. */
         public      static      IMAGE_GROUND_DARK_SOLID_CENTER                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidCenter.png';
-        /** Image tile 'solid ascending top'. */
+        /** Image tile 'ground dark solid ascending top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_ASCENDING_TOP           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidAscendingTop.png';
-        /** Image tile 'solid descending top'. */
+        /** Image tile 'ground dark solid descending top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_DESCENDING_TOP          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidDescendingTop.png';
-        /** Image tile 'solid ascending left top'. */
+        /** Image tile 'ground dark solid ascending left top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_ASCENDING_LEFT_TOP      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidAscendingLeftTop.png';
-        /** Image tile 'solid descending left top'. */
+        /** Image tile 'ground dark solid descending left top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_DESCENDING_LEFT_TOP     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidDescendingLeftTop.png';
-        /** Image tile 'solid ascending right top'. */
+        /** Image tile 'ground dark solid ascending right top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_ASCENDING_RIGHT_TOP     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidAscendingRightTop.png';
-        /** Image tile 'solid descending right top'. */
+        /** Image tile 'ground dark solid descending right top'. */
         public      static      IMAGE_GROUND_DARK_SOLID_DESCENDING_RIGHT_TOP    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidDescendingRightTop.png';
-        /** Image tile 'flying left'. */
+        /** Image tile 'ground dark flying left'. */
         public      static      IMAGE_GROUND_DARK_FLYING_LEFT                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingLeft.png';
-        /** Image tile 'flying center'. */
+        /** Image tile 'ground dark flying center'. */
         public      static      IMAGE_GROUND_DARK_FLYING_CENTER                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingCenter.png';
-        /** Image tile 'flying right'. */
+        /** Image tile 'ground dark flying right'. */
         public      static      IMAGE_GROUND_DARK_FLYING_RIGHT                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingRight.png';
-        /** Image tile 'flying ascending left'. */
+        /** Image tile 'ground dark flying ascending left'. */
         public      static      IMAGE_GROUND_DARK_FLYING_ASCENDING_LEFT         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingAscendingLeft.png';
-        /** Image tile 'flying ascending center'. */
+        /** Image tile 'ground dark flying ascending center'. */
         public      static      IMAGE_GROUND_DARK_FLYING_ASCENDING_CENTER       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingAscendingCenter.png';
-        /** Image tile 'flying ascending right'. */
+        /** Image tile 'ground dark flying ascending right'. */
         public      static      IMAGE_GROUND_DARK_FLYING_ASCENDING_RIGHT        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingAscendingRight.png';
-        /** Image tile 'flying descending left'. */
+        /** Image tile 'ground dark flying descending left'. */
         public      static      IMAGE_GROUND_DARK_FLYING_DESCENDING_LEFT        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingDescendingLeft.png';
-        /** Image tile 'flying descending center'. */
+        /** Image tile 'ground dark flying descending center'. */
         public      static      IMAGE_GROUND_DARK_FLYING_DESCENDING_CENTER      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingDescendingCenter.png';
-        /** Image tile 'flying descending right'. */
+        /** Image tile 'ground dark flying descending right'. */
         public      static      IMAGE_GROUND_DARK_FLYING_DESCENDING_RIGHT       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'flyingDescendingRight.png';
+
+        /** Image tile 'ground snow solid top'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_TOP                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidTop.png';
+        /** Image tile 'ground snow solid left top'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_LEFT_TOP                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidLeftTop.png';
+        /** Image tile 'ground snow solid right top'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_RIGHT_TOP               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidRightTop.png';
+        /** Image tile 'ground snow solid center'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_CENTER                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidCenter.png';
+        /** Image tile 'ground snow solid bottom'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_BOTTOM                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidBottom.png';
+        /** Image tile 'ground snow solid left bottom'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_LEFT_BOTTOM             :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidLeftBottom.png';
+        /** Image tile 'ground snow solid right bottom'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_RIGHT_BOTTOM            :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidRightBottom.png';
+        /** Image tile 'ground snow solid left'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_LEFT                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidLeft.png';
+        /** Image tile 'ground snow solid right'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_RIGHT                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidRight.png';
+        /** Image tile 'ground snow solid ascending top'. */
+        public      static      IMAGE_GROUND_SNOW_SOLID_ASCENDING_TOP           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidAscendingTop.png';
 
         /** A bg image. */
         public      static      IMAGE_BG                                        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
@@ -756,6 +777,17 @@
             ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_LEFT,
             ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_CENTER,
             ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_RIGHT,
+
+            ImageData.IMAGE_GROUND_SNOW_SOLID_TOP,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_LEFT_TOP,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_RIGHT_TOP,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_CENTER,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_BOTTOM,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_LEFT_BOTTOM,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_RIGHT_BOTTOM,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_LEFT,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_RIGHT,
+            ImageData.IMAGE_GROUND_SNOW_SOLID_ASCENDING_TOP,
 
             ImageData.IMAGE_BG,
 

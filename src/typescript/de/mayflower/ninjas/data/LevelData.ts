@@ -36,9 +36,9 @@
             );
 
             // solid grounds
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT, ninjas.GroundData.TILESET_DARK_GROUND );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 3280, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 3920, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 3280, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 3920, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_SNOW );
 
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
