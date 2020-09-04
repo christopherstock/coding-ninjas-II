@@ -147,9 +147,9 @@
             {
                 case Slope.ASCENDING:
                 {
-                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_LEFT   );
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_CENTER );
-                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_ASCENDING_RIGHT  );
+                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_LEFT   );
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_CENTER );
+                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_RIGHT  );
 
                     drawY      = yTop - GameObjectBundleFactory.ALTITUDE;
                     alt        = -GameObjectBundleFactory.ALTITUDE;
@@ -159,9 +159,9 @@
 
                 case Slope.DESCENDING:
                 {
-                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_LEFT   );
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_CENTER );
-                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_DESCENDING_RIGHT  );
+                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_LEFT   );
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_CENTER );
+                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_RIGHT  );
 
                     drawY      = yTop;
                     alt        = GameObjectBundleFactory.ALTITUDE;
@@ -172,9 +172,9 @@
                 case Slope.NONE:
                 default:
                 {
-                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_LEFT   );
-                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_CENTER );
-                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_FLYING_RIGHT  );
+                    leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_LEFT   );
+                    centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_CENTER );
+                    rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_RIGHT  );
 
                     drawY      = yTop;
                     alt        = 0;
