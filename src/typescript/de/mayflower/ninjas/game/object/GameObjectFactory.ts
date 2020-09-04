@@ -383,54 +383,6 @@
         }
 
         /** ************************************************************************************************************
-        *   Creates the player.
-        *
-        *   @param x                Anchor X.
-        *   @param yBottom          Anchor Y.
-        *   @param lookingDirection The initial looking direction.
-        *   @param initialFloat     Whether to startup with an open parachute.
-        *
-        *   @return The created player.
-        ***************************************************************************************************************/
-        public static createPlayer
-        (
-            x                :number,
-            yBottom          :number,
-            lookingDirection :ninjas.CharacterLookingDirection,
-            initialFloat     :boolean
-        )
-        : ninjas.Player
-        {
-            const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT;
-            const firstSprite     :ninjas.SpriteTemplate = (
-                initialFloat
-                ? (
-                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
-                    ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT
-                    : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT
-                )
-                : (
-                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
-                    ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT
-                    : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT
-                )
-            );
-
-            return new ninjas.Player
-            (
-                GameObjectFactory.createCharacterDiamondShape(
-                    dimensionSprite,
-                    ninjas.DebugColor.COLOR_DEBUG_PLAYER
-                ),
-                x,
-                ( yBottom - dimensionSprite.height ),
-                lookingDirection,
-                firstSprite,
-                initialFloat
-            );
-        }
-
-        /** ************************************************************************************************************
         *   Creates an enemy.
         *
         *   @param x                  Anchor X.
@@ -558,23 +510,25 @@
         /** ************************************************************************************************************
         *   Creates a parallax scrolling decoration.
         *
+        *   @param level          The level to append this parallax deco to.
         *   @param x              Anchor X.
         *   @param y              Anchor Y.
         *   @param parallaxRatio  The parallax ratio according to the level width.
+        *   @param decoPosition   The position of this decoration - foreground or background.
         *   @param spriteTemplate The decoration sprite.
-        *
-        *   @return The created decoration.
         ***************************************************************************************************************/
         public static createParallaxDeco
         (
+            level          :ninjas.Level,
             x              :number,
             y              :number,
             parallaxRatio  :number,
+            decoPosition   :ninjas.DecoPosition,
             spriteTemplate :ninjas.SpriteTemplate
         )
-        : ninjas.ParallaxDeco
+        : void
         {
-            return new ninjas.ParallaxDeco
+            const parallaxDeco :ninjas.ParallaxDeco = new ninjas.ParallaxDeco
             (
                 new ninjas.ShapeRectangle
                 (
@@ -592,11 +546,27 @@
                 y,
                 parallaxRatio
             );
+
+            switch ( decoPosition )
+            {
+                case ninjas.DecoPosition.FG:
+                {
+                    level.parallaxFgs.push( parallaxDeco );
+                    break;
+                }
+
+                case ninjas.DecoPosition.BG:
+                {
+                    level.parallaxBgs.push( parallaxDeco );
+                    break;
+                }
+            }
         }
 
         /** ************************************************************************************************************
         *   Creates a site trigger.
         *
+        *   @param level               The level to add the site trigger to.
         *   @param x                   Anchor X.
         *   @param yBottom             Anchor of bottom Y.
         *   @param width               Width for the site trigger.
@@ -604,11 +574,10 @@
         *   @param content             The site content to display on releasing this trigger.
         *   @param sitePanelAppearance The position for the site panel to appear.
         *   @param spriteTemplate      The decoration sprite to display in bg of this site trigger.
-        *
-        *   @return The created site trigger.
         ***************************************************************************************************************/
         public static createSiteTrigger
         (
+            level               :ninjas.Level,
             x                   :number,
             yBottom             :number,
             width               :number,
@@ -617,9 +586,9 @@
             sitePanelAppearance :ninjas.SitePanelAppearance,
             spriteTemplate      :ninjas.SpriteTemplate
         )
-        : ninjas.SiteTrigger
+        : void
         {
-            return new ninjas.SiteTrigger
+            const siteTrigger :ninjas.SiteTrigger = new ninjas.SiteTrigger
             (
                 new ninjas.ShapeRectangle
                 (
@@ -638,6 +607,8 @@
                 content,
                 sitePanelAppearance
             );
+
+            level.siteTriggers.push( siteTrigger );
         }
 
         /** ************************************************************************************************************
@@ -758,7 +729,7 @@
         *
         *   @return The created diamond shape.
         ***************************************************************************************************************/
-        private static createCharacterDiamondShape(
+        public static createCharacterDiamondShape(
             spriteTemplate :ninjas.SpriteTemplate,
             debugColor     :ninjas.DebugColor
         )

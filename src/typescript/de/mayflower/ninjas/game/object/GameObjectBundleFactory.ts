@@ -66,6 +66,54 @@
         private             static          readonly        GROUND_TILE_HEIGHT              :number     = 128;
 
         /** ************************************************************************************************************
+        *   Creates the player.
+        *
+        *   @param level            The level instance to add the player to.
+        *   @param x                Anchor X.
+        *   @param yBottom          Anchor Y.
+        *   @param lookingDirection The initial looking direction.
+        *   @param initialFloat     Whether to startup with an open parachute.
+        ***************************************************************************************************************/
+        public static createPlayer
+        (
+            level            :ninjas.Level,
+            x                :number,
+            yBottom          :number,
+            lookingDirection :ninjas.CharacterLookingDirection,
+            initialFloat     :boolean
+        )
+        : void
+        {
+            const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT;
+            const firstSprite     :ninjas.SpriteTemplate = (
+                initialFloat
+                ? (
+                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                    ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT
+                    : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT
+                )
+                : (
+                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                    ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT
+                    : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT
+                )
+            );
+
+            level.player = new ninjas.Player
+            (
+                ninjas.GameObjectFactory.createCharacterDiamondShape(
+                    dimensionSprite,
+                    ninjas.DebugColor.COLOR_DEBUG_PLAYER
+                ),
+                x,
+                ( yBottom - dimensionSprite.height ),
+                lookingDirection,
+                firstSprite,
+                initialFloat
+            );
+        }
+
+        /** ************************************************************************************************************
         *   Creates a flying ground.
         *
         *   @param level       The level to add the flying ground to.

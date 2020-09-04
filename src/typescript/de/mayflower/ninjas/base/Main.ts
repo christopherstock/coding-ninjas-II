@@ -6,7 +6,6 @@
     *
     *   CLEANUP
     *   =======
-    *   TODO Fix all TODOs outside this class.
     *   TODO Group all deco images into subfolders.
     *   TODO Remove static access on Main.game.
     *   TODO Improve image sequence handling in ImageData (ALL_IMAGES) by class access?

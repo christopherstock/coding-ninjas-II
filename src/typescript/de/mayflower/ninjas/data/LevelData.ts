@@ -4,7 +4,7 @@
     import * as ninjas from '../ninjas';
 
     /** ****************************************************************************************************************
-    *   The level set for the dev level.
+    *   The level data for the dev level.
     *******************************************************************************************************************/
     export class LevelData extends ninjas.Level
     {
@@ -25,50 +25,38 @@
         ***************************************************************************************************************/
         protected createGameObjects() : void
         {
-            // TODO unify - don't return!
-            this.parallaxBgs =
-            [
-/*
-                ninjas.GameObjectFactory.createParallaxDeco( 0, 0, 1.0, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_BG ) ),
-*/
-            ];
+            // parallax deco bg
+            ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
             // enemies
+            ninjas.GameObjectBundleFactory.createEnemy( this, 1250, 0,     ninjas.CharacterLookingDirection.RIGHT, 2100,  3600,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 1550, 0,     ninjas.CharacterLookingDirection.RIGHT, 6150,  7100,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 12300, 4200, ninjas.CharacterLookingDirection.RIGHT, 12300, 12800, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 11250, 5100, ninjas.CharacterLookingDirection.RIGHT, 11250, 12000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
 
-            ninjas.GameObjectBundleFactory.createEnemy( this, 1250, 0, ninjas.CharacterLookingDirection.RIGHT, 2100,  3600, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 1550, 0, ninjas.CharacterLookingDirection.RIGHT, 6150,  7100, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
-/*
-            ninjas.GameObjectBundleFactory.createEnemy( this, 12300, 4200, ninjas.CharacterLookingDirection.RIGHT, 12300, 12800 );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 11250, 5100, ninjas.CharacterLookingDirection.RIGHT, 11250, 12000 );
-*/
-            // TODO unify - don't return the player!
-            this.player = ninjas.GameObjectFactory.createPlayer
+            // player
+            ninjas.GameObjectBundleFactory.createPlayer
             (
+                this,
                 this.playerStartX,
                 this.playerStartY,
                 ninjas.CharacterLookingDirection.RIGHT,
                 this.playerInitialFloat
             );
 
-            // TODO unify - don't return the siteTriggers!
-            this.siteTriggers =
-            [
-                ninjas.GameObjectFactory.createSiteTrigger( 2000, 2000, 500, 400, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, null ),
-                ninjas.GameObjectFactory.createSiteTrigger( 3480, 1700, 500, 400, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.LEFT,  null ),
+            // site triggers
+            ninjas.GameObjectFactory.createSiteTrigger( this, 2000, 2000, 500, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
+            ninjas.GameObjectFactory.createSiteTrigger( this,3480,  1700, 500, 400, ninjas.SiteContent.CONTENT_COMPANY, ninjas.SitePanelAppearance.LEFT,  null );
 /*
-                ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
-                ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),
-                ninjas.GameObjectFactory.createSiteTrigger( 3530,  4060, ninjas.SiteContent.CONTENT_SERVICES,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_3 ) ),
-                ninjas.GameObjectFactory.createSiteTrigger( 7360,  4280, ninjas.SiteContent.CONTENT_TECHNOLOGY, ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_1 ) ),
-                ninjas.GameObjectFactory.createSiteTrigger( 12876, 4200, ninjas.SiteContent.CONTENT_TIMELINE,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_2 ) ),
-                ninjas.GameObjectFactory.createSiteTrigger( 14720, 5100, ninjas.SiteContent.CONTENT_CONTACT,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_DOJO        ) ),
+            ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
+            ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),
+            ninjas.GameObjectFactory.createSiteTrigger( 3530,  4060, ninjas.SiteContent.CONTENT_SERVICES,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_3 ) ),
+            ninjas.GameObjectFactory.createSiteTrigger( 7360,  4280, ninjas.SiteContent.CONTENT_TECHNOLOGY, ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_1 ) ),
+            ninjas.GameObjectFactory.createSiteTrigger( 12876, 4200, ninjas.SiteContent.CONTENT_TIMELINE,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_2 ) ),
+            ninjas.GameObjectFactory.createSiteTrigger( 14720, 5100, ninjas.SiteContent.CONTENT_CONTACT,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_DOJO        ) ),
 */
-            ];
-
-            // TODO unify - don't return!
-            this.parallaxFgs =
-            [
-            ];
+            // parallax deco fg
+            // ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
             // shrine 1
             // ninjas.GameObjectBundleFactory.createShrine(    this, 1000,  500, true, true, ninjas.SiteContent.CONTENT_WELCOME      );
