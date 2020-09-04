@@ -6,11 +6,12 @@
     *
     *   CLEANUP
     *   =======
-    *   TODO Group all deco images into subfolders.
-    *   TODO Remove static access on Main.game.
-    *   TODO Improve image sequence handling in ImageData (ALL_IMAGES) by class access?
-    *   TODO AliveState for character (alive, dying, dead)
-    *   TODO React Components to React Hooks.
+    *   TODO HIGH Turn React Components into React Hooks.
+    *   TODO HIGH Group AND PRUNE all deco images into subfolders.
+    *   TODO INIT Introduce AliveState for character (alive, dying, dead)
+    *
+    *   TODO LOW Improve image sequence handling in ImageData (FILE_NAMES) by class access?
+    *   TODO LOW Remove static access on Main.game.
     *
     *   NEW ENGINE FEATURES
     *   ===================
@@ -22,14 +23,14 @@
     *   TODO Add destroyable obstacles.
     *   TODO Add destroyable movables.
     *   TODO Add decoration particle effects on smashing objects / windows etc.
-    *   TODO Panel left AND right?
+    *   TODO Enable Panels popping up left AND right?
     *   TODO Selectable panel animations.
     *   TODO Setting for light or dark preloader.
-    *   TODO Enum 'wearpon' with according damage values.
+    *   TODO Enum 'wearpon' with according damage values?
     *   TODO Try different elements from the Matter.js "physics demos" to face the player?
-    *   TODO Add Camera joyride on level startup?
-    *   TODO Create HUD ( for items etc )?
+    *   TODO Create HUD ( for picked items etc )?
     *   TODO create class HUD with own paint-method.
+    *   TODO Add Camera joyride on level startup?
     *
     *   NEW GAME FEATURES
     *   =================
@@ -37,18 +38,18 @@
     *   TODO Create different ground tilesets.
     *   TODO Doors that warp.
     *   TODO Add 'katana strike' action in air.
-    *   TODO More cool flask images.
+    *   TODO Add more cool flask images.
     *   TODO Particle fx smashed crates, startup window etc.
     *   TODO Add new ninja sprites.
     *   TODO Add 'crouch' action.
     *   TODO Add 'crouch slide' action.
     *   TODO Much more air friction for parachute.
     *   TODO Add 'shuriken throw' action.
-    *   TODO Bots that help you and talk to you.
+    *   TODO Friendly Bots that talk to you.
     *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
     *   TODO Sound effects for ninja girl actions and enemies
     *   TODO Player shooting or throwing objects.
-    *   TODO Collectables
+    *   TODO Collectables.
     *   TODO Create item pickup HUD effect?
     *******************************************************************************************************************/
     export class Main
