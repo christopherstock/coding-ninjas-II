@@ -4,12 +4,15 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO HIGH Turn React Components into React Hooks.
+    *
+    *   TODO HIGH Create startup experience (smooth title fading etc.)
+    *   TODO HIGH Create toggable startup level experience elements
+    *
     *   CLEANUP
     *   =======
-    *   TODO HIGH Turn React Components into React Hooks.
     *   TODO HIGH Group AND PRUNE all deco images into subfolders.
     *   TODO INIT Introduce AliveState for character (alive, dying, dead)
-    *
     *   TODO LOW Improve image sequence handling in ImageData (FILE_NAMES) by class access?
     *   TODO LOW Remove static access on Main.game.
     *
