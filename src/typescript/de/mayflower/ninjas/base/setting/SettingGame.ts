@@ -32,8 +32,8 @@
         public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 500;
         /** The maximum width for the site panel. */
         public      static  readonly    SITE_PANEL_MAX_WIDTH                        :number                     = 500;
-        /** The maximum height for the site panel. */
-        public      static  readonly    SITE_PANEL_MAX_HEIGHT                       :number                     = 858;
+        /** The maximum height for the site panel. -1 disables the check. */
+        public      static  readonly    SITE_PANEL_MAX_HEIGHT                       :number                     = -1;
         /** The duration for showing and hiding the site panel in ms. */
         public      static  readonly    SITE_PANEL_ANIMATION_DURATION               :number                     = 500;
         /** The outer border size for the site panel and all HUD elements in px. */

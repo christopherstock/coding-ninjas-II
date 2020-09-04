@@ -189,8 +189,10 @@
             this.panelHeight = (
                 ninjas.Main.game.engine.canvasSystem.getHeight() - 2 * ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
             );
-            if ( this.panelHeight > ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT )
-            {
+            if (
+                ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT !== -1
+                && this.panelHeight > ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT
+            ) {
                 this.panelHeight = ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT;
             }
 
