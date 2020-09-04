@@ -4,8 +4,6 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO HIGH Turn React Components into React Hooks.
-    *
     *   TODO HIGH Create startup experience (smooth title fading etc.)
     *   TODO HIGH Create toggable startup level experience elements
     *

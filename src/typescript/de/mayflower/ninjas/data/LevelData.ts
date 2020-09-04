@@ -25,15 +25,6 @@
         ***************************************************************************************************************/
         protected createGameObjects() : void
         {
-            // parallax deco bg
-            ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
-
-            // enemies
-            ninjas.GameObjectBundleFactory.createEnemy( this, 1250, 0,     ninjas.CharacterLookingDirection.RIGHT, 2100,  3600,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 1550, 0,     ninjas.CharacterLookingDirection.RIGHT, 6150,  7100,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 12300, 4200, ninjas.CharacterLookingDirection.RIGHT, 12300, 12800, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 11250, 5100, ninjas.CharacterLookingDirection.RIGHT, 11250, 12000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
-
             // player
             ninjas.GameObjectBundleFactory.createPlayer
             (
@@ -44,9 +35,33 @@
                 this.playerInitialFloat
             );
 
+            // solid grounds
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT, ninjas.GroundData.TILESET_DARK_GROUND );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 3280, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 3920, 1900, 20, 5, ninjas.Slope.NONE,      ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
+
+            // obstacles
+            ninjas.GameObjectBundleFactory.createObstacle(    this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
+
+
+/*
+*/
+            // parallax deco bg
+/*
+            ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
+*/
+            // enemies
+/*
+            ninjas.GameObjectBundleFactory.createEnemy( this, 1250, 0,     ninjas.CharacterLookingDirection.RIGHT, 2100,  3600,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 1550, 0,     ninjas.CharacterLookingDirection.RIGHT, 6150,  7100,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 12300, 4200, ninjas.CharacterLookingDirection.RIGHT, 12300, 12800, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 11250, 5100, ninjas.CharacterLookingDirection.RIGHT, 11250, 12000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
+*/
             // site triggers
+/*
             ninjas.GameObjectFactory.createSiteTrigger( this, 2000, 2000, 500, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
             ninjas.GameObjectFactory.createSiteTrigger( this,3480,  1700, 500, 400, ninjas.SiteContent.CONTENT_COMPANY, ninjas.SitePanelAppearance.LEFT,  null );
+*/
 /*
             ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
             ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),
@@ -191,10 +206,11 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16150, 5100, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_3 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 16260, 5105, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_2 );
 */
-
             // movables
+/*
             ninjas.GameObjectBundleFactory.createMovableRect( this, 4020,  1700, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 4080,  1700, ninjas.ImageData.IMAGE_FLASK_2                                   );
+*/
 /*
             ninjas.GameObjectBundleFactory.createMovableRect( this, 900,  200, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 950,  180, ninjas.ImageData.IMAGE_FLASK_1                                   );
@@ -202,6 +218,7 @@
             ninjas.GameObjectBundleFactory.createMovableRect( this, 900,  140, ninjas.ImageData.IMAGE_FLASK_1                                   );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 950,  120, ninjas.ImageData.IMAGE_FLASK_1                                   );
 */
+/*
             // statue and bush
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1270, 500, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1   );
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1400, 500, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
@@ -213,23 +230,8 @@
             // bridge and water GREEN
             ninjas.GameObjectBundleFactory.createWaterArea(   this, 3062,  660, 7, 4, ninjas.ImageData.IMAGE_ACID1_CENTER );
             ninjas.GameObjectBundleFactory.createBridge(      this, 3200,  500       );
-
-            // solid ground
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 2, ninjas.Slope.NONE, ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_DARK_GROUND );
-            ninjas.GameObjectBundleFactory.createObstacle(    this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 3280, 1700, 20, 7, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
-
-
-
-
-/*
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 2304,  5000, 10, 10, ninjas.Slope.ASCENDING,  ninjas.CapHorz.NONE  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 3584,  4800, 20, 10, ninjas.Slope.NONE,       ninjas.CapHorz.RIGHT );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 6844,  4800, 15, 10, ninjas.Slope.NONE,       ninjas.CapHorz.LEFT  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 8764,  4800, 15, 10, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 10684, 5100, 45, 10, ninjas.Slope.NONE,       ninjas.CapHorz.NONE  );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 12000, 4180, 12,  2, ninjas.Slope.NONE,       ninjas.CapHorz.BOTH  );
 */
+
 /*
             // flying grounds
             ninjas.GameObjectBundleFactory.createFlyingGround( this, 3525,  4060, 11, ninjas.Slope.NONE, ninjas.JumpPassThrough.NO, ninjas.CapHorz.BOTH );
