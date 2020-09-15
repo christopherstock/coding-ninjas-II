@@ -100,7 +100,6 @@
                     if ( false ) {
                         this.checkPlayerCollision();
                     }
-
                 }
             }
 
@@ -201,7 +200,7 @@
                 // remove character body from world
                 ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
 
-                // fkag as dead
+                // flag as dead
                 this.isDead = true;
             }
         }

@@ -171,7 +171,6 @@
                             const MAX_SINK_DELTA:number = 10;
                             if ( Math.abs( playerBottom - enemyTop ) <= MAX_SINK_DELTA )
                             {
-
                                 enemy.onHitByPlayer( this.lookingDirection );
                             }
                         }

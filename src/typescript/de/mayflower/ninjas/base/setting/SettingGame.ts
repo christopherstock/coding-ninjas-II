@@ -8,7 +8,7 @@
     {
         /** The application's internal name. */
         public      static  readonly    TITLE                                       :string                     = (
-            'Coding Ninjas II - Back with a Vengeance, (c) 2020 Mayflower GmbH, v2.0.0'
+            'Coding Ninjas II - Back with a Vengeance, (c) 2020 Mayflower GmbH, v1.0.0'
         );
 
         /** The distance the player can reach with an attack of his katana. */
@@ -29,9 +29,9 @@
         public      static  readonly    DEFAULT_SPRITE_SCALE                        :number                     = 1.0;
 
         /** The minimum width for the site panel. */
-        public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 500;
+        public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 650;
         /** The maximum width for the site panel. */
-        public      static  readonly    SITE_PANEL_MAX_WIDTH                        :number                     = 500;
+        public      static  readonly    SITE_PANEL_MAX_WIDTH                        :number                     = 650;
         /** The maximum height for the site panel. -1 disables the check. */
         public      static  readonly    SITE_PANEL_MAX_HEIGHT                       :number                     = -1;
         /** The duration for showing and hiding the site panel in ms. */

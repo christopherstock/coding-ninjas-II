@@ -186,8 +186,8 @@
         ***************************************************************************************************************/
         public receivePunchBack( punchBackDirection:ninjas.CharacterLookingDirection ) : void
         {
-            const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 11.5 );
-            const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 15.0 );
+            const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 17.5 );
+            const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 27.5 );
 
             // apply punch-back force
             switch ( punchBackDirection )
@@ -361,7 +361,18 @@
         ***************************************************************************************************************/
         protected assignCurrentSprite() : void
         {
-            if ( this.isFalling() )
+            if ( this.isDying )
+            {
+                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                {
+                    this.setSprite( this.spriteSet.spriteDieLeft );
+                }
+                else
+                {
+                    this.setSprite( this.spriteSet.spriteDieRight );
+                }
+            }
+            else if ( this.isFalling() )
             {
                 if ( this.isGliding )
                 {
@@ -395,17 +406,6 @@
                 else
                 {
                     this.setSprite( this.spriteSet.spriteJumpRight );
-                }
-            }
-            else if ( this.isDying )
-            {
-                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
-                {
-                    this.setSprite( this.spriteSet.spriteDieLeft );
-                }
-                else
-                {
-                    this.setSprite( this.spriteSet.spriteDieRight );
                 }
             }
             else if ( this.isAttacking() )
@@ -496,11 +496,13 @@
             {
                 bodiesToCheck.push( gameObject.shape.body );
             }
+/*
+            // ignore enemies!
             for ( const gameObject of ninjas.Main.game.level.enemies )
             {
                 bodiesToCheck.push( gameObject.shape.body );
             }
-
+*/
             const MARGIN_X :number = 10;
 
             // check colliding bodies

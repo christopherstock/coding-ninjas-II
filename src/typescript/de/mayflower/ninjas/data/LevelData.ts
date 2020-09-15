@@ -16,7 +16,7 @@
         public      playerInitialFloat      :boolean                    = true;
 
         /** The width of this level. */
-        public      width                   :number                     = 8500;
+        public      width                   :number                     = 12000;
         /** The height of this level. */
         public      height                  :number                     = 5000;
 
@@ -43,23 +43,22 @@
             ninjas.GameObjectBundleFactory.createSolidGround( this, 1400,  2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2680, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3320, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_SNOW );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 5020, 1900, 12, 5, ninjas.Slope.NONE,      ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 5020, 1900, 20, 5, ninjas.Slope.NONE,      ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_SNOW );
 
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
+            ninjas.GameObjectBundleFactory.createObstacle(    this, 7470, 1900, ninjas.ImageData.IMAGE_STATUE_3 );
 
             // parallax deco bg
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
             // enemies
-            ninjas.GameObjectBundleFactory.createEnemy( this, 6000, 1900, ninjas.CharacterLookingDirection.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
-            ninjas.GameObjectBundleFactory.createEnemy( this, 7000, 1900, ninjas.CharacterLookingDirection.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL );
-
-
+            ninjas.GameObjectBundleFactory.createEnemy( this, 6000, 1900, ninjas.CharacterLookingDirection.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
+            ninjas.GameObjectBundleFactory.createEnemy( this, 7000, 1900, ninjas.CharacterLookingDirection.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
 
             // site triggers
+            ninjas.GameObjectFactory.createSiteTrigger( this, 7000, 1900, 600, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 /*
-            ninjas.GameObjectFactory.createSiteTrigger( this, 2000, 2000, 500, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
             ninjas.GameObjectFactory.createSiteTrigger( this,3480,  1700, 500, 400, ninjas.SiteContent.CONTENT_COMPANY, ninjas.SitePanelAppearance.LEFT,  null );
 */
 /*

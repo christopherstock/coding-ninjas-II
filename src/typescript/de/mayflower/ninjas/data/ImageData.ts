@@ -497,7 +497,7 @@
         /** Site image 'site panel bg left'. */
         public      static      IMAGE_SITE_PANEL_BG_LEFT                        :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
         /** Site image 'site panel bg right'. */
-        public      static      IMAGE_SITE_PANEL_BG_RIGHT                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight.png';
+        public      static      IMAGE_SITE_PANEL_BG_RIGHT                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight_a90.png';
         /** Site image 'carousel desktop'. */
         public      static      IMAGE_SITE_PANEL_CAROUSEL_DESKTOP               :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
         /** Site image 'carousel mobile'. */
