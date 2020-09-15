@@ -40,7 +40,7 @@
             ninjas.GameObjectBundleFactory.createBridge(      this, 4370,  1900 );
 
             // solid grounds
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 1400,  2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 1400, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2680, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3320, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 5020, 1900, 20, 5, ninjas.Slope.NONE,      ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_SNOW );
@@ -58,22 +58,9 @@
 
             // site triggers
             ninjas.GameObjectFactory.createSiteTrigger( this, 7000, 1900, 600, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
-/*
-            ninjas.GameObjectFactory.createSiteTrigger( this,3480,  1700, 500, 400, ninjas.SiteContent.CONTENT_COMPANY, ninjas.SitePanelAppearance.LEFT,  null );
-*/
-/*
-            ninjas.GameObjectFactory.createSiteTrigger( 1000,   500, ninjas.SiteContent.CONTENT_WELCOME,    ninjas.SitePanelAppearance.RIGHT, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_SHRINE_BG_4 ) ),
-            ninjas.GameObjectFactory.createSiteTrigger( 3670,  4800, ninjas.SiteContent.CONTENT_COMPANY,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_5 ) ),
-            ninjas.GameObjectFactory.createSiteTrigger( 3530,  4060, ninjas.SiteContent.CONTENT_SERVICES,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_3 ) ),
-            ninjas.GameObjectFactory.createSiteTrigger( 7360,  4280, ninjas.SiteContent.CONTENT_TECHNOLOGY, ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_1 ) ),
-            ninjas.GameObjectFactory.createSiteTrigger( 12876, 4200, ninjas.SiteContent.CONTENT_TIMELINE,   ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_SHRINE_BG_2 ) ),
-            ninjas.GameObjectFactory.createSiteTrigger( 14720, 5100, ninjas.SiteContent.CONTENT_CONTACT,    ninjas.SitePanelAppearance.PLAYER_LOOKING, ninjas.SpriteTemplate.createFromSingleImage( ninjas.Image.IMAGE_DOJO        ) ),
-*/
-            // parallax deco fg
-            // ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.FG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
-            // shrine 1
-            // ninjas.GameObjectBundleFactory.createShrine(    this, 1000,  500, true, true, ninjas.SiteContent.CONTENT_WELCOME      );
+
+
 /*
             // shrine 1 nature
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 75,    5000, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_1 );
