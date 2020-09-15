@@ -127,10 +127,6 @@
         ***************************************************************************************************************/
         public performSmash() : void
         {
-            // const bodiesToCheck:matter.Body[] = [];
-
-            // this.shape.body.bounds.
-
             // the bounds of the smash depend on character bound and looking direction
             const attackRange :number = (
                 this.lookingDirection === ninjas.CharacterLookingDirection.LEFT
@@ -158,23 +154,33 @@
                 )
             );
 
-            for ( const gameObject of ninjas.Main.game.level.movables )
+            // check all movables
+            for ( const movable of ninjas.Main.game.level.movables )
             {
-                // bodiesToCheck.push( gameObject.shape.body );
-
-                if (
-                    matter.Query.region(
-                        [ gameObject.shape.body ],
-                        smashBounds
-                    ).length > 0
-                ) {
+                if ( matter.Query.region( [ movable.shape.body ], smashBounds ).length > 0 )
+                {
                     ninjas.Debug.character.log( 'Character hits a level object' );
 
                     matter.Body.setVelocity
                     (
-                        gameObject.shape.body,
+                        movable.shape.body,
                         matter.Vector.create( damageForce, -10.0 )
                     );
+                }
+            }
+
+            // check all enemies
+            for ( const enemy of ninjas.Main.game.level.enemies )
+            {
+                if ( matter.Query.region( [ enemy.shape.body ], smashBounds ).length > 0 )
+                {
+                    // skip dead enemies
+                    if ( enemy.isAlive() )
+                    {
+                        ninjas.Debug.character.log( 'Character hits an enemy' );
+
+                        enemy.onHitByPlayer( this.lookingDirection );
+                    }
                 }
             }
         }
