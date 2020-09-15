@@ -35,17 +35,20 @@
                 this.playerInitialFloat
             );
 
+            // bridge and blue water
+            ninjas.GameObjectBundleFactory.createWaterArea(   this, 4900,  2060, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
+            ninjas.GameObjectBundleFactory.createBridge(      this, 4970,  1900 );
+
             // solid grounds
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3280, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 3920, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 5620, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_SNOW );
 
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
 
 
-/*
-*/
             // parallax deco bg
 /*
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
@@ -222,10 +225,6 @@
             // statue and bush
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1270, 500, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1   );
             ninjas.GameObjectBundleFactory.createDecoImage( this, 1400, 500, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
-
-            // bridge and water BLUE
-            ninjas.GameObjectBundleFactory.createWaterArea(   this, 512,  660, 7, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
-            ninjas.GameObjectBundleFactory.createBridge(      this, 640,  500       );
 
             // bridge and water GREEN
             ninjas.GameObjectBundleFactory.createWaterArea(   this, 3062,  660, 7, 4, ninjas.ImageData.IMAGE_ACID1_CENTER );
