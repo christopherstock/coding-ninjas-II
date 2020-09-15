@@ -11,14 +11,14 @@
         /** Player start position X. */
         public      playerStartX            :number                     = 2200;
         /** Player start position Y. */
-        public      playerStartY            :number                     = 1000;
+        public      playerStartY            :number                     = 750;
         /** Player starts with an open parachute. */
         public      playerInitialFloat      :boolean                    = true;
 
         /** The width of this level. */
-        public      width                   :number                     = 10000;
+        public      width                   :number                     = 7500;
         /** The height of this level. */
-        public      height                  :number                     = 10000;
+        public      height                  :number                     = 7500;
 
         /** ************************************************************************************************************
         *   Inits a new level.
@@ -48,11 +48,9 @@
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
 
-
             // parallax deco bg
-/*
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
-*/
+
             // enemies
 /*
             ninjas.GameObjectBundleFactory.createEnemy( this, 1250, 0,     ninjas.CharacterLookingDirection.RIGHT, 2100,  3600,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY    );
