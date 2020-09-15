@@ -179,7 +179,7 @@
             window.setTimeout
             (
                 () => { this.game.start(); },
-                ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
+                ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : ninjas.SettingEngine.PRELOADER_DELAY )
             );
         }
 

@@ -14,7 +14,6 @@
     export * from './engine/SitePanel';
     export * from './engine/SiteSystem';
 
-    export * from './engine/hid/Key';
     export * from './engine/hid/KeySystem';
     export * from './engine/hid/PointerSystem';
 
@@ -59,6 +58,7 @@
     export * from './game/object/special/SiteTrigger';
 
     export * from './data/ImageData';
+    export * from './data/KeyData';
     export * from './data/SoundData';
     export * from './data/SpriteTemplateData';
     export * from './data/CharacterSpriteData';

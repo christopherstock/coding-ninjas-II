@@ -2,7 +2,7 @@
     /** ****************************************************************************************************************
     *   All key values used by the key system.
     *******************************************************************************************************************/
-    export class Key
+    export class KeyData
     {
         /** The keycode that represents the 'ARROW LEFT' key. */
         public      static  KEY_LEFT            :string                         = 'ArrowLeft';
@@ -12,6 +12,9 @@
         public      static  KEY_RIGHT           :string                         = 'ArrowRight';
         /** The keycode that represents the 'ARROW DOWN' key. */
         public      static  KEY_DOWN            :string                         = 'ArrowDown';
+
+        /** The keycode that represents the 'V' key. */
+        public      static  KEY_V               :string                         = 'V';
 
         /** The keycode that represents the '1' key. */
         public      static  KEY_1               :string                         = '1';

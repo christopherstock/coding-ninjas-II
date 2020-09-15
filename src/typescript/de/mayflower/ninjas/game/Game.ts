@@ -30,7 +30,7 @@
             window.setTimeout
             (
                 () => { this.engine.launch(); },
-                ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : 500 )
+                ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : ninjas.SettingEngine.PRELOADER_DELAY )
             );
         }
 
@@ -198,9 +198,9 @@
         {
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
-                if ( this.engine.keySystem.isPressed( ninjas.Key.KEY_1 ) )
+                if ( this.engine.keySystem.isPressed( ninjas.KeyData.KEY_1 ) )
                 {
-                    this.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_1 );
+                    this.engine.keySystem.setNeedsRelease( ninjas.KeyData.KEY_1 );
 
                     ninjas.Debug.init.log( 'Resetting and switching to level 1' );
                     this.resetAndLaunchLevel( new ninjas.LevelData() );

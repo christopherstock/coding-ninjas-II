@@ -32,7 +32,7 @@
         {
             // event.preventDefault();
 
-            const keyID :string = ( event as KeyboardEvent ).key;
+            const keyID :string = ( event as KeyboardEvent ).key.toLowerCase();
 
             if ( !this.keysNeedRelease[ keyID ] && !this.keysPressed[ keyID ] ) {
                 this.keysPressed[ keyID ] = true;
@@ -50,7 +50,7 @@
         {
             // event.preventDefault();
 
-            const keyID :string = ( event as KeyboardEvent ).key;
+            const keyID :string = ( event as KeyboardEvent ).key.toLowerCase();
 
             this.keysPressed[     keyID ] = false;
             this.keysNeedRelease[ keyID ] = false;
@@ -68,7 +68,7 @@
         ***************************************************************************************************************/
         public isPressed( keyCode:string ):boolean
         {
-            return this.keysPressed[ keyCode ];
+            return this.keysPressed[ keyCode.toLowerCase() ];
         }
 
         /** ************************************************************************************************************
@@ -78,8 +78,8 @@
         ***************************************************************************************************************/
         public setNeedsRelease( keyCode:string ) : void
         {
-            this.keysNeedRelease[ keyCode ] = true;
-            this.keysPressed[     keyCode ] = false;
+            this.keysNeedRelease[ keyCode.toLowerCase() ] = true;
+            this.keysPressed[     keyCode.toLowerCase() ] = false;
         }
 
         /** ************************************************************************************************************

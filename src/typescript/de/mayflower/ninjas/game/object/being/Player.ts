@@ -77,7 +77,7 @@
 
             if
             (
-                keySystem.isPressed( ninjas.Key.KEY_LEFT )
+                keySystem.isPressed( ninjas.KeyData.KEY_LEFT )
                 || (
                         !ninjas.SettingDebug.DISABLE_POINTER
                         && ninjas.Main.game.engine.pointerSystem.leftCanvasHalfPressed
@@ -88,7 +88,7 @@
             }
             else if
             (
-                keySystem.isPressed( ninjas.Key.KEY_RIGHT )
+                keySystem.isPressed( ninjas.KeyData.KEY_RIGHT )
                 || (
                         !ninjas.SettingDebug.DISABLE_POINTER
                         && ninjas.Main.game.engine.pointerSystem.rightCanvasHalfPressed
@@ -98,9 +98,9 @@
                 this.moveRight();
             }
 
-            if ( keySystem.isPressed( ninjas.Key.KEY_UP ) )
+            if ( keySystem.isPressed( ninjas.KeyData.KEY_UP ) )
             {
-                keySystem.setNeedsRelease( ninjas.Key.KEY_UP );
+                keySystem.setNeedsRelease( ninjas.KeyData.KEY_UP );
 
                 if ( this.collidesBottom )
                 {
@@ -120,9 +120,9 @@
                 }
             }
 
-            if ( keySystem.isPressed( ninjas.Key.KEY_SPACE ) )
+            if ( keySystem.isPressed( ninjas.KeyData.KEY_V ) )
             {
-                keySystem.setNeedsRelease( ninjas.Key.KEY_SPACE );
+                keySystem.setNeedsRelease( ninjas.KeyData.KEY_V );
 
                 if ( !this.isGliding && !this.glidingRequest && !this.collidesBottom )
                 {
@@ -130,9 +130,9 @@
                 }
             }
 
-            if ( keySystem.isPressed( ninjas.Key.KEY_ALT ) )
+            if ( keySystem.isPressed( ninjas.KeyData.KEY_SPACE ) )
             {
-                keySystem.setNeedsRelease( ninjas.Key.KEY_ALT );
+                keySystem.setNeedsRelease( ninjas.KeyData.KEY_SPACE );
 
                 if ( !this.isAttacking() )
                 {

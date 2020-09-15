@@ -11,6 +11,9 @@
         /** The minimum canvas2D height. */
         public  static  readonly    CANVAS_MIN_HEIGHT                       :number             = 600;
 
+        /** Delay around preloader in ms. */
+        public  static  readonly    PRELOADER_DELAY                         :number             = 250;
+
         /** The color of the matter.js canvas bg. */
         public  static  readonly    COLOR_BG_MATTER_JS_CSS                  :string             = '#000000';
         /** The color of the preloader canvas bg. */
