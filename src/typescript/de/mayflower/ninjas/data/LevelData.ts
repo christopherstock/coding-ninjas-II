@@ -49,6 +49,10 @@
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
             ninjas.GameObjectBundleFactory.createObstacle(    this, 7470, 1900, ninjas.ImageData.IMAGE_STATUE_3 );
 
+            // movables
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1650, 2000, ninjas.ImageData.IMAGE_POT_1 );
+
+
             // parallax deco bg
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
@@ -181,7 +185,6 @@
             ninjas.GameObjectBundleFactory.createDecoSprite(  this, 15305, 4517, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 14900, 5100, ninjas.Image.IMAGE_FLASK_2                                       );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 15040, 5100, ninjas.Image.IMAGE_GOBLET                                        );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 15080, 5100, ninjas.Image.IMAGE_POT                                           );
             ninjas.GameObjectBundleFactory.createCandle(      this, 14820, 5100                                                                   );
             ninjas.GameObjectBundleFactory.createCandle(      this, 14990, 5100                                                                   );
             ninjas.GameObjectBundleFactory.createCandle(      this, 15160, 5100                                                                   );

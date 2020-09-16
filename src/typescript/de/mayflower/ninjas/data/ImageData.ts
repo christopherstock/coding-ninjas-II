@@ -232,8 +232,8 @@
         public      static      IMAGE_FLASK_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask1.png';
         /** Image resource 'flask 2'. */
         public      static      IMAGE_FLASK_2                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask2.png';
-        /** Image resource 'pot'. */
-        public      static      IMAGE_POT                                       :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'pot.png';
+        /** Image resource 'pot 1'. */
+        public      static      IMAGE_POT_1                                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'pot1.png';
 
         /** Image resource 'shrine bg 1'. */
         public      static      IMAGE_SHRINE_BG_1                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg1.png';
@@ -635,7 +635,7 @@
             ImageData.IMAGE_FLASK_1,
             ImageData.IMAGE_FLASK_2,
 
-            ImageData.IMAGE_POT,
+            ImageData.IMAGE_POT_1,
 
             ImageData.IMAGE_SHRINE_BG_1,
             ImageData.IMAGE_SHRINE_BG_2,
