@@ -767,6 +767,7 @@
         *   @param yBottom     Anchor for bottom Y.
         *   @param length      Length of the bottom stone row.
         ***************************************************************************************************************/
+/*
         public static createRubblePile
         (
             level       :ninjas.Level,
@@ -797,7 +798,7 @@
                 );
             }
         }
-
+*/
         /** ************************************************************************************************************
         *   Creates a candle deco.
         *
