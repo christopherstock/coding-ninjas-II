@@ -182,15 +182,6 @@
         /** Image resource 'boulder 1'. */
         public      static      IMAGE_BOULDER_1                                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
 
-        /** Image resource 'fence 1'. */
-        public      static      IMAGE_FENCE_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence1.png';
-        /** Image resource 'fence left'. */
-        public      static      IMAGE_FENCE_LEFT                                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
-        /** Image resource 'fence center'. */
-        public      static      IMAGE_FENCE_CENTER                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
-        /** Image resource 'fence right'. */
-        public      static      IMAGE_FENCE_RIGHT                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceRight.png';
-
         /** Image resource 'bridge 1'. */
         public      static      IMAGE_BRIDGE_1                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge.png';
 
@@ -385,16 +376,6 @@
         public      static      IMAGE_FLAME_1_FRAME_13                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/13.png';
         /** Image resource 'flame 1 frame 14'. */
         public      static      IMAGE_FLAME_1_FRAME_14                          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/14.png';
-
-        /** Image resource 'tree stub'. */
-        public      static      IMAGE_TREE_STUB                                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'treeStub.png';
-
-        /** Image resource 'rubble 1'. */
-        public      static      IMAGE_RUBBLE_1                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble1.png';
-        /** Image resource 'rubble 2'. */
-        public      static      IMAGE_RUBBLE_2                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble2.png';
-        /** Image resource 'rubble 3'. */
-        public      static      IMAGE_RUBBLE_3                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble3.png';
 
         /** Image tile 'water top frame 1'. */
         public      static      IMAGE_WATER_TOP_FRAME_1                         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/01.png';
@@ -623,11 +604,6 @@
 
             ImageData.IMAGE_BOULDER_1,
 
-            ImageData.IMAGE_FENCE_1,
-            ImageData.IMAGE_FENCE_LEFT,
-            ImageData.IMAGE_FENCE_CENTER,
-            ImageData.IMAGE_FENCE_RIGHT,
-
             ImageData.IMAGE_BRIDGE_1,
 
             ImageData.IMAGE_TREE_1,
@@ -734,12 +710,6 @@
             ImageData.IMAGE_FLAME_1_FRAME_12,
             ImageData.IMAGE_FLAME_1_FRAME_13,
             ImageData.IMAGE_FLAME_1_FRAME_14,
-
-            ImageData.IMAGE_TREE_STUB,
-
-            ImageData.IMAGE_RUBBLE_1,
-            ImageData.IMAGE_RUBBLE_2,
-            ImageData.IMAGE_RUBBLE_3,
 
             ImageData.IMAGE_WATER_TOP_FRAME_1,
             ImageData.IMAGE_WATER_TOP_FRAME_2,
