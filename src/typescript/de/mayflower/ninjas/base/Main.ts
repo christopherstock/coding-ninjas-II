@@ -4,7 +4,12 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO HIGH Create startup experience (smooth title fading etc.)
+    *   TODO HIGH Add primal Ant Design components:
+    *        https://ant.design/components/steps/
+    *        https://ant.design/components/badge/
+    *        https://ant.design/components/carousel/
+    *        https://ant.design/components/progress/
+    *
     *   TODO HIGH Create toggable startup level experience elements
     *
     *   CLEANUP
