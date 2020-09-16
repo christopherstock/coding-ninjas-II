@@ -177,7 +177,7 @@
         /** Image resource 'item'. */
         public      static      IMAGE_ITEM                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
         /** Image resource 'sphere'. */
-        public      static      IMAGE_SPHERE                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'sphere.png';
+        public      static      IMAGE_TEST_SPHERE                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'testSphere.png';
 
         /** Image resource 'boulder 1'. */
         public      static      IMAGE_BOULDER_1                                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
@@ -226,14 +226,14 @@
         /** Image resource 'bush 2'. */
         public      static      IMAGE_BUSH_2                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush2.png';
 
-        /** Image resource 'goblet'. */
-        public      static      IMAGE_GOBLET                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'goblet.png';
+        /** Image resource 'goblet 1'. */
+        public      static      IMAGE_GOBLET_1                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'goblet1.png';
         /** Image resource 'flask 1'. */
-        public      static      IMAGE_FLASK_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask1.png';
+        public      static      IMAGE_FLASK_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask1.png';
         /** Image resource 'flask 2'. */
-        public      static      IMAGE_FLASK_2                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flask2.png';
+        public      static      IMAGE_FLASK_2                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask2.png';
         /** Image resource 'pot 1'. */
-        public      static      IMAGE_POT_1                                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'pot1.png';
+        public      static      IMAGE_POT_1                                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot1.png';
 
         /** Image resource 'shrine bg 1'. */
         public      static      IMAGE_SHRINE_BG_1                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg1.png';
@@ -600,7 +600,7 @@
             ImageData.IMAGE_ITEM,
             ImageData.IMAGE_CRATE_WOOD,
             ImageData.IMAGE_CRATE_METAL,
-            ImageData.IMAGE_SPHERE,
+            ImageData.IMAGE_TEST_SPHERE,
 
             ImageData.IMAGE_BOULDER_1,
 
@@ -630,7 +630,7 @@
             ImageData.IMAGE_BUSH_1,
             ImageData.IMAGE_BUSH_2,
 
-            ImageData.IMAGE_GOBLET,
+            ImageData.IMAGE_GOBLET_1,
 
             ImageData.IMAGE_FLASK_1,
             ImageData.IMAGE_FLASK_2,

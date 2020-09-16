@@ -532,16 +532,16 @@
         *   @param level    The level to add the decoration to.
         *   @param xLeft    Anchor for left X.
         *   @param yBottom  Anchor for bottom Y.
-        *   @param imageId  The id of the image.
         *   @param angle    The initial rotation angle for this movable.
+        *   @param imageId  The id of the image.
         ***************************************************************************************************************/
         public static createMovableCircular
         (
             level    :ninjas.Level,
             xLeft    :number,
             yBottom  :number,
-            imageId  :string,
-            angle    :number
+            angle    :number,
+            imageId  :string
         )
         : void
         {

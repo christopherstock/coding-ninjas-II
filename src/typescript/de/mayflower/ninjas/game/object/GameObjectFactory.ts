@@ -141,7 +141,7 @@
         : ninjas.Movable
         {
             const spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
-                ninjas.ImageData.IMAGE_SPHERE
+                ninjas.ImageData.IMAGE_TEST_SPHERE
             );
 
             if ( spriteTemplate.width !== spriteTemplate.height )
