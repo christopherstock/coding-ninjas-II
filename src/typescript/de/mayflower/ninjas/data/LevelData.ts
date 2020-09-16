@@ -48,10 +48,12 @@
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
             ninjas.GameObjectBundleFactory.createObstacle(    this, 7470, 1900, ninjas.ImageData.IMAGE_STATUE_3 );
+            ninjas.GameObjectBundleFactory.createObstacle(    this, 2100, 2000, ninjas.ImageData.IMAGE_TABLE_1 );
 
             // movables
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1650, 2000, ninjas.ImageData.IMAGE_POT_1 );
-
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 2120, 1830, ninjas.ImageData.IMAGE_FLASK_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 2158, 1830, ninjas.ImageData.IMAGE_FLASK_2 );
 
             // parallax deco bg
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
@@ -62,8 +64,6 @@
 
             // site triggers
             ninjas.GameObjectFactory.createSiteTrigger( this, 7000, 1900, 600, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
-
-
 
 /*
             // shrine 1 nature

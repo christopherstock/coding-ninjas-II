@@ -711,7 +711,7 @@
         {
             const sprtiteBookOpen   :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BOOK_OPEN   );
             const sprtiteBookClosed :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BOOK_CLOSED );
-            const spriteShrine      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_CONSOLE     );
+            const spriteShrine      :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_TABLE_1     );
 
             const decoBookOpen      :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft - 5,  yBottom - 118, ninjas.StaticShape.YES, sprtiteBookOpen,   ninjas.DebugColor.COLOR_TRANSPARENT );
             const decoBookClosed    :ninjas.Decoration     = ninjas.GameObjectFactory.createDecorationRect( xLeft + 72, yBottom - 114, ninjas.StaticShape.YES, sprtiteBookClosed, ninjas.DebugColor.COLOR_TRANSPARENT );

@@ -190,8 +190,8 @@
         /** Image resource 'tree 2'. */
         public      static      IMAGE_TREE_2                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
 
-        /** Image resource 'console'. */
-        public      static      IMAGE_CONSOLE                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'console.png';
+        /** Image resource 'table 1'. */
+        public      static      IMAGE_TABLE_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'table1.png';
 
         /** Image resource 'statue 1'. */
         public      static      IMAGE_STATUE_1                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
@@ -609,7 +609,7 @@
             ImageData.IMAGE_TREE_1,
             ImageData.IMAGE_TREE_2,
 
-            ImageData.IMAGE_CONSOLE,
+            ImageData.IMAGE_TABLE_1,
 
             ImageData.IMAGE_STATUE_1,
             ImageData.IMAGE_STATUE_2,
