@@ -18,7 +18,13 @@
         *   @param x              Startup position X.
         *   @param y              Startup position Y.
         ***************************************************************************************************************/
-        public constructor(shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number )
+        public constructor
+        (
+            shape          :ninjas.Shape,
+            spriteTemplate :ninjas.SpriteTemplate,
+            x              :number,
+            y              :number
+        )
         {
             super
             (
@@ -34,11 +40,12 @@
                     pointA: { x: this.shape.body.position.x, y: this.shape.body.position.y },
                     pointB: { x: 0, y: 0 },
                     stiffness: 1.0,
+                    damping: 0.0,
                     length: 0,
                     render: {
                         strokeStyle: ninjas.DebugColor.COLOR_DEBUG_SIGSAW_JOINT,
-                        lineWidth: 1.0,
-                        visible:   true,
+                        lineWidth: 0.0,
+                        visible:   false,
                     },
                 }
             );

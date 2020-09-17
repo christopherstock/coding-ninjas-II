@@ -87,7 +87,7 @@
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 6300, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STOVE );
 
             // sig saw
-            // ninjas.GameObjectFactory.createSigsaw( this, 7000, 1900, 600, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
+            ninjas.GameObjectFactory.createSigsaw( this, 3600, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ) );
 /*
             // nature below shrine 4
             ninjas.GameObjectBundleFactory.createCrate(      this, 7500, 4800, ninjas.CrateType.WOODEN                                      );

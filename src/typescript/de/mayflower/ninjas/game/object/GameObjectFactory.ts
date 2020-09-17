@@ -614,20 +614,25 @@
         /** ************************************************************************************************************
         *   Creates a sigsaw.
         *
-        *   @param x              Anchor X.
-        *   @param y              Anchor Y.
+        *   @param level          The level to add the sigsaw to.
+        *   @param xLeft          Anchor X.
+        *   @param yTop           Anchor Y.
         *   @param width          Object width.
         *   @param height         Object height.
         *   @param spriteTemplate The decoration sprite.
-        *
-        *   @return The created decoration.
         ***************************************************************************************************************/
-        public static createSigsaw(
-            x:number, y:number, width:number, height:number, spriteTemplate:ninjas.SpriteTemplate
+        public static createSigsaw
+        (
+            level          :ninjas.Level,
+            xLeft          :number,
+            yTop           :number,
+            width          :number,
+            height         :number,
+            spriteTemplate :ninjas.SpriteTemplate
         )
-        : ninjas.SigSaw
+        : void
         {
-            return new ninjas.SigSaw
+            const sigsaw :ninjas.SigSaw = new ninjas.SigSaw
             (
                 new ninjas.ShapeRectangle
                 (
@@ -641,9 +646,11 @@
                     ninjas.BodyRestitution.DEFAULT
                 ),
                 spriteTemplate,
-                x,
-                y
+                xLeft,
+                yTop
             );
+
+            level.sigsaws.push( sigsaw );
         }
 
         /** ************************************************************************************************************

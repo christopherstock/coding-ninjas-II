@@ -502,6 +502,10 @@
             {
                 bodiesToCheck.push( gameObject.shape.body );
             }
+            for ( const gameObject of ninjas.Main.game.level.sigsaws )
+            {
+                bodiesToCheck.push( gameObject.shape.body );
+            }
 /*
             // ignore enemies!
             for ( const gameObject of ninjas.Main.game.level.enemies )

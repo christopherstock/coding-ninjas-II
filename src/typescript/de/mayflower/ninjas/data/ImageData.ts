@@ -509,6 +509,9 @@
         /** Site image 'office ber'. */
         public      static      IMAGE_SITE_PANEL_OFFICE_BER                     :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeBer.jpg';
 
+        /** Site image 'sigsaw 1'. */
+        public      static      SIGSAW_1                                        :string         = ninjas.SettingEngine.PATH_IMAGE_SIGSAW + 'sigsaw1.png';
+
         /** An array holding all filenames of all images to load. */
         public      static      FILE_NAMES                                      :string[]       =
         [
@@ -780,5 +783,7 @@
             ImageData.IMAGE_SITE_PANEL_OFFICE_WZBG,
             ImageData.IMAGE_SITE_PANEL_OFFICE_MUC,
             ImageData.IMAGE_SITE_PANEL_OFFICE_BER,
+
+            ImageData.SIGSAW_1,
         ];
     }
