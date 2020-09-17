@@ -17,8 +17,8 @@
         private     bgMusic                 :HTMLAudioElement               = null;
         /** The remaining ticks for the blend panel to disappear. */
         private     blendPanelTicks         :number                         = 0;
-        /** Determines if slow motion rendering is enabled. */
-        private     slowMotion              :boolean                        = false;
+        /** Number of ticks for the engine to run in slow motion. */
+        private     slowMotionTicks         :number                         = 0;
 
         /** ************************************************************************************************************
         *   Shows the preloader.
@@ -122,16 +122,17 @@
         }
 
         /** ************************************************************************************************************
-        *   Sets slow motion game engine speed.
-        *
-        *   @param enabled Sets slow motion if <code>true</code.>
-        *                  Sets default engine speed if <code>false</code>.
+        *   Sets slow motion game engine speed for a specified period.
         ***************************************************************************************************************/
-        public setSlowMotion( enabled:boolean ) : void
+        public startSlowMotionTicks() : void
         {
-            ninjas.Debug.engine.log( 'Engine - setSlowMotion [' + String( enabled ) + ']' );
+            ninjas.Debug.engine.log(
+                'Engine - setSlowMotion for ['
+                + String( ninjas.SettingEngine.ENGINE_SLOW_MOTION_TICKS )
+                + '] ticks'
+            );
 
-            this.slowMotion = enabled;
+            this.slowMotionTicks = ninjas.SettingEngine.ENGINE_SLOW_MOTION_TICKS;
         }
 
         /** ************************************************************************************************************
@@ -139,8 +140,8 @@
         ***************************************************************************************************************/
         private resetAndLaunchLevel( levelToLaunch:ninjas.Level ) : void
         {
-            // release slow motion
-            this.slowMotion = false;
+            // reset slow motion ticks
+            this.slowMotionTicks = 0;
 
             // clear world
             this.engine.matterJsSystem.resetWorld();
@@ -171,7 +172,7 @@
             this.handleMenuKey();
 
             // render one game tick and update matter.js 2D engine
-            if ( !this.slowMotion )
+            if ( this.slowMotionTicks === 0 || this.slowMotionTicks-- % 2 === 0 )
             {
                 this.render();
                 this.engine.matterJsSystem.updateEngine();

@@ -14,6 +14,9 @@
         /** Delay around preloader in ms. */
         public  static  readonly    PRELOADER_DELAY                         :number             = 250;
 
+        /** Slow Motion ticks for the game engine. */
+        public  static  readonly    ENGINE_SLOW_MOTION_TICKS                :number             = 50;
+
         /** The color of the matter.js canvas bg. */
         public  static  readonly    COLOR_BG_MATTER_JS_CSS                  :string             = '#000000';
         /** The color of the preloader canvas bg. */

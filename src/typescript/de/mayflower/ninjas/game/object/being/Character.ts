@@ -183,7 +183,7 @@
                         enemy.onHitByPlayer( this.lookingDirection );
 
                         // enable slow motion
-                        ninjas.Main.game.setSlowMotion( true );
+                        ninjas.Main.game.startSlowMotionTicks();
                     }
                 }
             }

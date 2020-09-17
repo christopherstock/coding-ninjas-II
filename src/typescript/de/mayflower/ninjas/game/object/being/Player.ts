@@ -171,7 +171,11 @@
                             const MAX_SINK_DELTA:number = 10;
                             if ( Math.abs( playerBottom - enemyTop ) <= MAX_SINK_DELTA )
                             {
+                                // hit enemy
                                 enemy.onHitByPlayer( this.lookingDirection );
+
+                                // enable slow motion
+                                ninjas.Main.game.startSlowMotionTicks();
                             }
                         }
                     }
