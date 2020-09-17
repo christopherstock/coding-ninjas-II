@@ -616,21 +616,25 @@
         /** ************************************************************************************************************
         *   Creates a sigsaw.
         *
-        *   @param level          The level to add the sigsaw to.
-        *   @param xLeft          Anchor X.
-        *   @param yTop           Anchor Y.
-        *   @param width          Object width.
-        *   @param height         Object height.
-        *   @param spriteTemplate The decoration sprite.
+        *   @param level            The level to add the sigsaw to.
+        *   @param xLeft            Anchor X.
+        *   @param yTop             Anchor Y.
+        *   @param width            Object width.
+        *   @param height           Object height.
+        *   @param spriteTemplate   The decoration sprite.
+        *   @param maxRotationSpeed The maximum rotation speed per tick. -1 disables this maximum.
+        *   @param density          The density of the Sigsaw.
         ***************************************************************************************************************/
         public static createSigsaw
         (
-            level          :ninjas.Level,
-            xLeft          :number,
-            yTop           :number,
-            width          :number,
-            height         :number,
-            spriteTemplate :ninjas.SpriteTemplate
+            level            :ninjas.Level,
+            xLeft            :number,
+            yTop             :number,
+            width            :number,
+            height           :number,
+            spriteTemplate   :ninjas.SpriteTemplate,
+            maxRotationSpeed :number,
+            density          :number
         )
         : void
         {
@@ -644,12 +648,13 @@
                     ninjas.StaticShape.NO,
                     0.0,
                     ninjas.BodyFriction.DEFAULT,
-                    ninjas.BodyDensity.DEFAULT,
+                    density,
                     ninjas.BodyRestitution.DEFAULT
                 ),
                 spriteTemplate,
                 xLeft,
-                yTop
+                yTop,
+                maxRotationSpeed
             );
 
             level.sigsaws.push( sigsaw );
@@ -706,6 +711,7 @@
         *   @param width          Object width.
         *   @param height         Object height.
         *   @param spriteTemplate The decoration sprite.
+        *   @param density        The density for the Bounce.
         *
         *   @return The created decoration.
         ***************************************************************************************************************/
@@ -715,7 +721,8 @@
             y              :number,
             width          :number,
             height         :number,
-            spriteTemplate :ninjas.SpriteTemplate
+            spriteTemplate :ninjas.SpriteTemplate,
+            density        :number
         )
         : void
         {
@@ -729,7 +736,7 @@
                     ninjas.StaticShape.NO,
                     0.0,
                     ninjas.BodyFriction.DEFAULT,
-                    ninjas.BodyDensity.DEFAULT,
+                    density,
                     ninjas.BodyRestitution.DEFAULT
                 ),
                 spriteTemplate,

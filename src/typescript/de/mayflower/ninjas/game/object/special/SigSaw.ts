@@ -9,21 +9,25 @@
     {
         /** The constraint that builds the turning point for the sigsaw. */
         private     readonly            constraint                      :matter.Constraint                  = null;
+        /** The maximum rotation speed per tick. */
+        private     readonly            maxRotationSpeed                :number                             = 0.0;
 
         /** ************************************************************************************************************
         *   Creates a new sigsaw.
         *
-        *   @param shape          The shape for this object.
-        *   @param spriteTemplate The sprite template for this game object.
-        *   @param x              Startup position X.
-        *   @param y              Startup position Y.
+        *   @param shape            The shape for this object.
+        *   @param spriteTemplate   The sprite template for this game object.
+        *   @param x                Startup position X.
+        *   @param y                Startup position Y.
+        *   @param maxRotationSpeed The maximum rotation speed per tick.
         ***************************************************************************************************************/
         public constructor
         (
-            shape          :ninjas.Shape,
-            spriteTemplate :ninjas.SpriteTemplate,
-            x              :number,
-            y              :number
+            shape            :ninjas.Shape,
+            spriteTemplate   :ninjas.SpriteTemplate,
+            x                :number,
+            y                :number,
+            maxRotationSpeed :number
         )
         {
             super
@@ -33,6 +37,8 @@
                 x,
                 y
             );
+
+            this.maxRotationSpeed = maxRotationSpeed;
 
             this.constraint = matter.Constraint.create(
                 {
@@ -91,15 +97,17 @@
         ***************************************************************************************************************/
         private clipRotationSpeed() : void
         {
-            const maxRotationSpeed :number = 0.005;
-
-            if ( this.shape.body.angularVelocity < -maxRotationSpeed )
-            {
-                matter.Body.setAngularVelocity( this.shape.body, -maxRotationSpeed );
+            if ( this.maxRotationSpeed === -1 ) {
+                return;
             }
-            else if ( this.shape.body.angularVelocity > maxRotationSpeed )
+
+            if ( this.shape.body.angularVelocity < -this.maxRotationSpeed )
             {
-                matter.Body.setAngularVelocity( this.shape.body, maxRotationSpeed );
+                matter.Body.setAngularVelocity( this.shape.body, -this.maxRotationSpeed );
+            }
+            else if ( this.shape.body.angularVelocity > this.maxRotationSpeed )
+            {
+                matter.Body.setAngularVelocity( this.shape.body, this.maxRotationSpeed );
             }
         }
     }
