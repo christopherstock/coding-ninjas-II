@@ -10,6 +10,8 @@
         /** ************************************************************************************************************
         *   Creates a wooden crate.
         *
+        *   TODO remove and simplify!
+        *
         *   @param x        Anchor X.
         *   @param yBottom  Anchor for bottom Y.
         *

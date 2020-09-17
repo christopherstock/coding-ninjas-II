@@ -88,12 +88,10 @@
 
             // sig saw
             ninjas.GameObjectFactory.createSigsaw( this, 3600, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ) );
-/*
-            // nature below shrine 4
-            ninjas.GameObjectBundleFactory.createCrate(      this, 7500, 4800, ninjas.CrateType.WOODEN                                      );
 
-            // nature before shrine 6
-*/
+            // wooden crate
+            ninjas.GameObjectBundleFactory.createCrate( this, 6900, 1900, ninjas.CrateType.WOODEN );
+
             // chandelier
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 7073, 1705, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CHANDELIER );
             ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7066, 1501, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );

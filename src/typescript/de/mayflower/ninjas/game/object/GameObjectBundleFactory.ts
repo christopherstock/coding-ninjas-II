@@ -462,7 +462,7 @@
             {
                 case CrateType.WOODEN:
                 {
-                    crate = ninjas.GameObjectFactory.createWoodenCrate( 7500, 4800 );
+                    crate = ninjas.GameObjectFactory.createWoodenCrate( xLeft, yBottom );
                     break;
                 }
             }
