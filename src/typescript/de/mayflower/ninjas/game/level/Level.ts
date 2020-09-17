@@ -16,30 +16,30 @@
         /** The height of this level. */
         public      height                  :number                         = 0.0;
 
-        /** All parallax bgs. */
-        public      parallaxBgs             :ninjas.ParallaxDeco[]          = [];
+        /** The player instance. */
+        public      player                  :ninjas.Player                  = null;
+        /** All enemies. */
+        public      enemies                 :ninjas.Bot[]                   = [];
+        /** All obstacles. */
+        public      obstacles               :ninjas.Obstacle[]              = [];
+        /** All movables. */
+        public      movables                :ninjas.Movable[]               = [];
         /** All decos in bg. */
         public      decosBg                 :ninjas.Decoration[]            = [];
-        /** All shrines. */
-        public      shrines                 :ninjas.Shrine[]                = [];
+        /** All decos in fg. */
+        public      decosFg                 :ninjas.Decoration[]            = [];
         /** All site triggers. */
         public      siteTriggers            :ninjas.SiteTrigger[]           = [];
         /** All sigsaws. */
         public      sigsaws                 :ninjas.SigSaw[]                = [];
         /** All bounces. */
         public      bounces                 :ninjas.Bounce[]                = [];
-        /** All obstacles. */
-        public      obstacles               :ninjas.Obstacle[]              = [];
-        /** All movables. */
-        public      movables                :ninjas.Movable[]               = [];
-        /** All enemies. */
-        public      enemies                 :ninjas.Bot[]                   = [];
-        /** The player instance. */
-        public      player                  :ninjas.Player                  = null;
-        /** All decos in fg. */
-        public      decosFg                 :ninjas.Decoration[]            = [];
+        /** All parallax bgs. */
+        public      parallaxBgs             :ninjas.ParallaxDeco[]          = [];
         /** All parallax fgs. */
         public      parallaxFgs             :ninjas.ParallaxDeco[]          = [];
+        /** All shrines. TODO prune? */
+        public      shrines                 :ninjas.Shrine[]                = [];
 
         /** ************************************************************************************************************
         *   Sets the player and the game objects.
