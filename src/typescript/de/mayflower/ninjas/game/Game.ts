@@ -139,6 +139,9 @@
         ***************************************************************************************************************/
         private resetAndLaunchLevel( levelToLaunch:ninjas.Level ) : void
         {
+            // release slow motion
+            this.slowMotion = false;
+
             // clear world
             this.engine.matterJsSystem.resetWorld();
 
@@ -163,6 +166,9 @@
             {
                 this.engine.fpsMeter.tickStart();
             }
+
+            // handle menu keys
+            this.handleMenuKey();
 
             // render one game tick and update matter.js 2D engine
             if ( !this.slowMotion )
@@ -193,9 +199,6 @@
             {
                 --this.blendPanelTicks;
             }
-
-            // handle menu key
-            this.handleMenuKey();
 
             // render level
             this.level.render( this.engine.keySystem );
