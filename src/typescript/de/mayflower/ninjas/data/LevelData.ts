@@ -9,7 +9,7 @@
     export class LevelData extends ninjas.Level
     {
         /** Player start position X. */
-        public      playerStartX            :number                     = 1600;
+        public      playerStartX            :number                     = 5020; // 1600;
         /** Player start position Y. */
         public      playerStartY            :number                     = 750;
         /** Player starts with an open parachute. */
@@ -47,7 +47,7 @@
 
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
-            ninjas.GameObjectBundleFactory.createObstacle(    this, 7470, 1900, ninjas.ImageData.IMAGE_STATUE_3 );
+            ninjas.GameObjectBundleFactory.createObstacle(    this, 7450, 1900, ninjas.ImageData.IMAGE_STATUE_3 );
             ninjas.GameObjectBundleFactory.createObstacle(    this, 2100, 2000, ninjas.ImageData.IMAGE_TABLE_1 );
 
             // movables
@@ -71,34 +71,38 @@
             // site triggers
             ninjas.GameObjectFactory.createSiteTrigger( this, 7000, 1900, 600, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 
-/*
             // sprites
-            ninjas.GameObjectBundleFactory.createDecoSprite( this, 75,    5000, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_GRASS_1 );
+            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5100, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_1 );
+            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5200, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_2 );
+            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5300, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_3 );
+            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5400, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_4 );
 
-            // candle
-            ninjas.GameObjectBundleFactory.createCandle(      this, 3815,  4060                                                               );
+            // candles
+            ninjas.GameObjectBundleFactory.createCandle( this, 5600, 1900 );
+            ninjas.GameObjectBundleFactory.createCandle( this, 5720, 1900 );
+            ninjas.GameObjectBundleFactory.createCandle( this, 5840, 1900 );
 
+            // deco
+            ninjas.GameObjectBundleFactory.createDecoImage(   this, 6000, 1900, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CAGE  );
+            ninjas.GameObjectBundleFactory.createDecoImage(   this, 6300, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STOVE );
+
+            // sig saw
+            // ninjas.GameObjectFactory.createSigsaw( this, 7000, 1900, 600, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
+/*
             // nature below shrine 4
             ninjas.GameObjectBundleFactory.createCrate(      this, 7500, 4800, ninjas.CrateType.WOODEN                                      );
 
             // nature before shrine 6
-            ninjas.GameObjectBundleFactory.createDecoImage(   this, 11370, 5100, ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CAGE              );
-            ninjas.GameObjectBundleFactory.createDecoImage(   this, 12400, 5100, ninjas.DecoPosition.BG, ninjas.Image.IMAGE_STOVE             );
-
-            // shrine 6 (DoJo)
-            ninjas.GameObjectBundleFactory.createDecoImage(   this, 15073, 4705, ninjas.DecoPosition.FG, ninjas.Image.IMAGE_CHANDELIER            );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 15066, 4501, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 15120, 4486, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 15254, 4488, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 15305, 4517, ninjas.DecoPosition.FG, ninjas.SpriteData.SPRITE_FLAME_1_BIG );
 */
+            // chandelier
+            ninjas.GameObjectBundleFactory.createDecoImage(   this, 7073, 1705, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CHANDELIER );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7066, 1501, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7120, 1486, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7254, 1488, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7305, 1517, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
 /*
             // flying grounds
             ninjas.GameObjectBundleFactory.createFlyingGround( this, 3525,  4060, 11, ninjas.Slope.NONE, ninjas.JumpPassThrough.NO, ninjas.CapHorz.BOTH );
-            ninjas.GameObjectBundleFactory.createFlyingGround( this, 5062,  4430, 3,  ninjas.Slope.NONE, ninjas.JumpPassThrough.NO, ninjas.CapHorz.BOTH );
-            ninjas.GameObjectBundleFactory.createFlyingGround( this, 7350,  4280, 6,  ninjas.Slope.NONE, ninjas.JumpPassThrough.NO, ninjas.CapHorz.BOTH );
-            ninjas.GameObjectBundleFactory.createFlyingGround( this, 9800,  4560, 3,  ninjas.Slope.NONE, ninjas.JumpPassThrough.NO, ninjas.CapHorz.BOTH );
-            ninjas.GameObjectBundleFactory.createFlyingGround( this, 10800, 4350, 3,  ninjas.Slope.NONE, ninjas.JumpPassThrough.NO, ninjas.CapHorz.BOTH );
  */
         }
     }
