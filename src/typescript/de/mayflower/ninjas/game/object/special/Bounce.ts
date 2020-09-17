@@ -37,8 +37,8 @@
                     length: 0,
                     render: {
                         strokeStyle: ninjas.DebugColor.COLOR_DEBUG_BOUNCE_JOINT,
-                        lineWidth: 1.0,
-                        visible:   true,
+                        lineWidth: 0.0,
+                        visible:   false,
                     },
                 }
             );

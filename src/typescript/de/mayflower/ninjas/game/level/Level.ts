@@ -26,6 +26,8 @@
         public      siteTriggers            :ninjas.SiteTrigger[]           = [];
         /** All sigsaws. */
         public      sigsaws                 :ninjas.SigSaw[]                = [];
+        /** All bounces. */
+        public      bounces                 :ninjas.Bounce[]                = [];
         /** All obstacles. */
         public      obstacles               :ninjas.Obstacle[]              = [];
         /** All movables. */
@@ -66,6 +68,10 @@
             for ( const sigsaw of this.sigsaws )
             {
                 matterJsSystem.addToWorld( sigsaw.shape.body );
+            }
+            for ( const bounce of this.bounces )
+            {
+                matterJsSystem.addToWorld( bounce.shape.body );
             }
             for ( const obstacle of this.obstacles )
             {
@@ -119,6 +125,10 @@
             for ( const sigsaw of this.sigsaws )
             {
                 sigsaw.render();
+            }
+            for ( const bounce of this.bounces )
+            {
+                bounce.render();
             }
             for ( const obstacle of this.obstacles )
             {

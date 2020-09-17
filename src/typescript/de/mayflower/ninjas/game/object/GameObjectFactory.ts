@@ -676,6 +676,8 @@
         )
         :ninjas.Platform
         {
+            // TODO see 'static friction example'
+
             return new ninjas.Platform
             (
                 new ninjas.ShapeRectangle
@@ -698,6 +700,7 @@
         /** ************************************************************************************************************
         *   Creates a bounce.
         *
+        *   @param level          The level to add the sigsaw to.
         *   @param x              Anchor X.
         *   @param y              Anchor Y.
         *   @param width          Object width.
@@ -707,11 +710,16 @@
         *   @return The created decoration.
         ***************************************************************************************************************/
         public static createBounce(
-            x:number, y:number, width:number, height:number, spriteTemplate:ninjas.SpriteTemplate
+            level          :ninjas.Level,
+            x              :number,
+            y              :number,
+            width          :number,
+            height         :number,
+            spriteTemplate :ninjas.SpriteTemplate
         )
-        : ninjas.Bounce
+        : void
         {
-            return new ninjas.Bounce
+            const bounce :ninjas.Bounce = new ninjas.Bounce
             (
                 new ninjas.ShapeRectangle
                 (
@@ -728,6 +736,8 @@
                 x,
                 y
             );
+
+            level.bounces.push( bounce );
         }
 
         /** ************************************************************************************************************

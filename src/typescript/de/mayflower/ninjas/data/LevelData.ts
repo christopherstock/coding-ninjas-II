@@ -88,6 +88,8 @@
 
             // sig saw
             ninjas.GameObjectFactory.createSigsaw( this, 3600, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ) );
+            // bounce
+            ninjas.GameObjectFactory.createBounce( this, 2500, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ) );
 
             // wooden crate
             ninjas.GameObjectBundleFactory.createCrate( this, 6900, 1900, ninjas.CrateType.WOODEN );
