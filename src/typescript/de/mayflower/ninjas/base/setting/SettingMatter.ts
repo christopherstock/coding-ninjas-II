@@ -6,8 +6,8 @@
     *******************************************************************************************************************/
     export class SettingMatter
     {
-        /** The rendering delta between render ticks. */
-        public  static  readonly    RENDER_DELTA                                :number                     = 20.0;
+        /** The rendering delta between render ticks for default rendering. */
+        public  static  readonly    RENDER_DELTA_DEFAULT                        :number                     = 20.0;
 
         /** The default jump power. */
         public  static  readonly    PLAYER_JUMP_POWER                           :number                     = -1.50;

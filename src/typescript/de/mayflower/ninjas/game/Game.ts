@@ -17,6 +17,8 @@
         private     bgMusic                 :HTMLAudioElement               = null;
         /** The remaining ticks for the blend panel to disappear. */
         private     blendPanelTicks         :number                         = 0;
+        /** Determines if slow motion rendering is enabled. */
+        private     slowMotion              :boolean                        = false;
 
         /** ************************************************************************************************************
         *   Shows the preloader.
@@ -101,7 +103,6 @@
             }
         }
 
-
         /** ************************************************************************************************************
         *   Resets the camera.
         ***************************************************************************************************************/
@@ -118,6 +119,19 @@
                 this.engine.canvasSystem.getHeight()
             );
             this.camera.reset( this );
+        }
+
+        /** ************************************************************************************************************
+        *   Sets slow motion game engine speed.
+        *
+        *   @param enabled Sets slow motion if <code>true</code.>
+        *                  Sets default engine speed if <code>false</code>.
+        ***************************************************************************************************************/
+        public setSlowMotion( enabled:boolean ) : void
+        {
+            ninjas.Debug.engine.log( 'Engine - setSlowMotion [' + String( enabled ) + ']' );
+
+            this.slowMotion = enabled;
         }
 
         /** ************************************************************************************************************
@@ -144,24 +158,26 @@
         ***************************************************************************************************************/
         private tickGame() : void
         {
+            // start fpsMetet tick
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
-                // start fpsMetet tick
                 this.engine.fpsMeter.tickStart();
             }
 
-            // render one game tick
-            this.render();
+            // render one game tick and update matter.js 2D engine
+            if ( !this.slowMotion )
+            {
+                this.render();
+                this.engine.matterJsSystem.updateEngine();
+            }
 
-            // update MatterJS 2d engine
-            this.engine.matterJsSystem.updateEngine( ninjas.SettingMatter.RENDER_DELTA );
-
+            // stop fpsMeter tick
             if ( ninjas.SettingDebug.DEBUG_MODE )
             {
-                // stop fpsMeter tick
                 this.engine.fpsMeter.tick();
             }
 
+            // request next animation frame
             window.requestAnimationFrame(
                 () => { this.tickGame(); }
             );

@@ -29,6 +29,8 @@
         public      static  readonly    site            :Debug              = new Debug( false );
         /** Debugs react events. */
         public      static  readonly    react           :Debug              = new Debug( false );
+        /** Debugs matter.js engine events. */
+        public      static  readonly    engine          :Debug              = new Debug( true );
 
         /** The flag that enables or disables logging for this debug group. */
         private             readonly    debugEnabled    :boolean            = false;

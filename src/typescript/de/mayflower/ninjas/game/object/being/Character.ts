@@ -179,7 +179,11 @@
                     {
                         ninjas.Debug.character.log( 'Character hits an enemy' );
 
+                        // hit enemy
                         enemy.onHitByPlayer( this.lookingDirection );
+
+                        // enable slow motion
+                        ninjas.Main.game.setSlowMotion( true );
                     }
                 }
             }

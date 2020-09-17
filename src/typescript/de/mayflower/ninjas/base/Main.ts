@@ -10,6 +10,7 @@
     *        https://ant.design/components/carousel/
     *        https://ant.design/components/progress/
     *
+    *   TODO HIGH Add slow motion fx.
     *   TODO HIGH Create toggable startup level experience elements
     *
     *   CLEANUP

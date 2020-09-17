@@ -8,9 +8,9 @@
     export class MatterJsSystem
     {
         /** The Matter.js engine. */
-        private         readonly        engine                  :matter.Engine                  = null;
+        private             readonly    engine                      :matter.Engine              = null;
         /** The Matter.js renderer. */
-        private        readonly         renderer                :matter.Render                  = null;
+        private             readonly    renderer                    :matter.Render              = null;
 
         /** ************************************************************************************************************
         *   Creates a new Matter.js engine.
@@ -131,12 +131,13 @@
 
         /** ************************************************************************************************************
         *   Updates the Matter.js engine for the specified rendering delta.
-        *
-        *   @param renderDelta The rendering delta in ms.
         ***************************************************************************************************************/
-        public updateEngine( renderDelta:number ) : void
+        public updateEngine() : void
         {
-            matter.Engine.update( this.engine, renderDelta );
+            matter.Engine.update(
+                this.engine,
+                ninjas.SettingMatter.RENDER_DELTA_DEFAULT
+            );
         }
 
         /** ************************************************************************************************************
