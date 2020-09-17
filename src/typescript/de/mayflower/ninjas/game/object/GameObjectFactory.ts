@@ -642,6 +642,7 @@
             (
                 new ninjas.ShapeRectangle
                 (
+                    // TODO width and height from image!
                     width,
                     height,
                     ninjas.DebugColor.COLOR_DEBUG_SIGSAW,
@@ -661,8 +662,9 @@
         }
 
         /** ************************************************************************************************************
-        *   Creates a platform.
+        *   Creates a platform that moves in the air.
         *
+        *   @param level          The level to add the platform to.
         *   @param width          Object width.
         *   @param height         Object height.
         *   @param spriteTemplate The decoration sprite.
@@ -673,17 +675,18 @@
         ***************************************************************************************************************/
         public static createPlatform
         (
+            level          :ninjas.Level,
             width          :number,
             height         :number,
             spriteTemplate :ninjas.SpriteTemplate,
             speed          :number,
             waypoints      :matter.Vector[]
         )
-        :ninjas.Platform
+        : void
         {
             // TODO see 'static friction example'
 
-            return new ninjas.Platform
+            const platform :ninjas.Platform = new ninjas.Platform
             (
                 new ninjas.ShapeRectangle
                 (
@@ -700,6 +703,8 @@
                 speed,
                 waypoints
             );
+
+            level.platforms.push( platform );
         }
 
         /** ************************************************************************************************************
@@ -730,6 +735,7 @@
             (
                 new ninjas.ShapeRectangle
                 (
+                    // TODO width and height from image?
                     width,
                     height,
                     ninjas.DebugColor.COLOR_DEBUG_BOUNCE,
@@ -755,7 +761,8 @@
         *
         *   @return The created diamond shape.
         ***************************************************************************************************************/
-        public static createCharacterDiamondShape(
+        public static createCharacterDiamondShape
+        (
             spriteTemplate :ninjas.SpriteTemplate,
             debugColor     :ninjas.DebugColor
         )

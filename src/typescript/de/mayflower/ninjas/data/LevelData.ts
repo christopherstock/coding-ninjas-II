@@ -2,6 +2,7 @@
     /* eslint-disable max-len */
 
     import * as ninjas from '../ninjas';
+    import * as matter from 'matter-js';
 
     /** ****************************************************************************************************************
     *   The level data for the dev level.
@@ -90,6 +91,8 @@
             ninjas.GameObjectFactory.createSigsaw( this, 3600, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, 0.0005 );
             // bounce
             ninjas.GameObjectFactory.createBounce( this, 2500, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), 0.00075 );
+            // platform
+            ninjas.GameObjectFactory.createPlatform( this, 250, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 6000, 1600 ), matter.Vector.create( 5000, 1600 ) ] );
 
             // wooden crate
             ninjas.GameObjectBundleFactory.createCrate( this, 6900, 1900, ninjas.CrateType.WOODEN );

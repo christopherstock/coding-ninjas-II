@@ -494,21 +494,25 @@
         {
             const bodiesToCheck:matter.Body[] = [];
 
-            for ( const gameObject of ninjas.Main.game.level.movables )
+            for ( const movable of ninjas.Main.game.level.movables )
             {
-                bodiesToCheck.push( gameObject.shape.body );
+                bodiesToCheck.push( movable.shape.body );
             }
-            for ( const gameObject of ninjas.Main.game.level.obstacles )
+            for ( const obstacle of ninjas.Main.game.level.obstacles )
             {
-                bodiesToCheck.push( gameObject.shape.body );
+                bodiesToCheck.push( obstacle.shape.body );
             }
-            for ( const gameObject of ninjas.Main.game.level.sigsaws )
+            for ( const sigsaw of ninjas.Main.game.level.sigsaws )
             {
-                bodiesToCheck.push( gameObject.shape.body );
+                bodiesToCheck.push( sigsaw.shape.body );
             }
-            for ( const gameObject of ninjas.Main.game.level.bounces )
+            for ( const bounce of ninjas.Main.game.level.bounces )
             {
-                bodiesToCheck.push( gameObject.shape.body );
+                bodiesToCheck.push( bounce.shape.body );
+            }
+            for ( const platform of ninjas.Main.game.level.platforms )
+            {
+                bodiesToCheck.push( platform.shape.body );
             }
 /*
             // ignore enemies!

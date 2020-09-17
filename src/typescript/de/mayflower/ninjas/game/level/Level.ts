@@ -34,6 +34,8 @@
         public      sigsaws                 :ninjas.SigSaw[]                = [];
         /** All bounces. */
         public      bounces                 :ninjas.Bounce[]                = [];
+        /** All platforms. */
+        public      platforms               :ninjas.Platform[]              = [];
         /** All parallax bgs. */
         public      parallaxBgs             :ninjas.ParallaxDeco[]          = [];
         /** All parallax fgs. */
@@ -72,6 +74,10 @@
             for ( const bounce of this.bounces )
             {
                 matterJsSystem.addToWorld( bounce.shape.body );
+            }
+            for ( const platform of this.platforms )
+            {
+                matterJsSystem.addToWorld( platform.shape.body );
             }
             for ( const obstacle of this.obstacles )
             {
@@ -129,6 +135,10 @@
             for ( const bounce of this.bounces )
             {
                 bounce.render();
+            }
+            for ( const platform of this.platforms )
+            {
+                platform.render();
             }
             for ( const obstacle of this.obstacles )
             {

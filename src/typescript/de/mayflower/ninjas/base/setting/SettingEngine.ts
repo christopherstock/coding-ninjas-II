@@ -62,4 +62,6 @@
         public  static  readonly    PATH_IMAGE_PRELOADER                    :string             = SettingEngine.PATH_IMAGE + 'preloader/';
         /** The relative path from index.html where all sigsaw images reside. */
         public  static  readonly    PATH_IMAGE_SIGSAW                       :string             = SettingEngine.PATH_IMAGE_LEVEL + 'sigsaw/';
+        /** The relative path from index.html where all platform images reside. */
+        public  static  readonly    PATH_IMAGE_PLATFORM                     :string             = SettingEngine.PATH_IMAGE_LEVEL + 'platform/';
     }
