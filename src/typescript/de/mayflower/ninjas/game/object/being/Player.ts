@@ -56,11 +56,16 @@
         {
             super.render();
 
-            this.handleKeys( ninjas.Main.game.engine.keySystem );
+            if ( !this.isDead )
+            {
+                this.handleKeys( ninjas.Main.game.engine.keySystem );
+                this.checkEnemyKill();
+            }
 
-            this.checkEnemyKill();
             this.clipToHorizontalLevelBounds();
             this.assignCurrentSprite();
+
+            this.checkFallToDeath();
         }
 
         /** ************************************************************************************************************
@@ -180,6 +185,31 @@
                         }
                     }
                 }
+            }
+        }
+
+        /** ************************************************************************************************************
+        *   Checks if the player is currently falling out of the level.
+        ***************************************************************************************************************/
+        private checkFallToDeath() : void
+        {
+            // check if the bottom outside is reached
+            if ( this.shape.body.position.y > ( ninjas.Main.game.level.height - ( this.shape.getHeight() / 2 ) ) )
+            {
+                // flag player as dead if not done yet
+                if ( !this.isDead )
+                {
+                    this.isDead = true;
+
+                    ninjas.Debug.engine.log( 'Player has fallen to death' );
+
+                    window.setTimeout(
+                        () :void => {
+                            ninjas.Main.game.resetAndLaunchLevel( new ninjas.LevelData() );
+                        },
+                        2000
+                    );
+               }
             }
         }
     }

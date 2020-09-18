@@ -138,7 +138,7 @@
         /** ************************************************************************************************************
         *   Inits the level.
         ***************************************************************************************************************/
-        private resetAndLaunchLevel( levelToLaunch:ninjas.Level ) : void
+        public resetAndLaunchLevel( levelToLaunch:ninjas.Level ) : void
         {
             // reset slow motion ticks
             this.slowMotionTicks = 0;
@@ -155,6 +155,9 @@
 
             // reset camera
             this.resetCamera();
+
+            // reset keys
+            ninjas.Main.game.engine.keySystem.releaseAllKeys();
         }
 
         /** ************************************************************************************************************

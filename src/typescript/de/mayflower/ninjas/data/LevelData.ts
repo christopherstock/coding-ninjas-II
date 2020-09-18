@@ -62,6 +62,8 @@
             // bridge and blue water
             ninjas.GameObjectBundleFactory.createWaterArea(   this, 9150, 2060, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
             ninjas.GameObjectBundleFactory.createBridge(      this, 9220, 1900 );
+            // site triggers
+            ninjas.GameObjectFactory.createSiteTrigger( this, 12000, 1900, 3000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 /*
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
@@ -82,9 +84,6 @@
             // enemies
             ninjas.GameObjectBundleFactory.createEnemy( this, 6000, 1900, ninjas.CharacterFacing.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
             ninjas.GameObjectBundleFactory.createEnemy( this, 7000, 1900, ninjas.CharacterFacing.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
-
-            // site triggers
-            ninjas.GameObjectFactory.createSiteTrigger( this, 7000, 1900, 600, 400, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 
             // sprites
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5100, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_1 );
