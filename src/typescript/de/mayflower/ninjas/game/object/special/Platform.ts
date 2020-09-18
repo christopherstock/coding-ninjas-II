@@ -41,8 +41,7 @@
             spriteTemplate :ninjas.SpriteTemplate,
             speed          :number,
             waypoints      :matter.Vector[]
-        )
-        {
+        ) {
             super
             (
                 shape,
@@ -56,8 +55,8 @@
                 throw new Error( 'Platform requires at least one waypoint to be specified!' );
             }
 
-            this.waypoints            = waypoints;
-            this.speed                = speed;
+            this.speed     = speed;
+            this.waypoints = waypoints;
 
             this.currentWaypointIndex = -1;
             this.assignNextWaypoint();
@@ -72,6 +71,7 @@
         {
             super.render();
 
+            // check if next waypoint is reached
             ++this.currentStep;
             if ( this.currentStep > this.stepsTillNextWaypoint )
             {

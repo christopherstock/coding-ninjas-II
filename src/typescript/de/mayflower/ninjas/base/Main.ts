@@ -4,16 +4,14 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO Fix slow sliding down on platform.
+    *   TODO HIGH Add slow motion fx.
+    *   TODO HIGH Create toggable startup level experience elements
     *   TODO HIGH Add primal Ant Design components:
     *        https://ant.design/components/steps/
     *        https://ant.design/components/badge/
     *        https://ant.design/components/carousel/
     *        https://ant.design/components/progress/
-    *
-    *   TODO Fix slow sliding down on platform.
-    *   TODO HIGH Add slow motion fx.
-    *   TODO HIGH Reset level when player dies.
-    *   TODO HIGH Create toggable startup level experience elements
     *
     *   CLEANUP
     *   =======
