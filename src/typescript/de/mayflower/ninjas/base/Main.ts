@@ -10,6 +10,7 @@
     *        https://ant.design/components/carousel/
     *        https://ant.design/components/progress/
     *
+    *   TODO Fix slow sliding down on platform.
     *   TODO HIGH Add slow motion fx.
     *   TODO HIGH Reset level when player dies.
     *   TODO HIGH Create toggable startup level experience elements

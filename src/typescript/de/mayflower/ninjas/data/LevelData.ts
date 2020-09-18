@@ -19,7 +19,7 @@
         public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
         /** The width of this level. */
-        public  width                   :number                             = 20000;
+        public  width                   :number                             = 15000;
         /** The height of this level. */
         public  height                  :number                             = 5000;
 
