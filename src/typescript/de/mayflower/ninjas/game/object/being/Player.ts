@@ -207,7 +207,7 @@
                         () :void => {
                             ninjas.Main.game.resetAndLaunchLevel( new ninjas.LevelData() );
                         },
-                        1000
+                        250
                     );
                }
             }
