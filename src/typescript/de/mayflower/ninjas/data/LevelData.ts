@@ -10,9 +10,9 @@
     export class LevelData extends ninjas.Level
     {
         /** Player start position X. */
-        public  playerStartX            :number                             = 4620; // 500;
+        public  playerStartX            :number                             = 480;
         /** Player start position Y. */
-        public  playerStartY            :number                             = 2000; // 750;
+        public  playerStartY            :number                             = 1200; // 2000; // 750;
         /** Player initial parachute state. */
         public  playerInitialFloat      :boolean                            = false; // true;
         /** Player initial facing. */
@@ -34,9 +34,8 @@
             // parallax bg
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
-            // startup plateau
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
-            ninjas.GameObjectBundleFactory.createDecoImage(   this, 700, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
+            // contents
+            this.addStartupPlateau();
 
             // 2nd plateau (sigsaw)
             ninjas.GameObjectFactory.createSigsaw( this, 1400, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, ninjas.BodyDensity.DEFAULT );
@@ -68,12 +67,11 @@
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
             ninjas.GameObjectBundleFactory.createObstacle(    this, 7450, 1900, ninjas.ImageData.IMAGE_STATUE_3 );
-            ninjas.GameObjectBundleFactory.createObstacle(    this, 2100, 2000, ninjas.ImageData.IMAGE_TABLE_1 );
+
+
 
             // movables
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1650, 2000, ninjas.ImageData.IMAGE_POT_1 );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 2120, 1830, ninjas.ImageData.IMAGE_FLASK_1 );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 2158, 1830, ninjas.ImageData.IMAGE_FLASK_2 );
             ninjas.GameObjectBundleFactory.createMovableCircular( this, 2300, 2000, 0.0, ninjas.ImageData.IMAGE_TEST_SPHERE );
 
             // deco
@@ -113,5 +111,31 @@
             // flying ground
             ninjas.GameObjectBundleFactory.createFlyingGround( this, 6000,  1500, 5, ninjas.Slope.NONE, ninjas.JumpPassThrough.YES, ninjas.CapHorz.BOTH );
 */
+        }
+
+        /** ************************************************************************************************************
+        *   Adds the 1st (startup) plateau.
+        ***************************************************************************************************************/
+        private addStartupPlateau() : void
+        {
+            // ground
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+
+            // status with bush
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 780, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 830, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
+
+            // table with flasks
+            ninjas.GameObjectBundleFactory.createObstacle(    this, 420, 2000, ninjas.ImageData.IMAGE_TABLE_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 430, 1830, ninjas.ImageData.IMAGE_FLASK_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 462, 1830, ninjas.ImageData.IMAGE_FLASK_2 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 513, 1830, ninjas.ImageData.IMAGE_FLASK_3 );
+
+            // pot
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 558, 2000, ninjas.ImageData.IMAGE_POT_1 );
+
+            // flasks on the floor
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 633, 2000, ninjas.ImageData.IMAGE_FLASK_2 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 684, 2000, ninjas.ImageData.IMAGE_FLASK_1 );
         }
     }

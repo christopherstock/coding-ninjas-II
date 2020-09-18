@@ -233,6 +233,8 @@
         public      static      IMAGE_FLASK_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask1.png';
         /** Image resource 'flask 2'. */
         public      static      IMAGE_FLASK_2                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask2.png';
+        /** Image resource 'flask 3'. */
+        public      static      IMAGE_FLASK_3                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask3.png';
         /** Image resource 'pot 1'. */
         public      static      IMAGE_POT_1                                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot1.png';
 
@@ -642,6 +644,7 @@
 
             ImageData.IMAGE_FLASK_1,
             ImageData.IMAGE_FLASK_2,
+            ImageData.IMAGE_FLASK_3,
 
             ImageData.IMAGE_POT_1,
 
