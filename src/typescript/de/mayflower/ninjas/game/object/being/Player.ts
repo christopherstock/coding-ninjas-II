@@ -10,21 +10,21 @@
         /** ************************************************************************************************************
         *   Creates a new player instance.
         *
-        *   @param shape            The shape for the player.
-        *   @param x                Startup position X.
-        *   @param y                Startup position Y.
-        *   @param lookingDirection The initial looking direction.
-        *   @param spriteTemplate   The initial sprite template to use for the player.
-        *   @param initialFloat     Whether to startup with an open parachute.
+        *   @param shape          The shape for the player.
+        *   @param x              Startup position X.
+        *   @param y              Startup position Y.
+        *   @param facing         The initial facing direction.
+        *   @param spriteTemplate The initial sprite template to use for the player.
+        *   @param initialFloat   Whether to startup with an open parachute.
         ***************************************************************************************************************/
         public constructor
         (
-            shape            :ninjas.Shape,
-            x                :number,
-            y                :number,
-            lookingDirection :ninjas.CharacterLookingDirection,
-            spriteTemplate   :ninjas.SpriteTemplate,
-            initialFloat     :boolean
+            shape          :ninjas.Shape,
+            x              :number,
+            y              :number,
+            facing         :ninjas.CharacterFacing,
+            spriteTemplate :ninjas.SpriteTemplate,
+            initialFloat   :boolean
         )
         {
             super
@@ -33,7 +33,7 @@
                 spriteTemplate,
                 x,
                 y,
-                lookingDirection,
+                facing,
                 ninjas.SettingMatter.PLAYER_SPEED_MOVE,
                 ninjas.SettingMatter.PLAYER_JUMP_POWER,
                 ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL
@@ -172,7 +172,7 @@
                             if ( Math.abs( playerBottom - enemyTop ) <= MAX_SINK_DELTA )
                             {
                                 // hit enemy
-                                enemy.onHitByPlayer( this.lookingDirection );
+                                enemy.onHitByPlayer( this.facing );
 
                                 // enable slow motion
                                 ninjas.Main.game.startSlowMotionTicks();

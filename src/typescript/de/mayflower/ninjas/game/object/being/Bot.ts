@@ -50,7 +50,7 @@
             y                  :number,
             walkingTargetLeft  :number,
             walkingTargetRight :number,
-            lookingDirection   :ninjas.CharacterLookingDirection,
+            lookingDirection   :ninjas.CharacterFacing,
             spriteTemplate     :ninjas.SpriteTemplate,
             characterSpriteSet :ninjas.CharacterSpriteSet
         )
@@ -70,7 +70,7 @@
             this.walkingTargetLeft  = walkingTargetLeft;
             this.walkingTargetRight = walkingTargetRight;
 
-            if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+            if ( this.facing === ninjas.CharacterFacing.LEFT )
             {
                 this.currentPhase = EnemyMovementPhase.WALKING_LEFT;
             }
@@ -111,19 +111,19 @@
         *
         *   @param playerDirection The current direction of the player.
         ***************************************************************************************************************/
-        public onHitByPlayer( playerDirection :ninjas.CharacterLookingDirection ) : void
+        public onHitByPlayer( playerDirection :ninjas.CharacterFacing ) : void
         {
             // flag as dying
             this.isDying = true;
 
             // face the player
-            if ( playerDirection === ninjas.CharacterLookingDirection.LEFT )
+            if ( playerDirection === ninjas.CharacterFacing.LEFT )
             {
-                this.lookingDirection = ninjas.CharacterLookingDirection.RIGHT;
+                this.facing = ninjas.CharacterFacing.RIGHT;
             }
             else
             {
-                this.lookingDirection = ninjas.CharacterLookingDirection.LEFT;
+                this.facing = ninjas.CharacterFacing.LEFT;
             }
 
             // disable body collisions
@@ -218,15 +218,15 @@
                 {
                     ninjas.Debug.enemy.log( 'Player hit by enemy! Player is punching back now!' );
 
-                    let playerPunchBackDirection:ninjas.CharacterLookingDirection;
+                    let playerPunchBackDirection:ninjas.CharacterFacing;
 
-                    if ( ninjas.Main.game.level.player.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    if ( ninjas.Main.game.level.player.facing === ninjas.CharacterFacing.LEFT )
                     {
-                        playerPunchBackDirection = ninjas.CharacterLookingDirection.RIGHT;
+                        playerPunchBackDirection = ninjas.CharacterFacing.RIGHT;
                     }
                     else
                     {
-                        playerPunchBackDirection = ninjas.CharacterLookingDirection.LEFT;
+                        playerPunchBackDirection = ninjas.CharacterFacing.LEFT;
                     }
 
                     // punch back the player into the player's opposite direction!

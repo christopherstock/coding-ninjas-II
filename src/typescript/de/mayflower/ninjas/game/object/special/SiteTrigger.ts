@@ -113,7 +113,7 @@
             {
                 case SitePanelAppearance.PLAYER_LOOKING:
                 {
-                    if ( ninjas.Main.game.level.player.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    if ( ninjas.Main.game.level.player.facing === ninjas.CharacterFacing.LEFT )
                     {
                         return ninjas.SitePanelPosition.LEFT;
                     }

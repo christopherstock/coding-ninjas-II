@@ -68,32 +68,20 @@
         /** ************************************************************************************************************
         *   Creates the player.
         *
-        *   @param level            The level instance to add the player to.
-        *   @param x                Anchor X.
-        *   @param yBottom          Anchor Y.
-        *   @param lookingDirection The initial looking direction.
-        *   @param initialFloat     Whether to startup with an open parachute.
+        *   @param level The level instance to add the player to.
         ***************************************************************************************************************/
-        public static createPlayer
-        (
-            level            :ninjas.Level,
-            x                :number,
-            yBottom          :number,
-            lookingDirection :ninjas.CharacterLookingDirection,
-            initialFloat     :boolean
-        )
-        : void
+        public static createPlayer( level:ninjas.Level ) : void
         {
             const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT;
             const firstSprite     :ninjas.SpriteTemplate = (
-                initialFloat
+                level.playerInitialFloat
                 ? (
-                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                    level.playerInitialFacing === ninjas.CharacterFacing.LEFT
                     ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT
                     : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT
                 )
                 : (
-                    lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                    level.playerInitialFacing === ninjas.CharacterFacing.LEFT
                     ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT
                     : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT
                 )
@@ -105,11 +93,11 @@
                     dimensionSprite,
                     ninjas.DebugColor.COLOR_DEBUG_PLAYER
                 ),
-                x,
-                ( yBottom - dimensionSprite.height ),
-                lookingDirection,
+                level.playerStartX,
+                ( level.playerStartY - dimensionSprite.height ),
+                level.playerInitialFacing,
                 firstSprite,
-                initialFloat
+                level.playerInitialFloat
             );
         }
 
@@ -631,7 +619,7 @@
             level              :ninjas.Level,
             xLeft              :number,
             yBottom            :number,
-            lookingDirection   :ninjas.CharacterLookingDirection,
+            lookingDirection   :ninjas.CharacterFacing,
             walkingTargetLeft  :number,
             walkingTargetRight :number,
             characterSpriteSet :ninjas.CharacterSpriteSet

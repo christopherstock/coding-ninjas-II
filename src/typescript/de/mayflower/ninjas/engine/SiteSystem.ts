@@ -228,9 +228,9 @@
                 || this.animationState === ninjas.SitePanelAnimation.HIDING
             ) {
                 // center camera X if desired
-                switch ( ninjas.Main.game.level.player.lookingDirection )
+                switch ( ninjas.Main.game.level.player.facing )
                 {
-                    case ninjas.CharacterLookingDirection.LEFT:
+                    case ninjas.CharacterFacing.LEFT:
                     {
                         return (
                             ninjas.Main.game.engine.canvasSystem.getWidth()
@@ -238,7 +238,7 @@
                         );
                     }
 
-                    case ninjas.CharacterLookingDirection.RIGHT:
+                    case ninjas.CharacterFacing.RIGHT:
                     {
                         return (
                             ninjas.Main.game.engine.canvasSystem.getWidth()
@@ -247,14 +247,14 @@
                     }
                 }
 
-                switch ( ninjas.Main.game.level.player.lookingDirection )
+                switch ( ninjas.Main.game.level.player.facing )
                 {
-                    case ninjas.CharacterLookingDirection.LEFT:
+                    case ninjas.CharacterFacing.LEFT:
                     {
                         return this.leftCameraTargetX;
                     }
 
-                    case ninjas.CharacterLookingDirection.RIGHT:
+                    case ninjas.CharacterFacing.RIGHT:
                     {
                         return this.rightCameraTargetX;
                     }

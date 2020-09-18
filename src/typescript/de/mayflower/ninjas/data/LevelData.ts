@@ -10,16 +10,18 @@
     export class LevelData extends ninjas.Level
     {
         /** Player start position X. */
-        public      playerStartX            :number                     = 500; // 5020; // 1600;
+        public  playerStartX            :number                             = 500;
         /** Player start position Y. */
-        public      playerStartY            :number                     = 750;
-        /** Player starts with an open parachute. */
-        public      playerInitialFloat      :boolean                    = true;
+        public  playerStartY            :number                             = 2000; // 750;
+        /** Player initial parachute state. */
+        public  playerInitialFloat      :boolean                            = false; // true;
+        /** Player initial facing. */
+        public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
         /** The width of this level. */
-        public      width                   :number                     = 20000;
+        public  width                   :number                             = 20000;
         /** The height of this level. */
-        public      height                  :number                     = 5000;
+        public  height                  :number                             = 5000;
 
         /** ************************************************************************************************************
         *   Inits a new level.
@@ -27,21 +29,20 @@
         protected createGameObjects() : void
         {
             // player
-            ninjas.GameObjectBundleFactory.createPlayer
-            (
-                this,
-                this.playerStartX,
-                this.playerStartY,
-                ninjas.CharacterLookingDirection.RIGHT,
-                this.playerInitialFloat
-            );
+            ninjas.GameObjectBundleFactory.createPlayer( this );
 
             // parallax bg
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
-            // startup area
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE,      ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+            // startup plateau
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 700, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
+
+            // 2nd plateau
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 1500, 2000, 8,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+
+
+
 /*
             // solid grounds
             ninjas.GameObjectBundleFactory.createSolidGround( this, 1400, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
@@ -70,7 +71,7 @@
             ninjas.GameObjectBundleFactory.createDecoImage(  this, 3050, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_TREE_1 );
             ninjas.GameObjectBundleFactory.createDecoImage(  this, 3450, 1900, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
             ninjas.GameObjectBundleFactory.createDecoImage(  this, 3550, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_BUSH_2 );
-*/
+
             // enemies
             ninjas.GameObjectBundleFactory.createEnemy( this, 6000, 1900, ninjas.CharacterLookingDirection.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
             ninjas.GameObjectBundleFactory.createEnemy( this, 7000, 1900, ninjas.CharacterLookingDirection.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
@@ -112,5 +113,6 @@
 
             // flying ground
             ninjas.GameObjectBundleFactory.createFlyingGround( this, 6000,  1500, 5, ninjas.Slope.NONE, ninjas.JumpPassThrough.YES, ninjas.CapHorz.BOTH );
+*/
         }
     }

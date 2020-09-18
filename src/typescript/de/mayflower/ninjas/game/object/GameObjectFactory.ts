@@ -400,7 +400,7 @@
         (
             x                  :number,
             yBottom            :number,
-            lookingDirection   :ninjas.CharacterLookingDirection,
+            lookingDirection   :ninjas.CharacterFacing,
             walkingTargetLeft  :number,
             walkingTargetRight :number,
             characterSpriteSet :ninjas.CharacterSpriteSet

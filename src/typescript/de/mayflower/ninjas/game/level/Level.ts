@@ -10,6 +10,10 @@
         public      playerStartX            :number                         = 0.0;
         /** Player start position Y. */
         public      playerStartY            :number                         = 0.0;
+        /** Player initial parachute state. */
+        public      playerInitialFloat      :boolean                        = false;
+        /** Player initial looking direction. */
+        public      playerInitialFacing     :ninjas.CharacterFacing         = ninjas.CharacterFacing.RIGHT;
 
         /** The width of this level. */
         public      width                   :number                         = 0.0;

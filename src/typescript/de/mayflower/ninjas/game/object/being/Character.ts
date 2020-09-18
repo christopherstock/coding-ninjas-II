@@ -3,13 +3,13 @@
     import * as ninjas from '../../../ninjas';
 
     /** ****************************************************************************************************************
-    *   Represents a character's looking direction.
+    *   Represents a character's facing direction.
     *******************************************************************************************************************/
-    export enum CharacterLookingDirection
+    export enum CharacterFacing
     {
-        /** Looking left. */
+        /** Facing left. */
         LEFT,
-        /** Looking right. */
+        /** Facing right. */
         RIGHT,
     }
 
@@ -18,8 +18,8 @@
     *******************************************************************************************************************/
     export abstract class Character extends ninjas.GameObject
     {
-        /** The looking direction for this character. */
-        public                          lookingDirection                    :ninjas.CharacterLookingDirection   = null;
+        /** The facing direction for this character. */
+        public                          facing                              :ninjas.CharacterFacing             = null;
         /** Flags if the character currently collides with the bottom sensor. */
         public                          collidesBottom                      :boolean                            = false;
 
@@ -55,24 +55,24 @@
         /** ************************************************************************************************************
         *   Creates a new character.
         *
-        *   @param shape            The shape for this object.
-        *   @param spriteTemplate   The sprite template to use for this game object.
-        *   @param x                Startup position X.
-        *   @param y                Startup position Y.
-        *   @param lookingDirection The initial looking direction.
-        *   @param speedMove        The speed for horizontal movement.
-        *   @param jumpPower        The vertical force to apply on jumping.
-        *   @param spriteSet        The sprite set to use for this character.
+        *   @param shape          The shape for this object.
+        *   @param spriteTemplate The sprite template to use for this game object.
+        *   @param x              Startup position X.
+        *   @param y              Startup position Y.
+        *   @param facing         The initial looking direction.
+        *   @param speedMove      The speed for horizontal movement.
+        *   @param jumpPower      The vertical force to apply on jumping.
+        *   @param spriteSet      The sprite set to use for this character.
         ***************************************************************************************************************/
         protected constructor
         (
-            shape            :ninjas.Shape,
-            spriteTemplate   :ninjas.SpriteTemplate,
-            x                :number,
-            y                :number,
-            lookingDirection :ninjas.CharacterLookingDirection,
-            speedMove        :number,
-            jumpPower        :number,
+            shape          :ninjas.Shape,
+            spriteTemplate :ninjas.SpriteTemplate,
+            x              :number,
+            y              :number,
+            facing         :ninjas.CharacterFacing,
+            speedMove      :number,
+            jumpPower      :number,
 
             spriteSet        :ninjas.CharacterSpriteSet
         )
@@ -85,11 +85,11 @@
                 y
             );
 
-            this.lookingDirection = lookingDirection;
-            this.speedMove        = speedMove;
-            this.jumpPower        = jumpPower;
+            this.facing    = facing;
+            this.speedMove = speedMove;
+            this.jumpPower = jumpPower;
 
-            this.spriteSet        = spriteSet;
+            this.spriteSet = spriteSet;
 
             this.setSprite( spriteTemplate );
         }
@@ -129,12 +129,12 @@
         {
             // the bounds of the smash depend on character bound and looking direction
             const attackRange :number = (
-                this.lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                this.facing === ninjas.CharacterFacing.LEFT
                 ? -ninjas.SettingGame.PLAYER_ATTACK_RANGE
                 : ninjas.SettingGame.PLAYER_ATTACK_RANGE
             );
             const damageForce :number = (
-                this.lookingDirection === ninjas.CharacterLookingDirection.LEFT
+                this.facing === ninjas.CharacterFacing.LEFT
                 ? -ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
                 : ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
             );
@@ -180,7 +180,7 @@
                         ninjas.Debug.character.log( 'Character hits an enemy' );
 
                         // hit enemy
-                        enemy.onHitByPlayer( this.lookingDirection );
+                        enemy.onHitByPlayer( this.facing );
 
                         // enable slow motion
                         ninjas.Main.game.startSlowMotionTicks();
@@ -194,7 +194,7 @@
         *
         *   @param punchBackDirection The direction in which to punch back.
         ***************************************************************************************************************/
-        public receivePunchBack( punchBackDirection:ninjas.CharacterLookingDirection ) : void
+        public receivePunchBack( punchBackDirection:ninjas.CharacterFacing ) : void
         {
             const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 17.5 );
             const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 27.5 );
@@ -202,7 +202,7 @@
             // apply punch-back force
             switch ( punchBackDirection )
             {
-                case ninjas.CharacterLookingDirection.LEFT:
+                case ninjas.CharacterFacing.LEFT:
                 {
                     matter.Body.setVelocity
                     (
@@ -212,7 +212,7 @@
                     break;
                 }
 
-                case ninjas.CharacterLookingDirection.RIGHT:
+                case ninjas.CharacterFacing.RIGHT:
                 {
                     matter.Body.setVelocity
                     (
@@ -271,7 +271,7 @@
         {
             matter.Body.translate( this.shape.body, matter.Vector.create( -this.speedMove, 0 ) );
             this.movesLeft = true;
-            this.lookingDirection = ninjas.CharacterLookingDirection.LEFT;
+            this.facing    = ninjas.CharacterFacing.LEFT;
 
             // check in-air collision
             if ( !this.collidesBottom && this.isCollidingObstacle() )
@@ -288,7 +288,7 @@
         {
             matter.Body.translate( this.shape.body, matter.Vector.create( this.speedMove, 0 ) );
             this.movesRight = true;
-            this.lookingDirection = ninjas.CharacterLookingDirection.RIGHT;
+            this.facing     = ninjas.CharacterFacing.RIGHT;
 
             // check in-air collision
             if ( !this.collidesBottom && this.isCollidingObstacle() )
@@ -373,7 +373,7 @@
         {
             if ( this.isDying )
             {
-                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                if ( this.facing === ninjas.CharacterFacing.LEFT )
                 {
                     this.setSprite( this.spriteSet.spriteDieLeft );
                 }
@@ -386,7 +386,7 @@
             {
                 if ( this.isGliding )
                 {
-                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    if ( this.facing === ninjas.CharacterFacing.LEFT )
                     {
                         this.setSprite( this.spriteSet.spriteGlideLeft );
                     }
@@ -397,7 +397,7 @@
                 }
                 else
                 {
-                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    if ( this.facing === ninjas.CharacterFacing.LEFT )
                     {
                         this.setSprite( this.spriteSet.spriteFallLeft );
                     }
@@ -409,7 +409,7 @@
             }
             else if ( this.isJumping() )
             {
-                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                if ( this.facing === ninjas.CharacterFacing.LEFT )
                 {
                     this.setSprite( this.spriteSet.spriteJumpLeft );
                 }
@@ -420,7 +420,7 @@
             }
             else if ( this.isAttacking() )
             {
-                if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                if ( this.facing === ninjas.CharacterFacing.LEFT )
                 {
                     this.setSprite( this.spriteSet.spriteAttackLeft );
                 }
@@ -441,7 +441,7 @@
                 }
                 else
                 {
-                    if ( this.lookingDirection === ninjas.CharacterLookingDirection.LEFT )
+                    if ( this.facing === ninjas.CharacterFacing.LEFT )
                     {
                         this.setSprite( this.spriteSet.spriteStandLeft );
                     }
