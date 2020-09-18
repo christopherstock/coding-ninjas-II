@@ -38,16 +38,23 @@
             ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 700, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
 
-            // 2nd plateau
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 1500, 2000, 8,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+            // 2nd plateau (sigsaw)
+            ninjas.GameObjectFactory.createSigsaw( this, 1400, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, ninjas.BodyDensity.DEFAULT );
 
             // 3rd plateau
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 2984, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 2460, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
-            // sig saw
-            ninjas.GameObjectFactory.createSigsaw( this, 4084, 1800, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, 0.0005 );
+            // 4th plateau (bounce)
+            ninjas.GameObjectFactory.createBounce( this, 3560, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.BOUNCE_1 ), 0.00075 );
+
+            // 5th plateau
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 4620, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
 
+            // platform
+/*
+            ninjas.GameObjectFactory.createPlatform( this, 250, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 6000, 1600 ), matter.Vector.create( 5000, 1600 ) ] );
+*/
 
 /*
             // solid grounds
@@ -99,11 +106,6 @@
             // deco
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 6000, 1900, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CAGE  );
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 6300, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STOVE );
-
-            // bounce
-            ninjas.GameObjectFactory.createBounce( this, 2500, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), 0.00075 );
-            // platform
-            ninjas.GameObjectFactory.createPlatform( this, 250, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 6000, 1600 ), matter.Vector.create( 5000, 1600 ) ] );
 
             // wooden crate
             ninjas.GameObjectBundleFactory.createCrate( this, 6900, 1900, ninjas.CrateType.WOODEN );

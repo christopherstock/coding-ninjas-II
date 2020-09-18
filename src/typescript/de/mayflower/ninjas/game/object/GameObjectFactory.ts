@@ -619,8 +619,6 @@
         *   @param level            The level to add the sigsaw to.
         *   @param xLeft            Anchor X.
         *   @param yTop             Anchor Y.
-        *   @param width            Object width.
-        *   @param height           Object height.
         *   @param spriteTemplate   The decoration sprite.
         *   @param maxRotationSpeed The maximum rotation speed per tick. -1 disables this maximum.
         *   @param density          The density of the Sigsaw.
@@ -630,8 +628,6 @@
             level            :ninjas.Level,
             xLeft            :number,
             yTop             :number,
-            width            :number,
-            height           :number,
             spriteTemplate   :ninjas.SpriteTemplate,
             maxRotationSpeed :number,
             density          :number
@@ -642,9 +638,8 @@
             (
                 new ninjas.ShapeRectangle
                 (
-                    // TODO width and height from image!
-                    width,
-                    height,
+                    spriteTemplate.width,
+                    spriteTemplate.height,
                     ninjas.DebugColor.COLOR_DEBUG_SIGSAW,
                     ninjas.StaticShape.NO,
                     0.0,
@@ -711,10 +706,8 @@
         *   Creates a bounce.
         *
         *   @param level          The level to add the sigsaw to.
-        *   @param x              Anchor X.
-        *   @param y              Anchor Y.
-        *   @param width          Object width.
-        *   @param height         Object height.
+        *   @param xLeft          Anchor X.
+        *   @param yTop           Anchor Y.
         *   @param spriteTemplate The decoration sprite.
         *   @param density        The density for the Bounce.
         *
@@ -722,10 +715,8 @@
         ***************************************************************************************************************/
         public static createBounce(
             level          :ninjas.Level,
-            x              :number,
-            y              :number,
-            width          :number,
-            height         :number,
+            xLeft          :number,
+            yTop           :number,
             spriteTemplate :ninjas.SpriteTemplate,
             density        :number
         )
@@ -735,9 +726,8 @@
             (
                 new ninjas.ShapeRectangle
                 (
-                    // TODO width and height from image?
-                    width,
-                    height,
+                    spriteTemplate.width,
+                    spriteTemplate.height,
                     ninjas.DebugColor.COLOR_DEBUG_BOUNCE,
                     ninjas.StaticShape.NO,
                     0.0,
@@ -746,8 +736,8 @@
                     ninjas.BodyRestitution.DEFAULT
                 ),
                 spriteTemplate,
-                x,
-                y
+                xLeft,
+                yTop
             );
 
             level.bounces.push( bounce );

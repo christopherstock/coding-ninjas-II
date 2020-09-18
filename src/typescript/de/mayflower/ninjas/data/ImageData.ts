@@ -512,6 +512,8 @@
 
         /** Site image 'sigsaw 1'. */
         public      static      SIGSAW_1                                        :string         = ninjas.SettingEngine.PATH_IMAGE_SIGSAW + 'sigsaw1.png';
+        /** Site image 'bounce 1'. */
+        public      static      BOUNCE_1                                        :string         = ninjas.SettingEngine.PATH_IMAGE_BOUNCE + 'bounce1.png';
         /** Site image 'platform 1'. */
         public      static      PLATFORM_1                                      :string         = ninjas.SettingEngine.PATH_IMAGE_PLATFORM + 'platform1.png';
 
@@ -788,6 +790,7 @@
             ImageData.IMAGE_SITE_PANEL_OFFICE_BER,
 
             ImageData.SIGSAW_1,
+            ImageData.BOUNCE_1,
             ImageData.PLATFORM_1,
         ];
     }
