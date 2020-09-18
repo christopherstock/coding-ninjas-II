@@ -10,7 +10,7 @@
     export class LevelData extends ninjas.Level
     {
         /** Player start position X. */
-        public  playerStartX            :number                             = 500;
+        public  playerStartX            :number                             = 4620; // 500;
         /** Player start position Y. */
         public  playerStartY            :number                             = 2000; // 750;
         /** Player initial parachute state. */
@@ -50,24 +50,18 @@
             // 5th plateau
             ninjas.GameObjectBundleFactory.createSolidGround( this, 4620, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
+            // 6th plateau (platform)
+            ninjas.GameObjectFactory.createPlatform( this, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 5260, 2000 ), matter.Vector.create( 6000, 2000 ) ] );
 
-            // platform
-/*
-            ninjas.GameObjectFactory.createPlatform( this, 250, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 6000, 1600 ), matter.Vector.create( 5000, 1600 ) ] );
-*/
-
-/*
-            // solid grounds
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 1400, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 2680, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 3320, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_SNOW );
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 5020, 1900, 20, 5, ninjas.Slope.NONE,      ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_SNOW );
-
+            // 7th plateau
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 6250, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 7530, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 8170, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_SNOW );
+            // plateau after bridge
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 9870, 1900, 20, 5, ninjas.Slope.NONE,      ninjas.CapHorz.BOTH,  ninjas.GroundData.TILESET_SNOW );
             // bridge and blue water
-            ninjas.GameObjectBundleFactory.createWaterArea(   this, 4300,  2060, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
-            ninjas.GameObjectBundleFactory.createBridge(      this, 4370,  1900 );
-*/
-
+            ninjas.GameObjectBundleFactory.createWaterArea(   this, 9150, 2060, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
+            ninjas.GameObjectBundleFactory.createBridge(      this, 9220, 1900 );
 /*
             // obstacles
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );

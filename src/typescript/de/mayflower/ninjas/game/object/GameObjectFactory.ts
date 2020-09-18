@@ -660,8 +660,6 @@
         *   Creates a platform that moves in the air.
         *
         *   @param level          The level to add the platform to.
-        *   @param width          Object width.
-        *   @param height         Object height.
         *   @param spriteTemplate The decoration sprite.
         *   @param speed          Moving speed of the platform in px per tick.
         *   @param waypoints      Moving waypoints. First waypoint is the startup position.
@@ -671,22 +669,18 @@
         public static createPlatform
         (
             level          :ninjas.Level,
-            width          :number,
-            height         :number,
             spriteTemplate :ninjas.SpriteTemplate,
             speed          :number,
             waypoints      :matter.Vector[]
         )
         : void
         {
-            // TODO see 'static friction example'
-
             const platform :ninjas.Platform = new ninjas.Platform
             (
                 new ninjas.ShapeRectangle
                 (
-                    width,
-                    height,
+                    spriteTemplate.width,
+                    spriteTemplate.height,
                     ninjas.DebugColor.COLOR_DEBUG_PLATFORM,
                     ninjas.StaticShape.YES,
                     0.0,
