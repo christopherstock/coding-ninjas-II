@@ -59,7 +59,7 @@
         *   @param spriteTemplate The sprite template to use for this game object.
         *   @param x              Startup position X.
         *   @param y              Startup position Y.
-        *   @param facing         The initial looking direction.
+        *   @param facing         The initial facing direction.
         *   @param speedMove      The speed for horizontal movement.
         *   @param jumpPower      The vertical force to apply on jumping.
         *   @param spriteSet      The sprite set to use for this character.
@@ -127,7 +127,7 @@
         ***************************************************************************************************************/
         public performSmash() : void
         {
-            // the bounds of the smash depend on character bound and looking direction
+            // the bounds of the smash depend on character bound and facing direction
             const attackRange :number = (
                 this.facing === ninjas.CharacterFacing.LEFT
                 ? -ninjas.SettingGame.PLAYER_ATTACK_RANGE

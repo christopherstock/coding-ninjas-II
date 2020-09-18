@@ -609,7 +609,7 @@
         *   @param level              The level to add the enemy to.
         *   @param xLeft              Anchor X.
         *   @param yBottom            Anchor bottom Y.
-        *   @param lookingDirection   The enemies initial looking and walking direction.
+        *   @param facingDirection    The enemies initial facing and walking direction.
         *   @param walkingTargetLeft  Left walking target X.
         *   @param walkingTargetRight Right walking target X.
         *   @param characterSpriteSet The sprite set to use for this enemy.
@@ -619,7 +619,7 @@
             level              :ninjas.Level,
             xLeft              :number,
             yBottom            :number,
-            lookingDirection   :ninjas.CharacterFacing,
+            facingDirection    :ninjas.CharacterFacing,
             walkingTargetLeft  :number,
             walkingTargetRight :number,
             characterSpriteSet :ninjas.CharacterSpriteSet
@@ -630,7 +630,7 @@
             (
                 xLeft,
                 yBottom,
-                lookingDirection,
+                facingDirection,
                 walkingTargetLeft,
                 walkingTargetRight,
                 characterSpriteSet

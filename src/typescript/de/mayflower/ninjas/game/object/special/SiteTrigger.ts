@@ -7,7 +7,7 @@
     *******************************************************************************************************************/
     export enum SitePanelAppearance
     {
-        PLAYER_LOOKING,
+        PLAYER_FACING,
         LEFT,
         RIGHT,
     }
@@ -69,7 +69,7 @@
             {
                 if ( !this.sitePanelActive )
                 {
-                    // get panel popup according to player looking direction
+                    // get panel popup according to player facing direction
                     const panelPosition:ninjas.SitePanelPosition = this.determinePanelPosition();
 
                     if ( ninjas.Main.game.engine.siteSystem.show( this.content, panelPosition ) )
@@ -103,7 +103,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Determines the position of the panel to show according to the player's current looking direction.
+        *   Determines the position of the panel to show according to the player's current facing direction.
         *
         *   @return The position of the panel to be shown.
         ***************************************************************************************************************/
@@ -111,7 +111,7 @@
         {
             switch ( this.sitePanelAppearance )
             {
-                case SitePanelAppearance.PLAYER_LOOKING:
+                case SitePanelAppearance.PLAYER_FACING:
                 {
                     if ( ninjas.Main.game.level.player.facing === ninjas.CharacterFacing.LEFT )
                     {

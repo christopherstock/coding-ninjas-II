@@ -221,7 +221,7 @@
         ***************************************************************************************************************/
         public getCameraTargetX() : number
         {
-            // target according to looking direction
+            // target according to player facing
             if (
                 ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X
                 || this.animationState === ninjas.SitePanelAnimation.HIDDEN

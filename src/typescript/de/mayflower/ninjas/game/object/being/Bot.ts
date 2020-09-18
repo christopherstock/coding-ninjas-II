@@ -39,7 +39,7 @@
         *   @param y                  Startup position Y.
         *   @param walkingTargetLeft  Left walking target X.
         *   @param walkingTargetRight Right walking target X.
-        *   @param lookingDirection   The initial looking direction of this character.
+        *   @param facing             The initial facing direction of this character.
         *   @param spriteTemplate     The sprite template to use for this game object.
         *   @param characterSpriteSet The sprite set to use for this character.
         ***************************************************************************************************************/
@@ -50,7 +50,7 @@
             y                  :number,
             walkingTargetLeft  :number,
             walkingTargetRight :number,
-            lookingDirection   :ninjas.CharacterFacing,
+            facing             :ninjas.CharacterFacing,
             spriteTemplate     :ninjas.SpriteTemplate,
             characterSpriteSet :ninjas.CharacterSpriteSet
         )
@@ -61,7 +61,7 @@
                 spriteTemplate,
                 x,
                 y,
-                lookingDirection,
+                facing,
                 ninjas.SettingMatter.ENEMY_SPEED_MOVE,
                 0,
                 characterSpriteSet
