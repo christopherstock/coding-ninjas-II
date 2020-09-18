@@ -41,6 +41,12 @@
             // 2nd plateau
             ninjas.GameObjectBundleFactory.createSolidGround( this, 1500, 2000, 8,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
+            // 3rd plateau
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 2984, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+
+            // sig saw
+            ninjas.GameObjectFactory.createSigsaw( this, 4084, 1800, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, 0.0005 );
+
 
 
 /*
@@ -94,8 +100,6 @@
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 6000, 1900, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CAGE  );
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 6300, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STOVE );
 
-            // sig saw
-            ninjas.GameObjectFactory.createSigsaw( this, 3600, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, 0.0005 );
             // bounce
             ninjas.GameObjectFactory.createBounce( this, 2500, 1700, 600, 40, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), 0.00075 );
             // platform

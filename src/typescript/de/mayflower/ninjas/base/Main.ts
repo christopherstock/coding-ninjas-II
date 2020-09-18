@@ -11,6 +11,7 @@
     *        https://ant.design/components/progress/
     *
     *   TODO HIGH Add slow motion fx.
+    *   TODO HIGH Reset level when player dies.
     *   TODO HIGH Create toggable startup level experience elements
     *
     *   CLEANUP
