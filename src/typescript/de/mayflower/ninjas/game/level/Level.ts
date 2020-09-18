@@ -82,6 +82,7 @@
             for ( const platform of this.platforms )
             {
                 matterJsSystem.addToWorld( platform.shape.body );
+                matterJsSystem.addToWorld( platform.frictionShape.body );
             }
             for ( const obstacle of this.obstacles )
             {

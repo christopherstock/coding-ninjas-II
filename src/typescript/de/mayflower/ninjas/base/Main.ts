@@ -4,7 +4,6 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
-    *   TODO Fix slow sliding down on platform.
     *   TODO HIGH Add slow motion fx.
     *   TODO HIGH Create toggable startup level experience elements
     *   TODO HIGH Add primal Ant Design components:

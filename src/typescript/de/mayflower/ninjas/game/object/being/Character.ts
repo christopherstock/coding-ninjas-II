@@ -517,6 +517,7 @@
             for ( const platform of ninjas.Main.game.level.platforms )
             {
                 bodiesToCheck.push( platform.shape.body );
+                bodiesToCheck.push( platform.frictionShape.body );
             }
 /*
             // ignore enemies!

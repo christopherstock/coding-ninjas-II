@@ -8,24 +8,29 @@
     export class Platform extends ninjas.GameObject
     {
         /** Medium moving speed. */
-        public  static              SPEED_NORMAL            :number                         = 1.0;
+        public  static              SPEED_NORMAL                :number                         = 1.0;
+        /** Friction shape margin X. */
+        public  static              FRICTION_SHAPE_MARGIN_X     :number                         = 15.0;
+
+        /** The friction shape that has infinite static friction. */
+        public          readonly    frictionShape               :ninjas.ShapeRectangle          = null;
 
         /** The waypoints for this platform to move. */
-        private         readonly    waypoints               :matter.Vector[]                = null;
+        private         readonly    waypoints                   :matter.Vector[]                = null;
         /** The number of ticks till the next waypoint is reached. */
-        private         readonly    speed                   :number                         = 0.0;
+        private         readonly    speed                       :number                         = 0.0;
         /** The current waypoint to move to. */
-        private                     currentWaypointIndex    :number                         = 0;
+        private                     currentWaypointIndex        :number                         = 0;
 
         /** The number of animation steps till the next waypoint. */
-        private                     stepsTillNextWaypoint   :number                         = 0;
+        private                     stepsTillNextWaypoint       :number                         = 0;
         /** A counter for the current step to the next waypoint. */
-        private                     currentStep             :number                         = 0;
+        private                     currentStep                 :number                         = 0;
 
         /** Step size X per tick in px. */
-        private                     stepSizeX               :number                         = 0.0;
+        private                     stepSizeX                   :number                         = 0.0;
         /** Step size Y per tick in px. */
-        private                     stepSizeY               :number                         = 0.0;
+        private                     stepSizeY                   :number                         = 0.0;
 
         /** ************************************************************************************************************
         *   Creates a new platform. Initial position is the first waypoint.
@@ -58,10 +63,22 @@
             this.speed     = speed;
             this.waypoints = waypoints;
 
+            this.frictionShape = new ninjas.ShapeRectangle
+            (
+                ( shape.getWidth() - ( 2 * Platform.FRICTION_SHAPE_MARGIN_X ) ),
+                shape.getHeight(),
+                ninjas.DebugColor.COLOR_DEBUG_PLATFORM_FRICTION,
+                ninjas.StaticShape.YES,
+                0.0,
+                ninjas.BodyFriction.DEFAULT,
+                ninjas.BodyDensity.INFINITE,
+                ninjas.BodyRestitution.DEFAULT
+            );
+            this.frictionShape.body.frictionStatic = Infinity;
+            // this.frictionShape.body.render.fillStyle = '#ffff00';
+
             this.currentWaypointIndex = -1;
             this.assignNextWaypoint();
-
-            this.shape.body.frictionStatic = Infinity;
         }
 
         /** ************************************************************************************************************
@@ -78,9 +95,15 @@
                 this.assignNextWaypoint();
             }
 
+            // TODO extract vector
+
             // move platform
             matter.Body.setVelocity( this.shape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
             matter.Body.translate(   this.shape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
+
+            // move friction shape
+            matter.Body.setVelocity( this.frictionShape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
+            matter.Body.translate(   this.frictionShape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
         }
 
         /** ************************************************************************************************************
@@ -112,8 +135,9 @@
                 this.waypoints[ nextWaypointIndex ].y + ( this.shape.getHeight() / 2 )
             );
 
-            // set platform to starting wp
-            matter.Body.setPosition( this.shape.body, currentWaypoint );
+            // set platform to starting waypoint
+            matter.Body.setPosition( this.shape.body,         currentWaypoint );
+            matter.Body.setPosition( this.frictionShape.body, currentWaypoint );
 
             // get deltas
             const deltaX:number      = Math.abs( nextWaypoint.x - currentWaypoint.x );
