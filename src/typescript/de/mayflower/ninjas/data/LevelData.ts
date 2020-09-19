@@ -10,7 +10,7 @@
     export class LevelData extends ninjas.Level
     {
         /** Player start position X. */
-        public  playerStartX            :number                             = 2460; // 480;
+        public  playerStartX            :number                             = 4620; // 480;
         /** Player start position Y. */
         public  playerStartY            :number                             = 1200; // 2000; // 750;
         /** Player initial parachute state. */
@@ -35,16 +35,12 @@
             ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
             // contents
-            this.addStartupPlateau();
+            this.addFirstPlateau();
             this.addSecondPlateau();
             this.addThirdPlateau();
             this.addFourthPlateau();
-
-            // 5th plateau
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 4620, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
-
-            // 6th plateau (platform)
-            ninjas.GameObjectFactory.createPlatform( this, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 5260, 2000 ), matter.Vector.create( 6000, 2000 ) ] );
+            this.addFifthPlateau();
+            this.addSixthPlateau();
 
             // main plateau
             ninjas.GameObjectBundleFactory.createSolidGround( this, 6250, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
@@ -58,7 +54,7 @@
             // site triggers
             ninjas.GameObjectFactory.createSiteTrigger( this, 12000, 1900, 3000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 /*
-            // obstacles
+            // lion statue
             ninjas.GameObjectBundleFactory.createObstacle(    this, 1400, 2000, ninjas.ImageData.IMAGE_STATUE_2 );
             ninjas.GameObjectBundleFactory.createObstacle(    this, 7450, 1900, ninjas.ImageData.IMAGE_STATUE_3 );
 
@@ -105,7 +101,7 @@
         /** ************************************************************************************************************
         *   Adds the 1st plateau (startup shrine).
         ***************************************************************************************************************/
-        private addStartupPlateau() : void
+        private addFirstPlateau() : void
         {
             // ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
@@ -158,7 +154,7 @@
             // ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2460, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
-            // status
+            // statue
             ninjas.GameObjectBundleFactory.createDecoImage( this, 2580, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_2 );
 
             // candles
@@ -172,7 +168,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Adds the 4th plateau.
+        *   Adds the 4th plateau (bounce).
         ***************************************************************************************************************/
         private addFourthPlateau() : void
         {
@@ -191,5 +187,38 @@
             ninjas.GameObjectBundleFactory.createMovableRect( this, 3884, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 4041, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 4166, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+        }
+
+        /** ************************************************************************************************************
+        *   Adds the 5th plateau.
+        ***************************************************************************************************************/
+        private addFifthPlateau() : void
+        {
+            // ground
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 4620, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+
+            // statue
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 4780, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_1 );
+
+            // bush
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 4690, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
+
+            // candles
+            ninjas.GameObjectBundleFactory.createCandle( this, 4930, 2000, ninjas.DecoPosition.BG );
+            ninjas.GameObjectBundleFactory.createCandle( this, 5060, 2000, ninjas.DecoPosition.FG );
+
+            // wooden crate
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 4980, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 5095, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 5042, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+        }
+
+        /** ************************************************************************************************************
+        *   Adds the 6th plateau (platform).
+        ***************************************************************************************************************/
+        private addSixthPlateau() : void
+        {
+            // platform
+            ninjas.GameObjectFactory.createPlatform( this, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 5260, 2000 ), matter.Vector.create( 6000, 2000 ) ] );
         }
     }
