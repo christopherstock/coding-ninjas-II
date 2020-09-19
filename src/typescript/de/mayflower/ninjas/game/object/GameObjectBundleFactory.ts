@@ -793,16 +793,18 @@
         *   @param level       The level to add the decoration to.
         *   @param xLeft       Anchor for left X.
         *   @param yBottom     Anchor for bottom Y.
+        *   @param position    The position for the candle - foreground or background.
         ***************************************************************************************************************/
         public static createCandle
         (
-            level   :ninjas.Level,
-            xLeft   :number,
-            yBottom :number
+            level    :ninjas.Level,
+            xLeft    :number,
+            yBottom  :number,
+            position :ninjas.DecoPosition
         )
         : void
         {
-            ninjas.GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CANDLE                );
-            ninjas.GameObjectBundleFactory.createDecoSprite( level, xLeft - 17, yBottom - 153, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       position, ninjas.ImageData.IMAGE_CANDLE                );
+            ninjas.GameObjectBundleFactory.createDecoSprite( level, xLeft - 17, yBottom - 153, position, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
         }
     }

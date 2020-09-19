@@ -197,8 +197,8 @@
         public      static      IMAGE_STATUE_2                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
         /** Image resource 'statue 3'. */
         public      static      IMAGE_STATUE_3                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue3.png';
-        /** Image resource 'statue 4'. */
-        public      static      IMAGE_STATUE_4                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue4.png';
+        /** Image resource 'statue lion'. */
+        public      static      IMAGE_STATUE_LION                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statueLion.png';
 
         /** Image resource 'well 1'. */
         public      static      IMAGE_WELL_1                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'well1.png';
@@ -621,7 +621,7 @@
             ImageData.IMAGE_STATUE_1,
             ImageData.IMAGE_STATUE_2,
             ImageData.IMAGE_STATUE_3,
-            ImageData.IMAGE_STATUE_4,
+            ImageData.IMAGE_STATUE_LION,
             ImageData.IMAGE_WELL_1,
 
             ImageData.IMAGE_BOOK_CLOSED,

@@ -10,7 +10,7 @@
     export class LevelData extends ninjas.Level
     {
         /** Player start position X. */
-        public  playerStartX            :number                             = 480;
+        public  playerStartX            :number                             = 2460; // 480;
         /** Player start position Y. */
         public  playerStartY            :number                             = 1200; // 2000; // 750;
         /** Player initial parachute state. */
@@ -37,10 +37,7 @@
             // contents
             this.addStartupPlateau();
             this.addSecondPlateau();
-
-
-            // 3rd plateau
-            ninjas.GameObjectBundleFactory.createSolidGround( this, 2460, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+            this.addThirdPlateau();
 
             // 4th plateau (bounce)
             ninjas.GameObjectFactory.createBounce( this, 3560, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.BOUNCE_1 ), 0.00075 );
@@ -87,11 +84,6 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5200, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_2 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5300, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_3 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5400, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_4 );
-
-            // candles
-            ninjas.GameObjectBundleFactory.createCandle( this, 5600, 1900 );
-            ninjas.GameObjectBundleFactory.createCandle( this, 5720, 1900 );
-            ninjas.GameObjectBundleFactory.createCandle( this, 5840, 1900 );
 
             // deco
             ninjas.GameObjectBundleFactory.createDecoImage(   this, 6000, 1900, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CAGE  );
@@ -158,5 +150,26 @@
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1684, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+        }
+
+        /** ************************************************************************************************************
+        *   Adds the 3rd plateau.
+        ***************************************************************************************************************/
+        private addThirdPlateau() : void
+        {
+            // ground
+            ninjas.GameObjectBundleFactory.createSolidGround( this, 2460, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+
+            // status
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 2580, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_2 );
+
+            // candles
+            ninjas.GameObjectBundleFactory.createCandle( this, 2765, 2000, ninjas.DecoPosition.FG );
+            ninjas.GameObjectBundleFactory.createCandle( this, 2865, 2000, ninjas.DecoPosition.BG );
+            ninjas.GameObjectBundleFactory.createCandle( this, 2965, 2000, ninjas.DecoPosition.FG );
+
+            // bushes
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 2630, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 2690, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_BUSH_2 );
         }
     }
