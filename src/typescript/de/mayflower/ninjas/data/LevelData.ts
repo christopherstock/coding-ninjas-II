@@ -38,9 +38,7 @@
             this.addStartupPlateau();
             this.addSecondPlateau();
             this.addThirdPlateau();
-
-            // 4th plateau (bounce)
-            ninjas.GameObjectFactory.createBounce( this, 3560, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.BOUNCE_1 ), 0.00075 );
+            this.addFourthPlateau();
 
             // 5th plateau
             ninjas.GameObjectBundleFactory.createSolidGround( this, 4620, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
@@ -171,5 +169,27 @@
             // bushes
             ninjas.GameObjectBundleFactory.createDecoImage( this, 2630, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
             ninjas.GameObjectBundleFactory.createDecoImage( this, 2690, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_BUSH_2 );
+        }
+
+        /** ************************************************************************************************************
+        *   Adds the 4th plateau.
+        ***************************************************************************************************************/
+        private addFourthPlateau() : void
+        {
+            // bounce
+            ninjas.GameObjectFactory.createBounce( this, 3560, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.BOUNCE_1 ), 0.00075 );
+
+            // wooden crates
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 3600, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 3725, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 3884, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 4041, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 4166, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 3600, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 3725, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 3884, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 4041, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 4166, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
         }
     }
