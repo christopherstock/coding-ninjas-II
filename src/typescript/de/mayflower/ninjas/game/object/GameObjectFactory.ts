@@ -20,7 +20,7 @@
         public static createWoodenCrate( x:number, yBottom:number ):ninjas.Movable
         {
             const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
-                ninjas.ImageData.IMAGE_CRATE_WOOD
+                ninjas.ImageData.IMAGE_CRATE_WOOD_1
             );
 
             return new ninjas.Movable

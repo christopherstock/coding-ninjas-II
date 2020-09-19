@@ -169,10 +169,8 @@
         /** Image resource 'enemy ninja 1 die right frame 5'. */
         public      static      IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blueNinjaGuy/die/05.png';
 
-        /** Image resource 'wooden crate'. */
-        public      static      IMAGE_CRATE_WOOD                                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
-        /** Image resource 'metal crate'. */
-        public      static      IMAGE_CRATE_METAL                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateMetal.jpg';
+        /** Image resource 'wooden crate 1'. */
+        public      static      IMAGE_CRATE_WOOD_1                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood1.png';
 
         /** Image resource 'item'. */
         public      static      IMAGE_ITEM                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
@@ -608,8 +606,7 @@
             ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
 
             ImageData.IMAGE_ITEM,
-            ImageData.IMAGE_CRATE_WOOD,
-            ImageData.IMAGE_CRATE_METAL,
+            ImageData.IMAGE_CRATE_WOOD_1,
             ImageData.IMAGE_TEST_SPHERE,
 
             ImageData.IMAGE_BOULDER_1,

@@ -36,9 +36,8 @@
 
             // contents
             this.addStartupPlateau();
+            this.addSecondPlateau();
 
-            // 2nd plateau (sigsaw)
-            ninjas.GameObjectFactory.createSigsaw( this, 1400, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, ninjas.BodyDensity.DEFAULT );
 
             // 3rd plateau
             ninjas.GameObjectBundleFactory.createSolidGround( this, 2460, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
@@ -52,7 +51,7 @@
             // 6th plateau (platform)
             ninjas.GameObjectFactory.createPlatform( this, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 5260, 2000 ), matter.Vector.create( 6000, 2000 ) ] );
 
-            // 7th plateau
+            // main plateau
             ninjas.GameObjectBundleFactory.createSolidGround( this, 6250, 2000, 10, 5, ninjas.Slope.NONE,      ninjas.CapHorz.LEFT,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 7530, 2000, 5,  5, ninjas.Slope.ASCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
             ninjas.GameObjectBundleFactory.createSolidGround( this, 8170, 1900, 8,  5, ninjas.Slope.NONE,      ninjas.CapHorz.RIGHT, ninjas.GroundData.TILESET_SNOW );
@@ -114,7 +113,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Adds the 1st (startup) plateau.
+        *   Adds the 1st plateau (startup shrine).
         ***************************************************************************************************************/
         private addStartupPlateau() : void
         {
@@ -137,5 +136,19 @@
             // flasks on the floor
             ninjas.GameObjectBundleFactory.createMovableRect( this, 633, 2000, ninjas.ImageData.IMAGE_FLASK_2 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 684, 2000, ninjas.ImageData.IMAGE_FLASK_1 );
+        }
+
+        /** ************************************************************************************************************
+        *   Adds the 2nd plateau (sigsaw).
+        ***************************************************************************************************************/
+        private addSecondPlateau() : void
+        {
+            // sigsaw
+            ninjas.GameObjectFactory.createSigsaw( this, 1400, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, ninjas.BodyDensity.DEFAULT );
+
+            // wooden crates
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1600, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+
+
         }
     }
