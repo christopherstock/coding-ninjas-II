@@ -79,7 +79,7 @@
         RUBBER      = 0.001,
 
         /** Player friction. */
-        // WOOD        = BodyFriction.DEFAULT,
+        WOOD        = BodyFriction.DEFAULT,
         /** Low surface friction. */
         // GLASS       = 0.01,
 

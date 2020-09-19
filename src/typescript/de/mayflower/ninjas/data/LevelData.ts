@@ -147,8 +147,16 @@
             ninjas.GameObjectFactory.createSigsaw( this, 1400, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1.0, ninjas.BodyDensity.DEFAULT );
 
             // wooden crates
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1600, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1400, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1525, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1684, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
 
-
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1400, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1525, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1684, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
         }
     }
