@@ -49,6 +49,9 @@
         ***************************************************************************************************************/
         private addFirstPlateau() : void
         {
+            // site trigger
+            // ninjas.GameObjectFactory.createSiteTrigger( this, 400, 2000, 640, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.LEFT, null );
+
             // ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
@@ -85,25 +88,9 @@
             ninjas.GameObjectBundleFactory.createObstacle( this, 1991, 2150, ninjas.ImageData.IMAGE_STONE_SPHERE );
 
             // wooden crates
-/*
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1400, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1525, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-*/
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1684, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-/*
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1390, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1525, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-*/
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1684, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-/*
-            // stone
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1600, 1775, ninjas.ImageData.IMAGE_STONE_SPHERE );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1991, 1775, ninjas.ImageData.IMAGE_STONE_SPHERE );
-*/
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1924, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
         }
 
         /** ************************************************************************************************************

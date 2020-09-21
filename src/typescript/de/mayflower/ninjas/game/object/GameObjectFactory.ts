@@ -642,7 +642,7 @@
                     ninjas.StaticShape.NO,
                     0.0,
                     2.5,
-                    0.005,
+                    0.001,
                     ninjas.BodyRestitution.DEFAULT
                 ),
                 spriteTemplate,

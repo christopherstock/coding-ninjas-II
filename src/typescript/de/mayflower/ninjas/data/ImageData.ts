@@ -386,7 +386,7 @@
         /** Site image 'logo'. */
         public      static      IMAGE_SITE_PANEL_LOGO                           :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logo.png';
         /** Site image 'site panel bg left'. */
-        public      static      IMAGE_SITE_PANEL_BG_LEFT                        :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
+        public      static      IMAGE_SITE_PANEL_BG_LEFT                        :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft_a90.png';
         /** Site image 'site panel bg right'. */
         public      static      IMAGE_SITE_PANEL_BG_RIGHT                       :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight_a90.png';
         /** Site image 'carousel desktop'. */
