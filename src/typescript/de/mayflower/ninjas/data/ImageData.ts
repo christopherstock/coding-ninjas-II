@@ -200,9 +200,6 @@
         /** Image resource 'statue lion'. */
         public      static      IMAGE_STATUE_LION                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statueLion.png';
 
-        /** Image resource 'well 1'. */
-        public      static      IMAGE_WELL_1                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'well1.png';
-
         /** Image resource 'book closed'. */
         public      static      IMAGE_BOOK_CLOSED                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookClosed.png';
         /** Image resource 'book open'. */
@@ -214,11 +211,6 @@
         public      static      IMAGE_CHANDELIER                                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
         /** Image resource 'candle'. */
         public      static      IMAGE_CANDLE                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
-
-        /** Image resource 'cage'. */
-        public      static      IMAGE_CAGE                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'cage.png';
-        /** Image resource 'stove'. */
-        public      static      IMAGE_STOVE                                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'stove.png';
 
         /** Image resource 'bush 1'. */
         public      static      IMAGE_BUSH_1                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
@@ -236,16 +228,6 @@
         /** Image resource 'pot 1'. */
         public      static      IMAGE_POT_1                                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot1.png';
 
-        /** Image resource 'shrine bg 1'. */
-        public      static      IMAGE_SHRINE_BG_1                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg1.png';
-        /** Image resource 'shrine bg 2'. */
-        public      static      IMAGE_SHRINE_BG_2                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg2.png';
-        /** Image resource 'shrine bg 3'. */
-        public      static      IMAGE_SHRINE_BG_3                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg3.png';
-        /** Image resource 'shrine bg 4'. */
-        public      static      IMAGE_SHRINE_BG_4                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg4.png';
-        /** Image resource 'shrine bg 5'. */
-        public      static      IMAGE_SHRINE_BG_5                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'shrineBg5.png';
         /** Image resource 'DoJo'. */
         public      static      IMAGE_DOJO                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'dojo.jpg';
 
@@ -622,7 +604,6 @@
             ImageData.IMAGE_STATUE_2,
             ImageData.IMAGE_STATUE_3,
             ImageData.IMAGE_STATUE_LION,
-            ImageData.IMAGE_WELL_1,
 
             ImageData.IMAGE_BOOK_CLOSED,
             ImageData.IMAGE_BOOK_OPEN,
@@ -630,9 +611,6 @@
             ImageData.IMAGE_CANDELABRA,
             ImageData.IMAGE_CHANDELIER,
             ImageData.IMAGE_CANDLE,
-
-            ImageData.IMAGE_CAGE,
-            ImageData.IMAGE_STOVE,
 
             ImageData.IMAGE_BUSH_1,
             ImageData.IMAGE_BUSH_2,
@@ -645,11 +623,6 @@
 
             ImageData.IMAGE_POT_1,
 
-            ImageData.IMAGE_SHRINE_BG_1,
-            ImageData.IMAGE_SHRINE_BG_2,
-            ImageData.IMAGE_SHRINE_BG_3,
-            ImageData.IMAGE_SHRINE_BG_4,
-            ImageData.IMAGE_SHRINE_BG_5,
             ImageData.IMAGE_DOJO,
 
             ImageData.IMAGE_GRASS_1_FRAME_1,

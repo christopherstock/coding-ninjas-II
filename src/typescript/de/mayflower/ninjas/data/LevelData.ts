@@ -193,15 +193,15 @@
 
             // lion statue
             ninjas.GameObjectBundleFactory.createDecoImage( this, 6500, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_LION );
-/*
+
             // movables
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1650, 2000, ninjas.ImageData.IMAGE_POT_1 );
-            ninjas.GameObjectBundleFactory.createMovableCircular( this, 2300, 2000, 0.0, ninjas.ImageData.IMAGE_TEST_SPHERE );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 7350, 2000, ninjas.ImageData.IMAGE_POT_1 );
+            ninjas.GameObjectBundleFactory.createMovableCircular( this, 7450, 2000, 0.0, ninjas.ImageData.IMAGE_TEST_SPHERE );
 
             // deco
-            ninjas.GameObjectBundleFactory.createDecoImage(  this, 3450, 1900, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
-            ninjas.GameObjectBundleFactory.createDecoImage(  this, 3550, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_BUSH_2 );
-
+            ninjas.GameObjectBundleFactory.createDecoImage(  this, 7000, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_BOULDER_1 );
+            ninjas.GameObjectBundleFactory.createDecoImage(  this, 6800, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_2 );
+/*
             // enemies
             ninjas.GameObjectBundleFactory.createEnemy( this, 6000, 1900, ninjas.CharacterFacing.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
             ninjas.GameObjectBundleFactory.createEnemy( this, 7000, 1900, ninjas.CharacterFacing.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
@@ -211,10 +211,6 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5200, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_2 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5300, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_3 );
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5400, 1900, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_4 );
-
-            // deco
-            ninjas.GameObjectBundleFactory.createDecoImage(   this, 6000, 1900, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CAGE  );
-            ninjas.GameObjectBundleFactory.createDecoImage(   this, 6300, 1900, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STOVE );
 
             // wooden crate
             ninjas.GameObjectBundleFactory.createCrate( this, 6900, 1900, ninjas.CrateType.WOODEN );
