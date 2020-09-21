@@ -88,9 +88,9 @@
             ninjas.GameObjectBundleFactory.createObstacle( this, 1991, 2150, ninjas.ImageData.IMAGE_STONE_SPHERE );
 
             // wooden crates
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            // ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1924, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+            // ninjas.GameObjectBundleFactory.createMovableRect( this, 1924, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
         }
 
         /** ************************************************************************************************************
