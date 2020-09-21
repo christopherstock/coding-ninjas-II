@@ -173,6 +173,14 @@
         ***************************************************************************************************************/
         private addSeventhPlateau() : void
         {
+            // bushes and tree before dojo
+            ninjas.GameObjectBundleFactory.createDecoImage(  this, 10000, 2100, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
+            ninjas.GameObjectBundleFactory.createDecoImage(  this, 10070, 2120, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_BUSH_2 );
+            ninjas.GameObjectBundleFactory.createDecoImage(  this, 10500, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_TREE_2 );
+
+            // statue before bridge
+            ninjas.GameObjectBundleFactory.createDecoImage( this, 8850, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
+
             // bridge and blue water
             ninjas.GameObjectBundleFactory.createWaterArea(   this, 9150, 2260, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
             ninjas.GameObjectBundleFactory.createBridge(      this, 9220, 2100 );
