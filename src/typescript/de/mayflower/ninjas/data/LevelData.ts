@@ -189,7 +189,7 @@
             ninjas.GameObjectBundleFactory.createDecoImage(  this, 8030, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_TREE_1 );
 
             // site trigger
-            ninjas.GameObjectFactory.createSiteTrigger( this, 12000, 2100, 3000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
+            ninjas.GameObjectFactory.createSiteTrigger( this, 11400, 2100, 3000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 
             // lion statue
             ninjas.GameObjectBundleFactory.createDecoImage( this, 6500, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_LION );
@@ -198,13 +198,28 @@
             ninjas.GameObjectBundleFactory.createMovableRect( this, 7350, 2000, ninjas.ImageData.IMAGE_POT_1 );
             ninjas.GameObjectBundleFactory.createMovableCircular( this, 7450, 2000, 0.0, ninjas.ImageData.IMAGE_TEST_SPHERE );
 
-            // deco
+            // boulder and bush
             ninjas.GameObjectBundleFactory.createDecoImage(  this, 7000, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_BOULDER_1 );
             ninjas.GameObjectBundleFactory.createDecoImage(  this, 6800, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_2 );
 
             // final statue
-            ninjas.GameObjectBundleFactory.createObstacle( this, 12470, 2100, ninjas.ImageData.IMAGE_STATUE_1 );
+            ninjas.GameObjectBundleFactory.createObstacle( this, 12300, 2100, ninjas.ImageData.IMAGE_STATUE_1 );
 
+            // dojo
+            ninjas.GameObjectBundleFactory.createDecoImage(  this, 11400, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
+
+            // chandelier
+            ninjas.GameObjectBundleFactory.createDecoImage(   this, 11673, 1805, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CHANDELIER );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 11666, 1601, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 11720, 1586, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 11854, 1588, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 11905, 1617, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
+
+            // candles
+            ninjas.GameObjectBundleFactory.createCandle( this, 11500, 2100, ninjas.DecoPosition.FG );
+            ninjas.GameObjectBundleFactory.createCandle( this, 11600, 2100, ninjas.DecoPosition.FG );
+            ninjas.GameObjectBundleFactory.createCandle( this, 12000, 2100, ninjas.DecoPosition.FG );
+            ninjas.GameObjectBundleFactory.createCandle( this, 12100, 2100, ninjas.DecoPosition.FG );
 /*
             // enemies
             ninjas.GameObjectBundleFactory.createEnemy( this, 6000, 1900, ninjas.CharacterFacing.LEFT, 0,  5000,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
@@ -217,16 +232,6 @@
             ninjas.GameObjectBundleFactory.createDecoSprite( this, 5400, 2100, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_4 );
 
             // wooden crates
-
-            // chandelier
-            ninjas.GameObjectBundleFactory.createDecoImage(   this, 7073, 1705, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_CHANDELIER );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7066, 1501, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7120, 1486, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7254, 1488, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
-            ninjas.GameObjectBundleFactory.createDecoSprite(  this, 7305, 1517, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_FLAME_1_BIG );
-
-            // flying ground
-            ninjas.GameObjectBundleFactory.createFlyingGround( this, 6000,  1500, 5, ninjas.Slope.NONE, ninjas.JumpPassThrough.YES, ninjas.CapHorz.BOTH );
 */
         }
     }
