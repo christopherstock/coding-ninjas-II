@@ -420,79 +420,6 @@
             ninjas.SettingGame.DEFAULT_SPRITE_SCALE
         );
 
-        /** Sprite 'grass 2'. */
-        public      static  SPRITE_GRASS_2                              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
-        (
-            [
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_1,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_2,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_3,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_4,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_5,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_6,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_7,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_8,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_9,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_10,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_11,
-                ninjas.ImageData.IMAGE_GRASS_2_FRAME_12,
-            ],
-            12,
-            ninjas.MirrorImage.NO,
-            ninjas.LoopSprite.YES,
-            ninjas.RandomFrames.ONLY_START_FRAME,
-            ninjas.SettingGame.DEFAULT_SPRITE_SCALE
-        );
-
-
-        /** Sprite 'grass 3'. */
-        public      static  SPRITE_GRASS_3                              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
-        (
-            [
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_1,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_2,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_3,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_4,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_5,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_6,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_7,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_8,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_9,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_10,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_11,
-                ninjas.ImageData.IMAGE_GRASS_3_FRAME_12,
-            ],
-            12,
-            ninjas.MirrorImage.NO,
-            ninjas.LoopSprite.YES,
-            ninjas.RandomFrames.ONLY_START_FRAME,
-            ninjas.SettingGame.DEFAULT_SPRITE_SCALE
-        );
-
-        /** Sprite 'grass 4'. */
-        public      static  SPRITE_GRASS_4                              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
-        (
-            [
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_1,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_2,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_3,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_4,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_5,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_6,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_7,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_8,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_9,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_10,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_11,
-                ninjas.ImageData.IMAGE_GRASS_4_FRAME_12,
-            ],
-            12,
-            ninjas.MirrorImage.NO,
-            ninjas.LoopSprite.YES,
-            ninjas.RandomFrames.ONLY_START_FRAME,
-            ninjas.SettingGame.DEFAULT_SPRITE_SCALE
-        );
-
         /** Sprite 'flame 1 big'. */
         public      static  SPRITE_FLAME_1_BIG                              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
         (
@@ -568,9 +495,6 @@
             SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
             SpriteTemplateData.SPRITE_WATER_TOP,
             SpriteTemplateData.SPRITE_GRASS_1,
-            SpriteTemplateData.SPRITE_GRASS_2,
-            SpriteTemplateData.SPRITE_GRASS_3,
-            SpriteTemplateData.SPRITE_GRASS_4,
             SpriteTemplateData.SPRITE_FLAME_1_BIG,
             SpriteTemplateData.SPRITE_FLAME_1_SMALL,
         ];

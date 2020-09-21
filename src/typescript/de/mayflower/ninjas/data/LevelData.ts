@@ -56,6 +56,9 @@
             ninjas.GameObjectBundleFactory.createDecoImage( this, 780, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
             ninjas.GameObjectBundleFactory.createDecoImage( this, 830, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_BUSH_1 );
 
+            // grass
+            ninjas.GameObjectBundleFactory.createDecoSprite( this, 660, 2000, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_1 );
+
             // table with flasks
             ninjas.GameObjectBundleFactory.createObstacle(    this, 420, 2000, ninjas.ImageData.IMAGE_TABLE_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 430, 1830, ninjas.ImageData.IMAGE_FLASK_1 );
@@ -245,12 +248,5 @@
             ninjas.GameObjectBundleFactory.createEnemy( this, 11670, 2100, ninjas.CharacterFacing.LEFT,  11670, 11870, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
             ninjas.GameObjectBundleFactory.createEnemy( this, 8600,  2100, ninjas.CharacterFacing.LEFT,  8600,  9500,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
             ninjas.GameObjectBundleFactory.createEnemy( this, 6700,  2100, ninjas.CharacterFacing.LEFT,  6700,  7250,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
-/*
-            // sprites
-            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5100, 2100, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_1 );
-            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5200, 2100, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_2 );
-            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5300, 2100, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_3 );
-            ninjas.GameObjectBundleFactory.createDecoSprite( this, 5400, 2100, ninjas.DecoPosition.FG, ninjas.SpriteTemplateData.SPRITE_GRASS_4 );
-*/
         }
     }
