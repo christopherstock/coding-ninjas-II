@@ -50,7 +50,7 @@
             ninjas.ImageData.IMAGE_GROUND_SNOW_SOLID_RIGHT_BOTTOM,
             ninjas.ImageData.IMAGE_GROUND_SNOW_SOLID_CENTER,
             ninjas.ImageData.IMAGE_GROUND_SNOW_SOLID_ASCENDING_TOP,
-            ninjas.ImageData.IMAGE_GROUND_DARK_SOLID_DESCENDING_TOP,
+            ninjas.ImageData.IMAGE_GROUND_SNOW_SOLID_DESCENDING_TOP,
             ninjas.ImageData.IMAGE_GROUND_DARK_SOLID_ASCENDING_LEFT_TOP,
             ninjas.ImageData.IMAGE_GROUND_DARK_SOLID_DESCENDING_LEFT_TOP,
             ninjas.ImageData.IMAGE_GROUND_DARK_SOLID_ASCENDING_RIGHT_TOP,
