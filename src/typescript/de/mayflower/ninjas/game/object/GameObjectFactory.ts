@@ -109,7 +109,7 @@
                     ninjas.DebugColor.COLOR_DEBUG_MOVABLE,
                     ninjas.StaticShape.NO,
                     angle,
-                    ninjas.BodyFriction.NONE,
+                    ninjas.BodyFriction.DEFAULT,
                     ninjas.BodyDensity.DEFAULT,
                     ninjas.BodyRestitution.RUBBER
                 ),
@@ -143,7 +143,7 @@
         : ninjas.Movable
         {
             const spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
-                ninjas.ImageData.IMAGE_TEST_SPHERE
+                ninjas.ImageData.IMAGE_STONE_SPHERE
             );
 
             if ( spriteTemplate.width !== spriteTemplate.height )

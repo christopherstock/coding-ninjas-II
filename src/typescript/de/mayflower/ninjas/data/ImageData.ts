@@ -174,8 +174,8 @@
 
         /** Image resource 'item'. */
         public      static      IMAGE_ITEM                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
-        /** Image resource 'sphere'. */
-        public      static      IMAGE_TEST_SPHERE                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'testSphere.png';
+        /** Image resource 'stone sphere'. */
+        public      static      IMAGE_STONE_SPHERE                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'stoneSphere.png';
 
         /** Image resource 'boulder 1'. */
         public      static      IMAGE_BOULDER_1                                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
@@ -591,7 +591,7 @@
 
             ImageData.IMAGE_ITEM,
             ImageData.IMAGE_CRATE_WOOD_1,
-            ImageData.IMAGE_TEST_SPHERE,
+            ImageData.IMAGE_STONE_SPHERE,
 
             ImageData.IMAGE_BOULDER_1,
 
