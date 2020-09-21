@@ -4,6 +4,7 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   TODO Revise ALL physical attributes!
     *   TODO HIGH Add slow motion fx.
     *   TODO HIGH Add primal Ant Design components:
     *        https://ant.design/components/steps/

@@ -70,7 +70,7 @@
                     ninjas.DebugColor.COLOR_DEBUG_MOVABLE,
                     ninjas.StaticShape.NO,
                     0.0,
-                    ninjas.BodyFriction.NONE,
+                    0.001,
                     ninjas.BodyDensity.DEFAULT,
                     ninjas.BodyRestitution.RUBBER
                 ),
@@ -621,7 +621,6 @@
         *   @param yTop             Anchor Y.
         *   @param spriteTemplate   The decoration sprite.
         *   @param maxRotationSpeed The maximum rotation speed per tick. -1 disables this maximum.
-        *   @param density          The density of the Sigsaw.
         ***************************************************************************************************************/
         public static createSigsaw
         (
@@ -629,8 +628,7 @@
             xLeft            :number,
             yTop             :number,
             spriteTemplate   :ninjas.SpriteTemplate,
-            maxRotationSpeed :number,
-            density          :number
+            maxRotationSpeed :number
         )
         : void
         {
@@ -643,8 +641,8 @@
                     ninjas.DebugColor.COLOR_DEBUG_SIGSAW,
                     ninjas.StaticShape.NO,
                     0.0,
-                    ninjas.BodyFriction.DEFAULT,
-                    density,
+                    2.5,
+                    0.005,
                     ninjas.BodyRestitution.DEFAULT
                 ),
                 spriteTemplate,

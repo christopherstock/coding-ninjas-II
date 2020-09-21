@@ -12,9 +12,9 @@
         /** Player start position X. */
         public  playerStartX            :number                             = 480;
         /** Player start position Y. */
-        public  playerStartY            :number                             = 750;
+        public  playerStartY            :number                             = 1200; // 750;
         /** Player initial parachute state. */
-        public  playerInitialFloat      :boolean                            = true;
+        public  playerInitialFloat      :boolean                            = false; // true;
         /** Player initial facing. */
         public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
@@ -76,23 +76,31 @@
         private addSecondPlateau() : void
         {
             // sigsaw
-            ninjas.GameObjectFactory.createSigsaw( this, 1400, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1, ninjas.BodyDensity.DEFAULT );
+            ninjas.GameObjectFactory.createSigsaw( this, 1400, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.SIGSAW_1 ), -1 );
+
+            // stone obstacle
+            ninjas.GameObjectBundleFactory.createObstacle( this, 1991, 2150, ninjas.ImageData.IMAGE_STONE_SPHERE );
 
             // wooden crates
+/*
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1400, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1525, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+*/
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1684, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1400, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+/*
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1390, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1525, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
+*/
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1684, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1841, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
             ninjas.GameObjectBundleFactory.createMovableRect( this, 1966, 1875, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );
-
+/*
             // stone
-            ninjas.GameObjectBundleFactory.createMovableRect( this, 1733, 1750, ninjas.ImageData.IMAGE_STONE_SPHERE );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1600, 1775, ninjas.ImageData.IMAGE_STONE_SPHERE );
+            ninjas.GameObjectBundleFactory.createMovableRect( this, 1991, 1775, ninjas.ImageData.IMAGE_STONE_SPHERE );
+*/
         }
 
         /** ************************************************************************************************************
