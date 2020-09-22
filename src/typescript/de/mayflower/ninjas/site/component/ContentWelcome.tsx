@@ -58,8 +58,8 @@
                 (
                     'scrollx',
                     true,
-                    1000,
-                    250,
+                    1250,
+                    500,
                     [
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(
@@ -146,7 +146,7 @@
             { /* ninjas.SiteContentFactory.createDivider()                                        */ }
             { ninjas.SiteContentFactory.createParagraph( 'Current project progress is:' ) }
             { /* ninjas.SiteContentFactory.createSpacerVertical() */ }
-            { ninjas.SiteContentFactory.createProgress( 'line', 57.8 )        }
+            { ninjas.SiteContentFactory.createProgress( 'line', 72.6 )        }
 
         </div>;
     }
