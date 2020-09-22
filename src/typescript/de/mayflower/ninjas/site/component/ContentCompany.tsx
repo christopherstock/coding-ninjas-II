@@ -29,6 +29,7 @@
                     'fade',
                     true,
                     2500,
+                    3000,
                     [
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(

@@ -274,6 +274,7 @@
         *   @param effect        The effect for the next carousel page to showup.
         *   @param autoplay      Specifies if the carousel should automatically change pages.
         *   @param autoplaySpeed The delay speed for automatic page changes.
+        *   @param changeSpeed   The duration for one change animation.
         *   @param pages         All pages to show up in the carousel.
         *
         *   @return The created JSX element.
@@ -283,6 +284,7 @@
             effect        :CarouselEffect,
             autoplay      :boolean,
             autoplaySpeed :number,
+            changeSpeed   :number,
             pages         :JSX.Element[]
         )
         : JSX.Element
@@ -294,7 +296,12 @@
                 contents.push( <div key={ key }>{ pages[ key ] }</div> );
             }
 
-            return <antd.Carousel effect={ effect } autoplay={ true } autoplaySpeed={ 3000 } >
+            return <antd.Carousel
+                effect={ effect }
+                autoplay={ true }
+                autoplaySpeed={ autoplaySpeed }
+                speed={ changeSpeed }
+            >
                 { contents }
             </antd.Carousel>;
         }

@@ -43,11 +43,11 @@
             {
                 ninjas.SiteContentFactory.createParagraph
                 (
-                    'This is a demo of Coding Ninjas II. '
-                    + '<a target=\'_blank\' title=\'Developer Camp 2018\' '
-                    + 'href=\'https://developercamp.io/\'>Developer Camp 2018</a> '
-                    + 'in the context of the <a target=\'_blank\' title=\'Würzburg Web Week\' '
-                    + 'href=\'https://wueww.de/\'>Würzburg Web Week 2018.</a><br>'
+                    'Welcome to the Demo of Coding Ninjas II. '
+                    // + '<a target=\'_blank\' title=\'Developer Camp 2018\' '
+                    // + 'href=\'https://developercamp.io/\'>Developer Camp 2018</a> '
+                    // + 'in the context of the <a target=\'_blank\' title=\'Würzburg Web Week\' '
+                    // + 'href=\'https://wueww.de/\'>Würzburg Web Week 2018.</a><br>'
                 )
             }
 
@@ -60,7 +60,8 @@
                 (
                     'fade',
                     true,
-                    2500,
+                    1000,
+                    250,
                     [
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(
@@ -141,6 +142,8 @@
                 */
             }
             { /* ninjas.SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
+
+            { ninjas.SiteContentFactory.createSpacerVertical() }
 
             { /* ninjas.SiteContentFactory.createDivider()                                        */ }
             { ninjas.SiteContentFactory.createParagraph( 'Current project progress is:' ) }
