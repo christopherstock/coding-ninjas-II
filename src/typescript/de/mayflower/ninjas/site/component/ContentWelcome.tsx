@@ -43,11 +43,9 @@
             {
                 ninjas.SiteContentFactory.createParagraph
                 (
-                    'Welcome to the Demo of Coding Ninjas II. '
-                    // + '<a target=\'_blank\' title=\'Developer Camp 2018\' '
-                    // + 'href=\'https://developercamp.io/\'>Developer Camp 2018</a> '
-                    // + 'in the context of the <a target=\'_blank\' title=\'Würzburg Web Week\' '
-                    // + 'href=\'https://wueww.de/\'>Würzburg Web Week 2018.</a><br>'
+                    'Welcome to the Demo of '
+                    + '<a target=\'_blank\' title=\'Coding Ninjas II\' '
+                    + 'href=\'https://developercamp.io/\'>Coding Ninjas II</a>.'
                 )
             }
 
@@ -61,7 +59,7 @@
                     'scrollx',
                     true,
                     1000,
-                    5250, // 250
+                    500,
                     [
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(

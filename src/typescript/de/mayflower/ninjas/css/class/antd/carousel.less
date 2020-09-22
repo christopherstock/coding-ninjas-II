@@ -5,82 +5,27 @@
     *   The Ant Design Carousel was a beast to adjust!
     *******************************************************************************************************************/
 
-    @carousel-width-max: 350px;
-    @carousel-height:    220px;
+    @carousel-width:  350px;
+    @carousel-height: 220px;
 
     div.ant-carousel
     {
-        width:                      @carousel-width-max !important;
-//        background:                 @color-transparent !important;
-    }
-
-    div.ant-carousel .slick-track
-    {
-        height:                     @carousel-height !important;
-/*
-        width:                      100% !important;
-        padding-right:              1px;
-        margin-bottom:              1px;
-        background:                 @color-transparent !important;
-*/
-    }
-
-    .ant-carousel .slick-slide
-    {
-        height:                     @carousel-height !important;
-/*
-        background:                 @color-transparent !important;
-        text-align:                 center;
-        left:                       0 !important;
-        width:                      100% !important;
-        height:                     0 !important;
-*/
-    }
-
-    .ant-carousel .slick-slide.slick-active
-    {
-        height:                     @carousel-height !important;
-/*
-        width:                      100%                !important;
-        max-width:                  @carousel-width-max !important;
-        background:                 @color-transparent !important;
-*/
+        width:                      @carousel-width !important;
     }
 
     .ant-carousel div.carouselPage
     {
         height:                     @carousel-height !important;
-/*
-        width:                      100% !important;
-        border-radius:              10px;
-        // border:                     1px solid @color-white;
-        // box-shadow:                 1px 1px @color-shadow;
-        // background:                 @color-transparent !important;
-*/
     }
-/*
+
     .ant-carousel .slick-slide h3
     {
         color:                      @color-white;
+        width:                      100%;
+        text-align:                 center;
         height:                     35px;
         line-height:                35px;
-        // text-shadow:                1px 1px @color-shadow;
-
-        border-top-left-radius:     10px !important;
-        border-top-right-radius:    10px !important;
-        border-bottom-left-radius:  0px !important;
-        border-bottom-right-radius:  0px !important;
-
-        border-radius:              10px 10px 0 0 !important;
-
-        background:                 rgba( 0, 0, 0, 1.0 ) !important;
-
-        // background:                 @color-transparent !important;
-    }
-
-    .ant-carousel .slick-dots li
-    {
-        // box-shadow:                 1px 1px @color-shadow;
+        background:                 rgba( 0, 0, 0, 0.25 ) !important;
     }
 
     .ant-carousel .slick-dots li button
@@ -89,8 +34,7 @@
         opacity:                    1.0 !important;
     }
 
-    .ant-carousel .slick-dots li.slick-active button
+    .ant-carousel li.slick-active button
     {
         background-color:           @color-project !important;
     }
-*/
