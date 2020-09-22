@@ -58,10 +58,10 @@
             {
                 ninjas.SiteContentFactory.createCarousel
                 (
-                    'fade',
+                    'scrollx',
                     true,
                     1000,
-                    250,
+                    5250, // 250
                     [
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(
