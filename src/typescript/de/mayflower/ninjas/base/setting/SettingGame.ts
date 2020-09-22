@@ -29,9 +29,9 @@
         public      static  readonly    DEFAULT_SPRITE_SCALE                        :number                     = 1.0;
 
         /** The minimum width for the site panel. */
-        public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 650;
+        public      static  readonly    SITE_PANEL_MIN_WIDTH                        :number                     = 600;
         /** The maximum width for the site panel. */
-        public      static  readonly    SITE_PANEL_MAX_WIDTH                        :number                     = 650;
+        public      static  readonly    SITE_PANEL_MAX_WIDTH                        :number                     = 600;
         /** The maximum height for the site panel. -1 disables the check. */
         public      static  readonly    SITE_PANEL_MAX_HEIGHT                       :number                     = -1;
         /** The duration for showing and hiding the site panel in ms. */
@@ -41,5 +41,5 @@
         /** The inner border size for the inner site panel container. */
         public      static  readonly    SITE_PANEL_BORDER_SIZE_INNER                :number                     = 50;
         /** The inner border size to the top for the inner site panel container. */
-        public      static  readonly    SITE_PANEL_BORDER_SIZE_INNER_TOP            :number                     = 75;
+        public      static  readonly    SITE_PANEL_BORDER_SIZE_INNER_TOP            :number                     = 25;
     }

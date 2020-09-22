@@ -384,7 +384,7 @@
         public      static      IMAGE_BG                                        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
 
         /** Site image 'logo'. */
-        public      static      IMAGE_SITE_PANEL_LOGO                           :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logo.png';
+        public      static      IMAGE_SITE_PANEL_LOGO                           :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
         /** Site image 'site panel bg left'. */
         public      static      IMAGE_SITE_PANEL_BG_LEFT                        :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft_a90.png';
         /** Site image 'site panel bg right'. */

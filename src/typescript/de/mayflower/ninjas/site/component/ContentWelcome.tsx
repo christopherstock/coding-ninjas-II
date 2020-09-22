@@ -11,11 +11,21 @@
 
         return <div>
 
-            { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_WELCOME ) }
-            { ninjas.SiteContentFactory.createDivider() }
-            { ninjas.SiteContentFactory.createImageFullWidth( ninjas.Main.game.engine.imageSystem.getImage(
-                ninjas.ImageData.IMAGE_SITE_PANEL_LOGO ).src ) }
+            { /* ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_WELCOME ) */ }
+
+            { /* ninjas.SiteContentFactory.createDivider() */ }
+
+            {
+                ninjas.SiteContentFactory.createImageFullWidth(
+                    ninjas.Main.game.engine.imageSystem.getImage(
+                        ninjas.ImageData.IMAGE_SITE_PANEL_LOGO
+                    ).src
+                )
+            }
+
             { ninjas.SiteContentFactory.createSpacerVertical() }
+
+            { /*
 
             <a target='_blank' title='Würzburg Web Week' href='https://wueww.de/'>
                 {
@@ -28,10 +38,12 @@
                 }
             </a>
 
+            */ }
+
             {
                 ninjas.SiteContentFactory.createParagraph
                 (
-                    'This site serves as an example Node.js project for the '
+                    'This is a demo of Coding Ninjas II. '
                     + '<a target=\'_blank\' title=\'Developer Camp 2018\' '
                     + 'href=\'https://developercamp.io/\'>Developer Camp 2018</a> '
                     + 'in the context of the <a target=\'_blank\' title=\'Würzburg Web Week\' '
@@ -39,22 +51,67 @@
                 )
             }
 
-            { ninjas.SiteContentFactory.createDivider() }
+            { ninjas.SiteContentFactory.createSpacerVertical() }
+
+            { /* ninjas.SiteContentFactory.createDivider() */ }
+
+            {
+                ninjas.SiteContentFactory.createCarousel
+                (
+                    'fade',
+                    true,
+                    2500,
+                    [
+                        <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                        + ninjas.Main.game.engine.imageSystem.getImage(
+                            ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP
+                        ).src + ' )' } }>
+                            <h3>Desktop &amp; Enterprise Applications</h3>
+                        </div>,
+                        <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                        + ninjas.Main.game.engine.imageSystem.getImage(
+                            ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES
+                        ).src + ' )' } }>
+                            <h3>Web Design</h3>
+                        </div>,
+                        <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                        + ninjas.Main.game.engine.imageSystem.getImage(
+                            ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE
+                        ).src + ' )' } }>
+                            <h3>Mobile Applications</h3>
+                        </div>,
+                        <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                        + ninjas.Main.game.engine.imageSystem.getImage(
+                            ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS
+                        ).src + ' )' } }>
+                            <h3>Web Applications</h3>
+                        </div>,
+                    ]
+                )
+            }
+
+            { /*
 
             <a target='_blank' title='Coding Ninjas on GitHub'
                 href='https://github.com/christopherstock/coding-ninjas'>
                 { ninjas.SiteContentFactory.createAvatar( '', 'github' ) }
             </a>
+
+            */ }
+
             {
+                /*
                 ninjas.SiteContentFactory.createParagraph
                 (
                     'Get the source on <a target=\'_blank\' title=\'Coding Ninjas on GitHub\' '
                     + 'href=\'https://github.com/christopherstock/coding-ninjas\'>GitHub</a>',
                     'sitePanel defaultParagraph avatarLine'
                 )
+                */
             }
-            { ninjas.SiteContentFactory.createDivider() }
+            { /* ninjas.SiteContentFactory.createDivider() */ }
             {
+                /*
                 ninjas.SiteContentFactory.createParagraph
                 (
                     'Use the <span style=\'color: #b42157;\'>arrow keys</span> to move and jump around.<br>'
@@ -64,9 +121,11 @@
                     + 'your mouse</span>.<br>'
                     + 'Can you find all <span style=\'color: #b42157;\'>six shrines?</span>.<br>'
                 )
+                */
             }
-            { ninjas.SiteContentFactory.createDivider() }
+            { /* ninjas.SiteContentFactory.createDivider() */ }
             {
+                /*
                 ninjas.SiteContentFactory.createSwitch
                 (
                     'notification',
@@ -79,13 +138,14 @@
                         ninjas.Main.game.toggleBgMusic( checked );
                     }
                 )
+                */
             }
-            { ninjas.SiteContentFactory.createParagraph( 'Toggle background music' ) }
+            { /* ninjas.SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
 
-            { /* ninjas.SiteContentFactory.createDivider()                                   */ }
-            { /* ninjas.SiteContentFactory.createParagraph( 'Current project progress is:' ) */ }
-            { /* ninjas.SiteContentFactory.createSpacerVertical()                            */ }
-            { /* ninjas.SiteContentFactory.createProgress( 'circle', 100.0 )                 */ }
+            { /* ninjas.SiteContentFactory.createDivider()                                        */ }
+            { ninjas.SiteContentFactory.createParagraph( 'Current project progress is:' ) }
+            { ninjas.SiteContentFactory.createSpacerVertical()                                 }
+            { ninjas.SiteContentFactory.createProgress( 'circle', 7.5 )        }
 
         </div>;
     }

@@ -6,9 +6,7 @@
     *
     *   MVP (DEMO)
     *   ==========
-    *   TODO HIGH Create toggable startup level experience elements
-    *
-    *   TODO Enable onetimer for closing site panels.
+    *   TODO Enable one-timer for closing site panels.
     *   TODO Enable ENTER press for closing site panels.
     *
     *   TODO Revise ALL physical attributes!

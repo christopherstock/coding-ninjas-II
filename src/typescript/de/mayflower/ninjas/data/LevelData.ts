@@ -50,13 +50,13 @@
         ***************************************************************************************************************/
         private addFirstPlateau() : void
         {
-            // site trigger
-            // ninjas.GameObjectFactory.createSiteTrigger( this, 400, 2000, 640, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.LEFT, null );
-
             // ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
-            if ( true ) return;
+            // if ( true ) return;
+
+            // site trigger
+            ninjas.GameObjectFactory.createSiteTrigger( this, 0, 2000, 800, 550, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.LEFT, null );
 
             // status with bush
             ninjas.GameObjectBundleFactory.createDecoImage( this, 780, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );
