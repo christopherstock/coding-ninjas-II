@@ -1,13 +1,13 @@
 
-    import * as React           from 'react';
-    import * as antd            from 'antd';
-    import * as ninjas          from '../ninjas';
-    import { TooltipPlacement } from 'antd/lib/tooltip';
-    import { ButtonType       } from 'antd/lib/button';
-    import { CarouselEffect   } from 'antd/lib/carousel';
-    import { FloatProperty    } from 'csstype';
-    import { RadioChangeEvent } from 'antd/es/radio';
-    import { ProgressType     } from 'antd/es/progress/progress';
+    import * as React                         from 'react';
+    import * as antd                          from 'antd';
+    import * as ninjas                        from '../ninjas';
+    import { TooltipPlacement               } from 'antd/lib/tooltip';
+    import { ButtonType                     } from 'antd/lib/button';
+    import { CarouselEffect                 } from 'antd/lib/carousel';
+    import { FloatProperty                  } from 'csstype';
+    import { RadioChangeEvent               } from 'antd/es/radio';
+    import { ProgressType                   } from 'antd/es/progress/progress';
 
     /** ****************************************************************************************************************
     *   Creates content components for the factory.
@@ -146,7 +146,7 @@
         ***************************************************************************************************************/
         public static createProgress( type:ProgressType, percent:number ) : JSX.Element
         {
-            return <antd.Progress type={ type } percent={ percent } />;
+            return <antd.Progress type={ type } percent={ percent } status='active' />;
         }
 
         /** ************************************************************************************************************

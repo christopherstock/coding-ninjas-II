@@ -17,7 +17,8 @@
     @primary-color:             @color-project;
     @disabled-color:            @color-grey;
     @text-color:                @color-text-fg;
-    @progress-remaining-color:  @color-text-fg;
+    // @progress-remaining-color:  @color-text-fg;
+    @progress-default-color:    @color-project;
     @border-color-base:         @color-text-fg;
     @border-color-split:        @color-text-fg;
     @finish-tail-color:         @color-text-fg;
@@ -81,8 +82,14 @@
 
     .ant-progress-circle
     {
-        -webkit-filter:         drop-shadow( 1px 1px 0px @color-shadow );
-        filter:                 drop-shadow( 1px 1px 0px @color-shadow );
+        // -webkit-filter:         drop-shadow( 1px 1px 0px @color-shadow );
+        // filter:                 drop-shadow( 1px 1px 0px @color-shadow );
+    }
+
+    .ant-progress-line
+    {
+        width:                  330px !important;
+        padding-top:            10px;
     }
 
     .ant-tabs-tab
