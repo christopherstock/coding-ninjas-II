@@ -59,7 +59,7 @@
                     'scrollx',
                     true,
                     1000,
-                    500,
+                    2500,
                     [
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(
