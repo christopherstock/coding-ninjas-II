@@ -12,9 +12,9 @@
         /** Player start position X. */
         public  playerStartX            :number                             = 480;
         /** Player start position Y. */
-        public  playerStartY            :number                             = 1200; // 750;
+        public  playerStartY            :number                             = 1200;
         /** Player initial parachute state. */
-        public  playerInitialFloat      :boolean                            = false; // true;
+        public  playerInitialFloat      :boolean                            = true;
         /** Player initial facing. */
         public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
@@ -32,16 +32,17 @@
             ninjas.GameObjectBundleFactory.createPlayer( this );
 
             // parallax bg
-            ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
+            // ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
             // plateaus
             this.addFirstPlateau();
-            this.addSecondPlateau();
-            this.addThirdPlateau();
-            this.addFourthPlateau();
-            this.addFifthPlateau();
-            this.addSixthPlateau();
-            this.addSeventhPlateau();
+
+            // this.addSecondPlateau();
+            // this.addThirdPlateau();
+            // this.addFourthPlateau();
+            // this.addFifthPlateau();
+            // this.addSixthPlateau();
+            // this.addSeventhPlateau();
         }
 
         /** ************************************************************************************************************
@@ -54,6 +55,8 @@
 
             // ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
+
+            if ( true ) return;
 
             // status with bush
             ninjas.GameObjectBundleFactory.createDecoImage( this, 780, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );

@@ -4,14 +4,20 @@
     /** ****************************************************************************************************************
     *   The main class contains the application's points of entry and termination.
     *
+    *   MVP (DEMO)
+    *   ==========
+    *   TODO HIGH Create toggable startup level experience elements
+    *
+    *   TODO Enable onetimer for closing site panels.
+    *   TODO Enable ENTER press for closing site panels.
+    *
     *   TODO Revise ALL physical attributes!
-    *   TODO HIGH Add slow motion fx.
+    *   TODO HIGH Add slow motion fx with fewer rendering time!
     *   TODO HIGH Add primal Ant Design components:
     *        https://ant.design/components/steps/
     *        https://ant.design/components/badge/
     *        https://ant.design/components/carousel/
     *        https://ant.design/components/progress/
-    *   TODO HIGH Create toggable startup level experience elements
     *
     *   CLEANUP
     *   =======
