@@ -53,7 +53,7 @@
             // ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
-            // if ( true ) return;
+            if ( true ) return;
 
             // site trigger
             ninjas.GameObjectFactory.createSiteTrigger( this, 0, 2000, 800, 550, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.LEFT, null );
@@ -201,7 +201,7 @@
             ninjas.GameObjectBundleFactory.createDecoImage(  this, 8030, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_TREE_1 );
 
             // site trigger
-            ninjas.GameObjectFactory.createSiteTrigger( this, 11400, 2100, 3000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
+            // ninjas.GameObjectFactory.createSiteTrigger( this, 11400, 2100, 3000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 
             // lion statue
             ninjas.GameObjectBundleFactory.createDecoImage( this, 6500, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_LION );

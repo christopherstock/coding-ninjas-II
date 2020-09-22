@@ -65,25 +65,25 @@
                         + ninjas.Main.game.engine.imageSystem.getImage(
                             ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP
                         ).src + ' )' } }>
-                            <h3>Desktop &amp; Enterprise Applications</h3>
+                            <h3>React 16.13.1</h3>
                         </div>,
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(
                             ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES
                         ).src + ' )' } }>
-                            <h3>Web Design</h3>
+                            <h3>Ant Design 3.26.9</h3>
                         </div>,
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(
                             ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE
                         ).src + ' )' } }>
-                            <h3>Mobile Applications</h3>
+                            <h3>TypeScript 3.7.5</h3>
                         </div>,
                         <div className='carouselPage' style={ { 'backgroundImage': 'url( '
                         + ninjas.Main.game.engine.imageSystem.getImage(
                             ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS
                         ).src + ' )' } }>
-                            <h3>Web Applications</h3>
+                            <h3>Webpack 4.41.6</h3>
                         </div>,
                     ]
                 )
@@ -144,7 +144,7 @@
             { ninjas.SiteContentFactory.createSpacerVertical() }
 
             { /* ninjas.SiteContentFactory.createDivider()                                        */ }
-            { ninjas.SiteContentFactory.createParagraph( 'Current project progress is:' ) }
+            { ninjas.SiteContentFactory.createParagraph( 'Current progress of the project is:' ) }
             { /* ninjas.SiteContentFactory.createSpacerVertical() */ }
             { ninjas.SiteContentFactory.createProgress( 'line', 72.6 )        }
 
