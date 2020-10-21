@@ -32,17 +32,16 @@
             ninjas.GameObjectBundleFactory.createPlayer( this );
 
             // parallax bg
-            // ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
+            ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
             // plateaus
             this.addFirstPlateau();
-
-            // this.addSecondPlateau();
-            // this.addThirdPlateau();
-            // this.addFourthPlateau();
-            // this.addFifthPlateau();
-            // this.addSixthPlateau();
-            // this.addSeventhPlateau();
+            this.addSecondPlateau();
+            this.addThirdPlateau();
+            this.addFourthPlateau();
+            this.addFifthPlateau();
+            this.addSixthPlateau();
+            this.addSeventhPlateau();
         }
 
         /** ************************************************************************************************************

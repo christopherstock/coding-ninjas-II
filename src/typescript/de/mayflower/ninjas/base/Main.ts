@@ -6,16 +6,11 @@
     *
     *   MVP (DEMO)
     *   ==========
+    *   TODO Adjust all matter.js adjustments (PlayerMass etc.) and store them in SettingsMatter.
+    *   TODO Revise ALL physical attributes!
+    *
     *   TODO Enable one-timer for closing site panels.
     *   TODO Enable ENTER press for closing site panels.
-    *
-    *   TODO Revise ALL physical attributes!
-    *   TODO HIGH Add slow motion fx with fewer rendering time!
-    *   TODO HIGH Add primal Ant Design components:
-    *        https://ant.design/components/steps/
-    *        https://ant.design/components/badge/
-    *        https://ant.design/components/carousel/
-    *        https://ant.design/components/progress/
     *
     *   CLEANUP
     *   =======
@@ -23,6 +18,13 @@
     *   TODO INIT Introduce AliveState for character (alive, dying, dead)
     *   TODO LOW Improve image sequence handling in ImageData (FILE_NAMES) by class access?
     *   TODO LOW Remove static access on Main.game.
+    *
+    *   TODO HIGH Add slow motion fx with fewer rendering time!
+    *   TODO HIGH Add primal Ant Design components:
+    *        https://ant.design/components/steps/
+    *        https://ant.design/components/badge/
+    *        https://ant.design/components/carousel/
+    *        https://ant.design/components/progress/
     *
     *   NEW ENGINE FEATURES
     *   ===================
