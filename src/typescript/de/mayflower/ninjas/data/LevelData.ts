@@ -52,8 +52,6 @@
             // ground
             ninjas.GameObjectBundleFactory.createSolidGround( this, 400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
-            if ( true ) return;
-
             // site trigger
             ninjas.GameObjectFactory.createSiteTrigger( this, 0, 2000, 800, 550, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.LEFT, null );
 
