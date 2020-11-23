@@ -24,8 +24,8 @@
         /** The primary color of the project. */
         public  static  readonly    COLOR_PRIMARY_CSS                       :string             = '#b42157';
 
-        /** The camera ration for the vertical axis. */
-        public  static  readonly    CAMERA_ALWAYS_CENTER_X                  :boolean            = true;
+        /** Center camera according to player facing Specifies if the camera shall center the horizontal axis on panels rushing in. */
+        public  static  readonly    CAMERA_ALWAYS_CENTER_X                  :boolean            = false;
         /** The camera ration for the horizontal axis. */
         public  static  readonly    CAMERA_RATIO_X                          :number             = 0.4;
         /** The camera ration for the vertical axis. */

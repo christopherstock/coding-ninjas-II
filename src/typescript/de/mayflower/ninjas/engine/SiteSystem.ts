@@ -221,7 +221,7 @@
         ***************************************************************************************************************/
         public getCameraTargetX() : number
         {
-            // target according to player facing
+            // center camera X if no panels are showing
             if (
                 ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X
                 || this.animationState === ninjas.SitePanelAnimation.HIDDEN
@@ -247,6 +247,7 @@
                     }
                 }
 
+                // target according to player facing
                 switch ( ninjas.Main.game.level.player.facing )
                 {
                     case ninjas.CharacterFacing.LEFT:
