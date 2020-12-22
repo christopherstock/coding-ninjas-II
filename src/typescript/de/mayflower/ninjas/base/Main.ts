@@ -11,16 +11,17 @@
     *
     *   TODO Enable one-timer for closing site panels.
     *   TODO Enable ENTER press for closing site panels.
+    *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
     *
     *   CLEANUP
     *   =======
-    *   TODO HIGH Group AND PRUNE all deco images into subfolders.
-    *   TODO INIT Introduce AliveState for character (alive, dying, dead)
-    *   TODO LOW Improve image sequence handling in ImageData (FILE_NAMES) by class access?
-    *   TODO LOW Remove static access on Main.game.
+    *   TODO Group AND PRUNE all deco images into subfolders.
+    *   TODO Introduce AliveState for character (alive, dying, dead)
+    *   TODO Improve image sequence handling in ImageData (FILE_NAMES) by class access?
+    *   TODO Remove static access on Main.game.
     *
-    *   TODO HIGH Add slow motion fx with fewer rendering time!
-    *   TODO HIGH Add primal Ant Design components:
+    *   TODO Add slow motion fx with fewer rendering time!
+    *   TODO Add primal Ant Design components:
     *        https://ant.design/components/steps/
     *        https://ant.design/components/badge/
     *        https://ant.design/components/carousel/
@@ -59,7 +60,6 @@
     *   TODO Much more air friction for parachute.
     *   TODO Add 'shuriken throw' action.
     *   TODO Friendly Bots that talk to you.
-    *   TODO Add event triggers! ( for falling obstacles, new enemies etc )
     *   TODO Sound effects for ninja girl actions and enemies
     *   TODO Player shooting or throwing objects.
     *   TODO Collectables.
