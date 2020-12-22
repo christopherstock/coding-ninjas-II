@@ -526,20 +526,55 @@
                 bodiesToCheck.push( gameObject.shape.body );
             }
 */
-            const MARGIN_X :number = 10;
+            const USE_SINGLE_RAY_LINE :boolean = false;
+            const MARGIN_X :number = 0;
+            const MARGIN_Y :number = 25;
 
-            // check colliding bodies
-            this.collidesBottom = matter.Query.ray
-            (
-                bodiesToCheck,
-                matter.Vector.create(
-                    this.shape.body.position.x - ( this.shape.getWidth() / 2 ) + MARGIN_X,
-                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
-                ),
-                matter.Vector.create(
-                    this.shape.body.position.x + ( this.shape.getWidth() / 2 ) - MARGIN_X,
-                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
-                )
-            ).length > 0;
+            if ( USE_SINGLE_RAY_LINE )
+            {
+                // check colliding bodies for bottom ray line
+                this.collidesBottom = matter.Query.ray
+                (
+                    bodiesToCheck,
+                    matter.Vector.create(
+                        this.shape.body.position.x - ( this.shape.getWidth() / 2 ) + MARGIN_X,
+                        this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                    ),
+                    matter.Vector.create(
+                        this.shape.body.position.x + ( this.shape.getWidth() / 2 ) - MARGIN_X,
+                        this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                    )
+                ).length > 0;
+            }
+            else
+            {
+                // check colliding bodies for bottom ray line and 2nd bottom ray line
+                this.collidesBottom = (
+                    matter.Query.ray
+                    (
+                        bodiesToCheck,
+                        matter.Vector.create(
+                            this.shape.body.position.x - ( this.shape.getWidth() / 2 ) + MARGIN_X,
+                            this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                        ),
+                        matter.Vector.create(
+                            this.shape.body.position.x + ( this.shape.getWidth() / 2 ) - MARGIN_X,
+                            this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                        )
+                    ).length > 0
+                    || matter.Query.ray
+                    (
+                        bodiesToCheck,
+                        matter.Vector.create(
+                            this.shape.body.position.x - ( this.shape.getWidth()  / 2 ) + MARGIN_X,
+                            this.shape.body.position.y + ( this.shape.getHeight() / 2 ) + MARGIN_Y
+                        ),
+                        matter.Vector.create(
+                            this.shape.body.position.x + ( this.shape.getWidth()  / 2 ) - MARGIN_X,
+                            this.shape.body.position.y + ( this.shape.getHeight() / 2 ) + MARGIN_Y
+                        )
+                    ).length > 0
+                );
+            }
         }
     }
