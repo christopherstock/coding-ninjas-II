@@ -94,9 +94,13 @@
             this.outerAbsoluteContainer.style.height = String( height ) + 'px';
 
             this.outerAbsoluteContainer.style.backgroundSize  = String( width ) + 'px ' + String( height ) + 'px';
+            this.outerAbsoluteContainer.style.backgroundColor = '#ff0000';
 
             // debug offset ..
             const OFFSET :number = -100;
+            const CANVAS_OFFSET_X :number = (
+                ( window.innerWidth - ninjas.Main.game.engine.canvasSystem.getPhysicalWidth() ) / 2
+            );
 
             // outer container position
             switch ( this.position )
@@ -105,6 +109,7 @@
                 {
                     this.outerAbsoluteContainer.style.left = String(
                         ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
+                        + CANVAS_OFFSET_X
                     ) + 'px';
                     break;
                 }
@@ -113,7 +118,7 @@
                 {
                     this.outerAbsoluteContainer.style.left = String(
                         (
-                            ninjas.Main.game.engine.canvasSystem.getWidth()
+                            ninjas.Main.game.engine.canvasSystem.getPhysicalWidth()
                             - width
                             - ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
                         )
@@ -122,7 +127,7 @@
                 }
             }
             this.outerAbsoluteContainer.style.top = String(
-                ( ( ninjas.Main.game.engine.canvasSystem.getHeight() - height ) / 2 )
+                ( ( ninjas.Main.game.engine.canvasSystem.getPhysicalHeight() - height ) / 2 )
             ) + 'px';
 
             // inner container size
