@@ -14,10 +14,8 @@
         private                     canvasWidth             :number                         = 0;
         /** The current height of the canvas. */
         private                     canvasHeight            :number                         = 0;
-        /** The current scale X of the canvas. */
-        private                     canvasScaleX            :number                         = 0;
-        /** The current scale Y of the canvas. */
-        private                     canvasScaleY            :number                         = 0;
+        /** The current scale (X and Y) of the canvas. */
+        private                     canvasScale             :number                         = 0;
 
         /** ************************************************************************************************************
         *   Constructs a new canvas system.
@@ -47,43 +45,45 @@
             const windowHeight :number = window.innerHeight;
             let   canvasWidth  :number = 0;
             let   canvasHeight :number = 0;
+            let   canvasScaleX :number = 0;
+            let   canvasScaleY :number = 0;
 
             // clip to minimum canvas dimensions
             if ( windowWidth <= ninjas.SettingEngine.CANVAS_MIN_WIDTH  )
             {
-                this.canvasScaleX = 1.0;
+                canvasScaleX = 1.0;
                 canvasWidth = ninjas.SettingEngine.CANVAS_MIN_WIDTH;
             }
             else if ( windowWidth > ninjas.SettingEngine.CANVAS_MIN_WIDTH  )
             {
-                this.canvasScaleX = ( windowWidth / ninjas.SettingEngine.CANVAS_MIN_WIDTH );
+                canvasScaleX = ( windowWidth / ninjas.SettingEngine.CANVAS_MIN_WIDTH );
                 canvasWidth = windowWidth;
             }
 
             if ( windowHeight <= ninjas.SettingEngine.CANVAS_MIN_HEIGHT )
             {
-                this.canvasScaleY = 1.0;
+                canvasScaleY = 1.0;
                 canvasHeight = ninjas.SettingEngine.CANVAS_MIN_HEIGHT;
             }
             else if ( windowHeight > ninjas.SettingEngine.CANVAS_MIN_HEIGHT )
             {
-                this.canvasScaleY = ( windowHeight / ninjas.SettingEngine.CANVAS_MIN_HEIGHT );
+                canvasScaleY = ( windowHeight / ninjas.SettingEngine.CANVAS_MIN_HEIGHT );
                 canvasHeight = windowHeight;
             }
 
-            // save target dimensions as canvas system dimensions
+            // calculate canvas scaling
+            this.canvasScale  = Math.min( canvasScaleX, canvasScaleY );
+
+            // remember target canvas size
             this.canvasWidth  = ninjas.SettingEngine.CANVAS_MIN_WIDTH;
             this.canvasHeight = ninjas.SettingEngine.CANVAS_MIN_HEIGHT;
 
-            const canvasScale :number = Math.min( this.canvasScaleX, this.canvasScaleY );
-            this.canvasContext.scale( canvasScale, canvasScale );
+            // set physical canvas element size
+            this.canvas.width  = ( ninjas.SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
+            this.canvas.height = ( ninjas.SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
 
-            // adjust canvas size to window dimensions
-            this.canvas.width  = ( ninjas.SettingEngine.CANVAS_MIN_WIDTH  * canvasScale );
-            this.canvas.height = ( ninjas.SettingEngine.CANVAS_MIN_HEIGHT * canvasScale );
-
-            this.canvasWidth  = ( ninjas.SettingEngine.CANVAS_MIN_WIDTH  * canvasScale );
-            this.canvasHeight = ( ninjas.SettingEngine.CANVAS_MIN_HEIGHT * canvasScale );
+            // apply canvas scaling last
+            this.canvasContext.scale( this.canvasScale, this.canvasScale );
 
             ninjas.Debug.canvas.log(
                 'Updated canvas dimensions to ['
@@ -91,11 +91,11 @@
                 + ']x['
                 + String( this.canvasHeight )
                 + '] scaling ['
-                + String( this.canvasScaleX )
+                + String( canvasScaleX )
                 + ']x['
-                + String( this.canvasScaleY )
-                + '] = ['
-                + String( canvasScale )
+                + String( canvasScaleY )
+                + '] min ['
+                + String( this.canvasScale )
                 + ']'
             );
         }
@@ -121,23 +121,13 @@
         }
 
         /** ************************************************************************************************************
-        *   Returns the current canvas scaling X.
+        *   Returns the current canvas scaling (X and Y).
         *
-        *   @return Current canvas scaling X.
+        *   @return Current canvas scaling.
         ***************************************************************************************************************/
-        public getScaleX() : number
+        public getScale() : number
         {
-            return this.canvasScaleX;
-        }
-
-        /** ************************************************************************************************************
-        *   Returns the current canvas scaling Y.
-        *
-        *   @return Current canvas scaling Y.
-        ***************************************************************************************************************/
-        public getScaleY() : number
-        {
-            return this.canvasScaleY;
+            return this.canvasScale;
         }
 
         /** ************************************************************************************************************
