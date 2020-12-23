@@ -6,6 +6,7 @@
     *
     *   MVP (DEMO)
     *   ==========
+    *   TODO Add canvas upscaling / downscaling
     *   TODO Adjust all matter.js adjustments (PlayerMass etc.) and store them in SettingsMatter.
     *   TODO Revise ALL physical attributes!
     *
@@ -32,7 +33,6 @@
     *   TODO Debug Disable Pointer control.
     *   TODO Add canvas max width?
     *   TODO Fix falling/standing-flickering when player lands on flask.
-    *   TODO Add canvas upscaling / downscaling?
     *   TODO Add BotMind.ENEMY, etc.
     *   TODO Add destroyable obstacles.
     *   TODO Add destroyable movables.

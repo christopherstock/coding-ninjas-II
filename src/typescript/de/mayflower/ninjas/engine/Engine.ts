@@ -91,11 +91,7 @@
 
                 if ( this.matterJsSystem !== null )
                 {
-                    this.matterJsSystem.updateEngineDimensions
-                    (
-                        this.canvasSystem.getWidth(),
-                        this.canvasSystem.getHeight()
-                    );
+                    this.matterJsSystem.updateEngineDimensions( this.canvasSystem );
                     this.siteSystem.updatePanelSizeAndPosition();
                     this.game.resetCamera();
                 }
@@ -126,6 +122,7 @@
                 ( renderContext:CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
                 this.imageSystem.getAll()
             );
+            this.matterJsSystem.updateEngineDimensions( this.canvasSystem );
         }
 
         /** ************************************************************************************************************

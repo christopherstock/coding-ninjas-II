@@ -118,13 +118,48 @@
         /** ************************************************************************************************************
         *   Updates the dimensions of the Matter.js rendering system.
         ***************************************************************************************************************/
-        public updateEngineDimensions( newWidth:number, newHeight:number ) : void
+        public updateEngineDimensions( canvasSystem:ninjas.CanvasSystem ) : void
         {
-            this.renderer.canvas.width  = newWidth;
-            this.renderer.canvas.height = newHeight;
+            // get inner window dimensions
+            const windowWidth  :number = window.innerWidth;
+            const windowHeight :number = window.innerHeight;
+            let   canvasWidth  :number = 0;
+            let   canvasHeight :number = 0;
+            let   canvasScaleX  :number = 0;
+            let   canvasScaleY :number = 0;
 
-            this.renderer.options.width  = newWidth;
-            this.renderer.options.height = newHeight;
+            // clip to minimum canvas dimensions
+            if ( windowWidth <= ninjas.SettingEngine.CANVAS_MIN_WIDTH  )
+            {
+                canvasScaleX = 1.0;
+                canvasWidth = ninjas.SettingEngine.CANVAS_MIN_WIDTH;
+            }
+            else if ( windowWidth > ninjas.SettingEngine.CANVAS_MIN_WIDTH  )
+            {
+                canvasScaleX = ( windowWidth / ninjas.SettingEngine.CANVAS_MIN_WIDTH );
+                canvasWidth = windowWidth;
+            }
+
+            if ( windowHeight <= ninjas.SettingEngine.CANVAS_MIN_HEIGHT )
+            {
+                canvasScaleY = 1.0;
+                canvasHeight = ninjas.SettingEngine.CANVAS_MIN_HEIGHT;
+            }
+            else if ( windowHeight > ninjas.SettingEngine.CANVAS_MIN_HEIGHT )
+            {
+                canvasScaleY = ( windowHeight / ninjas.SettingEngine.CANVAS_MIN_HEIGHT );
+                canvasHeight = windowHeight;
+            }
+
+            const canvasScale :number = Math.min( canvasScaleX, canvasScaleY );
+
+            this.renderer.canvas.getContext('2d').scale( canvasScale, canvasScale );
+
+            this.renderer.canvas.width  = ninjas.SettingEngine.CANVAS_MIN_WIDTH  * canvasScale;
+            this.renderer.canvas.height = ninjas.SettingEngine.CANVAS_MIN_HEIGHT * canvasScale;
+
+            this.renderer.options.width  = ninjas.SettingEngine.CANVAS_MIN_WIDTH  * canvasScale;
+            this.renderer.options.height = ninjas.SettingEngine.CANVAS_MIN_HEIGHT * canvasScale;
 
             ninjas.Debug.canvas.log( 'Updated matter.js engine dimensions according to canvas.' );
         }
