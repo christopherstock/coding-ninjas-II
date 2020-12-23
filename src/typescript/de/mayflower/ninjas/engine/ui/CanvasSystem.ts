@@ -49,7 +49,8 @@
             const canvasScaleY :number = ( windowHeight / ninjas.SettingEngine.CANVAS_MIN_HEIGHT );
 
             // pick smallest canvas scaling factor - lower clip to 1.0
-            this.canvasScale  = Math.min( canvasScaleX, canvasScaleY, 1.0 );
+            this.canvasScale  = Math.min( canvasScaleX, canvasScaleY );
+            this.canvasScale  = Math.max( this.canvasScale, 1.0 );
 
             // remember target canvas size
             this.canvasWidth  = ninjas.SettingEngine.CANVAS_MIN_WIDTH;
