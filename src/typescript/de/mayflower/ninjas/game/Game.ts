@@ -262,8 +262,8 @@
                     context,
                     0,
                     0,
-                    this.engine.canvasSystem.getWidth(),
-                    this.engine.canvasSystem.getHeight(),
+                    this.engine.canvasSystem.getPhysicalWidth(),
+                    this.engine.canvasSystem.getPhysicalHeight(),
                     'rgba( 0, 0, 0, '
                     + String( this.blendPanelTicks / ninjas.SettingGame.BLEND_PANEL_TICKS )
                     + ' )'

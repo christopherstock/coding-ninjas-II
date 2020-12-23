@@ -14,6 +14,10 @@
         private                     canvasWidth             :number                         = 0;
         /** The current height of the canvas. */
         private                     canvasHeight            :number                         = 0;
+        /** The physical width of the canvas. */
+        private                     canvasPhysicalWidth     :number                         = 0;
+        /** The physical height of the canvas. */
+        private                     canvasPhysicalHeight    :number                         = 0;
         /** The current scale (X and Y) of the canvas. */
         private                     canvasScale             :number                         = 0;
 
@@ -57,8 +61,12 @@
             this.canvasHeight = ninjas.SettingEngine.CANVAS_MIN_HEIGHT;
 
             // set physical canvas element size
-            this.canvas.width  = ( ninjas.SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
-            this.canvas.height = ( ninjas.SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
+            this.canvasPhysicalWidth  = ( ninjas.SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
+            this.canvasPhysicalHeight = ( ninjas.SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
+
+            // assign physical dimensions to canvas
+            this.canvas.width  = this.canvasPhysicalWidth;
+            this.canvas.height = this.canvasPhysicalHeight;
 
             // apply canvas scaling last
             this.canvasContext.scale( this.canvasScale, this.canvasScale );
@@ -96,6 +104,26 @@
         public getHeight() : number
         {
             return this.canvasHeight;
+        }
+
+        /** ************************************************************************************************************
+        *   Returns the physical canvas width.
+        *
+        *   @return Current physical canvas width.
+        ***************************************************************************************************************/
+        public getPhysicalWidth() : number
+        {
+            return this.canvasPhysicalWidth;
+        }
+
+        /** ************************************************************************************************************
+        *   Returns the physical canvas height.
+        *
+        *   @return Current physical canvas height.
+        ***************************************************************************************************************/
+        public getPhysicalHeight() : number
+        {
+            return this.canvasPhysicalHeight;
         }
 
         /** ************************************************************************************************************

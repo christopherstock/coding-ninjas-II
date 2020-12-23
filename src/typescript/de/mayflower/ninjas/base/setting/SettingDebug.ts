@@ -25,7 +25,7 @@
         public  static  readonly    DISABLE_SOUNDS                          :boolean                    = ( true && SettingDebug.DEBUG_MODE );
         // noinspection PointlessBooleanExpressionJS
         /** Disables the initial blend panel. */
-        public  static  readonly    DISABLE_BLEND_PANEL                     :boolean                    = ( true && SettingDebug.DEBUG_MODE );
+        public  static  readonly    DISABLE_BLEND_PANEL                     :boolean                    = ( false && SettingDebug.DEBUG_MODE );
         // noinspection PointlessBooleanExpressionJS
         /** Disables pointer controls. */
         public  static  readonly    DISABLE_POINTER                         :boolean                    = ( true && SettingDebug.DEBUG_MODE );

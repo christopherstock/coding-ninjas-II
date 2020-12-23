@@ -122,11 +122,11 @@
         {
             this.renderer.canvas.getContext('2d').scale( canvasSystem.getScale(), canvasSystem.getScale() );
 
-            this.renderer.canvas.width  = ninjas.SettingEngine.CANVAS_MIN_WIDTH  * canvasSystem.getScale();
-            this.renderer.canvas.height = ninjas.SettingEngine.CANVAS_MIN_HEIGHT * canvasSystem.getScale();
+            this.renderer.canvas.width  = canvasSystem.getPhysicalWidth();
+            this.renderer.canvas.height = canvasSystem.getPhysicalHeight();
 
-            this.renderer.options.width  = ninjas.SettingEngine.CANVAS_MIN_WIDTH  * canvasSystem.getScale();
-            this.renderer.options.height = ninjas.SettingEngine.CANVAS_MIN_HEIGHT * canvasSystem.getScale();
+            this.renderer.options.width  = canvasSystem.getPhysicalWidth();
+            this.renderer.options.height = canvasSystem.getPhysicalHeight();
 
             ninjas.Debug.canvas.log( 'Updated matter.js engine dimensions according to canvas.' );
         }
