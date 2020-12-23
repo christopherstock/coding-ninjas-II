@@ -43,36 +43,13 @@
             // get inner window dimensions
             const windowWidth  :number = window.innerWidth;
             const windowHeight :number = window.innerHeight;
-            let   canvasWidth  :number = 0;
-            let   canvasHeight :number = 0;
-            let   canvasScaleX :number = 0;
-            let   canvasScaleY :number = 0;
 
-            // clip to minimum canvas dimensions
-            if ( windowWidth <= ninjas.SettingEngine.CANVAS_MIN_WIDTH  )
-            {
-                canvasScaleX = 1.0;
-                canvasWidth = ninjas.SettingEngine.CANVAS_MIN_WIDTH;
-            }
-            else if ( windowWidth > ninjas.SettingEngine.CANVAS_MIN_WIDTH  )
-            {
-                canvasScaleX = ( windowWidth / ninjas.SettingEngine.CANVAS_MIN_WIDTH );
-                canvasWidth = windowWidth;
-            }
+            // calculate scaling factors X and Y
+            const canvasScaleX :number = ( windowWidth  / ninjas.SettingEngine.CANVAS_MIN_WIDTH  );
+            const canvasScaleY :number = ( windowHeight / ninjas.SettingEngine.CANVAS_MIN_HEIGHT );
 
-            if ( windowHeight <= ninjas.SettingEngine.CANVAS_MIN_HEIGHT )
-            {
-                canvasScaleY = 1.0;
-                canvasHeight = ninjas.SettingEngine.CANVAS_MIN_HEIGHT;
-            }
-            else if ( windowHeight > ninjas.SettingEngine.CANVAS_MIN_HEIGHT )
-            {
-                canvasScaleY = ( windowHeight / ninjas.SettingEngine.CANVAS_MIN_HEIGHT );
-                canvasHeight = windowHeight;
-            }
-
-            // calculate canvas scaling
-            this.canvasScale  = Math.min( canvasScaleX, canvasScaleY );
+            // pick smallest canvas scaling factor - lower clip to 1.0
+            this.canvasScale  = Math.min( canvasScaleX, canvasScaleY, 1.0 );
 
             // remember target canvas size
             this.canvasWidth  = ninjas.SettingEngine.CANVAS_MIN_WIDTH;
