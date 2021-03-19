@@ -126,7 +126,7 @@
         private addFourthPlateau() : void
         {
             // bounce
-            ninjas.GameObjectFactory.createBounce( this, 5560, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.BOUNCE_1 ), 0.00075 );
+            ninjas.GameObjectFactory.createBounce( this, 7460, 2000, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.BOUNCE_1 ), 0.00075 );
 
             // wooden crates
             ninjas.GameObjectBundleFactory.createMovableRect( this, 5600, 2000, ninjas.ImageData.IMAGE_CRATE_WOOD_1 );

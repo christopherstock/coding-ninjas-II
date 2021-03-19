@@ -11,6 +11,9 @@
         /** The minimum canvas2D height. */
         public  static  readonly    CANVAS_MIN_HEIGHT                       :number             = 600;
 
+        /** Disable canvas scaling. */
+        public  static  readonly    NO_CANVAS_SCALING                       :boolean            = true;
+
         /** Delay around preloader in ms. */
         public  static  readonly    PRELOADER_DELAY                         :number             = 250;
 

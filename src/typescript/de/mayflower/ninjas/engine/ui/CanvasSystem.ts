@@ -64,6 +64,16 @@
             this.canvasPhysicalWidth  = ( ninjas.SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
             this.canvasPhysicalHeight = ( ninjas.SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
 
+            if ( ninjas.SettingEngine.NO_CANVAS_SCALING )
+            {
+                this.canvasScale  = 1.0;
+                this.canvasScale  = 1.0;
+                this.canvasWidth  = windowWidth;
+                this.canvasHeight = windowHeight;
+                this.canvasPhysicalWidth  = windowWidth;
+                this.canvasPhysicalHeight = windowHeight;
+            }
+
             // assign physical dimensions to canvas
             this.canvas.width  = this.canvasPhysicalWidth;
             this.canvas.height = this.canvasPhysicalHeight;

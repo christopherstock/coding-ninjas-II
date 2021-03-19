@@ -94,7 +94,10 @@
             this.outerAbsoluteContainer.style.height = String( height ) + 'px';
 
             this.outerAbsoluteContainer.style.backgroundSize  = String( width ) + 'px ' + String( height ) + 'px';
-            this.outerAbsoluteContainer.style.backgroundColor = '#ff0000';
+
+            // debug outer container
+            // this.outerAbsoluteContainer.style.backgroundColor = '#ff0000';
+            this.outerAbsoluteContainer.style.backgroundColor = 'transparent';
 
             // debug offset ..
             const OFFSET :number = -100;
