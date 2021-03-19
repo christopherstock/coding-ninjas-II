@@ -4,7 +4,7 @@
 https://christopherstock.github.io/coding-ninjas-II/dist/
 
 ## System Requirements
-- Node.js v.12.13.1
+- Node.js v.12.18.3
 
 ## Install all Node.js packages
 ```
