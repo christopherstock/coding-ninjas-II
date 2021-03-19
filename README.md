@@ -1,6 +1,3 @@
-# ![Coding Ninjas II - Back with a Vengeance](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/promo.png)
-# Coding Ninjas II
-
 # ![Coding Ninjas II - Back with a Vengeance](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/badge.jpg)
 
 ## Latest Build Online
