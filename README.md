@@ -1,5 +1,10 @@
 # ![Coding Ninjas II - Back with a Vengeance](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/promo.png)
-# Coding Ninjas II - Back with a Vengeance
+# Coding Ninjas II
+
+# ![Coding Ninjas II - Back with a Vengeance](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/badge.jpg)
+
+## Latest Build Online
+https://christopherstock.github.io/coding-ninjas-II/dist/
 
 ## System Requirements
 - Node.js v.12.13.1
