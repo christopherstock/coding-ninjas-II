@@ -3,8 +3,13 @@
 ## Latest Build Online
 https://christopherstock.github.io/coding-ninjas-II/dist/
 
-## System Requirements
+## Tech Stack
 - Node.js v.12.18.3
+- TODO
+
+---
+
+# Primary npm Targets
 
 ## Install all Node.js packages
 ```

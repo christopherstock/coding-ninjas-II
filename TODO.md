@@ -1,14 +1,16 @@
+# TODO List
 
-# PRIMARY
-=======
+## Primary
+
 ```
-TODO Update all npm packages (from hackathon 2022 frontend) 
+TODO Update all npm packages (from hackathon 2022 frontend)
 TODO Move to MF GitLab
+TODO Add GitLab CI/CD pipeline
 TODO Change slogan
 ```
 
-MVP (DEMO)
-==========
+## MVP (Demo)
+
 ```
 TODO Add canvas upscaling / downscaling
 TODO Adjust all matter.js adjustments (PlayerMass etc.) and store them in SettingsMatter.
@@ -19,8 +21,8 @@ TODO Enable ENTER press for closing site panels.
 TODO Add event triggers! ( for falling obstacles, new enemies etc )
 ```
 
-CLEANUP
-=======
+## Cleanup
+
 ```
 TODO Group AND PRUNE all deco images into subfolders.
 TODO Introduce AliveState for character (alive, dying, dead)
@@ -35,8 +37,7 @@ https://ant.design/components/carousel/
 https://ant.design/components/progress/
 ```
 
-NEW ENGINE FEATURES
-===================
+## New Engine Features
 ```
 TODO Debug Disable Pointer control.
 TODO Add canvas max width?
@@ -55,8 +56,7 @@ TODO create class HUD with own paint-method.
 TODO Add Camera joyride on level startup?
 ```
 
-NEW GAME FEATURES
-=================
+## New Game Features
 ```
 TODO Green bubbling water - fix tiles. etc.
 TODO Create different ground tilesets.
