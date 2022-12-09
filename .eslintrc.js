@@ -36,17 +36,13 @@ module.exports = {
             },
         ],
 
-        // 'indent': 'off',
+        'indent': 'off',
 
         '@typescript-eslint/no-inferrable-types': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-var-requires': 'off',
 
-        '@typescript-eslint/indent': [
-            'warn',
-            4,
-            { outerIIFEBody: 2 }
-        ],
+        // '@typescript-eslint/indent': ['warn', 4, { outerIIFEBody: 2 } ],
 
         '@typescript-eslint/interface-name-prefix': 'off',
         '@typescript-eslint/member-delimiter-style': [
@@ -111,7 +107,7 @@ module.exports = {
         'id-blacklist': ['warn', 'any', 'Number', 'number', 'String', 'string', 'Boolean', 'boolean'],
         'id-match': 'warn',
         'import/no-deprecated': 'warn',
-        'import/order': 'warn',
+        'import/order': 'off',
         'linebreak-style': 'off',
         'max-classes-per-file': [ 'warn', 1 ],
         'max-len': [
@@ -149,23 +145,25 @@ module.exports = {
         'no-trailing-spaces': 'off',
         'no-undef-init': 'warn',
         'no-underscore-dangle': 'warn',
+        'no-unsafe-finally': 'warn',
         '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
-        '@typescript-eslint/no-unsafe-return': 'off',
-        'no-unsafe-finally': 'warn',
         'no-unused-expressions': 'warn',
         'no-unused-labels': 'warn',
         'object-shorthand': 'off',
         'one-var': ['warn', 'never'],
+/*
         'prefer-arrow/prefer-arrow-functions': [
             'warn',
             {
                 disallowPrototype: false,
-                singleReturnOnly: true,
-                classPropertiesAllowed: false,
+                allowNamedFunctions: false,
+                allowUnboundThis: true
             },
         ],
+*/
         'quote-props': 'off',
         radix: 'warn',
         'space-before-function-paren': 'off',

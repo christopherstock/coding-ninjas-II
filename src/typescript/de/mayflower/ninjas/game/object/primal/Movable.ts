@@ -1,12 +1,12 @@
 
-import * as ninjas from '../../../ninjas';
+    import * as ninjas from '../../../ninjas';
 
-/** ****************************************************************************************************************
+    /** ****************************************************************************************************************
     *   Represents a movable box.
     *******************************************************************************************************************/
-export class Movable extends ninjas.GameObject
-{
-    /** ************************************************************************************************************
+    export class Movable extends ninjas.GameObject
+    {
+        /** ************************************************************************************************************
         *   Creates a new movable.
         *
         *   @param shape          The shape for this object.
@@ -14,30 +14,30 @@ export class Movable extends ninjas.GameObject
         *   @param x              Startup position X.
         *   @param y              Startup position Y.
         ***************************************************************************************************************/
-    public constructor
-    (
-        shape          :ninjas.Shape,
-        spriteTemplate :ninjas.SpriteTemplate,
-        x              :number,
-        y              :number
-    )
-    {
-        super
+        public constructor
         (
-            shape,
-            spriteTemplate,
-            x,
-            y
-        );
-    }
+            shape          :ninjas.Shape,
+            spriteTemplate :ninjas.SpriteTemplate,
+            x              :number,
+            y              :number
+        )
+        {
+            super
+            (
+                shape,
+                spriteTemplate,
+                x,
+                y
+            );
+        }
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   Renders this movable.
         ***************************************************************************************************************/
-    public render() : void
-    {
-        super.render();
+        public render() : void
+        {
+            super.render();
 
-        // this.clipToHorizontalLevelBounds();
+            // this.clipToHorizontalLevelBounds();
+        }
     }
-}

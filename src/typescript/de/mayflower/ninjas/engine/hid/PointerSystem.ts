@@ -1,154 +1,154 @@
 
-import * as ninjas from '../../ninjas';
+    import * as ninjas from '../../ninjas';
 
-/** ****************************************************************************************************************
+    /** ****************************************************************************************************************
     *   The pointer system that manages all pointer interactions.
     *******************************************************************************************************************/
-export class PointerSystem
-{
-    /** Indicates if the left canvas half is currently pointer pressed. */
-    public              leftCanvasHalfPressed               :boolean            = false;
-    /** Indicates if the right canvas half is currently pointer pressed. */
-    public              rightCanvasHalfPressed              :boolean            = false;
-    /** Indicates a canvas tab. */
-    public              canvasTabbed                        :boolean            = false;
+    export class PointerSystem
+    {
+        /** Indicates if the left canvas half is currently pointer pressed. */
+        public              leftCanvasHalfPressed               :boolean            = false;
+        /** Indicates if the right canvas half is currently pointer pressed. */
+        public              rightCanvasHalfPressed              :boolean            = false;
+        /** Indicates a canvas tab. */
+        public              canvasTabbed                        :boolean            = false;
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   Creates a new key system.
         ***************************************************************************************************************/
-    public constructor()
-    {
-        ninjas.Debug.pointer.log( 'Setup pointer system' );
+        public constructor()
+        {
+            ninjas.Debug.pointer.log( 'Setup pointer system' );
 
-        const canvas:HTMLCanvasElement = ninjas.Main.game.engine.canvasSystem.getCanvas();
+            const canvas:HTMLCanvasElement = ninjas.Main.game.engine.canvasSystem.getCanvas();
 
-        // eslint-disable-next-line max-len
-        canvas.addEventListener( 'onpointermove', ( event:Event ) => { this.onPointerMove( event as PointerEvent ); }, false );
-        // eslint-disable-next-line max-len
-        canvas.addEventListener( 'onpointerdown', ( event:Event ) => { this.onPointerDown( event as PointerEvent ); }, false );
-        // eslint-disable-next-line max-len
-        window.addEventListener( 'onpointerup',   ( event:Event ) => { this.onPointerUp(   event as PointerEvent ); }, false );
+            // eslint-disable-next-line max-len
+            canvas.addEventListener( 'onpointermove', ( event:Event ) => { this.onPointerMove( event as PointerEvent ); }, false );
+            // eslint-disable-next-line max-len
+            canvas.addEventListener( 'onpointerdown', ( event:Event ) => { this.onPointerDown( event as PointerEvent ); }, false );
+            // eslint-disable-next-line max-len
+            window.addEventListener( 'onpointerup',   ( event:Event ) => { this.onPointerUp(   event as PointerEvent ); }, false );
 
-        canvas.addEventListener( 'pointermove', ( event:PointerEvent ) => { this.onPointerMove( event ); }, false );
-        canvas.addEventListener( 'pointerdown', ( event:PointerEvent ) => { this.onPointerDown( event ); }, false );
-        window.addEventListener( 'pointerup',   ( event:PointerEvent ) => { this.onPointerUp(   event ); }, false );
+            canvas.addEventListener( 'pointermove', ( event:PointerEvent ) => { this.onPointerMove( event ); }, false );
+            canvas.addEventListener( 'pointerdown', ( event:PointerEvent ) => { this.onPointerDown( event ); }, false );
+            window.addEventListener( 'pointerup',   ( event:PointerEvent ) => { this.onPointerUp(   event ); }, false );
 
-        canvas.addEventListener( 'touchmove',   ( event:TouchEvent ) => { this.onTouchMove( event ); }, false );
-        canvas.addEventListener( 'touchstart',  ( event:TouchEvent ) => { this.onTouchDown( event ); }, false );
-        window.addEventListener( 'touchend',    ( event:TouchEvent ) => { this.onTouchUp(   event ); }, false );
-    }
+            canvas.addEventListener( 'touchmove',   ( event:TouchEvent ) => { this.onTouchMove( event ); }, false );
+            canvas.addEventListener( 'touchstart',  ( event:TouchEvent ) => { this.onTouchDown( event ); }, false );
+            window.addEventListener( 'touchend',    ( event:TouchEvent ) => { this.onTouchUp(   event ); }, false );
+        }
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   This method is invoked when the pointer is moved.
         *
         *   @param event The system's propagated pointer event.
         ***************************************************************************************************************/
-    public onPointerMove( event:PointerEvent ) : void
-    {
-        ninjas.Debug.pointer.log( 'pointer move' );
+        public onPointerMove( event:PointerEvent ) : void
+        {
+            ninjas.Debug.pointer.log( 'pointer move' );
 
-        event.preventDefault();
-    }
+            event.preventDefault();
+        }
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   This method is invoked when the pointer is pressed.
         *
         *   @param event The system's propagated pointer event.
         ***************************************************************************************************************/
-    public onPointerDown( event:PointerEvent ) : void
-    {
-        ninjas.Debug.pointer.log( 'pointer down' );
-
-        event.preventDefault();
-
-        if ( ninjas.Main.game.level !== null )
+        public onPointerDown( event:PointerEvent ) : void
         {
-            const playerCenterX :number = (
-                ninjas.Main.game.level.player.shape.body.position.x
-            ) - ninjas.Main.game.camera.getOffsetX();
+            ninjas.Debug.pointer.log( 'pointer down' );
 
-            if ( event.clientX < playerCenterX )
+            event.preventDefault();
+
+            if ( ninjas.Main.game.level !== null )
             {
-                this.leftCanvasHalfPressed = true;
-                this.canvasTabbed           = true;
-            }
-            else
-            {
-                this.rightCanvasHalfPressed = true;
-                this.canvasTabbed           = true;
+                const playerCenterX :number = (
+                    ninjas.Main.game.level.player.shape.body.position.x
+                ) - ninjas.Main.game.camera.getOffsetX();
+
+                if ( event.clientX < playerCenterX )
+                {
+                    this.leftCanvasHalfPressed = true;
+                    this.canvasTabbed           = true;
+                }
+                else
+                {
+                    this.rightCanvasHalfPressed = true;
+                    this.canvasTabbed           = true;
+                }
             }
         }
-    }
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   This method is invoked when the pointer is released.
         *
         *   @param event The system's propagated pointer event.
         ***************************************************************************************************************/
-    public onPointerUp( event:PointerEvent ) : void
-    {
-        ninjas.Debug.pointer.log( 'pointer up' );
+        public onPointerUp( event:PointerEvent ) : void
+        {
+            ninjas.Debug.pointer.log( 'pointer up' );
 
-        event.preventDefault();
+            event.preventDefault();
 
-        this.leftCanvasHalfPressed  = false;
-        this.rightCanvasHalfPressed = false;
-    }
+            this.leftCanvasHalfPressed  = false;
+            this.rightCanvasHalfPressed = false;
+        }
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   This method is invoked when the touch is moved.
         *
         *   @param event The system's propagated touch event.
         ***************************************************************************************************************/
-    public onTouchMove( event:TouchEvent ) : void
-    {
-        ninjas.Debug.pointer.log( 'touch move' );
+        public onTouchMove( event:TouchEvent ) : void
+        {
+            ninjas.Debug.pointer.log( 'touch move' );
 
-        event.preventDefault();
-    }
+            event.preventDefault();
+        }
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   This method is invoked when the touch is pressed.
         *
         *   @param event The system's propagated touch  event.
         ***************************************************************************************************************/
-    public onTouchDown( event:TouchEvent ) : void
-    {
-        ninjas.Debug.pointer.log( 'touch down' );
-
-        event.preventDefault();
-
-        if ( ninjas.Main.game.level !== null )
+        public onTouchDown( event:TouchEvent ) : void
         {
-            const playerCenterX:number = (
-                ninjas.Main.game.level.player.shape.body.position.x
-            ) - ninjas.Main.game.camera.getOffsetX();
+            ninjas.Debug.pointer.log( 'touch down' );
 
-            if ( event.touches[ 0 ].pageX < playerCenterX )
+            event.preventDefault();
+
+            if ( ninjas.Main.game.level !== null )
             {
-                this.leftCanvasHalfPressed = true;
-                this.canvasTabbed           = true;
-            }
-            else
-            {
-                this.rightCanvasHalfPressed = true;
-                this.canvasTabbed           = true;
+                const playerCenterX:number = (
+                    ninjas.Main.game.level.player.shape.body.position.x
+                ) - ninjas.Main.game.camera.getOffsetX();
+
+                if ( event.touches[ 0 ].pageX < playerCenterX )
+                {
+                    this.leftCanvasHalfPressed = true;
+                    this.canvasTabbed           = true;
+                }
+                else
+                {
+                    this.rightCanvasHalfPressed = true;
+                    this.canvasTabbed           = true;
+                }
             }
         }
-    }
 
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   This method is invoked when the touch  is released.
         *
         *   @param event The system's propagated touch  event.
         ***************************************************************************************************************/
-    public onTouchUp( event:TouchEvent ) : void
-    {
-        ninjas.Debug.pointer.log( 'touch  up' );
+        public onTouchUp( event:TouchEvent ) : void
+        {
+            ninjas.Debug.pointer.log( 'touch  up' );
 
-        event.preventDefault();
+            event.preventDefault();
 
-        this.leftCanvasHalfPressed  = false;
-        this.rightCanvasHalfPressed = false;
+            this.leftCanvasHalfPressed  = false;
+            this.rightCanvasHalfPressed = false;
+        }
     }
-}

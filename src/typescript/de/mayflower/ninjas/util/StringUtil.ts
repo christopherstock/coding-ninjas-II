@@ -1,12 +1,12 @@
 
-const moment :any = require('moment');
+    const moment :any = require('moment');
 
-/** ****************************************************************************************************************
+    /** ****************************************************************************************************************
     *   Offers static string functionality.
     *******************************************************************************************************************/
-export class StringUtil
-{
-    /** ************************************************************************************************************
+    export class StringUtil
+    {
+        /** ************************************************************************************************************
         *   Returns an array of all found regular expression matches.
         *   The subject will need the 'multiple' modifier for this method to work as expected.
         *   e.g. /[a-z]+/g
@@ -16,29 +16,29 @@ export class StringUtil
         *                    This string MUST NOT be enclosed in string quotes!
         *   @return          An array containing all matched results.
         ***************************************************************************************************************/
-    public static searchRegEx( subject:string, regEx:RegExp ) : string[]
-    {
-        const results:RegExpMatchArray = regEx.exec( subject );
-        const ret:string[] = [];
-
-        if ( results !== null )
+        public static searchRegEx( subject:string, regEx:RegExp ) : string[]
         {
-            for ( const result of results )
+            const results:RegExpMatchArray = regEx.exec( subject );
+            const ret:string[] = [];
+
+            if ( results !== null )
             {
-                ret.push( result );
+                for ( const result of results )
+                {
+                    ret.push( result );
+                }
             }
+
+            return ret;
         }
 
-        return ret;
-    }
-
-    /** ************************************************************************************************************
+        /** ************************************************************************************************************
         *   Returns a formatted timestamp of the current system date and time.
         *
         *   @return string A formatted timestamp of the current system date and time.
         ***************************************************************************************************************/
-    public static getDateTimeString():string
-    {
-        return new moment().format( 'DD.MM.YYYY HH:mm:ss' );
+        public static getDateTimeString():string
+        {
+            return new moment().format( 'DD.MM.YYYY HH:mm:ss' );
+        }
     }
-}
