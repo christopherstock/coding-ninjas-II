@@ -1,124 +1,123 @@
+import * as ninjas   from '../ninjas';
+import * as React    from 'react';
+import * as ReactDOM from 'react-dom';
 
-    import * as ninjas   from '../ninjas';
-    import * as React    from 'react';
-    import * as ReactDOM from 'react-dom';
+/** ********************************************************************************************************************
+*   Specifies all existing site contents.
+***********************************************************************************************************************/
+export enum SiteContent
+{
+    /** The 'welcome' page. */
+    CONTENT_WELCOME,
+    /** The 'company' page. */
+    CONTENT_COMPANY,
+    /** The 'services' page. */
+    CONTENT_SERVICES,
+    /** The 'technology' page. */
+    CONTENT_TECHNOLOGY,
+    /** The 'timeline' page. */
+    CONTENT_TIMELINE,
+    /** The 'contact' page. */
+    CONTENT_CONTACT,
+}
+
+/** ********************************************************************************************************************
+*   Manages all site contents for the site panel.
+***********************************************************************************************************************/
+export class SiteContentSystem
+{
+    /** All already discovered contents. */
+    public                  discoveredContents          :ninjas.SiteContent[]           = [];
+
+    /** The site content for the 'welcome' page. */
+    private                 contentWelcome              :JSX.Element                    = null;
+    /** The site content for the 'company' page. */
+    private                 contentCompany              :JSX.Element                    = null;
+    /** The site content for the 'services' page. */
+    private                 contentServices             :JSX.Element                    = null;
+    /** The site content for the 'technology' page. */
+    private                 contentTechnology           :JSX.Element                    = null;
+    /** The site content for the 'timeline' page. */
+    private                 contentTimeline             :JSX.Element                    = null;
+    /** The site content for the 'contact' page. */
+    private                 contentContact              :JSX.Element                    = null;
 
     /** ****************************************************************************************************************
-    *   Specifies all existing site contents.
+    *   Inits all site contents.
     *******************************************************************************************************************/
-    export enum SiteContent
+    public initAllContents() : void
     {
-        /** The 'welcome' page. */
-        CONTENT_WELCOME,
-        /** The 'company' page. */
-        CONTENT_COMPANY,
-        /** The 'services' page. */
-        CONTENT_SERVICES,
-        /** The 'technology' page. */
-        CONTENT_TECHNOLOGY,
-        /** The 'timeline' page. */
-        CONTENT_TIMELINE,
-        /** The 'contact' page. */
-        CONTENT_CONTACT,
+        this.contentWelcome    = <ninjas.ContentWelcome    />;
+        this.contentCompany    = <ninjas.ContentCompany    />;
+        this.contentServices   = <ninjas.ContentServices   />;
+        this.contentTechnology = <ninjas.ContentTechnology />;
+        this.contentTimeline   = <ninjas.ContentTimeline   />;
+        this.contentContact    = <ninjas.ContentContact    />;
     }
 
     /** ****************************************************************************************************************
-    *   Manages all site contents for the site panel.
+    *   Mounts the specified content to the specified container.
+    *
+    *   @param content   The site content to mount.
+    *   @param container The container to mount the content to.
     *******************************************************************************************************************/
-    export class SiteContentSystem
+    public mountContent( content:SiteContent, container:HTMLDivElement ) : void
     {
-        /** All already discovered contents. */
-        public                  discoveredContents          :ninjas.SiteContent[]           = [];
+        // unmount existent component if any
+        ReactDOM.unmountComponentAtNode(
+            container
+        );
 
-        /** The site content for the 'welcome' page. */
-        private                 contentWelcome              :JSX.Element                    = null;
-        /** The site content for the 'company' page. */
-        private                 contentCompany              :JSX.Element                    = null;
-        /** The site content for the 'services' page. */
-        private                 contentServices             :JSX.Element                    = null;
-        /** The site content for the 'technology' page. */
-        private                 contentTechnology           :JSX.Element                    = null;
-        /** The site content for the 'timeline' page. */
-        private                 contentTimeline             :JSX.Element                    = null;
-        /** The site content for the 'contact' page. */
-        private                 contentContact              :JSX.Element                    = null;
-
-        /** ************************************************************************************************************
-        *   Inits all site contents.
-        ***************************************************************************************************************/
-        public initAllContents() : void
+        // add to discovered contents if not already discovered
+        if ( !this.discoveredContents.includes( content ) )
         {
-            this.contentWelcome    = <ninjas.ContentWelcome    />;
-            this.contentCompany    = <ninjas.ContentCompany    />;
-            this.contentServices   = <ninjas.ContentServices   />;
-            this.contentTechnology = <ninjas.ContentTechnology />;
-            this.contentTimeline   = <ninjas.ContentTimeline   />;
-            this.contentContact    = <ninjas.ContentContact    />;
+            this.discoveredContents.push( content );
         }
 
-        /** ************************************************************************************************************
-        *   Mounts the specified content to the specified container.
-        *
-        *   @param content   The site content to mount.
-        *   @param container The container to mount the content to.
-        ***************************************************************************************************************/
-        public mountContent( content:SiteContent, container:HTMLDivElement ) : void
+        // pick new content to mount
+        let elementToMount:JSX.Element = null;
+        switch ( content )
         {
-            // unmount existent component if any
-            ReactDOM.unmountComponentAtNode(
-                container
-            );
-
-            // add to discovered contents if not already discovered
-            if ( !this.discoveredContents.includes( content ) )
+            case SiteContent.CONTENT_WELCOME:
             {
-                this.discoveredContents.push( content );
+                elementToMount = this.contentWelcome;
+                break;
             }
 
-            // pick new content to mount
-            let elementToMount:JSX.Element = null;
-            switch ( content )
+            case SiteContent.CONTENT_COMPANY:
             {
-                case SiteContent.CONTENT_WELCOME:
-                {
-                    elementToMount = this.contentWelcome;
-                    break;
-                }
-
-                case SiteContent.CONTENT_COMPANY:
-                {
-                    elementToMount = this.contentCompany;
-                    break;
-                }
-                case SiteContent.CONTENT_SERVICES:
-                {
-                    elementToMount = this.contentServices;
-                    break;
-                }
-
-                case SiteContent.CONTENT_TECHNOLOGY:
-                {
-                    elementToMount = this.contentTechnology;
-                    break;
-                }
-
-                case SiteContent.CONTENT_TIMELINE:
-                {
-                    elementToMount = this.contentTimeline;
-                    break;
-                }
-
-                case SiteContent.CONTENT_CONTACT:
-                {
-                    elementToMount = this.contentContact;
-                    break;
-                }
+                elementToMount = this.contentCompany;
+                break;
+            }
+            case SiteContent.CONTENT_SERVICES:
+            {
+                elementToMount = this.contentServices;
+                break;
             }
 
-            // mount content to DOM node
-            ReactDOM.render(
-                elementToMount,
-                container
-            );
+            case SiteContent.CONTENT_TECHNOLOGY:
+            {
+                elementToMount = this.contentTechnology;
+                break;
+            }
+
+            case SiteContent.CONTENT_TIMELINE:
+            {
+                elementToMount = this.contentTimeline;
+                break;
+            }
+
+            case SiteContent.CONTENT_CONTACT:
+            {
+                elementToMount = this.contentContact;
+                break;
+            }
         }
+
+        // mount content to DOM node
+        ReactDOM.render(
+            elementToMount,
+            container
+        );
     }
+}
