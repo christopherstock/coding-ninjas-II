@@ -111,27 +111,27 @@ export class SiteTrigger extends ninjas.Decoration
     {
         switch ( this.sitePanelAppearance )
         {
-        case SitePanelAppearance.PLAYER_FACING:
-        {
-            if ( ninjas.Main.game.level.player.facing === ninjas.CharacterFacing.LEFT )
+            case SitePanelAppearance.PLAYER_FACING:
+            {
+                if ( ninjas.Main.game.level.player.facing === ninjas.CharacterFacing.LEFT )
+                {
+                    return ninjas.SitePanelPosition.LEFT;
+                }
+                else
+                {
+                    return ninjas.SitePanelPosition.RIGHT;
+                }
+            }
+
+            case SitePanelAppearance.LEFT:
             {
                 return ninjas.SitePanelPosition.LEFT;
             }
-            else
+
+            case SitePanelAppearance.RIGHT:
             {
                 return ninjas.SitePanelPosition.RIGHT;
             }
-        }
-
-        case SitePanelAppearance.LEFT:
-        {
-            return ninjas.SitePanelPosition.LEFT;
-        }
-
-        case SitePanelAppearance.RIGHT:
-        {
-            return ninjas.SitePanelPosition.RIGHT;
-        }
         }
     }
 }
