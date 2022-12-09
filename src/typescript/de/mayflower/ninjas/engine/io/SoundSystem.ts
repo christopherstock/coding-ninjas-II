@@ -47,7 +47,8 @@ export class SoundSystem
                 {
                     clipClone.addEventListener(
                         'ended',
-                        () => {
+                        () =>
+                        {
 
                             ninjas.Debug.sound.log( 'Clip ended - now repeating ..' );
 

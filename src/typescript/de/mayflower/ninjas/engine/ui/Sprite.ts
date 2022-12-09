@@ -51,7 +51,8 @@ export class Sprite
         if (
             this.template.loop === ninjas.LoopSprite.NO
             && this.currentFrame === this.template.imageIds.length - 1
-        ) {
+        )
+        {
             return false;
         }
 
@@ -100,10 +101,8 @@ export class Sprite
         {
             return ninjas.Main.game.engine.imageSystem.getMirroredImage( imageId ).src;
         }
-        else
-        {
-            return ninjas.Main.game.engine.imageSystem.getImage( imageId ).src;
-        }
+
+        return ninjas.Main.game.engine.imageSystem.getImage( imageId ).src;
     }
 
     /** ****************************************************************************************************************

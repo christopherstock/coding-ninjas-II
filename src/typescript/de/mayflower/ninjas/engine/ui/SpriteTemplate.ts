@@ -94,7 +94,6 @@ export class SpriteTemplate
         }
     }
 
-
     /** ****************************************************************************************************************
     *   Returns the sprite scale factor.
     *
@@ -119,7 +118,7 @@ export class SpriteTemplate
         for ( const imageId of this.imageIds )
         {
             if (
-                   this.width  !== imageSystem.getImage( imageId ).width
+                this.width  !== imageSystem.getImage( imageId ).width
                 || this.height !== imageSystem.getImage( imageId ).height
             )
             {
