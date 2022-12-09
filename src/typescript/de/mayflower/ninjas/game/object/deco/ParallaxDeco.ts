@@ -20,7 +20,8 @@ export class ParallaxDeco extends ninjas.Decoration
     *******************************************************************************************************************/
     public constructor(
         shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number, parallaxRatio:number
-    ) {
+    )
+    {
         super
         (
             shape,

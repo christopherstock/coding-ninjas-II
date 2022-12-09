@@ -96,7 +96,8 @@ export class SigSaw extends ninjas.GameObject
     *******************************************************************************************************************/
     private clipRotationSpeed() : void
     {
-        if ( this.maxRotationSpeed === -1 ) {
+        if ( this.maxRotationSpeed === -1 )
+        {
             return;
         }
 

@@ -45,7 +45,8 @@ export class Platform extends ninjas.GameObject
         spriteTemplate :ninjas.SpriteTemplate,
         speed          :number,
         waypoints      :matter.Vector[]
-    ) {
+    )
+    {
         super
         (
             shape,
@@ -114,7 +115,8 @@ export class Platform extends ninjas.GameObject
         ++this.currentWaypointIndex;
 
         // assign current wp
-        if ( this.currentWaypointIndex >= this.waypoints.length ) {
+        if ( this.currentWaypointIndex >= this.waypoints.length )
+        {
             this.currentWaypointIndex = 0;
         }
         const currentWaypoint:matter.Vector = matter.Vector.create
@@ -125,7 +127,8 @@ export class Platform extends ninjas.GameObject
 
         // assign next wp
         let nextWaypointIndex :number = this.currentWaypointIndex + 1;
-        if ( nextWaypointIndex >= this.waypoints.length ) {
+        if ( nextWaypointIndex >= this.waypoints.length )
+        {
             nextWaypointIndex = 0;
         }
         const nextWaypoint:matter.Vector = matter.Vector.create
