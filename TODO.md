@@ -4,9 +4,9 @@
 
 ```
 TODO Update all npm packages (from hackathon 2022 frontend)
+TODO Change slogan
 TODO Move to MF GitLab
 TODO Add GitLab CI/CD pipeline
-TODO Change slogan
 ```
 
 ## MVP (Demo)

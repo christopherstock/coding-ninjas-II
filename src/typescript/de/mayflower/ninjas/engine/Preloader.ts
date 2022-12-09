@@ -12,9 +12,9 @@
         private     readonly        onPreloaderSetup                :() => void                         = null;
 
         /**  The colorful preloader image. */
-        private                     imageGay                        :HTMLImageElement                   = null;
+        private                     imageLoaded                        :HTMLImageElement                   = null;
         /**  The monochrome preloader image. */
-        private                     imageMono                       :HTMLImageElement                   = null;
+        private                     imageUnloaded                       :HTMLImageElement                   = null;
         /**  A counter for the preloaded images. */
         private                     loadedImageCount                :number                             = 0;
         /**  The percentage of all loaded game contents. */
@@ -44,14 +44,14 @@
             this.engine.initWindowResizeHandler();
 
             // load preloader images
-            this.imageGay  = new Image();
-            this.imageMono = new Image();
+            this.imageLoaded  = new Image();
+            this.imageUnloaded = new Image();
 
-            this.imageGay.src  = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderGay.png';
-            this.imageMono.src = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderMono.png';
+            this.imageLoaded.src  = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderLoaded.png';
+            this.imageUnloaded.src = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderUnloaded.png';
 
-            this.imageGay.onload  = () :void => { this.preloaderImageLoaded(); };
-            this.imageMono.onload = () :void => { this.preloaderImageLoaded(); };
+            this.imageLoaded.onload  = () :void => { this.preloaderImageLoaded(); };
+            this.imageUnloaded.onload = () :void => { this.preloaderImageLoaded(); };
         }
 
         /** ************************************************************************************************************
@@ -109,41 +109,41 @@
             );
 
             // calc image location
-            const imageX :number = ( this.engine.canvasSystem.getWidth()  - this.imageMono.width  ) / 2;
-            const imageY :number = ( this.engine.canvasSystem.getHeight() - this.imageMono.height ) / 2;
+            const imageX :number = ( this.engine.canvasSystem.getWidth()  - this.imageUnloaded.width  ) / 2;
+            const imageY :number = ( this.engine.canvasSystem.getHeight() - this.imageUnloaded.height ) / 2;
 
             // calc image width to draw
-            const gayImageWidth  :number = ( this.imageGay.width * this.loadingPercentage ) / 100;
-            const monoImageWidth :number = ( this.imageMono.width - gayImageWidth );
+            const gayImageWidth  :number = ( this.imageLoaded.width * this.loadingPercentage ) / 100;
+            const monoImageWidth :number = ( this.imageUnloaded.width - gayImageWidth );
 
             // draw mono image
             ninjas.DrawUtil.drawImageScaledClipped
             (
                 this.engine.canvasSystem.getCanvasContext(),
-                this.imageMono,
+                this.imageUnloaded,
                 gayImageWidth,
                 0,
                 monoImageWidth,
-                this.imageMono.height,
+                this.imageUnloaded.height,
                 imageX + gayImageWidth,
                 imageY,
                 monoImageWidth,
-                this.imageMono.height
+                this.imageUnloaded.height
             );
 
             // draw gay image clipped
             ninjas.DrawUtil.drawImageScaledClipped
             (
                 this.engine.canvasSystem.getCanvasContext(),
-                this.imageGay,
+                this.imageLoaded,
                 0,
                 0,
                 gayImageWidth,
-                this.imageGay.height,
+                this.imageLoaded.height,
                 imageX,
                 imageY,
                 gayImageWidth,
-                this.imageGay.height
+                this.imageLoaded.height
             );
         }
     }

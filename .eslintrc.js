@@ -43,7 +43,16 @@ module.exports = {
         // the indent rule is not working properly!
         'indent': 'off',
         // '@typescript-eslint/indent': ['warn', 4, { outerIIFEBody: 2 } ],
-
+/*
+        'indent': [
+            'warn',
+            4,
+            {
+                ignoreComments: true,
+                SwitchCase: 1,
+            },
+        ],
+*/
         '@typescript-eslint/interface-name-prefix': 'off',
         '@typescript-eslint/member-delimiter-style': [
             'off',
