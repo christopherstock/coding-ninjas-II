@@ -172,7 +172,7 @@
 
             this.preloader.setLoadingPercentage( 100 );
 
-            // start the game loop after a short delay .. runs smoother for the user
+            // start the game loop after a short delay. this runs smoother for the user
             window.setTimeout
             (
                 () => { this.game.start(); },

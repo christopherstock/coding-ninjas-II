@@ -94,7 +94,7 @@
 
         /** ************************************************************************************************************
         *   Updates the singleton instance of the camera by reassigning
-        *   it's horizontal and vertical offset.
+        *   its horizontal and vertical offset.
         *
         *   @param subjectX     The subject coordinate X to center the camera.
         *   @param subjectY     The subject coordinate Y to center the camera.

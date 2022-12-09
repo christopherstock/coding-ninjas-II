@@ -3,7 +3,7 @@
     import * as React  from 'react';
 
     /** ****************************************************************************************************************
-    *   A react component with the content for the 'timeline' page.
+    *   A React component with the content for the 'timeline' page.
     *******************************************************************************************************************/
     export const ContentTimeline :() => JSX.Element = () :JSX.Element =>
     {

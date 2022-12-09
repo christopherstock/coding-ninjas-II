@@ -82,7 +82,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Calculates the width and height of this shapes bounds.
+        *   Calculates the width and height of shapes.
         ***************************************************************************************************************/
         private determineBoundDimensions() : void
         {

@@ -203,7 +203,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Creates an rectangular obstacle with a specified sprite.
+        *   Creates a rectangular obstacle with a specified sprite.
         *
         *   @param xLeft           Anchor for left X.
         *   @param yBottom         Anchor for top Y.
@@ -250,7 +250,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Creates an rectangular obstacle without an assigned sprite.
+        *   Creates a rectangular obstacle without an assigned sprite.
         *
         *   @param xLeft           Anchor for left X.
         *   @param yTop            Anchor for top Y.

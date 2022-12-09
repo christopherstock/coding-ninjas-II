@@ -488,7 +488,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Creates an movable with a rectangular shape.
+        *   Creates a movable with a rectangular shape.
         *
         *   @param level    The level to add the decoration to.
         *   @param xLeft    Anchor for left X.
@@ -515,7 +515,7 @@
         }
 
         /** ************************************************************************************************************
-        *   Creates an movable with a circular shape.
+        *   Creates a movable with a circular shape.
         *
         *   @param level    The level to add the decoration to.
         *   @param xLeft    Anchor for left X.

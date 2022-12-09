@@ -3,7 +3,7 @@
     import * as React  from 'react';
 
     /** ****************************************************************************************************************
-    *   A react component with the content for the 'contact' page.
+    *   A React component with the content for the 'contact' page.
     *******************************************************************************************************************/
     export const ContentContact :() => JSX.Element = () :JSX.Element =>
     {

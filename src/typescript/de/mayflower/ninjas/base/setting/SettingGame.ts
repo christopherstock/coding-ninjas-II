@@ -8,7 +8,7 @@
     {
         /** The application's internal name. */
         public      static  readonly    TITLE                                       :string                     = (
-            'Coding Ninjas II - Back with a Vengeance, (c) 2020 Mayflower GmbH, v1.0.0'
+            'Coding Ninjas II - gifted with second sight, (c) 2023 Mayflower GmbH, v1.0.0'
         );
 
         /** The distance the player can reach with an attack of his katana. */

@@ -28,7 +28,7 @@
             // create the game engine
             this.engine = new ninjas.Engine( this );
 
-            // start the preloader after a short delay .. runs smoother for the user
+            // start the preloader after a short delay. this runs smoother for the user
             window.setTimeout
             (
                 () => { this.engine.launch(); },

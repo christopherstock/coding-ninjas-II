@@ -3,7 +3,7 @@
     import * as React  from 'react';
 
     /** ****************************************************************************************************************
-    *   A react component with the content for the 'company' page.
+    *   A React component with the content for the 'company' page.
     *******************************************************************************************************************/
     export const ContentCompany :() => JSX.Element = () :JSX.Element =>
     {

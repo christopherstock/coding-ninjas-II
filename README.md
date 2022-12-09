@@ -1,4 +1,4 @@
-# ![Coding Ninjas II - Back with a Vengeance](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/badge.jpg)
+# ![Coding Ninjas II - gifted with second sight](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/badge.jpg)
 
 ## Latest Build Online
 https://christopherstock.github.io/coding-ninjas-II/dist/
