@@ -79,40 +79,40 @@ export class SiteContentSystem
         let elementToMount:JSX.Element = null;
         switch ( content )
         {
-        case SiteContent.CONTENT_WELCOME:
-        {
-            elementToMount = this.contentWelcome;
-            break;
-        }
+            case SiteContent.CONTENT_WELCOME:
+            {
+                elementToMount = this.contentWelcome;
+                break;
+            }
 
-        case SiteContent.CONTENT_COMPANY:
-        {
-            elementToMount = this.contentCompany;
-            break;
-        }
-        case SiteContent.CONTENT_SERVICES:
-        {
-            elementToMount = this.contentServices;
-            break;
-        }
+            case SiteContent.CONTENT_COMPANY:
+            {
+                elementToMount = this.contentCompany;
+                break;
+            }
+            case SiteContent.CONTENT_SERVICES:
+            {
+                elementToMount = this.contentServices;
+                break;
+            }
 
-        case SiteContent.CONTENT_TECHNOLOGY:
-        {
-            elementToMount = this.contentTechnology;
-            break;
-        }
+            case SiteContent.CONTENT_TECHNOLOGY:
+            {
+                elementToMount = this.contentTechnology;
+                break;
+            }
 
-        case SiteContent.CONTENT_TIMELINE:
-        {
-            elementToMount = this.contentTimeline;
-            break;
-        }
+            case SiteContent.CONTENT_TIMELINE:
+            {
+                elementToMount = this.contentTimeline;
+                break;
+            }
 
-        case SiteContent.CONTENT_CONTACT:
-        {
-            elementToMount = this.contentContact;
-            break;
-        }
+            case SiteContent.CONTENT_CONTACT:
+            {
+                elementToMount = this.contentContact;
+                break;
+            }
         }
 
         // mount content to DOM node

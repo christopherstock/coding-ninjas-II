@@ -143,47 +143,47 @@ export class Bot extends ninjas.Character
     {
         switch ( this.currentPhase )
         {
-        case EnemyMovementPhase.STANDING_LEFT:
-        {
-            if ( ++this.currentPhaseDelayTick >= ninjas.SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
+            case EnemyMovementPhase.STANDING_LEFT:
             {
-                this.currentPhaseDelayTick = 0;
-                this.currentPhase          = EnemyMovementPhase.WALKING_RIGHT;
+                if ( ++this.currentPhaseDelayTick >= ninjas.SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
+                {
+                    this.currentPhaseDelayTick = 0;
+                    this.currentPhase          = EnemyMovementPhase.WALKING_RIGHT;
+                }
+                break;
             }
-            break;
-        }
 
-        case EnemyMovementPhase.STANDING_RIGHT:
-        {
-            if ( ++this.currentPhaseDelayTick >= ninjas.SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
+            case EnemyMovementPhase.STANDING_RIGHT:
             {
-                this.currentPhaseDelayTick = 0;
-                this.currentPhase          = EnemyMovementPhase.WALKING_LEFT;
+                if ( ++this.currentPhaseDelayTick >= ninjas.SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
+                {
+                    this.currentPhaseDelayTick = 0;
+                    this.currentPhase          = EnemyMovementPhase.WALKING_LEFT;
+                }
+                break;
             }
-            break;
-        }
 
-        case EnemyMovementPhase.WALKING_LEFT:
-        {
-            this.moveLeft();
-
-            if ( this.shape.body.position.x - this.shape.getWidth() / 2 <= this.walkingTargetLeft )
+            case EnemyMovementPhase.WALKING_LEFT:
             {
-                this.currentPhase = EnemyMovementPhase.STANDING_LEFT;
+                this.moveLeft();
+
+                if ( this.shape.body.position.x - this.shape.getWidth() / 2 <= this.walkingTargetLeft )
+                {
+                    this.currentPhase = EnemyMovementPhase.STANDING_LEFT;
+                }
+                break;
             }
-            break;
-        }
 
-        case EnemyMovementPhase.WALKING_RIGHT:
-        {
-            this.moveRight();
-
-            if ( this.shape.body.position.x - this.shape.getWidth() / 2 >= this.walkingTargetRight )
+            case EnemyMovementPhase.WALKING_RIGHT:
             {
-                this.currentPhase = EnemyMovementPhase.STANDING_RIGHT;
+                this.moveRight();
+
+                if ( this.shape.body.position.x - this.shape.getWidth() / 2 >= this.walkingTargetRight )
+                {
+                    this.currentPhase = EnemyMovementPhase.STANDING_RIGHT;
+                }
+                break;
             }
-            break;
-        }
         }
     }
 

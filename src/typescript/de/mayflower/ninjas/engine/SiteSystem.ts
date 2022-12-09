@@ -232,50 +232,50 @@ export class SiteSystem
             // center camera X if desired
             switch ( ninjas.Main.game.level.player.facing )
             {
-            case ninjas.CharacterFacing.LEFT:
-            {
-                return (
-                    ninjas.Main.game.engine.canvasSystem.getWidth()
+                case ninjas.CharacterFacing.LEFT:
+                {
+                    return (
+                        ninjas.Main.game.engine.canvasSystem.getWidth()
                             * ( 1.0 - ninjas.SettingEngine.CAMERA_RATIO_X )
-                );
-            }
+                    );
+                }
 
-            case ninjas.CharacterFacing.RIGHT:
-            {
-                return (
-                    ninjas.Main.game.engine.canvasSystem.getWidth()
+                case ninjas.CharacterFacing.RIGHT:
+                {
+                    return (
+                        ninjas.Main.game.engine.canvasSystem.getWidth()
                             * ninjas.SettingEngine.CAMERA_RATIO_X
-                );
-            }
+                    );
+                }
             }
 
             // target according to player facing
             switch ( ninjas.Main.game.level.player.facing )
             {
-            case ninjas.CharacterFacing.LEFT:
-            {
-                return this.leftCameraTargetX;
-            }
+                case ninjas.CharacterFacing.LEFT:
+                {
+                    return this.leftCameraTargetX;
+                }
 
-            case ninjas.CharacterFacing.RIGHT:
-            {
-                return this.rightCameraTargetX;
-            }
+                case ninjas.CharacterFacing.RIGHT:
+                {
+                    return this.rightCameraTargetX;
+                }
             }
         }
 
         // target according to active site panel
         switch ( this.sitePanel.getPosition() )
         {
-        case ninjas.SitePanelPosition.LEFT:
-        {
-            return this.leftCameraTargetX;
-        }
+            case ninjas.SitePanelPosition.LEFT:
+            {
+                return this.leftCameraTargetX;
+            }
 
-        case ninjas.SitePanelPosition.RIGHT:
-        {
-            return this.rightCameraTargetX;
-        }
+            case ninjas.SitePanelPosition.RIGHT:
+            {
+                return this.rightCameraTargetX;
+            }
         }
     }
 
