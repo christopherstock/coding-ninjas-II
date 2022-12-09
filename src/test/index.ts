@@ -10,7 +10,8 @@ import * as Adapter from 'enzyme-adapter-react-16';
 ( global as any ).Image = [];
 
 /** Define global 'btoa' function to perform a base64 conversion ( btoa is not present in chai ). */
-( global as any ).btoa = ( str:string ) : string => {
+( global as any ).btoa = ( str:string ) : string =>
+{
     // return new Buffer( str ).toString( 'base64' );
     return Buffer.from( str ).toString( 'base64' );
 };

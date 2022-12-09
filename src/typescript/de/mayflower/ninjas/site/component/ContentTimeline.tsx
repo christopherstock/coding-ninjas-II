@@ -1,5 +1,5 @@
-import * as ninjas from '../../ninjas';
 import * as React  from 'react';
+import * as ninjas from '../../ninjas';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'timeline' page.

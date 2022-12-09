@@ -129,13 +129,13 @@ export abstract class Character extends ninjas.GameObject
         // the bounds of the smash depend on character bound and facing direction
         const attackRange :number = (
             this.facing === ninjas.CharacterFacing.LEFT
-            ? -ninjas.SettingGame.PLAYER_ATTACK_RANGE
-            : ninjas.SettingGame.PLAYER_ATTACK_RANGE
+                ? -ninjas.SettingGame.PLAYER_ATTACK_RANGE
+                : ninjas.SettingGame.PLAYER_ATTACK_RANGE
         );
         const damageForce :number = (
             this.facing === ninjas.CharacterFacing.LEFT
-            ? -ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
-            : ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
+                ? -ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
+                : ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
         );
         const smashBounds :matter.Bounds = matter.Bounds.create(
             matter.Vertices.create(
@@ -463,7 +463,6 @@ export abstract class Character extends ninjas.GameObject
         this.isGliding = false;
     }
 
-
     /** ****************************************************************************************************************
     *   Checks if the requested move for this character is collision free.
     *
@@ -518,13 +517,15 @@ export abstract class Character extends ninjas.GameObject
             bodiesToCheck.push( platform.shape.body );
             bodiesToCheck.push( platform.frictionShape.body );
         }
-/*
+
+        /*
         // ignore enemies!
         for ( const gameObject of ninjas.Main.game.level.enemies )
         {
             bodiesToCheck.push( gameObject.shape.body );
         }
-*/
+        */
+
         const USE_SINGLE_RAY_LINE :boolean = false;
         const MARGIN_X :number = 0;
         const MARGIN_Y :number = 25;

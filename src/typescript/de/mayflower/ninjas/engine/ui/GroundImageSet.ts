@@ -105,7 +105,8 @@ export class GroundImageSet
         flyingDescendingLeft    :string,
         flyingDescendingCenter  :string,
         flyingDescendingRight   :string
-    ) {
+    )
+    {
         this.solidLeft               = solidLeft;
         this.solidRight              = solidRight;
         this.solidTop                = solidTop;

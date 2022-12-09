@@ -1,71 +1,70 @@
+import * as matter from 'matter-js';
+import * as ninjas from '../../../ninjas';
 
-    import * as matter from 'matter-js';
-    import * as ninjas from '../../../ninjas';
+/** ********************************************************************************************************************
+*   Represents a pickable item.
+***********************************************************************************************************************/
+export class Item extends ninjas.GameObject
+{
+    /** Indicates if this item has been picked. */
+    public          picked                      :boolean                        = null;
 
     /** ****************************************************************************************************************
-    *   Represents a pickable item.
+    *   Creates a new item.
+    *
+    *   @param shape          The shape for this object.
+    *   @param spriteTemplate The sprite template to use for this object.
+    *   @param x              Startup position X.
+    *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    export class Item extends ninjas.GameObject
+    public constructor( shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number )
     {
-        /** Indicates if this item has been picked. */
-        public          picked                      :boolean                        = null;
+        super
+        (
+            shape,
+            spriteTemplate,
+            x,
+            y
+        );
 
-        /** ************************************************************************************************************
-        *   Creates a new item.
-        *
-        *   @param shape          The shape for this object.
-        *   @param spriteTemplate The sprite template to use for this object.
-        *   @param x              Startup position X.
-        *   @param y              Startup position Y.
-        ***************************************************************************************************************/
-        public constructor( shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number )
+        this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_ITEM;
+    }
+
+    /** ****************************************************************************************************************
+    *   Renders this item.
+    *******************************************************************************************************************/
+    public render() : void
+    {
+        super.render();
+
+        if ( !this.picked )
         {
-            super
-            (
-                shape,
-                spriteTemplate,
-                x,
-                y
-            );
-
-            this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_ITEM;
-        }
-
-        /** ************************************************************************************************************
-        *   Renders this item.
-        ***************************************************************************************************************/
-        public render() : void
-        {
-            super.render();
-
-            if ( !this.picked )
-            {
-                this.checkPicked();
-            }
-        }
-
-        /** ************************************************************************************************************
-        *   Checks if this item is picked up in this frame.
-        ***************************************************************************************************************/
-        private checkPicked() : void
-        {
-            if ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) )
-            {
-                ninjas.Debug.item.log( 'Player picked item' );
-
-                this.pick();
-            }
-        }
-
-        /** ************************************************************************************************************
-        *   Picks up this item.
-        ***************************************************************************************************************/
-        private pick() : void
-        {
-            // flag as picked
-            this.picked = true;
-
-            // remove item body
-            ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
+            this.checkPicked();
         }
     }
+
+    /** ****************************************************************************************************************
+    *   Checks if this item is picked up in this frame.
+    *******************************************************************************************************************/
+    private checkPicked() : void
+    {
+        if ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) )
+        {
+            ninjas.Debug.item.log( 'Player picked item' );
+
+            this.pick();
+        }
+    }
+
+    /** ****************************************************************************************************************
+    *   Picks up this item.
+    *******************************************************************************************************************/
+    private pick() : void
+    {
+        // flag as picked
+        this.picked = true;
+
+        // remove item body
+        ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
+    }
+}

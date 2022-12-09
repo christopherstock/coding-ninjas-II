@@ -227,7 +227,8 @@ export class Game
                 ninjas.Debug.init.log( 'Resetting and switching to level 1' );
                 this.resetAndLaunchLevel( new ninjas.LevelData() );
             }
-/*
+
+            /*
             if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_2 ) )
             {
                 ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_2 );
@@ -243,7 +244,7 @@ export class Game
                 ninjas.Debug.init.log( 'Resetting and switching to level 3' );
                 this.resetAndLaunchLevel( new ninjas.LevelEnchantedWoods() );
             }
-*/
+            */
         }
     }
 

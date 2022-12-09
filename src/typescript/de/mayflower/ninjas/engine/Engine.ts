@@ -34,11 +34,13 @@ export class Engine
     *
     *   @param game The parent game instance that uses this game engine.
     *******************************************************************************************************************/
-    public constructor( game:ninjas.Game ) {
+    public constructor( game:ninjas.Game )
+    {
         this.game      = game;
         this.preloader = new ninjas.Preloader(
             this,
-            () => {
+            () =>
+            {
                 this.onPreloaderInitComplete();
             }
         );
@@ -84,8 +86,8 @@ export class Engine
     {
         ninjas.Debug.init.log( 'Initing window resize handler' );
 
-        window.onresize = ( event:Event ) :void => {
-
+        window.onresize = ( event:Event ) :void =>
+        {
             this.canvasSystem.updateDimensions();
 
             if ( this.matterJsSystem !== null )
@@ -186,8 +188,8 @@ export class Engine
     {
         ninjas.Debug.init.log( 'Initing window blur handler' );
 
-        window.onblur = ( event:Event ) :void => {
-
+        window.onblur = ( event:Event ) :void =>
+        {
             ninjas.Debug.canvas.log( 'Detected window focus lost. Releasing all keys.' );
 
             this.keySystem.releaseAllKeys();

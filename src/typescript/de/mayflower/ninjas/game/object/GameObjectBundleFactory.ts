@@ -74,16 +74,16 @@ export abstract class GameObjectBundleFactory
         const dimensionSprite :ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT;
         const firstSprite     :ninjas.SpriteTemplate = (
             level.playerInitialFloat
-            ? (
-                level.playerInitialFacing === ninjas.CharacterFacing.LEFT
-                ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT
-                : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT
-            )
-            : (
-                level.playerInitialFacing === ninjas.CharacterFacing.LEFT
-                ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT
-                : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT
-            )
+                ? (
+                    level.playerInitialFacing === ninjas.CharacterFacing.LEFT
+                        ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT
+                        : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT
+                )
+                : (
+                    level.playerInitialFacing === ninjas.CharacterFacing.LEFT
+                        ? ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT
+                        : ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT
+                )
         );
 
         level.player = new ninjas.Player
