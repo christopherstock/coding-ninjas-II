@@ -1,20 +1,20 @@
 
-    import * as ninjas from '../../../ninjas';
+import * as ninjas from '../../../ninjas';
 
-    /** ****************************************************************************************************************
+/** ****************************************************************************************************************
     *   Represents a non-colliding shrine decoration.
     *******************************************************************************************************************/
-    export class Shrine extends ninjas.Decoration
-    {
-        /** The site content this shrine is connected to. */
-        public                      content                 :ninjas.SiteContent                 = null;
+export class Shrine extends ninjas.Decoration
+{
+    /** The site content this shrine is connected to. */
+    public                      content                 :ninjas.SiteContent                 = null;
 
-        /** The decoration of the open book for this shrine. */
-        private     readonly        decoBookOpen            :ninjas.Decoration                  = null;
-        /** The decoration of the closed book for this shrine. */
-        private     readonly        decoBookClosed          :ninjas.Decoration                  = null;
+    /** The decoration of the open book for this shrine. */
+    private     readonly        decoBookOpen            :ninjas.Decoration                  = null;
+    /** The decoration of the closed book for this shrine. */
+    private     readonly        decoBookClosed          :ninjas.Decoration                  = null;
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Creates a new Shrine.
         *
         *   @param shape          The shape for this object.
@@ -25,42 +25,42 @@
         *   @param decoBookOpen   The decoration of the open book for this shrine.
         *   @param decoBookClosed The decoration of the closed book for this shrine.
         ***************************************************************************************************************/
-        public constructor
+    public constructor
+    (
+        shape          :ninjas.Shape,
+        spriteTemplate :ninjas.SpriteTemplate,
+        x              :number,
+        y              :number,
+        content        :ninjas.SiteContent,
+        decoBookOpen   :ninjas.Decoration,
+        decoBookClosed :ninjas.Decoration
+    )
+    {
+        super
         (
-            shape          :ninjas.Shape,
-            spriteTemplate :ninjas.SpriteTemplate,
-            x              :number,
-            y              :number,
-            content        :ninjas.SiteContent,
-            decoBookOpen   :ninjas.Decoration,
-            decoBookClosed :ninjas.Decoration
-        )
-        {
-            super
-            (
-                shape,
-                spriteTemplate,
-                x,
-                y
-            );
+            shape,
+            spriteTemplate,
+            x,
+            y
+        );
 
-            this.content = content;
+        this.content = content;
 
-            this.decoBookOpen   = decoBookOpen;
-            this.decoBookClosed = decoBookClosed;
+        this.decoBookOpen   = decoBookOpen;
+        this.decoBookClosed = decoBookClosed;
 
-            // close the book initially
-            this.setBookOpen( false );
-        }
+        // close the book initially
+        this.setBookOpen( false );
+    }
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Sets the shrine book open or closed..
         *
         *   @boolean open Specifies if the open book should be shown.
         ***************************************************************************************************************/
-        public setBookOpen( open:boolean ) : void
-        {
-            this.decoBookOpen.setVisible(   open  );
-            this.decoBookClosed.setVisible( !open );
-        }
+    public setBookOpen( open:boolean ) : void
+    {
+        this.decoBookOpen.setVisible(   open  );
+        this.decoBookClosed.setVisible( !open );
     }
+}

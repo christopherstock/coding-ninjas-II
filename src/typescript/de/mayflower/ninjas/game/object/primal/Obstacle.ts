@@ -1,26 +1,26 @@
 
-    import * as ninjas from '../../../ninjas';
+import * as ninjas from '../../../ninjas';
 
-    /** ****************************************************************************************************************
+/** ****************************************************************************************************************
     *   Specifies if an obstacle allows jump pass through.
     *******************************************************************************************************************/
-    export enum JumpPassThrough
+export enum JumpPassThrough
     {
-        YES,
-        NO,
-    }
+    YES,
+    NO,
+}
 
-    /** ****************************************************************************************************************
+/** ****************************************************************************************************************
     *   Represents a collidable and solid obstacle.
     *******************************************************************************************************************/
-    export class Obstacle extends ninjas.GameObject
-    {
-        /** Specifies if the player shall be allowed to jump through this obstacle. */
-        private     readonly        jumpPassThrough             :JumpPassThrough                    = null;
-        /** Specifies if the obstacle currently allows passing through. */
-        private     readonly        currentlyAllowPassThrough   :JumpPassThrough                    = null;
+export class Obstacle extends ninjas.GameObject
+{
+    /** Specifies if the player shall be allowed to jump through this obstacle. */
+    private     readonly        jumpPassThrough             :JumpPassThrough                    = null;
+    /** Specifies if the obstacle currently allows passing through. */
+    private     readonly        currentlyAllowPassThrough   :JumpPassThrough                    = null;
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Creates a new obstacle.
         *
         *   @param shape           The shape for this object.
@@ -29,34 +29,34 @@
         *   @param spriteTemplate  The sprite template to use for this game object.
         *   @param jumpPassThrough Specifies if the player may jump through this obstacle.
         ***************************************************************************************************************/
-        public constructor
+    public constructor
+    (
+        shape           :ninjas.Shape,
+        x               :number,
+        y               :number,
+        spriteTemplate  :ninjas.SpriteTemplate,
+        jumpPassThrough :JumpPassThrough
+    )
+    {
+        super
         (
-            shape           :ninjas.Shape,
-            x               :number,
-            y               :number,
-            spriteTemplate  :ninjas.SpriteTemplate,
-            jumpPassThrough :JumpPassThrough
-        )
-        {
-            super
-            (
-                shape,
-                spriteTemplate,
-                x,
-                y
-            );
+            shape,
+            spriteTemplate,
+            x,
+            y
+        );
 
-            this.jumpPassThrough = jumpPassThrough;
-            this.currentlyAllowPassThrough   = JumpPassThrough.NO;
-        }
+        this.jumpPassThrough = jumpPassThrough;
+        this.currentlyAllowPassThrough   = JumpPassThrough.NO;
+    }
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Renders this obstacle.
         ***************************************************************************************************************/
-        public render() : void
-        {
-            super.render();
-/*
+    public render() : void
+    {
+        super.render();
+        /*
             // handle obstacle that are capable of jumping through
             if ( this.jumpPassThrough == JumpPassThrough.YES )
             {
@@ -83,5 +83,5 @@
                 }
             }
   */
-        }
     }
+}

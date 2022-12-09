@@ -1,10 +1,10 @@
 
-    /** ****************************************************************************************************************
+/** ****************************************************************************************************************
     *   Offers orthogonal drawing functionality.
     *******************************************************************************************************************/
-    export class DrawUtil
-    {
-        /** ************************************************************************************************************
+export class DrawUtil
+{
+    /** ************************************************************************************************************
         *   Strokes a line with the specified points color and size.
         *
         *   @param  ctx The rendering context.
@@ -14,19 +14,19 @@
         *   @param  y2  The end point's y.
         *   @param  col A stroke color.
         ***************************************************************************************************************/
-        public static strokeLine( ctx:CanvasRenderingContext2D, x1:number, y1:number, x2:number, y2:number, col:string )
+    public static strokeLine( ctx:CanvasRenderingContext2D, x1:number, y1:number, x2:number, y2:number, col:string )
         : void
-        {
-            ctx.strokeStyle = col;
-            ctx.lineWidth   = 1.0;
+    {
+        ctx.strokeStyle = col;
+        ctx.lineWidth   = 1.0;
 
-            ctx.beginPath();
-            ctx.moveTo( x1, y1 );
-            ctx.lineTo( x2, y2 );
-            ctx.stroke();
-        }
+        ctx.beginPath();
+        ctx.moveTo( x1, y1 );
+        ctx.lineTo( x2, y2 );
+        ctx.stroke();
+    }
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Draws a rect's stroke with the specified dimensions and color.
         *
         *   @param  ctx        The rendering context.
@@ -36,18 +36,18 @@
         *   @param  height     The desired height.
         *   @param  col        A stroke color.
         ***************************************************************************************************************/
-        public static strokeRect(
-            ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
-        )
+    public static strokeRect(
+        ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
+    )
         : void
-        {
-            ctx.strokeStyle = col;
-            ctx.lineWidth   = 1.0;
+    {
+        ctx.strokeStyle = col;
+        ctx.lineWidth   = 1.0;
 
-            ctx.strokeRect( x, y, width, height );
-        }
+        ctx.strokeRect( x, y, width, height );
+    }
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Fills a rect with the specified dimensions and color.
         *
         *   @param  ctx     The rendering context.
@@ -57,16 +57,16 @@
         *   @param  height  The desired height.
         *   @param  col     A fill color.
         ***************************************************************************************************************/
-        public static fillRect(
-            ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
-        )
+    public static fillRect(
+        ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
+    )
         : void
-        {
-            ctx.fillStyle = col;
-            ctx.fillRect( x, y, width, height );
-        }
+    {
+        ctx.fillStyle = col;
+        ctx.fillRect( x, y, width, height );
+    }
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Draws an image at the specified location with a specified anchor.
         *
         *   @param  ctx         The rendering context
@@ -74,12 +74,12 @@
         *   @param  x           Drawing position x.
         *   @param  y           Drawing position y.
         ***************************************************************************************************************/
-        public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number ) : void
-        {
-            DrawUtil.drawImageScaledClipped( ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height );
-        }
+    public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number ) : void
+    {
+        DrawUtil.drawImageScaledClipped( ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height );
+    }
 
-        /** ************************************************************************************************************
+    /** ************************************************************************************************************
         *   Draws an image at the specified location with a specified anchor
         *   and scales it to the given destiny dimensions.
         *
@@ -94,21 +94,21 @@
         *   @param  destWidth   Destination width.
         *   @param  destHeight  Destination height.
         ***************************************************************************************************************/
-        public static drawImageScaledClipped
-        (
-            ctx         :CanvasRenderingContext2D,
-            img         :HTMLImageElement,
-            srcX        :number,
-            srcY        :number,
-            srcWidth    :number,
-            srcHeight   :number,
-            destX       :number,
-            destY       :number,
-            destWidth   :number,
-            destHeight  :number
-        )
+    public static drawImageScaledClipped
+    (
+        ctx         :CanvasRenderingContext2D,
+        img         :HTMLImageElement,
+        srcX        :number,
+        srcY        :number,
+        srcWidth    :number,
+        srcHeight   :number,
+        destX       :number,
+        destY       :number,
+        destWidth   :number,
+        destHeight  :number
+    )
         : void
-        {
-            ctx.drawImage( img, srcX, srcY, srcWidth, srcHeight, destX, destY, destWidth, destHeight );
-        }
+    {
+        ctx.drawImage( img, srcX, srcY, srcWidth, srcHeight, destX, destY, destWidth, destHeight );
     }
+}
