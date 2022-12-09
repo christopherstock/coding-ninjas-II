@@ -2,9 +2,9 @@
 import * as matter from 'matter-js';
 import * as ninjas from '../../../ninjas';
 
-/**
- *  Represents the movement phases for an enemy.
- */
+/** ****************************************************************************************************************
+    *   Represents the movement phases for an enemy.
+    *******************************************************************************************************************/
 export enum EnemyMovementPhase
     {
     /** Enemy walking to the right. */
@@ -17,9 +17,9 @@ export enum EnemyMovementPhase
     STANDING_LEFT,
 }
 
-/**
- *  Represents an enemy being controlled by the system.
- */
+/** ****************************************************************************************************************
+    *   Represents an enemy being controlled by the system.
+    *******************************************************************************************************************/
 export class Bot extends ninjas.Character
 {
     /** The enemies' current movement phase. */
