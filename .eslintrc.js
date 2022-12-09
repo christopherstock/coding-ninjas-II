@@ -40,11 +40,11 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-var-requires': 'off',
 
-        // 'indent': 'off',
+        // 'indent': 'warn',
         '@typescript-eslint/indent': [
             'warn',
             4,
-            // { outerIIFEBody: 1 }
+            { outerIIFEBody: 1 }
         ],
 
         '@typescript-eslint/interface-name-prefix': 'off',

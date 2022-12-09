@@ -202,25 +202,25 @@ export abstract class Character extends ninjas.GameObject
         // apply punch-back force
         switch ( punchBackDirection )
         {
-            case ninjas.CharacterFacing.LEFT:
-            {
-                matter.Body.setVelocity
-                (
-                    this.shape.body,
-                    matter.Vector.create( -forceX, -forceY )
-                );
-                break;
-            }
+        case ninjas.CharacterFacing.LEFT:
+        {
+            matter.Body.setVelocity
+            (
+                this.shape.body,
+                matter.Vector.create( -forceX, -forceY )
+            );
+            break;
+        }
 
-            case ninjas.CharacterFacing.RIGHT:
-            {
-                matter.Body.setVelocity
-                (
-                    this.shape.body,
-                    matter.Vector.create( forceX, -forceY )
-                );
-                break;
-            }
+        case ninjas.CharacterFacing.RIGHT:
+        {
+            matter.Body.setVelocity
+            (
+                this.shape.body,
+                matter.Vector.create( forceX, -forceY )
+            );
+            break;
+        }
         }
     }
 

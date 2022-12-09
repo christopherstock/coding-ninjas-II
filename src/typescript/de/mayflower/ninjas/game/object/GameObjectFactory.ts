@@ -551,17 +551,17 @@ export abstract class GameObjectFactory
 
         switch ( decoPosition )
         {
-            case ninjas.DecoPosition.FG:
-            {
-                level.parallaxFgs.push( parallaxDeco );
-                break;
-            }
+        case ninjas.DecoPosition.FG:
+        {
+            level.parallaxFgs.push( parallaxDeco );
+            break;
+        }
 
-            case ninjas.DecoPosition.BG:
-            {
-                level.parallaxBgs.push( parallaxDeco );
-                break;
-            }
+        case ninjas.DecoPosition.BG:
+        {
+            level.parallaxBgs.push( parallaxDeco );
+            break;
+        }
         }
     }
 
