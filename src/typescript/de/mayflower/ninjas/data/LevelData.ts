@@ -42,12 +42,12 @@
 
             // plateaus
             this.addFirstPlateau();
-            this.addSecondPlateau();
-            this.addThirdPlateau();
-            this.addFourthPlateau();
-            this.addFifthPlateau();
-            this.addSixthPlateau();
-            this.addSeventhPlateau();
+            if (false) this.addSecondPlateau();
+            if (false) this.addThirdPlateau();
+            if (false) this.addFourthPlateau();
+            if (false) this.addFifthPlateau();
+            if (false) this.addSixthPlateau();
+            if (false) this.addSeventhPlateau();
         }
 
         /** ************************************************************************************************************
