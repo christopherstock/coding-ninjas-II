@@ -116,10 +116,8 @@ export class SiteTrigger extends ninjas.Decoration
                 {
                     return ninjas.SitePanelPosition.LEFT;
                 }
-                else
-                {
-                    return ninjas.SitePanelPosition.RIGHT;
-                }
+
+                return ninjas.SitePanelPosition.RIGHT;
             }
 
             case SitePanelAppearance.LEFT:

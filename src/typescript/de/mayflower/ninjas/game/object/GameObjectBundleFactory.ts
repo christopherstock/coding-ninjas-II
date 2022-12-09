@@ -177,7 +177,7 @@ export abstract class GameObjectBundleFactory
             {
                 level.decosBg.push(
                     ninjas.GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH,
-                    drawY + leftTile.height, ninjas.StaticShape.YES, leftTile ) );
+                        drawY + leftTile.height, ninjas.StaticShape.YES, leftTile ) );
             }
             else if ( tileX === ( length - 1 ) && ( capEnds === CapHorz.RIGHT || capEnds === CapHorz.BOTH ) )
             {
@@ -754,7 +754,7 @@ export abstract class GameObjectBundleFactory
     *   @param yBottom     Anchor for bottom Y.
     *   @param length      Length of the bottom stone row.
     *******************************************************************************************************************/
-/*
+    /*
     public static createRubblePile
     (
         level       :ninjas.Level,
@@ -785,7 +785,8 @@ export abstract class GameObjectBundleFactory
             );
         }
     }
-*/
+    */
+
     /** ****************************************************************************************************************
     *   Creates a candle deco.
     *

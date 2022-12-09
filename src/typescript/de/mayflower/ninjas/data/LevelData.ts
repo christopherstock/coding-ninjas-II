@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
-import * as ninjas from '../ninjas';
 import * as matter from 'matter-js';
+import * as ninjas from '../ninjas';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.

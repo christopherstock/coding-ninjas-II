@@ -54,7 +54,8 @@ export class MatterJsSystem
                     wireframes:         false,
 
                     // pixelRatio:         1,
-/*
+
+                    /*
                     showSleeping:       true,
                     showDebug:          true,
                     showBroadphase:     true,
@@ -66,7 +67,7 @@ export class MatterJsSystem
                     showVertexNumbers:  true,
                     showConvexHulls:    true,
                     showInternalEdges:  true,
-*/
+                    */
                 } as any,
             }
         );

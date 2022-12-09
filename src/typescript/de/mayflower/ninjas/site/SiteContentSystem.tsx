@@ -1,6 +1,6 @@
-import * as ninjas   from '../ninjas';
 import * as React    from 'react';
 import * as ReactDOM from 'react-dom';
+import * as ninjas   from '../ninjas';
 
 /** ********************************************************************************************************************
 *   Specifies all existing site contents.

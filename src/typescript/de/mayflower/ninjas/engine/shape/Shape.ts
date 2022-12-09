@@ -59,16 +59,16 @@ export abstract class Shape
 
             friction:        friction,
             frictionAir:     ninjas.BodyFrictionAir.DEFAULT,
-//              frictionStatic:  0.5,
+            // frictionStatic:  0.5,
 
             angle:           ninjas.MathUtil.angleToRad( angle ),
             density:         density,
 
             restitution:     restitution,
 
-//              slop:            0.0,
-//              isSensor:        isSensor,
-//              chamfer:         { radius: [ 5.0, 5.0, 5.0, 5.0 ] },
+            // slop:            0.0,
+            // isSensor:        isSensor,
+            // chamfer:         { radius: [ 5.0, 5.0, 5.0, 5.0 ] },
         };
     }
 

@@ -118,7 +118,8 @@ export class SiteSystem
         this.wowSystem.sync();
 
         window.setTimeout(
-            () => {
+            () =>
+            {
                 if ( this.animationState === ninjas.SitePanelAnimation.SHOWING )
                 {
                     this.animationState = ninjas.SitePanelAnimation.PRESENT;
@@ -158,7 +159,8 @@ export class SiteSystem
         this.wowSystem.sync();
 
         window.setTimeout(
-            () => {
+            () =>
+            {
                 this.animationState = ninjas.SitePanelAnimation.HIDDEN;
                 this.sitePanel.removeFromDom();
             },
@@ -182,7 +184,8 @@ export class SiteSystem
         if ( this.panelWidth < ninjas.SettingGame.SITE_PANEL_MIN_WIDTH )
         {
             this.panelWidth = ninjas.SettingGame.SITE_PANEL_MIN_WIDTH;
-        } else if ( this.panelWidth > ninjas.SettingGame.SITE_PANEL_MAX_WIDTH )
+        }
+        else if ( this.panelWidth > ninjas.SettingGame.SITE_PANEL_MAX_WIDTH )
         {
             this.panelWidth = ninjas.SettingGame.SITE_PANEL_MAX_WIDTH;
         }
@@ -193,7 +196,8 @@ export class SiteSystem
         if (
             ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT !== -1
             && this.panelHeight > ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT
-        ) {
+        )
+        {
             this.panelHeight = ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT;
         }
 
@@ -204,7 +208,7 @@ export class SiteSystem
             + ( ( canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth ) / 2 )
         );
         this.rightCameraTargetX  = (
-             ( canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth ) / 2
+            ( canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth ) / 2
         );
 
         // update panel size and position
@@ -227,7 +231,8 @@ export class SiteSystem
             ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X
             || this.animationState === ninjas.SitePanelAnimation.HIDDEN
             || this.animationState === ninjas.SitePanelAnimation.HIDING
-        ) {
+        )
+        {
             // center camera X if desired
             switch ( ninjas.Main.game.level.player.facing )
             {
@@ -289,13 +294,12 @@ export class SiteSystem
             {
                 boxClass:        'wow',              // animated element css class (default is wow)
                 animateClass:    'animated',         // animation css class (default is animated)
-                offset:          0,                  // distance to the element when triggering the animation
-                                                     // (defaults to 0)
+                offset:          0,                  // distance to the element when triggering the animation default 0
                 mobile:          true,               // trigger animations on mobile devices (default is true)
                 scrollContainer: null,               // optional scroll container selector, otherwise use window
                 live:            true,               // act on asynchronously loaded content (default is true)
                 // callback:     function( box ) {}, // the callback is fired every time an animation is started
-                                                     // the argument that is passed in is the animated DOM node
+                //                                   // the argument that is passed in is the animated DOM node
             }
         );
         this.wowSystem.init();

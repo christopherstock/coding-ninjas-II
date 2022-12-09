@@ -33,7 +33,8 @@ export class KeySystem
 
         const keyID :string = ( event as KeyboardEvent ).key.toLowerCase();
 
-        if ( !this.keysNeedRelease[ keyID ] && !this.keysPressed[ keyID ] ) {
+        if ( !this.keysNeedRelease[ keyID ] && !this.keysPressed[ keyID ] )
+        {
             this.keysPressed[ keyID ] = true;
 
             ninjas.Debug.key.log( 'key pressed ['  + keyID + ']' );

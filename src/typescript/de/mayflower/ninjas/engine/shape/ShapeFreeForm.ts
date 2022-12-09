@@ -93,17 +93,21 @@ export class ShapeFreeForm extends ninjas.Shape
 
         for ( const vertex of this.vertices )
         {
-            if ( vertex.x < minimumX ) {
+            if ( vertex.x < minimumX )
+            {
                 minimumX = vertex.x;
             }
-            if ( vertex.y < minimumY ) {
+            if ( vertex.y < minimumY )
+            {
                 minimumY = vertex.y;
             }
 
-            if ( vertex.x > maximumX ) {
+            if ( vertex.x > maximumX )
+            {
                 maximumX = vertex.x;
             }
-            if ( vertex.y > maximumY ) {
+            if ( vertex.y > maximumY )
+            {
                 maximumY = vertex.y;
             }
         }

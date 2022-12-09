@@ -36,9 +36,8 @@ export class ShapeCircle extends ninjas.Shape
         this.diameter = diameter;
 
         this.body     = this.createBody();
-/*
-        this.body.torque = 360.0;
-*/
+
+        // this.body.torque = 360.0;
     }
 
     /** ****************************************************************************************************************

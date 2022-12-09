@@ -83,8 +83,8 @@ export class Player extends ninjas.Character
         (
             keySystem.isPressed( ninjas.KeyData.KEY_LEFT )
             || (
-                    !ninjas.SettingDebug.DISABLE_POINTER
-                    && ninjas.Main.game.engine.pointerSystem.leftCanvasHalfPressed
+                !ninjas.SettingDebug.DISABLE_POINTER
+                && ninjas.Main.game.engine.pointerSystem.leftCanvasHalfPressed
             )
         )
         {
@@ -94,8 +94,8 @@ export class Player extends ninjas.Character
         (
             keySystem.isPressed( ninjas.KeyData.KEY_RIGHT )
             || (
-                    !ninjas.SettingDebug.DISABLE_POINTER
-                    && ninjas.Main.game.engine.pointerSystem.rightCanvasHalfPressed
+                !ninjas.SettingDebug.DISABLE_POINTER
+                && ninjas.Main.game.engine.pointerSystem.rightCanvasHalfPressed
             )
         )
         {
@@ -115,7 +115,8 @@ export class Player extends ninjas.Character
         if (
             !ninjas.SettingDebug.DISABLE_POINTER
             && ninjas.Main.game.engine.pointerSystem.canvasTabbed
-        ) {
+        )
+        {
             ninjas.Main.game.engine.pointerSystem.canvasTabbed = false;
 
             if ( this.collidesBottom )
@@ -203,12 +204,13 @@ export class Player extends ninjas.Character
                 ninjas.Debug.engine.log( 'Player has fallen to death' );
 
                 window.setTimeout(
-                    () :void => {
+                    () :void =>
+                    {
                         ninjas.Main.game.resetAndLaunchLevel( new ninjas.LevelData() );
                     },
                     250
                 );
-           }
+            }
         }
     }
 }
