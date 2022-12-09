@@ -1,5 +1,5 @@
-import * as ninjas from '../../../ninjas';
 import * as matter from 'matter-js';
+import * as ninjas from '../../../ninjas';
 
 /** ********************************************************************************************************************
 *   Represents the movement phases for an enemy.
@@ -96,7 +96,8 @@ export class Bot extends ninjas.Character
                 this.clipToHorizontalLevelBounds();
 
                 // enemies shall not interfer with the Player by now
-                if ( false ) {
+                if ( false )
+                {
                     this.checkPlayerCollision();
                 }
             }

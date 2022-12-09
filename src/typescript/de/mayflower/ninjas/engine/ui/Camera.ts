@@ -171,18 +171,22 @@ export class Camera
     private clipTargetsToLevelBounds() : void
     {
         // clip camera target x to level bounds
-        if ( this.targetX < 0 ) {
+        if ( this.targetX < 0 )
+        {
             this.targetX = 0;
         }
-        if ( this.targetX > this.levelWidth - this.canvasWidth ) {
+        if ( this.targetX > this.levelWidth - this.canvasWidth )
+        {
             this.targetX = this.levelWidth - this.canvasWidth;
         }
 
         // clip camera target y to level bounds
-        if ( this.targetY < 0 ) {
+        if ( this.targetY < 0 )
+        {
             this.targetY = 0;
         }
-        if ( this.targetY > this.levelHeight - this.canvasHeight ) {
+        if ( this.targetY > this.levelHeight - this.canvasHeight )
+        {
             this.targetY = this.levelHeight - this.canvasHeight;
         }
     }
@@ -200,15 +204,18 @@ export class Camera
         {
             cameraMoveX = ( this.targetX - this.offsetX ) * this.movingSpeedX;
 
-            if ( cameraMoveX < this.minimumCameraMove ) {
+            if ( cameraMoveX < this.minimumCameraMove )
+            {
                 cameraMoveX = this.minimumCameraMove;
             }
-            if ( cameraMoveX > this.maximumCameraMove ) {
+            if ( cameraMoveX > this.maximumCameraMove )
+            {
                 cameraMoveX = this.maximumCameraMove;
             }
 
             this.offsetX += cameraMoveX;
-            if ( this.offsetX > this.targetX ) {
+            if ( this.offsetX > this.targetX )
+            {
                 this.offsetX = this.targetX;
             }
         }
@@ -216,15 +223,18 @@ export class Camera
         {
             cameraMoveX = ( this.offsetX - this.targetX ) * this.movingSpeedX;
 
-            if ( cameraMoveX < this.minimumCameraMove ) {
+            if ( cameraMoveX < this.minimumCameraMove )
+            {
                 cameraMoveX = this.minimumCameraMove;
             }
-            if ( cameraMoveX > this.maximumCameraMove ) {
+            if ( cameraMoveX > this.maximumCameraMove )
+            {
                 cameraMoveX = this.maximumCameraMove;
             }
 
             this.offsetX -= cameraMoveX;
-            if ( this.offsetX < this.targetX ) {
+            if ( this.offsetX < this.targetX )
+            {
                 this.offsetX = this.targetX;
             }
         }
@@ -235,11 +245,13 @@ export class Camera
             if ( this.offsetY > this.targetY )
             {
                 let cameraMoveY:number = ( this.offsetY - this.targetY ) * this.movingSpeedY;
-                if ( cameraMoveY < this.minimumCameraMove ) {
+                if ( cameraMoveY < this.minimumCameraMove )
+                {
                     cameraMoveY = this.minimumCameraMove;
                 }
                 this.offsetY -= cameraMoveY;
-                if ( this.offsetY < this.targetY ) {
+                if ( this.offsetY < this.targetY )
+                {
                     this.offsetY = this.targetY;
                 }
             }
@@ -249,13 +261,14 @@ export class Camera
         if ( this.targetY > this.offsetY )
         {
             this.offsetY = this.targetY;
-/*
+
+            /*
             // buffer camera on descending
             cameraMoveY = ( this.targetY - this.offsetY ) * this.movingSpeed;
             if ( cameraMoveY < this.minimumCameraMove ) cameraMoveY = this.minimumCameraMove;
             this.offsetY += cameraMoveY;
             if ( this.offsetY > this.targetY ) this.offsetY = this.targetY;
-*/
+            */
         }
 
         // floor offsets (important for renderer bounds! fuzzy drawing problems on images may appear otherwise!)
