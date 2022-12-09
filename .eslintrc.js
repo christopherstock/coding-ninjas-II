@@ -117,7 +117,7 @@ module.exports = {
         'id-blacklist': ['warn', 'any', 'Number', 'number', 'String', 'string', 'Boolean', 'boolean'],
         'id-match': 'warn',
         'import/no-deprecated': 'warn',
-        'import/order': 'off',
+        'import/order': 'warn',
         'linebreak-style': 'off',
         'brace-style': [
             'warn',
