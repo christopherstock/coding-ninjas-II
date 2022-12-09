@@ -36,15 +36,16 @@ module.exports = {
             },
         ],
 
+        // 'indent': 'off',
+
         '@typescript-eslint/no-inferrable-types': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-var-requires': 'off',
 
-        // 'indent': 'off',
         '@typescript-eslint/indent': [
             'warn',
             4,
-            // { outerIIFEBody: 1 }
+            { outerIIFEBody: 2 }
         ],
 
         '@typescript-eslint/interface-name-prefix': 'off',

@@ -133,42 +133,42 @@ export abstract class GameObjectBundleFactory
 
         switch ( slope )
         {
-            case Slope.ASCENDING:
-            {
-                leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_LEFT   );
-                centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_CENTER );
-                rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_RIGHT  );
+        case Slope.ASCENDING:
+        {
+            leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_LEFT   );
+            centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_CENTER );
+            rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_RIGHT  );
 
-                drawY      = yTop - GameObjectBundleFactory.ALTITUDE;
-                alt        = -GameObjectBundleFactory.ALTITUDE;
+            drawY      = yTop - GameObjectBundleFactory.ALTITUDE;
+            alt        = -GameObjectBundleFactory.ALTITUDE;
 
-                break;
-            }
+            break;
+        }
 
-            case Slope.DESCENDING:
-            {
-                leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_LEFT   );
-                centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_CENTER );
-                rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_RIGHT  );
+        case Slope.DESCENDING:
+        {
+            leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_LEFT   );
+            centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_CENTER );
+            rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_RIGHT  );
 
-                drawY      = yTop;
-                alt        = GameObjectBundleFactory.ALTITUDE;
+            drawY      = yTop;
+            alt        = GameObjectBundleFactory.ALTITUDE;
 
-                break;
-            }
+            break;
+        }
 
-            case Slope.NONE:
-            default:
-            {
-                leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_LEFT   );
-                centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_CENTER );
-                rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_RIGHT  );
+        case Slope.NONE:
+        default:
+        {
+            leftTile   = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_LEFT   );
+            centerTile = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_CENTER );
+            rightTile  = ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_GROUND_DARK_FLYING_RIGHT  );
 
-                drawY      = yTop;
-                alt        = 0;
+            drawY      = yTop;
+            alt        = 0;
 
-                break;
-            }
+            break;
+        }
         }
 
         // draw decoration
@@ -195,18 +195,18 @@ export abstract class GameObjectBundleFactory
         // add obstacle
         switch ( slope )
         {
-            case Slope.NONE:
-            {
-                level.obstacles.push( ninjas.GameObjectFactory.createObstacleSpriteless( xLeft, yTop, length * GameObjectBundleFactory.GROUND_TILE_WIDTH, GameObjectBundleFactory.HEIGHT_FLYING_GROUND, 0.0, jumpThrough ) );
-                break;
-            }
+        case Slope.NONE:
+        {
+            level.obstacles.push( ninjas.GameObjectFactory.createObstacleSpriteless( xLeft, yTop, length * GameObjectBundleFactory.GROUND_TILE_WIDTH, GameObjectBundleFactory.HEIGHT_FLYING_GROUND, 0.0, jumpThrough ) );
+            break;
+        }
 
-            case Slope.ASCENDING:
-            case Slope.DESCENDING:
-            {
-                level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft, yTop, length * GameObjectBundleFactory.GROUND_TILE_WIDTH, GameObjectBundleFactory.HEIGHT_FLYING_GROUND, ( alt * length ), null, jumpThrough ) );
-                break;
-            }
+        case Slope.ASCENDING:
+        case Slope.DESCENDING:
+        {
+            level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft, yTop, length * GameObjectBundleFactory.GROUND_TILE_WIDTH, GameObjectBundleFactory.HEIGHT_FLYING_GROUND, ( alt * length ), null, jumpThrough ) );
+            break;
+        }
         }
     }
 
@@ -252,41 +252,41 @@ export abstract class GameObjectBundleFactory
 
         switch ( slope )
         {
-            case Slope.NONE:
-            {
-                leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidLeftTop  );
-                topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidTop      );
-                rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidRightTop );
+        case Slope.NONE:
+        {
+            leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidLeftTop  );
+            topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidTop      );
+            rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidRightTop );
 
-                firstLineDrawY = yTop;
-                firstLineAlt   = 0.0;
+            firstLineDrawY = yTop;
+            firstLineAlt   = 0.0;
 
-                break;
-            }
+            break;
+        }
 
-            case Slope.ASCENDING:
-            {
-                leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingLeftTop  );
-                topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingTop      );
-                rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingRightTop );
+        case Slope.ASCENDING:
+        {
+            leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingLeftTop  );
+            topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingTop      );
+            rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidAscendingRightTop );
 
-                firstLineDrawY = yTop;
-                firstLineAlt   = -GameObjectBundleFactory.ALTITUDE;
+            firstLineDrawY = yTop;
+            firstLineAlt   = -GameObjectBundleFactory.ALTITUDE;
 
-                break;
-            }
+            break;
+        }
 
-            case Slope.DESCENDING:
-            {
-                leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingLeftTop  );
-                topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingTop      );
-                rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingRightTop );
+        case Slope.DESCENDING:
+        {
+            leftTopTile    = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingLeftTop  );
+            topTile        = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingTop      );
+            rightTopTile   = ninjas.SpriteTemplate.createFromSingleImage( ground.solidDescendingRightTop );
 
-                firstLineDrawY = yTop + GameObjectBundleFactory.ALTITUDE;
-                firstLineAlt   = GameObjectBundleFactory.ALTITUDE;
+            firstLineDrawY = yTop + GameObjectBundleFactory.ALTITUDE;
+            firstLineAlt   = GameObjectBundleFactory.ALTITUDE;
 
-                break;
-            }
+            break;
+        }
         }
 
         // browse lines
@@ -366,23 +366,23 @@ export abstract class GameObjectBundleFactory
         // add single obstacle object
         switch ( slope )
         {
-            case Slope.NONE:
-            {
-                level.obstacles.push( ninjas.GameObjectFactory.createObstacleSpriteless( xLeft, yTop, lengthHorz * GameObjectBundleFactory.GROUND_TILE_WIDTH, lengthVert * GameObjectBundleFactory.GROUND_TILE_HEIGHT, 0.0, ninjas.JumpPassThrough.NO ) );
-                break;
-            }
+        case Slope.NONE:
+        {
+            level.obstacles.push( ninjas.GameObjectFactory.createObstacleSpriteless( xLeft, yTop, lengthHorz * GameObjectBundleFactory.GROUND_TILE_WIDTH, lengthVert * GameObjectBundleFactory.GROUND_TILE_HEIGHT, 0.0, ninjas.JumpPassThrough.NO ) );
+            break;
+        }
 
-            case Slope.ASCENDING:
-            {
-                level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft, yTop, lengthHorz * GameObjectBundleFactory.GROUND_TILE_WIDTH, lengthVert * GameObjectBundleFactory.GROUND_TILE_HEIGHT, lengthHorz * -GameObjectBundleFactory.ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
-                break;
-            }
+        case Slope.ASCENDING:
+        {
+            level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft, yTop, lengthHorz * GameObjectBundleFactory.GROUND_TILE_WIDTH, lengthVert * GameObjectBundleFactory.GROUND_TILE_HEIGHT, lengthHorz * -GameObjectBundleFactory.ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
+            break;
+        }
 
-            case Slope.DESCENDING:
-            {
-                level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft, yTop, lengthHorz * GameObjectBundleFactory.GROUND_TILE_WIDTH, lengthVert * GameObjectBundleFactory.GROUND_TILE_HEIGHT, lengthHorz * GameObjectBundleFactory.ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
-                break;
-            }
+        case Slope.DESCENDING:
+        {
+            level.obstacles.push( ninjas.GameObjectFactory.createElevatedRamp( xLeft, yTop, lengthHorz * GameObjectBundleFactory.GROUND_TILE_WIDTH, lengthVert * GameObjectBundleFactory.GROUND_TILE_HEIGHT, lengthHorz * GameObjectBundleFactory.ALTITUDE, null, ninjas.JumpPassThrough.NO ) );
+            break;
+        }
         }
     }
 
@@ -448,11 +448,11 @@ export abstract class GameObjectBundleFactory
 
         switch ( type )
         {
-            case CrateType.WOODEN:
-            {
-                crate = ninjas.GameObjectFactory.createWoodenCrate( xLeft, yBottom );
-                break;
-            }
+        case CrateType.WOODEN:
+        {
+            crate = ninjas.GameObjectFactory.createWoodenCrate( xLeft, yBottom );
+            break;
+        }
         }
 
         level.movables.push( crate );
@@ -662,17 +662,17 @@ export abstract class GameObjectBundleFactory
 
         switch ( position )
         {
-            case DecoPosition.FG:
-            {
-                level.decosFg.push( deco );
-                break;
-            }
+        case DecoPosition.FG:
+        {
+            level.decosFg.push( deco );
+            break;
+        }
 
-            case DecoPosition.BG:
-            {
-                level.decosBg.push( deco );
-                break;
-            }
+        case DecoPosition.BG:
+        {
+            level.decosBg.push( deco );
+            break;
+        }
         }
     }
 
