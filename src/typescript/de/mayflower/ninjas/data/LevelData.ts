@@ -41,12 +41,12 @@ export class LevelData extends ninjas.Level
 
         // plateaus
         this.addFirstPlateau();
-        if (false) this.addSecondPlateau();
-        if (false) this.addThirdPlateau();
-        if (false) this.addFourthPlateau();
-        if (false) this.addFifthPlateau();
-        if (false) this.addSixthPlateau();
-        if (false) this.addSeventhPlateau();
+        /* if (false) */ this.addSecondPlateau();
+        /* if (false) */ this.addThirdPlateau();
+        /* if (false) */ this.addFourthPlateau();
+        /* if (false) */ this.addFifthPlateau();
+        /* if (false) */ this.addSixthPlateau();
+        /* if (false) */ this.addSeventhPlateau();
     }
 
     /** ****************************************************************************************************************
