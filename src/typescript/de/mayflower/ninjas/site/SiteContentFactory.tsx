@@ -3,7 +3,6 @@ import * as antd                          from 'antd';
 import { TooltipPlacement               } from 'antd/lib/tooltip';
 import { ButtonType                     } from 'antd/lib/button';
 import { CarouselEffect                 } from 'antd/lib/carousel';
-import { FloatProperty                  } from 'csstype';
 import { RadioChangeEvent               } from 'antd/es/radio';
 import { ProgressType                   } from 'antd/es/progress/progress';
 import * as ninjas                        from '../ninjas';
@@ -86,7 +85,7 @@ export class SiteContentFactory
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createImageFloating( float:FloatProperty, src:string ) : JSX.Element
+    public static createImageFloating( float:any, src:string ) : JSX.Element
     {
         const marginLeft  :string = ( float === 'right' ? '10px' : '0' );
         const marginRight :string = ( float === 'left'  ? '10px' : '0' );

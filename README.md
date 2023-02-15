@@ -12,8 +12,9 @@ https://christopherstock.github.io/coding-ninjas-II/dist/
 # Primary npm Targets
 
 ## Install all Node.js packages
+Be sure to run with Node.js LTS 16.16.0! 
 ```
-npm install
+npm install --force
 ```
 
 ## Start the Webpack Dev Server and build the project
