@@ -35,23 +35,6 @@ export class LevelData extends ninjas.Level
 
         // home shrine
         this.addHomeShrine();
-
-        // TODO offset x/y param for all plateaus!
-
-        // TODO remove all unused confusing panel images!
-
-        // TODO fix moving plateau
-
-        // TODO door for walking through / changing level
-
-        // plateaus
-        if (false) this.addFirstPlateau();
-        if (false) this.addSecondPlateau();
-        if (false) this.addThirdPlateau();
-        if (false) this.addFourthPlateau();
-        if (false) this.addFifthPlateau();
-        if (false) this.addSixthPlateau();
-        if (false) this.addSeventhPlateau();
     }
 
     /** ****************************************************************************************************************

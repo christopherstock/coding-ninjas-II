@@ -9,6 +9,14 @@ TODO Move to MF GitLab
 TODO Add GitLab CI/CD pipeline
 ```
 
+## Secondary
+```
+TODO offset x/y param for all plateaus!
+TODO remove all unused confusing panel images!
+TODO fix moving plateau
+TODO door for walking through / changing level
+```
+
 ## MVP (Demo)
 
 ```
