@@ -18,9 +18,9 @@ export class LevelData extends ninjas.Level
     public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
     /** The width of this level. */
-    public  width                   :number                             = 17000;
+    public  width                   :number                             = 7500;
     /** The height of this level. */
-    public  height                  :number                             = 5000;
+    public  height                  :number                             = 2500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.
@@ -30,8 +30,8 @@ export class LevelData extends ninjas.Level
         // player
         ninjas.GameObjectBundleFactory.createPlayer( this );
 
-        // parallax bg
-        ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
+        // parallax bg "Mount Fuji"
+        ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG_MOUNT_FUJI ) );
 
         // home shrine
         this.addHomeShrine();
@@ -41,6 +41,8 @@ export class LevelData extends ninjas.Level
         // TODO remove all unused confusing panel images!
 
         // TODO fix moving plateau
+
+        // TODO door for walking through / changing level
 
         // plateaus
         if (false) this.addFirstPlateau();
@@ -58,15 +60,18 @@ export class LevelData extends ninjas.Level
     private addHomeShrine() : void
     {
         // ground
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 1000, 2000, 20,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 3560, 2000, 5,  5, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 4200, 2100, 10, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 2000, 40,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 5120, 2000, 5,  5, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 5760, 2100, 15, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
 
         // statue
-        ninjas.GameObjectBundleFactory.createObstacle( this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
+        // ninjas.GameObjectBundleFactory.createObstacle( this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
 
         // dojo
-        ninjas.GameObjectBundleFactory.createDecoImage(  this, 4600, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
+        // ninjas.GameObjectBundleFactory.createDecoImage(  this, 4600, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
+
+        // door
+        ninjas.GameObjectBundleFactory.createDecoImage(  this, 2000, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOOR_1 );
 
         // bridge and blue water
         // ninjas.GameObjectBundleFactory.createWaterArea(   this, 3050, 2260, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
