@@ -11,7 +11,7 @@ export class LevelData extends ninjas.Level
     /** Player start position X. */
     public  playerStartX            :number                             = 2480;
     /** Player start position Y. */
-    public  playerStartY            :number                             = 1200;
+    public  playerStartY            :number                             = 2000; // 1200;
     /** Player initial parachute state. */
     public  playerInitialFloat      :boolean                            = true;
     /** Player initial facing. */
@@ -33,6 +33,9 @@ export class LevelData extends ninjas.Level
         // parallax bg
         ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG ) );
 
+        // home shrine
+        this.addHomeShrine();
+
         // TODO offset x/y param for all plateaus!
 
         // TODO remove all unused confusing panel images!
@@ -40,13 +43,37 @@ export class LevelData extends ninjas.Level
         // TODO fix moving plateau
 
         // plateaus
-        this.addFirstPlateau();
-        /* if (false) */ this.addSecondPlateau();
-        /* if (false) */ this.addThirdPlateau();
-        /* if (false) */ this.addFourthPlateau();
-        /* if (false) */ this.addFifthPlateau();
-        /* if (false) */ this.addSixthPlateau();
-        /* if (false) */ this.addSeventhPlateau();
+        if (false) this.addFirstPlateau();
+        if (false) this.addSecondPlateau();
+        if (false) this.addThirdPlateau();
+        if (false) this.addFourthPlateau();
+        if (false) this.addFifthPlateau();
+        if (false) this.addSixthPlateau();
+        if (false) this.addSeventhPlateau();
+    }
+
+    /** ****************************************************************************************************************
+    *   Adds the startup shrine.
+    *******************************************************************************************************************/
+    private addHomeShrine() : void
+    {
+        // ground
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 1000, 2000, 20,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 3560, 2000, 5,  5, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 4200, 2100, 10, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+
+        // statue
+        ninjas.GameObjectBundleFactory.createObstacle( this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
+
+        // dojo
+        ninjas.GameObjectBundleFactory.createDecoImage(  this, 4600, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
+
+        // bridge and blue water
+        // ninjas.GameObjectBundleFactory.createWaterArea(   this, 3050, 2260, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
+        // ninjas.GameObjectBundleFactory.createBridge(      this, 3120, 2100 );
+
+        // ground
+
     }
 
     /** ****************************************************************************************************************
