@@ -587,7 +587,12 @@ export abstract class Character extends ninjas.GameObject
             for ( const door of ninjas.Main.game.level.doors )
             {
                 if (door.checkPlayerCollision()) {
+
+                    ninjas.Debug.init.log( 'Resetting and switching to level 2' );
+
                     console.log('door opens ..');
+
+                    ninjas.Main.game.resetAndLaunchLevel( new ninjas.LevelHut() );
                 }
             }
 
