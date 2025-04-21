@@ -48,13 +48,13 @@ export class LevelData extends ninjas.Level
         ninjas.GameObjectBundleFactory.createSolidGround( this, 5760, 2100, 15, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
 
         // statue
-        // ninjas.GameObjectBundleFactory.createObstacle( this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
+        // ninjas.GameObjectBundleFactory.createObstacle(this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
 
         // dojo
-        // ninjas.GameObjectBundleFactory.createDecoImage(  this, 4600, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
+        // ninjas.GameObjectBundleFactory.createDecoImage(this, 4600, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
 
         // door
-        ninjas.GameObjectBundleFactory.createDecoImage(  this, 2300, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOOR_1 );
+        ninjas.GameObjectFactory.createDoor( this, 2300, 2000, ninjas.ImageData.IMAGE_DOOR_1 );
 
         // bridge and blue water
         // ninjas.GameObjectBundleFactory.createWaterArea(   this, 3050, 2260, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );

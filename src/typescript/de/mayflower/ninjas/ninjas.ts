@@ -55,6 +55,7 @@ export * from './game/object/special/Bounce';
 export * from './game/object/special/Platform';
 export * from './game/object/special/SigSaw';
 export * from './game/object/special/SiteTrigger';
+export * from './game/object/special/Door';
 
 export * from './data/ImageData';
 export * from './data/KeyData';

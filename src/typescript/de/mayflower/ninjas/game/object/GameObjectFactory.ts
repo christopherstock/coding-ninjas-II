@@ -613,6 +613,46 @@ export abstract class GameObjectFactory
     }
 
     /** ****************************************************************************************************************
+    *   Creates a door.
+    *
+    *   @param level               The level to add the site trigger to.
+    *   @param x                   Anchor X.
+    *   @param yBottom             Anchor of bottom Y.
+    *   @param imageId             Image ID of the sprite for the door to use.
+    *******************************************************************************************************************/
+    public static createDoor
+    (
+        level               :ninjas.Level,
+        x                   :number,
+        yBottom             :number,
+        imageId             :string
+    )
+    : void
+    {
+        const spriteTemplate :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+
+        const door :ninjas.Door = new ninjas.Door
+        (
+            new ninjas.ShapeRectangle
+            (
+                spriteTemplate.width,
+                spriteTemplate.height,
+                ninjas.DebugColor.COLOR_DEBUG_SITE_TRIGGER,
+                ninjas.StaticShape.YES,
+                0.0,
+                ninjas.BodyFriction.DEFAULT,
+                ninjas.BodyDensity.INFINITE,
+                ninjas.BodyRestitution.DEFAULT
+            ),
+            spriteTemplate,
+            x,
+            yBottom - spriteTemplate.height
+        );
+
+        level.doors.push( door );
+    }
+
+    /** ****************************************************************************************************************
     *   Creates a sigsaw.
     *
     *   @param level            The level to add the sigsaw to.

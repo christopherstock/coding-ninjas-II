@@ -45,6 +45,8 @@ export abstract class Level
     public      parallaxFgs             :ninjas.ParallaxDeco[]          = [];
     /** All shrines. TODO prune? */
     public      shrines                 :ninjas.Shrine[]                = [];
+    /** All shrines. TODO prune? */
+    public      doors                   :ninjas.Door[]                = [];
 
     /** ****************************************************************************************************************
     *   Sets the player and the game objects.
@@ -69,6 +71,10 @@ export abstract class Level
         for ( const siteTrigger of this.siteTriggers )
         {
             matterJsSystem.addToWorld( siteTrigger.shape.body );
+        }
+        for ( const door of this.doors )
+        {
+            matterJsSystem.addToWorld( door.shape.body );
         }
         for ( const sigsaw of this.sigsaws )
         {
@@ -131,6 +137,10 @@ export abstract class Level
         for ( const siteTrigger of this.siteTriggers )
         {
             siteTrigger.render();
+        }
+        for ( const door of this.doors )
+        {
+            door.render();
         }
         for ( const sigsaw of this.sigsaws )
         {
