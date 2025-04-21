@@ -13,7 +13,7 @@ export class LevelStart extends ninjas.Level
     /** Player start position Y. */
     public  playerStartY            :number                             = 2000; // 1200;
     /** Player initial parachute state. */
-    public  playerInitialFloat      :boolean                            = true;
+    public  playerInitialFloat      :boolean                            = false;
     /** Player initial facing. */
     public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 

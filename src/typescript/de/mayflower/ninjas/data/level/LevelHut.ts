@@ -31,7 +31,7 @@ export class LevelHut extends ninjas.Level
         ninjas.GameObjectBundleFactory.createPlayer( this );
 
         // parallax bg "Mount Fuji"
-        ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG_MOUNT_FUJI ) );
+        ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG_JAPAN ) );
 
         // home shrine
         this.addHomeShrine();

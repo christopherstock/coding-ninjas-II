@@ -110,6 +110,12 @@ export class Player extends ninjas.Character
             {
                 this.jump();
             }
+            else {
+                if ( !this.isGliding && !this.glidingRequest && !this.collidesBottom )
+                {
+                    this.requestGliding();
+                }
+            }
         }
 
         if (
@@ -122,16 +128,6 @@ export class Player extends ninjas.Character
             if ( this.collidesBottom )
             {
                 this.jump();
-            }
-        }
-
-        if ( keySystem.isPressed( ninjas.KeyData.KEY_DOWN ) )
-        {
-            keySystem.setNeedsRelease( ninjas.KeyData.KEY_DOWN );
-
-            if ( !this.isGliding && !this.glidingRequest && !this.collidesBottom )
-            {
-                this.requestGliding();
             }
         }
 
