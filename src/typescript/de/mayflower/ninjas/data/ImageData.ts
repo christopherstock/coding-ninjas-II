@@ -282,7 +282,7 @@ export class ImageData
     /** Image tile 'ground snow solid descending top'. */
     public      static      IMAGE_GROUND_SNOW_SOLID_DESCENDING_TOP          :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidDescendingTop.png';
 
-    public      static      IMAGE_BG                                        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
+    public      static      IMAGE_BG_JAPAN                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
     public      static      IMAGE_BG_MOUNT_FUJI                             :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
 
     /** Site image 'logo'. */
@@ -532,7 +532,7 @@ export class ImageData
         ImageData.IMAGE_GROUND_SNOW_SOLID_ASCENDING_TOP,
         ImageData.IMAGE_GROUND_SNOW_SOLID_DESCENDING_TOP,
 
-        ImageData.IMAGE_BG,
+        ImageData.IMAGE_BG_JAPAN,
         ImageData.IMAGE_BG_MOUNT_FUJI,
 
         ImageData.IMAGE_SITE_PANEL_LOGO,

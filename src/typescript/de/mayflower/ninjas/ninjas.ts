@@ -65,6 +65,7 @@ export * from './data/CharacterSpriteData';
 export * from './data/GroundData';
 
 export * from './data/level/LevelStart';
+export * from './data/level/LevelHut';
 
 export * from './site/component/ContentCompany';
 export * from './site/component/ContentContact';

@@ -11,6 +11,7 @@ export class KeyData
     public      static  KEY_E               :string                         = 'E';
 
     public      static  KEY_1               :string                         = '1';
+    public      static  KEY_2               :string                         = '2';
 
     public      static  KEY_SPACE           :string                         = ' ';
 

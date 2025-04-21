@@ -228,15 +228,14 @@ export class Game
                 this.resetAndLaunchLevel( new ninjas.LevelStart() );
             }
 
-            /*
-            if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_2 ) )
+            if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.KeyData.KEY_2 ) )
             {
-                ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_2 );
+                ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.KeyData.KEY_2 );
 
                 ninjas.Debug.init.log( 'Resetting and switching to level 2' );
-                this.resetAndLaunchLevel( new ninjas.LevelAllElements() );
+                this.resetAndLaunchLevel( new ninjas.LevelHut() );
             }
-
+/*
             if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_3 ) )
             {
                 ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_3 );
