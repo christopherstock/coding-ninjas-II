@@ -77,8 +77,3 @@ export * from './site/component/ContentWelcome';
 
 export * from './site/SiteContentSystem';
 export * from './site/SiteContentFactory';
-
-export * from './util/DrawUtil';
-export * from './util/ImageUtil';
-export * from './util/MathUtil';
-export * from './util/StringUtil';

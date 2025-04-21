@@ -1,4 +1,5 @@
 import * as ninjas from '../../ninjas';
+import {ImageUtil} from "../../util/ImageUtil";
 
 /** ********************************************************************************************************************
 *   The system realizes dynamic image loading.
@@ -96,7 +97,7 @@ export class ImageSystem
         this.imagesToMirrorCount = this.mirroredFileNames.length;
         for ( const mirroredFileName of this.mirroredFileNames )
         {
-            this.mirroredImages[ mirroredFileName ] = ninjas.ImageUtil.flipImageHorizontal(
+            this.mirroredImages[ mirroredFileName ] = ImageUtil.flipImageHorizontal(
                 this.originalImages[ mirroredFileName ],
                 () => { this.onMirrorImage(); }
             );

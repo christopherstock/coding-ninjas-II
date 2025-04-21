@@ -1,4 +1,5 @@
 import * as ninjas from '../ninjas';
+import {DrawUtil} from "../util/DrawUtil";
 
 /** ********************************************************************************************************************
 *   Handles the whole preloading process for the web app.
@@ -97,7 +98,7 @@ export class Preloader
     private drawPreloader() : void
     {
         // clear canvas
-        ninjas.DrawUtil.fillRect
+        DrawUtil.fillRect
         (
             this.engine.canvasSystem.getCanvasContext(),
             0,
@@ -116,7 +117,7 @@ export class Preloader
         const monoImageWidth :number = ( this.imageUnloaded.width - gayImageWidth );
 
         // draw mono image
-        ninjas.DrawUtil.drawImageScaledClipped
+        DrawUtil.drawImageScaledClipped
         (
             this.engine.canvasSystem.getCanvasContext(),
             this.imageUnloaded,
@@ -131,7 +132,7 @@ export class Preloader
         );
 
         // draw gay image clipped
-        ninjas.DrawUtil.drawImageScaledClipped
+        DrawUtil.drawImageScaledClipped
         (
             this.engine.canvasSystem.getCanvasContext(),
             this.imageLoaded,

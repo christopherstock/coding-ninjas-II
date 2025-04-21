@@ -1,5 +1,6 @@
 import * as matter from 'matter-js';
 import * as ninjas from '../ninjas';
+import {DrawUtil} from "../util/DrawUtil";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -258,7 +259,7 @@ export class Game
     {
         if ( this.blendPanelTicks > 0 )
         {
-            ninjas.DrawUtil.fillRect
+            DrawUtil.fillRect
             (
                 context,
                 0,

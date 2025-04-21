@@ -15,8 +15,7 @@ export class Door extends ninjas.Decoration
     *   @param spriteTemplate      The sprite template to use.
     *   @param x                   Startup position X.
     *   @param y                   Startup position Y.
-    *   @param content             The site content to display on releasing this trigger.
-    *   @param sitePanelAppearance The position for the site panel to appear.
+    *   @param action              The action to trigger on door interaction.
     *******************************************************************************************************************/
     public constructor
     (
@@ -51,7 +50,10 @@ export class Door extends ninjas.Decoration
     *******************************************************************************************************************/
     public checkPlayerInteraction() : boolean
     {
-        const doorActivated: boolean = matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds );
+        const doorActivated: boolean = matter.Bounds.overlaps(
+            this.shape.body.bounds,
+            ninjas.Main.game.level.player.shape.body.bounds
+        );
 
         if (doorActivated) {
             this.action.data.targetLevel.playerStartX = this.action.data.playerStartX;

@@ -1,4 +1,5 @@
 import * as ninjas from '../../ninjas';
+import {MathUtil} from "../../util/MathUtil";
 
 /** ********************************************************************************************************************
 *   Represents one game sprite.
@@ -110,6 +111,6 @@ export class Sprite
     *******************************************************************************************************************/
     private assignRandomFrame() : void
     {
-        this.currentFrame = ninjas.MathUtil.getRandomInt( 0, ( this.template.imageIds.length - 1 ) );
+        this.currentFrame = MathUtil.getRandomInt( 0, ( this.template.imageIds.length - 1 ) );
     }
 }
