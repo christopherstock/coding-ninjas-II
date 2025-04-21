@@ -9,11 +9,11 @@ import * as ninjas from '../../ninjas';
 export class LevelStart extends ninjas.Level
 {
     public  playerStartX            :number                             = 2480;
-    public  playerStartY            :number                             = 2000; // 1200;
+    public  playerStartY            :number                             = 2000;
     public  playerInitialFloat      :boolean                            = false;
     public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
-    public  width                   :number                             = 7500;
+    public  width                   :number                             = 12500;
     public  height                  :number                             = 2500;
 
     /** ****************************************************************************************************************
@@ -38,33 +38,39 @@ export class LevelStart extends ninjas.Level
     {
         // ground
         ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 2000, 40,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 5120, 2000, 5,  5, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 5760, 2100, 15, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
 
         // door
         ninjas.GameObjectFactory.createDoor( this, 2300, 2000, ninjas.ImageData.IMAGE_DOOR_1, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: new ninjas.LevelHut(), playerStartX: 1020 } ) );
 
         // enemies
-        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT, this, 0, 2000, ninjas.CharacterFacing.RIGHT, 0, 1500, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY, false );
+        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 0, 2000, ninjas.CharacterFacing.RIGHT, 0, 1500, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
 
         // friends
-        ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT, this, 3000, 2000, ninjas.CharacterFacing.RIGHT, 3000, 3750, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
-        ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, ninjas.CharacterFacing.RIGHT, 3250, 4000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
-        ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT, this, 5000, 2000, ninjas.CharacterFacing.RIGHT, 3750, 5000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
+        ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 2000, ninjas.CharacterFacing.RIGHT, 3000, 3750, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
+        ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, ninjas.CharacterFacing.RIGHT, 3250, 4000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL, false );
+        ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,    this, 5000, 2000, ninjas.CharacterFacing.RIGHT, 3750, 5000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
+        ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_WALK_LEFT,         this, 4500, 2000, ninjas.CharacterFacing.RIGHT, 4500, 5000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
 
         // trees
         ninjas.GameObjectBundleFactory.createDecoImage(  this, 400, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_TREE_2 );
         ninjas.GameObjectBundleFactory.createDecoImage(  this, 1200, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_TREE_2 );
+
+        // lion statue
+        ninjas.GameObjectBundleFactory.createDecoImage( this, 4500, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_LION );
+
+        // slope down and solid ground
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 5120, 2000, 5,  5, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 5760, 2100, 15, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+
+        // bridge and blue water
+        ninjas.GameObjectBundleFactory.createWaterArea(   this, 7680, 2260, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
+        ninjas.GameObjectBundleFactory.createBridge(      this, 7750, 2100 );
 
         // statue
         // ninjas.GameObjectBundleFactory.createObstacle(this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
 
         // dojo
         // ninjas.GameObjectBundleFactory.createDecoImage(this, 4600, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
-
-        // bridge and blue water
-        // ninjas.GameObjectBundleFactory.createWaterArea(   this, 3050, 2260, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
-        // ninjas.GameObjectBundleFactory.createBridge(      this, 3120, 2100 );
     }
 
     /** ****************************************************************************************************************
@@ -223,9 +229,6 @@ export class LevelStart extends ninjas.Level
         // site trigger
         // ninjas.GameObjectFactory.createSiteTrigger( this, 11400, 2100, 3000, 500, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.RIGHT, null );
 
-        // lion statue
-        ninjas.GameObjectBundleFactory.createDecoImage( this, 8500, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_LION );
-
         // movables
         ninjas.GameObjectBundleFactory.createMovableRect( this, 9350, 2000, ninjas.ImageData.IMAGE_POT_1 );
         ninjas.GameObjectBundleFactory.createMovableCircular( this, 9450, 2000, 0.0, ninjas.ImageData.IMAGE_STONE_SPHERE );
@@ -254,9 +257,9 @@ export class LevelStart extends ninjas.Level
         ninjas.GameObjectBundleFactory.createCandle( this, 14100, 2100, ninjas.DecoPosition.FG );
 
         // enemies
-        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT, this, 12000, 2100, ninjas.CharacterFacing.RIGHT, 10000, 11150, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
-        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT, this, 13670, 2100, ninjas.CharacterFacing.LEFT,  11670, 11870, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
-        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT, this, 10600,  2100, ninjas.CharacterFacing.LEFT,  8600,  9500,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
-        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT, this, 8700,  2100, ninjas.CharacterFacing.LEFT,  6700,  7250,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
+        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 12000, 2100, ninjas.CharacterFacing.RIGHT, 10000, 11150, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
+        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 13670, 2100, ninjas.CharacterFacing.LEFT,  11670, 11870, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
+        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 10600,  2100, ninjas.CharacterFacing.LEFT,  8600,  9500,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
+        ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 8700,  2100, ninjas.CharacterFacing.LEFT,  6700,  7250,  ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
     }
 }

@@ -8,7 +8,7 @@ import * as ninjas from '../ninjas';
 export class SpriteTemplateData
 {
     /** Sprite 'ninja girl stand left'. */
-    public      static  SPRITE_NINJA_GIRL_STAND_LEFT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_STAND_LEFT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
@@ -30,7 +30,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl stand right'. */
-    public      static  SPRITE_NINJA_GIRL_STAND_RIGHT               :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_STAND_RIGHT               :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_STAND_RIGHT_FRAME_1,
@@ -52,7 +52,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl walk left'. */
-    public      static  SPRITE_NINJA_GIRL_WALK_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_WALK_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
@@ -74,7 +74,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl walk right'. */
-    public      static  SPRITE_NINJA_GIRL_WALK_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_WALK_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_WALK_RIGHT_FRAME_1,
@@ -96,7 +96,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl attack left'. */
-    public      static  SPRITE_NINJA_GIRL_ATTACK_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_1,
@@ -123,7 +123,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl attack right'. */
-    public      static  SPRITE_NINJA_GIRL_ATTACK_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_ATTACK_RIGHT_FRAME_1,
@@ -150,7 +150,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl jump left'. */
-    public      static  SPRITE_NINJA_GIRL_JUMP_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
@@ -165,7 +165,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl jump right'. */
-    public      static  SPRITE_NINJA_GIRL_JUMP_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
@@ -180,7 +180,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl fall left'. */
-    public      static  SPRITE_NINJA_GIRL_FALL_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_FALL_LEFT                 :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
@@ -195,7 +195,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl fall right'. */
-    public      static  SPRITE_NINJA_GIRL_FALL_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_FALL_RIGHT_FRAME_1,
@@ -210,7 +210,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl glide left'. */
-    public      static  SPRITE_NINJA_GIRL_GLIDE_LEFT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT                :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
@@ -232,7 +232,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl glide right'. */
-    public      static  SPRITE_NINJA_GIRL_GLIDE_RIGHT               :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT               :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
             ninjas.ImageData.IMAGE_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
@@ -298,19 +298,19 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 stand left'. */
-    public      static  SPRITE_ENEMY_NINJA_1_STAND_LEFT             :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_STAND_LEFT             :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_6,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_7,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_8,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_9,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_10,
         ],
         4,
         ninjas.MirrorImage.YES,
@@ -320,19 +320,19 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 stand right'. */
-    public      static  SPRITE_ENEMY_NINJA_1_STAND_RIGHT            :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_1_STAND_RIGHT            :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_1,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_2,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_3,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_4,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_5,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_6,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_7,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_8,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_9,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_STAND_RIGHT_FRAME_10,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_6,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_7,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_8,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_9,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_10,
         ],
         4,
         ninjas.MirrorImage.NO,
@@ -342,19 +342,19 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 walk left'. */
-    public      static  SPRITE_ENEMY_NINJA_1_WALK_LEFT              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_WALK_LEFT              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_6,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_7,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_8,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_9,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_10,
         ],
         4,
         ninjas.MirrorImage.YES,
@@ -364,19 +364,19 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 walk right'. */
-    public      static  SPRITE_ENEMY_NINJA_1_WALK_RIGHT             :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_1_WALK_RIGHT             :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_1,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_2,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_3,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_4,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_5,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_6,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_7,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_8,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_9,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_WALK_RIGHT_FRAME_10,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_6,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_7,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_8,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_9,
+            ninjas.ImageData.IMAGE_ENEMY_NINJA_WALK_RIGHT_FRAME_10,
         ],
         4,
         ninjas.MirrorImage.NO,
@@ -386,14 +386,14 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 die left'. */
-    public      static  SPRITE_ENEMY_NINJA_1_DIE_LEFT               :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_1_DIE_LEFT               :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_5,
         ],
         16,
         ninjas.MirrorImage.YES,
@@ -403,14 +403,14 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 die right'. */
-    public      static  SPRITE_ENEMY_NINJA_1_DIE_RIGHT              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_1_DIE_RIGHT              :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (
         [
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_1,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_2,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
-            ninjas.ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_5,
         ],
         16,
         ninjas.MirrorImage.NO,
@@ -518,24 +518,24 @@ export class SpriteTemplateData
     /** A reference over all sprite templates. */
     public      static  readonly        ALL_SPRITE_TEMPLATES                        :ninjas.SpriteTemplate[] =
     [
-        SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_WALK_LEFT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_RIGHT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_JUMP_LEFT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_JUMP_RIGHT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_FALL_LEFT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_FALL_RIGHT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_LEFT,
-        SpriteTemplateData.SPRITE_NINJA_GIRL_GLIDE_RIGHT,
-        SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT,
-        SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_ENEMY_NINJA_1_WALK_LEFT,
-        SpriteTemplateData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
-        SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_1_STAND_RIGHT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_WALK_LEFT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_1_WALK_RIGHT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_LEFT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_RIGHT,
         SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
         SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
         SpriteTemplateData.SPRITE_WATER_TOP,
