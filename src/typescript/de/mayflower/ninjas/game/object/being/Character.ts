@@ -194,7 +194,7 @@ export abstract class Character extends ninjas.GameObject
     public receivePunchBack( punchBackDirection:ninjas.CharacterFacing ) : void
     {
         const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 5.0 );
-        const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 35.0 );
+        const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 32.5 );
 
         // apply punch-back force
         switch ( punchBackDirection )
