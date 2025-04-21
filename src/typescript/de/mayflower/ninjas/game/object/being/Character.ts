@@ -28,14 +28,11 @@ export abstract class Character extends ninjas.GameObject
     /** Ticks the character is currently attacking. */
     public                          attackingTicks                      :number                             = 0;
 
-    /** Flags if this character is gliding. */
-    protected                       isGliding                           :boolean                            = false;
-    /** Flags if this character is requesting gliding while ascending etc. */
     protected                       glidingRequest                      :boolean                            = false;
+    protected                       interactionRequest                  :boolean                            = false;
 
-    /** Flags if this character is dying but not already dead. */
+    protected                       isGliding                           :boolean                            = false;
     protected                       isDying                             :boolean                            = false;
-    /** Flags if this character is dead. */
     protected                       isDead                              :boolean                            = false;
 
     /** Flags if the character is currently moving left. */
@@ -117,6 +114,7 @@ export abstract class Character extends ninjas.GameObject
         }
 
         this.resetRotation();
+        this.checkInteraction();
         this.checkBottomCollision();
         this.checkParachuteState();
     }
@@ -310,14 +308,18 @@ export abstract class Character extends ninjas.GameObject
         );
     }
 
-    /** ****************************************************************************************************************
-    *   Requests gliding for the player so the parachute will open on next descending phase.
-    *******************************************************************************************************************/
     protected requestGliding() : void
     {
         ninjas.Debug.character.log( 'Character requests gliding' );
 
         this.glidingRequest = true;
+    }
+
+    protected requestInteraction() : void
+    {
+        ninjas.Debug.character.log( 'Character requests gliding' );
+
+        this.interactionRequest = true;
     }
 
     /** ****************************************************************************************************************
@@ -575,6 +577,21 @@ export abstract class Character extends ninjas.GameObject
                     )
                 ).length > 0
             );
+        }
+    }
+
+    private checkInteraction() : void
+    {
+        if (this.interactionRequest)
+        {
+            for ( const door of ninjas.Main.game.level.doors )
+            {
+                if (door.checkPlayerCollision()) {
+                    console.log('door opens ..');
+                }
+            }
+
+            this.interactionRequest = false;
         }
     }
 }

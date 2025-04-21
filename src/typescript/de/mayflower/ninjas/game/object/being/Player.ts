@@ -125,14 +125,21 @@ export class Player extends ninjas.Character
             }
         }
 
-        if ( keySystem.isPressed( ninjas.KeyData.KEY_V ) )
+        if ( keySystem.isPressed( ninjas.KeyData.KEY_DOWN ) )
         {
-            keySystem.setNeedsRelease( ninjas.KeyData.KEY_V );
+            keySystem.setNeedsRelease( ninjas.KeyData.KEY_DOWN );
 
             if ( !this.isGliding && !this.glidingRequest && !this.collidesBottom )
             {
                 this.requestGliding();
             }
+        }
+
+        if ( keySystem.isPressed( ninjas.KeyData.KEY_E ) )
+        {
+            keySystem.setNeedsRelease( ninjas.KeyData.KEY_E );
+
+            this.requestInteraction();
         }
 
         if ( keySystem.isPressed( ninjas.KeyData.KEY_SPACE ) )

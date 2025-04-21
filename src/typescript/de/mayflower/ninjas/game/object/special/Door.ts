@@ -39,22 +39,12 @@ export class Door extends ninjas.Decoration
     public render() : void
     {
         super.render();
-
-        // check if player collides with this trigger
-        if ( this.checkPlayerCollision() )
-        {
-            console.log('player4 collisiuon');
-        }
-        else
-        {
-            console.log('NO player4 collisiuon');
-        }
     }
 
     /** ****************************************************************************************************************
     *   Renders this site trigger.
     *******************************************************************************************************************/
-    private checkPlayerCollision() : boolean
+    public checkPlayerCollision() : boolean
     {
         return (
             matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds )
