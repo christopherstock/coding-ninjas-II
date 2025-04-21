@@ -75,6 +75,10 @@ export class SoundSystem
     {
         ninjas.Debug.sound.log( 'Preloading [' + String( this.fileNames.length ) + '] sounds' );
 
+        if (this.fileNames.length === 0) {
+            this.onLoadComplete();
+        }
+
         for ( const fileName of this.fileNames )
         {
             try

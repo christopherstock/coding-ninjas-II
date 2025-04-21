@@ -13,7 +13,7 @@ export class LevelHut extends ninjas.Level
     /** Player start position Y. */
     public  playerStartY            :number                             = 2000; // 1200;
     /** Player initial parachute state. */
-    public  playerInitialFloat      :boolean                            = true;
+    public  playerInitialFloat      :boolean                            = false;
     /** Player initial facing. */
     public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
@@ -31,7 +31,7 @@ export class LevelHut extends ninjas.Level
         ninjas.GameObjectBundleFactory.createPlayer( this );
 
         // parallax bg "Mount Fuji"
-        ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG_JAPAN ) );
+        ninjas.GameObjectFactory.createParallaxDeco( this, 0, 0, 1.0, ninjas.DecoPosition.BG, ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_BG_MOUNT_FUJI ) );
 
         // home shrine
         this.addHomeShrine();
