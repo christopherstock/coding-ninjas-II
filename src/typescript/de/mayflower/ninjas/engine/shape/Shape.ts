@@ -1,6 +1,5 @@
 import * as matter from 'matter-js';
 import * as ninjas from '../../ninjas';
-import {MathUtil} from "../../util/MathUtil";
 
 /** ********************************************************************************************************************
 *   Specifies if a shape is static or not.
@@ -62,7 +61,7 @@ export abstract class Shape
             frictionAir:     ninjas.BodyFrictionAir.DEFAULT,
             // frictionStatic:  0.5,
 
-            angle:           MathUtil.angleToRad( angle ),
+            angle:           ninjas.MathUtil.angleToRad( angle ),
             density:         density,
 
             restitution:     restitution,

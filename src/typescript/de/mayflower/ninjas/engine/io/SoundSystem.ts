@@ -1,5 +1,4 @@
 import * as ninjas from '../../ninjas';
-import {ImageUtil} from "../../util/ImageUtil";
 
 /** ********************************************************************************************************************
 *   Loads and manages all desired sounds.
@@ -89,7 +88,7 @@ export class SoundSystem
                 this.sounds[ fileName ].onloadeddata = () :void => { this.onLoadSound(); };
                 this.sounds[ fileName ].onerror      = () :void => { this.onLoadSoundError(); };
 
-                if ( ImageUtil.isMac() )
+                if ( ninjas.ImageUtil.isMac() )
                 {
                     this.onLoadSound();
                 }
