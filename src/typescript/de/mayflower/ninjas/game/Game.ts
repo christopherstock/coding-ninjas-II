@@ -53,7 +53,7 @@ export class Game
         this.bgMusic = this.engine.soundSystem.playSound( ninjas.SoundData.BG_CHINESE, true );
 
         // launch initial level
-        this.resetAndLaunchLevel( new ninjas.LevelData() );
+        this.resetAndLaunchLevel( new ninjas.LevelStart() );
 
         // update camera bounds
         this.updateAndAssignCamera();
@@ -225,7 +225,7 @@ export class Game
                 this.engine.keySystem.setNeedsRelease( ninjas.KeyData.KEY_1 );
 
                 ninjas.Debug.init.log( 'Resetting and switching to level 1' );
-                this.resetAndLaunchLevel( new ninjas.LevelData() );
+                this.resetAndLaunchLevel( new ninjas.LevelStart() );
             }
 
             /*

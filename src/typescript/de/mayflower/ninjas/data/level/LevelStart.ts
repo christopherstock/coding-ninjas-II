@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
 
 import * as matter from 'matter-js';
-import * as ninjas from '../ninjas';
+import * as ninjas from '../../ninjas';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
 ***********************************************************************************************************************/
-export class LevelData extends ninjas.Level
+export class LevelStart extends ninjas.Level
 {
     /** Player start position X. */
     public  playerStartX            :number                             = 2480;

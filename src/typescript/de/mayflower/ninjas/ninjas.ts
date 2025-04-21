@@ -1,10 +1,10 @@
 export * from './base/Debug';
 export * from './base/Main';
 
-export * from './base/setting/SettingDebug';
-export * from './base/setting/SettingEngine';
-export * from './base/setting/SettingGame';
-export * from './base/setting/SettingMatter';
+export * from './setting/SettingDebug';
+export * from './setting/SettingEngine';
+export * from './setting/SettingGame';
+export * from './setting/SettingMatter';
 
 export * from './engine/Engine';
 
@@ -63,7 +63,8 @@ export * from './data/SoundData';
 export * from './data/SpriteTemplateData';
 export * from './data/CharacterSpriteData';
 export * from './data/GroundData';
-export * from './data/LevelData';
+
+export * from './data/level/LevelStart';
 
 export * from './site/component/ContentCompany';
 export * from './site/component/ContentContact';
