@@ -253,6 +253,50 @@ export class SpriteTemplateData
         ninjas.SettingGame.DEFAULT_SPRITE_SCALE
     );
 
+    /** Sprite 'red ninja girl stand left'. */
+    public      static  SPRITE_RED_NINJA_GIRL_STAND_LEFT             :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    (
+        [
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_6,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_7,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_8,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_9,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_10,
+        ],
+        4,
+        ninjas.MirrorImage.YES,
+        ninjas.LoopSprite.YES,
+        ninjas.RandomFrames.NO,
+        ninjas.SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    /** Sprite 'red ninja girl stand right'. */
+    public      static  SPRITE_RED_NINJA_GIRL_STAND_RIGHT            :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
+    (
+        [
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_2,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_3,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_4,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_5,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_6,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_7,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_8,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_9,
+            ninjas.ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_10,
+        ],
+        4,
+        ninjas.MirrorImage.NO,
+        ninjas.LoopSprite.YES,
+        ninjas.RandomFrames.NO,
+        ninjas.SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
     /** Sprite 'enemy ninja 1 stand left'. */
     public      static  SPRITE_ENEMY_NINJA_1_STAND_LEFT             :ninjas.SpriteTemplate         = new ninjas.SpriteTemplate
     (

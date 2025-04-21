@@ -397,6 +397,7 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createEnemy
     (
+        spriteTemplate     :ninjas.SpriteTemplate,
         x                  :number,
         yBottom            :number,
         facingDirection    :ninjas.CharacterFacing,
@@ -408,9 +409,7 @@ export abstract class GameObjectFactory
     )
     : ninjas.Bot
     {
-        const diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
-
-        const diamondShape = GameObjectFactory.createCharacterDiamondShape( diamondSprite, ninjas.DebugColor.COLOR_DEBUG_ENEMY );
+        const diamondShape = GameObjectFactory.createCharacterDiamondShape( spriteTemplate, ninjas.DebugColor.COLOR_DEBUG_ENEMY );
         if (friendly)
         {
             diamondShape.body.isStatic = true;

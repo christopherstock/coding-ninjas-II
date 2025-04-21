@@ -615,6 +615,7 @@ export abstract class GameObjectBundleFactory
     *******************************************************************************************************************/
     public static createEnemy
     (
+        spriteTemplate     :ninjas.SpriteTemplate,
         level              :ninjas.Level,
         xLeft              :number,
         yBottom            :number,
@@ -629,6 +630,7 @@ export abstract class GameObjectBundleFactory
     {
         const enemy :ninjas.Bot = ninjas.GameObjectFactory.createEnemy
         (
+            spriteTemplate,
             xLeft,
             yBottom,
             facingDirection,

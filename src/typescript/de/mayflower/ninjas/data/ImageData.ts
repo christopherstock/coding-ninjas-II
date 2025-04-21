@@ -92,6 +92,17 @@ export class ImageData
     public      static      IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blueNinjaGuy/die/04.png';
     public      static      IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blueNinjaGuy/die/05.png';
 
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_1         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/01.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_2         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/02.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_3         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/03.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_4         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/04.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_5         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/05.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_6         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/06.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_7         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/07.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_8         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/08.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_9         :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/09.png';
+    public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_10        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/10.png';
+
     public      static      IMAGE_CRATE_WOOD_1                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood1.png';
 
     public      static      IMAGE_ITEM                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
@@ -325,6 +336,17 @@ export class ImageData
         ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_3,
         ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_4,
         ImageData.IMAGE_ENEMY_NINJA_1_DIE_RIGHT_FRAME_5,
+
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_2,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_3,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_4,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_5,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_6,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_7,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_8,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_9,
+        ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_10,
 
         ImageData.IMAGE_ITEM,
         ImageData.IMAGE_CRATE_WOOD_1,
