@@ -19,8 +19,8 @@ export class CharacterSpriteData
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT,
-        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_LEFT,
-        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
@@ -37,8 +37,8 @@ export class CharacterSpriteData
         ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_STAND_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT,
         ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_STAND_RIGHT,
-        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_LEFT,
-        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
@@ -47,16 +47,16 @@ export class CharacterSpriteData
     public  static  CHARACTER_SPRITE_SET_RED_NINJA_GIRL     :ninjas.CharacterSpriteSet  = new ninjas.CharacterSpriteSet(
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
         ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
-        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
-        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
-        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_LEFT,
-        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_1_DIE_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_RIGHT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
         ninjas.SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
