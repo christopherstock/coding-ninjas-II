@@ -52,6 +52,10 @@ export class LevelStart extends ninjas.Level
         ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, ninjas.CharacterFacing.RIGHT, 3250, 4000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
         ninjas.GameObjectBundleFactory.createFriend( ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT, this, 5000, 2000, ninjas.CharacterFacing.RIGHT, 3750, 5000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
 
+        // trees
+        ninjas.GameObjectBundleFactory.createDecoImage(  this, 400, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_TREE_2 );
+        ninjas.GameObjectBundleFactory.createDecoImage(  this, 1200, 2000, ninjas.DecoPosition.FG, ninjas.ImageData.IMAGE_TREE_2 );
+
         // statue
         // ninjas.GameObjectBundleFactory.createObstacle(this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
 

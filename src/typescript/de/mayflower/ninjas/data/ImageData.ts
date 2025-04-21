@@ -104,42 +104,30 @@ export class ImageData
     public      static      IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_10        :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/stand/10.png';
 
     public      static      IMAGE_CRATE_WOOD_1                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood1.png';
-
     public      static      IMAGE_ITEM                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
     public      static      IMAGE_STONE_SPHERE                              :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'stoneSphere.png';
-
     public      static      IMAGE_BOULDER_1                                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
-
     public      static      IMAGE_BRIDGE_1                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge.png';
-
     public      static      IMAGE_TREE_1                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
     public      static      IMAGE_TREE_2                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
-
     public      static      IMAGE_TABLE_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'table1.png';
-
     public      static      IMAGE_STATUE_1                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
     public      static      IMAGE_STATUE_2                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
     public      static      IMAGE_STATUE_3                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue3.png';
     public      static      IMAGE_STATUE_LION                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statueLion.png';
-
     public      static      IMAGE_BOOK_CLOSED                               :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookClosed.png';
     public      static      IMAGE_BOOK_OPEN                                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookOpen.png';
-
     public      static      IMAGE_CANDELABRA                                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candelabra.png';
     public      static      IMAGE_CHANDELIER                                :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
     public      static      IMAGE_CANDLE                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
-
     public      static      IMAGE_BUSH_1                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
     public      static      IMAGE_BUSH_2                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush2.png';
-
     public      static      IMAGE_GOBLET_1                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'goblet1.png';
     public      static      IMAGE_FLASK_1                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask1.png';
     public      static      IMAGE_FLASK_2                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask2.png';
     public      static      IMAGE_FLASK_3                                   :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask3.png';
     public      static      IMAGE_POT_1                                     :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot1.png';
-
     public      static      IMAGE_DOJO                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'dojo.jpg';
-
     public      static      IMAGE_DOOR_1                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
     public      static      IMAGE_DOOR_2                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door2.png';
     public      static      IMAGE_DOOR_3                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door3.png';
