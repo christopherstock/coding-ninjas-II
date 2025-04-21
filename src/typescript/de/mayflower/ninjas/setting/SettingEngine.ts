@@ -35,9 +35,9 @@ export class SettingEngine
     /** The camera moving speed X from 0.0 to 1.0. */
     public  static  readonly    CAMERA_MOVING_SPEED_X                   :number             = 0.1;
     /** The camera moving speed Y from 0.0 to 1.0. */
-    public  static  readonly    CAMERA_MOVING_SPEED_Y                   :number             = 0.2;
+    public  static  readonly    CAMERA_MOVING_SPEED_Y                   :number             = 0.05;
     /** The minimum camera moving speed in px per move. */
-    public  static  readonly    CAMERA_MOVING_MINIMUM                   :number             = 1.0;
+    public  static  readonly    CAMERA_MOVING_MINIMUM                   :number             = 0.05;
     /** The maximum camera moving speed in px per move. */
     public  static  readonly    CAMERA_MOVING_MAXIMUM                   :number             = 20.0;
 

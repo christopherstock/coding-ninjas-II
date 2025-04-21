@@ -9,9 +9,9 @@ import * as ninjas from '../../ninjas';
 export class LevelHut extends ninjas.Level
 {
     /** Player start position X. */
-    public  playerStartX            :number                             = 2480;
+    public  playerStartX            :number                             = 1400;
     /** Player start position Y. */
-    public  playerStartY            :number                             = 2000; // 1200;
+    public  playerStartY            :number                             = 1400;
     /** Player initial parachute state. */
     public  playerInitialFloat      :boolean                            = false;
     /** Player initial facing. */
@@ -43,9 +43,11 @@ export class LevelHut extends ninjas.Level
     private addHomeShrine() : void
     {
         // ground
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 2000, 40,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 5120, 2000, 5,  5, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
-        ninjas.GameObjectBundleFactory.createSolidGround( this, 5760, 2100, 15, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
+         // ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 1200, 40,  1, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_DARK_GROUND );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 1400, 40,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 300, 40,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 300, 10,  9, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
+        ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 300, 10,  9, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
 
         // statue
         // ninjas.GameObjectBundleFactory.createObstacle(this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
