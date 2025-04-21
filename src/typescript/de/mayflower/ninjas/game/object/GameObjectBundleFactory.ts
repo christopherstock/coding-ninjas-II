@@ -622,7 +622,8 @@ export abstract class GameObjectBundleFactory
         walkingTargetLeft  :number,
         walkingTargetRight :number,
         characterSpriteSet :ninjas.CharacterSpriteSet,
-        friendly           :boolean = false
+        friendly           :boolean = false,
+        blocksPlayer       :boolean = true
     )
     : void
     {
@@ -634,7 +635,8 @@ export abstract class GameObjectBundleFactory
             walkingTargetLeft,
             walkingTargetRight,
             characterSpriteSet,
-            friendly
+            friendly,
+            blocksPlayer
         );
 
         level.enemies.push( enemy );

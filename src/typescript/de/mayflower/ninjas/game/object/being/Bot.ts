@@ -80,16 +80,12 @@ export class Bot extends ninjas.Character
             this.currentPhase = EnemyMovementPhase.WALKING_RIGHT;
         }
 
-        // disable body collisions on friendly bots
-
-        // TODO wrap to GameObjectFactory.createEnemy
-
         this.friendly = friendly;
-        if (this.friendly)
-        {
-            this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_BOT;
-            this.shape.body.isStatic = true;
-        }
+    }
+
+    public isFriendly() : boolean
+    {
+        return this.friendly;
     }
 
     /** ****************************************************************************************************************

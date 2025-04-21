@@ -161,7 +161,7 @@ export class Player extends ninjas.Character
             for ( const enemy of ninjas.Main.game.level.enemies )
             {
                 // skip dead enemies
-                if ( enemy.isAlive() )
+                if ( enemy.isAlive() && !enemy.isFriendly() )
                 {
                     // check intersection of the player and the enemy
                     if ( matter.Bounds.overlaps( this.shape.body.bounds, enemy.shape.body.bounds ) )

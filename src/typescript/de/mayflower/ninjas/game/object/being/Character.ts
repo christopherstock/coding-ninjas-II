@@ -172,7 +172,7 @@ export abstract class Character extends ninjas.GameObject
             if ( matter.Query.region( [ enemy.shape.body ], smashBounds ).length > 0 )
             {
                 // skip dead enemies
-                if ( enemy.isAlive() )
+                if ( enemy.isAlive() && !enemy.isFriendly() )
                 {
                     ninjas.Debug.character.log( 'Character hits an enemy' );
 
@@ -193,8 +193,8 @@ export abstract class Character extends ninjas.GameObject
     *******************************************************************************************************************/
     public receivePunchBack( punchBackDirection:ninjas.CharacterFacing ) : void
     {
-        const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 17.5 );
-        const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 27.5 );
+        const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 5.0 );
+        const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 35.0 );
 
         // apply punch-back force
         switch ( punchBackDirection )

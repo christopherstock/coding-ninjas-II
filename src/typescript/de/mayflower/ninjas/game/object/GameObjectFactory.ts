@@ -403,13 +403,23 @@ export abstract class GameObjectFactory
         walkingTargetLeft  :number,
         walkingTargetRight :number,
         characterSpriteSet :ninjas.CharacterSpriteSet,
-        friendly           :boolean
+        friendly           :boolean,
+        blocksPlayer       :boolean
     )
     : ninjas.Bot
     {
         const diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
 
         const diamondShape = GameObjectFactory.createCharacterDiamondShape( diamondSprite, ninjas.DebugColor.COLOR_DEBUG_ENEMY );
+        if (friendly)
+        {
+            diamondShape.body.isStatic = true;
+            if (blocksPlayer) {
+                diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_COLLIDING;
+            } else {
+                diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_BOT;
+            }
+        }
 
         return new ninjas.Bot
         (
