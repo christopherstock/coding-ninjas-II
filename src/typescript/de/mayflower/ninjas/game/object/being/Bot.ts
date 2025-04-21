@@ -30,6 +30,7 @@ export class Bot extends ninjas.Character
     /** Right walking target X. */
     private     readonly        walkingTargetRight      :number                     = 0;
     private     readonly        friendly                :boolean                    = false;
+    private     readonly        blocksPlayer            :boolean                    = false;
 
     /** ****************************************************************************************************************
     *   Creates a new enemy.
@@ -53,7 +54,8 @@ export class Bot extends ninjas.Character
         facing             :ninjas.CharacterFacing,
         spriteTemplate     :ninjas.SpriteTemplate,
         characterSpriteSet :ninjas.CharacterSpriteSet,
-        friendly           :boolean
+        friendly           :boolean,
+        blocksPlayer       :boolean
     )
     {
         super
@@ -81,11 +83,17 @@ export class Bot extends ninjas.Character
         }
 
         this.friendly = friendly;
+        this.blocksPlayer = blocksPlayer;
     }
 
     public isFriendly() : boolean
     {
         return this.friendly;
+    }
+
+    public isBlocking() : boolean
+    {
+        return this.blocksPlayer;
     }
 
     /** ****************************************************************************************************************
@@ -142,6 +150,7 @@ export class Bot extends ninjas.Character
 
         // disable body collisions
         this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY;
+        this.shape.body.isStatic = false;
 
         // bring body to foreground
         ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
@@ -243,7 +252,7 @@ export class Bot extends ninjas.Character
                     playerPunchBackDirection = ninjas.CharacterFacing.LEFT;
                 }
 
-                // punch back the player into the player's opposite direction!
+                // punch back the player into the players opposite direction!
                 ninjas.Main.game.level.player.receivePunchBack( playerPunchBackDirection );
 
                 // flag player as punched back

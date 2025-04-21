@@ -623,12 +623,11 @@ export abstract class GameObjectBundleFactory
         walkingTargetLeft  :number,
         walkingTargetRight :number,
         characterSpriteSet :ninjas.CharacterSpriteSet,
-        friendly           :boolean = false,
         blocksPlayer       :boolean = true
     )
     : void
     {
-        const enemy :ninjas.Bot = ninjas.GameObjectFactory.createEnemy
+        const enemy :ninjas.Bot = ninjas.GameObjectFactory.createBot
         (
             spriteTemplate,
             xLeft,
@@ -637,11 +636,53 @@ export abstract class GameObjectBundleFactory
             walkingTargetLeft,
             walkingTargetRight,
             characterSpriteSet,
-            friendly,
+            false,
             blocksPlayer
         );
 
         level.enemies.push( enemy );
+    }
+
+
+    /** ****************************************************************************************************************
+    *   Creates an enemy and adds it to the level stack.
+    *
+    *   @param level              The level to add the enemy to.
+    *   @param xLeft              Anchor X.
+    *   @param yBottom            Anchor bottom Y.
+    *   @param facingDirection    The enemies initial facing and walking direction.
+    *   @param walkingTargetLeft  Left walking target X.
+    *   @param walkingTargetRight Right walking target X.
+    *   @param characterSpriteSet The sprite set to use for this enemy.
+    *******************************************************************************************************************/
+    public static createFriend
+    (
+        spriteTemplate     :ninjas.SpriteTemplate,
+        level              :ninjas.Level,
+        xLeft              :number,
+        yBottom            :number,
+        facingDirection    :ninjas.CharacterFacing,
+        walkingTargetLeft  :number,
+        walkingTargetRight :number,
+        characterSpriteSet :ninjas.CharacterSpriteSet,
+        blocksPlayer       :boolean = true
+    )
+    : void
+    {
+        const friend :ninjas.Bot = ninjas.GameObjectFactory.createBot
+        (
+            spriteTemplate,
+            xLeft,
+            yBottom,
+            facingDirection,
+            walkingTargetLeft,
+            walkingTargetRight,
+            characterSpriteSet,
+            true,
+            blocksPlayer
+        );
+
+        level.enemies.push( friend );
     }
 
     /** ****************************************************************************************************************

@@ -395,7 +395,7 @@ export abstract class GameObjectFactory
     *
     *   @return The created enemy.
     *******************************************************************************************************************/
-    public static createEnemy
+    public static createBot
     (
         spriteTemplate     :ninjas.SpriteTemplate,
         x                  :number,
@@ -410,14 +410,11 @@ export abstract class GameObjectFactory
     : ninjas.Bot
     {
         const diamondShape = GameObjectFactory.createCharacterDiamondShape( spriteTemplate, ninjas.DebugColor.COLOR_DEBUG_ENEMY );
-        if (friendly)
-        {
+        if (blocksPlayer) {
+            diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_COLLIDING;
+        } else {
             diamondShape.body.isStatic = true;
-            if (blocksPlayer) {
-                diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_COLLIDING;
-            } else {
-                diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_BOT;
-            }
+            diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_BOT;
         }
 
         return new ninjas.Bot
@@ -430,7 +427,8 @@ export abstract class GameObjectFactory
             facingDirection,
             spriteTemplate,
             characterSpriteSet,
-            friendly
+            friendly,
+            blocksPlayer
         );
     }
 
