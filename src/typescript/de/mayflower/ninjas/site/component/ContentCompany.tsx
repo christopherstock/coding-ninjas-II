@@ -1,7 +1,5 @@
 import * as React  from 'react';
 import * as ninjas from '../../ninjas';
-import {SiteContentFactory} from "../SiteContentFactory";
-import {SiteContent} from "../SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'company' page.
@@ -12,20 +10,20 @@ export const ContentCompany :() => JSX.Element = () :JSX.Element =>
 
     return <div>
 
-        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_COMPANY ) }
-        { SiteContentFactory.createDivider() }
-        { SiteContentFactory.createHeadline( 'Our Company' ) }
-        { SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_COMPANY ) }
+        { ninjas.SiteContentFactory.createDivider() }
+        { ninjas.SiteContentFactory.createHeadline( 'Our Company' ) }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
         {
-            SiteContentFactory.createParagraph
+            ninjas.SiteContentFactory.createParagraph
             (
                 'We <span style=\'color: #ff6666;\'>&#x2764;</span> programming! '
                 + 'And particularly we love to create:'
             )
         }
-        { SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
         {
-            SiteContentFactory.createCarousel
+            ninjas.SiteContentFactory.createCarousel
             (
                 'fade',
                 true,
@@ -59,9 +57,9 @@ export const ContentCompany :() => JSX.Element = () :JSX.Element =>
                 ]
             )
         }
-        { SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
         {
-            SiteContentFactory.createParagraph
+            ninjas.SiteContentFactory.createParagraph
             (
                 'Read more about our services on the next site by finding the shrine directly '
                 + '<span style=\'color: #ff6666;\'>above</span> this one.'

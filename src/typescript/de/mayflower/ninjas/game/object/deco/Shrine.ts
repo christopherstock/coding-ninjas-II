@@ -1,5 +1,4 @@
 import * as ninjas from '../../../ninjas';
-import {SiteContent} from "../../../site/SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding shrine decoration.
@@ -7,7 +6,7 @@ import {SiteContent} from "../../../site/SiteContentSystem";
 export class Shrine extends ninjas.Decoration
 {
     /** The site content this shrine is connected to. */
-    public                      content                 :SiteContent                        = null;
+    public                      content                 :ninjas.SiteContent                 = null;
 
     /** The decoration of the open book for this shrine. */
     private     readonly        decoBookOpen            :ninjas.Decoration                  = null;
@@ -31,7 +30,7 @@ export class Shrine extends ninjas.Decoration
         spriteTemplate :ninjas.SpriteTemplate,
         x              :number,
         y              :number,
-        content        :SiteContent,
+        content        :ninjas.SiteContent,
         decoBookOpen   :ninjas.Decoration,
         decoBookClosed :ninjas.Decoration
     )

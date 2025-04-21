@@ -1,6 +1,5 @@
 import * as React  from 'react';
 import * as ninjas from '../../ninjas';
-import {SiteContentFactory} from "../SiteContentFactory";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'welcome' page.
@@ -11,25 +10,25 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
 
     return <div>
 
-        { /* SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_WELCOME ) */ }
+        { /* ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_WELCOME ) */ }
 
-        { /* SiteContentFactory.createDivider() */ }
+        { /* ninjas.SiteContentFactory.createDivider() */ }
 
         {
-            SiteContentFactory.createImageFullWidth(
+            ninjas.SiteContentFactory.createImageFullWidth(
                 ninjas.Main.game.engine.imageSystem.getImage(
                     ninjas.ImageData.IMAGE_SITE_PANEL_LOGO
                 ).src
             )
         }
 
-        { SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
 
         { /*
 
         <a target='_blank' title='Würzburg Web Week' href='https://wueww.de/'>
             {
-                SiteContentFactory.createImageFloating(
+                ninjas.SiteContentFactory.createImageFloating(
                     'right',
                     ninjas.Main.game.engine.imageSystem.getImage(
                         ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_WEBWEEK
@@ -41,7 +40,7 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
         */ }
 
         {
-            SiteContentFactory.createParagraph
+            ninjas.SiteContentFactory.createParagraph
             (
                 'Welcome to the Demo of '
                 + '<a target=\'_blank\' title=\'Coding Ninjas II\' '
@@ -49,12 +48,12 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
             )
         }
 
-        { SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
 
-        { /* SiteContentFactory.createDivider() */ }
+        { /* ninjas.SiteContentFactory.createDivider() */ }
 
         {
-            SiteContentFactory.createCarousel
+            ninjas.SiteContentFactory.createCarousel
             (
                 'scrollx',
                 true,
@@ -93,14 +92,14 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
 
         <a target='_blank' title='Coding Ninjas on GitHub'
             href='https://github.com/christopherstock/coding-ninjas'>
-            { SiteContentFactory.createAvatar( '', 'github' ) }
+            { ninjas.SiteContentFactory.createAvatar( '', 'github' ) }
         </a>
 
         */ }
 
         {
             /*
-            SiteContentFactory.createParagraph
+            ninjas.SiteContentFactory.createParagraph
             (
                 'Get the source on <a target=\'_blank\' title=\'Coding Ninjas on GitHub\' '
                 + 'href=\'https://github.com/christopherstock/coding-ninjas\'>GitHub</a>',
@@ -108,10 +107,10 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
             )
             */
         }
-        { /* SiteContentFactory.createDivider() */ }
+        { /* ninjas.SiteContentFactory.createDivider() */ }
         {
             /*
-            SiteContentFactory.createParagraph
+            ninjas.SiteContentFactory.createParagraph
             (
                 'Use the <span style=\'color: #b42157;\'>arrow keys</span> to move and jump around.<br>'
                 + 'Use the <span style=\'color: #b42157;\'>space bar</span> to open your parachute '
@@ -122,10 +121,10 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
             )
             */
         }
-        { /* SiteContentFactory.createDivider() */ }
+        { /* ninjas.SiteContentFactory.createDivider() */ }
         {
             /*
-            SiteContentFactory.createSwitch
+            ninjas.SiteContentFactory.createSwitch
             (
                 'notification',
                 'poweroff',
@@ -139,14 +138,14 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
             )
             */
         }
-        { /* SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
+        { /* ninjas.SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
 
-        { SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
 
-        { /* SiteContentFactory.createDivider()                                        */ }
-        { SiteContentFactory.createParagraph( 'Current progress of the project is:' ) }
-        { /* SiteContentFactory.createSpacerVertical() */ }
-        { SiteContentFactory.createProgress( 'line', 72.6 )        }
+        { /* ninjas.SiteContentFactory.createDivider()                                        */ }
+        { ninjas.SiteContentFactory.createParagraph( 'Current progress of the project is:' ) }
+        { /* ninjas.SiteContentFactory.createSpacerVertical() */ }
+        { ninjas.SiteContentFactory.createProgress( 'line', 72.6 )        }
 
     </div>;
 }

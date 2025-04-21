@@ -1,7 +1,5 @@
 import * as React  from 'react';
 import * as ninjas from '../../ninjas';
-import {SiteContentFactory} from "../SiteContentFactory";
-import {SiteContent} from "../SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'technology' page.
@@ -12,16 +10,16 @@ export const ContentTechnology :() => JSX.Element = () :JSX.Element =>
 
     return <div>
 
-        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_TECHNOLOGY ) }
-        { SiteContentFactory.createDivider() }
-        { SiteContentFactory.createHeadline( 'Primal Technologies' ) }
-        { SiteContentFactory.createSpacerVertical() }
-        { SiteContentFactory.createParagraph(
+        { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_TECHNOLOGY ) }
+        { ninjas.SiteContentFactory.createDivider() }
+        { ninjas.SiteContentFactory.createHeadline( 'Primal Technologies' ) }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createParagraph(
             'Read more about the technologies being used to realize this website:'
         ) }
-        { SiteContentFactory.createSpacerVertical() }
+        { ninjas.SiteContentFactory.createSpacerVertical() }
         {
-            SiteContentFactory.createAccordion
+            ninjas.SiteContentFactory.createAccordion
             (
                 [
                     'Node.js',
@@ -33,123 +31,123 @@ export const ContentTechnology :() => JSX.Element = () :JSX.Element =>
                 ],
                 [
                     <div>
-                        { SiteContentFactory.createImageFloating(
+                        { ninjas.SiteContentFactory.createImageFloating(
                             'right',
                             ninjas.Main.game.engine.imageSystem.getImage(
                                 ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_NODE_JS
                             ).src ) }
-                        { SiteContentFactory.createParagraph(
+                        { ninjas.SiteContentFactory.createParagraph(
                             'Node.js is an open-source, cross-platform JavaScript run-time environment for '
                             + 'executing JavaScript code server-side. Historically, JavaScript was used '
                             + 'primarily for client-side scripting, in which scripts written in JavaScript '
                             + 'are embedded in a webpage\'s HTML, to be run client-side by a JavaScript engine '
                             + 'in the user\'s web browser.'
                         ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'lime', 'transparent', 'yarn init -y' ) }
-                        { SiteContentFactory.createTag( 'lime', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'lime', 'transparent', 'yarn init -y' ) }
+                        { ninjas.SiteContentFactory.createTag( 'lime', 'transparent',
                             'Creates a new Node.js project with default settings' ) }
                     </div>,
                     <div>
-                        { SiteContentFactory.createImageFloating( 'right',
+                        { ninjas.SiteContentFactory.createImageFloating( 'right',
                             ninjas.Main.game.engine.imageSystem.getImage(
                                 ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_TYPE_SCRIPT ).src ) }
-                        { SiteContentFactory.createParagraph( 'TypeScript is an open-source programming '
+                        { ninjas.SiteContentFactory.createParagraph( 'TypeScript is an open-source programming '
                             + 'language developed and maintained by Microsoft. It is a strict syntactical '
                             + 'superset of JavaScript, and adds optional static typing to the language. '
                             + 'TypeScript is designed for development of large applications and compiles to '
                             + 'JavaScript. As TypeScript is a superset of JavaScript, existing JavaScript '
                             + 'programs are also valid TypeScript programs.' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'blue', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'blue', 'transparent',
                             'yarn add typescript --dev' ) }
-                        { SiteContentFactory.createTag( 'blue', 'transparent',
+                        { ninjas.SiteContentFactory.createTag( 'blue', 'transparent',
                             'Installs the TypeScript compiler as a dev dependency' ) }
                     </div>,
                     <div>
-                        { SiteContentFactory.createImageFloating(
+                        { ninjas.SiteContentFactory.createImageFloating(
                             'right',
                             ninjas.Main.game.engine.imageSystem.getImage(
                                 ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_WEBPACK
                             ).src ) }
-                        { SiteContentFactory.createParagraph( 'Webpack is an open-source JavaScript '
+                        { ninjas.SiteContentFactory.createParagraph( 'Webpack is an open-source JavaScript '
                             + 'module bundler. Webpack takes modules with dependencies and generates static '
                             + 'assets representing those modules. It takes the dependencies and generates a '
                             + 'dependency graph allowing web developers to use a modular approach for their '
                             + 'web application development purposes. The bundler can be used from the command '
                             + 'line, or can be configured using a config file.' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'cyan', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'cyan', 'transparent',
                             'yarn add webpack --dev' ) }
-                        { SiteContentFactory.createTag( 'cyan', 'transparent',
+                        { ninjas.SiteContentFactory.createTag( 'cyan', 'transparent',
                             'Installs the webpack module bundler' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'cyan', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'cyan', 'transparent',
                             'yarn add @types/webpack --dev' ) }
-                        { SiteContentFactory.createTag( 'cyan', 'transparent',
+                        { ninjas.SiteContentFactory.createTag( 'cyan', 'transparent',
                             'Installs the TypeScript definitions for webpack' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'cyan', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'cyan', 'transparent',
                             'yarn add awesome-typescript-loader --dev' ) }
-                        { SiteContentFactory.createTag( 'cyan', 'transparent',
+                        { ninjas.SiteContentFactory.createTag( 'cyan', 'transparent',
                             'Installs the TS loader for webpack' ) }
                     </div>,
                     <div>
-                        { SiteContentFactory.createImageFloating(
+                        { ninjas.SiteContentFactory.createImageFloating(
                             'right',
                             ninjas.Main.game.engine.imageSystem.getImage(
                                 ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_MATTER_JS ).src ) }
-                        { SiteContentFactory.createParagraph( 'Matter.js is a JavaScript 2D rigid body '
+                        { ninjas.SiteContentFactory.createParagraph( 'Matter.js is a JavaScript 2D rigid body '
                             + 'physics engine for the web. It features rigid bodies, compound bodies, '
                             + 'composite bodies, concave and convex hulls, physical properties (mass, area, '
                             + 'density etc.), restitution (elastic and inelastic collisions), collisions '
                             + '(broad-phase, mid-phase and narrow-phase) and many more.' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'gold', 'transparent', 'yarn add matter-js'  ) }
-                        { SiteContentFactory.createTag( 'gold', 'transparent', 'Installs the Matter.js '
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'gold', 'transparent', 'yarn add matter-js'  ) }
+                        { ninjas.SiteContentFactory.createTag( 'gold', 'transparent', 'Installs the Matter.js '
                             + '2D physics library' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'gold', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'gold', 'transparent',
                             'yarn add @types/matter-js --dev'  ) }
-                        { SiteContentFactory.createTag( 'gold', 'transparent',
+                        { ninjas.SiteContentFactory.createTag( 'gold', 'transparent',
                             'Installs the TypeScript definitions for Matter.js'  ) }
                     </div>,
                     <div>
-                        { SiteContentFactory.createImageFloating(
+                        { ninjas.SiteContentFactory.createImageFloating(
                             'right',
                             ninjas.Main.game.engine.imageSystem.getImage(
                                 ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_REACT ).src ) }
-                        { SiteContentFactory.createParagraph( 'React is a JavaScript library for '
+                        { ninjas.SiteContentFactory.createParagraph( 'React is a JavaScript library for '
                             + 'building user interfaces. React allows developers to create large '
                             + 'web-applications that use data and can change over time without reloading the '
                             + 'page. It aims primarily to provide speed, simplicity, and scalability. '
                             + 'React processes only user interfaces in applications. This corresponds to '
                             + 'View in the Model-View-Controller (MVC) pattern, and can be used in combination '
                             + 'with other JavaScript libraries or frameworks in MVC, such as AngularJS.' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'volcano', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'volcano', 'transparent',
                             'yarn add react' ) }
-                        { SiteContentFactory.createTag( 'volcano', 'transparent',
+                        { ninjas.SiteContentFactory.createTag( 'volcano', 'transparent',
                             'Installs the React library' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'volcano', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'volcano', 'transparent',
                             'yarn add @types/react --dev' ) }
-                        { SiteContentFactory.createTag( 'volcano', 'transparent',
+                        { ninjas.SiteContentFactory.createTag( 'volcano', 'transparent',
                             'Installs the TypeScript definitions for React' ) }
                     </div>,
                     <div>
-                        { SiteContentFactory.createImageFloating(
+                        { ninjas.SiteContentFactory.createImageFloating(
                             'right',
                             ninjas.Main.game.engine.imageSystem.getImage(
                                 ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_ANT_DESIGN ).src ) }
-                        { SiteContentFactory.createParagraph( 'An enterprise-class UI design language '
+                        { ninjas.SiteContentFactory.createParagraph( 'An enterprise-class UI design language '
                             + 'and React-based implementation for desktop applications offering a set of '
                             + 'high-quality React components out of the box. Written in TypeScript with '
                             + 'predictable static types, this library allows working with great development '
                             + 'and design resources and tools.' ) }
-                        { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createTag( 'magenta', 'transparent', 'yarn add antd'  ) }
-                        { SiteContentFactory.createTag( 'magenta', 'transparent',
+                        { ninjas.SiteContentFactory.createSpacerVertical() }
+                        { ninjas.SiteContentFactory.createTag( 'magenta', 'transparent', 'yarn add antd'  ) }
+                        { ninjas.SiteContentFactory.createTag( 'magenta', 'transparent',
                             'Installs the Ant Design library'  ) }
                     </div>,
                 ]

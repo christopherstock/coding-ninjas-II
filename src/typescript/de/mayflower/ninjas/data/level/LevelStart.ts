@@ -2,7 +2,6 @@
 
 import * as matter from 'matter-js';
 import * as ninjas from '../../ninjas';
-import {SiteContent} from "../../site/SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -83,7 +82,7 @@ export class LevelStart extends ninjas.Level
         ninjas.GameObjectBundleFactory.createSolidGround( this, 2400, 2000, 5,  5, ninjas.Slope.NONE, ninjas.CapHorz.BOTH, ninjas.GroundData.TILESET_SNOW );
 
         // site trigger
-        ninjas.GameObjectFactory.createSiteTrigger( this, 2000, 2000, 800, 550, SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.LEFT, null );
+        ninjas.GameObjectFactory.createSiteTrigger( this, 2000, 2000, 800, 550, ninjas.SiteContent.CONTENT_WELCOME, ninjas.SitePanelAppearance.LEFT, null );
 
         // status with bush
         ninjas.GameObjectBundleFactory.createDecoImage( this, 2780, 2000, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_STATUE_3 );

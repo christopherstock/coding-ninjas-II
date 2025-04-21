@@ -6,7 +6,6 @@ import { CarouselEffect                 } from 'antd/lib/carousel';
 import { RadioChangeEvent               } from 'antd/es/radio';
 import { ProgressType                   } from 'antd/es/progress/progress';
 import * as ninjas                        from '../ninjas';
-import {SiteContent} from "./SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   Creates content components for the factory.
@@ -20,7 +19,7 @@ export class SiteContentFactory
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createStepIndicator( content:SiteContent ) : JSX.Element
+    public static createStepIndicator( content:ninjas.SiteContent ) : JSX.Element
     {
         const index :number = 2;
 

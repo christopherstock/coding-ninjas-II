@@ -1,6 +1,5 @@
 import * as matter from 'matter-js';
 import * as ninjas from '../../../ninjas';
-import {SiteContent} from "../../../site/SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   Specifies possible appearances for the site panel.
@@ -18,7 +17,7 @@ export enum SitePanelAppearance
 export class SiteTrigger extends ninjas.Decoration
 {
     /** The site content to show when this trigger is released. */
-    private     readonly            content                         :SiteContent             = null;
+    private     readonly            content                         :ninjas.SiteContent             = null;
     /** A fixed position for the panel to popup, if desired. */
     private     readonly            sitePanelAppearance             :ninjas.SitePanelAppearance     = null;
 
@@ -41,7 +40,7 @@ export class SiteTrigger extends ninjas.Decoration
         spriteTemplate      :ninjas.SpriteTemplate,
         x                   :number,
         y                   :number,
-        content             :SiteContent,
+        content             :ninjas.SiteContent,
         sitePanelAppearance :ninjas.SitePanelAppearance
     )
     {

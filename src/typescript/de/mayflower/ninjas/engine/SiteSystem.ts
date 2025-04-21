@@ -1,5 +1,4 @@
 import * as ninjas from '../ninjas';
-import {SiteContent, SiteContentSystem} from "../site/SiteContentSystem";
 const wow :any = require( 'wowjs' );
 
 /** ********************************************************************************************************************
@@ -23,7 +22,7 @@ export enum SitePanelAnimation
 export class SiteSystem
 {
     /** The content system. */
-    private     readonly    contentSystem               :SiteContentSystem       = null;
+    private     readonly    contentSystem               :ninjas.SiteContentSystem       = null;
     /** The active site panel. */
     private     readonly    sitePanel                   :ninjas.SitePanel               = null;
 
@@ -53,7 +52,7 @@ export class SiteSystem
     *******************************************************************************************************************/
     public constructor()
     {
-        this.contentSystem = new SiteContentSystem();
+        this.contentSystem = new ninjas.SiteContentSystem();
         this.contentSystem.initAllContents();
 
         this.sitePanel     = new ninjas.SitePanel();
@@ -70,7 +69,7 @@ export class SiteSystem
     *
     *   @return If showing the site succeeded.
     *******************************************************************************************************************/
-    public show( content:SiteContent, position:ninjas.SitePanelPosition ) : boolean
+    public show( content:ninjas.SiteContent, position:ninjas.SitePanelPosition ) : boolean
     {
         // only show if hidden
         if ( this.animationState !== ninjas.SitePanelAnimation.HIDDEN )

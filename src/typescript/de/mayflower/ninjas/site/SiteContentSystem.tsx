@@ -27,7 +27,7 @@ export enum SiteContent
 export class SiteContentSystem
 {
     /** All already discovered contents. */
-    public                  discoveredContents          :SiteContent[]           = [];
+    public                  discoveredContents          :ninjas.SiteContent[]           = [];
 
     /** The site content for the 'welcome' page. */
     private                 contentWelcome              :JSX.Element                    = null;
