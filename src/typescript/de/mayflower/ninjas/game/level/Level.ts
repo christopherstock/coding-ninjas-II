@@ -8,47 +8,27 @@ export abstract class Level
     public static readonly LEVEL_START = 0;
     public static readonly LEVEL_HUT = 1;
 
-    /** Player start position X. */
     public      playerStartX            :number                         = 0.0;
-    /** Player start position Y. */
     public      playerStartY            :number                         = 0.0;
-    /** Player initial parachute state. */
     public      playerInitialFloat      :boolean                        = false;
-    /** Player initial facing. */
     public      playerInitialFacing     :ninjas.CharacterFacing         = ninjas.CharacterFacing.RIGHT;
 
-    /** The width of this level. */
     public      width                   :number                         = 0.0;
-    /** The height of this level. */
     public      height                  :number                         = 0.0;
 
-    /** The player instance. */
     public      player                  :ninjas.Player                  = null;
-    /** All enemies. */
     public      enemies                 :ninjas.Bot[]                   = [];
-    /** All obstacles. */
     public      obstacles               :ninjas.Obstacle[]              = [];
-    /** All movables. */
     public      movables                :ninjas.Movable[]               = [];
-    /** All decos in bg. */
     public      decosBg                 :ninjas.Decoration[]            = [];
-    /** All decos in fg. */
     public      decosFg                 :ninjas.Decoration[]            = [];
-    /** All site triggers. */
     public      siteTriggers            :ninjas.SiteTrigger[]           = [];
-    /** All sigsaws. */
     public      sigsaws                 :ninjas.SigSaw[]                = [];
-    /** All bounces. */
     public      bounces                 :ninjas.Bounce[]                = [];
-    /** All platforms. */
     public      platforms               :ninjas.Platform[]              = [];
-    /** All parallax bgs. */
     public      parallaxBgs             :ninjas.ParallaxDeco[]          = [];
-    /** All parallax fgs. */
     public      parallaxFgs             :ninjas.ParallaxDeco[]          = [];
-    /** All shrines. TODO prune? */
     public      shrines                 :ninjas.Shrine[]                = [];
-    /** All shrines. TODO prune? */
     public      doors                   :ninjas.Door[]                = [];
 
     /** ****************************************************************************************************************

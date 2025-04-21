@@ -8,18 +8,12 @@ import * as ninjas from '../../ninjas';
 ***********************************************************************************************************************/
 export class LevelHut extends ninjas.Level
 {
-    /** Player start position X. */
     public  playerStartX            :number                             = 1400;
-    /** Player start position Y. */
     public  playerStartY            :number                             = 1400;
-    /** Player initial parachute state. */
     public  playerInitialFloat      :boolean                            = false;
-    /** Player initial facing. */
     public  playerInitialFacing     :ninjas.CharacterFacing             = ninjas.CharacterFacing.RIGHT;
 
-    /** The width of this level. */
     public  width                   :number                             = 2500;
-    /** The height of this level. */
     public  height                  :number                             = 2500;
 
     /** ****************************************************************************************************************
