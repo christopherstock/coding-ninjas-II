@@ -1,5 +1,6 @@
 import * as matter from 'matter-js';
 import * as ninjas from '../../ninjas';
+import {SiteContent} from "../../site/SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   Creates customized instances of game objects.
@@ -594,7 +595,7 @@ export abstract class GameObjectFactory
         yBottom             :number,
         width               :number,
         height              :number,
-        content             :ninjas.SiteContent,
+        content             :SiteContent,
         sitePanelAppearance :ninjas.SitePanelAppearance,
         spriteTemplate      :ninjas.SpriteTemplate
     )

@@ -1,4 +1,5 @@
 import * as ninjas from '../../ninjas';
+import {SiteContent} from "../../site/SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   Represents the current level.
@@ -181,7 +182,7 @@ export abstract class Level
     *   @param content The site content of the shrine to toggle the book.
     *   @param open    Specifies if the book shall be opened.
     *******************************************************************************************************************/
-    public setShrineBookOpen( content:ninjas.SiteContent, open:boolean ) : void
+    public setShrineBookOpen( content:SiteContent, open:boolean ) : void
     {
         for ( const gameObject of this.shrines )
         {

@@ -1,5 +1,7 @@
 import * as React  from 'react';
 import * as ninjas from '../../ninjas';
+import {SiteContentFactory} from "../SiteContentFactory";
+import {SiteContent} from "../SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'contact' page.
@@ -10,10 +12,10 @@ export const ContentContact :() => JSX.Element = () :JSX.Element =>
 
     return <div>
 
-        { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_CONTACT ) }
-        { ninjas.SiteContentFactory.createDivider() }
-        { ninjas.SiteContentFactory.createHeadline( 'Contact Us!' ) }
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_CONTACT ) }
+        { SiteContentFactory.createDivider() }
+        { SiteContentFactory.createHeadline( 'Contact Us!' ) }
+        { SiteContentFactory.createSpacerVertical() }
 
         <div className='card-flip-container'>
             <div className='card-flipper'>
@@ -40,7 +42,7 @@ export const ContentContact :() => JSX.Element = () :JSX.Element =>
             </div>
         </div>
 
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
 
         <div className='card-flip-container'>
             <div className='card-flipper'>
@@ -67,7 +69,7 @@ export const ContentContact :() => JSX.Element = () :JSX.Element =>
             </div>
         </div>
 
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
 
         <div className='card-flip-container'>
             <div className='card-flipper'>

@@ -1,5 +1,7 @@
 import * as React  from 'react';
 import * as ninjas from '../../ninjas';
+import {SiteContentFactory} from "../SiteContentFactory";
+import {SiteContent} from "../SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'services' page.
@@ -10,32 +12,32 @@ export const ContentServices :() => JSX.Element = () :JSX.Element =>
 
     return <div>
 
-        { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_SERVICES ) }
-        { ninjas.SiteContentFactory.createDivider() }
-        { ninjas.SiteContentFactory.createHeadline( 'Our Services' ) }
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_SERVICES ) }
+        { SiteContentFactory.createDivider() }
+        { SiteContentFactory.createHeadline( 'Our Services' ) }
+        { SiteContentFactory.createSpacerVertical() }
         {
-            ninjas.SiteContentFactory.createParagraph
+            SiteContentFactory.createParagraph
             (
                 'We offer our services for the following platforms. Please click on one of the tabs to read '
                 + 'more about our skills and experiences:'
             )
         }
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
         {
-            ninjas.SiteContentFactory.createTabbedPane
+            SiteContentFactory.createTabbedPane
             (
                 0,
                 [
-                    <span>{ ninjas.SiteContentFactory.createIcon( 'desktop' ) } Enterprise</span>,
-                    <span>{ ninjas.SiteContentFactory.createIcon( 'cloud'   ) } Web</span>,
-                    <span>{ ninjas.SiteContentFactory.createIcon( 'mobile'  ) } Mobile</span>,
+                    <span>{ SiteContentFactory.createIcon( 'desktop' ) } Enterprise</span>,
+                    <span>{ SiteContentFactory.createIcon( 'cloud'   ) } Web</span>,
+                    <span>{ SiteContentFactory.createIcon( 'mobile'  ) } Mobile</span>,
                 ],
                 [
                     <div>
                         <h3>Desktop &amp; Enterprise</h3>
                         {
-                            ninjas.SiteContentFactory.createParagraph
+                            SiteContentFactory.createParagraph
                             (
                                 'Originally started as a purely Java development company over 16 years ago, '
                                 + 'today \'Coding Ninjas\' maintains the traditions of desktop software '
@@ -48,10 +50,10 @@ export const ContentServices :() => JSX.Element = () :JSX.Element =>
                                 + 'complementary software to gain customer loyalty and outdo competitors.'
                             )
                         }
-                        { ninjas.SiteContentFactory.createSpacerVertical() }
-                        { ninjas.SiteContentFactory.createBadge( 'JAVA', 'white', '#ff3568' ) }
+                        { SiteContentFactory.createSpacerVertical() }
+                        { SiteContentFactory.createBadge( 'JAVA', 'white', '#ff3568' ) }
                         {
-                            ninjas.SiteContentFactory.createParagraph
+                            SiteContentFactory.createParagraph
                             (
                                 '&bull; Java Micro Edition (J2ME)<br>'
                                 + '&bull; Java Desktop applications (J2SE)<br>'
@@ -63,7 +65,7 @@ export const ContentServices :() => JSX.Element = () :JSX.Element =>
                     <div>
                         <h3>Web Development</h3>
                         {
-                            ninjas.SiteContentFactory.createParagraph
+                            SiteContentFactory.createParagraph
                             (
                                 'Our dedicated web development experts team bring in over 16 years of '
                                 + 'domain experience. Over 200 web applications delivered by \'Coding Ninjas\' '
@@ -75,10 +77,10 @@ export const ContentServices :() => JSX.Element = () :JSX.Element =>
                                 + 'staying within time and budget limits.'
                             )
                         }
-                        { ninjas.SiteContentFactory.createSpacerVertical() }
-                        { ninjas.SiteContentFactory.createBadge( 'TypeScript & PHP', 'white', '#6799ff' ) }
+                        { SiteContentFactory.createSpacerVertical() }
+                        { SiteContentFactory.createBadge( 'TypeScript & PHP', 'white', '#6799ff' ) }
                         {
-                            ninjas.SiteContentFactory.createParagraph
+                            SiteContentFactory.createParagraph
                             (
                                 '&bull; React, Ant Design, Node.js<br>'
                                 + '&bull; Custom JavaScript &amp; PHP Applications<br>'
@@ -91,7 +93,7 @@ export const ContentServices :() => JSX.Element = () :JSX.Element =>
                     <div>
                         <h3>Mobile Apps</h3>
                         {
-                            ninjas.SiteContentFactory.createParagraph
+                            SiteContentFactory.createParagraph
                             (
                                 'Over the past decade, \'Coding Ninjas\' has successfully carried out over 75 '
                                 + 'mobile projects, providing consulting and mobile app development '
@@ -100,10 +102,10 @@ export const ContentServices :() => JSX.Element = () :JSX.Element =>
                                 + 'platforms at once.<br>'
                             )
                         }
-                        { ninjas.SiteContentFactory.createSpacerVertical() }
-                        { ninjas.SiteContentFactory.createBadge( 'MOBILE', 'white', '#50d882' ) }
+                        { SiteContentFactory.createSpacerVertical() }
+                        { SiteContentFactory.createBadge( 'MOBILE', 'white', '#50d882' ) }
                         {
-                            ninjas.SiteContentFactory.createParagraph
+                            SiteContentFactory.createParagraph
                             (
                                 'We offer native mobile development for:<br>'
                                 + '&bull; iOS<br>'

@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 
 import * as ninjas from '../../ninjas';
+import {SiteContent} from "../../site/SiteContentSystem";
 
 /** ********************************************************************************************************************
 *   Specifies vertical direction.
@@ -739,7 +740,7 @@ export abstract class GameObjectBundleFactory
         yBottom     :number,
         candleLeft  :boolean,
         candleRight :boolean,
-        content     :ninjas.SiteContent
+        content     :SiteContent
     )
     : void
     {

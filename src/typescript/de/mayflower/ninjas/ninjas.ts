@@ -74,6 +74,3 @@ export * from './site/component/ContentTechnology';
 export * from './site/component/ContentTimeline';
 export * from './site/component/ContentServices';
 export * from './site/component/ContentWelcome';
-
-export * from './site/SiteContentSystem';
-export * from './site/SiteContentFactory';

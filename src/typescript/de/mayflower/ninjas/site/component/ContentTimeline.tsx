@@ -1,5 +1,7 @@
 import * as React  from 'react';
 import * as ninjas from '../../ninjas';
+import {SiteContent} from "../SiteContentSystem";
+import {SiteContentFactory} from "../SiteContentFactory";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'timeline' page.
@@ -10,14 +12,14 @@ export const ContentTimeline :() => JSX.Element = () :JSX.Element =>
 
     return <div>
 
-        { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_TIMELINE ) }
-        { ninjas.SiteContentFactory.createDivider() }
-        { ninjas.SiteContentFactory.createHeadline( 'Project Timeline' ) }
-        { ninjas.SiteContentFactory.createSpacerVertical() }
-        { ninjas.SiteContentFactory.createParagraph( 'See the project\'s evolution timeline:' ) }
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_TIMELINE ) }
+        { SiteContentFactory.createDivider() }
+        { SiteContentFactory.createHeadline( 'Project Timeline' ) }
+        { SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createParagraph( 'See the project\'s evolution timeline:' ) }
+        { SiteContentFactory.createSpacerVertical() }
         {
-            ninjas.SiteContentFactory.createTimeline
+            SiteContentFactory.createTimeline
             (
                 [
                     '#1890ff',
