@@ -6,6 +6,8 @@ import * as ninjas from '../../../ninjas';
 ***********************************************************************************************************************/
 export class Door extends ninjas.Decoration
 {
+    private action: ninjas.GameAction = null;
+
     /** ****************************************************************************************************************
     *   Creates a new Door.
     *
@@ -21,7 +23,8 @@ export class Door extends ninjas.Decoration
         shape               :ninjas.Shape,
         spriteTemplate      :ninjas.SpriteTemplate,
         x                   :number,
-        y                   :number
+        y                   :number,
+        action              :ninjas.GameAction
     )
     {
         super
@@ -31,6 +34,8 @@ export class Door extends ninjas.Decoration
             x,
             y
         );
+
+        this.action = action;
     }
 
     /** ****************************************************************************************************************
@@ -44,10 +49,16 @@ export class Door extends ninjas.Decoration
     /** ****************************************************************************************************************
     *   Renders this site trigger.
     *******************************************************************************************************************/
-    public checkPlayerCollision() : boolean
+    public checkPlayerInteraction() : boolean
     {
-        return (
-            matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds )
-        );
+        const doorActivated: boolean = matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds );
+
+        if (doorActivated) {
+            ninjas.Debug.init.log( 'Resetting and switching to level 2' );
+            console.log('door opens ..');
+            ninjas.Main.game.resetAndLaunchLevel( this.action.data.targetLevel );
+        }
+
+        return doorActivated;
     }
 }

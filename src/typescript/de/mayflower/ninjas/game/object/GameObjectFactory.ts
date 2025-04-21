@@ -625,7 +625,8 @@ export abstract class GameObjectFactory
         level               :ninjas.Level,
         x                   :number,
         yBottom             :number,
-        imageId             :string
+        imageId             :string,
+        action              :ninjas.GameAction
     )
     : void
     {
@@ -646,7 +647,8 @@ export abstract class GameObjectFactory
             ),
             spriteTemplate,
             x,
-            yBottom - spriteTemplate.height
+            yBottom - spriteTemplate.height,
+            action
         );
 
         level.doors.push( door );

@@ -34,6 +34,7 @@ export * from './game/Game';
 
 export * from './game/level/Level';
 
+export * from './game/object/GameAction';
 export * from './game/object/GameObject';
 export * from './game/object/GameObjectBundleFactory';
 export * from './game/object/GameObjectFactory';

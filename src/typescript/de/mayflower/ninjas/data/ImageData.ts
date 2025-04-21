@@ -130,8 +130,8 @@ export class ImageData
     public      static      IMAGE_DOJO                                      :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'dojo.jpg';
 
     public      static      IMAGE_DOOR_1                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
-    public      static      IMAGE_DOOR_2                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
-    public      static      IMAGE_DOOR_3                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
+    public      static      IMAGE_DOOR_2                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door2.png';
+    public      static      IMAGE_DOOR_3                                    :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door3.png';
 
     /** Image resource 'grass 1 frame 1'. */
     public      static      IMAGE_GRASS_1_FRAME_1                           :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/01.png';
@@ -284,6 +284,7 @@ export class ImageData
 
     public      static      IMAGE_BG_JAPAN                                  :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
     public      static      IMAGE_BG_MOUNT_FUJI                             :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
+    public      static      IMAGE_BG_TOWN_1                                 :string         = ninjas.SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown1.png';
 
     /** Site image 'logo'. */
     public      static      IMAGE_SITE_PANEL_LOGO                           :string         = ninjas.SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
@@ -454,6 +455,8 @@ export class ImageData
 
         ImageData.IMAGE_DOJO,
         ImageData.IMAGE_DOOR_1,
+        ImageData.IMAGE_DOOR_2,
+        ImageData.IMAGE_DOOR_3,
 
         ImageData.IMAGE_GRASS_1_FRAME_1,
         ImageData.IMAGE_GRASS_1_FRAME_2,
@@ -534,6 +537,7 @@ export class ImageData
 
         ImageData.IMAGE_BG_JAPAN,
         ImageData.IMAGE_BG_MOUNT_FUJI,
+        ImageData.IMAGE_BG_TOWN_1,
 
         ImageData.IMAGE_SITE_PANEL_LOGO,
         ImageData.IMAGE_SITE_PANEL_BG_LEFT,

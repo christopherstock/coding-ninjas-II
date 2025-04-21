@@ -5,6 +5,9 @@ import * as ninjas from '../../ninjas';
 ***********************************************************************************************************************/
 export abstract class Level
 {
+    public static readonly LEVEL_START = 0;
+    public static readonly LEVEL_HUT = 1;
+
     /** Player start position X. */
     public      playerStartX            :number                         = 0.0;
     /** Player start position Y. */

@@ -240,20 +240,17 @@ export class Camera
         }
 
         // buffer camera on ascending, if allowed
-        if ( allowAscendY && this.targetY < this.offsetY )
+        if ( (allowAscendY) && this.targetY < this.offsetY )
         {
-            if ( this.offsetY > this.targetY )
+            let cameraMoveY:number = ( this.offsetY - this.targetY ) * this.movingSpeedY;
+            if ( cameraMoveY < this.minimumCameraMove )
             {
-                let cameraMoveY:number = ( this.offsetY - this.targetY ) * this.movingSpeedY;
-                if ( cameraMoveY < this.minimumCameraMove )
-                {
-                    cameraMoveY = this.minimumCameraMove;
-                }
-                this.offsetY -= cameraMoveY;
-                if ( this.offsetY < this.targetY )
-                {
-                    this.offsetY = this.targetY;
-                }
+                cameraMoveY = this.minimumCameraMove;
+            }
+            this.offsetY -= cameraMoveY;
+            if ( this.offsetY < this.targetY )
+            {
+                this.offsetY = this.targetY;
             }
         }
 
@@ -261,14 +258,6 @@ export class Camera
         if ( this.targetY > this.offsetY )
         {
             this.offsetY = this.targetY;
-
-            /*
-            // buffer camera on descending
-            cameraMoveY = ( this.targetY - this.offsetY ) * this.movingSpeed;
-            if ( cameraMoveY < this.minimumCameraMove ) cameraMoveY = this.minimumCameraMove;
-            this.offsetY += cameraMoveY;
-            if ( this.offsetY > this.targetY ) this.offsetY = this.targetY;
-            */
         }
 
         // floor offsets (important for renderer bounds! fuzzy drawing problems on images may appear otherwise!)
