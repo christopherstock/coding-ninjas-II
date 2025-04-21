@@ -55,7 +55,11 @@ export class Door extends ninjas.Decoration
 
         if (doorActivated) {
             ninjas.Debug.init.log( 'Resetting and switching to level 2' );
+
             console.log('door opens ..');
+            this.action.data.targetLevel.playerStartX = this.action.data.playerStartX;
+            this.action.data.targetLevel.playerInitialFacing = ninjas.Main.game.level.player.facing;
+
             ninjas.Main.game.resetAndLaunchLevel( this.action.data.targetLevel );
         }
 

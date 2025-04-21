@@ -49,7 +49,7 @@ export class LevelHut extends ninjas.Level
         // ninjas.GameObjectBundleFactory.createSolidGround( this, 2000, 300, 10,  9, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
 
         // door
-        ninjas.GameObjectFactory.createDoor( this, 1000, 1400, ninjas.ImageData.IMAGE_DOOR_2, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: new ninjas.LevelStart() } ) );
+        ninjas.GameObjectFactory.createDoor( this, 1000, 1400, ninjas.ImageData.IMAGE_DOOR_2, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: new ninjas.LevelStart(), playerStartX: 2320 } ) );
 
         // statue
         // ninjas.GameObjectBundleFactory.createObstacle(this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
