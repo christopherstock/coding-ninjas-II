@@ -424,11 +424,11 @@ export abstract class GameObjectFactory
         (
             diamondShape,
             x,
-            yBottom - diamondSprite.height,
+            yBottom - spriteTemplate.height,
             walkingTargetLeft,
             walkingTargetRight,
             facingDirection,
-            diamondSprite,
+            spriteTemplate,
             characterSpriteSet,
             friendly
         );

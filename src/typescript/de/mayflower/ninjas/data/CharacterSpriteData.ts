@@ -42,4 +42,22 @@ export class CharacterSpriteData
         ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
         ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_RIGHT
     );
+
+    /** The character sprite set for the 'Red Ninja Girl'. */
+    public  static  CHARACTER_SPRITE_SET_RED_NINJA_GIRL     :ninjas.CharacterSpriteSet  = new ninjas.CharacterSpriteSet(
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
+        ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_LEFT,
+        ninjas.SpriteTemplateData.SPRITE_NINJA_GIRL_ATTACK_RIGHT
+    );
 }

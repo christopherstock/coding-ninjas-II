@@ -69,9 +69,6 @@ export class Engine
     *******************************************************************************************************************/
     public initImageSystem() : void
     {
-    console.log('FileNames 1:', ninjas.ImageData.FILE_NAMES);
-    console.log('FileNames 2:', ninjas.ImageData);
-
         ninjas.Debug.init.log( 'Initing image system' );
         this.imageSystem = new ninjas.ImageSystem
         (

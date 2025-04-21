@@ -536,6 +536,8 @@ export class SpriteTemplateData
         SpriteTemplateData.SPRITE_ENEMY_NINJA_1_WALK_RIGHT,
         SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_LEFT,
         SpriteTemplateData.SPRITE_ENEMY_NINJA_1_DIE_RIGHT,
+        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
         SpriteTemplateData.SPRITE_WATER_TOP,
         SpriteTemplateData.SPRITE_GRASS_1,
         SpriteTemplateData.SPRITE_FLAME_1_BIG,
