@@ -621,7 +621,8 @@ export abstract class GameObjectBundleFactory
         facingDirection    :ninjas.CharacterFacing,
         walkingTargetLeft  :number,
         walkingTargetRight :number,
-        characterSpriteSet :ninjas.CharacterSpriteSet
+        characterSpriteSet :ninjas.CharacterSpriteSet,
+        friendly           :boolean = false
     )
     : void
     {
@@ -632,7 +633,8 @@ export abstract class GameObjectBundleFactory
             facingDirection,
             walkingTargetLeft,
             walkingTargetRight,
-            characterSpriteSet
+            characterSpriteSet,
+            friendly
         );
 
         level.enemies.push( enemy );

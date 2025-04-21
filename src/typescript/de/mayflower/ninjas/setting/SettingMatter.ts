@@ -60,6 +60,14 @@ export class SettingMatter
         mask:     0x0016,
         group:    0x0016,
     };
+
+    /** The collision group for all pass-through obstacles. */
+    public  static  readonly    COLLISION_GROUP_NON_COLLIDING_BOT            :matter.ICollisionFilter    =
+    {
+        category: 0x0032,
+        mask:     0x0032,
+        group:    0x0032,
+    };
 }
 
 /** ****************************************************************************************************************

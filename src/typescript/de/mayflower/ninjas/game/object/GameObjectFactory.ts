@@ -402,22 +402,26 @@ export abstract class GameObjectFactory
         facingDirection    :ninjas.CharacterFacing,
         walkingTargetLeft  :number,
         walkingTargetRight :number,
-        characterSpriteSet :ninjas.CharacterSpriteSet
+        characterSpriteSet :ninjas.CharacterSpriteSet,
+        friendly           :boolean
     )
     : ninjas.Bot
     {
         const diamondSprite:ninjas.SpriteTemplate = ninjas.SpriteTemplateData.SPRITE_ENEMY_NINJA_1_STAND_LEFT;
 
+        const diamondShape = GameObjectFactory.createCharacterDiamondShape( diamondSprite, ninjas.DebugColor.COLOR_DEBUG_ENEMY );
+
         return new ninjas.Bot
         (
-            GameObjectFactory.createCharacterDiamondShape( diamondSprite, ninjas.DebugColor.COLOR_DEBUG_ENEMY ),
+            diamondShape,
             x,
             yBottom - diamondSprite.height,
             walkingTargetLeft,
             walkingTargetRight,
             facingDirection,
             diamondSprite,
-            characterSpriteSet
+            characterSpriteSet,
+            friendly
         );
     }
 

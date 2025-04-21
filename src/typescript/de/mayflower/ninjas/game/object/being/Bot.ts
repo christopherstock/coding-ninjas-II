@@ -29,6 +29,7 @@ export class Bot extends ninjas.Character
     private     readonly        walkingTargetLeft       :number                     = 0;
     /** Right walking target X. */
     private     readonly        walkingTargetRight      :number                     = 0;
+    private     readonly        friendly                :boolean                    = false;
 
     /** ****************************************************************************************************************
     *   Creates a new enemy.
@@ -51,7 +52,8 @@ export class Bot extends ninjas.Character
         walkingTargetRight :number,
         facing             :ninjas.CharacterFacing,
         spriteTemplate     :ninjas.SpriteTemplate,
-        characterSpriteSet :ninjas.CharacterSpriteSet
+        characterSpriteSet :ninjas.CharacterSpriteSet,
+        friendly           :boolean
     )
     {
         super
@@ -76,6 +78,17 @@ export class Bot extends ninjas.Character
         else
         {
             this.currentPhase = EnemyMovementPhase.WALKING_RIGHT;
+        }
+
+        // disable body collisions on friendly bots
+
+        // TODO wrap to GameObjectFactory.createEnemy
+
+        this.friendly = friendly;
+        if (this.friendly)
+        {
+            this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_BOT;
+            this.shape.body.isStatic = true;
         }
     }
 
@@ -113,6 +126,11 @@ export class Bot extends ninjas.Character
     *******************************************************************************************************************/
     public onHitByPlayer( playerDirection :ninjas.CharacterFacing ) : void
     {
+        if (this.friendly)
+        {
+            return;
+        }
+
         // flag as dying
         this.isDying = true;
 
@@ -129,7 +147,7 @@ export class Bot extends ninjas.Character
         // disable body collisions
         this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY;
 
-        // bring body to forefround
+        // bring body to foreground
         ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
         ninjas.Main.game.engine.matterJsSystem.addToWorld(      this.shape.body );
 

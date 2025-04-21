@@ -51,7 +51,8 @@ export class LevelStart extends ninjas.Level
         ninjas.GameObjectFactory.createDoor( this, 2300, 2000, ninjas.ImageData.IMAGE_DOOR_1, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: new ninjas.LevelHut(), playerStartX: 1020 } ) );
 
         // enemies
-        ninjas.GameObjectBundleFactory.createEnemy( this, 4000, 2100, ninjas.CharacterFacing.RIGHT, 3000, 4000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
+        ninjas.GameObjectBundleFactory.createEnemy( this, 3500, 2000, ninjas.CharacterFacing.RIGHT, 3000, 3500, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY, true );
+        ninjas.GameObjectBundleFactory.createEnemy( this, 0, 2000, ninjas.CharacterFacing.RIGHT, 0, 1500, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY, false );
 
         // statue
         // ninjas.GameObjectBundleFactory.createObstacle(this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
