@@ -47,21 +47,21 @@ export class LevelStart extends ninjas.Level
         ninjas.GameObjectBundleFactory.createSolidGround( this, 5120, 2000, 5,  5, ninjas.Slope.DESCENDING, ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
         ninjas.GameObjectBundleFactory.createSolidGround( this, 5760, 2100, 15, 5, ninjas.Slope.NONE,       ninjas.CapHorz.NONE,  ninjas.GroundData.TILESET_SNOW );
 
+        // door
+        ninjas.GameObjectFactory.createDoor( this, 2300, 2000, ninjas.ImageData.IMAGE_DOOR_1, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: new ninjas.LevelHut(), playerStartX: 1020 } ) );
+
+        // enemies
+        ninjas.GameObjectBundleFactory.createEnemy( this, 4000, 2100, ninjas.CharacterFacing.RIGHT, 3000, 4000, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA_GUY );
+
         // statue
         // ninjas.GameObjectBundleFactory.createObstacle(this, 2000, 2000, ninjas.ImageData.IMAGE_STATUE_3 );
 
         // dojo
         // ninjas.GameObjectBundleFactory.createDecoImage(this, 4600, 2100, ninjas.DecoPosition.BG, ninjas.ImageData.IMAGE_DOJO );
 
-        // door
-        ninjas.GameObjectFactory.createDoor( this, 2300, 2000, ninjas.ImageData.IMAGE_DOOR_1, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: new ninjas.LevelHut(), playerStartX: 1020 } ) );
-
         // bridge and blue water
         // ninjas.GameObjectBundleFactory.createWaterArea(   this, 3050, 2260, 6, 4, ninjas.ImageData.IMAGE_WATER_CENTER );
         // ninjas.GameObjectBundleFactory.createBridge(      this, 3120, 2100 );
-
-        // ground
-
     }
 
     /** ****************************************************************************************************************
