@@ -1,18 +1,18 @@
 /* eslint-disable max-len */
 
 import * as matter from 'matter-js';
-import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
-import { GroundData } from '../GroundData';
-import { ImageData } from '../ImageData';
-import { Level, LevelId } from '../../game/level/Level';
-import { GameObjectFactory } from '../../game/object/GameObjectFactory';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { SpriteTemplateData } from '../SpriteTemplateData';
-import { SiteContent } from '../../site/SiteContentSystem';
-import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { CharacterSpriteData } from '../CharacterSpriteData';
-import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
+import {GroundData} from '../GroundData';
+import {ImageData} from '../ImageData';
+import {Level, LevelId} from '../../game/level/Level';
+import {GameObjectFactory} from '../../game/object/GameObjectFactory';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {SpriteTemplateData} from '../SpriteTemplateData';
+import {SiteContent} from '../../site/SiteContentSystem';
+import {SitePanelAppearance} from '../../game/object/special/SiteTrigger';
+import {GameAction, GameActionType} from '../../game/object/GameAction';
+import {CharacterSpriteData} from '../CharacterSpriteData';
+import {CharacterFacing} from '../../game/object/being/CharacterFacing';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -51,7 +51,17 @@ export class LevelStart extends Level {
         GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
 
         // statue
-        GameObjectBundleFactory.createDecoImage(this, 2900, 2000, DecoPosition.BG, ImageData.STATUE_1);
+        GameObjectBundleFactory.createDecoImage(this, 2700, 2000, DecoPosition.BG, ImageData.STATUE_1);
+
+        // billboard "welcome"
+        GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD);
+        GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD_WELCOME);
+
+        // trees and lion statue
+        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.BG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 3900, 2000, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 4550, 2000, DecoPosition.BG, ImageData.STATUE_LION);
 
         // enemies
         GameObjectBundleFactory.createEnemy(SpriteTemplateData.BLUE_NINJA_GUY_STAND_LEFT, this, 0, 2000, CharacterFacing.RIGHT, 0, 1500, CharacterSpriteData.BLUE_NINJA_GUY, false);
@@ -61,14 +71,6 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createFriend(SpriteTemplateData.MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.MASKED_NINJA_GIRL, false);
         GameObjectBundleFactory.createFriend(SpriteTemplateData.MASKED_NINJA_GUY_STAND_LEFT,    this, 5000, 2000, CharacterFacing.RIGHT, 3750, 5000, CharacterSpriteData.MASKED_NINJA_GUY, false);
         GameObjectBundleFactory.createFriend(SpriteTemplateData.BLUE_NINJA_GUY_WALK_LEFT,         this, 4500, 2000, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.BLUE_NINJA_GUY, false);
-
-        // trees
-        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.BG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
-
-        // tree and lion statue
-        GameObjectBundleFactory.createDecoImage(this, 3500, 2000, DecoPosition.FG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoImage(this, 4500, 2000, DecoPosition.BG, ImageData.STATUE_LION);
 
         // slope down and solid ground
         GameObjectBundleFactory.createSolidGround(this, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE,  GroundData.TILESET_SNOW);
