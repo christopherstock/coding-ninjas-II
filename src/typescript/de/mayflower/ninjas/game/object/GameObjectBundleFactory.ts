@@ -146,9 +146,9 @@ export abstract class GameObjectBundleFactory {
         switch ( slope ) {
             case Slope.ASCENDING:
             {
-                leftTile   = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_LEFT   );
-                centerTile = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_CENTER );
-                rightTile  = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_RIGHT  );
+                leftTile   = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_ASCENDING_LEFT   );
+                centerTile = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_ASCENDING_CENTER );
+                rightTile  = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_ASCENDING_RIGHT  );
 
                 drawY      = yTop - GameObjectBundleFactory.ALTITUDE;
                 alt        = -GameObjectBundleFactory.ALTITUDE;
@@ -158,9 +158,9 @@ export abstract class GameObjectBundleFactory {
 
             case Slope.DESCENDING:
             {
-                leftTile   = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_LEFT   );
-                centerTile = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_CENTER );
-                rightTile  = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_DESCENDING_RIGHT  );
+                leftTile   = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_DESCENDING_LEFT   );
+                centerTile = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_DESCENDING_CENTER );
+                rightTile  = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_DESCENDING_RIGHT  );
 
                 drawY      = yTop;
                 alt        = GameObjectBundleFactory.ALTITUDE;
@@ -171,9 +171,9 @@ export abstract class GameObjectBundleFactory {
             case Slope.NONE:
             default:
             {
-                leftTile   = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_LEFT   );
-                centerTile = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_CENTER );
-                rightTile  = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_RIGHT  );
+                leftTile   = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_LEFT   );
+                centerTile = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_CENTER );
+                rightTile  = SpriteTemplate.createFromSingleImage( ImageData.GROUND_DARK_FLYING_RIGHT  );
 
                 drawY      = yTop;
                 alt        = 0;
@@ -444,7 +444,7 @@ export abstract class GameObjectBundleFactory {
         // level.obstacles.push( GameObjectFactory.createElevatedRamp( xLeft + WIDTH_TOTAL - WIDTH_SLOPE, yBottom - ALTITUDE, WIDTH_SLOPE, 10, ALTITUDE, null, JumpPassThrough.NO ) );
 
         // add deco
-        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BRIDGE_1 );
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.BRIDGE_1 );
         level.decosFg.push( GameObjectFactory.createDecorationRect( xLeft - 115, yBottom + 121, StaticShape.YES, sprtiteTemplate ) );
     }
 
@@ -677,9 +677,9 @@ export abstract class GameObjectBundleFactory {
         candleRight: boolean,
         content: SiteContent
     ): void {
-        const sprtiteBookOpen: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BOOK_OPEN   );
-        const sprtiteBookClosed: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BOOK_CLOSED );
-        const spriteShrine: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_TABLE_1     );
+        const sprtiteBookOpen: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.BOOK_OPEN   );
+        const sprtiteBookClosed: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.BOOK_CLOSED );
+        const spriteShrine: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.TABLE_1     );
 
         const decoBookOpen: Decoration     = GameObjectFactory.createDecorationRect( xLeft - 5,  yBottom - 118, StaticShape.YES, sprtiteBookOpen,   DebugColor.COLOR_TRANSPARENT );
         const decoBookClosed: Decoration     = GameObjectFactory.createDecorationRect( xLeft + 72, yBottom - 114, StaticShape.YES, sprtiteBookClosed, DebugColor.COLOR_TRANSPARENT );
@@ -711,14 +711,14 @@ export abstract class GameObjectBundleFactory {
         level.shrines.push( decoShrine     );
 
         if ( candleLeft  ) {
-            GameObjectBundleFactory.createDecoImage(  level, xLeft - 80,  yBottom,       DecoPosition.FG, ImageData.IMAGE_CANDELABRA              );
+            GameObjectBundleFactory.createDecoImage(  level, xLeft - 80,  yBottom,       DecoPosition.FG, ImageData.CANDELABRA              );
             GameObjectBundleFactory.createDecoSprite( level, xLeft - 88,  yBottom - 222, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG   );
             GameObjectBundleFactory.createDecoSprite( level, xLeft - 68,  yBottom - 178, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_SMALL );
             GameObjectBundleFactory.createDecoSprite( level, xLeft - 106, yBottom - 182, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_SMALL );
         }
 
         if ( candleRight ) {
-            GameObjectBundleFactory.createDecoImage(  level, xLeft + 164, yBottom,       DecoPosition.FG, ImageData.IMAGE_CANDELABRA              );
+            GameObjectBundleFactory.createDecoImage(  level, xLeft + 164, yBottom,       DecoPosition.FG, ImageData.CANDELABRA              );
             GameObjectBundleFactory.createDecoSprite( level, xLeft + 156, yBottom - 222, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG   );
             GameObjectBundleFactory.createDecoSprite( level, xLeft + 176, yBottom - 178, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_SMALL );
             GameObjectBundleFactory.createDecoSprite( level, xLeft + 138, yBottom - 182, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_SMALL );
@@ -749,9 +749,9 @@ export abstract class GameObjectBundleFactory {
 
             switch ( MathUtil.getRandomInt( 0, 2 ) )
             {
-                case 0: imageId = ImageData.IMAGE_RUBBLE_1;      break;
-                case 1: imageId = ImageData.IMAGE_RUBBLE_2;      break;
-                case 2: imageId = ImageData.IMAGE_RUBBLE_3;      break;
+                case 0: imageId = ImageData.RUBBLE_1;      break;
+                case 1: imageId = ImageData.RUBBLE_2;      break;
+                case 2: imageId = ImageData.RUBBLE_3;      break;
             }
 
             GameObjectBundleFactory.createMovableCircular
@@ -780,7 +780,7 @@ export abstract class GameObjectBundleFactory {
         yBottom: number,
         position: DecoPosition
     ): void {
-        GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       position, ImageData.IMAGE_CANDLE                );
+        GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       position, ImageData.CANDLE                );
         GameObjectBundleFactory.createDecoSprite( level, xLeft - 17, yBottom - 153, position, SpriteTemplateData.SPRITE_FLAME_1_BIG );
     }
 }

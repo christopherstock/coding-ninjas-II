@@ -19,7 +19,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         {
             SiteContentFactory.createImageFullWidth(
                 Main.game.engine.imageSystem.getImage(
-                    ImageData.IMAGE_SITE_PANEL_LOGO
+                    ImageData.SITE_PANEL_LOGO
                 ).src
             )
         }
@@ -33,7 +33,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 SiteContentFactory.createImageFloating(
                     'right',
                     Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_LOGO_WEBWEEK
+                        ImageData.SITE_PANEL_LOGO_WEBWEEK
                     ).src
                 )
             }
@@ -62,25 +62,25 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 [
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP
+                        ImageData.SITE_PANEL_CAROUSEL_DESKTOP
                     ).src + ' )' }}>
                         <h3>React 16.13.1</h3>
                     </div>,
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES
+                        ImageData.SITE_PANEL_CAROUSEL_WEBSITES
                     ).src + ' )' }}>
                         <h3>Ant Design 3.26.9</h3>
                     </div>,
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE
+                        ImageData.SITE_PANEL_CAROUSEL_MOBILE
                     ).src + ' )' }}>
                         <h3>TypeScript 3.7.5</h3>
                     </div>,
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS
+                        ImageData.SITE_PANEL_CAROUSEL_WEB_APPS
                     ).src + ' )' }}>
                         <h3>Webpack 4.41.6</h3>
                     </div>,

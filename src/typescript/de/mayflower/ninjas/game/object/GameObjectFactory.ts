@@ -41,7 +41,7 @@ export abstract class GameObjectFactory {
     *******************************************************************************************************************/
     public static createWoodenCrate( x: number, yBottom: number ): Movable {
         const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(
-            ImageData.IMAGE_CRATE_WOOD_1
+            ImageData.CRATE_WOOD_1
         );
 
         return new Movable
@@ -155,7 +155,7 @@ export abstract class GameObjectFactory {
         restitution: BodyRestitution
     ): Movable {
         const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(
-            ImageData.IMAGE_STONE_SPHERE
+            ImageData.STONE_SPHERE
         );
 
         if ( spriteTemplate.width !== spriteTemplate.height ) {
@@ -206,7 +206,7 @@ export abstract class GameObjectFactory {
                 BodyDensity.INFINITE,
                 BodyRestitution.DEFAULT
             ),
-            SpriteTemplate.createFromSingleImage( ImageData.IMAGE_ITEM ),
+            SpriteTemplate.createFromSingleImage( ImageData.ITEM ),
             x,
             y
         );

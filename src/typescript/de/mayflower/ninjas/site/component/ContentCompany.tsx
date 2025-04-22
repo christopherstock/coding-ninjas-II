@@ -33,25 +33,25 @@ export const ContentCompany: ()=> JSX.Element = (): JSX.Element => {
                 [
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP
+                        ImageData.SITE_PANEL_CAROUSEL_DESKTOP
                     ).src + ' )' }}>
                         <h3>Desktop &amp; Enterprise Applications</h3>
                     </div>,
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES
+                        ImageData.SITE_PANEL_CAROUSEL_WEBSITES
                     ).src + ' )' }}>
                         <h3>Web Design</h3>
                     </div>,
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE
+                        ImageData.SITE_PANEL_CAROUSEL_MOBILE
                     ).src + ' )' }}>
                         <h3>Mobile Applications</h3>
                     </div>,
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
-                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS
+                        ImageData.SITE_PANEL_CAROUSEL_WEB_APPS
                     ).src + ' )' }}>
                         <h3>Web Applications</h3>
                     </div>,

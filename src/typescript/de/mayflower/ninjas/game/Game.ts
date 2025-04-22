@@ -7,7 +7,7 @@ import { SettingDebug } from '../setting/SettingDebug';
 import { SettingEngine } from '../setting/SettingEngine';
 import { SoundData } from '../data/SoundData';
 import { LevelStart } from '../data/level/LevelStart';
-import { LevelHut } from '../data/level/LevelHut';
+import { LevelDojo } from '../data/level/LevelDojo';
 import { Main } from '../base/Main';
 import { KeyData } from '../data/KeyData';
 import { DrawUtil } from '../util/DrawUtil';
@@ -157,7 +157,7 @@ export class Game {
                 this.level = new LevelStart();
                 break;
             case LevelId.LEVEL_HUT:
-                this.level = new LevelHut();
+                this.level = new LevelDojo();
                 break;
             default:
                 this.level = new LevelStart();

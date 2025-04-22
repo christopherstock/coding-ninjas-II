@@ -36,7 +36,7 @@ export const ContentTechnology: ()=> JSX.Element = (): JSX.Element => {
                         { SiteContentFactory.createImageFloating(
                             'right',
                             Main.game.engine.imageSystem.getImage(
-                                ImageData.IMAGE_SITE_PANEL_LOGO_NODE_JS
+                                ImageData.SITE_PANEL_LOGO_NODE_JS
                             ).src ) }
                         { SiteContentFactory.createParagraph(
                             'Node.js is an open-source, cross-platform JavaScript run-time environment for '
@@ -53,7 +53,7 @@ export const ContentTechnology: ()=> JSX.Element = (): JSX.Element => {
                     <div>
                         { SiteContentFactory.createImageFloating( 'right',
                             Main.game.engine.imageSystem.getImage(
-                                ImageData.IMAGE_SITE_PANEL_LOGO_TYPE_SCRIPT ).src ) }
+                                ImageData.SITE_PANEL_LOGO_TYPE_SCRIPT ).src ) }
                         { SiteContentFactory.createParagraph( 'TypeScript is an open-source programming '
                             + 'language developed and maintained by Microsoft. It is a strict syntactical '
                             + 'superset of JavaScript, and adds optional static typing to the language. '
@@ -70,7 +70,7 @@ export const ContentTechnology: ()=> JSX.Element = (): JSX.Element => {
                         { SiteContentFactory.createImageFloating(
                             'right',
                             Main.game.engine.imageSystem.getImage(
-                                ImageData.IMAGE_SITE_PANEL_LOGO_WEBPACK
+                                ImageData.SITE_PANEL_LOGO_WEBPACK
                             ).src ) }
                         { SiteContentFactory.createParagraph( 'Webpack is an open-source JavaScript '
                             + 'module bundler. Webpack takes modules with dependencies and generates static '
@@ -98,7 +98,7 @@ export const ContentTechnology: ()=> JSX.Element = (): JSX.Element => {
                         { SiteContentFactory.createImageFloating(
                             'right',
                             Main.game.engine.imageSystem.getImage(
-                                ImageData.IMAGE_SITE_PANEL_LOGO_MATTER_JS ).src ) }
+                                ImageData.SITE_PANEL_LOGO_MATTER_JS ).src ) }
                         { SiteContentFactory.createParagraph( 'Matter.js is a JavaScript 2D rigid body '
                             + 'physics engine for the web. It features rigid bodies, compound bodies, '
                             + 'composite bodies, concave and convex hulls, physical properties (mass, area, '
@@ -118,7 +118,7 @@ export const ContentTechnology: ()=> JSX.Element = (): JSX.Element => {
                         { SiteContentFactory.createImageFloating(
                             'right',
                             Main.game.engine.imageSystem.getImage(
-                                ImageData.IMAGE_SITE_PANEL_LOGO_REACT ).src ) }
+                                ImageData.SITE_PANEL_LOGO_REACT ).src ) }
                         { SiteContentFactory.createParagraph( 'React is a JavaScript library for '
                             + 'building user interfaces. React allows developers to create large '
                             + 'web-applications that use data and can change over time without reloading the '
@@ -141,7 +141,7 @@ export const ContentTechnology: ()=> JSX.Element = (): JSX.Element => {
                         { SiteContentFactory.createImageFloating(
                             'right',
                             Main.game.engine.imageSystem.getImage(
-                                ImageData.IMAGE_SITE_PANEL_LOGO_ANT_DESIGN ).src ) }
+                                ImageData.SITE_PANEL_LOGO_ANT_DESIGN ).src ) }
                         { SiteContentFactory.createParagraph( 'An enterprise-class UI design language '
                             + 'and React-based implementation for desktop applications offering a set of '
                             + 'high-quality React components out of the box. Written in TypeScript with '

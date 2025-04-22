@@ -24,7 +24,7 @@ export const ContentContact: ()=> JSX.Element = (): JSX.Element => {
                     {
                         backgroundImage: 'url( '
                         + Main.game.engine.imageSystem.getImage(
-                            ImageData.IMAGE_SITE_PANEL_OFFICE_WZBG
+                            ImageData.SITE_PANEL_OFFICE_WZBG
                         ).src
                         + ' )',
                     }
@@ -51,7 +51,7 @@ export const ContentContact: ()=> JSX.Element = (): JSX.Element => {
                     {
                         backgroundImage: 'url( '
                         + Main.game.engine.imageSystem.getImage(
-                            ImageData.IMAGE_SITE_PANEL_OFFICE_MUC
+                            ImageData.SITE_PANEL_OFFICE_MUC
                         ).src
                         + ' )',
                     }
@@ -78,7 +78,7 @@ export const ContentContact: ()=> JSX.Element = (): JSX.Element => {
                     {
                         backgroundImage: 'url( '
                         + Main.game.engine.imageSystem.getImage(
-                            ImageData.IMAGE_SITE_PANEL_OFFICE_BER
+                            ImageData.SITE_PANEL_OFFICE_BER
                         ).src
                         + ' )',
                     }

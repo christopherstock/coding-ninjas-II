@@ -103,11 +103,11 @@ export class SiteSystem {
 
         if ( position === SitePanelPosition.RIGHT ) {
             this.sitePanel.setPanelBgImage(
-                Main.game.engine.imageSystem.getImage( ImageData.IMAGE_SITE_PANEL_BG_RIGHT ).src
+                Main.game.engine.imageSystem.getImage( ImageData.SITE_PANEL_BG_RIGHT ).src
             );
         } else {
             this.sitePanel.setPanelBgImage(
-                Main.game.engine.imageSystem.getImage( ImageData.IMAGE_SITE_PANEL_BG_LEFT ).src
+                Main.game.engine.imageSystem.getImage( ImageData.SITE_PANEL_BG_LEFT ).src
             );
         }
 
