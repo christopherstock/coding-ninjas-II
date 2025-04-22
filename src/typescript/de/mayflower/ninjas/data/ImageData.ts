@@ -182,9 +182,9 @@ export class ImageData {
     public static WATER_TOP_FRAME_7: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/07.png';
     public static WATER_TOP_FRAME_8: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterTop/08.png';
 
-    public      static      WATER_CENTER: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterCenter.png';
+    public static WATER_CENTER: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterCenter.png';
 
-    public      static      ACID1_CENTER: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'acid1/center.png';
+    public static ACID1_CENTER: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'acid1/center.png';
 
     public static GROUND_DARK_SOLID_LEFT: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidLeft.png';
     public static GROUND_DARK_SOLID_RIGHT: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidRight.png';

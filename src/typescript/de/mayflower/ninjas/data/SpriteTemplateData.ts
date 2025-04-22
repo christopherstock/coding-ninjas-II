@@ -346,7 +346,7 @@ export class SpriteTemplateData {
     );
 
     /** Sprite 'blue ninja guy stand left'. */
-    public      static  SPRITE_BLUE_NINJA_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_GUY_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.BLUE_NINJA_GUY_STAND_RIGHT_FRAME_1,
@@ -368,7 +368,7 @@ export class SpriteTemplateData {
     );
 
     /** Sprite 'enemy ninja 1 stand right'. */
-    public      static  SPRITE_BLUE_NINJA_1_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_GUY_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.BLUE_NINJA_GUY_STAND_RIGHT_FRAME_1,
@@ -390,7 +390,7 @@ export class SpriteTemplateData {
     );
 
     /** Sprite 'enemy ninja 1 walk left'. */
-    public      static  SPRITE_BLUE_NINJA_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_GUY_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.BLUE_NINJA_GUY_WALK_RIGHT_FRAME_1,
@@ -412,7 +412,7 @@ export class SpriteTemplateData {
     );
 
     /** Sprite 'enemy ninja 1 walk right'. */
-    public      static  SPRITE_BLUE_NINJA_1_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_GUY_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.BLUE_NINJA_GUY_WALK_RIGHT_FRAME_1,
@@ -478,7 +478,7 @@ export class SpriteTemplateData {
     );
 
     /** Sprite 'enemy ninja 1 die left'. */
-    public      static  SPRITE_BLUE_NINJA_DIE_LEFT: SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_GUY_DIE_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
@@ -495,7 +495,7 @@ export class SpriteTemplateData {
     );
 
     /** Sprite 'enemy ninja 1 die right'. */
-    public      static  SPRITE_BLUE_NINJA_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_GUY_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
@@ -622,12 +622,12 @@ export class SpriteTemplateData {
             SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
             SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT,
             SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT,
-            SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT,
-            SpriteTemplateData.SPRITE_BLUE_NINJA_1_STAND_RIGHT,
-            SpriteTemplateData.SPRITE_BLUE_NINJA_WALK_LEFT,
-            SpriteTemplateData.SPRITE_BLUE_NINJA_1_WALK_RIGHT,
-            SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_LEFT,
-            SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_RIGHT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_RIGHT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_WALK_LEFT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_WALK_RIGHT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_LEFT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_RIGHT,
             SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
             SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
             SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_LEFT,

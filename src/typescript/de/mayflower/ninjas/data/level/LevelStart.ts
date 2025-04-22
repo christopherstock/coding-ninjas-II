@@ -54,13 +54,13 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage( this, 2900, 2000, DecoPosition.BG, ImageData.STATUE_1 );
 
         // enemies
-        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 0, 2000, CharacterFacing.RIGHT, 0, 1500, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
+        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT, this, 0, 2000, CharacterFacing.RIGHT, 0, 1500, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
 
         // friends
         GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 2000, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
         GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL, false );
         GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_LEFT,    this, 5000, 2000, CharacterFacing.RIGHT, 3750, 5000, CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GUY, false );
-        GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_BLUE_NINJA_WALK_LEFT,         this, 4500, 2000, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
+        GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_WALK_LEFT,         this, 4500, 2000, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
 
         // trees
         GameObjectBundleFactory.createDecoImage(  this, 400, 2000, DecoPosition.BG, ImageData.TREE_2 );
@@ -263,9 +263,9 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createCandle( this, 14100, 2100, DecoPosition.FG );
 
         // enemies
-        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 12000, 2100, CharacterFacing.RIGHT, 10000, 11150, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
-        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 13670, 2100, CharacterFacing.LEFT,  11670, 11870, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
-        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 10600,  2100, CharacterFacing.LEFT,  8600,  9500,  CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
-        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 8700,  2100, CharacterFacing.LEFT,  6700,  7250,  CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
+        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT, this, 12000, 2100, CharacterFacing.RIGHT, 10000, 11150, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
+        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT, this, 13670, 2100, CharacterFacing.LEFT,  11670, 11870, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
+        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT, this, 10600,  2100, CharacterFacing.LEFT,  8600,  9500,  CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
+        GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT, this, 8700,  2100, CharacterFacing.LEFT,  6700,  7250,  CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
     }
 }
