@@ -1,9 +1,9 @@
 import { Game } from '../game/Game';
 import { Debug } from '../base/Debug';
 import { SoundData } from '../data/SoundData';
-import { SettingDebug } from '../setting/SettingDebug';
-import { SettingEngine } from '../setting/SettingEngine';
-import { SettingGame } from '../setting/SettingGame';
+import { SettingDebug } from '../base/SettingDebug';
+import { SettingEngine } from '../base/SettingEngine';
+import { SettingGame } from '../base/SettingGame';
 import { ImageData } from '../data/ImageData';
 import { SpriteTemplateData } from '../data/SpriteTemplateData';
 import { CanvasSystem } from './ui/CanvasSystem';

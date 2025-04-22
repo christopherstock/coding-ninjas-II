@@ -1,5 +1,5 @@
 import { Game } from '../game/Game';
-import { SettingGame } from '../setting/SettingGame';
+import { SettingGame } from '../base/SettingGame';
 import { Debug } from './Debug';
 
 /** ********************************************************************************************************************

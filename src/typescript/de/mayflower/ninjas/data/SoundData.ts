@@ -1,4 +1,4 @@
-import { SettingEngine } from '../setting/SettingEngine';
+import { SettingEngine } from '../base/SettingEngine';
 
 /** ********************************************************************************************************************
 *   Specifies all different soundSystem effects being used in the game.

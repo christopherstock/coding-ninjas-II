@@ -1,7 +1,7 @@
 import { Debug } from '../base/Debug';
 import { Main } from '../base/Main';
-import { SettingEngine } from '../setting/SettingEngine';
-import { SettingGame } from '../setting/SettingGame';
+import { SettingEngine } from '../base/SettingEngine';
+import { SettingGame } from '../base/SettingGame';
 import { ImageData } from '../data/ImageData';
 import { SiteContent, SiteContentSystem } from '../site/SiteContentSystem';
 import { CharacterFacing } from '../game/object/being/CharacterFacing';

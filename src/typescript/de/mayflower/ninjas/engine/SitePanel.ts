@@ -1,4 +1,4 @@
-import { SettingGame } from '../setting/SettingGame';
+import { SettingGame } from '../base/SettingGame';
 import { Main } from '../base/Main';
 
 /** ********************************************************************************************************************

@@ -16,7 +16,7 @@ import { CharacterFacing } from '../object/being/CharacterFacing';
 
 export enum LevelId {
     LEVEL_START,
-    LEVEL_HUT,
+    LEVEL_DOJO,
 }
 
 /** ********************************************************************************************************************

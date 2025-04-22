@@ -5,7 +5,7 @@ import { ButtonType                     } from 'antd/lib/button';
 import { CarouselEffect                 } from 'antd/lib/carousel';
 import { RadioChangeEvent               } from 'antd/es/radio';
 import { ProgressType                   } from 'antd/es/progress/progress';
-import { SettingEngine } from '../setting/SettingEngine';
+import { SettingEngine } from '../base/SettingEngine';
 import { SiteContent } from './SiteContentSystem';
 
 /** ********************************************************************************************************************

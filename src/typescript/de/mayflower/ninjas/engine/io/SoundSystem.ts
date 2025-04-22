@@ -1,4 +1,4 @@
-import { SettingDebug } from '../../setting/SettingDebug';
+import { SettingDebug } from '../../base/SettingDebug';
 import { Debug } from '../../base/Debug';
 import { ImageUtil } from '../../util/ImageUtil';
 

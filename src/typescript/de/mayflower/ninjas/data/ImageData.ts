@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import { SettingEngine } from '../setting/SettingEngine';
+import { SettingEngine } from '../base/SettingEngine';
 
 /** ********************************************************************************************************************
 *   All image resource files the game makes use of.

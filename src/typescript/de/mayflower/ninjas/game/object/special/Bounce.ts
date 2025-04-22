@@ -2,7 +2,7 @@ import * as matter from 'matter-js';
 import { GameObject } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { DebugColor } from '../../../setting/SettingDebug';
+import { DebugColor } from '../../../base/SettingDebug';
 import { Main } from '../../../base/Main';
 
 /** ********************************************************************************************************************

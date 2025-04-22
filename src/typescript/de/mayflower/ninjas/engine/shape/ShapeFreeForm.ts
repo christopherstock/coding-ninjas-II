@@ -1,6 +1,6 @@
 import * as matter from 'matter-js';
-import { DebugColor } from '../../setting/SettingDebug';
-import { BodyDensity, BodyFriction, BodyRestitution } from '../../setting/SettingMatter';
+import { DebugColor } from '../../base/SettingDebug';
+import { BodyDensity, BodyFriction, BodyRestitution } from '../../base/SettingMatter';
 import { Shape, StaticShape } from './Shape';
 
 /** ********************************************************************************************************************

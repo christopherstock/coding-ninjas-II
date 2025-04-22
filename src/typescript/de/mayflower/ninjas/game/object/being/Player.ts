@@ -1,12 +1,12 @@
 import * as matter from 'matter-js';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { SettingMatter } from '../../../setting/SettingMatter';
+import { SettingMatter } from '../../../base/SettingMatter';
 import { CharacterSpriteData } from '../../../data/CharacterSpriteData';
 import { Main } from '../../../base/Main';
 import { KeySystem } from '../../../engine/hid/KeySystem';
 import { KeyData } from '../../../data/KeyData';
-import { SettingDebug } from '../../../setting/SettingDebug';
+import { SettingDebug } from '../../../base/SettingDebug';
 import { Debug } from '../../../base/Debug';
 import { LevelId } from '../../level/Level';
 import { Character } from './Character';

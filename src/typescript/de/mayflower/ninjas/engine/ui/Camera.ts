@@ -1,6 +1,6 @@
 import * as matter from 'matter-js';
 import { Game } from '../../game/Game';
-import { SettingEngine } from '../../setting/SettingEngine';
+import { SettingEngine } from '../../base/SettingEngine';
 
 /** ********************************************************************************************************************
 *   Manages the camera that calculates the scrolling amounts.

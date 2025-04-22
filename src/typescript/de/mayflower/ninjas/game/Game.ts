@@ -2,9 +2,9 @@ import * as matter from 'matter-js';
 import { Engine } from '../engine/Engine';
 import { Camera } from '../engine/ui/Camera';
 import { Debug } from '../base/Debug';
-import { SettingGame } from '../setting/SettingGame';
-import { SettingDebug } from '../setting/SettingDebug';
-import { SettingEngine } from '../setting/SettingEngine';
+import { SettingGame } from '../base/SettingGame';
+import { SettingDebug } from '../base/SettingDebug';
+import { SettingEngine } from '../base/SettingEngine';
 import { SoundData } from '../data/SoundData';
 import { LevelStart } from '../data/level/LevelStart';
 import { LevelDojo } from '../data/level/LevelDojo';
@@ -156,7 +156,7 @@ export class Game {
             case LevelId.LEVEL_START:
                 this.level = new LevelStart();
                 break;
-            case LevelId.LEVEL_HUT:
+            case LevelId.LEVEL_DOJO:
                 this.level = new LevelDojo();
                 break;
             default:
@@ -247,7 +247,7 @@ export class Game {
                 Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_2);
 
                 Debug.init.log('Resetting and switching to level 2');
-                this.resetAndLaunchLevel(LevelId.LEVEL_HUT);
+                this.resetAndLaunchLevel(LevelId.LEVEL_DOJO);
             }
             /*
             if ( Main.game.engine.keySystem.isPressed( Key.KEY_3 ) )

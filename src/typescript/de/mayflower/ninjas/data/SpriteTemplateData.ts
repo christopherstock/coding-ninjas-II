@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 import { SpriteTemplate } from '../engine/ui/SpriteTemplate';
-import { SettingGame } from '../setting/SettingGame';
+import { SettingGame } from '../base/SettingGame';
 import { MirrorImage } from '../engine/ui/MirrorImage';
 import { LoopSprite } from '../engine/ui/LoopSprite';
 import { RandomFrames } from '../engine/ui/RandomFrames';

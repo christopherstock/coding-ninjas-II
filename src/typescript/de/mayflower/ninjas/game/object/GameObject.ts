@@ -2,7 +2,7 @@ import * as matter from 'matter-js';
 import { Shape } from '../../engine/shape/Shape';
 import { Sprite } from '../../engine/ui/Sprite';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { SettingDebug } from '../../setting/SettingDebug';
+import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
 
 /** ********************************************************************************************************************

@@ -1,5 +1,5 @@
 import { ImageSystem } from '../io/ImageSystem';
-import { SettingGame } from '../../setting/SettingGame';
+import { SettingGame } from '../../base/SettingGame';
 import { Main } from '../../base/Main';
 import { MirrorImage } from './MirrorImage';
 import { LoopSprite } from './LoopSprite';

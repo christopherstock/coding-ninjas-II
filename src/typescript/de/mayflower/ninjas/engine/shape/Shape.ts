@@ -1,8 +1,8 @@
 import * as matter from 'matter-js';
-import { DebugColor, SettingDebug } from '../../setting/SettingDebug';
+import { DebugColor, SettingDebug } from '../../base/SettingDebug';
 import {
     BodyDensity, BodyFriction, BodyFrictionAir, BodyRestitution, SettingMatter,
-} from '../../setting/SettingMatter';
+} from '../../base/SettingMatter';
 import { MathUtil } from '../../util/MathUtil';
 
 /** ********************************************************************************************************************

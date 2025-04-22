@@ -48,7 +48,7 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createSolidGround(this, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
 
         // door
-        GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HUT, playerStartX: 1020 }));
+        GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
 
         // statue
         GameObjectBundleFactory.createDecoImage(this, 2900, 2000, DecoPosition.BG, ImageData.STATUE_1);

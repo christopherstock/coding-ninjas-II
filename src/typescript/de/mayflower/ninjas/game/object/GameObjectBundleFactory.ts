@@ -1,13 +1,13 @@
 import { Level } from '../level/Level';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SpriteTemplateData } from '../../data/SpriteTemplateData';
-import { DebugColor } from '../../setting/SettingDebug';
+import { DebugColor } from '../../base/SettingDebug';
 import { ImageData } from '../../data/ImageData';
 import { StaticShape } from '../../engine/shape/Shape';
 import { GroundImageSet } from '../../engine/ui/GroundImageSet';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { ShapeRectangle } from '../../engine/shape/ShapeRectangle';
-import { BodyDensity, BodyFriction, BodyRestitution } from '../../setting/SettingMatter';
+import { BodyDensity, BodyFriction, BodyRestitution } from '../../base/SettingMatter';
 import { Player } from './being/Player';
 import { GameObjectFactory } from './GameObjectFactory';
 import { JumpPassThrough, Obstacle } from './primal/Obstacle';

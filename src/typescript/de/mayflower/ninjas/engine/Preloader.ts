@@ -1,6 +1,6 @@
 import { DrawUtil } from '../util/DrawUtil';
 import { Debug } from '../base/Debug';
-import { SettingEngine } from '../setting/SettingEngine';
+import { SettingEngine } from '../base/SettingEngine';
 import { Engine } from './Engine';
 
 /** ********************************************************************************************************************

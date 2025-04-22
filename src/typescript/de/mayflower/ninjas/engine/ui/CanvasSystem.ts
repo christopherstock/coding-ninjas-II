@@ -1,4 +1,4 @@
-import { SettingEngine } from '../../setting/SettingEngine';
+import { SettingEngine } from '../../base/SettingEngine';
 import { Debug } from '../../base/Debug';
 
 /** ********************************************************************************************************************

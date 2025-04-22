@@ -1,7 +1,7 @@
 import { GameObject } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { SettingMatter } from '../../../setting/SettingMatter';
+import { SettingMatter } from '../../../base/SettingMatter';
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.

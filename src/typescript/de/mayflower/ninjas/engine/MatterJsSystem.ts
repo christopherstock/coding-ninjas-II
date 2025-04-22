@@ -1,7 +1,7 @@
 import * as matter from 'matter-js';
-import { SettingMatter } from '../setting/SettingMatter';
-import { SettingDebug } from '../setting/SettingDebug';
-import { SettingEngine } from '../setting/SettingEngine';
+import { SettingMatter } from '../base/SettingMatter';
+import { SettingDebug } from '../base/SettingDebug';
+import { SettingEngine } from '../base/SettingEngine';
 import { Debug } from '../base/Debug';
 import { CanvasSystem } from './ui/CanvasSystem';
 

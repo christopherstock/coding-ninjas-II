@@ -1,5 +1,5 @@
 import { StringUtil } from '../util/StringUtil';
-import { SettingDebug } from '../setting/SettingDebug';
+import { SettingDebug } from '../base/SettingDebug';
 
 /** ********************************************************************************************************************
 *   Represents a debug group whose logging can be enabled or disabled.
