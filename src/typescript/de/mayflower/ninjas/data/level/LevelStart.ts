@@ -66,7 +66,8 @@ export class LevelStart extends Level
         GameObjectBundleFactory.createDecoImage(  this, 400, 2000, DecoPosition.BG, ImageData.IMAGE_TREE_2 );
         GameObjectBundleFactory.createDecoImage(  this, 1200, 2000, DecoPosition.FG, ImageData.IMAGE_TREE_2 );
 
-        // lion statue
+        // tree and lion statue
+        GameObjectBundleFactory.createDecoImage(  this, 3500, 2000, DecoPosition.FG, ImageData.IMAGE_TREE_2 );
         GameObjectBundleFactory.createDecoImage( this, 4500, 2000, DecoPosition.BG, ImageData.IMAGE_STATUE_LION );
 
         // slope down and solid ground
