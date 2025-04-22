@@ -1,20 +1,19 @@
 import * as matter from 'matter-js';
-import {Shape} from "../../engine/shape/Shape";
-import {Sprite} from "../../engine/ui/Sprite";
-import {SpriteTemplate} from "../../engine/ui/SpriteTemplate";
-import {SettingDebug} from "../../setting/SettingDebug";
-import {Main} from "../../base/Main";
+import { Shape } from '../../engine/shape/Shape';
+import { Sprite } from '../../engine/ui/Sprite';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { SettingDebug } from '../../setting/SettingDebug';
+import { Main } from '../../base/Main';
 
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
 ***********************************************************************************************************************/
-export abstract class GameObject
-{
+export abstract class GameObject {
     /** Collision shape. */
-    public          shape                   :Shape                   = null;
+    public          shape: Shape                   = null;
 
     /** Sprite. */
-    public          sprite                  :Sprite                  = null;
+    public          sprite: Sprite                  = null;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.
@@ -24,14 +23,12 @@ export abstract class GameObject
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    protected constructor
-    (
-        shape          :Shape,
-        spriteTemplate :SpriteTemplate,
-        x              :number,
-        y              :number
-    )
-    {
+    protected constructor(
+        shape: Shape,
+        spriteTemplate: SpriteTemplate,
+        x: number,
+        y: number
+    ) {
         this.shape = shape;
         this.setSprite( spriteTemplate );
 
@@ -41,13 +38,10 @@ export abstract class GameObject
     /** ****************************************************************************************************************
     *   Renders the current game object.
     *******************************************************************************************************************/
-    public render() : void
-    {
-        if ( this.sprite !== null )
-        {
+    public render(): void {
+        if ( this.sprite !== null ) {
             // render sprite and check frame change
-            if ( this.sprite.render() )
-            {
+            if ( this.sprite.render() ) {
                 this.setImageFromSprite();
             }
         }
@@ -58,14 +52,10 @@ export abstract class GameObject
     *
     *   @param visible The desired visibility.
     *******************************************************************************************************************/
-    public setVisible( visible:boolean ) : void
-    {
-        if ( visible )
-        {
+    public setVisible( visible: boolean ): void {
+        if ( visible ) {
             this.setImageFromSprite();
-        }
-        else
-        {
+        } else {
             this.shape.body.render.sprite.texture = null;
         }
     }
@@ -75,13 +65,10 @@ export abstract class GameObject
     *
     *   @param spriteTemplate The sprite template to use for this new sprite.
     *******************************************************************************************************************/
-    protected setSprite( spriteTemplate:SpriteTemplate ) : void
-    {
-        if ( spriteTemplate !== null )
-        {
+    protected setSprite( spriteTemplate: SpriteTemplate ): void {
+        if ( spriteTemplate !== null ) {
             // only set new sprite if it differs from current sprite
-            if ( this.sprite !== null && this.sprite.template === spriteTemplate )
-            {
+            if ( this.sprite !== null && this.sprite.template === spriteTemplate ) {
                 return;
             }
 
@@ -97,10 +84,8 @@ export abstract class GameObject
     /** ****************************************************************************************************************
     *   Assigns the current active sprite frame as the game objects image.
     *******************************************************************************************************************/
-    protected setImageFromSprite() : void
-    {
-        if ( !SettingDebug.DISABLE_SPRITES )
-        {
+    protected setImageFromSprite(): void {
+        if ( !SettingDebug.DISABLE_SPRITES ) {
             this.shape.body.render.sprite.texture = this.sprite.getCurrentFrameImageUrl();
             this.shape.body.render.sprite.xScale  = this.sprite.template.getScale();
             this.shape.body.render.sprite.yScale  = this.sprite.template.getScale();
@@ -110,16 +95,14 @@ export abstract class GameObject
     /** ****************************************************************************************************************
     *   Assigns the specified opacity for drawing this game object.
     *******************************************************************************************************************/
-    protected setOpacity( opacity:number ) : void
-    {
+    protected setOpacity( opacity: number ): void {
         this.shape.body.render.opacity = opacity;
     }
 
     /** ****************************************************************************************************************
     *   Avoids this game object from rotating.
     *******************************************************************************************************************/
-    protected resetRotation() : void
-    {
+    protected resetRotation(): void {
         matter.Body.setAngularVelocity( this.shape.body, 0.0 );
         matter.Body.setAngle(           this.shape.body, 0.0 );
     }
@@ -127,11 +110,9 @@ export abstract class GameObject
     /** ****************************************************************************************************************
     *   Clips this body to the horizontal level bounds.
     *******************************************************************************************************************/
-    protected clipToHorizontalLevelBounds() : void
-    {
+    protected clipToHorizontalLevelBounds(): void {
         // clip left bound
-        if ( this.shape.body.position.x < this.shape.getWidth() / 2 )
-        {
+        if ( this.shape.body.position.x < this.shape.getWidth() / 2 ) {
             matter.Body.setPosition(
                 this.shape.body,
                 {
@@ -142,8 +123,7 @@ export abstract class GameObject
         }
 
         // clip right bound
-        if ( this.shape.body.position.x > Main.game.level.width - this.shape.getWidth() / 2 )
-        {
+        if ( this.shape.body.position.x > Main.game.level.width - this.shape.getWidth() / 2 ) {
             matter.Body.setPosition(
                 this.shape.body,
                 {

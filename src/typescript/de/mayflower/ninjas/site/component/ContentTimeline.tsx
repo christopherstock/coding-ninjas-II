@@ -1,13 +1,12 @@
 import * as React  from 'react';
-import {Debug} from "../../base/Debug";
-import {SiteContentFactory} from "../SiteContentFactory";
-import {SiteContent} from "../SiteContentSystem";
+import { Debug } from '../../base/Debug';
+import { SiteContentFactory } from '../SiteContentFactory';
+import { SiteContent } from '../SiteContentSystem';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'timeline' page.
 ***********************************************************************************************************************/
-export const ContentTimeline :() => JSX.Element = () :JSX.Element =>
-{
+export const ContentTimeline: ()=> JSX.Element = (): JSX.Element => {
     Debug.react.log( 'ContentTimeline.render() being invoked' );
 
     return <div>
@@ -19,8 +18,7 @@ export const ContentTimeline :() => JSX.Element = () :JSX.Element =>
         { SiteContentFactory.createParagraph( 'See the project\'s evolution timeline:' ) }
         { SiteContentFactory.createSpacerVertical() }
         {
-            SiteContentFactory.createTimeline
-            (
+            SiteContentFactory.createTimeline(
                 [
                     '#1890ff',
                     'red',

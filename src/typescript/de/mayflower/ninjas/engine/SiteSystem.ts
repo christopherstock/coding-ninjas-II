@@ -1,14 +1,14 @@
-import {SitePanel, SitePanelPosition} from "./SitePanel";
-import {Debug} from "../base/Debug";
-import {Main} from "../base/Main";
-import {SettingEngine} from "../setting/SettingEngine";
-import {SettingGame} from "../setting/SettingGame";
-import {ImageData} from "../data/ImageData";
-import {SiteContent, SiteContentSystem} from "../site/SiteContentSystem";
-import {CanvasSystem} from "./ui/CanvasSystem";
-import {CharacterFacing} from "../game/object/being/CharacterFacing";
+import { Debug } from '../base/Debug';
+import { Main } from '../base/Main';
+import { SettingEngine } from '../setting/SettingEngine';
+import { SettingGame } from '../setting/SettingGame';
+import { ImageData } from '../data/ImageData';
+import { SiteContent, SiteContentSystem } from '../site/SiteContentSystem';
+import { CharacterFacing } from '../game/object/being/CharacterFacing';
+import { CanvasSystem } from './ui/CanvasSystem';
+import { SitePanel, SitePanelPosition } from './SitePanel';
 
-const wow :any = require( 'wowjs' );
+const wow: any = require( 'wowjs' );
 
 /** ********************************************************************************************************************
 *   Specifies the current site panel animation state.
@@ -28,39 +28,37 @@ export enum SitePanelAnimation
 /** ********************************************************************************************************************
 *   Manages the communication between the game and the company presentation.
 ***********************************************************************************************************************/
-export class SiteSystem
-{
+export class SiteSystem {
     /** The content system. */
-    private     readonly    contentSystem               :SiteContentSystem       = null;
+    private     readonly    contentSystem: SiteContentSystem       = null;
     /** The active site panel. */
-    private     readonly    sitePanel                   :SitePanel               = null;
+    private     readonly    sitePanel: SitePanel               = null;
 
     /** The current animation of the site panel. */
-    private                 animationState              :SitePanelAnimation      = SitePanelAnimation.HIDDEN;
+    private                 animationState: SitePanelAnimation      = SitePanelAnimation.HIDDEN;
     /** Flags if the panel is shown for the 1st time. */
-    private                 firstShow                   :boolean                        = true;
+    private                 firstShow: boolean                        = true;
 
     /** The current width of the panel. */
-    private                 panelWidth                  :number                         = 0;
+    private                 panelWidth: number                         = 0;
     /** The current height of the panel. */
-    private                 panelHeight                 :number                         = 0;
+    private                 panelHeight: number                         = 0;
 
     /** The current width of the panel including border size. */
-    private                 panelAndBorderWidth         :number                         = 0;
+    private                 panelAndBorderWidth: number                         = 0;
 
     /** The left camera target X if the border is shown right. */
-    private                 leftCameraTargetX           :number                         = 0;
+    private                 leftCameraTargetX: number                         = 0;
     /** The right camera target X if the border is shown left. */
-    private                 rightCameraTargetX          :number                         = 0;
+    private                 rightCameraTargetX: number                         = 0;
 
     /** The WOW animation system. */
-    private                 wowSystem                   :any                            = null;
+    private                 wowSystem: any                            = null;
 
     /** ****************************************************************************************************************
     *   Creates a new site system.
     *******************************************************************************************************************/
-    public constructor()
-    {
+    public constructor() {
         this.contentSystem = new SiteContentSystem();
         this.contentSystem.initAllContents();
 
@@ -78,11 +76,9 @@ export class SiteSystem
     *
     *   @return If showing the site succeeded.
     *******************************************************************************************************************/
-    public show( content:SiteContent, position:SitePanelPosition ) : boolean
-    {
+    public show( content: SiteContent, position: SitePanelPosition ): boolean {
         // only show if hidden
-        if ( this.animationState !== SitePanelAnimation.HIDDEN )
-        {
+        if ( this.animationState !== SitePanelAnimation.HIDDEN ) {
             return false;
         }
 
@@ -95,27 +91,21 @@ export class SiteSystem
         this.sitePanel.setPosition( position );
         this.updatePanelSizeAndPosition();
 
-        if ( this.firstShow )
-        {
+        if ( this.firstShow ) {
             this.firstShow = false;
 
             // set visibility to 'hidden' fixes unanimated flickering the panel on 1st creation!
             this.sitePanel.setVisible( false );
-        }
-        else
-        {
+        } else {
             // set visibility to 'visible' fixes unanimated flickering the panel on 1st creation!
             this.sitePanel.setVisible( true );
         }
 
-        if ( position === SitePanelPosition.RIGHT )
-        {
+        if ( position === SitePanelPosition.RIGHT ) {
             this.sitePanel.setPanelBgImage(
                 Main.game.engine.imageSystem.getImage( ImageData.IMAGE_SITE_PANEL_BG_RIGHT ).src
             );
-        }
-        else
-        {
+        } else {
             this.sitePanel.setPanelBgImage(
                 Main.game.engine.imageSystem.getImage( ImageData.IMAGE_SITE_PANEL_BG_LEFT ).src
             );
@@ -127,10 +117,8 @@ export class SiteSystem
         this.wowSystem.sync();
 
         window.setTimeout(
-            () =>
-            {
-                if ( this.animationState === SitePanelAnimation.SHOWING )
-                {
+            () => {
+                if ( this.animationState === SitePanelAnimation.SHOWING ) {
                     this.animationState = SitePanelAnimation.PRESENT;
                 }
             },
@@ -143,8 +131,7 @@ export class SiteSystem
     /** ****************************************************************************************************************
     *   Immediately hides and removes the panel, no matter which state it currently is in.
     *******************************************************************************************************************/
-    public reset() : void
-    {
+    public reset(): void {
         this.animationState = SitePanelAnimation.HIDDEN;
         this.sitePanel.removeFromDom();
     }
@@ -154,10 +141,8 @@ export class SiteSystem
     *
     *   @return If hiding the site succeeded.
     *******************************************************************************************************************/
-    public hide() : boolean
-    {
-        if ( this.animationState !== SitePanelAnimation.PRESENT )
-        {
+    public hide(): boolean {
+        if ( this.animationState !== SitePanelAnimation.PRESENT ) {
             return false;
         }
 
@@ -168,8 +153,7 @@ export class SiteSystem
         this.wowSystem.sync();
 
         window.setTimeout(
-            () =>
-            {
+            () => {
                 this.animationState = SitePanelAnimation.HIDDEN;
                 this.sitePanel.removeFromDom();
             },
@@ -182,20 +166,16 @@ export class SiteSystem
     /** ****************************************************************************************************************
     *   Being invoked when the panel size should be set according to the current canvas size.
     *******************************************************************************************************************/
-    public updatePanelSizeAndPosition() : void
-    {
-        const canvasSystem :CanvasSystem = Main.game.engine.canvasSystem;
+    public updatePanelSizeAndPosition(): void {
+        const canvasSystem: CanvasSystem = Main.game.engine.canvasSystem;
 
         // calculate and clip panel size
         this.panelWidth = (
             canvasSystem.getPhysicalWidth() / 2 - SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
         );
-        if ( this.panelWidth < SettingGame.SITE_PANEL_MIN_WIDTH )
-        {
+        if ( this.panelWidth < SettingGame.SITE_PANEL_MIN_WIDTH ) {
             this.panelWidth = SettingGame.SITE_PANEL_MIN_WIDTH;
-        }
-        else if ( this.panelWidth > SettingGame.SITE_PANEL_MAX_WIDTH )
-        {
+        } else if ( this.panelWidth > SettingGame.SITE_PANEL_MAX_WIDTH ) {
             this.panelWidth = SettingGame.SITE_PANEL_MAX_WIDTH;
         }
 
@@ -205,8 +185,7 @@ export class SiteSystem
         if (
             SettingGame.SITE_PANEL_MAX_HEIGHT !== -1
             && this.panelHeight > SettingGame.SITE_PANEL_MAX_HEIGHT
-        )
-        {
+        ) {
             this.panelHeight = SettingGame.SITE_PANEL_MAX_HEIGHT;
         }
 
@@ -221,8 +200,7 @@ export class SiteSystem
         );
 
         // update panel size and position
-        this.sitePanel.updateSizeAndPosition
-        (
+        this.sitePanel.updateSizeAndPosition(
             this.panelWidth,
             this.panelHeight
         );
@@ -233,18 +211,15 @@ export class SiteSystem
     *
     *   @return <code>true</code> if a site panel is currently active.
     *******************************************************************************************************************/
-    public getCameraTargetX() : number
-    {
+    public getCameraTargetX(): number {
         // center camera X if no panels are showing
         if (
             SettingEngine.CAMERA_ALWAYS_CENTER_X
             || this.animationState === SitePanelAnimation.HIDDEN
             || this.animationState === SitePanelAnimation.HIDING
-        )
-        {
+        ) {
             // center camera X if desired
-            switch ( Main.game.level.player.facing )
-            {
+            switch ( Main.game.level.player.facing ) {
                 case CharacterFacing.LEFT:
                 {
                     return (
@@ -263,8 +238,7 @@ export class SiteSystem
             }
 
             // target according to player facing
-            switch ( Main.game.level.player.facing )
-            {
+            switch ( Main.game.level.player.facing ) {
                 case CharacterFacing.LEFT:
                 {
                     return this.leftCameraTargetX;
@@ -278,8 +252,7 @@ export class SiteSystem
         }
 
         // target according to active site panel
-        switch ( this.sitePanel.getPosition() )
-        {
+        switch ( this.sitePanel.getPosition() ) {
             case SitePanelPosition.LEFT:
             {
                 return this.leftCameraTargetX;
@@ -295,8 +268,7 @@ export class SiteSystem
     /** ****************************************************************************************************************
     *   Inits the WOW animation system.
     *******************************************************************************************************************/
-    private initWowSystem() : void
-    {
+    private initWowSystem(): void {
         Debug.init.log( 'Initing WOW animations' );
 
         this.wowSystem = new wow.WOW(

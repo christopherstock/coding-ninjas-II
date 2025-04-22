@@ -1,19 +1,17 @@
-import {Main} from "./de/mayflower/ninjas/base/Main";
+import { Main } from './de/mayflower/ninjas/base/Main';
 
 require( './de/mayflower/ninjas/css/custom.less' );
 
 /** ********************************************************************************************************************
 *   Being invoked when the page is loaded completely.
 ***********************************************************************************************************************/
-window.onload = () :void =>
-{
+window.onload = (): void => {
     Main.main();
 };
 
 /** ********************************************************************************************************************
 *   Being invoked when the page is left.
 ***********************************************************************************************************************/
-window.onunload = () :void =>
-{
+window.onunload = (): void => {
     // do explicit unloads
 };

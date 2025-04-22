@@ -1,41 +1,39 @@
-import {Debug} from "../../base/Debug";
-import {Main} from "../../base/Main";
+import { Debug } from '../../base/Debug';
+import { Main } from '../../base/Main';
 
 /** ********************************************************************************************************************
 *   The pointer system that manages all pointer interactions.
 ***********************************************************************************************************************/
-export class PointerSystem
-{
+export class PointerSystem {
     /** Indicates if the left canvas half is currently pointer pressed. */
-    public              leftCanvasHalfPressed               :boolean            = false;
+    public              leftCanvasHalfPressed: boolean            = false;
     /** Indicates if the right canvas half is currently pointer pressed. */
-    public              rightCanvasHalfPressed              :boolean            = false;
+    public              rightCanvasHalfPressed: boolean            = false;
     /** Indicates a canvas tab. */
-    public              canvasTabbed                        :boolean            = false;
+    public              canvasTabbed: boolean            = false;
 
     /** ****************************************************************************************************************
     *   Creates a new key system.
     *******************************************************************************************************************/
-    public constructor()
-    {
+    public constructor() {
         Debug.pointer.log( 'Setup pointer system' );
 
-        const canvas:HTMLCanvasElement = Main.game.engine.canvasSystem.getCanvas();
+        const canvas: HTMLCanvasElement = Main.game.engine.canvasSystem.getCanvas();
 
         // eslint-disable-next-line max-len
-        canvas.addEventListener( 'onpointermove', ( event:Event ) => { this.onPointerMove( event as PointerEvent ); }, false );
+        canvas.addEventListener( 'onpointermove', ( event: Event ) => { this.onPointerMove( event as PointerEvent ); }, false );
         // eslint-disable-next-line max-len
-        canvas.addEventListener( 'onpointerdown', ( event:Event ) => { this.onPointerDown( event as PointerEvent ); }, false );
+        canvas.addEventListener( 'onpointerdown', ( event: Event ) => { this.onPointerDown( event as PointerEvent ); }, false );
         // eslint-disable-next-line max-len
-        window.addEventListener( 'onpointerup',   ( event:Event ) => { this.onPointerUp(   event as PointerEvent ); }, false );
+        window.addEventListener( 'onpointerup',   ( event: Event ) => { this.onPointerUp(   event as PointerEvent ); }, false );
 
-        canvas.addEventListener( 'pointermove', ( event:PointerEvent ) => { this.onPointerMove( event ); }, false );
-        canvas.addEventListener( 'pointerdown', ( event:PointerEvent ) => { this.onPointerDown( event ); }, false );
-        window.addEventListener( 'pointerup',   ( event:PointerEvent ) => { this.onPointerUp(   event ); }, false );
+        canvas.addEventListener( 'pointermove', ( event: PointerEvent ) => { this.onPointerMove( event ); }, false );
+        canvas.addEventListener( 'pointerdown', ( event: PointerEvent ) => { this.onPointerDown( event ); }, false );
+        window.addEventListener( 'pointerup',   ( event: PointerEvent ) => { this.onPointerUp(   event ); }, false );
 
-        canvas.addEventListener( 'touchmove',   ( event:TouchEvent ) => { this.onTouchMove( event ); }, false );
-        canvas.addEventListener( 'touchstart',  ( event:TouchEvent ) => { this.onTouchDown( event ); }, false );
-        window.addEventListener( 'touchend',    ( event:TouchEvent ) => { this.onTouchUp(   event ); }, false );
+        canvas.addEventListener( 'touchmove',   ( event: TouchEvent ) => { this.onTouchMove( event ); }, false );
+        canvas.addEventListener( 'touchstart',  ( event: TouchEvent ) => { this.onTouchDown( event ); }, false );
+        window.addEventListener( 'touchend',    ( event: TouchEvent ) => { this.onTouchUp(   event ); }, false );
     }
 
     /** ****************************************************************************************************************
@@ -43,8 +41,7 @@ export class PointerSystem
     *
     *   @param event The system's propagated pointer event.
     *******************************************************************************************************************/
-    public onPointerMove( event:PointerEvent ) : void
-    {
+    public onPointerMove( event: PointerEvent ): void {
         Debug.pointer.log( 'pointer move' );
 
         event.preventDefault();
@@ -55,25 +52,20 @@ export class PointerSystem
     *
     *   @param event The system's propagated pointer event.
     *******************************************************************************************************************/
-    public onPointerDown( event:PointerEvent ) : void
-    {
+    public onPointerDown( event: PointerEvent ): void {
         Debug.pointer.log( 'pointer down' );
 
         event.preventDefault();
 
-        if ( Main.game.level !== null )
-        {
-            const playerCenterX :number = (
+        if ( Main.game.level !== null ) {
+            const playerCenterX: number = (
                 Main.game.level.player.shape.body.position.x
             ) - Main.game.camera.getOffsetX();
 
-            if ( event.clientX < playerCenterX )
-            {
+            if ( event.clientX < playerCenterX ) {
                 this.leftCanvasHalfPressed = true;
                 this.canvasTabbed           = true;
-            }
-            else
-            {
+            } else {
                 this.rightCanvasHalfPressed = true;
                 this.canvasTabbed           = true;
             }
@@ -85,8 +77,7 @@ export class PointerSystem
     *
     *   @param event The system's propagated pointer event.
     *******************************************************************************************************************/
-    public onPointerUp( event:PointerEvent ) : void
-    {
+    public onPointerUp( event: PointerEvent ): void {
         Debug.pointer.log( 'pointer up' );
 
         event.preventDefault();
@@ -100,8 +91,7 @@ export class PointerSystem
     *
     *   @param event The system's propagated touch event.
     *******************************************************************************************************************/
-    public onTouchMove( event:TouchEvent ) : void
-    {
+    public onTouchMove( event: TouchEvent ): void {
         Debug.pointer.log( 'touch move' );
 
         event.preventDefault();
@@ -112,25 +102,20 @@ export class PointerSystem
     *
     *   @param event The system's propagated touch  event.
     *******************************************************************************************************************/
-    public onTouchDown( event:TouchEvent ) : void
-    {
+    public onTouchDown( event: TouchEvent ): void {
         Debug.pointer.log( 'touch down' );
 
         event.preventDefault();
 
-        if ( Main.game.level !== null )
-        {
-            const playerCenterX:number = (
+        if ( Main.game.level !== null ) {
+            const playerCenterX: number = (
                 Main.game.level.player.shape.body.position.x
             ) - Main.game.camera.getOffsetX();
 
-            if ( event.touches[ 0 ].pageX < playerCenterX )
-            {
+            if ( event.touches[ 0 ].pageX < playerCenterX ) {
                 this.leftCanvasHalfPressed = true;
                 this.canvasTabbed           = true;
-            }
-            else
-            {
+            } else {
                 this.rightCanvasHalfPressed = true;
                 this.canvasTabbed           = true;
             }
@@ -142,8 +127,7 @@ export class PointerSystem
     *
     *   @param event The system's propagated touch  event.
     *******************************************************************************************************************/
-    public onTouchUp( event:TouchEvent ) : void
-    {
+    public onTouchUp( event: TouchEvent ): void {
         Debug.pointer.log( 'touch  up' );
 
         event.preventDefault();

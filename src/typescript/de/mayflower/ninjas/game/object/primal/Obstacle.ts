@@ -1,6 +1,6 @@
-import {GameObject} from "../GameObject";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import { GameObject } from '../GameObject';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 
 /** ********************************************************************************************************************
 *   Specifies if an obstacle allows jump pass through.
@@ -14,12 +14,11 @@ export enum JumpPassThrough
 /** ********************************************************************************************************************
 *   Represents a collidable and solid obstacle.
 ***********************************************************************************************************************/
-export class Obstacle extends GameObject
-{
+export class Obstacle extends GameObject {
     /** Specifies if the player shall be allowed to jump through this obstacle. */
-    private     readonly        jumpPassThrough             :JumpPassThrough                    = null;
+    private     readonly        jumpPassThrough: JumpPassThrough                    = null;
     /** Specifies if the obstacle currently allows passing through. */
-    private     readonly        currentlyAllowPassThrough   :JumpPassThrough                    = null;
+    private     readonly        currentlyAllowPassThrough: JumpPassThrough                    = null;
 
     /** ****************************************************************************************************************
     *   Creates a new obstacle.
@@ -30,17 +29,14 @@ export class Obstacle extends GameObject
     *   @param spriteTemplate  The sprite template to use for this game object.
     *   @param jumpPassThrough Specifies if the player may jump through this obstacle.
     *******************************************************************************************************************/
-    public constructor
-    (
-        shape           :Shape,
-        x               :number,
-        y               :number,
-        spriteTemplate  :SpriteTemplate,
-        jumpPassThrough :JumpPassThrough
-    )
-    {
-        super
-        (
+    public constructor(
+        shape: Shape,
+        x: number,
+        y: number,
+        spriteTemplate: SpriteTemplate,
+        jumpPassThrough: JumpPassThrough
+    ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -54,8 +50,7 @@ export class Obstacle extends GameObject
     /** ****************************************************************************************************************
     *   Renders this obstacle.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
 
         /*

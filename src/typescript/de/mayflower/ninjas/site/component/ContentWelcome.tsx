@@ -1,14 +1,13 @@
 import * as React  from 'react';
-import {Debug} from "../../base/Debug";
-import {SiteContentFactory} from "../SiteContentFactory";
-import {Main} from "../../base/Main";
-import {ImageData} from "../../data/ImageData";
+import { Debug } from '../../base/Debug';
+import { SiteContentFactory } from '../SiteContentFactory';
+import { Main } from '../../base/Main';
+import { ImageData } from '../../data/ImageData';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'welcome' page.
 ***********************************************************************************************************************/
-export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
-{
+export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
     Debug.react.log( 'ContentWelcome.render() being invoked' );
 
     return <div>
@@ -43,8 +42,7 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
         */ }
 
         {
-            SiteContentFactory.createParagraph
-            (
+            SiteContentFactory.createParagraph(
                 'Welcome to the Demo of '
                 + '<a target=\'_blank\' title=\'Coding Ninjas II\' '
                 + 'href=\'https://developercamp.io/\'>Coding Ninjas II</a>.'
@@ -56,35 +54,34 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
         { /* SiteContentFactory.createDivider() */ }
 
         {
-            SiteContentFactory.createCarousel
-            (
+            SiteContentFactory.createCarousel(
                 'scrollx',
                 true,
                 1250,
                 500,
                 [
-                    <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                    <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
                         ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP
-                    ).src + ' )' } }>
+                    ).src + ' )' }}>
                         <h3>React 16.13.1</h3>
                     </div>,
-                    <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                    <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
                         ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES
-                    ).src + ' )' } }>
+                    ).src + ' )' }}>
                         <h3>Ant Design 3.26.9</h3>
                     </div>,
-                    <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                    <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
                         ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE
-                    ).src + ' )' } }>
+                    ).src + ' )' }}>
                         <h3>TypeScript 3.7.5</h3>
                     </div>,
-                    <div className='carouselPage' style={ { 'backgroundImage': 'url( '
+                    <div className='carouselPage' style={{ 'backgroundImage': 'url( '
                     + Main.game.engine.imageSystem.getImage(
                         ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS
-                    ).src + ' )' } }>
+                    ).src + ' )' }}>
                         <h3>Webpack 4.41.6</h3>
                     </div>,
                 ]

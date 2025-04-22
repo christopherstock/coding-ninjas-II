@@ -1,33 +1,30 @@
 /* eslint-disable max-len */
 
-import * as matter from 'matter-js';
-import {Level, LevelId} from "../../game/level/Level";
-import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from "../../game/object/GameObjectBundleFactory";
-import {GameObjectFactory} from "../../game/object/GameObjectFactory";
-import {ImageData} from "../ImageData";
-import {GameAction, GameActionType} from "../../game/object/GameAction";
-import {GroundData} from "../GroundData";
-import {SpriteTemplate} from "../../engine/ui/SpriteTemplate";
-import {CharacterFacing} from "../../game/object/being/CharacterFacing";
+import { Level, LevelId } from '../../game/level/Level';
+import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { ImageData } from '../ImageData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { GroundData } from '../GroundData';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
 ***********************************************************************************************************************/
-export class LevelHut extends Level
-{
-    public  playerStartX            :number                             = 1400;
-    public  playerStartY            :number                             = 1400;
-    public  playerInitialFloat      :boolean                            = false;
-    public  playerInitialFacing     :CharacterFacing                    = CharacterFacing.RIGHT;
+export class LevelHut extends Level {
+    public  playerStartX: number                             = 1400;
+    public  playerStartY: number                             = 1400;
+    public  playerInitialFloat: boolean                            = false;
+    public  playerInitialFacing: CharacterFacing                    = CharacterFacing.RIGHT;
 
-    public  width                   :number                             = 2500;
-    public  height                  :number                             = 2500;
+    public  width: number                             = 2500;
+    public  height: number                             = 2500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.
     *******************************************************************************************************************/
-    protected createGameObjects() : void
-    {
+    protected createGameObjects(): void {
         // player
         GameObjectBundleFactory.createPlayer( this );
 
@@ -41,8 +38,7 @@ export class LevelHut extends Level
     /** ****************************************************************************************************************
     *   Adds the startup shrine.
     *******************************************************************************************************************/
-    private addHomeShrine() : void
-    {
+    private addHomeShrine(): void {
         // ground
         GameObjectBundleFactory.createSolidGround( this, 0, 1400, 40,  3, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW );
         // GameObjectBundleFactory.createSolidGround( this, 0, 300, 40,  5, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW );

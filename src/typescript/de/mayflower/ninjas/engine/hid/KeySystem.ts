@@ -1,25 +1,23 @@
-import {Debug} from "../../base/Debug";
+import { Debug } from '../../base/Debug';
 
 /** ********************************************************************************************************************
 *   The key system that manages all pressed keys.
 ***********************************************************************************************************************/
-export class KeySystem
-{
+export class KeySystem {
     /** All 'pressed' information for all keys. */
-    private             keysPressed         :boolean[]                  = [];
+    private             keysPressed: boolean[]                  = [];
     /** All 'needs release' information for all keys. */
-    private             keysNeedRelease     :boolean[]                  = [];
+    private             keysNeedRelease: boolean[]                  = [];
 
     /** ****************************************************************************************************************
     *   Creates a new key system.
     *******************************************************************************************************************/
-    public constructor()
-    {
-        window.addEventListener( 'keydown',     ( event :Event ) => { this.onKeyDown( event ); }, false );
-        window.addEventListener( 'keyup',       ( event :Event ) => { this.onKeyUp(   event ); }, false );
+    public constructor() {
+        window.addEventListener( 'keydown',     ( event: Event ) => { this.onKeyDown( event ); }, false );
+        window.addEventListener( 'keyup',       ( event: Event ) => { this.onKeyUp(   event ); }, false );
 
-        window.addEventListener( 'onkeydown',   ( event :Event ) => { this.onKeyDown( event ); }, false );
-        window.addEventListener( 'onkeyup',     ( event :Event ) => { this.onKeyUp(   event ); }, false );
+        window.addEventListener( 'onkeydown',   ( event: Event ) => { this.onKeyDown( event ); }, false );
+        window.addEventListener( 'onkeyup',     ( event: Event ) => { this.onKeyUp(   event ); }, false );
     }
 
     /** ****************************************************************************************************************
@@ -27,14 +25,12 @@ export class KeySystem
     *
     *   @param event The system's propagated key event.
     *******************************************************************************************************************/
-    public onKeyDown( event:Event ) : void
-    {
+    public onKeyDown( event: Event ): void {
         // event.preventDefault();
 
-        const keyID :string = ( event as KeyboardEvent ).key.toLowerCase();
+        const keyID: string = ( event as KeyboardEvent ).key.toLowerCase();
 
-        if ( !this.keysNeedRelease[ keyID ] && !this.keysPressed[ keyID ] )
-        {
+        if ( !this.keysNeedRelease[ keyID ] && !this.keysPressed[ keyID ] ) {
             this.keysPressed[ keyID ] = true;
 
             Debug.key.log( 'key pressed ['  + keyID + ']' );
@@ -46,11 +42,10 @@ export class KeySystem
     *
     *   @param event The system's propagated key event.
     *******************************************************************************************************************/
-    public onKeyUp( event:Event ) : void
-    {
+    public onKeyUp( event: Event ): void {
         // event.preventDefault();
 
-        const keyID :string = ( event as KeyboardEvent ).key.toLowerCase();
+        const keyID: string = ( event as KeyboardEvent ).key.toLowerCase();
 
         this.keysPressed[     keyID ] = false;
         this.keysNeedRelease[ keyID ] = false;
@@ -66,8 +61,7 @@ export class KeySystem
     *   @return         <code>true</code> if this key is currently pressed.
     *                   Otherwise <code>false</code>.
     *******************************************************************************************************************/
-    public isPressed( keyCode:string ):boolean
-    {
+    public isPressed( keyCode: string ): boolean {
         return this.keysPressed[ keyCode.toLowerCase() ];
     }
 
@@ -76,8 +70,7 @@ export class KeySystem
     *
     *   @param keyCode The keyCode of the key to mark as 'needs key release'.
     *******************************************************************************************************************/
-    public setNeedsRelease( keyCode:string ) : void
-    {
+    public setNeedsRelease( keyCode: string ): void {
         this.keysNeedRelease[ keyCode.toLowerCase() ] = true;
         this.keysPressed[     keyCode.toLowerCase() ] = false;
     }
@@ -85,8 +78,7 @@ export class KeySystem
     /** ****************************************************************************************************************
     *   Flags all keys as released.
     *******************************************************************************************************************/
-    public releaseAllKeys() : void
-    {
+    public releaseAllKeys(): void {
         this.keysPressed = [];
     }
 }

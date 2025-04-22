@@ -1,33 +1,32 @@
-import {Debug} from "../../base/Debug";
-import {Main} from "../../base/Main";
-import {ImageUtil} from "../../util/ImageUtil";
+import { Debug } from '../../base/Debug';
+import { Main } from '../../base/Main';
+import { ImageUtil } from '../../util/ImageUtil';
 
 /** ********************************************************************************************************************
 *   The system realizes dynamic image loading.
 ***********************************************************************************************************************/
-export class ImageSystem
-{
+export class ImageSystem {
     /** All image file names to load. */
-    private     readonly            fileNames                       :string[]                       = null;
+    private     readonly            fileNames: string[]                       = null;
     /** All image file names to mirror. */
-    private     readonly            mirroredFileNames               :string[]                       = null;
+    private     readonly            mirroredFileNames: string[]                       = null;
     /** The method to invoke when all images are loaded. */
-    private     readonly            onLoadComplete                  :() => void                     = null;
+    private     readonly            onLoadComplete: ()=> void                     = null;
 
     /** The number of images to load. */
-    private                         imagesToLoad                    :number                         = 0;
+    private                         imagesToLoad: number                         = 0;
     /** The number of currently loaded images. */
-    private                         loadedImageCount                :number                         = 0;
+    private                         loadedImageCount: number                         = 0;
 
     /** The number of images that need to be mirrored. */
-    private                         imagesToMirrorCount             :number                         = 0;
+    private                         imagesToMirrorCount: number                         = 0;
     /** The number of currently mirrored images. */
-    private                         mirroredImageCount              :number                         = 0;
+    private                         mirroredImageCount: number                         = 0;
 
     /** All loaded image objects. */
-    private                         originalImages                  :HTMLImageElement[]             = [];
+    private                         originalImages: HTMLImageElement[]             = [];
     /** All loaded and mirrored image objects. */
-    private                         mirroredImages                  :HTMLImageElement[]             = [];
+    private                         mirroredImages: HTMLImageElement[]             = [];
 
     /** ****************************************************************************************************************
     *   Preloads all images into memory.
@@ -36,8 +35,7 @@ export class ImageSystem
     *   @param mirroredFileNames The names of all mirrored image files to load.
     *   @param onLoadComplete    The method to invoke when all image files are loaded.
     *******************************************************************************************************************/
-    public constructor( fileNames:string[], mirroredFileNames:string[], onLoadComplete:() => void )
-    {
+    public constructor( fileNames: string[], mirroredFileNames: string[], onLoadComplete: ()=> void ) {
         this.fileNames         = fileNames;
         this.mirroredFileNames = mirroredFileNames;
         this.onLoadComplete    = onLoadComplete;
@@ -50,10 +48,8 @@ export class ImageSystem
     *
     *   @throws Error if the id doesn't exist.
     *******************************************************************************************************************/
-    public getImage( id:string ) : HTMLImageElement
-    {
-        if ( !this.originalImages[ id ] )
-        {
+    public getImage( id: string ): HTMLImageElement {
+        if ( !this.originalImages[ id ] ) {
             throw new Error( 'The image id [' + id + '] doesn\'t exist in the image array stack.' );
         }
 
@@ -65,39 +61,34 @@ export class ImageSystem
     *
     *   @param id The id of the mirrored image to receive.
     *******************************************************************************************************************/
-    public getMirroredImage( id:string ) : HTMLImageElement
-    {
+    public getMirroredImage( id: string ): HTMLImageElement {
         return this.mirroredImages[ id ];
     }
 
     /** ****************************************************************************************************************
     *   Loads all specified image files into system memory.
     *******************************************************************************************************************/
-    public loadImages() : void
-    {
+    public loadImages(): void {
         Debug.image.log( 'Loading [' + String( this.fileNames.length ) + '] images' );
 
         // load all images
         this.imagesToLoad = this.fileNames.length;
-        for ( const fileName of this.fileNames )
-        {
+        for ( const fileName of this.fileNames ) {
             this.originalImages[ fileName ]        = new Image();
             this.originalImages[ fileName ].src    = fileName;
-            this.originalImages[ fileName ].onload = ( event:Event ) :void => { this.onLoadImage( event ); };
+            this.originalImages[ fileName ].onload = ( event: Event ): void => { this.onLoadImage( event ); };
         }
     }
 
     /** ****************************************************************************************************************
     *   Mirrors all specified image files in system memory.
     *******************************************************************************************************************/
-    public mirrorImages() : void
-    {
+    public mirrorImages(): void {
         Debug.image.log( 'Mirroring [' + String( this.mirroredFileNames.length ) + '] images' );
 
         // mirror determined images
         this.imagesToMirrorCount = this.mirroredFileNames.length;
-        for ( const mirroredFileName of this.mirroredFileNames )
-        {
+        for ( const mirroredFileName of this.mirroredFileNames ) {
             this.mirroredImages[ mirroredFileName ] = ImageUtil.flipImageHorizontal(
                 this.originalImages[ mirroredFileName ],
                 () => { this.onMirrorImage(); }
@@ -110,17 +101,14 @@ export class ImageSystem
     *
     *   @return An associated array of all images. Source attribute is the key.
     *******************************************************************************************************************/
-    public getAll() : HTMLImageElement[]
-    {
-        const ret:HTMLImageElement[] = [];
+    public getAll(): HTMLImageElement[] {
+        const ret: HTMLImageElement[] = [];
 
-        for ( const fileName of this.fileNames )
-        {
+        for ( const fileName of this.fileNames ) {
             ret[ this.getImage( fileName ).src ] = this.getImage( fileName );
         }
 
-        for ( const mirroredFileName of this.mirroredFileNames )
-        {
+        for ( const mirroredFileName of this.mirroredFileNames ) {
             ret[ this.getMirroredImage( mirroredFileName ).src ] = this.getMirroredImage( mirroredFileName );
         }
 
@@ -132,13 +120,12 @@ export class ImageSystem
     *
     *   @param event The according image event.
     *******************************************************************************************************************/
-    private onLoadImage( event:Event ) : void
-    {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    private onLoadImage( event: Event ): void {
         Main.game.engine.preloader.setLoadingPercentage(
             5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
 
-        if ( ++this.loadedImageCount === this.imagesToLoad )
-        {
+        if ( ++this.loadedImageCount === this.imagesToLoad ) {
             Debug.image.log( 'All [' + String( this.imagesToLoad ) + '] images loaded' );
 
             this.mirrorImages();
@@ -148,14 +135,12 @@ export class ImageSystem
     /** ****************************************************************************************************************
     *   Being invoked when one image was mirrored.
     *******************************************************************************************************************/
-    private onMirrorImage() : void
-    {
+    private onMirrorImage(): void {
         Main.game.engine.preloader.setLoadingPercentage(
             55 + ( 20 * this.mirroredImageCount / this.imagesToMirrorCount )
         );
 
-        if ( ++this.mirroredImageCount === this.imagesToMirrorCount )
-        {
+        if ( ++this.mirroredImageCount === this.imagesToMirrorCount ) {
             Debug.image.log( 'All [' + String( this.imagesToMirrorCount ) + '] images mirrored' );
 
             this.onLoadComplete();

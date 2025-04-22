@@ -1,15 +1,14 @@
 /* eslint-disable max-len */
 
-import {GroundImageSet} from "../engine/ui/GroundImageSet";
-import {ImageData} from "./ImageData";
+import { GroundImageSet } from '../engine/ui/GroundImageSet';
+import { ImageData } from './ImageData';
 
 /** ********************************************************************************************************************
 *   All concrete tilesets the game makes use of.
 ***********************************************************************************************************************/
-export class GroundData
-{
+export class GroundData {
     /** Tileset 'dark ground'. */
-    public      static  TILESET_DARK_GROUND                         :GroundImageSet             = new GroundImageSet
+    public      static  TILESET_DARK_GROUND: GroundImageSet             = new GroundImageSet
     (
         ImageData.IMAGE_GROUND_DARK_SOLID_LEFT,
         ImageData.IMAGE_GROUND_DARK_SOLID_RIGHT,
@@ -38,7 +37,7 @@ export class GroundData
     );
 
     /** Tileset 'snow'. */
-    public      static  TILESET_SNOW                                :GroundImageSet             = new GroundImageSet
+    public      static  TILESET_SNOW: GroundImageSet             = new GroundImageSet
     (
         ImageData.IMAGE_GROUND_SNOW_SOLID_LEFT,
         ImageData.IMAGE_GROUND_SNOW_SOLID_RIGHT,

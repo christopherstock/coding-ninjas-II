@@ -1,16 +1,15 @@
 import * as matter from 'matter-js';
-import {Decoration} from "../deco/Decoration";
-import {GameAction} from "../GameAction";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
-import {Main} from "../../../base/Main";
+import { Decoration } from '../deco/Decoration';
+import { GameAction } from '../GameAction';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { Main } from '../../../base/Main';
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
 ***********************************************************************************************************************/
-export class Door extends Decoration
-{
-    private action: GameAction = null;
+export class Door extends Decoration {
+    private readonly action: GameAction = null;
 
     /** ****************************************************************************************************************
     *   Creates a new Door.
@@ -22,17 +21,14 @@ export class Door extends Decoration
     *   @param content             The site content to display on releasing this trigger.
     *   @param sitePanelAppearance The position for the site panel to appear.
     *******************************************************************************************************************/
-    public constructor
-    (
-        shape               :Shape,
-        spriteTemplate      :SpriteTemplate,
-        x                   :number,
-        y                   :number,
-        action              :GameAction
-    )
-    {
-        super
-        (
+    public constructor(
+        shape: Shape,
+        spriteTemplate: SpriteTemplate,
+        x: number,
+        y: number,
+        action: GameAction
+    ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -45,17 +41,18 @@ export class Door extends Decoration
     /** ****************************************************************************************************************
     *   Renders this door.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
     }
 
     /** ****************************************************************************************************************
     *   Renders this site trigger.
     *******************************************************************************************************************/
-    public checkPlayerInteraction() : boolean
-    {
-        const doorActivated: boolean = matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds );
+    public checkInteraction(): boolean {
+        const doorActivated: boolean = matter.Bounds.overlaps(
+            this.shape.body.bounds,
+            Main.game.level.player.shape.body.bounds
+        );
 
         if (doorActivated) {
             Main.game.resetAndLaunchLevel(

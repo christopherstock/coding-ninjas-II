@@ -1,40 +1,35 @@
-import {SpriteTemplate} from "./SpriteTemplate";
-import {Main} from "../../base/Main";
-import {MathUtil} from "../../util/MathUtil";
-import {RandomFrames} from "./RandomFrames";
-import {MirrorImage} from "./MirrorImage";
-import {LoopSprite} from "./LoopSprite";
+import { Main } from '../../base/Main';
+import { MathUtil } from '../../util/MathUtil';
+import { SpriteTemplate } from './SpriteTemplate';
+import { RandomFrames } from './RandomFrames';
+import { MirrorImage } from './MirrorImage';
+import { LoopSprite } from './LoopSprite';
 
 /** ********************************************************************************************************************
 *   Represents one game sprite.
 ***********************************************************************************************************************/
-export class Sprite
-{
+export class Sprite {
     /** The sprite template for this sprite. */
-    public                  template                                    :SpriteTemplate  = null;
+    public                  template: SpriteTemplate  = null;
 
     /** The id of the current frame for this sprite. */
-    private                 currentFrame                                :number                 = 0;
+    private                 currentFrame: number                 = 0;
     /** The current tick since last frame change. */
-    private                 currentTick                                 :number                 = 0;
+    private                 currentTick: number                 = 0;
 
     /** ****************************************************************************************************************
     *   Creates a new sprite.
     *
     *   @param template The template for this sprite.
     *******************************************************************************************************************/
-    public constructor( template:SpriteTemplate )
-    {
+    public constructor( template: SpriteTemplate ) {
         this.template = template;
 
         this.currentTick  = 0;
 
-        if ( template.randomFrames !== RandomFrames.NO )
-        {
+        if ( template.randomFrames !== RandomFrames.NO ) {
             this.assignRandomFrame();
-        }
-        else
-        {
+        } else {
             this.currentFrame = 0;
         }
     }
@@ -44,11 +39,9 @@ export class Sprite
     *
     *   @return If the frame actually changed.
     *******************************************************************************************************************/
-    public render() : boolean
-    {
+    public render(): boolean {
         // no changes for single framed sprites
-        if ( this.template.singleFramed )
-        {
+        if ( this.template.singleFramed ) {
             return false;
         }
 
@@ -56,8 +49,7 @@ export class Sprite
         if (
             this.template.loop === LoopSprite.NO
             && this.currentFrame === this.template.imageIds.length - 1
-        )
-        {
+        ) {
             return false;
         }
 
@@ -65,24 +57,19 @@ export class Sprite
         ++this.currentTick;
 
         // check if the delay is reached
-        if ( this.currentTick >= this.template.ticksBetweenFrames )
-        {
+        if ( this.currentTick >= this.template.ticksBetweenFrames ) {
             // reset tick count
             this.currentTick = 0;
 
             // check if random frame shall be assigned
-            if ( this.template.randomFrames === RandomFrames.ALL_FRAMES )
-            {
+            if ( this.template.randomFrames === RandomFrames.ALL_FRAMES ) {
                 this.assignRandomFrame();
-            }
-            else
-            {
+            } else {
                 // next frame
                 ++this.currentFrame;
 
                 // reset frame on reaching upper bound
-                if ( this.currentFrame >= this.template.imageIds.length )
-                {
+                if ( this.currentFrame >= this.template.imageIds.length ) {
                     this.currentFrame = 0;
                 }
             }
@@ -98,12 +85,10 @@ export class Sprite
     *
     *   @return The image url of the currently active frame.
     *******************************************************************************************************************/
-    public getCurrentFrameImageUrl() : string
-    {
-        const imageId:string = this.template.imageIds[ this.currentFrame ];
+    public getCurrentFrameImageUrl(): string {
+        const imageId: string = this.template.imageIds[ this.currentFrame ];
 
-        if ( this.template.mirrored === MirrorImage.YES )
-        {
+        if ( this.template.mirrored === MirrorImage.YES ) {
             return Main.game.engine.imageSystem.getMirroredImage( imageId ).src;
         }
 
@@ -113,8 +98,7 @@ export class Sprite
     /** ****************************************************************************************************************
     *   Assigns a random frame as the current frame.
     *******************************************************************************************************************/
-    private assignRandomFrame() : void
-    {
+    private assignRandomFrame(): void {
         this.currentFrame = MathUtil.getRandomInt( 0, ( this.template.imageIds.length - 1 ) );
     }
 }

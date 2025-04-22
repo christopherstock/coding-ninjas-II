@@ -1,20 +1,19 @@
 import * as matter from 'matter-js';
-import {Shape, StaticShape} from "./Shape";
-import {DebugColor} from "../../setting/SettingDebug";
-import {BodyDensity, BodyFriction, BodyRestitution} from "../../setting/SettingMatter";
+import { DebugColor } from '../../setting/SettingDebug';
+import { BodyDensity, BodyFriction, BodyRestitution } from '../../setting/SettingMatter';
+import { Shape, StaticShape } from './Shape';
 
 /** ********************************************************************************************************************
 *   A free form shape for a game object.
 ***********************************************************************************************************************/
-export class ShapeFreeForm extends Shape
-{
+export class ShapeFreeForm extends Shape {
     /** All vertices that build the free form. */
-    public              vertices            :matter.Vector[]        = null;
+    public              vertices: matter.Vector[]        = null;
 
     /** The boundary width. */
-    public              boundWidth          :number                 = 0.0;
+    public              boundWidth: number                 = 0.0;
     /** The boundary height. */
-    public              boundHeight         :number                 = 0.0;
+    public              boundHeight: number                 = 0.0;
 
     /** ****************************************************************************************************************
     *   Creates a new free formed shape.
@@ -27,17 +26,15 @@ export class ShapeFreeForm extends Shape
     *   @param density     The object's body density.
     *   @param restitution The object's body restitution.
     *******************************************************************************************************************/
-    public constructor
-    (
-        vertices    :matter.Vector[],
-        debugColor  :DebugColor,
-        isStatic    :StaticShape,
-        angle       :number,
-        friction    :BodyFriction,
-        density     :BodyDensity,
-        restitution :BodyRestitution
-    )
-    {
+    public constructor(
+        vertices: matter.Vector[],
+        debugColor: DebugColor,
+        isStatic: StaticShape,
+        angle: number,
+        friction: BodyFriction,
+        density: BodyDensity,
+        restitution: BodyRestitution
+    ) {
         super( debugColor, isStatic, angle, friction, density, restitution );
 
         this.vertices = vertices;
@@ -52,8 +49,7 @@ export class ShapeFreeForm extends Shape
     *
     *   @return The body for this shape.
     *******************************************************************************************************************/
-    public createBody() : matter.Body
-    {
+    public createBody(): matter.Body {
         return matter.Bodies.fromVertices(
             ( this.boundWidth  / 2 ),
             ( this.boundHeight / 2 ),
@@ -67,8 +63,7 @@ export class ShapeFreeForm extends Shape
     *
     *   @return The shape's boundaries width.
     *******************************************************************************************************************/
-    public getWidth() : number
-    {
+    public getWidth(): number {
         return this.boundWidth;
     }
 
@@ -77,39 +72,32 @@ export class ShapeFreeForm extends Shape
     *
     *   @return The shape's boundaries height.
     *******************************************************************************************************************/
-    public getHeight() : number
-    {
+    public getHeight(): number {
         return this.boundHeight;
     }
 
     /** ****************************************************************************************************************
     *   Calculates the width and height of shapes.
     *******************************************************************************************************************/
-    private determineBoundDimensions() : void
-    {
-        let minimumX:number = Infinity;
-        let minimumY:number = Infinity;
+    private determineBoundDimensions(): void {
+        let minimumX: number = Infinity;
+        let minimumY: number = Infinity;
 
-        let maximumX:number = -Infinity;
-        let maximumY:number = -Infinity;
+        let maximumX: number = -Infinity;
+        let maximumY: number = -Infinity;
 
-        for ( const vertex of this.vertices )
-        {
-            if ( vertex.x < minimumX )
-            {
+        for ( const vertex of this.vertices ) {
+            if ( vertex.x < minimumX ) {
                 minimumX = vertex.x;
             }
-            if ( vertex.y < minimumY )
-            {
+            if ( vertex.y < minimumY ) {
                 minimumY = vertex.y;
             }
 
-            if ( vertex.x > maximumX )
-            {
+            if ( vertex.x > maximumX ) {
                 maximumX = vertex.x;
             }
-            if ( vertex.y > maximumY )
-            {
+            if ( vertex.y > maximumY ) {
                 maximumY = vertex.y;
             }
         }

@@ -1,11 +1,11 @@
 import * as matter from 'matter-js';
-import {Decoration} from "../deco/Decoration";
-import {SiteContent} from "../../../site/SiteContentSystem";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
-import {SitePanelPosition} from "../../../engine/SitePanel";
-import {Main} from "../../../base/Main";
-import {CharacterFacing} from "../being/CharacterFacing";
+import { Decoration } from '../deco/Decoration';
+import { SiteContent } from '../../../site/SiteContentSystem';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { SitePanelPosition } from '../../../engine/SitePanel';
+import { Main } from '../../../base/Main';
+import { CharacterFacing } from '../being/CharacterFacing';
 
 /** ********************************************************************************************************************
 *   Specifies possible appearances for the site panel.
@@ -20,15 +20,14 @@ export enum SitePanelAppearance
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
 ***********************************************************************************************************************/
-export class SiteTrigger extends Decoration
-{
+export class SiteTrigger extends Decoration {
     /** The site content to show when this trigger is released. */
-    private     readonly            content                         :SiteContent             = null;
+    private     readonly            content: SiteContent             = null;
     /** A fixed position for the panel to popup, if desired. */
-    private     readonly            sitePanelAppearance             :SitePanelAppearance     = null;
+    private     readonly            sitePanelAppearance: SitePanelAppearance     = null;
 
     /** Flags if the according site panel is currently displayed. */
-    private                         sitePanelActive                 :boolean                        = false;
+    private                         sitePanelActive: boolean                        = false;
 
     /** ****************************************************************************************************************
     *   Creates a new site trigger.
@@ -40,18 +39,15 @@ export class SiteTrigger extends Decoration
     *   @param content             The site content to display on releasing this trigger.
     *   @param sitePanelAppearance The position for the site panel to appear.
     *******************************************************************************************************************/
-    public constructor
-    (
-        shape               :Shape,
-        spriteTemplate      :SpriteTemplate,
-        x                   :number,
-        y                   :number,
-        content             :SiteContent,
-        sitePanelAppearance :SitePanelAppearance
-    )
-    {
-        super
-        (
+    public constructor(
+        shape: Shape,
+        spriteTemplate: SpriteTemplate,
+        x: number,
+        y: number,
+        content: SiteContent,
+        sitePanelAppearance: SitePanelAppearance
+    ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -65,31 +61,23 @@ export class SiteTrigger extends Decoration
     /** ****************************************************************************************************************
     *   Renders this site trigger.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
 
         // check if player collides with this trigger
-        if ( this.checkPlayerCollision() )
-        {
-            if ( !this.sitePanelActive )
-            {
+        if ( this.checkPlayerCollision() ) {
+            if ( !this.sitePanelActive ) {
                 // get panel popup according to player facing direction
-                const panelPosition:SitePanelPosition = this.determinePanelPosition();
+                const panelPosition: SitePanelPosition = this.determinePanelPosition();
 
-                if ( Main.game.engine.siteSystem.show( this.content, panelPosition ) )
-                {
+                if ( Main.game.engine.siteSystem.show( this.content, panelPosition ) ) {
                     Main.game.level.setShrineBookOpen( this.content, true );
                     this.sitePanelActive = true;
                 }
             }
-        }
-        else
-        {
-            if ( this.sitePanelActive )
-            {
-                if ( Main.game.engine.siteSystem.hide() )
-                {
+        } else {
+            if ( this.sitePanelActive ) {
+                if ( Main.game.engine.siteSystem.hide() ) {
                     Main.game.level.setShrineBookOpen( this.content, false );
                     this.sitePanelActive = false;
                 }
@@ -100,8 +88,7 @@ export class SiteTrigger extends Decoration
     /** ****************************************************************************************************************
     *   Renders this site trigger.
     *******************************************************************************************************************/
-    private checkPlayerCollision() : boolean
-    {
+    private checkPlayerCollision(): boolean {
         return (
             matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds )
         );
@@ -112,14 +99,11 @@ export class SiteTrigger extends Decoration
     *
     *   @return The position of the panel to be shown.
     *******************************************************************************************************************/
-    private determinePanelPosition() : SitePanelPosition
-    {
-        switch ( this.sitePanelAppearance )
-        {
+    private determinePanelPosition(): SitePanelPosition {
+        switch ( this.sitePanelAppearance ) {
             case SitePanelAppearance.PLAYER_FACING:
             {
-                if ( Main.game.level.player.facing === CharacterFacing.LEFT )
-                {
+                if ( Main.game.level.player.facing === CharacterFacing.LEFT ) {
                     return SitePanelPosition.LEFT;
                 }
 

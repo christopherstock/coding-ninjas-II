@@ -1,19 +1,18 @@
 import * as matter from 'matter-js';
-import {SettingMatter} from "../setting/SettingMatter";
-import {SettingDebug} from "../setting/SettingDebug";
-import {SettingEngine} from "../setting/SettingEngine";
-import {Debug} from "../base/Debug";
-import {CanvasSystem} from "./ui/CanvasSystem";
+import { SettingMatter } from '../setting/SettingMatter';
+import { SettingDebug } from '../setting/SettingDebug';
+import { SettingEngine } from '../setting/SettingEngine';
+import { Debug } from '../base/Debug';
+import { CanvasSystem } from './ui/CanvasSystem';
 
 /** ********************************************************************************************************************
 *   Manages the Matter.js engine.
 ***********************************************************************************************************************/
-export class MatterJsSystem
-{
+export class MatterJsSystem {
     /** The Matter.js engine. */
-    private             readonly    engine                      :matter.Engine              = null;
+    private             readonly    engine: matter.Engine              = null;
     /** The Matter.js renderer. */
-    private             readonly    renderer                    :matter.Render              = null;
+    private             readonly    renderer: matter.Render              = null;
 
     /** ****************************************************************************************************************
     *   Creates a new Matter.js engine.
@@ -22,13 +21,11 @@ export class MatterJsSystem
     *   @param callbackAfterRender The function to invoke after  the engine has been rendered and drawed.
     *   @param textureCache        All cached textures to use.
     *******************************************************************************************************************/
-    public constructor
-    (
-        canvasSystem        :CanvasSystem,
-        callbackAfterRender :( renderContext:CanvasRenderingContext2D ) => void,
-        textureCache        :HTMLImageElement[]
-    )
-    {
+    public constructor(
+        canvasSystem: CanvasSystem,
+        callbackAfterRender: ( renderContext: CanvasRenderingContext2D )=> void,
+        textureCache: HTMLImageElement[]
+    ) {
         // create engine
         this.engine = matter.Engine.create();
         this.engine.world.gravity = {
@@ -94,8 +91,7 @@ export class MatterJsSystem
     /** ****************************************************************************************************************
     *   Starts the Matter.js renderer.
     *******************************************************************************************************************/
-    public startRenderer() : void
-    {
+    public startRenderer(): void {
         matter.Render.run( this.renderer );
     }
 
@@ -104,8 +100,7 @@ export class MatterJsSystem
     *
     *   @param constraint A body, composite or constraint of the Matter.js system.
     *******************************************************************************************************************/
-    public addToWorld( constraint:matter.Body|matter.Composite|matter.Constraint ) : void
-    {
+    public addToWorld( constraint: matter.Body|matter.Composite|matter.Constraint ): void {
         matter.Composite.add( this.engine.world, constraint );
     }
 
@@ -114,16 +109,14 @@ export class MatterJsSystem
     *
     *   @param constraint A body, composite or constraint of the Matter.js system.
     *******************************************************************************************************************/
-    public removeFromWorld( constraint:matter.Body|matter.Composite|matter.Constraint ) : void
-    {
+    public removeFromWorld( constraint: matter.Body|matter.Composite|matter.Constraint ): void {
         matter.Composite.remove( this.engine.world, constraint );
     }
 
     /** ****************************************************************************************************************
     *   Updates the dimensions of the Matter.js rendering system.
     *******************************************************************************************************************/
-    public updateEngineDimensions( canvasSystem:CanvasSystem ) : void
-    {
+    public updateEngineDimensions( canvasSystem: CanvasSystem ): void {
         this.renderer.canvas.getContext('2d').scale( canvasSystem.getScale(), canvasSystem.getScale() );
 
         this.renderer.canvas.width  = canvasSystem.getPhysicalWidth();
@@ -138,8 +131,7 @@ export class MatterJsSystem
     /** ****************************************************************************************************************
     *   Updates the Matter.js engine for the specified rendering delta.
     *******************************************************************************************************************/
-    public updateEngine() : void
-    {
+    public updateEngine(): void {
         matter.Engine.update(
             this.engine,
             SettingMatter.RENDER_DELTA_DEFAULT
@@ -149,8 +141,7 @@ export class MatterJsSystem
     /** ****************************************************************************************************************
     *   Resets the world of the Matter.js engine.
     *******************************************************************************************************************/
-    public resetWorld() : void
-    {
+    public resetWorld(): void {
         matter.World.clear( this.engine.world, false );
     }
 
@@ -159,8 +150,7 @@ export class MatterJsSystem
     *
     *   @param bounds The bounds to set for the renderer.
     *******************************************************************************************************************/
-    public setRenderBounds( bounds:matter.Bounds ) : void
-    {
+    public setRenderBounds( bounds: matter.Bounds ): void {
         this.renderer.bounds = bounds;
     }
 }

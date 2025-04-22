@@ -1,20 +1,19 @@
 import * as matter from 'matter-js';
-import {GameObject} from "../GameObject";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
-import {DebugColor} from "../../../setting/SettingDebug";
-import {Main} from "../../../base/Main";
-import {MathUtil} from "../../../util/MathUtil";
+import { GameObject } from '../GameObject';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { DebugColor } from '../../../setting/SettingDebug';
+import { Main } from '../../../base/Main';
+import { MathUtil } from '../../../util/MathUtil';
 
 /** ********************************************************************************************************************
 *   Represents a sigsaw.
 ***********************************************************************************************************************/
-export class SigSaw extends GameObject
-{
+export class SigSaw extends GameObject {
     /** The constraint that builds the turning point for the sigsaw. */
-    private     readonly            constraint                      :matter.Constraint                  = null;
+    private     readonly            constraint: matter.Constraint                  = null;
     /** The maximum rotation speed per tick. */
-    private     readonly            maxRotationSpeed                :number                             = 0.0;
+    private     readonly            maxRotationSpeed: number                             = 0.0;
 
     /** ****************************************************************************************************************
     *   Creates a new sigsaw.
@@ -25,17 +24,14 @@ export class SigSaw extends GameObject
     *   @param y                Startup position Y.
     *   @param maxRotationSpeed The maximum rotation speed per tick.
     *******************************************************************************************************************/
-    public constructor
-    (
-        shape            :Shape,
-        spriteTemplate   :SpriteTemplate,
-        x                :number,
-        y                :number,
-        maxRotationSpeed :number
-    )
-    {
-        super
-        (
+    public constructor(
+        shape: Shape,
+        spriteTemplate: SpriteTemplate,
+        x: number,
+        y: number,
+        maxRotationSpeed: number
+    ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -66,8 +62,7 @@ export class SigSaw extends GameObject
     /** ****************************************************************************************************************
     *   Renders this sigsaw.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
 
         this.clipRotation();
@@ -77,20 +72,16 @@ export class SigSaw extends GameObject
     /** ****************************************************************************************************************
     *   Clips the rotation of the sigsaw.
     *******************************************************************************************************************/
-    private clipRotation() : void
-    {
-        const clipAngle :number = 15.0;
+    private clipRotation(): void {
+        const clipAngle: number = 15.0;
 
-        const minAngle :number = MathUtil.angleToRad( -clipAngle );
-        const maxAngle :number = MathUtil.angleToRad( clipAngle  );
+        const minAngle: number = MathUtil.angleToRad( -clipAngle );
+        const maxAngle: number = MathUtil.angleToRad( clipAngle  );
 
-        if ( this.shape.body.angle < minAngle )
-        {
+        if ( this.shape.body.angle < minAngle ) {
             matter.Body.setAngle(           this.shape.body, minAngle );
             matter.Body.setAngularVelocity( this.shape.body, 0.0       );
-        }
-        else if ( this.shape.body.angle > maxAngle )
-        {
+        } else if ( this.shape.body.angle > maxAngle ) {
             matter.Body.setAngle(           this.shape.body, maxAngle );
             matter.Body.setAngularVelocity( this.shape.body, 0.0       );
         }
@@ -99,19 +90,14 @@ export class SigSaw extends GameObject
     /** ****************************************************************************************************************
     *   Clips the rotation speed of the sigsaw.
     *******************************************************************************************************************/
-    private clipRotationSpeed() : void
-    {
-        if ( this.maxRotationSpeed === -1 )
-        {
+    private clipRotationSpeed(): void {
+        if ( this.maxRotationSpeed === -1 ) {
             return;
         }
 
-        if ( this.shape.body.angularVelocity < -this.maxRotationSpeed )
-        {
+        if ( this.shape.body.angularVelocity < -this.maxRotationSpeed ) {
             matter.Body.setAngularVelocity( this.shape.body, -this.maxRotationSpeed );
-        }
-        else if ( this.shape.body.angularVelocity > this.maxRotationSpeed )
-        {
+        } else if ( this.shape.body.angularVelocity > this.maxRotationSpeed ) {
             matter.Body.setAngularVelocity( this.shape.body, this.maxRotationSpeed );
         }
     }

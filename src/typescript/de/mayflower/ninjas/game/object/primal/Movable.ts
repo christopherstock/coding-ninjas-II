@@ -1,12 +1,11 @@
-import {GameObject} from "../GameObject";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import { GameObject } from '../GameObject';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
 ***********************************************************************************************************************/
-export class Movable extends GameObject
-{
+export class Movable extends GameObject {
     /** ****************************************************************************************************************
     *   Creates a new movable.
     *
@@ -15,16 +14,13 @@ export class Movable extends GameObject
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor
-    (
-        shape          :Shape,
-        spriteTemplate :SpriteTemplate,
-        x              :number,
-        y              :number
-    )
-    {
-        super
-        (
+    public constructor(
+        shape: Shape,
+        spriteTemplate: SpriteTemplate,
+        x: number,
+        y: number
+    ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -35,8 +31,7 @@ export class Movable extends GameObject
     /** ****************************************************************************************************************
     *   Renders this movable.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
 
         // this.clipToHorizontalLevelBounds();

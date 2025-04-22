@@ -1,22 +1,22 @@
-import { Level } from "../level/Level";
-import { SpriteTemplate } from "../../engine/ui/SpriteTemplate";
-import {SpriteTemplateData} from "../../data/SpriteTemplateData";
-import {Player} from "./being/Player";
-import {GameObjectFactory} from "./GameObjectFactory";
-import {DebugColor} from "../../setting/SettingDebug";
-import {JumpPassThrough, Obstacle} from "./primal/Obstacle";
-import {ImageData} from "../../data/ImageData";
-import {StaticShape} from "../../engine/shape/Shape";
-import {GroundImageSet} from "../../engine/ui/GroundImageSet";
-import {Movable} from "./primal/Movable";
-import {CharacterSpriteSet} from "./being/CharacterSpriteSet";
-import {Bot} from "./being/Bot";
-import {Decoration} from "./deco/Decoration";
-import {SiteContent} from "../../site/SiteContentSystem";
-import {Shrine} from "./deco/Shrine";
-import {ShapeRectangle} from "../../engine/shape/ShapeRectangle";
-import {BodyDensity, BodyFriction, BodyRestitution} from "../../setting/SettingMatter";
-import {CharacterFacing} from "./being/CharacterFacing";
+import { Level } from '../level/Level';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { SpriteTemplateData } from '../../data/SpriteTemplateData';
+import { DebugColor } from '../../setting/SettingDebug';
+import { ImageData } from '../../data/ImageData';
+import { StaticShape } from '../../engine/shape/Shape';
+import { GroundImageSet } from '../../engine/ui/GroundImageSet';
+import { SiteContent } from '../../site/SiteContentSystem';
+import { ShapeRectangle } from '../../engine/shape/ShapeRectangle';
+import { BodyDensity, BodyFriction, BodyRestitution } from '../../setting/SettingMatter';
+import { Player } from './being/Player';
+import { GameObjectFactory } from './GameObjectFactory';
+import { JumpPassThrough, Obstacle } from './primal/Obstacle';
+import { Movable } from './primal/Movable';
+import { CharacterSpriteSet } from './being/CharacterSpriteSet';
+import { Bot } from './being/Bot';
+import { Decoration } from './deco/Decoration';
+import { Shrine } from './deco/Shrine';
+import { CharacterFacing } from './being/CharacterFacing';
 
 /* eslint-disable max-len */
 
@@ -71,26 +71,24 @@ export enum DecoPosition
 /** ********************************************************************************************************************
 *   Creates bundled instances of game objects.
 ***********************************************************************************************************************/
-export abstract class GameObjectBundleFactory
-{
+export abstract class GameObjectBundleFactory {
     /** The collision height of the flying ground. */
-    private             static          readonly        HEIGHT_FLYING_GROUND            :number     = 90;
+    private             static          readonly        HEIGHT_FLYING_GROUND: number     = 90;
     /** The altitude of elevated grounds. */
-    private             static          readonly        ALTITUDE                        :number     = 20;
+    private             static          readonly        ALTITUDE: number     = 20;
     /** Ground tile width. */
-    private             static          readonly        GROUND_TILE_WIDTH               :number     = 128;
+    private             static          readonly        GROUND_TILE_WIDTH: number     = 128;
     /** Ground tile height. */
-    private             static          readonly        GROUND_TILE_HEIGHT              :number     = 128;
+    private             static          readonly        GROUND_TILE_HEIGHT: number     = 128;
 
     /** ****************************************************************************************************************
     *   Creates the player.
     *
     *   @param level The level instance to add the player to.
     *******************************************************************************************************************/
-    public static createPlayer( level:Level ) : void
-    {
-        const dimensionSprite :SpriteTemplate = SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT;
-        const firstSprite     :SpriteTemplate = (
+    public static createPlayer( level: Level ): void {
+        const dimensionSprite: SpriteTemplate = SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT;
+        const firstSprite: SpriteTemplate = (
             level.playerInitialFloat
                 ? (
                     level.playerInitialFacing === CharacterFacing.LEFT
@@ -129,27 +127,23 @@ export abstract class GameObjectBundleFactory
     *   @param jumpThrough Specified if the player may jump through this ground.
     *   @param capEnds     Specifies end cappings.
     *******************************************************************************************************************/
-    public static createFlyingGround
-    (
-        level       :Level,
-        xLeft       :number,
-        yTop        :number,
-        length      :number,
-        slope       :Slope,
-        jumpThrough :JumpPassThrough,
-        capEnds     :CapHorz
-    )
-    : void
-    {
-        let leftTile   :SpriteTemplate;
-        let centerTile :SpriteTemplate;
-        let rightTile  :SpriteTemplate;
+    public static createFlyingGround(
+        level: Level,
+        xLeft: number,
+        yTop: number,
+        length: number,
+        slope: Slope,
+        jumpThrough: JumpPassThrough,
+        capEnds: CapHorz
+    ): void {
+        let leftTile: SpriteTemplate;
+        let centerTile: SpriteTemplate;
+        let rightTile: SpriteTemplate;
 
-        let drawY      :number;
-        let alt        :number;
+        let drawY: number;
+        let alt: number;
 
-        switch ( slope )
-        {
+        switch ( slope ) {
             case Slope.ASCENDING:
             {
                 leftTile   = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_GROUND_DARK_FLYING_ASCENDING_LEFT   );
@@ -189,20 +183,14 @@ export abstract class GameObjectBundleFactory
         }
 
         // draw decoration
-        for ( let tileX:number = 0; tileX < length; ++tileX )
-        {
-            if ( tileX === 0 && ( capEnds === CapHorz.LEFT || capEnds === CapHorz.BOTH ) )
-            {
+        for ( let tileX: number = 0; tileX < length; ++tileX ) {
+            if ( tileX === 0 && ( capEnds === CapHorz.LEFT || capEnds === CapHorz.BOTH ) ) {
                 level.decosBg.push(
                     GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH,
                         drawY + leftTile.height, StaticShape.YES, leftTile ) );
-            }
-            else if ( tileX === ( length - 1 ) && ( capEnds === CapHorz.RIGHT || capEnds === CapHorz.BOTH ) )
-            {
+            } else if ( tileX === ( length - 1 ) && ( capEnds === CapHorz.RIGHT || capEnds === CapHorz.BOTH ) ) {
                 level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + rightTile.height, StaticShape.YES, rightTile ) );
-            }
-            else
-            {
+            } else {
                 level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + centerTile.height, StaticShape.YES, centerTile ) );
             }
 
@@ -210,8 +198,7 @@ export abstract class GameObjectBundleFactory
         }
 
         // add obstacle
-        switch ( slope )
-        {
+        switch ( slope ) {
             case Slope.NONE:
             {
                 level.obstacles.push( GameObjectFactory.createObstacleSpriteless( xLeft, yTop, length * GameObjectBundleFactory.GROUND_TILE_WIDTH, GameObjectBundleFactory.HEIGHT_FLYING_GROUND, 0.0, jumpThrough ) );
@@ -239,36 +226,33 @@ export abstract class GameObjectBundleFactory
     *   @param capHorz      Specifies horizontal end cappings.
     *   @param ground       The set of ground tiles to use.
     *******************************************************************************************************************/
-    public static createSolidGround
-    (
-        level      :Level,
-        xLeft      :number,
-        yTop       :number,
-        lengthHorz :number,
-        lengthVert :number,
-        slope      :Slope,
-        capHorz    :CapHorz,
-        ground     :GroundImageSet
-    )
-    : void
-    {
-        let leftTopTile       :SpriteTemplate = null;
-        let topTile           :SpriteTemplate = null;
-        let rightTopTile      :SpriteTemplate = null;
+    // eslint-disable-next-line complexity
+    public static createSolidGround(
+        level: Level,
+        xLeft: number,
+        yTop: number,
+        lengthHorz: number,
+        lengthVert: number,
+        slope: Slope,
+        capHorz: CapHorz,
+        ground: GroundImageSet
+    ): void {
+        let leftTopTile: SpriteTemplate = null;
+        let topTile: SpriteTemplate = null;
+        let rightTopTile: SpriteTemplate = null;
 
-        const leftTile        :SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidLeft   );
-        const centerTile      :SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidCenter );
-        const rightTile       :SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidRight  );
+        const leftTile: SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidLeft   );
+        const centerTile: SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidCenter );
+        const rightTile: SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidRight  );
 
-        const leftBottomTile  :SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidLeftBottom  );
-        const bottomTile      :SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidBottom      );
-        const rightBottomTile :SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidRightBottom );
+        const leftBottomTile: SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidLeftBottom  );
+        const bottomTile: SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidBottom      );
+        const rightBottomTile: SpriteTemplate = SpriteTemplate.createFromSingleImage( ground.solidRightBottom );
 
-        let firstLineDrawY  :number = 0.0;
-        let firstLineAlt    :number = 0.0;
+        let firstLineDrawY: number = 0.0;
+        let firstLineAlt: number = 0.0;
 
-        switch ( slope )
-        {
+        switch ( slope ) {
             case Slope.NONE:
             {
                 leftTopTile    = SpriteTemplate.createFromSingleImage( ground.solidLeftTop  );
@@ -307,71 +291,47 @@ export abstract class GameObjectBundleFactory
         }
 
         // browse lines
-        for ( let tileY:number = 0; tileY < lengthVert; ++tileY )
-        {
-            if ( tileY === 0 )
-            {
+        for ( let tileY: number = 0; tileY < lengthVert; ++tileY ) {
+            if ( tileY === 0 ) {
                 // add top line
-                let drawY:number = firstLineDrawY;
+                let drawY: number = firstLineDrawY;
 
-                for ( let tileX :number = 0; tileX < lengthHorz; ++tileX )
-                {
-                    if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) )
-                    {
+                for ( let tileX: number = 0; tileX < lengthHorz; ++tileX ) {
+                    if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) ) {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, leftTopTile ) );
-                    }
-                    else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) )
-                    {
+                    } else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) ) {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, rightTopTile ) );
-                    }
-                    else
-                    {
+                    } else {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, topTile ) );
                     }
 
                     drawY += firstLineAlt;
                 }
-            }
-            else if ( tileY === lengthVert - 1 )
-            {
+            } else if ( tileY === lengthVert - 1 ) {
                 // add bottom line
-                let drawY :number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
+                let drawY: number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
 
-                for ( let tileX:number = 0; tileX < lengthHorz; ++tileX )
-                {
-                    if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) )
-                    {
+                for ( let tileX: number = 0; tileX < lengthHorz; ++tileX ) {
+                    if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) ) {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, leftBottomTile ) );
-                    }
-                    else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) )
-                    {
+                    } else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) ) {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, rightBottomTile ) );
-                    }
-                    else
-                    {
+                    } else {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, bottomTile ) );
                     }
 
                     drawY += firstLineAlt;
                 }
-            }
-            else
-            {
+            } else {
                 // add middle lines
-                let drawY :number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
+                let drawY: number = firstLineDrawY + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT;
 
-                for ( let tileX:number = 0; tileX < lengthHorz; ++tileX )
-                {
-                    if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) )
-                    {
+                for ( let tileX: number = 0; tileX < lengthHorz; ++tileX ) {
+                    if ( tileX === 0 && ( capHorz === CapHorz.LEFT || capHorz === CapHorz.BOTH ) ) {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, leftTile ) );
-                    }
-                    else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) )
-                    {
+                    } else if ( tileX === lengthHorz - 1 && ( capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH ) ) {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, rightTile ) );
-                    }
-                    else
-                    {
+                    } else {
                         level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, centerTile ) );
                     }
 
@@ -381,8 +341,7 @@ export abstract class GameObjectBundleFactory
         }
 
         // add single obstacle object
-        switch ( slope )
-        {
+        switch ( slope ) {
             case Slope.NONE:
             {
                 level.obstacles.push( GameObjectFactory.createObstacleSpriteless( xLeft, yTop, lengthHorz * GameObjectBundleFactory.GROUND_TILE_WIDTH, lengthVert * GameObjectBundleFactory.GROUND_TILE_HEIGHT, 0.0, JumpPassThrough.NO ) );
@@ -413,31 +372,23 @@ export abstract class GameObjectBundleFactory
     *   @param height          The height of the area.
     *   @param tileCenterImage Tile for water area's center.
     *******************************************************************************************************************/
-    public static createWaterArea
-    (
-        level           :Level,
-        xLeft           :number,
-        yTop            :number,
-        length          :number,
-        height          :number,
-        tileCenterImage :string
-    )
-    : void
-    {
-        const tileTop    :SpriteTemplate = SpriteTemplateData.SPRITE_WATER_TOP;
-        const tileCenter :SpriteTemplate = SpriteTemplate.createFromSingleImage( tileCenterImage );
+    public static createWaterArea(
+        level: Level,
+        xLeft: number,
+        yTop: number,
+        length: number,
+        height: number,
+        tileCenterImage: string
+    ): void {
+        const tileTop: SpriteTemplate = SpriteTemplateData.SPRITE_WATER_TOP;
+        const tileCenter: SpriteTemplate = SpriteTemplate.createFromSingleImage( tileCenterImage );
 
         // draw area
-        for ( let tileX:number = 0; tileX < length; ++tileX )
-        {
-            for ( let tileY:number = 0; tileY < height; ++tileY )
-            {
-                if ( tileY === 0 )
-                {
+        for ( let tileX: number = 0; tileX < length; ++tileX ) {
+            for ( let tileY: number = 0; tileY < height; ++tileY ) {
+                if ( tileY === 0 ) {
                     level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileTop ) );
-                }
-                else
-                {
+                } else {
                     level.decosBg.push( GameObjectFactory.createDecorationRect( xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileCenter ) );
                 }
             }
@@ -452,19 +403,15 @@ export abstract class GameObjectBundleFactory
     *   @param yBottom      Anchor for bottom Y.
     *   @param type         The type of crate to create.
     *******************************************************************************************************************/
-    public static createCrate
-    (
-        level      :Level,
-        xLeft      :number,
-        yBottom    :number,
-        type       :CrateType
-    )
-    : void
-    {
-        let crate:Movable = null;
+    public static createCrate(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        type: CrateType
+    ): void {
+        let crate: Movable = null;
 
-        switch ( type )
-        {
+        switch ( type ) {
             case CrateType.WOODEN:
             {
                 crate = GameObjectFactory.createWoodenCrate( xLeft, yBottom );
@@ -482,15 +429,12 @@ export abstract class GameObjectBundleFactory
     *   @param xLeft   Anchor for left X.
     *   @param yBottom Anchor for bottom Y.
     *******************************************************************************************************************/
-    public static createBridge
-    (
-        level   :Level,
-        xLeft   :number,
-        yBottom :number
-    )
-    : void
-    {
-        const WIDTH_TOTAL :number = 700;
+    public static createBridge(
+        level: Level,
+        xLeft: number,
+        yBottom: number
+    ): void {
+        const WIDTH_TOTAL: number = 700;
         // let WIDTH_SLOPE :number = 128;
         // let ALTITUDE    :number = 30;
 
@@ -500,7 +444,7 @@ export abstract class GameObjectBundleFactory
         // level.obstacles.push( GameObjectFactory.createElevatedRamp( xLeft + WIDTH_TOTAL - WIDTH_SLOPE, yBottom - ALTITUDE, WIDTH_SLOPE, 10, ALTITUDE, null, JumpPassThrough.NO ) );
 
         // add deco
-        const sprtiteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BRIDGE_1 );
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BRIDGE_1 );
         level.decosFg.push( GameObjectFactory.createDecorationRect( xLeft - 115, yBottom + 121, StaticShape.YES, sprtiteTemplate ) );
     }
 
@@ -512,17 +456,13 @@ export abstract class GameObjectBundleFactory
     *   @param yBottom  Anchor for bottom Y.
     *   @param imageId  The id of the image.
     *******************************************************************************************************************/
-    public static createMovableRect
-    (
-        level    :Level,
-        xLeft    :number,
-        yBottom  :number,
-        imageId  :string
-    )
-    : void
-    {
-        const movable:Movable = GameObjectFactory.createMovableRect
-        (
+    public static createMovableRect(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        imageId: string
+    ): void {
+        const movable: Movable = GameObjectFactory.createMovableRect(
             xLeft,
             yBottom,
             imageId
@@ -540,18 +480,14 @@ export abstract class GameObjectBundleFactory
     *   @param angle    The initial rotation angle for this movable.
     *   @param imageId  The id of the image.
     *******************************************************************************************************************/
-    public static createMovableCircular
-    (
-        level    :Level,
-        xLeft    :number,
-        yBottom  :number,
-        angle    :number,
-        imageId  :string
-    )
-    : void
-    {
-        const movable:Movable = GameObjectFactory.createMovableCircular
-        (
+    public static createMovableCircular(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        angle: number,
+        imageId: string
+    ): void {
+        const movable: Movable = GameObjectFactory.createMovableCircular(
             xLeft,
             yBottom,
             imageId,
@@ -570,20 +506,16 @@ export abstract class GameObjectBundleFactory
     *   @param position The position for the decoration.
     *   @param imageId  The id of the image.
     *******************************************************************************************************************/
-    public static createDecoImage
-    (
-        level    :Level,
-        xLeft    :number,
-        yBottom  :number,
-        position :DecoPosition,
-        imageId  :string
-    )
-    : void
-    {
-        const spriteTemplate :SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+    public static createDecoImage(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        position: DecoPosition,
+        imageId: string
+    ): void {
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
-        GameObjectBundleFactory.createDecoSprite
-        (
+        GameObjectBundleFactory.createDecoSprite(
             level,
             xLeft,
             yBottom,
@@ -600,18 +532,15 @@ export abstract class GameObjectBundleFactory
     *   @param yBottom  Anchor for bottom Y.
     *   @param imageId  The id of the image.
     *******************************************************************************************************************/
-    public static createObstacle
-    (
-        level   :Level,
-        xLeft   :number,
-        yBottom :number,
-        imageId :string
-    )
-    : void
-    {
-        const spriteTemplate :SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+    public static createObstacle(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        imageId: string
+    ): void {
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
-        const obstacle :Obstacle = GameObjectFactory.createObstacleSpriteful(
+        const obstacle: Obstacle = GameObjectFactory.createObstacleSpriteful(
             xLeft,
             yBottom,
             spriteTemplate
@@ -631,22 +560,18 @@ export abstract class GameObjectBundleFactory
     *   @param walkingTargetRight Right walking target X.
     *   @param characterSpriteSet The sprite set to use for this enemy.
     *******************************************************************************************************************/
-    public static createEnemy
-    (
-        spriteTemplate     :SpriteTemplate,
-        level              :Level,
-        xLeft              :number,
-        yBottom            :number,
-        facingDirection    :CharacterFacing,
-        walkingTargetLeft  :number,
-        walkingTargetRight :number,
-        characterSpriteSet :CharacterSpriteSet,
-        blocksPlayer       :boolean = true
-    )
-    : void
-    {
-        const enemy :Bot = GameObjectFactory.createBot
-        (
+    public static createEnemy(
+        spriteTemplate: SpriteTemplate,
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        facingDirection: CharacterFacing,
+        walkingTargetLeft: number,
+        walkingTargetRight: number,
+        characterSpriteSet: CharacterSpriteSet,
+        blocksPlayer: boolean = true
+    ): void {
+        const enemy: Bot = GameObjectFactory.createBot(
             spriteTemplate,
             xLeft,
             yBottom,
@@ -673,22 +598,18 @@ export abstract class GameObjectBundleFactory
     *   @param walkingTargetRight Right walking target X.
     *   @param characterSpriteSet The sprite set to use for this enemy.
     *******************************************************************************************************************/
-    public static createFriend
-    (
-        spriteTemplate     :SpriteTemplate,
-        level              :Level,
-        xLeft              :number,
-        yBottom            :number,
-        facingDirection    :CharacterFacing,
-        walkingTargetLeft  :number,
-        walkingTargetRight :number,
-        characterSpriteSet :CharacterSpriteSet,
-        blocksPlayer       :boolean = true
-    )
-    : void
-    {
-        const friend :Bot = GameObjectFactory.createBot
-        (
+    public static createFriend(
+        spriteTemplate: SpriteTemplate,
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        facingDirection: CharacterFacing,
+        walkingTargetLeft: number,
+        walkingTargetRight: number,
+        characterSpriteSet: CharacterSpriteSet,
+        blocksPlayer: boolean = true
+    ): void {
+        const friend: Bot = GameObjectFactory.createBot(
             spriteTemplate,
             xLeft,
             yBottom,
@@ -712,20 +633,16 @@ export abstract class GameObjectBundleFactory
     *   @param position       The position for the decoration.
     *   @param spriteTemplate The sprite template to use.
     *******************************************************************************************************************/
-    public static createDecoSprite
-    (
-        level          :Level,
-        xLeft          :number,
-        yBottom        :number,
-        position       :DecoPosition,
-        spriteTemplate :SpriteTemplate
-    )
-    : void
-    {
-        const deco :Decoration = GameObjectFactory.createDecorationRect( xLeft, yBottom, StaticShape.YES, spriteTemplate );
+    public static createDecoSprite(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        position: DecoPosition,
+        spriteTemplate: SpriteTemplate
+    ): void {
+        const deco: Decoration = GameObjectFactory.createDecorationRect( xLeft, yBottom, StaticShape.YES, spriteTemplate );
 
-        switch ( position )
-        {
+        switch ( position ) {
             case DecoPosition.FG:
             {
                 level.decosFg.push( deco );
@@ -750,24 +667,21 @@ export abstract class GameObjectBundleFactory
     *   @param candleRight Specifies if the right candle shall be drawn.
     *   @param content     The level content associated with this shrine.
     *******************************************************************************************************************/
-    public static createShrine
-    (
-        level       :Level,
-        xLeft       :number,
-        yBottom     :number,
-        candleLeft  :boolean,
-        candleRight :boolean,
-        content     :SiteContent
-    )
-    : void
-    {
-        const sprtiteBookOpen   :SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BOOK_OPEN   );
-        const sprtiteBookClosed :SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BOOK_CLOSED );
-        const spriteShrine      :SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_TABLE_1     );
+    public static createShrine(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        candleLeft: boolean,
+        candleRight: boolean,
+        content: SiteContent
+    ): void {
+        const sprtiteBookOpen: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BOOK_OPEN   );
+        const sprtiteBookClosed: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_BOOK_CLOSED );
+        const spriteShrine: SpriteTemplate = SpriteTemplate.createFromSingleImage( ImageData.IMAGE_TABLE_1     );
 
-        const decoBookOpen      :Decoration     = GameObjectFactory.createDecorationRect( xLeft - 5,  yBottom - 118, StaticShape.YES, sprtiteBookOpen,   DebugColor.COLOR_TRANSPARENT );
-        const decoBookClosed    :Decoration     = GameObjectFactory.createDecorationRect( xLeft + 72, yBottom - 114, StaticShape.YES, sprtiteBookClosed, DebugColor.COLOR_TRANSPARENT );
-        const decoShrine        :Shrine         = new Shrine
+        const decoBookOpen: Decoration     = GameObjectFactory.createDecorationRect( xLeft - 5,  yBottom - 118, StaticShape.YES, sprtiteBookOpen,   DebugColor.COLOR_TRANSPARENT );
+        const decoBookClosed: Decoration     = GameObjectFactory.createDecorationRect( xLeft + 72, yBottom - 114, StaticShape.YES, sprtiteBookClosed, DebugColor.COLOR_TRANSPARENT );
+        const decoShrine: Shrine         = new Shrine
         (
             new ShapeRectangle
             (
@@ -794,16 +708,14 @@ export abstract class GameObjectBundleFactory
 
         level.shrines.push( decoShrine     );
 
-        if ( candleLeft  )
-        {
+        if ( candleLeft  ) {
             GameObjectBundleFactory.createDecoImage(  level, xLeft - 80,  yBottom,       DecoPosition.FG, ImageData.IMAGE_CANDELABRA              );
             GameObjectBundleFactory.createDecoSprite( level, xLeft - 88,  yBottom - 222, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG   );
             GameObjectBundleFactory.createDecoSprite( level, xLeft - 68,  yBottom - 178, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_SMALL );
             GameObjectBundleFactory.createDecoSprite( level, xLeft - 106, yBottom - 182, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_SMALL );
         }
 
-        if ( candleRight )
-        {
+        if ( candleRight ) {
             GameObjectBundleFactory.createDecoImage(  level, xLeft + 164, yBottom,       DecoPosition.FG, ImageData.IMAGE_CANDELABRA              );
             GameObjectBundleFactory.createDecoSprite( level, xLeft + 156, yBottom - 222, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG   );
             GameObjectBundleFactory.createDecoSprite( level, xLeft + 176, yBottom - 178, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_SMALL );
@@ -860,15 +772,12 @@ export abstract class GameObjectBundleFactory
     *   @param yBottom     Anchor for bottom Y.
     *   @param position    The position for the candle - foreground or background.
     *******************************************************************************************************************/
-    public static createCandle
-    (
-        level    :Level,
-        xLeft    :number,
-        yBottom  :number,
-        position :DecoPosition
-    )
-    : void
-    {
+    public static createCandle(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        position: DecoPosition
+    ): void {
         GameObjectBundleFactory.createDecoImage(  level, xLeft,      yBottom,       position, ImageData.IMAGE_CANDLE                );
         GameObjectBundleFactory.createDecoSprite( level, xLeft - 17, yBottom - 153, position, SpriteTemplateData.SPRITE_FLAME_1_BIG );
     }

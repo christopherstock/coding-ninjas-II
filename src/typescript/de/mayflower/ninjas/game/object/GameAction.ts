@@ -1,5 +1,3 @@
-import * as matter from 'matter-js';
-
 export enum GameActionType {
     SWITCH_TO_LEVEL,
 }
@@ -7,11 +5,10 @@ export enum GameActionType {
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
 ***********************************************************************************************************************/
-export class GameAction
-{
+export class GameAction {
     /** Collision shape. */
-    public          type                    :GameActionType                 = null;
-    public          data                    :any                            = null;
+    public          type: GameActionType                 = null;
+    public          data: any                            = null;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.
@@ -21,12 +18,10 @@ export class GameAction
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor
-    (
-        type          :GameActionType,
-        data          :any
-    )
-    {
+    public constructor(
+        type: GameActionType,
+        data: any
+    ) {
         this.type = type;
         this.data = data;
     }

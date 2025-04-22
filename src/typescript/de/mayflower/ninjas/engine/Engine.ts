@@ -1,62 +1,58 @@
-import {CanvasSystem} from "./ui/CanvasSystem";
-import {ImageSystem} from "./io/ImageSystem";
-import {SoundSystem} from "./io/SoundSystem";
-import {MatterJsSystem} from "./MatterJsSystem";
-import {SiteSystem} from "./SiteSystem";
-import {KeySystem} from "./hid/KeySystem";
-import {PointerSystem} from "./hid/PointerSystem";
-import {Preloader} from "./Preloader";
-import {Game} from "../game/Game";
-import {Debug} from "../base/Debug";
-import {SoundData} from "../data/SoundData";
-import {SpriteTemplate} from "./ui/SpriteTemplate";
-import {SettingDebug} from "../setting/SettingDebug";
-import {SettingEngine} from "../setting/SettingEngine";
-import {SettingGame} from "../setting/SettingGame";
-import {ImageData} from "../data/ImageData";
-import {SpriteTemplateData} from "../data/SpriteTemplateData";
+import { Game } from '../game/Game';
+import { Debug } from '../base/Debug';
+import { SoundData } from '../data/SoundData';
+import { SettingDebug } from '../setting/SettingDebug';
+import { SettingEngine } from '../setting/SettingEngine';
+import { SettingGame } from '../setting/SettingGame';
+import { ImageData } from '../data/ImageData';
+import { SpriteTemplateData } from '../data/SpriteTemplateData';
+import { CanvasSystem } from './ui/CanvasSystem';
+import { ImageSystem } from './io/ImageSystem';
+import { SoundSystem } from './io/SoundSystem';
+import { MatterJsSystem } from './MatterJsSystem';
+import { SiteSystem } from './SiteSystem';
+import { KeySystem } from './hid/KeySystem';
+import { PointerSystem } from './hid/PointerSystem';
+import { Preloader } from './Preloader';
 
 require( 'fpsmeter' );
 
 /** ********************************************************************************************************************
 *   Specifies the game engine and its systems.
 ***********************************************************************************************************************/
-export class Engine
-{
+export class Engine {
     /** The canvas element. */
-    public              canvasSystem            :CanvasSystem            = null;
+    public              canvasSystem: CanvasSystem            = null;
     /** The image system. */
-    public              imageSystem             :ImageSystem             = null;
+    public              imageSystem: ImageSystem             = null;
     /** The soundSystem system. */
-    public              soundSystem             :SoundSystem             = null;
+    public              soundSystem: SoundSystem             = null;
     /** The matterJS engine. */
-    public              matterJsSystem          :MatterJsSystem          = null;
+    public              matterJsSystem: MatterJsSystem          = null;
     /** The site system. */
-    public              siteSystem              :SiteSystem              = null;
+    public              siteSystem: SiteSystem              = null;
     /** The custom key system. */
-    public              keySystem               :KeySystem               = null;
+    public              keySystem: KeySystem               = null;
     /** The custom pointer system. */
-    public              pointerSystem           :PointerSystem           = null;
+    public              pointerSystem: PointerSystem           = null;
     /** The FPS counter. */
-    public              fpsMeter                :FPSMeter                       = null;
+    public              fpsMeter: FPSMeter                       = null;
 
     /** The preloader instance. */
-    public  readonly    preloader               :Preloader               = null;
+    public  readonly    preloader: Preloader               = null;
     /** The parent game instance. */
-    private readonly    game                    :Game                    = null;
+    private readonly    game: Game                    = null;
 
     /** ***************************************************************************************************************
     *   Creates a new game engine.
     *
     *   @param game The parent game instance that uses this game engine.
     *******************************************************************************************************************/
-    public constructor( game:Game )
-    {
+    public constructor( game: Game ) {
         this.game      = game;
         this.preloader = new Preloader(
             this,
-            () =>
-            {
+            () => {
                 this.onPreloaderInitComplete();
             }
         );
@@ -65,16 +61,14 @@ export class Engine
     /** ****************************************************************************************************************
     *   Launches the game engine and starts with showing the preloader.
     *******************************************************************************************************************/
-    public launch() : void
-    {
+    public launch(): void {
         this.preloader.preload()
     }
 
     /** ****************************************************************************************************************
     *   Inits the canvas of the game engine.
     *******************************************************************************************************************/
-    public initCanvas() : void
-    {
+    public initCanvas(): void {
         Debug.init.log( 'Initing canvas system' );
         this.canvasSystem = new CanvasSystem();
         this.canvasSystem.updateDimensions();
@@ -83,8 +77,7 @@ export class Engine
     /** ****************************************************************************************************************
     *   Inits the canvas of the game engine.
     *******************************************************************************************************************/
-    public initImageSystem() : void
-    {
+    public initImageSystem(): void {
         Debug.init.log( 'Initing image system' );
         this.imageSystem = new ImageSystem
         (
@@ -98,16 +91,14 @@ export class Engine
     /** ****************************************************************************************************************
     *   Inits the window resize handler.
     *******************************************************************************************************************/
-    public initWindowResizeHandler() : void
-    {
+    public initWindowResizeHandler(): void {
         Debug.init.log( 'Initing window resize handler' );
 
-        window.onresize = ( event:Event ) :void =>
-        {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        window.onresize = ( event: Event ): void => {
             this.canvasSystem.updateDimensions();
 
-            if ( this.matterJsSystem !== null )
-            {
+            if ( this.matterJsSystem !== null ) {
                 this.matterJsSystem.updateEngineDimensions( this.canvasSystem );
                 this.siteSystem.updatePanelSizeAndPosition();
                 this.game.resetCamera();
@@ -118,8 +109,7 @@ export class Engine
     /** ****************************************************************************************************************
     *   Being invoked when the preloader is set up.
     *******************************************************************************************************************/
-    public onPreloaderInitComplete() : void
-    {
+    public onPreloaderInitComplete(): void {
         Debug.init.log( 'Preloader initialization complete. Preloading all contents now.' );
         this.preloader.setLoadingPercentage( 5 );
 
@@ -129,14 +119,13 @@ export class Engine
     /** ****************************************************************************************************************
     *   Inits the 2D engine.
     *******************************************************************************************************************/
-    public initMatterJS() : void
-    {
+    public initMatterJS(): void {
         Debug.init.log( 'Initing 2D physics engine' );
 
         this.matterJsSystem = new MatterJsSystem
         (
             this.canvasSystem,
-            ( renderContext:CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
+            ( renderContext: CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
             this.imageSystem.getAll()
         );
         this.matterJsSystem.updateEngineDimensions( this.canvasSystem );
@@ -145,8 +134,7 @@ export class Engine
     /** ****************************************************************************************************************
     *   Being invoked when all images are loaded.
     *******************************************************************************************************************/
-    private onImagesLoaded() : void
-    {
+    private onImagesLoaded(): void {
         SpriteTemplateData.assignAllImageSizes( this.imageSystem );
 
         this.preloader.setLoadingPercentage( 80 );
@@ -162,8 +150,7 @@ export class Engine
     /** ****************************************************************************************************************
     *   Being invoked when all sounds are loaded.
     *******************************************************************************************************************/
-    private onSoundsLoaded() : void
-    {
+    private onSoundsLoaded(): void {
         this.preloader.setLoadingPercentage( 90 );
 
         // init site system
@@ -180,8 +167,7 @@ export class Engine
         this.initWindowBlurHandler();
 
         // init FPS-counter
-        if ( SettingDebug.DEBUG_MODE )
-        {
+        if ( SettingDebug.DEBUG_MODE ) {
             this.initFpsCounter();
         }
 
@@ -190,8 +176,7 @@ export class Engine
         this.preloader.setLoadingPercentage( 100 );
 
         // start the game loop after a short delay. this runs smoother for the user
-        window.setTimeout
-        (
+        window.setTimeout(
             () => { this.game.start(); },
             ( SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY )
         );
@@ -200,12 +185,11 @@ export class Engine
     /** ****************************************************************************************************************
     *   Inits the window blur handler.
     *******************************************************************************************************************/
-    private initWindowBlurHandler() : void
-    {
+    private initWindowBlurHandler(): void {
         Debug.init.log( 'Initing window blur handler' );
 
-        window.onblur = ( event:Event ) :void =>
-        {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        window.onblur = ( event: Event ): void => {
             Debug.canvas.log( 'Detected window focus lost. Releasing all keys.' );
 
             this.keySystem.releaseAllKeys();
@@ -215,8 +199,7 @@ export class Engine
     /** ****************************************************************************************************************
     *   Inits the FPS counter.
     *******************************************************************************************************************/
-    private initFpsCounter() : void
-    {
+    private initFpsCounter(): void {
         Debug.init.log( 'Initing FPS counter' );
 
         this.fpsMeter = new FPSMeter(

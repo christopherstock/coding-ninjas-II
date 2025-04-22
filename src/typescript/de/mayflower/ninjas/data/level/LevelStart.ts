@@ -1,37 +1,35 @@
 /* eslint-disable max-len */
 
 import * as matter from 'matter-js';
-import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from "../../game/object/GameObjectBundleFactory";
-import {GroundData} from "../GroundData";
-import {ImageData} from "../ImageData";
-import {Level, LevelId} from "../../game/level/Level";
-import {GameObjectFactory} from "../../game/object/GameObjectFactory";
-import {SpriteTemplate} from "../../engine/ui/SpriteTemplate";
-import {SpriteTemplateData} from "../SpriteTemplateData";
-import {SiteContent} from "../../site/SiteContentSystem";
-import {SitePanelAppearance} from "../../game/object/special/SiteTrigger";
-import {GameAction, GameActionType} from "../../game/object/GameAction";
-import {CharacterSpriteData} from "../CharacterSpriteData";
-import {CharacterFacing} from "../../game/object/being/CharacterFacing";
+import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import { GroundData } from '../GroundData';
+import { ImageData } from '../ImageData';
+import { Level, LevelId } from '../../game/level/Level';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { SpriteTemplateData } from '../SpriteTemplateData';
+import { SiteContent } from '../../site/SiteContentSystem';
+import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { CharacterSpriteData } from '../CharacterSpriteData';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
 ***********************************************************************************************************************/
-export class LevelStart extends Level
-{
-    public  playerStartX            :number                             = 2480;
-    public  playerStartY            :number                             = 2000;
-    public  playerInitialFloat      :boolean                            = false;
-    public  playerInitialFacing     :CharacterFacing             = CharacterFacing.RIGHT;
+export class LevelStart extends Level {
+    public  playerStartX: number                             = 2480;
+    public  playerStartY: number                             = 2000;
+    public  playerInitialFloat: boolean                            = false;
+    public  playerInitialFacing: CharacterFacing             = CharacterFacing.RIGHT;
 
-    public  width                   :number                             = 12500;
-    public  height                  :number                             = 2500;
+    public  width: number                             = 12500;
+    public  height: number                             = 2500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.
     *******************************************************************************************************************/
-    protected createGameObjects() : void
-    {
+    protected createGameObjects(): void {
         // player
         GameObjectBundleFactory.createPlayer( this );
 
@@ -45,8 +43,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the startup shrine.
     *******************************************************************************************************************/
-    private addHomeShrine() : void
-    {
+    private addHomeShrine(): void {
         // ground
         GameObjectBundleFactory.createSolidGround( this, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW );
 
@@ -88,8 +85,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the 1st plateau (startup shrine).
     *******************************************************************************************************************/
-    private addFirstPlateau() : void
-    {
+    private addFirstPlateau(): void {
         // ground
         GameObjectBundleFactory.createSolidGround( this, 2400, 2000, 5,  5, Slope.NONE, CapHorz.BOTH, GroundData.TILESET_SNOW );
 
@@ -120,8 +116,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the 2nd plateau (sigsaw).
     *******************************************************************************************************************/
-    private addSecondPlateau() : void
-    {
+    private addSecondPlateau(): void {
         // sigsaw
         GameObjectFactory.createSigsaw( this, 3400, 2000, SpriteTemplate.createFromSingleImage( ImageData.SIGSAW_1 ), -1 );
 
@@ -137,8 +132,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the 3rd plateau.
     *******************************************************************************************************************/
-    private addThirdPlateau() : void
-    {
+    private addThirdPlateau(): void {
         // ground
         GameObjectBundleFactory.createSolidGround( this, 4460, 2000, 5,  5, Slope.NONE, CapHorz.BOTH, GroundData.TILESET_SNOW );
 
@@ -158,8 +152,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the 4th plateau (bounce).
     *******************************************************************************************************************/
-    private addFourthPlateau() : void
-    {
+    private addFourthPlateau(): void {
         // bounce
         GameObjectFactory.createBounce( this, 7460, 2000, SpriteTemplate.createFromSingleImage( ImageData.BOUNCE_1 ), 0.00075 );
 
@@ -180,8 +173,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the 5th plateau.
     *******************************************************************************************************************/
-    private addFifthPlateau() : void
-    {
+    private addFifthPlateau(): void {
         // ground
         GameObjectBundleFactory.createSolidGround( this, 6620, 2000, 5,  5, Slope.NONE, CapHorz.BOTH, GroundData.TILESET_SNOW );
 
@@ -204,8 +196,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the 6th plateau (platform).
     *******************************************************************************************************************/
-    private addSixthPlateau() : void
-    {
+    private addSixthPlateau(): void {
         // platform
         GameObjectFactory.createPlatform( this, SpriteTemplate.createFromSingleImage( ImageData.PLATFORM_1 ), 3.5, [ matter.Vector.create( 5260, 2000 ), matter.Vector.create( 6000, 2000 ) ] );
     }
@@ -213,8 +204,7 @@ export class LevelStart extends Level
     /** ****************************************************************************************************************
     *   Adds the 7th plateau (main).
     *******************************************************************************************************************/
-    private addSeventhPlateau() : void
-    {
+    private addSeventhPlateau(): void {
         // bushes and tree before dojo
         GameObjectBundleFactory.createDecoImage(  this, 12000, 2100, DecoPosition.FG, ImageData.IMAGE_BUSH_1 );
         GameObjectBundleFactory.createDecoImage(  this, 12070, 2120, DecoPosition.BG, ImageData.IMAGE_BUSH_2 );

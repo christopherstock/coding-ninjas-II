@@ -1,48 +1,45 @@
 import * as matter from 'matter-js';
-import {Engine} from "../engine/Engine";
-import {Camera} from "../engine/ui/Camera";
-import {Level, LevelId} from "./level/Level";
-import {Debug} from "../base/Debug";
-import {SettingGame} from "../setting/SettingGame";
-import {SettingDebug} from "../setting/SettingDebug";
-import {SettingEngine} from "../setting/SettingEngine";
-import {SoundData} from "../data/SoundData";
-import {LevelStart} from "../data/level/LevelStart";
-import {LevelHut} from "../data/level/LevelHut";
-import {Main} from "../base/Main";
-import {KeyData} from "../data/KeyData";
-import {DrawUtil} from "../util/DrawUtil";
-import {CharacterFacing} from "./object/being/CharacterFacing";
+import { Engine } from '../engine/Engine';
+import { Camera } from '../engine/ui/Camera';
+import { Debug } from '../base/Debug';
+import { SettingGame } from '../setting/SettingGame';
+import { SettingDebug } from '../setting/SettingDebug';
+import { SettingEngine } from '../setting/SettingEngine';
+import { SoundData } from '../data/SoundData';
+import { LevelStart } from '../data/level/LevelStart';
+import { LevelHut } from '../data/level/LevelHut';
+import { Main } from '../base/Main';
+import { KeyData } from '../data/KeyData';
+import { DrawUtil } from '../util/DrawUtil';
+import { Level, LevelId } from './level/Level';
+import { CharacterFacing } from './object/being/CharacterFacing';
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
 ***********************************************************************************************************************/
-export class Game
-{
+export class Game {
     /** The game engine. */
-    public      engine                  :Engine                  = null;
+    public      engine: Engine                  = null;
     /** The custom camera system. */
-    public      camera                  :Camera                  = null;
+    public      camera: Camera                  = null;
     /** The custom level. */
-    public      level                   :Level                   = null;
+    public      level: Level                   = null;
     /** The currently assigned background music. */
-    private     bgMusic                 :HTMLAudioElement               = null;
+    private     bgMusic: HTMLAudioElement               = null;
     /** The remaining ticks for the blend panel to disappear. */
-    private     blendPanelTicks         :number                         = 0;
+    private     blendPanelTicks: number                         = 0;
     /** Number of ticks for the engine to run in slow motion. */
-    private     slowMotionTicks         :number                         = 0;
+    private     slowMotionTicks: number                         = 0;
 
     /** ****************************************************************************************************************
     *   Shows the preloader.
     *******************************************************************************************************************/
-    public launch() : void
-    {
+    public launch(): void {
         // create the game engine
         this.engine = new Engine( this );
 
         // start the preloader after a short delay. this runs smoother for the user
-        window.setTimeout
-        (
+        window.setTimeout(
             () => { this.engine.launch(); },
             ( SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY )
         );
@@ -51,8 +48,7 @@ export class Game
     /** ****************************************************************************************************************
     *   Starts the game loop.
     *******************************************************************************************************************/
-    public start() : void
-    {
+    public start(): void {
         Debug.init.log( 'Starting the game loop' );
         Debug.init.log();
 
@@ -85,11 +81,9 @@ export class Game
     *
     *   @param context The 2D rendering context to draw onto.
     *******************************************************************************************************************/
-    public paintHUD( context:CanvasRenderingContext2D ) : void
-    {
+    public paintHUD( context: CanvasRenderingContext2D ): void {
         // paint blend overlay
-        if ( !SettingDebug.DISABLE_BLEND_PANEL )
-        {
+        if ( !SettingDebug.DISABLE_BLEND_PANEL ) {
             this.paintBlendPanel( context );
         }
     }
@@ -99,17 +93,12 @@ export class Game
     *
     *   @param enable Specifies if the background music shall be enabled or not.
     *******************************************************************************************************************/
-    public toggleBgMusic( enable:boolean ) : void
-    {
-        if ( this.bgMusic !== null )
-        {
-            if ( enable )
-            {
+    public toggleBgMusic( enable: boolean ): void {
+        if ( this.bgMusic !== null ) {
+            if ( enable ) {
                 // noinspection JSIgnoredPromiseFromCall
-                this.bgMusic.play().then().catch( ( e :Error ) => { return e; } );
-            }
-            else
-            {
+                this.bgMusic.play().then().catch( ( e: Error ) => { return e; } );
+            } else {
                 this.bgMusic.pause();
             }
         }
@@ -118,8 +107,7 @@ export class Game
     /** ****************************************************************************************************************
     *   Resets the camera.
     *******************************************************************************************************************/
-    public resetCamera() : void
-    {
+    public resetCamera(): void {
         this.camera = new Camera(
             SettingEngine.CAMERA_MOVING_SPEED_X,
             SettingEngine.CAMERA_MOVING_SPEED_Y,
@@ -138,8 +126,7 @@ export class Game
     *
     *   TODO prune!
     *******************************************************************************************************************/
-    public startSlowMotionTicks() : void
-    {
+    public startSlowMotionTicks(): void {
         Debug.engine.log(
             'Engine - setSlowMotion for ['
             + String( SettingEngine.ENGINE_SLOW_MOTION_TICKS )
@@ -153,11 +140,10 @@ export class Game
     *   Inits the level.
     *******************************************************************************************************************/
     public resetAndLaunchLevel(
-        levelId:LevelId,
+        levelId: LevelId,
         playerStartX: number = null,
         playerInitialFacing: CharacterFacing = null
-    ) : void
-    {
+    ): void {
         // reset slow motion ticks
         this.slowMotionTicks = 0;
 
@@ -200,11 +186,9 @@ export class Game
     /** ****************************************************************************************************************
     *   Being invoked each tick of the game loop in order to render the game.
     *******************************************************************************************************************/
-    private tickGame() : void
-    {
+    private tickGame(): void {
         // start fpsMetet tick
-        if ( SettingDebug.DEBUG_MODE )
-        {
+        if ( SettingDebug.DEBUG_MODE ) {
             this.engine.fpsMeter.tickStart();
         }
 
@@ -212,15 +196,13 @@ export class Game
         this.handleMenuKey();
 
         // render one game tick and update matter.js 2D engine
-        if ( this.slowMotionTicks === 0 || this.slowMotionTicks-- % 2 === 0 )
-        {
+        if ( this.slowMotionTicks === 0 || this.slowMotionTicks-- % 2 === 0 ) {
             this.render();
             this.engine.matterJsSystem.updateEngine();
         }
 
         // stop fpsMeter tick
-        if ( SettingDebug.DEBUG_MODE )
-        {
+        if ( SettingDebug.DEBUG_MODE ) {
             this.engine.fpsMeter.tick();
         }
 
@@ -233,16 +215,14 @@ export class Game
     /** ****************************************************************************************************************
     *   Renders all game components.
     *******************************************************************************************************************/
-    private render() : void
-    {
+    private render(): void {
         // hide blend panel if active
-        if ( this.blendPanelTicks > 0 )
-        {
+        if ( this.blendPanelTicks > 0 ) {
             --this.blendPanelTicks;
         }
 
         // render level
-        this.level.render( this.engine.keySystem );
+        this.level.render();
 
         // update camera bounds
         this.updateAndAssignCamera();
@@ -254,26 +234,22 @@ export class Game
     /** ****************************************************************************************************************
     *   Handles pressed menu keys.
     *******************************************************************************************************************/
-    private handleMenuKey() : void
-    {
-        if ( SettingDebug.DEBUG_MODE )
-        {
-            if ( this.engine.keySystem.isPressed( KeyData.KEY_1 ) )
-            {
+    private handleMenuKey(): void {
+        if ( SettingDebug.DEBUG_MODE ) {
+            if ( this.engine.keySystem.isPressed( KeyData.KEY_1 ) ) {
                 this.engine.keySystem.setNeedsRelease( KeyData.KEY_1 );
 
                 Debug.init.log( 'Resetting and switching to level 1' );
                 this.resetAndLaunchLevel( LevelId.LEVEL_START );
             }
 
-            if ( Main.game.engine.keySystem.isPressed( KeyData.KEY_2 ) )
-            {
+            if ( Main.game.engine.keySystem.isPressed( KeyData.KEY_2 ) ) {
                 Main.game.engine.keySystem.setNeedsRelease( KeyData.KEY_2 );
 
                 Debug.init.log( 'Resetting and switching to level 2' );
                 this.resetAndLaunchLevel( LevelId.LEVEL_HUT );
             }
-/*
+            /*
             if ( Main.game.engine.keySystem.isPressed( Key.KEY_3 ) )
             {
                 Main.game.engine.keySystem.setNeedsRelease( Key.KEY_3 );
@@ -290,12 +266,9 @@ export class Game
     *
     *   @param context The 2D rendering context to draw onto.
     *******************************************************************************************************************/
-    private paintBlendPanel( context:CanvasRenderingContext2D ) : void
-    {
-        if ( this.blendPanelTicks > 0 )
-        {
-            DrawUtil.fillRect
-            (
+    private paintBlendPanel( context: CanvasRenderingContext2D ): void {
+        if ( this.blendPanelTicks > 0 ) {
+            DrawUtil.fillRect(
                 context,
                 0,
                 0,
@@ -312,9 +285,8 @@ export class Game
     *   Updates the level camera and then assigns it onto the player.
     *   by updating the rendered bounds of the camera onto the matter.js rendering engine.
     *******************************************************************************************************************/
-    private updateAndAssignCamera() : void
-    {
-        const cameraBounds :matter.Bounds = this.camera.update(
+    private updateAndAssignCamera(): void {
+        const cameraBounds: matter.Bounds = this.camera.update(
             this.level.player.shape.body.position.x,
             this.level.player.shape.body.position.y,
             this.level.player.collidesBottom,

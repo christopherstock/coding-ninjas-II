@@ -1,18 +1,17 @@
 import * as matter from 'matter-js';
-import {GameObject} from "../GameObject";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
-import {SettingMatter} from "../../../setting/SettingMatter";
-import {Main} from "../../../base/Main";
-import {Debug} from "../../../base/Debug";
+import { GameObject } from '../GameObject';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { SettingMatter } from '../../../setting/SettingMatter';
+import { Main } from '../../../base/Main';
+import { Debug } from '../../../base/Debug';
 
 /** ********************************************************************************************************************
 *   Represents a pickable item.
 ***********************************************************************************************************************/
-export class Item extends GameObject
-{
+export class Item extends GameObject {
     /** Indicates if this item has been picked. */
-    public          picked                      :boolean                        = null;
+    public          picked: boolean                        = null;
 
     /** ****************************************************************************************************************
     *   Creates a new item.
@@ -22,10 +21,8 @@ export class Item extends GameObject
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape:Shape, spriteTemplate:SpriteTemplate, x:number, y:number )
-    {
-        super
-        (
+    public constructor( shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -38,12 +35,10 @@ export class Item extends GameObject
     /** ****************************************************************************************************************
     *   Renders this item.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
 
-        if ( !this.picked )
-        {
+        if ( !this.picked ) {
             this.checkPicked();
         }
     }
@@ -51,10 +46,8 @@ export class Item extends GameObject
     /** ****************************************************************************************************************
     *   Checks if this item is picked up in this frame.
     *******************************************************************************************************************/
-    private checkPicked() : void
-    {
-        if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) )
-        {
+    private checkPicked(): void {
+        if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) ) {
             Debug.item.log( 'Player picked item' );
 
             this.pick();
@@ -64,8 +57,7 @@ export class Item extends GameObject
     /** ****************************************************************************************************************
     *   Picks up this item.
     *******************************************************************************************************************/
-    private pick() : void
-    {
+    private pick(): void {
         // flag as picked
         this.picked = true;
 

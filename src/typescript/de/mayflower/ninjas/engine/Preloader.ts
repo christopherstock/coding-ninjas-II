@@ -1,26 +1,25 @@
-import {DrawUtil} from "../util/DrawUtil";
-import {Engine} from "./Engine";
-import {Debug} from "../base/Debug";
-import {SettingEngine} from "../setting/SettingEngine";
+import { DrawUtil } from '../util/DrawUtil';
+import { Debug } from '../base/Debug';
+import { SettingEngine } from '../setting/SettingEngine';
+import { Engine } from './Engine';
 
 /** ********************************************************************************************************************
 *   Handles the whole preloading process for the web app.
 ***********************************************************************************************************************/
-export class Preloader
-{
+export class Preloader {
     /** The parent engine instance. */
-    private     readonly        engine                            :Engine                    = null;
+    private     readonly        engine: Engine                    = null;
     /** The callback to invoke when the preloader is set up. */
-    private     readonly        onPreloaderSetup                :() => void                         = null;
+    private     readonly        onPreloaderSetup: ()=> void                         = null;
 
     /**  The colorful preloader image. */
-    private                     imageLoaded                        :HTMLImageElement                   = null;
+    private                     imageLoaded: HTMLImageElement                   = null;
     /**  The monochrome preloader image. */
-    private                     imageUnloaded                       :HTMLImageElement                   = null;
+    private                     imageUnloaded: HTMLImageElement                   = null;
     /**  A counter for the preloaded images. */
-    private                     loadedImageCount                :number                             = 0;
+    private                     loadedImageCount: number                             = 0;
     /**  The percentage of all loaded game contents. */
-    private                     loadingPercentage               :number                             = 0;
+    private                     loadingPercentage: number                             = 0;
 
     /** ****************************************************************************************************************
     *   Creates a new preloading system.
@@ -28,8 +27,7 @@ export class Preloader
     *   @param engine           The parent game engine.
     *   @param onPreloaderSetup The callback to invoke when the preloading is set up.
     *******************************************************************************************************************/
-    public constructor( engine:Engine, onPreloaderSetup:() => void )
-    {
+    public constructor( engine: Engine, onPreloaderSetup: ()=> void ) {
         this.engine           = engine;
         this.onPreloaderSetup = onPreloaderSetup;
     }
@@ -37,8 +35,7 @@ export class Preloader
     /** ****************************************************************************************************************
     *   Shows the preloader and starts preloading all initialization contents.
     *******************************************************************************************************************/
-    public preload() : void
-    {
+    public preload(): void {
         Debug.init.log( 'Preloading all game components' );
 
         // bring on the canvas and init the resize handler
@@ -52,8 +49,8 @@ export class Preloader
         this.imageLoaded.src  = SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderLoaded.png';
         this.imageUnloaded.src = SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderUnloaded.png';
 
-        this.imageLoaded.onload  = () :void => { this.preloaderImageLoaded(); };
-        this.imageUnloaded.onload = () :void => { this.preloaderImageLoaded(); };
+        this.imageLoaded.onload  = (): void => { this.preloaderImageLoaded(); };
+        this.imageUnloaded.onload = (): void => { this.preloaderImageLoaded(); };
     }
 
     /** ****************************************************************************************************************
@@ -61,8 +58,7 @@ export class Preloader
     *
     *   @param loadingPercentage The loading percentage to set.
     *******************************************************************************************************************/
-    public setLoadingPercentage( loadingPercentage:number ) : void
-    {
+    public setLoadingPercentage( loadingPercentage: number ): void {
         this.loadingPercentage = loadingPercentage;
 
         // force an immediate draw
@@ -72,10 +68,8 @@ export class Preloader
     /** ****************************************************************************************************************
     *   Being invoked when one preloader image has been loaded.
     *******************************************************************************************************************/
-    private preloaderImageLoaded() :void
-    {
-        if ( ++this.loadedImageCount === 2 )
-        {
+    private preloaderImageLoaded(): void {
+        if ( ++this.loadedImageCount === 2 ) {
             Debug.init.log( 'All preloader images loaded.' );
 
             this.onPreloaderImageLoadComplete();
@@ -85,8 +79,7 @@ export class Preloader
     /** ****************************************************************************************************************
     *   Being invoked when all preloader images have been loaded completely.
     *******************************************************************************************************************/
-    private onPreloaderImageLoadComplete() : void
-    {
+    private onPreloaderImageLoadComplete(): void {
         // draw the empty preloader
         this.drawPreloader();
 
@@ -97,11 +90,9 @@ export class Preloader
     /** ****************************************************************************************************************
     *   Draws the preloader onto the canvas.
     *******************************************************************************************************************/
-    private drawPreloader() : void
-    {
+    private drawPreloader(): void {
         // clear canvas
-        DrawUtil.fillRect
-        (
+        DrawUtil.fillRect(
             this.engine.canvasSystem.getCanvasContext(),
             0,
             0,
@@ -111,16 +102,15 @@ export class Preloader
         );
 
         // calc image location
-        const imageX :number = ( this.engine.canvasSystem.getWidth()  - this.imageUnloaded.width  ) / 2;
-        const imageY :number = ( this.engine.canvasSystem.getHeight() - this.imageUnloaded.height ) / 2;
+        const imageX: number = ( this.engine.canvasSystem.getWidth()  - this.imageUnloaded.width  ) / 2;
+        const imageY: number = ( this.engine.canvasSystem.getHeight() - this.imageUnloaded.height ) / 2;
 
         // calc image width to draw
-        const gayImageWidth  :number = ( this.imageLoaded.width * this.loadingPercentage ) / 100;
-        const monoImageWidth :number = ( this.imageUnloaded.width - gayImageWidth );
+        const gayImageWidth: number = ( this.imageLoaded.width * this.loadingPercentage ) / 100;
+        const monoImageWidth: number = ( this.imageUnloaded.width - gayImageWidth );
 
         // draw mono image
-        DrawUtil.drawImageScaledClipped
-        (
+        DrawUtil.drawImageScaledClipped(
             this.engine.canvasSystem.getCanvasContext(),
             this.imageUnloaded,
             gayImageWidth,
@@ -134,8 +124,7 @@ export class Preloader
         );
 
         // draw gay image clipped
-        DrawUtil.drawImageScaledClipped
-        (
+        DrawUtil.drawImageScaledClipped(
             this.engine.canvasSystem.getCanvasContext(),
             this.imageLoaded,
             0,

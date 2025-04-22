@@ -1,11 +1,11 @@
 import * as React    from 'react';
 import * as ReactDOM from 'react-dom';
-import {ContentWelcome} from "./component/ContentWelcome";
-import {ContentCompany} from "./component/ContentCompany";
-import {ContentServices} from "./component/ContentServices";
-import {ContentTechnology} from "./component/ContentTechnology";
-import {ContentTimeline} from "./component/ContentTimeline";
-import {ContentContact} from "./component/ContentContact";
+import { ContentWelcome } from './component/ContentWelcome';
+import { ContentCompany } from './component/ContentCompany';
+import { ContentServices } from './component/ContentServices';
+import { ContentTechnology } from './component/ContentTechnology';
+import { ContentTimeline } from './component/ContentTimeline';
+import { ContentContact } from './component/ContentContact';
 
 /** ********************************************************************************************************************
 *   Specifies all existing site contents.
@@ -29,29 +29,27 @@ export enum SiteContent
 /** ********************************************************************************************************************
 *   Manages all site contents for the site panel.
 ***********************************************************************************************************************/
-export class SiteContentSystem
-{
+export class SiteContentSystem {
     /** All already discovered contents. */
-    public                  discoveredContents          :SiteContent[]           = [];
+    public                  discoveredContents: SiteContent[]           = [];
 
     /** The site content for the 'welcome' page. */
-    private                 contentWelcome              :JSX.Element                    = null;
+    private                 contentWelcome: JSX.Element                    = null;
     /** The site content for the 'company' page. */
-    private                 contentCompany              :JSX.Element                    = null;
+    private                 contentCompany: JSX.Element                    = null;
     /** The site content for the 'services' page. */
-    private                 contentServices             :JSX.Element                    = null;
+    private                 contentServices: JSX.Element                    = null;
     /** The site content for the 'technology' page. */
-    private                 contentTechnology           :JSX.Element                    = null;
+    private                 contentTechnology: JSX.Element                    = null;
     /** The site content for the 'timeline' page. */
-    private                 contentTimeline             :JSX.Element                    = null;
+    private                 contentTimeline: JSX.Element                    = null;
     /** The site content for the 'contact' page. */
-    private                 contentContact              :JSX.Element                    = null;
+    private                 contentContact: JSX.Element                    = null;
 
     /** ****************************************************************************************************************
     *   Inits all site contents.
     *******************************************************************************************************************/
-    public initAllContents() : void
-    {
+    public initAllContents(): void {
         this.contentWelcome    = <ContentWelcome    />;
         this.contentCompany    = <ContentCompany    />;
         this.contentServices   = <ContentServices   />;
@@ -66,23 +64,20 @@ export class SiteContentSystem
     *   @param content   The site content to mount.
     *   @param container The container to mount the content to.
     *******************************************************************************************************************/
-    public mountContent( content:SiteContent, container:HTMLDivElement ) : void
-    {
+    public mountContent( content: SiteContent, container: HTMLDivElement ): void {
         // unmount existent component if any
         ReactDOM.unmountComponentAtNode(
             container
         );
 
         // add to discovered contents if not already discovered
-        if ( !this.discoveredContents.includes( content ) )
-        {
+        if ( !this.discoveredContents.includes( content ) ) {
             this.discoveredContents.push( content );
         }
 
         // pick new content to mount
-        let elementToMount:JSX.Element = null;
-        switch ( content )
-        {
+        let elementToMount: JSX.Element = null;
+        switch ( content ) {
             case SiteContent.CONTENT_WELCOME:
             {
                 elementToMount = this.contentWelcome;

@@ -1,15 +1,14 @@
 import * as matter from 'matter-js';
-import {DebugColor} from "../../setting/SettingDebug";
-import {Shape, StaticShape} from "./Shape";
-import {BodyDensity, BodyFriction, BodyRestitution} from "../../setting/SettingMatter";
+import { DebugColor } from '../../setting/SettingDebug';
+import { BodyDensity, BodyFriction, BodyRestitution } from '../../setting/SettingMatter';
+import { Shape, StaticShape } from './Shape';
 
 /** ********************************************************************************************************************
 *   Represents the shape of a game object.
 ***********************************************************************************************************************/
-export class ShapeCircle extends Shape
-{
+export class ShapeCircle extends Shape {
     /** The circle's diameter. */
-    public              diameter                :number             = 0.0;
+    public              diameter: number             = 0.0;
 
     /** ****************************************************************************************************************
     *   Creates a new circle shape.
@@ -22,17 +21,15 @@ export class ShapeCircle extends Shape
     *   @param density     The object's body density.
     *   @param restitution The object's body restitution.
     *******************************************************************************************************************/
-    public constructor
-    (
-        diameter    :number,
-        debugColor  :DebugColor,
-        isStatic    :StaticShape,
-        angle       :number,
-        friction    :BodyFriction,
-        density     :BodyDensity,
-        restitution :BodyRestitution
-    )
-    {
+    public constructor(
+        diameter: number,
+        debugColor: DebugColor,
+        isStatic: StaticShape,
+        angle: number,
+        friction: BodyFriction,
+        density: BodyDensity,
+        restitution: BodyRestitution
+    ) {
         super( debugColor, isStatic, angle, friction, density, restitution );
 
         this.diameter = diameter;
@@ -47,8 +44,7 @@ export class ShapeCircle extends Shape
     *
     *   @return The shape's boundaries width.
     *******************************************************************************************************************/
-    public getWidth() : number
-    {
+    public getWidth(): number {
         return this.diameter;
     }
 
@@ -57,8 +53,7 @@ export class ShapeCircle extends Shape
     *
     *   @return The shape's boundaries height.
     *******************************************************************************************************************/
-    public getHeight() : number
-    {
+    public getHeight(): number {
         return this.diameter;
     }
 
@@ -67,8 +62,7 @@ export class ShapeCircle extends Shape
     *
     *   @return The body for this shape.
     *******************************************************************************************************************/
-    protected createBody() : matter.Body
-    {
+    protected createBody(): matter.Body {
         return matter.Bodies.circle(
             ( this.diameter / 2 ),
             ( this.diameter / 2 ),

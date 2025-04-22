@@ -1,31 +1,29 @@
-import {SettingEngine} from "../../setting/SettingEngine";
-import {Debug} from "../../base/Debug";
+import { SettingEngine } from '../../setting/SettingEngine';
+import { Debug } from '../../base/Debug';
 
 /** ********************************************************************************************************************
 *   Manages the canvas.
 ***********************************************************************************************************************/
-export class CanvasSystem
-{
+export class CanvasSystem {
     /** The canvas element. */
-    private     readonly        canvas                  :HTMLCanvasElement              = null;
+    private     readonly        canvas: HTMLCanvasElement              = null;
     /** The canvas rendering context. */
-    private     readonly        canvasContext           :CanvasRenderingContext2D       = null;
+    private     readonly        canvasContext: CanvasRenderingContext2D       = null;
     /** The current width of the canvas. */
-    private                     canvasWidth             :number                         = 0;
+    private                     canvasWidth: number                         = 0;
     /** The current height of the canvas. */
-    private                     canvasHeight            :number                         = 0;
+    private                     canvasHeight: number                         = 0;
     /** The physical width of the canvas. */
-    private                     canvasPhysicalWidth     :number                         = 0;
+    private                     canvasPhysicalWidth: number                         = 0;
     /** The physical height of the canvas. */
-    private                     canvasPhysicalHeight    :number                         = 0;
+    private                     canvasPhysicalHeight: number                         = 0;
     /** The current scale (X and Y) of the canvas. */
-    private                     canvasScale             :number                         = 0;
+    private                     canvasScale: number                         = 0;
 
     /** ****************************************************************************************************************
     *   Constructs a new canvas system.
     *******************************************************************************************************************/
-    public constructor()
-    {
+    public constructor() {
         // create
         this.canvas = document.createElement( 'canvas' );
 
@@ -42,15 +40,14 @@ export class CanvasSystem
     /** ****************************************************************************************************************
     *   Updates the canvas dimensions according to current screen size.
     *******************************************************************************************************************/
-    public updateDimensions() : void
-    {
+    public updateDimensions(): void {
         // get inner window dimensions
-        const windowWidth  :number = window.innerWidth;
-        const windowHeight :number = window.innerHeight;
+        const windowWidth: number = window.innerWidth;
+        const windowHeight: number = window.innerHeight;
 
         // calculate scaling factors X and Y
-        const canvasScaleX :number = ( windowWidth  / SettingEngine.CANVAS_MIN_WIDTH  );
-        const canvasScaleY :number = ( windowHeight / SettingEngine.CANVAS_MIN_HEIGHT );
+        const canvasScaleX: number = ( windowWidth  / SettingEngine.CANVAS_MIN_WIDTH  );
+        const canvasScaleY: number = ( windowHeight / SettingEngine.CANVAS_MIN_HEIGHT );
 
         // pick smallest canvas scaling factor - lower clip to 1.0
         this.canvasScale  = Math.min( canvasScaleX, canvasScaleY );
@@ -64,8 +61,7 @@ export class CanvasSystem
         this.canvasPhysicalWidth  = ( SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
         this.canvasPhysicalHeight = ( SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
 
-        if ( SettingEngine.NO_CANVAS_SCALING )
-        {
+        if ( SettingEngine.NO_CANVAS_SCALING ) {
             this.canvasScale  = 1.0;
             this.canvasScale  = 1.0;
             this.canvasWidth  = windowWidth;
@@ -101,8 +97,7 @@ export class CanvasSystem
     *
     *   @return Current canvas width.
     *******************************************************************************************************************/
-    public getWidth() : number
-    {
+    public getWidth(): number {
         return this.canvasWidth;
     }
 
@@ -111,8 +106,7 @@ export class CanvasSystem
     *
     *   @return Current canvas height.
     *******************************************************************************************************************/
-    public getHeight() : number
-    {
+    public getHeight(): number {
         return this.canvasHeight;
     }
 
@@ -121,8 +115,7 @@ export class CanvasSystem
     *
     *   @return Current physical canvas width.
     *******************************************************************************************************************/
-    public getPhysicalWidth() : number
-    {
+    public getPhysicalWidth(): number {
         return this.canvasPhysicalWidth;
     }
 
@@ -131,8 +124,7 @@ export class CanvasSystem
     *
     *   @return Current physical canvas height.
     *******************************************************************************************************************/
-    public getPhysicalHeight() : number
-    {
+    public getPhysicalHeight(): number {
         return this.canvasPhysicalHeight;
     }
 
@@ -141,8 +133,7 @@ export class CanvasSystem
     *
     *   @return Current canvas scaling.
     *******************************************************************************************************************/
-    public getScale() : number
-    {
+    public getScale(): number {
         return this.canvasScale;
     }
 
@@ -151,8 +142,7 @@ export class CanvasSystem
     *
     *   @return The HTML canvas object.
     *******************************************************************************************************************/
-    public getCanvas() : HTMLCanvasElement
-    {
+    public getCanvas(): HTMLCanvasElement {
         return this.canvas;
     }
 
@@ -161,8 +151,7 @@ export class CanvasSystem
     *
     *   @return The canvas 2d rendering context.
     *******************************************************************************************************************/
-    public getCanvasContext() : CanvasRenderingContext2D
-    {
+    public getCanvasContext(): CanvasRenderingContext2D {
         return this.canvasContext;
     }
 }

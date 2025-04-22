@@ -1,8 +1,7 @@
 /** ********************************************************************************************************************
 *   Offers orthogonal drawing functionality.
 ***********************************************************************************************************************/
-export class DrawUtil
-{
+export class DrawUtil {
     /** ****************************************************************************************************************
     *   Strokes a line with the specified points color and size.
     *
@@ -13,9 +12,9 @@ export class DrawUtil
     *   @param  y2  The end point's y.
     *   @param  col A stroke color.
     *******************************************************************************************************************/
-    public static strokeLine( ctx:CanvasRenderingContext2D, x1:number, y1:number, x2:number, y2:number, col:string )
-    : void
-    {
+    public static strokeLine(
+        ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number, y2: number, col: string
+    ): void {
         ctx.strokeStyle = col;
         ctx.lineWidth   = 1.0;
 
@@ -36,10 +35,8 @@ export class DrawUtil
     *   @param  col        A stroke color.
     *******************************************************************************************************************/
     public static strokeRect(
-        ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
-    )
-    : void
-    {
+        ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, col: string
+    ): void {
         ctx.strokeStyle = col;
         ctx.lineWidth   = 1.0;
 
@@ -57,10 +54,8 @@ export class DrawUtil
     *   @param  col     A fill color.
     *******************************************************************************************************************/
     public static fillRect(
-        ctx:CanvasRenderingContext2D, x:number, y:number, width:number, height:number, col:string
-    )
-    : void
-    {
+        ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, col: string
+    ): void {
         ctx.fillStyle = col;
         ctx.fillRect( x, y, width, height );
     }
@@ -73,8 +68,7 @@ export class DrawUtil
     *   @param  x           Drawing position x.
     *   @param  y           Drawing position y.
     *******************************************************************************************************************/
-    public static drawImage( ctx:CanvasRenderingContext2D, img:HTMLImageElement, x:number, y:number ) : void
-    {
+    public static drawImage( ctx: CanvasRenderingContext2D, img: HTMLImageElement, x: number, y: number ): void {
         DrawUtil.drawImageScaledClipped( ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height );
     }
 
@@ -93,21 +87,18 @@ export class DrawUtil
     *   @param  destWidth   Destination width.
     *   @param  destHeight  Destination height.
     *******************************************************************************************************************/
-    public static drawImageScaledClipped
-    (
-        ctx         :CanvasRenderingContext2D,
-        img         :HTMLImageElement,
-        srcX        :number,
-        srcY        :number,
-        srcWidth    :number,
-        srcHeight   :number,
-        destX       :number,
-        destY       :number,
-        destWidth   :number,
-        destHeight  :number
-    )
-    : void
-    {
+    public static drawImageScaledClipped(
+        ctx: CanvasRenderingContext2D,
+        img: HTMLImageElement,
+        srcX: number,
+        srcY: number,
+        srcWidth: number,
+        srcHeight: number,
+        destX: number,
+        destY: number,
+        destWidth: number,
+        destHeight: number
+    ): void {
         ctx.drawImage( img, srcX, srcY, srcWidth, srcHeight, destX, destY, destWidth, destHeight );
     }
 }

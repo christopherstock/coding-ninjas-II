@@ -1,7 +1,9 @@
 import * as matter from 'matter-js';
-import {DebugColor, SettingDebug} from "../../setting/SettingDebug";
-import {BodyDensity, BodyFriction, BodyFrictionAir, BodyRestitution, SettingMatter} from "../../setting/SettingMatter";
-import {MathUtil} from "../../util/MathUtil";
+import { DebugColor, SettingDebug } from '../../setting/SettingDebug';
+import {
+    BodyDensity, BodyFriction, BodyFrictionAir, BodyRestitution, SettingMatter,
+} from '../../setting/SettingMatter';
+import { MathUtil } from '../../util/MathUtil';
 
 /** ********************************************************************************************************************
 *   Specifies if a shape is static or not.
@@ -18,13 +20,12 @@ export enum StaticShape
 /** ********************************************************************************************************************
 *   Represents the shape of a game object.
 ***********************************************************************************************************************/
-export abstract class Shape
-{
+export abstract class Shape {
     /** The body rendering options for this shape. */
-    public                  options                 :matter.IBodyDefinition         = null;
+    public                  options: matter.IBodyDefinition         = null;
 
     /** The shape's body. */
-    public                  body                    :matter.Body                    = null;
+    public                  body: matter.Body                    = null;
 
     /** ****************************************************************************************************************
     *   Creates a new game object shape.
@@ -36,16 +37,14 @@ export abstract class Shape
     *   @param density     The object's body density.
     *   @param restitution The object's body restitution.
     *******************************************************************************************************************/
-    protected constructor
-    (
-        debugColor  :DebugColor,
-        isStatic    :StaticShape,
-        angle       :number,
-        friction    :BodyFriction,
-        density     :BodyDensity,
-        restitution :BodyRestitution
-    )
-    {
+    protected constructor(
+        debugColor: DebugColor,
+        isStatic: StaticShape,
+        angle: number,
+        friction: BodyFriction,
+        density: BodyDensity,
+        restitution: BodyRestitution
+    ) {
         this.options = {
             render:
             {
@@ -79,19 +78,19 @@ export abstract class Shape
     *
     *   @return The shape's boundaries width.
     *******************************************************************************************************************/
-    public abstract getWidth() : number;
+    public abstract getWidth(): number;
 
     /** ****************************************************************************************************************
     *   Returns the height of this shape's boundaries.
     *
     *   @return The shape's boundaries height.
     *******************************************************************************************************************/
-    public abstract getHeight() : number;
+    public abstract getHeight(): number;
 
     /** ****************************************************************************************************************
     *   Creates this shapes body.
     *
     *   @return The body for this shape.
     *******************************************************************************************************************/
-    protected abstract createBody() : matter.Body;
+    protected abstract createBody(): matter.Body;
 }

@@ -1,17 +1,16 @@
 import * as matter from 'matter-js';
-import {GameObject} from "../GameObject";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
-import {DebugColor} from "../../../setting/SettingDebug";
-import {Main} from "../../../base/Main";
+import { GameObject } from '../GameObject';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { DebugColor } from '../../../setting/SettingDebug';
+import { Main } from '../../../base/Main';
 
 /** ********************************************************************************************************************
 *   Represents a bounce.
 ***********************************************************************************************************************/
-export class Bounce extends GameObject
-{
+export class Bounce extends GameObject {
     /** The constraint that builds the turning point for the bounce. */
-    private         readonly            constraint                      :matter.Constraint                  = null;
+    private         readonly            constraint: matter.Constraint                  = null;
 
     /** ****************************************************************************************************************
     *   Creates a new bounce.
@@ -21,10 +20,8 @@ export class Bounce extends GameObject
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape:Shape, spriteTemplate:SpriteTemplate, x:number, y:number )
-    {
-        super
-        (
+    public constructor( shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -54,8 +51,7 @@ export class Bounce extends GameObject
     *
     *   @return The rendered SigSaw.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
 
         matter.Body.setAngle(           this.shape.body, 0.0 );

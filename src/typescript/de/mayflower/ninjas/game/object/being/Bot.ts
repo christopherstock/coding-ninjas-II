@@ -1,13 +1,13 @@
 import * as matter from 'matter-js';
-import {Character} from "./Character";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
-import {CharacterSpriteSet} from "./CharacterSpriteSet";
-import {SettingMatter} from "../../../setting/SettingMatter";
-import {Main} from "../../../base/Main";
-import {SettingGame} from "../../../setting/SettingGame";
-import {Debug} from "../../../base/Debug";
-import {CharacterFacing} from "./CharacterFacing";
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { SettingMatter } from '../../../setting/SettingMatter';
+import { Main } from '../../../base/Main';
+import { SettingGame } from '../../../setting/SettingGame';
+import { Debug } from '../../../base/Debug';
+import { CharacterSpriteSet } from './CharacterSpriteSet';
+import { Character } from './Character';
+import { CharacterFacing } from './CharacterFacing';
 
 /** ********************************************************************************************************************
 *   Represents the movement phases for an enemy.
@@ -27,18 +27,17 @@ export enum EnemyMovementPhase
 /** ********************************************************************************************************************
 *   Represents an enemy being controlled by the system.
 ***********************************************************************************************************************/
-export class Bot extends Character
-{
+export class Bot extends Character {
     /** The enemies' current movement phase. */
-    private                     currentPhase            :EnemyMovementPhase         = null;
+    private                     currentPhase: EnemyMovementPhase         = null;
     /** The current delay tick between movement phases. */
-    private                     currentPhaseDelayTick   :number                     = 0;
+    private                     currentPhaseDelayTick: number                     = 0;
     /** Left walking target X. */
-    private     readonly        walkingTargetLeft       :number                     = 0;
+    private     readonly        walkingTargetLeft: number                     = 0;
     /** Right walking target X. */
-    private     readonly        walkingTargetRight      :number                     = 0;
-    private     readonly        friendly                :boolean                    = false;
-    private     readonly        blocksPlayer            :boolean                    = false;
+    private     readonly        walkingTargetRight: number                     = 0;
+    private     readonly        friendly: boolean                    = false;
+    private     readonly        blocksPlayer: boolean                    = false;
 
     /** ****************************************************************************************************************
     *   Creates a new enemy.
@@ -52,22 +51,19 @@ export class Bot extends Character
     *   @param spriteTemplate     The sprite template to use for this game object.
     *   @param characterSpriteSet The sprite set to use for this character.
     *******************************************************************************************************************/
-    public constructor
-    (
-        shape              :Shape,
-        x                  :number,
-        y                  :number,
-        walkingTargetLeft  :number,
-        walkingTargetRight :number,
-        facing             :CharacterFacing,
-        spriteTemplate     :SpriteTemplate,
-        characterSpriteSet :CharacterSpriteSet,
-        friendly           :boolean,
-        blocksPlayer       :boolean
-    )
-    {
-        super
-        (
+    public constructor(
+        shape: Shape,
+        x: number,
+        y: number,
+        walkingTargetLeft: number,
+        walkingTargetRight: number,
+        facing: CharacterFacing,
+        spriteTemplate: SpriteTemplate,
+        characterSpriteSet: CharacterSpriteSet,
+        friendly: boolean,
+        blocksPlayer: boolean
+    ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -81,12 +77,9 @@ export class Bot extends Character
         this.walkingTargetLeft  = walkingTargetLeft;
         this.walkingTargetRight = walkingTargetRight;
 
-        if ( this.facing === CharacterFacing.LEFT )
-        {
+        if ( this.facing === CharacterFacing.LEFT ) {
             this.currentPhase = EnemyMovementPhase.WALKING_LEFT;
-        }
-        else
-        {
+        } else {
             this.currentPhase = EnemyMovementPhase.WALKING_RIGHT;
         }
 
@@ -94,37 +87,31 @@ export class Bot extends Character
         this.blocksPlayer = blocksPlayer;
     }
 
-    public isFriendly() : boolean
-    {
+    public isFriendly(): boolean {
         return this.friendly;
     }
 
-    public isBlocking() : boolean
-    {
+    public isBlocking(): boolean {
         return this.blocksPlayer;
     }
 
     /** ****************************************************************************************************************
     *   Renders the current player tick.
     *******************************************************************************************************************/
-    public render() : void
-    {
+    public render(): void {
         super.render();
 
-        if ( !this.isDead )
-        {
+        if ( !this.isDead ) {
             this.checkFallingDead();
 
-            if ( !this.isDying )
-            {
+            if ( !this.isDying ) {
                 this.moveAccordingToPattern();
                 this.clipToHorizontalLevelBounds();
 
                 // enemies shall not interfer with the Player by now
-                if ( false )
-                {
-                    this.checkPlayerCollision();
-                }
+                // if ( false ) {
+                // this.checkPlayerCollision();
+                // }
             }
         }
 
@@ -136,10 +123,8 @@ export class Bot extends Character
     *
     *   @param playerDirection The current direction of the player.
     *******************************************************************************************************************/
-    public onHitByPlayer( playerDirection :CharacterFacing ) : void
-    {
-        if (this.friendly)
-        {
+    public onHitByPlayer( playerDirection: CharacterFacing ): void {
+        if (this.friendly) {
             return;
         }
 
@@ -147,12 +132,9 @@ export class Bot extends Character
         this.isDying = true;
 
         // face the player
-        if ( playerDirection === CharacterFacing.LEFT )
-        {
+        if ( playerDirection === CharacterFacing.LEFT ) {
             this.facing = CharacterFacing.RIGHT;
-        }
-        else
-        {
+        } else {
             this.facing = CharacterFacing.LEFT;
         }
 
@@ -171,14 +153,11 @@ export class Bot extends Character
     /** ****************************************************************************************************************
     *   Moves this enemy according to the current move pattern.
     *******************************************************************************************************************/
-    private moveAccordingToPattern() : void
-    {
-        switch ( this.currentPhase )
-        {
+    private moveAccordingToPattern(): void {
+        switch ( this.currentPhase ) {
             case EnemyMovementPhase.STANDING_LEFT:
             {
-                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
-                {
+                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT ) {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_RIGHT;
                 }
@@ -187,8 +166,7 @@ export class Bot extends Character
 
             case EnemyMovementPhase.STANDING_RIGHT:
             {
-                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
-                {
+                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT ) {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_LEFT;
                 }
@@ -199,8 +177,7 @@ export class Bot extends Character
             {
                 this.moveLeft();
 
-                if ( this.shape.body.position.x - this.shape.getWidth() / 2 <= this.walkingTargetLeft )
-                {
+                if ( this.shape.body.position.x - this.shape.getWidth() / 2 <= this.walkingTargetLeft ) {
                     this.currentPhase = EnemyMovementPhase.STANDING_LEFT;
                 }
                 break;
@@ -210,8 +187,7 @@ export class Bot extends Character
             {
                 this.moveRight();
 
-                if ( this.shape.body.position.x - this.shape.getWidth() / 2 >= this.walkingTargetRight )
-                {
+                if ( this.shape.body.position.x - this.shape.getWidth() / 2 >= this.walkingTargetRight ) {
                     this.currentPhase = EnemyMovementPhase.STANDING_RIGHT;
                 }
                 break;
@@ -222,10 +198,8 @@ export class Bot extends Character
     /** ****************************************************************************************************************
     *   Check if the enemy falls to death by falling out of the level.
     *******************************************************************************************************************/
-    private checkFallingDead() : void
-    {
-        if ( this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height )
-        {
+    private checkFallingDead(): void {
+        if ( this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height ) {
             Debug.character.log( 'Character has fallen to dead' );
 
             // remove character body from world
@@ -239,24 +213,18 @@ export class Bot extends Character
     /** ****************************************************************************************************************
     *   Check if the enemy collides with the player.
     *******************************************************************************************************************/
-    private checkPlayerCollision() : void
-    {
+    private checkPlayerCollision(): void {
         // only if player is not punched back
-        if ( Main.game.level.player.punchBackTicks === 0 )
-        {
+        if ( Main.game.level.player.punchBackTicks === 0 ) {
             // check intersection of the player and the enemy
-            if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) )
-            {
+            if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) ) {
                 Debug.enemy.log( 'Player hit by enemy! Player is punching back now!' );
 
-                let playerPunchBackDirection:CharacterFacing;
+                let playerPunchBackDirection: CharacterFacing;
 
-                if ( Main.game.level.player.facing === CharacterFacing.LEFT )
-                {
+                if ( Main.game.level.player.facing === CharacterFacing.LEFT ) {
                     playerPunchBackDirection = CharacterFacing.RIGHT;
-                }
-                else
-                {
+                } else {
                     playerPunchBackDirection = CharacterFacing.LEFT;
                 }
 

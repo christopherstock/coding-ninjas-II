@@ -1,20 +1,19 @@
 /* eslint-disable max-len */
 
-import {SpriteTemplate} from "../engine/ui/SpriteTemplate";
-import {ImageData} from "./ImageData";
-import {SettingGame} from "../setting/SettingGame";
-import {MirrorImage} from "../engine/ui/MirrorImage";
-import {LoopSprite} from "../engine/ui/LoopSprite";
-import {RandomFrames} from "../engine/ui/RandomFrames";
-import {ImageSystem} from "../engine/io/ImageSystem";
+import { SpriteTemplate } from '../engine/ui/SpriteTemplate';
+import { SettingGame } from '../setting/SettingGame';
+import { MirrorImage } from '../engine/ui/MirrorImage';
+import { LoopSprite } from '../engine/ui/LoopSprite';
+import { RandomFrames } from '../engine/ui/RandomFrames';
+import { ImageSystem } from '../engine/io/ImageSystem';
+import { ImageData } from './ImageData';
 
 /** ********************************************************************************************************************
 *   All concrete sprites the game makes use of.
 ***********************************************************************************************************************/
-export class SpriteTemplateData
-{
+export class SpriteTemplateData {
     /** Sprite 'ninja girl stand left'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_STAND_LEFT                :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
@@ -36,7 +35,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl stand right'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_STAND_RIGHT               :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
@@ -58,7 +57,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl walk left'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_WALK_LEFT                 :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_WALK_RIGHT_FRAME_1,
@@ -80,7 +79,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl walk right'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_WALK_RIGHT                :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_WALK_RIGHT_FRAME_1,
@@ -102,7 +101,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl attack left'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT                 :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_1,
@@ -129,7 +128,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl attack right'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT                :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_1,
@@ -156,7 +155,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl jump left'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT                 :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
@@ -171,7 +170,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl jump right'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT                :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
@@ -186,7 +185,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl fall left'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_FALL_LEFT                 :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_FALL_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_FALL_RIGHT_FRAME_1,
@@ -201,7 +200,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl fall right'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT                :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_FALL_RIGHT_FRAME_1,
@@ -216,7 +215,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl glide left'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT                :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
@@ -238,7 +237,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'ninja girl glide right'. */
-    public      static  SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT               :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_MASKED_NINJA_GIRL_GLIDE_RIGHT_FRAME_1,
@@ -260,7 +259,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'red ninja girl stand left'. */
-    public      static  SPRITE_RED_NINJA_GIRL_STAND_LEFT             :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_RED_NINJA_GIRL_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
@@ -282,7 +281,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'red ninja girl stand right'. */
-    public      static  SPRITE_RED_NINJA_GIRL_STAND_RIGHT            :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_RED_NINJA_GIRL_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_RED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
@@ -304,7 +303,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 stand left'. */
-    public      static  SPRITE_BLUE_NINJA_STAND_LEFT             :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_1,
@@ -326,7 +325,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 stand right'. */
-    public      static  SPRITE_BLUE_NINJA_1_STAND_RIGHT            :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_1_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_1,
@@ -348,7 +347,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 walk left'. */
-    public      static  SPRITE_BLUE_NINJA_WALK_LEFT              :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_1,
@@ -370,7 +369,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 walk right'. */
-    public      static  SPRITE_BLUE_NINJA_1_WALK_RIGHT             :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_1_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_1,
@@ -392,7 +391,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 walk left'. */
-    public      static  SPRITE_RED_NINJA_GIRL_WALK_LEFT              :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_RED_NINJA_GIRL_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_RED_NINJA_GIRL_WALK_RIGHT_FRAME_1,
@@ -414,7 +413,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 walk right'. */
-    public      static  SPRITE_RED_NINJA_GIRL_WALK_RIGHT             :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_RED_NINJA_GIRL_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_RED_NINJA_GIRL_WALK_RIGHT_FRAME_1,
@@ -436,7 +435,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 die left'. */
-    public      static  SPRITE_BLUE_NINJA_DIE_LEFT               :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_DIE_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_1,
@@ -453,7 +452,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'enemy ninja 1 die right'. */
-    public      static  SPRITE_BLUE_NINJA_DIE_RIGHT              :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_BLUE_NINJA_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_1,
@@ -470,7 +469,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'water top'. */
-    public      static  SPRITE_WATER_TOP                            :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_WATER_TOP: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_WATER_TOP_FRAME_1,
@@ -490,7 +489,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'grass 1'. */
-    public      static  SPRITE_GRASS_1                              :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_GRASS_1: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_GRASS_1_FRAME_1,
@@ -514,7 +513,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'flame 1 big'. */
-    public      static  SPRITE_FLAME_1_BIG                              :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_FLAME_1_BIG: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_FLAME_1_FRAME_1,
@@ -540,7 +539,7 @@ export class SpriteTemplateData
     );
 
     /** Sprite 'flame 1 small'. */
-    public      static  SPRITE_FLAME_1_SMALL                            :SpriteTemplate         = new SpriteTemplate
+    public      static  SPRITE_FLAME_1_SMALL: SpriteTemplate         = new SpriteTemplate
     (
         [
             ImageData.IMAGE_FLAME_1_FRAME_1,
@@ -566,51 +565,47 @@ export class SpriteTemplateData
     );
 
     /** A reference over all sprite templates. */
-    public      static  readonly        ALL_SPRITE_TEMPLATES                        :SpriteTemplate[] =
-    [
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_1_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_WALK_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_1_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_RIGHT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_LEFT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_WATER_TOP,
-        SpriteTemplateData.SPRITE_GRASS_1,
-        SpriteTemplateData.SPRITE_FLAME_1_BIG,
-        SpriteTemplateData.SPRITE_FLAME_1_SMALL,
-    ];
+    public      static  readonly        ALL_SPRITE_TEMPLATES: SpriteTemplate[] =
+        [
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_RIGHT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_LEFT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_RIGHT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_LEFT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_1_STAND_RIGHT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_WALK_LEFT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_1_WALK_RIGHT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_LEFT,
+            SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_RIGHT,
+            SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
+            SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
+            SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_LEFT,
+            SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_RIGHT,
+            SpriteTemplateData.SPRITE_WATER_TOP,
+            SpriteTemplateData.SPRITE_GRASS_1,
+            SpriteTemplateData.SPRITE_FLAME_1_BIG,
+            SpriteTemplateData.SPRITE_FLAME_1_SMALL,
+        ];
 
     /** ****************************************************************************************************************
     *   Determines and returns an array of filenames for all images that needs to be mirrored.
     *
     *   @return An array with all filenames of images needing to be mirrored.
     *******************************************************************************************************************/
-    public static getAllImagesToMirror() : string[]
-    {
-        const ret:string[] = [];
+    public static getAllImagesToMirror(): string[] {
+        const ret: string[] = [];
 
-        for ( const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES )
-        {
-            if ( spriteTemplate.mirrored === MirrorImage.YES )
-            {
-                for ( const image of spriteTemplate.imageIds )
-                {
+        for ( const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES ) {
+            if ( spriteTemplate.mirrored === MirrorImage.YES ) {
+                for ( const image of spriteTemplate.imageIds ) {
                     ret.push( image );
                 }
             }
@@ -624,10 +619,8 @@ export class SpriteTemplateData
     *
     *   @param imageSystem The image system to use.
     *******************************************************************************************************************/
-    public static assignAllImageSizes( imageSystem:ImageSystem ) : void
-    {
-        for ( const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES )
-        {
+    public static assignAllImageSizes( imageSystem: ImageSystem ): void {
+        for ( const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES ) {
             spriteTemplate.assignImageSizes( imageSystem );
         }
     }

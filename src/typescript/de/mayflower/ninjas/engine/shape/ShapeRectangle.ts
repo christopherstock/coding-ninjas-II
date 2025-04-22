@@ -1,17 +1,16 @@
 import * as matter from 'matter-js';
-import {Shape, StaticShape} from "./Shape";
-import {DebugColor} from "../../setting/SettingDebug";
-import {BodyDensity, BodyFriction, BodyRestitution} from "../../setting/SettingMatter";
+import { DebugColor } from '../../setting/SettingDebug';
+import { BodyDensity, BodyFriction, BodyRestitution } from '../../setting/SettingMatter';
+import { Shape, StaticShape } from './Shape';
 
 /** ********************************************************************************************************************
 *   Represents the shape of a game object.
 ***********************************************************************************************************************/
-export class ShapeRectangle extends Shape
-{
+export class ShapeRectangle extends Shape {
     /** The rectangle's width. */
-    public              width           :number                 = 0.0;
+    public              width: number                 = 0.0;
     /** The rectangle's height. */
-    public              height          :number                 = 0.0;
+    public              height: number                 = 0.0;
 
     /** ************************************************************************************************************
     *   Creates a new rectangle shape.
@@ -25,18 +24,16 @@ export class ShapeRectangle extends Shape
     *   @param density     The object's body density.
     *   @param restitution The object's body restitution.
     ***************************************************************************************************************/
-    public constructor
-    (
-        width       :number,
-        height      :number,
-        debugColor  :DebugColor,
-        isStatic    :StaticShape,
-        angle       :number,
-        friction    :BodyFriction,
-        density     :BodyDensity,
-        restitution :BodyRestitution
-    )
-    {
+    public constructor(
+        width: number,
+        height: number,
+        debugColor: DebugColor,
+        isStatic: StaticShape,
+        angle: number,
+        friction: BodyFriction,
+        density: BodyDensity,
+        restitution: BodyRestitution
+    ) {
         super( debugColor, isStatic, angle, friction, density, restitution );
 
         this.width  = width;
@@ -50,8 +47,7 @@ export class ShapeRectangle extends Shape
     *
     *   @return The body for this shape.
     ***************************************************************************************************************/
-    public createBody() : matter.Body
-    {
+    public createBody(): matter.Body {
         return matter.Bodies.rectangle(
             ( this.width  / 2 ),
             ( this.height / 2 ),
@@ -66,8 +62,7 @@ export class ShapeRectangle extends Shape
     *
     *   @return The shape's boundaries width.
     ***************************************************************************************************************/
-    public getWidth() : number
-    {
+    public getWidth(): number {
         return this.width;
     }
 
@@ -76,8 +71,7 @@ export class ShapeRectangle extends Shape
     *
     *   @return The shape's boundaries height.
     ***************************************************************************************************************/
-    public getHeight() : number
-    {
+    public getHeight(): number {
         return this.height;
     }
 }

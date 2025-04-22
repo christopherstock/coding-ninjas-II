@@ -1,5 +1,5 @@
-import {SettingGame} from "../setting/SettingGame";
-import {Main} from "../base/Main";
+import { SettingGame } from '../setting/SettingGame';
+import { Main } from '../base/Main';
 
 /** ********************************************************************************************************************
 *   Contains all possible positions for the site panel.
@@ -15,21 +15,19 @@ export enum SitePanelPosition
 /** ********************************************************************************************************************
 *   Represents a site panel that shows a site content.
 ***********************************************************************************************************************/
-export class SitePanel
-{
+export class SitePanel {
     /** The outer container div. */
-    private                 outerAbsoluteContainer          :HTMLDivElement             = null;
+    private                 outerAbsoluteContainer: HTMLDivElement             = null;
     /** The inner container div. */
-    private                 innerRelativeContainer          :HTMLDivElement             = null;
+    private                 innerRelativeContainer: HTMLDivElement             = null;
 
     /** The position for this panel to show up. */
-    private                 position                        :SitePanelPosition   = null;
+    private                 position: SitePanelPosition   = null;
 
     /** ****************************************************************************************************************
     *   Creates a new site panel.
     *******************************************************************************************************************/
-    public constructor()
-    {
+    public constructor() {
         this.createOuterAbsoluteContainer();
         this.createInnerRelativeContainer();
 
@@ -40,8 +38,7 @@ export class SitePanel
     /** ****************************************************************************************************************
     *   Sets the position of the panel.
     *******************************************************************************************************************/
-    public setPosition( position:SitePanelPosition ) : void
-    {
+    public setPosition( position: SitePanelPosition ): void {
         this.position = position;
     }
 
@@ -50,8 +47,7 @@ export class SitePanel
     *
     *   @param visible Flags if the panel shall be visible.
     *******************************************************************************************************************/
-    public setVisible( visible:boolean ) : void
-    {
+    public setVisible( visible: boolean ): void {
         this.outerAbsoluteContainer.style.visibility = ( visible ? 'visible' : 'hidden' );
     }
 
@@ -60,24 +56,21 @@ export class SitePanel
     *
     *   @param src The source of the background image to set.
     *******************************************************************************************************************/
-    public setPanelBgImage( src:string ) : void
-    {
+    public setPanelBgImage( src: string ): void {
         this.outerAbsoluteContainer.style.backgroundImage = ( 'url( ' + src + ')' );
     }
 
     /** ****************************************************************************************************************
     *   Appends the outer container to the DOM.
     *******************************************************************************************************************/
-    public addToDom() : void
-    {
+    public addToDom(): void {
         document.body.appendChild( this.outerAbsoluteContainer );
     }
 
     /** ****************************************************************************************************************
     *   Removed the outer container from the DOM.
     *******************************************************************************************************************/
-    public removeFromDom() : void
-    {
+    public removeFromDom(): void {
         this.outerAbsoluteContainer.remove();
     }
 
@@ -87,8 +80,7 @@ export class SitePanel
     *   @param width  The new panel width.
     *   @param height The new panel height.
     *******************************************************************************************************************/
-    public updateSizeAndPosition( width:number, height:number ) : void
-    {
+    public updateSizeAndPosition( width: number, height: number ): void {
         // outer container size
         this.outerAbsoluteContainer.style.width  = String( width  ) + 'px';
         this.outerAbsoluteContainer.style.height = String( height ) + 'px';
@@ -99,15 +91,12 @@ export class SitePanel
         // this.outerAbsoluteContainer.style.backgroundColor = '#ff0000';
         this.outerAbsoluteContainer.style.backgroundColor = 'transparent';
 
-        // debug offset ..
-        const OFFSET :number = -100;
-        const CANVAS_OFFSET_X :number = (
+        const CANVAS_OFFSET_X: number = (
             ( window.innerWidth - Main.game.engine.canvasSystem.getPhysicalWidth() ) / 2
         );
 
         // outer container position
-        switch ( this.position )
-        {
+        switch ( this.position ) {
             case SitePanelPosition.LEFT:
             {
                 this.outerAbsoluteContainer.style.left = String(
@@ -152,19 +141,16 @@ export class SitePanel
     *
     *   @return The current position of this panel.
     *******************************************************************************************************************/
-    public getPosition() : SitePanelPosition
-    {
+    public getPosition(): SitePanelPosition {
         return this.position;
     }
 
     /** ****************************************************************************************************************
     *   Sets WOW classes for animating the panel in.
     *******************************************************************************************************************/
-    public animateIn() : void
-    {
+    public animateIn(): void {
         // set animation class
-        switch ( this.position )
-        {
+        switch ( this.position ) {
             case SitePanelPosition.LEFT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInLeft';
@@ -184,11 +170,9 @@ export class SitePanel
     /** ****************************************************************************************************************
     *   Sets WOW classes for animating the panel out.
     *******************************************************************************************************************/
-    public animateOut() : void
-    {
+    public animateOut(): void {
         // set animation class
-        switch ( this.position )
-        {
+        switch ( this.position ) {
             case SitePanelPosition.LEFT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutLeft';
@@ -210,16 +194,14 @@ export class SitePanel
     *
     *   @return The inner relative container div.
     *******************************************************************************************************************/
-    public getMountPoint() : HTMLDivElement
-    {
+    public getMountPoint(): HTMLDivElement {
         return this.innerRelativeContainer;
     }
 
     /** ****************************************************************************************************************
     *   Creates the outer container with absolute position.
     *******************************************************************************************************************/
-    private createOuterAbsoluteContainer() : void
-    {
+    private createOuterAbsoluteContainer(): void {
         this.outerAbsoluteContainer = document.createElement( 'div' );
 
         this.outerAbsoluteContainer.setAttribute(
@@ -233,8 +215,7 @@ export class SitePanel
     /** ****************************************************************************************************************
     *   Creates the inner container with relative position.
     *******************************************************************************************************************/
-    private createInnerRelativeContainer() : void
-    {
+    private createInnerRelativeContainer(): void {
         this.innerRelativeContainer = document.createElement( 'div' );
         this.innerRelativeContainer.className = 'sitePanel innerRelativeContainer';
 

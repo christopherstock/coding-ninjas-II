@@ -1,15 +1,14 @@
 import * as React  from 'react';
-import {SiteContentFactory} from "../SiteContentFactory";
-import {Debug} from "../../base/Debug";
-import {SiteContent} from "../SiteContentSystem";
-import {Main} from "../../base/Main";
-import {ImageData} from "../../data/ImageData";
+import { SiteContentFactory } from '../SiteContentFactory';
+import { Debug } from '../../base/Debug';
+import { SiteContent } from '../SiteContentSystem';
+import { Main } from '../../base/Main';
+import { ImageData } from '../../data/ImageData';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'technology' page.
 ***********************************************************************************************************************/
-export const ContentTechnology :() => JSX.Element = () :JSX.Element =>
-{
+export const ContentTechnology: ()=> JSX.Element = (): JSX.Element => {
     Debug.react.log( 'ContentTechnology.render() being invoked' );
 
     return <div>
@@ -23,8 +22,7 @@ export const ContentTechnology :() => JSX.Element = () :JSX.Element =>
         ) }
         { SiteContentFactory.createSpacerVertical() }
         {
-            SiteContentFactory.createAccordion
-            (
+            SiteContentFactory.createAccordion(
                 [
                     'Node.js',
                     'TypeScript',

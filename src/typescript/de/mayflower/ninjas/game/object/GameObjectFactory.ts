@@ -1,35 +1,34 @@
 import * as matter from 'matter-js';
-import { Movable } from './primal/Movable';
-import { Platform } from './special/Platform';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import {ImageData} from "../../data/ImageData";
+import { ImageData } from '../../data/ImageData';
 import { ShapeRectangle } from '../../engine/shape/ShapeRectangle';
 import { DebugColor } from '../../setting/SettingDebug';
 import { StaticShape } from '../../engine/shape/Shape';
-import {BodyDensity, BodyFriction, BodyRestitution, SettingMatter} from '../../setting/SettingMatter';
-import {ShapeCircle} from "../../engine/shape/ShapeCircle";
-import {Item} from "./primal/Item";
-import {JumpPassThrough, Obstacle} from "./primal/Obstacle";
-import {ShapeFreeForm} from "../../engine/shape/ShapeFreeForm";
-import {CharacterSpriteSet} from "./being/CharacterSpriteSet";
-import {Bot} from "./being/Bot";
-import {Decoration} from "./deco/Decoration";
-import {Level} from "../level/Level";
-import {DecoPosition} from "./GameObjectBundleFactory";
-import {ParallaxDeco} from "./deco/ParallaxDeco";
-import {SiteContent} from "../../site/SiteContentSystem";
-import {Door} from "./special/Door";
-import {SigSaw} from "./special/SigSaw";
-import {Bounce} from "./special/Bounce";
-import {SitePanelAppearance, SiteTrigger} from "./special/SiteTrigger";
-import {GameAction} from "./GameAction";
-import {CharacterFacing} from "./being/CharacterFacing";
+import { BodyDensity, BodyFriction, BodyRestitution, SettingMatter } from '../../setting/SettingMatter';
+import { ShapeCircle } from '../../engine/shape/ShapeCircle';
+import { ShapeFreeForm } from '../../engine/shape/ShapeFreeForm';
+import { Level } from '../level/Level';
+import { SiteContent } from '../../site/SiteContentSystem';
+import { Item } from './primal/Item';
+import { JumpPassThrough, Obstacle } from './primal/Obstacle';
+import { CharacterSpriteSet } from './being/CharacterSpriteSet';
+import { Bot } from './being/Bot';
+import { Decoration } from './deco/Decoration';
+import { DecoPosition } from './GameObjectBundleFactory';
+import { ParallaxDeco } from './deco/ParallaxDeco';
+import { Platform } from './special/Platform';
+import { Movable } from './primal/Movable';
+import { Door } from './special/Door';
+import { SigSaw } from './special/SigSaw';
+import { Bounce } from './special/Bounce';
+import { SitePanelAppearance, SiteTrigger } from './special/SiteTrigger';
+import { GameAction } from './GameAction';
+import { CharacterFacing } from './being/CharacterFacing';
 
 /** ********************************************************************************************************************
 *   Creates customized instances of game objects.
 ***********************************************************************************************************************/
-export abstract class GameObjectFactory
-{
+export abstract class GameObjectFactory {
     /** ****************************************************************************************************************
     *   Creates a wooden crate.
     *
@@ -40,9 +39,8 @@ export abstract class GameObjectFactory
     *
     *   @return The created box.
     *******************************************************************************************************************/
-    public static createWoodenCrate( x:number, yBottom:number ):Movable
-    {
-        const sprtiteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage(
+    public static createWoodenCrate( x: number, yBottom: number ): Movable {
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(
             ImageData.IMAGE_CRATE_WOOD_1
         );
 
@@ -74,15 +72,12 @@ export abstract class GameObjectFactory
     *
     *   @return The created movable.
     *******************************************************************************************************************/
-    public static createMovableRect
-    (
-        x       :number,
-        yBottom :number,
-        imageId :string
-    )
-    : Movable
-    {
-        const sprtiteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+    public static createMovableRect(
+        x: number,
+        yBottom: number,
+        imageId: string
+    ): Movable {
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
         return new Movable
         (
@@ -113,16 +108,13 @@ export abstract class GameObjectFactory
     *
     *   @return The created movable.
     *******************************************************************************************************************/
-    public static createMovableCircular
-    (
-        x       :number,
-        yBottom :number,
-        imageId :string,
-        angle   :number
-    )
-    : Movable
-    {
-        const sprtiteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+    public static createMovableCircular(
+        x: number,
+        yBottom: number,
+        imageId: string,
+        angle: number
+    ): Movable {
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
         return new Movable
         (
@@ -155,22 +147,18 @@ export abstract class GameObjectFactory
     *
     *   @throws An error if the dimensions of the assigned sprite are not square.
     *******************************************************************************************************************/
-    public static createSphere
-    (
-        x           :number,
-        yBottom     :number,
-        friction    :BodyFriction,
-        density     :BodyDensity,
-        restitution :BodyRestitution
-    )
-    : Movable
-    {
-        const spriteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage(
+    public static createSphere(
+        x: number,
+        yBottom: number,
+        friction: BodyFriction,
+        density: BodyDensity,
+        restitution: BodyRestitution
+    ): Movable {
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(
             ImageData.IMAGE_STONE_SPHERE
         );
 
-        if ( spriteTemplate.width !== spriteTemplate.height )
-        {
+        if ( spriteTemplate.width !== spriteTemplate.height ) {
             throw new Error(
                 'Non-square sprite template dimensions for circular deco - sprite image ['
                 + spriteTemplate.imageIds[ 0 ]
@@ -204,8 +192,7 @@ export abstract class GameObjectFactory
     *
     *   @return The created item.
     *******************************************************************************************************************/
-    public static createItem( x:number, y:number ):Item
-    {
+    public static createItem( x: number, y: number ): Item {
         return new Item
         (
             new ShapeRectangle
@@ -239,19 +226,16 @@ export abstract class GameObjectFactory
     *
     *   @return The created obstacle.
     *******************************************************************************************************************/
-    public static createObstacleSpriteful
-    (
-        xLeft           :number,
-        yBottom         :number,
-        spriteTemplate  :SpriteTemplate,
-        angle           :number = 0,
-        jumpPassThrough :JumpPassThrough = JumpPassThrough.NO,
-        staticShape     :StaticShape = StaticShape.YES,
-        density         :BodyDensity = BodyDensity.DEFAULT,
-        restitution     :BodyRestitution = BodyRestitution.DEFAULT
-    )
-    : Obstacle
-    {
+    public static createObstacleSpriteful(
+        xLeft: number,
+        yBottom: number,
+        spriteTemplate: SpriteTemplate,
+        angle: number = 0,
+        jumpPassThrough: JumpPassThrough = JumpPassThrough.NO,
+        staticShape: StaticShape = StaticShape.YES,
+        density: BodyDensity = BodyDensity.DEFAULT,
+        restitution: BodyRestitution = BodyRestitution.DEFAULT
+    ): Obstacle {
         return new Obstacle
         (
             new ShapeRectangle
@@ -284,17 +268,14 @@ export abstract class GameObjectFactory
     *
     *   @return The created obstacle.
     *******************************************************************************************************************/
-    public static createObstacleSpriteless
-    (
-        xLeft           :number,
-        yTop            :number,
-        width           :number,
-        height          :number,
-        angle           :number,
-        jumpPassThrough :JumpPassThrough
-    )
-    : Obstacle
-    {
+    public static createObstacleSpriteless(
+        xLeft: number,
+        yTop: number,
+        width: number,
+        height: number,
+        angle: number,
+        jumpPassThrough: JumpPassThrough
+    ): Obstacle {
         return new Obstacle
         (
             new ShapeRectangle
@@ -327,10 +308,8 @@ export abstract class GameObjectFactory
     *   @return The created obstacle.
     *******************************************************************************************************************/
     public static createFreeForm(
-        x:number, y:number, vertices:matter.Vector[], angle:number, spriteTemplate:SpriteTemplate
-    )
-    : Obstacle
-    {
+        x: number, y: number, vertices: matter.Vector[], angle: number, spriteTemplate: SpriteTemplate
+    ): Obstacle {
         return new Obstacle
         (
             new ShapeFreeForm
@@ -363,19 +342,16 @@ export abstract class GameObjectFactory
     *
     *   @return The created obstacle ramp.
     *******************************************************************************************************************/
-    public static createElevatedRamp
-    (
-        x               :number,
-        y               :number,
-        width           :number,
-        height          :number,
-        deltaY          :number,
-        spriteTemplate  :SpriteTemplate,
-        jumpPassThrough :JumpPassThrough
-    )
-    : Obstacle
-    {
-        const vertices :matter.Vector[] = [];
+    public static createElevatedRamp(
+        x: number,
+        y: number,
+        width: number,
+        height: number,
+        deltaY: number,
+        spriteTemplate: SpriteTemplate,
+        jumpPassThrough: JumpPassThrough
+    ): Obstacle {
+        const vertices: matter.Vector[] = [];
 
         // shape ramp
         vertices.push( matter.Vector.create( 0.0,   0.0             ) );
@@ -383,8 +359,7 @@ export abstract class GameObjectFactory
         vertices.push( matter.Vector.create( width, height + deltaY ) );
         vertices.push( matter.Vector.create( 0.0,   height          ) );
 
-        if ( deltaY <= 0.0 )
-        {
+        if ( deltaY <= 0.0 ) {
             y += deltaY;
         }
 
@@ -419,21 +394,21 @@ export abstract class GameObjectFactory
     *
     *   @return The created enemy.
     *******************************************************************************************************************/
-    public static createBot
-    (
-        spriteTemplate     :SpriteTemplate,
-        x                  :number,
-        yBottom            :number,
-        facingDirection    :CharacterFacing,
-        walkingTargetLeft  :number,
-        walkingTargetRight :number,
-        characterSpriteSet :CharacterSpriteSet,
-        friendly           :boolean,
-        blocksPlayer       :boolean
-    )
-    : Bot
-    {
-        const diamondShape = GameObjectFactory.createCharacterDiamondShape( spriteTemplate, DebugColor.COLOR_DEBUG_ENEMY );
+    public static createBot(
+        spriteTemplate: SpriteTemplate,
+        x: number,
+        yBottom: number,
+        facingDirection: CharacterFacing,
+        walkingTargetLeft: number,
+        walkingTargetRight: number,
+        characterSpriteSet: CharacterSpriteSet,
+        friendly: boolean,
+        blocksPlayer: boolean
+    ): Bot {
+        const diamondShape = GameObjectFactory.createCharacterDiamondShape(
+            spriteTemplate,
+            DebugColor.COLOR_DEBUG_ENEMY
+        );
         if (blocksPlayer) {
             diamondShape.body.collisionFilter = SettingMatter.COLLISION_GROUP_COLLIDING;
         } else {
@@ -467,16 +442,13 @@ export abstract class GameObjectFactory
     *
     *   @return The created decoration.
     *******************************************************************************************************************/
-    public static createDecorationRect
-    (
-        xLeft          :number,
-        yBottom        :number,
-        isStatic       :StaticShape,
-        spriteTemplate :SpriteTemplate,
-        debugColor     :DebugColor = DebugColor.COLOR_DEBUG_DECORATION
-    )
-    : Decoration
-    {
+    public static createDecorationRect(
+        xLeft: number,
+        yBottom: number,
+        isStatic: StaticShape,
+        spriteTemplate: SpriteTemplate,
+        debugColor: DebugColor = DebugColor.COLOR_DEBUG_DECORATION
+    ): Decoration {
         return new Decoration
         (
             new ShapeRectangle
@@ -508,17 +480,13 @@ export abstract class GameObjectFactory
     *
     *   @throws An error if the dimensions of the assigned sprite are not square.
     *******************************************************************************************************************/
-    public static createDecorationCircular
-    (
-        xLeft          :number,
-        yBottom        :number,
-        isStatic       :StaticShape,
-        spriteTemplate :SpriteTemplate
-    )
-    : Decoration
-    {
-        if ( spriteTemplate.width !== spriteTemplate.height )
-        {
+    public static createDecorationCircular(
+        xLeft: number,
+        yBottom: number,
+        isStatic: StaticShape,
+        spriteTemplate: SpriteTemplate
+    ): Decoration {
+        if ( spriteTemplate.width !== spriteTemplate.height ) {
             throw new Error( 'Non-square sprite template dimensions for circular deco - sprite image ['
                 + String( spriteTemplate.imageIds[ 0 ] )
                 + ']'
@@ -553,18 +521,15 @@ export abstract class GameObjectFactory
     *   @param decoPosition   The position of this decoration - foreground or background.
     *   @param spriteTemplate The decoration sprite.
     *******************************************************************************************************************/
-    public static createParallaxDeco
-    (
-        level          :Level,
-        x              :number,
-        y              :number,
-        parallaxRatio  :number,
-        decoPosition   :DecoPosition,
-        spriteTemplate :SpriteTemplate
-    )
-    : void
-    {
-        const parallaxDeco :ParallaxDeco = new ParallaxDeco
+    public static createParallaxDeco(
+        level: Level,
+        x: number,
+        y: number,
+        parallaxRatio: number,
+        decoPosition: DecoPosition,
+        spriteTemplate: SpriteTemplate
+    ): void {
+        const parallaxDeco: ParallaxDeco = new ParallaxDeco
         (
             new ShapeRectangle
             (
@@ -583,8 +548,7 @@ export abstract class GameObjectFactory
             parallaxRatio
         );
 
-        switch ( decoPosition )
-        {
+        switch ( decoPosition ) {
             case DecoPosition.FG:
             {
                 level.parallaxFgs.push( parallaxDeco );
@@ -611,20 +575,17 @@ export abstract class GameObjectFactory
     *   @param sitePanelAppearance The position for the site panel to appear.
     *   @param spriteTemplate      The decoration sprite to display in bg of this site trigger.
     *******************************************************************************************************************/
-    public static createSiteTrigger
-    (
-        level               :Level,
-        x                   :number,
-        yBottom             :number,
-        width               :number,
-        height              :number,
-        content             :SiteContent,
-        sitePanelAppearance :SitePanelAppearance,
-        spriteTemplate      :SpriteTemplate
-    )
-    : void
-    {
-        const siteTrigger :SiteTrigger = new SiteTrigger
+    public static createSiteTrigger(
+        level: Level,
+        x: number,
+        yBottom: number,
+        width: number,
+        height: number,
+        content: SiteContent,
+        sitePanelAppearance: SitePanelAppearance,
+        spriteTemplate: SpriteTemplate
+    ): void {
+        const siteTrigger: SiteTrigger = new SiteTrigger
         (
             new ShapeRectangle
             (
@@ -655,19 +616,16 @@ export abstract class GameObjectFactory
     *   @param yBottom             Anchor of bottom Y.
     *   @param imageId             Image ID of the sprite for the door to use.
     *******************************************************************************************************************/
-    public static createDoor
-    (
-        level               :Level,
-        x                   :number,
-        yBottom             :number,
-        imageId             :string,
-        action              :GameAction
-    )
-    : void
-    {
-        const spriteTemplate :SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+    public static createDoor(
+        level: Level,
+        x: number,
+        yBottom: number,
+        imageId: string,
+        action: GameAction
+    ): void {
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
-        const door :Door = new Door
+        const door: Door = new Door
         (
             new ShapeRectangle
             (
@@ -698,17 +656,14 @@ export abstract class GameObjectFactory
     *   @param spriteTemplate   The decoration sprite.
     *   @param maxRotationSpeed The maximum rotation speed per tick. -1 disables this maximum.
     *******************************************************************************************************************/
-    public static createSigsaw
-    (
-        level            :Level,
-        xLeft            :number,
-        yTop             :number,
-        spriteTemplate   :SpriteTemplate,
-        maxRotationSpeed :number
-    )
-    : void
-    {
-        const sigsaw :SigSaw = new SigSaw
+    public static createSigsaw(
+        level: Level,
+        xLeft: number,
+        yTop: number,
+        spriteTemplate: SpriteTemplate,
+        maxRotationSpeed: number
+    ): void {
+        const sigsaw: SigSaw = new SigSaw
         (
             new ShapeRectangle
             (
@@ -740,16 +695,13 @@ export abstract class GameObjectFactory
     *
     *   @return The created decoration.
     *******************************************************************************************************************/
-    public static createPlatform
-    (
-        level          :Level,
-        spriteTemplate :SpriteTemplate,
-        speed          :number,
-        waypoints      :matter.Vector[]
-    )
-    : void
-    {
-        const platform :Platform = new Platform
+    public static createPlatform(
+        level: Level,
+        spriteTemplate: SpriteTemplate,
+        speed: number,
+        waypoints: matter.Vector[]
+    ): void {
+        const platform: Platform = new Platform
         (
             new ShapeRectangle
             (
@@ -782,15 +734,13 @@ export abstract class GameObjectFactory
     *   @return The created decoration.
     *******************************************************************************************************************/
     public static createBounce(
-        level          :Level,
-        xLeft          :number,
-        yTop           :number,
-        spriteTemplate :SpriteTemplate,
-        density        :number
-    )
-    : void
-    {
-        const bounce :Bounce = new Bounce
+        level: Level,
+        xLeft: number,
+        yTop: number,
+        spriteTemplate: SpriteTemplate,
+        density: number
+    ): void {
+        const bounce: Bounce = new Bounce
         (
             new ShapeRectangle
             (
@@ -819,17 +769,14 @@ export abstract class GameObjectFactory
     *
     *   @return The created diamond shape.
     *******************************************************************************************************************/
-    public static createCharacterDiamondShape
-    (
-        spriteTemplate :SpriteTemplate,
-        debugColor     :DebugColor
-    )
-    : ShapeFreeForm
-    {
-        const gapSizeX :number = ( spriteTemplate.width / 2 );
-        const gapSizeY :number = SettingMatter.PLAYER_EDGE_GAP_Y;
+    public static createCharacterDiamondShape(
+        spriteTemplate: SpriteTemplate,
+        debugColor: DebugColor
+    ): ShapeFreeForm {
+        const gapSizeX: number = ( spriteTemplate.width / 2 );
+        const gapSizeY: number = SettingMatter.PLAYER_EDGE_GAP_Y;
 
-        const vertices :matter.Vector[] = [];
+        const vertices: matter.Vector[] = [];
 
         // draw diamond path
         vertices.push( matter.Vector.create( gapSizeX,                        0.0                              ) );

@@ -1,20 +1,19 @@
-import {Decoration} from "./Decoration";
-import {SiteContent} from "../../../site/SiteContentSystem";
-import {Shape} from "../../../engine/shape/Shape";
-import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import { SiteContent } from '../../../site/SiteContentSystem';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { Decoration } from './Decoration';
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding shrine decoration.
 ***********************************************************************************************************************/
-export class Shrine extends Decoration
-{
+export class Shrine extends Decoration {
     /** The site content this shrine is connected to. */
-    public                      content                 :SiteContent                 = null;
+    public                      content: SiteContent                 = null;
 
     /** The decoration of the open book for this shrine. */
-    private     readonly        decoBookOpen            :Decoration                  = null;
+    private     readonly        decoBookOpen: Decoration                  = null;
     /** The decoration of the closed book for this shrine. */
-    private     readonly        decoBookClosed          :Decoration                  = null;
+    private     readonly        decoBookClosed: Decoration                  = null;
 
     /** ****************************************************************************************************************
     *   Creates a new Shrine.
@@ -27,19 +26,16 @@ export class Shrine extends Decoration
     *   @param decoBookOpen   The decoration of the open book for this shrine.
     *   @param decoBookClosed The decoration of the closed book for this shrine.
     *******************************************************************************************************************/
-    public constructor
-    (
-        shape          :Shape,
-        spriteTemplate :SpriteTemplate,
-        x              :number,
-        y              :number,
-        content        :SiteContent,
-        decoBookOpen   :Decoration,
-        decoBookClosed :Decoration
-    )
-    {
-        super
-        (
+    public constructor(
+        shape: Shape,
+        spriteTemplate: SpriteTemplate,
+        x: number,
+        y: number,
+        content: SiteContent,
+        decoBookOpen: Decoration,
+        decoBookClosed: Decoration
+    ) {
+        super(
             shape,
             spriteTemplate,
             x,
@@ -60,8 +56,7 @@ export class Shrine extends Decoration
     *
     *   @boolean open Specifies if the open book should be shown.
     *******************************************************************************************************************/
-    public setBookOpen( open:boolean ) : void
-    {
+    public setBookOpen( open: boolean ): void {
         this.decoBookOpen.setVisible(   open  );
         this.decoBookClosed.setVisible( !open );
     }
