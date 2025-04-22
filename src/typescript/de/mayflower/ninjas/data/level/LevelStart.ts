@@ -50,6 +50,9 @@ export class LevelStart extends Level {
         // door
         GameObjectFactory.createDoor( this, 2300, 2000, ImageData.IMAGE_DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HUT, playerStartX: 1020 } ) );
 
+        // statue
+        GameObjectBundleFactory.createDecoImage( this, 2900, 2000, DecoPosition.BG, ImageData.IMAGE_STATUE_1 );
+
         // enemies
         GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 0, 2000, CharacterFacing.RIGHT, 0, 1500, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
 
