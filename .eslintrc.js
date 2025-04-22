@@ -183,6 +183,7 @@ module.exports = {
         'quote-props': 'off',
         radix: 'warn',
         'space-before-function-paren': ['warn', 'never'],
+        'keyword-spacing': ['warn'],
         'spaced-comment': ['warn', 'always', {
             markers: ['/'],
             line: {
