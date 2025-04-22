@@ -34,7 +34,7 @@ export class ShapeRectangle extends Shape {
         density: BodyDensity,
         restitution: BodyRestitution
     ) {
-        super( debugColor, isStatic, angle, friction, density, restitution );
+        super(debugColor, isStatic, angle, friction, density, restitution);
 
         this.width  = width;
         this.height = height;
@@ -49,8 +49,8 @@ export class ShapeRectangle extends Shape {
     ***************************************************************************************************************/
     public createBody(): matter.Body {
         return matter.Bodies.rectangle(
-            ( this.width  / 2 ),
-            ( this.height / 2 ),
+            (this.width  / 2),
+            (this.height / 2),
             this.width,
             this.height,
             this.options

@@ -22,7 +22,7 @@ export class SoundSystem {
     *   @param fileNames      The names of all image files to load.
     *   @param onLoadComplete The method to invoke when all image files are loaded.
     *******************************************************************************************************************/
-    public constructor( fileNames: string[], onLoadComplete: ()=> void ) {
+    public constructor(fileNames: string[], onLoadComplete: ()=> void) {
         this.fileNames      = fileNames;
         this.onLoadComplete = onLoadComplete;
     }
@@ -35,26 +35,26 @@ export class SoundSystem {
     *
     *   @return A reference to the instanced audio clip.
     *******************************************************************************************************************/
-    public playSound( id: string, loop: boolean = false ): HTMLAudioElement {
-        if ( !SettingDebug.DISABLE_SOUNDS ) {
-            if ( this.sounds[ id ] !== null ) {
-                const clipClone: HTMLAudioElement = this.sounds[ id ].cloneNode( true );
+    public playSound(id: string, loop: boolean = false): HTMLAudioElement {
+        if (!SettingDebug.DISABLE_SOUNDS) {
+            if (this.sounds[ id ] !== null) {
+                const clipClone: HTMLAudioElement = this.sounds[ id ].cloneNode(true);
 
-                if ( loop ) {
+                if (loop) {
                     clipClone.addEventListener(
                         'ended',
                         () => {
 
-                            Debug.sound.log( 'Clip ended - now repeating ..' );
+                            Debug.sound.log('Clip ended - now repeating ..');
 
                             // noinspection JSIgnoredPromiseFromCall
-                            clipClone.play().then().catch( ( e: Error ) => { return e; } );
+                            clipClone.play().then().catch((e: Error) => { return e; });
                         }
                     );
                 }
 
                 // noinspection JSIgnoredPromiseFromCall
-                clipClone.play().then().catch( ( e: Error ) => { return e; } );
+                clipClone.play().then().catch((e: Error) => { return e; });
 
                 return clipClone;
             }
@@ -67,24 +67,24 @@ export class SoundSystem {
     *   Loads all specified sound files into system memory.
     *******************************************************************************************************************/
     public loadSounds(): void {
-        Debug.sound.log( 'Preloading [' + String( this.fileNames.length ) + '] sounds' );
+        Debug.sound.log('Preloading [' + String(this.fileNames.length) + '] sounds');
 
         if (this.fileNames.length === 0) {
             this.onLoadComplete();
         }
 
-        for ( const fileName of this.fileNames ) {
+        for (const fileName of this.fileNames) {
             try {
                 this.sounds[ fileName ]              = new Audio();
                 this.sounds[ fileName ].src          = fileName;
                 this.sounds[ fileName ].onloadeddata = (): void => { this.onLoadSound(); };
                 this.sounds[ fileName ].onerror      = (): void => { this.onLoadSoundError(); };
 
-                if ( ImageUtil.isMac() ) {
+                if (ImageUtil.isMac()) {
                     this.onLoadSound();
                 }
-            } catch ( e ) {
-                Debug.sound.log( 'Error on creating Audio element: ' + String( e.message ) );
+            } catch (e) {
+                Debug.sound.log('Error on creating Audio element: ' + String(e.message));
                 this.onLoadSoundError();
             }
         }
@@ -94,8 +94,8 @@ export class SoundSystem {
     *   Being invoked when one sound was loaded completely.
     *******************************************************************************************************************/
     private onLoadSound(): void {
-        if ( ++this.loadedSoundCount >= this.fileNames.length ) {
-            Debug.sound.log( 'All [' + String( this.fileNames.length ) + '] sounds loaded' );
+        if (++this.loadedSoundCount >= this.fileNames.length) {
+            Debug.sound.log('All [' + String(this.fileNames.length) + '] sounds loaded');
 
             this.onLoadComplete();
         }
@@ -105,7 +105,7 @@ export class SoundSystem {
     *   Being invoked when one sound was loaded completely.
     *******************************************************************************************************************/
     private onLoadSoundError(): void {
-        Debug.sound.log( 'ERROR on loading audio element!' );
+        Debug.sound.log('ERROR on loading audio element!');
 
         this.onLoadSound();
     }

@@ -150,7 +150,7 @@ module.exports = {
         'no-extra-semi': 'warn',
         'no-fallthrough': 'warn',
         'no-invalid-this': 'warn',
-        'no-irregular-whitespace': 'off',
+        'no-irregular-whitespace': 'error',
         'no-multiple-empty-lines': ['warn', { "max": 2, "maxEOF": 0, "maxBOF": 0 }],
         'no-new-wrappers': 'warn',
         '@typescript-eslint/no-shadow': [
@@ -183,6 +183,8 @@ module.exports = {
         'quote-props': 'off',
         radix: 'warn',
         'space-before-function-paren': ['warn', 'never'],
+        'space-in-parens': ['warn'],
+        'space-infix-ops': ['warn'],
         'keyword-spacing': ['warn'],
         'spaced-comment': ['warn', 'always', {
             markers: ['/'],

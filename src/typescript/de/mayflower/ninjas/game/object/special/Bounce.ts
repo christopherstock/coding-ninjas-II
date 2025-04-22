@@ -20,7 +20,7 @@ export class Bounce extends GameObject {
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number ) {
+    public constructor(shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number) {
         super(
             shape,
             spriteTemplate,
@@ -43,7 +43,7 @@ export class Bounce extends GameObject {
             }
         );
 
-        Main.game.engine.matterJsSystem.addToWorld( this.constraint );
+        Main.game.engine.matterJsSystem.addToWorld(this.constraint);
     }
 
     /** ****************************************************************************************************************
@@ -54,7 +54,7 @@ export class Bounce extends GameObject {
     public render(): void {
         super.render();
 
-        matter.Body.setAngle(           this.shape.body, 0.0 );
-        matter.Body.setAngularVelocity( this.shape.body, 0.0 );
+        matter.Body.setAngle(this.shape.body, 0.0);
+        matter.Body.setAngularVelocity(this.shape.body, 0.0);
     }
 }

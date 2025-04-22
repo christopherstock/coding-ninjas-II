@@ -22,12 +22,12 @@ export class Sprite {
     *
     *   @param template The template for this sprite.
     *******************************************************************************************************************/
-    public constructor( template: SpriteTemplate ) {
+    public constructor(template: SpriteTemplate) {
         this.template = template;
 
         this.currentTick  = 0;
 
-        if ( template.randomFrames !== RandomFrames.NO ) {
+        if (template.randomFrames !== RandomFrames.NO) {
             this.assignRandomFrame();
         } else {
             this.currentFrame = 0;
@@ -41,7 +41,7 @@ export class Sprite {
     *******************************************************************************************************************/
     public render(): boolean {
         // no changes for single framed sprites
-        if ( this.template.singleFramed ) {
+        if (this.template.singleFramed) {
             return false;
         }
 
@@ -57,19 +57,19 @@ export class Sprite {
         ++this.currentTick;
 
         // check if the delay is reached
-        if ( this.currentTick >= this.template.ticksBetweenFrames ) {
+        if (this.currentTick >= this.template.ticksBetweenFrames) {
             // reset tick count
             this.currentTick = 0;
 
             // check if random frame shall be assigned
-            if ( this.template.randomFrames === RandomFrames.ALL_FRAMES ) {
+            if (this.template.randomFrames === RandomFrames.ALL_FRAMES) {
                 this.assignRandomFrame();
             } else {
                 // next frame
                 ++this.currentFrame;
 
                 // reset frame on reaching upper bound
-                if ( this.currentFrame >= this.template.imageIds.length ) {
+                if (this.currentFrame >= this.template.imageIds.length) {
                     this.currentFrame = 0;
                 }
             }
@@ -88,17 +88,17 @@ export class Sprite {
     public getCurrentFrameImageUrl(): string {
         const imageId: string = this.template.imageIds[ this.currentFrame ];
 
-        if ( this.template.mirrored === MirrorImage.YES ) {
-            return Main.game.engine.imageSystem.getMirroredImage( imageId ).src;
+        if (this.template.mirrored === MirrorImage.YES) {
+            return Main.game.engine.imageSystem.getMirroredImage(imageId).src;
         }
 
-        return Main.game.engine.imageSystem.getImage( imageId ).src;
+        return Main.game.engine.imageSystem.getImage(imageId).src;
     }
 
     /** ****************************************************************************************************************
     *   Assigns a random frame as the current frame.
     *******************************************************************************************************************/
     private assignRandomFrame(): void {
-        this.currentFrame = MathUtil.getRandomInt( 0, ( this.template.imageIds.length - 1 ) );
+        this.currentFrame = MathUtil.getRandomInt(0, (this.template.imageIds.length - 1));
     }
 }

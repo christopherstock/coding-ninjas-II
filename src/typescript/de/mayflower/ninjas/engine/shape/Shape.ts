@@ -49,20 +49,20 @@ export abstract class Shape {
             render:
             {
                 fillStyle:   (
-                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT ),
+                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT),
                 strokeStyle: (
-                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT ),
+                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT),
                 opacity:     1.0,
                 lineWidth:   1.0,
             },
-            isStatic:        ( isStatic === StaticShape.YES ),
+            isStatic:        (isStatic === StaticShape.YES),
             collisionFilter: SettingMatter.COLLISION_GROUP_COLLIDING,
 
             friction:        friction,
             frictionAir:     BodyFrictionAir.DEFAULT,
             // frictionStatic:  0.5,
 
-            angle:           MathUtil.angleToRad( angle ),
+            angle:           MathUtil.angleToRad(angle),
             density:         density,
 
             restitution:     restitution,

@@ -30,7 +30,7 @@ export class ShapeCircle extends Shape {
         density: BodyDensity,
         restitution: BodyRestitution
     ) {
-        super( debugColor, isStatic, angle, friction, density, restitution );
+        super(debugColor, isStatic, angle, friction, density, restitution);
 
         this.diameter = diameter;
 
@@ -64,9 +64,9 @@ export class ShapeCircle extends Shape {
     *******************************************************************************************************************/
     protected createBody(): matter.Body {
         return matter.Bodies.circle(
-            ( this.diameter / 2 ),
-            ( this.diameter / 2 ),
-            ( this.diameter / 2 ),
+            (this.diameter / 2),
+            (this.diameter / 2),
+            (this.diameter / 2),
             this.options
         );
     }

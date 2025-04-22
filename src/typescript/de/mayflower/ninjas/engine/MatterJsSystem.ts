@@ -23,7 +23,7 @@ export class MatterJsSystem {
     *******************************************************************************************************************/
     public constructor(
         canvasSystem: CanvasSystem,
-        callbackAfterRender: ( renderContext: CanvasRenderingContext2D )=> void,
+        callbackAfterRender: (renderContext: CanvasRenderingContext2D)=> void,
         textureCache: HTMLImageElement[]
     ) {
         // create engine
@@ -41,10 +41,10 @@ export class MatterJsSystem {
                 canvas:  canvasSystem.getCanvas(),
                 engine:  this.engine,
                 options: {
-                    showCollisions:     ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
-                    showAxes:           ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
-                    showAngleIndicator: ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
-                    showVelocity:       ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                    showCollisions:     (SettingDebug.MATTERJS_DEBUG_VIEWS),
+                    showAxes:           (SettingDebug.MATTERJS_DEBUG_VIEWS),
+                    showAngleIndicator: (SettingDebug.MATTERJS_DEBUG_VIEWS),
+                    showVelocity:       (SettingDebug.MATTERJS_DEBUG_VIEWS),
 
                     background:         SettingEngine.COLOR_BG_MATTER_JS_CSS,
 
@@ -77,7 +77,7 @@ export class MatterJsSystem {
         this.renderer.textures = textureCache;
         Debug.init.log(
             'Assigned ['
-            + String( Object.keys( this.renderer.textures ).length )
+            + String(Object.keys(this.renderer.textures).length)
             + '] textures to renderer texture cache '
         );
 
@@ -85,14 +85,14 @@ export class MatterJsSystem {
         this.renderer.context.imageSmoothingEnabled = false;
 
         // add drawing callback after rendering
-        matter.Events.on( this.renderer, 'afterRender',  () => { callbackAfterRender( this.renderer.context ) } );
+        matter.Events.on(this.renderer, 'afterRender',  () => { callbackAfterRender(this.renderer.context) });
     }
 
     /** ****************************************************************************************************************
     *   Starts the Matter.js renderer.
     *******************************************************************************************************************/
     public startRenderer(): void {
-        matter.Render.run( this.renderer );
+        matter.Render.run(this.renderer);
     }
 
     /** ****************************************************************************************************************
@@ -100,8 +100,8 @@ export class MatterJsSystem {
     *
     *   @param constraint A body, composite or constraint of the Matter.js system.
     *******************************************************************************************************************/
-    public addToWorld( constraint: matter.Body|matter.Composite|matter.Constraint ): void {
-        matter.Composite.add( this.engine.world, constraint );
+    public addToWorld(constraint: matter.Body|matter.Composite|matter.Constraint): void {
+        matter.Composite.add(this.engine.world, constraint);
     }
 
     /** ****************************************************************************************************************
@@ -109,15 +109,15 @@ export class MatterJsSystem {
     *
     *   @param constraint A body, composite or constraint of the Matter.js system.
     *******************************************************************************************************************/
-    public removeFromWorld( constraint: matter.Body|matter.Composite|matter.Constraint ): void {
-        matter.Composite.remove( this.engine.world, constraint );
+    public removeFromWorld(constraint: matter.Body|matter.Composite|matter.Constraint): void {
+        matter.Composite.remove(this.engine.world, constraint);
     }
 
     /** ****************************************************************************************************************
     *   Updates the dimensions of the Matter.js rendering system.
     *******************************************************************************************************************/
-    public updateEngineDimensions( canvasSystem: CanvasSystem ): void {
-        this.renderer.canvas.getContext('2d').scale( canvasSystem.getScale(), canvasSystem.getScale() );
+    public updateEngineDimensions(canvasSystem: CanvasSystem): void {
+        this.renderer.canvas.getContext('2d').scale(canvasSystem.getScale(), canvasSystem.getScale());
 
         this.renderer.canvas.width  = canvasSystem.getPhysicalWidth();
         this.renderer.canvas.height = canvasSystem.getPhysicalHeight();
@@ -125,7 +125,7 @@ export class MatterJsSystem {
         this.renderer.options.width  = canvasSystem.getPhysicalWidth();
         this.renderer.options.height = canvasSystem.getPhysicalHeight();
 
-        Debug.canvas.log( 'Updated matter.js engine dimensions according to canvas.' );
+        Debug.canvas.log('Updated matter.js engine dimensions according to canvas.');
     }
 
     /** ****************************************************************************************************************
@@ -142,7 +142,7 @@ export class MatterJsSystem {
     *   Resets the world of the Matter.js engine.
     *******************************************************************************************************************/
     public resetWorld(): void {
-        matter.World.clear( this.engine.world, false );
+        matter.World.clear(this.engine.world, false);
     }
 
     /** ****************************************************************************************************************
@@ -150,7 +150,7 @@ export class MatterJsSystem {
     *
     *   @param bounds The bounds to set for the renderer.
     *******************************************************************************************************************/
-    public setRenderBounds( bounds: matter.Bounds ): void {
+    public setRenderBounds(bounds: matter.Bounds): void {
         this.renderer.bounds = bounds;
     }
 }

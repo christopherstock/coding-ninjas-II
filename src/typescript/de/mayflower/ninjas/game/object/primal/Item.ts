@@ -21,7 +21,7 @@ export class Item extends GameObject {
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number ) {
+    public constructor(shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number) {
         super(
             shape,
             spriteTemplate,
@@ -38,7 +38,7 @@ export class Item extends GameObject {
     public render(): void {
         super.render();
 
-        if ( !this.picked ) {
+        if (!this.picked) {
             this.checkPicked();
         }
     }
@@ -47,8 +47,8 @@ export class Item extends GameObject {
     *   Checks if this item is picked up in this frame.
     *******************************************************************************************************************/
     private checkPicked(): void {
-        if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) ) {
-            Debug.item.log( 'Player picked item' );
+        if (matter.Bounds.overlaps(this.shape.body.bounds, Main.game.level.player.shape.body.bounds)) {
+            Debug.item.log('Player picked item');
 
             this.pick();
         }
@@ -62,6 +62,6 @@ export class Item extends GameObject {
         this.picked = true;
 
         // remove item body
-        Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
+        Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
     }
 }

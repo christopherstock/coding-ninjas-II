@@ -15,7 +15,7 @@ export class Decoration extends GameObject {
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number  ) {
+    public constructor(shape: Shape, spriteTemplate: SpriteTemplate, x: number, y: number) {
         super(
             shape,
             spriteTemplate,

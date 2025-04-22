@@ -8,7 +8,7 @@ import { ImageData } from '../../data/ImageData';
 *   A React component with the content for the 'welcome' page.
 ***********************************************************************************************************************/
 export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log( 'ContentWelcome.render() being invoked' );
+    Debug.react.log('ContentWelcome.render() being invoked');
 
     return <div>
 
@@ -143,9 +143,9 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         { SiteContentFactory.createSpacerVertical() }
 
         { /* SiteContentFactory.createDivider()                                        */ }
-        { SiteContentFactory.createParagraph( 'Current progress of the project is:' ) }
+        { SiteContentFactory.createParagraph('Current progress of the project is:') }
         { /* SiteContentFactory.createSpacerVertical() */ }
-        { SiteContentFactory.createProgress( 'line', 72.6 )        }
+        { SiteContentFactory.createProgress('line', 72.6)        }
 
     </div>;
 }

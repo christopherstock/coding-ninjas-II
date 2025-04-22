@@ -45,7 +45,7 @@ export class SettingEngine {
     /** The relative path from index.html where all sounds reside. */
     public  static  readonly    PATH_SOUND: string             = SettingEngine.PATH_RESOURCES + 'sound/';
     /** The relative path from index.html where all images reside. */
-    public  static  readonly    PATH_IMAGE: string             = SettingEngine.PATH_RESOURCES +'image/';
+    public  static  readonly    PATH_IMAGE: string             = SettingEngine.PATH_RESOURCES + 'image/';
     /** The relative path from index.html where all level images reside. */
     public  static  readonly    PATH_IMAGE_LEVEL: string             = SettingEngine.PATH_IMAGE + 'level/';
     /** The relative path from index.html where all background images reside. */

@@ -6,30 +6,30 @@ import { SettingDebug } from '../setting/SettingDebug';
 ***********************************************************************************************************************/
 export class Debug {
     /** Debugs the init / preloading system. */
-    public      static  readonly    init: Debug              = new Debug( true  );
+    public      static  readonly    init: Debug              = new Debug(true);
     /** Debugs canvas events. */
-    public      static  readonly    canvas: Debug              = new Debug( true  );
+    public      static  readonly    canvas: Debug              = new Debug(true);
 
     /** Debugs the key system. */
-    public      static  readonly    key: Debug              = new Debug( false  );
+    public      static  readonly    key: Debug              = new Debug(false);
     /** Debugs the image system. */
-    public      static  readonly    image: Debug              = new Debug( false );
+    public      static  readonly    image: Debug              = new Debug(false);
     /** Debugs the sound system. */
-    public      static  readonly    sound: Debug              = new Debug( false );
+    public      static  readonly    sound: Debug              = new Debug(false);
     /** Debugs the pointer system. */
-    public      static  readonly    pointer: Debug              = new Debug( false );
+    public      static  readonly    pointer: Debug              = new Debug(false);
     /** Debugs the pickable game items. */
-    public      static  readonly    item: Debug              = new Debug( false );
+    public      static  readonly    item: Debug              = new Debug(false);
     /** Debugs character events. */
-    public      static  readonly    character: Debug              = new Debug( false );
+    public      static  readonly    character: Debug              = new Debug(false);
     /** Debugs enemy events. */
-    public      static  readonly    enemy: Debug              = new Debug( false );
+    public      static  readonly    enemy: Debug              = new Debug(false);
     /** Debugs site events. */
-    public      static  readonly    site: Debug              = new Debug( false );
+    public      static  readonly    site: Debug              = new Debug(false);
     /** Debugs react events. */
-    public      static  readonly    react: Debug              = new Debug( false );
+    public      static  readonly    react: Debug              = new Debug(false);
     /** Debugs matter.js engine events. */
-    public      static  readonly    engine: Debug              = new Debug( true );
+    public      static  readonly    engine: Debug              = new Debug(true);
 
     /** The flag that enables or disables logging for this debug group. */
     private             readonly    debugEnabled: boolean            = false;
@@ -39,7 +39,7 @@ export class Debug {
     *
     *   @param  debugEnabled    Flags if this debug group should log messages.
     *******************************************************************************************************************/
-    public constructor( debugEnabled: boolean ) {
+    public constructor(debugEnabled: boolean) {
         this.debugEnabled = debugEnabled;
     }
 
@@ -49,10 +49,10 @@ export class Debug {
     *
     *   @param msg The message to log to the default console.
     *******************************************************************************************************************/
-    public log( msg: string = '' ): void {
-        if ( SettingDebug.DEBUG_MODE && this.debugEnabled ) {
+    public log(msg: string = ''): void {
+        if (SettingDebug.DEBUG_MODE && this.debugEnabled) {
             // eslint-disable-next-line no-console
-            console.log( '[' + StringUtil.getDateTimeString() + '] ' + msg );
+            console.log('[' + StringUtil.getDateTimeString() + '] ' + msg);
         }
     }
 }

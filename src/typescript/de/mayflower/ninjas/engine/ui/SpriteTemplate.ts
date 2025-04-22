@@ -55,10 +55,10 @@ export class SpriteTemplate {
         this.randomFrames       = randomFrames;
         this.scale              = scale;
 
-        this.singleFramed       = ( this.imageIds.length === 1 );
+        this.singleFramed       = (this.imageIds.length === 1);
 
-        if ( this.imageIds.length === 0 ) {
-            throw new Error( 'Fatal! Trying to construct empty sprite!' );
+        if (this.imageIds.length === 0) {
+            throw new Error('Fatal! Trying to construct empty sprite!');
         }
     }
 
@@ -76,17 +76,17 @@ export class SpriteTemplate {
     *
     *   @param imageSystem The image system to use.
     *******************************************************************************************************************/
-    public assignImageSizes( imageSystem: ImageSystem ): void {
-        this.width  = imageSystem.getImage( this.imageIds[ 0 ] ).width;
-        this.height = imageSystem.getImage( this.imageIds[ 0 ] ).height;
+    public assignImageSizes(imageSystem: ImageSystem): void {
+        this.width  = imageSystem.getImage(this.imageIds[ 0 ]).width;
+        this.height = imageSystem.getImage(this.imageIds[ 0 ]).height;
 
         // browse all frames and alert on differing dimensions
-        for ( const imageId of this.imageIds ) {
+        for (const imageId of this.imageIds) {
             if (
-                this.width  !== imageSystem.getImage( imageId ).width
-                || this.height !== imageSystem.getImage( imageId ).height
+                this.width  !== imageSystem.getImage(imageId).width
+                || this.height !== imageSystem.getImage(imageId).height
             ) {
-                throw new Error( 'Differing sprite frame size detected in image id [' + imageId + ']' );
+                throw new Error('Differing sprite frame size detected in image id [' + imageId + ']');
             }
         }
     }
@@ -98,7 +98,7 @@ export class SpriteTemplate {
     *
     *   @return The SpriteTemplate from the specified image.
     *******************************************************************************************************************/
-    public static createFromSingleImage( imageId: string ): SpriteTemplate {
+    public static createFromSingleImage(imageId: string): SpriteTemplate {
         const spriteTemplate: SpriteTemplate = new SpriteTemplate(
             [ imageId ],
             0,
@@ -108,8 +108,8 @@ export class SpriteTemplate {
             SettingGame.DEFAULT_SPRITE_SCALE
         );
 
-        spriteTemplate.width  = Main.game.engine.imageSystem.getImage( imageId ).width;
-        spriteTemplate.height = Main.game.engine.imageSystem.getImage( imageId ).height;
+        spriteTemplate.width  = Main.game.engine.imageSystem.getImage(imageId).width;
+        spriteTemplate.height = Main.game.engine.imageSystem.getImage(imageId).height;
 
         return spriteTemplate;
     }

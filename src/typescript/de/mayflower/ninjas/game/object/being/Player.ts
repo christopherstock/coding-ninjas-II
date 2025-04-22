@@ -45,7 +45,7 @@ export class Player extends Character {
             CharacterSpriteData.MASKED_NINJA_GIRL
         );
 
-        if ( initialFloat ) {
+        if (initialFloat) {
             this.openParachute();
 
             // force gliding sprite on 1st frame
@@ -60,8 +60,8 @@ export class Player extends Character {
     public render(): void {
         super.render();
 
-        if ( !this.isDead ) {
-            this.handleKeys( Main.game.engine.keySystem );
+        if (!this.isDead) {
+            this.handleKeys(Main.game.engine.keySystem);
             this.checkEnemyKill();
         }
 
@@ -76,14 +76,14 @@ export class Player extends Character {
     *
     *   @param keySystem The keySystem that holds current pressed key information.
     *******************************************************************************************************************/
-    private handleKeys( keySystem: KeySystem ): void {
-        if ( this.punchBackTicks !== 0 ) {
+    private handleKeys(keySystem: KeySystem): void {
+        if (this.punchBackTicks !== 0) {
             return;
         }
 
         if
         (
-            keySystem.isPressed( KeyData.KEY_LEFT )
+            keySystem.isPressed(KeyData.KEY_LEFT)
             || (
                 !SettingDebug.DISABLE_POINTER
                 && Main.game.engine.pointerSystem.leftCanvasHalfPressed
@@ -92,7 +92,7 @@ export class Player extends Character {
             this.moveLeft();
         } else if
         (
-            keySystem.isPressed( KeyData.KEY_RIGHT )
+            keySystem.isPressed(KeyData.KEY_RIGHT)
             || (
                 !SettingDebug.DISABLE_POINTER
                 && Main.game.engine.pointerSystem.rightCanvasHalfPressed
@@ -101,13 +101,13 @@ export class Player extends Character {
             this.moveRight();
         }
 
-        if ( keySystem.isPressed( KeyData.KEY_UP ) ) {
-            keySystem.setNeedsRelease( KeyData.KEY_UP );
+        if (keySystem.isPressed(KeyData.KEY_UP)) {
+            keySystem.setNeedsRelease(KeyData.KEY_UP);
 
-            if ( this.collidesBottom ) {
+            if (this.collidesBottom) {
                 this.jump();
             } else {
-                if ( !this.isGliding && !this.glidingRequest && !this.collidesBottom ) {
+                if (!this.isGliding && !this.glidingRequest && !this.collidesBottom) {
                     this.requestGliding();
                 }
             }
@@ -119,21 +119,21 @@ export class Player extends Character {
         ) {
             Main.game.engine.pointerSystem.canvasTabbed = false;
 
-            if ( this.collidesBottom ) {
+            if (this.collidesBottom) {
                 this.jump();
             }
         }
 
-        if ( keySystem.isPressed( KeyData.KEY_E ) ) {
-            keySystem.setNeedsRelease( KeyData.KEY_E );
+        if (keySystem.isPressed(KeyData.KEY_E)) {
+            keySystem.setNeedsRelease(KeyData.KEY_E);
 
             this.requestInteraction();
         }
 
-        if ( keySystem.isPressed( KeyData.KEY_SPACE ) ) {
-            keySystem.setNeedsRelease( KeyData.KEY_SPACE );
+        if (keySystem.isPressed(KeyData.KEY_SPACE)) {
+            keySystem.setNeedsRelease(KeyData.KEY_SPACE);
 
-            if ( !this.isAttacking() ) {
+            if (!this.isAttacking()) {
                 this.attack();
             }
         }
@@ -144,27 +144,27 @@ export class Player extends Character {
     *******************************************************************************************************************/
     private checkEnemyKill(): void {
         // check if player collides on bottom and if he's descending
-        if ( this.shape.body.velocity.y > 0.0 ) {
+        if (this.shape.body.velocity.y > 0.0) {
             // browse all enemies
-            for ( const enemy of Main.game.level.enemies ) {
+            for (const enemy of Main.game.level.enemies) {
                 // skip dead, friendly or non-blocking enemies
-                if ( enemy.isAlive() && !enemy.isFriendly() && enemy.isBlocking() ) {
+                if (enemy.isAlive() && !enemy.isFriendly() && enemy.isBlocking()) {
                     // check intersection of the player and the enemy
-                    if ( matter.Bounds.overlaps( this.shape.body.bounds, enemy.shape.body.bounds ) ) {
-                        Debug.enemy.log( 'Enemy touched by player' );
+                    if (matter.Bounds.overlaps(this.shape.body.bounds, enemy.shape.body.bounds)) {
+                        Debug.enemy.log('Enemy touched by player');
 
                         const playerBottom: number = Math.floor(
-                            this.shape.body.position.y  + this.shape.getHeight() / 2 );
+                            this.shape.body.position.y  + this.shape.getHeight() / 2);
                         const enemyTop: number     = Math.floor(
-                            enemy.shape.body.position.y - enemy.shape.getHeight() / 2 );
+                            enemy.shape.body.position.y - enemy.shape.getHeight() / 2);
 
                         Debug.enemy.log(
-                            ' playerBottom [' + String(playerBottom) + '] enemyTop [' + String(enemyTop) + ']' );
+                            ' playerBottom [' + String(playerBottom) + '] enemyTop [' + String(enemyTop) + ']');
 
                         const MAX_SINK_DELTA: number = 10;
-                        if ( Math.abs( playerBottom - enemyTop ) <= MAX_SINK_DELTA ) {
+                        if (Math.abs(playerBottom - enemyTop) <= MAX_SINK_DELTA) {
                             // hit enemy
-                            enemy.onHitByPlayer( this.facing );
+                            enemy.onHitByPlayer(this.facing);
 
                             // enable slow motion
                             Main.game.startSlowMotionTicks();
@@ -180,16 +180,16 @@ export class Player extends Character {
     *******************************************************************************************************************/
     private checkFallToDeath(): void {
         // check if the bottom outside is reached
-        if ( this.shape.body.position.y > ( Main.game.level.height - ( this.shape.getHeight() / 2 ) ) ) {
+        if (this.shape.body.position.y > (Main.game.level.height - (this.shape.getHeight() / 2))) {
             // flag player as dead if not done yet
-            if ( !this.isDead ) {
+            if (!this.isDead) {
                 this.isDead = true;
 
-                Debug.engine.log( 'Player has fallen to death' );
+                Debug.engine.log('Player has fallen to death');
 
                 window.setTimeout(
                     (): void => {
-                        Main.game.resetAndLaunchLevel( LevelId.LEVEL_START );
+                        Main.game.resetAndLaunchLevel(LevelId.LEVEL_START);
                     },
                     250
                 );

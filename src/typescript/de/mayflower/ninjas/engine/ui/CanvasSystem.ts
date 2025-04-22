@@ -25,16 +25,16 @@ export class CanvasSystem {
     *******************************************************************************************************************/
     public constructor() {
         // create
-        this.canvas = document.createElement( 'canvas' );
+        this.canvas = document.createElement('canvas');
 
         // reference 2d rendering context
-        this.canvasContext = this.canvas.getContext( '2d' );
+        this.canvasContext = this.canvas.getContext('2d');
 
         // sharp images please!
         this.canvasContext.imageSmoothingEnabled = false;
 
         // append to body
-        document.body.appendChild( this.canvas );
+        document.body.appendChild(this.canvas);
     }
 
     /** ****************************************************************************************************************
@@ -46,22 +46,22 @@ export class CanvasSystem {
         const windowHeight: number = window.innerHeight;
 
         // calculate scaling factors X and Y
-        const canvasScaleX: number = ( windowWidth  / SettingEngine.CANVAS_MIN_WIDTH  );
-        const canvasScaleY: number = ( windowHeight / SettingEngine.CANVAS_MIN_HEIGHT );
+        const canvasScaleX: number = (windowWidth  / SettingEngine.CANVAS_MIN_WIDTH);
+        const canvasScaleY: number = (windowHeight / SettingEngine.CANVAS_MIN_HEIGHT);
 
         // pick smallest canvas scaling factor - lower clip to 1.0
-        this.canvasScale  = Math.min( canvasScaleX, canvasScaleY );
-        this.canvasScale  = Math.max( this.canvasScale, 1.0 );
+        this.canvasScale  = Math.min(canvasScaleX, canvasScaleY);
+        this.canvasScale  = Math.max(this.canvasScale, 1.0);
 
         // remember target canvas size
         this.canvasWidth  = SettingEngine.CANVAS_MIN_WIDTH;
         this.canvasHeight = SettingEngine.CANVAS_MIN_HEIGHT;
 
         // set physical canvas element size
-        this.canvasPhysicalWidth  = ( SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
-        this.canvasPhysicalHeight = ( SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
+        this.canvasPhysicalWidth  = (SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale);
+        this.canvasPhysicalHeight = (SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale);
 
-        if ( SettingEngine.NO_CANVAS_SCALING ) {
+        if (SettingEngine.NO_CANVAS_SCALING) {
             this.canvasScale  = 1.0;
             this.canvasScale  = 1.0;
             this.canvasWidth  = windowWidth;
@@ -75,19 +75,19 @@ export class CanvasSystem {
         this.canvas.height = this.canvasPhysicalHeight;
 
         // apply canvas scaling last
-        this.canvasContext.scale( this.canvasScale, this.canvasScale );
+        this.canvasContext.scale(this.canvasScale, this.canvasScale);
 
         Debug.canvas.log(
             'Updated canvas dimensions to ['
-            + String( this.canvasWidth  )
+            + String(this.canvasWidth)
             + ']x['
-            + String( this.canvasHeight )
+            + String(this.canvasHeight)
             + '] scaling ['
-            + String( canvasScaleX )
+            + String(canvasScaleX)
             + ']x['
-            + String( canvasScaleY )
+            + String(canvasScaleY)
             + '] min ['
-            + String( this.canvasScale )
+            + String(this.canvasScale)
             + ']'
         );
     }

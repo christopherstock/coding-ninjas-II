@@ -15,7 +15,7 @@ import { KeySystem } from './hid/KeySystem';
 import { PointerSystem } from './hid/PointerSystem';
 import { Preloader } from './Preloader';
 
-require( 'fpsmeter' );
+require('fpsmeter');
 
 /** ********************************************************************************************************************
 *   Specifies the game engine and its systems.
@@ -48,7 +48,7 @@ export class Engine {
     *
     *   @param game The parent game instance that uses this game engine.
     *******************************************************************************************************************/
-    public constructor( game: Game ) {
+    public constructor(game: Game) {
         this.game      = game;
         this.preloader = new Preloader(
             this,
@@ -69,7 +69,7 @@ export class Engine {
     *   Inits the canvas of the game engine.
     *******************************************************************************************************************/
     public initCanvas(): void {
-        Debug.init.log( 'Initing canvas system' );
+        Debug.init.log('Initing canvas system');
         this.canvasSystem = new CanvasSystem();
         this.canvasSystem.updateDimensions();
     }
@@ -78,7 +78,7 @@ export class Engine {
     *   Inits the canvas of the game engine.
     *******************************************************************************************************************/
     public initImageSystem(): void {
-        Debug.init.log( 'Initing image system' );
+        Debug.init.log('Initing image system');
         this.imageSystem = new ImageSystem
         (
             ImageData.FILE_NAMES,
@@ -92,14 +92,14 @@ export class Engine {
     *   Inits the window resize handler.
     *******************************************************************************************************************/
     public initWindowResizeHandler(): void {
-        Debug.init.log( 'Initing window resize handler' );
+        Debug.init.log('Initing window resize handler');
 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        window.onresize = ( event: Event ): void => {
+        window.onresize = (event: Event): void => {
             this.canvasSystem.updateDimensions();
 
-            if ( this.matterJsSystem !== null ) {
-                this.matterJsSystem.updateEngineDimensions( this.canvasSystem );
+            if (this.matterJsSystem !== null) {
+                this.matterJsSystem.updateEngineDimensions(this.canvasSystem);
                 this.siteSystem.updatePanelSizeAndPosition();
                 this.game.resetCamera();
             }
@@ -110,8 +110,8 @@ export class Engine {
     *   Being invoked when the preloader is set up.
     *******************************************************************************************************************/
     public onPreloaderInitComplete(): void {
-        Debug.init.log( 'Preloader initialization complete. Preloading all contents now.' );
-        this.preloader.setLoadingPercentage( 5 );
+        Debug.init.log('Preloader initialization complete. Preloading all contents now.');
+        this.preloader.setLoadingPercentage(5);
 
         this.initImageSystem();
     }
@@ -120,26 +120,26 @@ export class Engine {
     *   Inits the 2D engine.
     *******************************************************************************************************************/
     public initMatterJS(): void {
-        Debug.init.log( 'Initing 2D physics engine' );
+        Debug.init.log('Initing 2D physics engine');
 
         this.matterJsSystem = new MatterJsSystem
         (
             this.canvasSystem,
-            ( renderContext: CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
+            (renderContext: CanvasRenderingContext2D) => { this.game.paintHUD(renderContext); },
             this.imageSystem.getAll()
         );
-        this.matterJsSystem.updateEngineDimensions( this.canvasSystem );
+        this.matterJsSystem.updateEngineDimensions(this.canvasSystem);
     }
 
     /** ****************************************************************************************************************
     *   Being invoked when all images are loaded.
     *******************************************************************************************************************/
     private onImagesLoaded(): void {
-        SpriteTemplateData.assignAllImageSizes( this.imageSystem );
+        SpriteTemplateData.assignAllImageSizes(this.imageSystem);
 
-        this.preloader.setLoadingPercentage( 80 );
+        this.preloader.setLoadingPercentage(80);
 
-        Debug.init.log( 'Initing sound system' );
+        Debug.init.log('Initing sound system');
         this.soundSystem = new SoundSystem(
             SoundData.FILE_NAMES,
             () => { this.onSoundsLoaded(); }
@@ -151,34 +151,34 @@ export class Engine {
     *   Being invoked when all sounds are loaded.
     *******************************************************************************************************************/
     private onSoundsLoaded(): void {
-        this.preloader.setLoadingPercentage( 90 );
+        this.preloader.setLoadingPercentage(90);
 
         // init site system
-        Debug.init.log( 'Initing site system' );
+        Debug.init.log('Initing site system');
         this.siteSystem = new SiteSystem();
 
         // init key and pointer system
-        Debug.init.log( 'Initing key system' );
+        Debug.init.log('Initing key system');
         this.keySystem = new KeySystem();
-        Debug.init.log( 'Initing pointer system' );
+        Debug.init.log('Initing pointer system');
         this.pointerSystem = new PointerSystem();
 
         // init window blur handler
         this.initWindowBlurHandler();
 
         // init FPS-counter
-        if ( SettingDebug.DEBUG_MODE ) {
+        if (SettingDebug.DEBUG_MODE) {
             this.initFpsCounter();
         }
 
-        Debug.init.log( 'Initing game engine completed' );
+        Debug.init.log('Initing game engine completed');
 
-        this.preloader.setLoadingPercentage( 100 );
+        this.preloader.setLoadingPercentage(100);
 
         // start the game loop after a short delay. this runs smoother for the user
         window.setTimeout(
             () => { this.game.start(); },
-            ( SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY )
+            (SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY)
         );
     }
 
@@ -186,11 +186,11 @@ export class Engine {
     *   Inits the window blur handler.
     *******************************************************************************************************************/
     private initWindowBlurHandler(): void {
-        Debug.init.log( 'Initing window blur handler' );
+        Debug.init.log('Initing window blur handler');
 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        window.onblur = ( event: Event ): void => {
-            Debug.canvas.log( 'Detected window focus lost. Releasing all keys.' );
+        window.onblur = (event: Event): void => {
+            Debug.canvas.log('Detected window focus lost. Releasing all keys.');
 
             this.keySystem.releaseAllKeys();
         };
@@ -200,7 +200,7 @@ export class Engine {
     *   Inits the FPS counter.
     *******************************************************************************************************************/
     private initFpsCounter(): void {
-        Debug.init.log( 'Initing FPS counter' );
+        Debug.init.log('Initing FPS counter');
 
         this.fpsMeter = new FPSMeter(
             null,
@@ -210,8 +210,8 @@ export class Engine {
                 position: 'absolute',
                 zIndex:   10,
                 top:      'auto',
-                right:    String( SettingGame.SITE_PANEL_BORDER_SIZE_OUTER ) + 'px',
-                bottom:   String( SettingGame.SITE_PANEL_BORDER_SIZE_OUTER ) + 'px',
+                right:    String(SettingGame.SITE_PANEL_BORDER_SIZE_OUTER) + 'px',
+                bottom:   String(SettingGame.SITE_PANEL_BORDER_SIZE_OUTER) + 'px',
                 left:     'auto',
                 margin:   '0',
                 heat:     1,

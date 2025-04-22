@@ -35,7 +35,7 @@ export class ShapeFreeForm extends Shape {
         density: BodyDensity,
         restitution: BodyRestitution
     ) {
-        super( debugColor, isStatic, angle, friction, density, restitution );
+        super(debugColor, isStatic, angle, friction, density, restitution);
 
         this.vertices = vertices;
 
@@ -51,8 +51,8 @@ export class ShapeFreeForm extends Shape {
     *******************************************************************************************************************/
     public createBody(): matter.Body {
         return matter.Bodies.fromVertices(
-            ( this.boundWidth  / 2 ),
-            ( this.boundHeight / 2 ),
+            (this.boundWidth  / 2),
+            (this.boundHeight / 2),
             [ this.vertices ],
             this.options
         );
@@ -86,18 +86,18 @@ export class ShapeFreeForm extends Shape {
         let maximumX: number = -Infinity;
         let maximumY: number = -Infinity;
 
-        for ( const vertex of this.vertices ) {
-            if ( vertex.x < minimumX ) {
+        for (const vertex of this.vertices) {
+            if (vertex.x < minimumX) {
                 minimumX = vertex.x;
             }
-            if ( vertex.y < minimumY ) {
+            if (vertex.y < minimumY) {
                 minimumY = vertex.y;
             }
 
-            if ( vertex.x > maximumX ) {
+            if (vertex.x > maximumX) {
                 maximumX = vertex.x;
             }
-            if ( vertex.y > maximumY ) {
+            if (vertex.y > maximumY) {
                 maximumY = vertex.y;
             }
         }

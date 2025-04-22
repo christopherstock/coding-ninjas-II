@@ -8,7 +8,7 @@ import { CharacterFacing } from '../game/object/being/CharacterFacing';
 import { CanvasSystem } from './ui/CanvasSystem';
 import { SitePanel, SitePanelPosition } from './SitePanel';
 
-const wow: any = require( 'wowjs' );
+const wow: any = require('wowjs');
 
 /** ********************************************************************************************************************
 *   Specifies the current site panel animation state.
@@ -76,38 +76,38 @@ export class SiteSystem {
     *
     *   @return If showing the site succeeded.
     *******************************************************************************************************************/
-    public show( content: SiteContent, position: SitePanelPosition ): boolean {
+    public show(content: SiteContent, position: SitePanelPosition): boolean {
         // only show if hidden
-        if ( this.animationState !== SitePanelAnimation.HIDDEN ) {
+        if (this.animationState !== SitePanelAnimation.HIDDEN) {
             return false;
         }
 
-        Debug.site.log( 'Showing site panel' );
+        Debug.site.log('Showing site panel');
         this.animationState = SitePanelAnimation.SHOWING;
 
         // set content for site panel
-        this.contentSystem.mountContent( content, this.sitePanel.getMountPoint() );
+        this.contentSystem.mountContent(content, this.sitePanel.getMountPoint());
 
-        this.sitePanel.setPosition( position );
+        this.sitePanel.setPosition(position);
         this.updatePanelSizeAndPosition();
 
-        if ( this.firstShow ) {
+        if (this.firstShow) {
             this.firstShow = false;
 
             // set visibility to 'hidden' fixes unanimated flickering the panel on 1st creation!
-            this.sitePanel.setVisible( false );
+            this.sitePanel.setVisible(false);
         } else {
             // set visibility to 'visible' fixes unanimated flickering the panel on 1st creation!
-            this.sitePanel.setVisible( true );
+            this.sitePanel.setVisible(true);
         }
 
-        if ( position === SitePanelPosition.RIGHT ) {
+        if (position === SitePanelPosition.RIGHT) {
             this.sitePanel.setPanelBgImage(
-                Main.game.engine.imageSystem.getImage( ImageData.SITE_PANEL_BG_RIGHT ).src
+                Main.game.engine.imageSystem.getImage(ImageData.SITE_PANEL_BG_RIGHT).src
             );
         } else {
             this.sitePanel.setPanelBgImage(
-                Main.game.engine.imageSystem.getImage( ImageData.SITE_PANEL_BG_LEFT ).src
+                Main.game.engine.imageSystem.getImage(ImageData.SITE_PANEL_BG_LEFT).src
             );
         }
 
@@ -118,7 +118,7 @@ export class SiteSystem {
 
         window.setTimeout(
             () => {
-                if ( this.animationState === SitePanelAnimation.SHOWING ) {
+                if (this.animationState === SitePanelAnimation.SHOWING) {
                     this.animationState = SitePanelAnimation.PRESENT;
                 }
             },
@@ -142,11 +142,11 @@ export class SiteSystem {
     *   @return If hiding the site succeeded.
     *******************************************************************************************************************/
     public hide(): boolean {
-        if ( this.animationState !== SitePanelAnimation.PRESENT ) {
+        if (this.animationState !== SitePanelAnimation.PRESENT) {
             return false;
         }
 
-        Debug.site.log( 'Hiding site panel' );
+        Debug.site.log('Hiding site panel');
         this.animationState = SitePanelAnimation.HIDING;
 
         this.sitePanel.animateOut();
@@ -157,7 +157,7 @@ export class SiteSystem {
                 this.animationState = SitePanelAnimation.HIDDEN;
                 this.sitePanel.removeFromDom();
             },
-            ( SettingGame.SITE_PANEL_ANIMATION_DURATION / 2 )
+            (SettingGame.SITE_PANEL_ANIMATION_DURATION / 2)
         );
 
         return true;
@@ -173,9 +173,9 @@ export class SiteSystem {
         this.panelWidth = (
             canvasSystem.getPhysicalWidth() / 2 - SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
         );
-        if ( this.panelWidth < SettingGame.SITE_PANEL_MIN_WIDTH ) {
+        if (this.panelWidth < SettingGame.SITE_PANEL_MIN_WIDTH) {
             this.panelWidth = SettingGame.SITE_PANEL_MIN_WIDTH;
-        } else if ( this.panelWidth > SettingGame.SITE_PANEL_MAX_WIDTH ) {
+        } else if (this.panelWidth > SettingGame.SITE_PANEL_MAX_WIDTH) {
             this.panelWidth = SettingGame.SITE_PANEL_MAX_WIDTH;
         }
 
@@ -193,10 +193,10 @@ export class SiteSystem {
         this.panelAndBorderWidth = this.panelWidth + SettingGame.SITE_PANEL_BORDER_SIZE_OUTER;
         this.leftCameraTargetX   = (
             this.panelAndBorderWidth
-            + ( ( canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth ) / 2 )
+            + ((canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth) / 2)
         );
         this.rightCameraTargetX  = (
-            ( canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth ) / 2
+            (canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth) / 2
         );
 
         // update panel size and position
@@ -219,12 +219,12 @@ export class SiteSystem {
             || this.animationState === SitePanelAnimation.HIDING
         ) {
             // center camera X if desired
-            switch ( Main.game.level.player.facing ) {
+            switch (Main.game.level.player.facing) {
                 case CharacterFacing.LEFT:
                 {
                     return (
                         Main.game.engine.canvasSystem.getWidth()
-                        * ( 1.0 - SettingEngine.CAMERA_RATIO_X )
+                        * (1.0 - SettingEngine.CAMERA_RATIO_X)
                     );
                 }
 
@@ -238,7 +238,7 @@ export class SiteSystem {
             }
 
             // target according to player facing
-            switch ( Main.game.level.player.facing ) {
+            switch (Main.game.level.player.facing) {
                 case CharacterFacing.LEFT:
                 {
                     return this.leftCameraTargetX;
@@ -252,7 +252,7 @@ export class SiteSystem {
         }
 
         // target according to active site panel
-        switch ( this.sitePanel.getPosition() ) {
+        switch (this.sitePanel.getPosition()) {
             case SitePanelPosition.LEFT:
             {
                 return this.leftCameraTargetX;
@@ -269,7 +269,7 @@ export class SiteSystem {
     *   Inits the WOW animation system.
     *******************************************************************************************************************/
     private initWowSystem(): void {
-        Debug.init.log( 'Initing WOW animations' );
+        Debug.init.log('Initing WOW animations');
 
         this.wowSystem = new wow.WOW(
             {

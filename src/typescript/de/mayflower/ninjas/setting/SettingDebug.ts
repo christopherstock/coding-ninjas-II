@@ -9,27 +9,27 @@ export class SettingDebug {
 
     // noinspection PointlessBooleanExpressionJS
     /** Enable color bg for all matter sprites. */
-    public  static  readonly    BG_FOR_MATTER_BODY: boolean                    = ( false && SettingDebug.DEBUG_MODE );
+    public  static  readonly    BG_FOR_MATTER_BODY: boolean                    = (false && SettingDebug.DEBUG_MODE);
 
     // noinspection PointlessBooleanExpressionJS
     /** No delay after preloader if enabled. */
-    public  static  readonly    NO_DELAY_AROUND_PRELOADER: boolean                    = ( false && SettingDebug.DEBUG_MODE );
+    public  static  readonly    NO_DELAY_AROUND_PRELOADER: boolean                    = (false && SettingDebug.DEBUG_MODE);
 
     // noinspection PointlessBooleanExpressionJS
     /** Disables all sprites. */
-    public  static  readonly    DISABLE_SPRITES: boolean                    = ( false && SettingDebug.DEBUG_MODE );
+    public  static  readonly    DISABLE_SPRITES: boolean                    = (false && SettingDebug.DEBUG_MODE);
     // noinspection PointlessBooleanExpressionJS
     /** Disables all sounds. */
-    public  static  readonly    DISABLE_SOUNDS: boolean                    = ( true && SettingDebug.DEBUG_MODE );
+    public  static  readonly    DISABLE_SOUNDS: boolean                    = (true && SettingDebug.DEBUG_MODE);
     // noinspection PointlessBooleanExpressionJS
     /** Disables the initial blend panel. */
-    public  static  readonly    DISABLE_BLEND_PANEL: boolean                    = ( false && SettingDebug.DEBUG_MODE );
+    public  static  readonly    DISABLE_BLEND_PANEL: boolean                    = (false && SettingDebug.DEBUG_MODE);
     // noinspection PointlessBooleanExpressionJS
     /** Disables pointer controls. */
-    public  static  readonly    DISABLE_POINTER: boolean                    = ( true && SettingDebug.DEBUG_MODE );
+    public  static  readonly    DISABLE_POINTER: boolean                    = (true && SettingDebug.DEBUG_MODE);
     // noinspection PointlessBooleanExpressionJS
     /** Shows Matter.js indicators. */
-    public  static  readonly    MATTERJS_DEBUG_VIEWS: boolean                    = ( false && SettingDebug.DEBUG_MODE );
+    public  static  readonly    MATTERJS_DEBUG_VIEWS: boolean                    = (false && SettingDebug.DEBUG_MODE);
 }
 
 /** ********************************************************************************************************************

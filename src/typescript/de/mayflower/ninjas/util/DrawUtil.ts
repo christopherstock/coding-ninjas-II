@@ -19,8 +19,8 @@ export class DrawUtil {
         ctx.lineWidth   = 1.0;
 
         ctx.beginPath();
-        ctx.moveTo( x1, y1 );
-        ctx.lineTo( x2, y2 );
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
         ctx.stroke();
     }
 
@@ -40,7 +40,7 @@ export class DrawUtil {
         ctx.strokeStyle = col;
         ctx.lineWidth   = 1.0;
 
-        ctx.strokeRect( x, y, width, height );
+        ctx.strokeRect(x, y, width, height);
     }
 
     /** ****************************************************************************************************************
@@ -57,7 +57,7 @@ export class DrawUtil {
         ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, col: string
     ): void {
         ctx.fillStyle = col;
-        ctx.fillRect( x, y, width, height );
+        ctx.fillRect(x, y, width, height);
     }
 
     /** ****************************************************************************************************************
@@ -68,8 +68,8 @@ export class DrawUtil {
     *   @param  x           Drawing position x.
     *   @param  y           Drawing position y.
     *******************************************************************************************************************/
-    public static drawImage( ctx: CanvasRenderingContext2D, img: HTMLImageElement, x: number, y: number ): void {
-        DrawUtil.drawImageScaledClipped( ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height );
+    public static drawImage(ctx: CanvasRenderingContext2D, img: HTMLImageElement, x: number, y: number): void {
+        DrawUtil.drawImageScaledClipped(ctx, img, 0, 0, img.width, img.height, x, y, img.width, img.height);
     }
 
     /** ****************************************************************************************************************
@@ -99,6 +99,6 @@ export class DrawUtil {
         destWidth: number,
         destHeight: number
     ): void {
-        ctx.drawImage( img, srcX, srcY, srcWidth, srcHeight, destX, destY, destWidth, destHeight );
+        ctx.drawImage(img, srcX, srcY, srcWidth, srcHeight, destX, destY, destWidth, destHeight);
     }
 }

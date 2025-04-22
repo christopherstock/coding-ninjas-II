@@ -7,13 +7,13 @@ import { SiteContent } from '../SiteContentSystem';
 *   A React component with the content for the 'services' page.
 ***********************************************************************************************************************/
 export const ContentServices: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log( 'ContentServices.render() being invoked' );
+    Debug.react.log('ContentServices.render() being invoked');
 
     return <div>
 
-        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_SERVICES ) }
+        { SiteContentFactory.createStepIndicator(SiteContent.CONTENT_SERVICES) }
         { SiteContentFactory.createDivider() }
-        { SiteContentFactory.createHeadline( 'Our Services' ) }
+        { SiteContentFactory.createHeadline('Our Services') }
         { SiteContentFactory.createSpacerVertical() }
         {
             SiteContentFactory.createParagraph(
@@ -26,9 +26,9 @@ export const ContentServices: ()=> JSX.Element = (): JSX.Element => {
             SiteContentFactory.createTabbedPane(
                 0,
                 [
-                    <span>{ SiteContentFactory.createIcon( 'desktop' ) } Enterprise</span>,
-                    <span>{ SiteContentFactory.createIcon( 'cloud'   ) } Web</span>,
-                    <span>{ SiteContentFactory.createIcon( 'mobile'  ) } Mobile</span>,
+                    <span>{ SiteContentFactory.createIcon('desktop') } Enterprise</span>,
+                    <span>{ SiteContentFactory.createIcon('cloud') } Web</span>,
+                    <span>{ SiteContentFactory.createIcon('mobile') } Mobile</span>,
                 ],
                 [
                     <div>
@@ -47,7 +47,7 @@ export const ContentServices: ()=> JSX.Element = (): JSX.Element => {
                             )
                         }
                         { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createBadge( 'JAVA', 'white', '#ff3568' ) }
+                        { SiteContentFactory.createBadge('JAVA', 'white', '#ff3568') }
                         {
                             SiteContentFactory.createParagraph(
                                 '&bull; Java Micro Edition (J2ME)<br>'
@@ -72,7 +72,7 @@ export const ContentServices: ()=> JSX.Element = (): JSX.Element => {
                             )
                         }
                         { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createBadge( 'TypeScript & PHP', 'white', '#6799ff' ) }
+                        { SiteContentFactory.createBadge('TypeScript & PHP', 'white', '#6799ff') }
                         {
                             SiteContentFactory.createParagraph(
                                 '&bull; React, Ant Design, Node.js<br>'
@@ -95,7 +95,7 @@ export const ContentServices: ()=> JSX.Element = (): JSX.Element => {
                             )
                         }
                         { SiteContentFactory.createSpacerVertical() }
-                        { SiteContentFactory.createBadge( 'MOBILE', 'white', '#50d882' ) }
+                        { SiteContentFactory.createBadge('MOBILE', 'white', '#50d882') }
                         {
                             SiteContentFactory.createParagraph(
                                 'We offer native mobile development for:<br>'

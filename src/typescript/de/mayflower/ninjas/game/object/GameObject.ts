@@ -30,18 +30,18 @@ export abstract class GameObject {
         y: number
     ) {
         this.shape = shape;
-        this.setSprite( spriteTemplate );
+        this.setSprite(spriteTemplate);
 
-        matter.Body.translate( this.shape.body, matter.Vector.create( x, y ) );
+        matter.Body.translate(this.shape.body, matter.Vector.create(x, y));
     }
 
     /** ****************************************************************************************************************
     *   Renders the current game object.
     *******************************************************************************************************************/
     public render(): void {
-        if ( this.sprite !== null ) {
+        if (this.sprite !== null) {
             // render sprite and check frame change
-            if ( this.sprite.render() ) {
+            if (this.sprite.render()) {
                 this.setImageFromSprite();
             }
         }
@@ -52,8 +52,8 @@ export abstract class GameObject {
     *
     *   @param visible The desired visibility.
     *******************************************************************************************************************/
-    public setVisible( visible: boolean ): void {
-        if ( visible ) {
+    public setVisible(visible: boolean): void {
+        if (visible) {
             this.setImageFromSprite();
         } else {
             this.shape.body.render.sprite.texture = null;
@@ -65,15 +65,15 @@ export abstract class GameObject {
     *
     *   @param spriteTemplate The sprite template to use for this new sprite.
     *******************************************************************************************************************/
-    protected setSprite( spriteTemplate: SpriteTemplate ): void {
-        if ( spriteTemplate !== null ) {
+    protected setSprite(spriteTemplate: SpriteTemplate): void {
+        if (spriteTemplate !== null) {
             // only set new sprite if it differs from current sprite
-            if ( this.sprite !== null && this.sprite.template === spriteTemplate ) {
+            if (this.sprite !== null && this.sprite.template === spriteTemplate) {
                 return;
             }
 
             // assign new sprite and texture
-            this.sprite = new Sprite( spriteTemplate );
+            this.sprite = new Sprite(spriteTemplate);
             this.setImageFromSprite();
 
             // do NOT update body shape dimensions! immediate collisions will occur and block the game!
@@ -85,7 +85,7 @@ export abstract class GameObject {
     *   Assigns the current active sprite frame as the game objects image.
     *******************************************************************************************************************/
     protected setImageFromSprite(): void {
-        if ( !SettingDebug.DISABLE_SPRITES ) {
+        if (!SettingDebug.DISABLE_SPRITES) {
             this.shape.body.render.sprite.texture = this.sprite.getCurrentFrameImageUrl();
             this.shape.body.render.sprite.xScale  = this.sprite.template.getScale();
             this.shape.body.render.sprite.yScale  = this.sprite.template.getScale();
@@ -95,7 +95,7 @@ export abstract class GameObject {
     /** ****************************************************************************************************************
     *   Assigns the specified opacity for drawing this game object.
     *******************************************************************************************************************/
-    protected setOpacity( opacity: number ): void {
+    protected setOpacity(opacity: number): void {
         this.shape.body.render.opacity = opacity;
     }
 
@@ -103,8 +103,8 @@ export abstract class GameObject {
     *   Avoids this game object from rotating.
     *******************************************************************************************************************/
     protected resetRotation(): void {
-        matter.Body.setAngularVelocity( this.shape.body, 0.0 );
-        matter.Body.setAngle(           this.shape.body, 0.0 );
+        matter.Body.setAngularVelocity(this.shape.body, 0.0);
+        matter.Body.setAngle(this.shape.body, 0.0);
     }
 
     /** ****************************************************************************************************************
@@ -112,7 +112,7 @@ export abstract class GameObject {
     *******************************************************************************************************************/
     protected clipToHorizontalLevelBounds(): void {
         // clip left bound
-        if ( this.shape.body.position.x < this.shape.getWidth() / 2 ) {
+        if (this.shape.body.position.x < this.shape.getWidth() / 2) {
             matter.Body.setPosition(
                 this.shape.body,
                 {
@@ -123,7 +123,7 @@ export abstract class GameObject {
         }
 
         // clip right bound
-        if ( this.shape.body.position.x > Main.game.level.width - this.shape.getWidth() / 2 ) {
+        if (this.shape.body.position.x > Main.game.level.width - this.shape.getWidth() / 2) {
             matter.Body.setPosition(
                 this.shape.body,
                 {

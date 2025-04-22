@@ -64,20 +64,20 @@ export class SiteContentSystem {
     *   @param content   The site content to mount.
     *   @param container The container to mount the content to.
     *******************************************************************************************************************/
-    public mountContent( content: SiteContent, container: HTMLDivElement ): void {
+    public mountContent(content: SiteContent, container: HTMLDivElement): void {
         // unmount existent component if any
         ReactDOM.unmountComponentAtNode(
             container
         );
 
         // add to discovered contents if not already discovered
-        if ( !this.discoveredContents.includes( content ) ) {
-            this.discoveredContents.push( content );
+        if (!this.discoveredContents.includes(content)) {
+            this.discoveredContents.push(content);
         }
 
         // pick new content to mount
         let elementToMount: JSX.Element = null;
-        switch ( content ) {
+        switch (content) {
             case SiteContent.CONTENT_WELCOME:
             {
                 elementToMount = this.contentWelcome;

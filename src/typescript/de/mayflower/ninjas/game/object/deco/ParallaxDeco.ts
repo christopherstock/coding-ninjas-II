@@ -32,7 +32,7 @@ export class ParallaxDeco extends Decoration {
 
         this.parallaxRatio = parallaxRatio;
 
-        this.setVisible( false );
+        this.setVisible(false);
     }
 
     /** ****************************************************************************************************************
@@ -41,7 +41,7 @@ export class ParallaxDeco extends Decoration {
     public render(): void {
         super.render();
 
-        this.setVisible( true );
+        this.setVisible(true);
 
         this.setParallaxPosition();
     }
@@ -60,10 +60,10 @@ export class ParallaxDeco extends Decoration {
         const canvasHeight: number = Main.game.engine.canvasSystem.getHeight();
 
         let imgOffsetX: number = (
-            0 - ( this.shape.getWidth()  - canvasWidth  ) * cameraOffsetX / ( levelWidth  - canvasWidth  )
+            0 - (this.shape.getWidth()  - canvasWidth) * cameraOffsetX / (levelWidth  - canvasWidth)
         );
         let imgOffsetY: number = (
-            0 - ( this.shape.getHeight() - canvasHeight ) * cameraOffsetY / ( levelHeight - canvasHeight )
+            0 - (this.shape.getHeight() - canvasHeight) * cameraOffsetY / (levelHeight - canvasHeight)
         );
 
         imgOffsetX *= this.parallaxRatio;
@@ -72,8 +72,8 @@ export class ParallaxDeco extends Decoration {
         matter.Body.setPosition(
             this.shape.body,
             matter.Vector.create(
-                imgOffsetX + cameraOffsetX + ( this.shape.getWidth()  / 2 ),
-                imgOffsetY + cameraOffsetY + ( this.shape.getHeight() / 2 )
+                imgOffsetX + cameraOffsetX + (this.shape.getWidth()  / 2),
+                imgOffsetY + cameraOffsetY + (this.shape.getHeight() / 2)
             )
         )
     }

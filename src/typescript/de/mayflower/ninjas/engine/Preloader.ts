@@ -27,7 +27,7 @@ export class Preloader {
     *   @param engine           The parent game engine.
     *   @param onPreloaderSetup The callback to invoke when the preloading is set up.
     *******************************************************************************************************************/
-    public constructor( engine: Engine, onPreloaderSetup: ()=> void ) {
+    public constructor(engine: Engine, onPreloaderSetup: ()=> void) {
         this.engine           = engine;
         this.onPreloaderSetup = onPreloaderSetup;
     }
@@ -36,7 +36,7 @@ export class Preloader {
     *   Shows the preloader and starts preloading all initialization contents.
     *******************************************************************************************************************/
     public preload(): void {
-        Debug.init.log( 'Preloading all game components' );
+        Debug.init.log('Preloading all game components');
 
         // bring on the canvas and init the resize handler
         this.engine.initCanvas();
@@ -58,7 +58,7 @@ export class Preloader {
     *
     *   @param loadingPercentage The loading percentage to set.
     *******************************************************************************************************************/
-    public setLoadingPercentage( loadingPercentage: number ): void {
+    public setLoadingPercentage(loadingPercentage: number): void {
         this.loadingPercentage = loadingPercentage;
 
         // force an immediate draw
@@ -69,8 +69,8 @@ export class Preloader {
     *   Being invoked when one preloader image has been loaded.
     *******************************************************************************************************************/
     private preloaderImageLoaded(): void {
-        if ( ++this.loadedImageCount === 2 ) {
-            Debug.init.log( 'All preloader images loaded.' );
+        if (++this.loadedImageCount === 2) {
+            Debug.init.log('All preloader images loaded.');
 
             this.onPreloaderImageLoadComplete();
         }
@@ -102,12 +102,12 @@ export class Preloader {
         );
 
         // calc image location
-        const imageX: number = ( this.engine.canvasSystem.getWidth()  - this.imageUnloaded.width  ) / 2;
-        const imageY: number = ( this.engine.canvasSystem.getHeight() - this.imageUnloaded.height ) / 2;
+        const imageX: number = (this.engine.canvasSystem.getWidth()  - this.imageUnloaded.width) / 2;
+        const imageY: number = (this.engine.canvasSystem.getHeight() - this.imageUnloaded.height) / 2;
 
         // calc image width to draw
-        const gayImageWidth: number = ( this.imageLoaded.width * this.loadingPercentage ) / 100;
-        const monoImageWidth: number = ( this.imageUnloaded.width - gayImageWidth );
+        const gayImageWidth: number = (this.imageLoaded.width * this.loadingPercentage) / 100;
+        const monoImageWidth: number = (this.imageUnloaded.width - gayImageWidth);
 
         // draw mono image
         DrawUtil.drawImageScaledClipped(

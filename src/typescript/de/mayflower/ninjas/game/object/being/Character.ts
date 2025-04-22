@@ -82,7 +82,7 @@ export abstract class Character extends GameObject {
 
         this.spriteSet = spriteSet;
 
-        this.setSprite( spriteTemplate );
+        this.setSprite(spriteTemplate);
     }
 
     /** ****************************************************************************************************************
@@ -94,12 +94,12 @@ export abstract class Character extends GameObject {
         this.movesLeft  = false;
         this.movesRight = false;
 
-        if ( this.punchBackTicks > 0 ) {
+        if (this.punchBackTicks > 0) {
             --this.punchBackTicks;
         }
-        if ( this.attackingTicks > 0 ) {
+        if (this.attackingTicks > 0) {
             --this.attackingTicks;
-            if ( this.attackingTicks === 7 ) {
+            if (this.attackingTicks === 7) {
                 this.performSmash();
             }
         }
@@ -129,12 +129,12 @@ export abstract class Character extends GameObject {
             matter.Vertices.create(
                 [
                     matter.Vector.add(
-                        matter.Vector.clone( this.shape.body.bounds.min ),
-                        matter.Vector.create( attackRange, 0 )
+                        matter.Vector.clone(this.shape.body.bounds.min),
+                        matter.Vector.create(attackRange, 0)
                     ),
                     matter.Vector.add(
-                        matter.Vector.clone( this.shape.body.bounds.max ),
-                        matter.Vector.create( attackRange, 0 )
+                        matter.Vector.clone(this.shape.body.bounds.max),
+                        matter.Vector.create(attackRange, 0)
                     ),
                 ],
                 this.shape.body
@@ -142,26 +142,26 @@ export abstract class Character extends GameObject {
         );
 
         // check all movables
-        for ( const movable of Main.game.level.movables ) {
-            if ( matter.Query.region( [ movable.shape.body ], smashBounds ).length > 0 ) {
-                Debug.character.log( 'Character hits a level object' );
+        for (const movable of Main.game.level.movables) {
+            if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
+                Debug.character.log('Character hits a level object');
 
                 matter.Body.setVelocity(
                     movable.shape.body,
-                    matter.Vector.create( damageForce, -10.0 )
+                    matter.Vector.create(damageForce, -10.0)
                 );
             }
         }
 
         // check all enemies
-        for ( const enemy of Main.game.level.enemies ) {
-            if ( matter.Query.region( [ enemy.shape.body ], smashBounds ).length > 0 ) {
+        for (const enemy of Main.game.level.enemies) {
+            if (matter.Query.region([ enemy.shape.body ], smashBounds).length > 0) {
                 // skip dead enemies
-                if ( enemy.isAlive() && !enemy.isFriendly() ) {
-                    Debug.character.log( 'Character hits an enemy' );
+                if (enemy.isAlive() && !enemy.isFriendly()) {
+                    Debug.character.log('Character hits an enemy');
 
                     // hit enemy
-                    enemy.onHitByPlayer( this.facing );
+                    enemy.onHitByPlayer(this.facing);
 
                     // enable slow motion
                     Main.game.startSlowMotionTicks();
@@ -175,17 +175,17 @@ export abstract class Character extends GameObject {
     *
     *   @param punchBackDirection The direction in which to punch back.
     *******************************************************************************************************************/
-    public receivePunchBack( punchBackDirection: CharacterFacing ): void {
-        const forceX: number = ( this instanceof Player ? 7.5  : 10.0 );
-        const forceY: number = ( this instanceof Player ? 10.0 : 32.5 );
+    public receivePunchBack(punchBackDirection: CharacterFacing): void {
+        const forceX: number = (this instanceof Player ? 7.5  : 10.0);
+        const forceY: number = (this instanceof Player ? 10.0 : 32.5);
 
         // apply punch-back force
-        switch ( punchBackDirection ) {
+        switch (punchBackDirection) {
             case CharacterFacing.LEFT:
             {
                 matter.Body.setVelocity(
                     this.shape.body,
-                    matter.Vector.create( -forceX, -forceY )
+                    matter.Vector.create(-forceX, -forceY)
                 );
                 break;
             }
@@ -194,7 +194,7 @@ export abstract class Character extends GameObject {
             {
                 matter.Body.setVelocity(
                     this.shape.body,
-                    matter.Vector.create( forceX, -forceY )
+                    matter.Vector.create(forceX, -forceY)
                 );
                 break;
             }
@@ -207,7 +207,7 @@ export abstract class Character extends GameObject {
     *   @return <code>true</code> if this character is currently falling.
     *******************************************************************************************************************/
     public isFalling(): boolean {
-        return ( this.shape.body.velocity.y > 0.0 && !this.collidesBottom );
+        return (this.shape.body.velocity.y > 0.0 && !this.collidesBottom);
     }
 
     /** ****************************************************************************************************************
@@ -216,7 +216,7 @@ export abstract class Character extends GameObject {
     *   @return <code>true</code> if this character is currently jumping.
     *******************************************************************************************************************/
     public isJumping(): boolean {
-        return ( this.shape.body.velocity.y < 0.0 && !this.collidesBottom );
+        return (this.shape.body.velocity.y < 0.0 && !this.collidesBottom);
     }
 
     /** ****************************************************************************************************************
@@ -225,7 +225,7 @@ export abstract class Character extends GameObject {
     *   @return <code>true</code> if this character is currently attacking.
     *******************************************************************************************************************/
     public isAttacking(): boolean {
-        return ( this.attackingTicks > 0 );
+        return (this.attackingTicks > 0);
     }
 
     /** ****************************************************************************************************************
@@ -234,21 +234,21 @@ export abstract class Character extends GameObject {
     *   @return <code>true</code> if this character is alive.
     *******************************************************************************************************************/
     public isAlive(): boolean {
-        return ( !this.isDead && !this.isDying );
+        return (!this.isDead && !this.isDying);
     }
 
     /** ****************************************************************************************************************
     *   Moves this character left.
     *******************************************************************************************************************/
     protected moveLeft(): void {
-        matter.Body.translate( this.shape.body, matter.Vector.create( -this.speedMove, 0 ) );
+        matter.Body.translate(this.shape.body, matter.Vector.create(-this.speedMove, 0));
         this.movesLeft = true;
         this.facing    = CharacterFacing.LEFT;
 
         // check in-air collision
-        if ( !this.collidesBottom && this.isCollidingObstacle() ) {
+        if (!this.collidesBottom && this.isCollidingObstacle()) {
             // take back movement
-            matter.Body.translate( this.shape.body, matter.Vector.create( this.speedMove, 0 ) );
+            matter.Body.translate(this.shape.body, matter.Vector.create(this.speedMove, 0));
         }
     }
 
@@ -256,14 +256,14 @@ export abstract class Character extends GameObject {
     *   Moves this character left.
     *******************************************************************************************************************/
     protected moveRight(): void {
-        matter.Body.translate( this.shape.body, matter.Vector.create( this.speedMove, 0 ) );
+        matter.Body.translate(this.shape.body, matter.Vector.create(this.speedMove, 0));
         this.movesRight = true;
         this.facing     = CharacterFacing.RIGHT;
 
         // check in-air collision
-        if ( !this.collidesBottom && this.isCollidingObstacle() ) {
+        if (!this.collidesBottom && this.isCollidingObstacle()) {
             // take back movement
-            matter.Body.translate( this.shape.body, matter.Vector.create( -this.speedMove, 0 ) );
+            matter.Body.translate(this.shape.body, matter.Vector.create(-this.speedMove, 0));
         }
     }
 
@@ -274,18 +274,18 @@ export abstract class Character extends GameObject {
         matter.Body.applyForce(
             this.shape.body,
             this.shape.body.position,
-            matter.Vector.create( 0.0, this.jumpPower )
+            matter.Vector.create(0.0, this.jumpPower)
         );
     }
 
     protected requestGliding(): void {
-        Debug.character.log( 'Character requests gliding' );
+        Debug.character.log('Character requests gliding');
 
         this.glidingRequest = true;
     }
 
     protected requestInteraction(): void {
-        Debug.character.log( 'Character requests gliding' );
+        Debug.character.log('Character requests gliding');
 
         this.interactionRequest = true;
     }
@@ -294,7 +294,7 @@ export abstract class Character extends GameObject {
     *   Requests attacking for the player.
     *******************************************************************************************************************/
     protected attack(): void {
-        Debug.character.log( 'Character requests attack' );
+        Debug.character.log('Character requests attack');
 
         this.attackingTicks = 15;
     }
@@ -303,14 +303,14 @@ export abstract class Character extends GameObject {
     *   Checks the state for the parachute and opens or closes it.
     *******************************************************************************************************************/
     protected checkParachuteState(): void {
-        if ( this.collidesBottom ) {
-            if ( this.isGliding ) {
+        if (this.collidesBottom) {
+            if (this.isGliding) {
                 this.closeParachute();
             }
 
             this.glidingRequest = false;
         } else {
-            if ( this.glidingRequest && this.isFalling() ) {
+            if (this.glidingRequest && this.isFalling()) {
                 this.openParachute();
                 this.glidingRequest = false;
             }
@@ -321,7 +321,7 @@ export abstract class Character extends GameObject {
     *   Open character's parachute.
     *******************************************************************************************************************/
     protected openParachute(): void {
-        Debug.character.log( 'Character opens parachute' );
+        Debug.character.log('Character opens parachute');
 
         this.shape.body.frictionAir = BodyFrictionAir.GLIDING;
         this.isGliding = true;
@@ -331,48 +331,48 @@ export abstract class Character extends GameObject {
     *   Assigns the current sprite to the player according to his current state.
     *******************************************************************************************************************/
     protected assignCurrentSprite(): void {
-        if ( this.isDying ) {
-            if ( this.facing === CharacterFacing.LEFT ) {
-                this.setSprite( this.spriteSet.spriteDieLeft );
+        if (this.isDying) {
+            if (this.facing === CharacterFacing.LEFT) {
+                this.setSprite(this.spriteSet.spriteDieLeft);
             } else {
-                this.setSprite( this.spriteSet.spriteDieRight );
+                this.setSprite(this.spriteSet.spriteDieRight);
             }
-        } else if ( this.isFalling() ) {
-            if ( this.isGliding ) {
-                if ( this.facing === CharacterFacing.LEFT ) {
-                    this.setSprite( this.spriteSet.spriteGlideLeft );
+        } else if (this.isFalling()) {
+            if (this.isGliding) {
+                if (this.facing === CharacterFacing.LEFT) {
+                    this.setSprite(this.spriteSet.spriteGlideLeft);
                 } else {
-                    this.setSprite( this.spriteSet.spriteGlideRight );
+                    this.setSprite(this.spriteSet.spriteGlideRight);
                 }
             } else {
-                if ( this.facing === CharacterFacing.LEFT ) {
-                    this.setSprite( this.spriteSet.spriteFallLeft );
+                if (this.facing === CharacterFacing.LEFT) {
+                    this.setSprite(this.spriteSet.spriteFallLeft);
                 } else {
-                    this.setSprite( this.spriteSet.spriteFallRight );
+                    this.setSprite(this.spriteSet.spriteFallRight);
                 }
             }
-        } else if ( this.isJumping() ) {
-            if ( this.facing === CharacterFacing.LEFT ) {
-                this.setSprite( this.spriteSet.spriteJumpLeft );
+        } else if (this.isJumping()) {
+            if (this.facing === CharacterFacing.LEFT) {
+                this.setSprite(this.spriteSet.spriteJumpLeft);
             } else {
-                this.setSprite( this.spriteSet.spriteJumpRight );
+                this.setSprite(this.spriteSet.spriteJumpRight);
             }
-        } else if ( this.isAttacking() ) {
-            if ( this.facing === CharacterFacing.LEFT ) {
-                this.setSprite( this.spriteSet.spriteAttackLeft );
+        } else if (this.isAttacking()) {
+            if (this.facing === CharacterFacing.LEFT) {
+                this.setSprite(this.spriteSet.spriteAttackLeft);
             } else {
-                this.setSprite( this.spriteSet.spriteAttackRight );
+                this.setSprite(this.spriteSet.spriteAttackRight);
             }
         } else {
-            if ( this.movesLeft ) {
-                this.setSprite( this.spriteSet.spriteWalkLeft );
-            } else if ( this.movesRight ) {
-                this.setSprite( this.spriteSet.spriteWalkRight );
+            if (this.movesLeft) {
+                this.setSprite(this.spriteSet.spriteWalkLeft);
+            } else if (this.movesRight) {
+                this.setSprite(this.spriteSet.spriteWalkRight);
             } else {
-                if ( this.facing === CharacterFacing.LEFT ) {
-                    this.setSprite( this.spriteSet.spriteStandLeft );
+                if (this.facing === CharacterFacing.LEFT) {
+                    this.setSprite(this.spriteSet.spriteStandLeft);
                 } else {
-                    this.setSprite( this.spriteSet.spriteStandRight );
+                    this.setSprite(this.spriteSet.spriteStandRight);
                 }
             }
         }
@@ -382,7 +382,7 @@ export abstract class Character extends GameObject {
     *   Closes character's parachute.
     *******************************************************************************************************************/
     private closeParachute(): void {
-        Debug.character.log( 'Character closes parachute' );
+        Debug.character.log('Character closes parachute');
 
         this.shape.body.frictionAir = BodyFrictionAir.DEFAULT;
         this.isGliding = false;
@@ -396,10 +396,10 @@ export abstract class Character extends GameObject {
     private isCollidingObstacle(): boolean {
         const bodiesToCheck: matter.Body[] = [];
 
-        for ( const gameObject of Main.game.level.obstacles ) {
+        for (const gameObject of Main.game.level.obstacles) {
             // only consider rectangular obstacles
-            if ( gameObject.shape instanceof ShapeRectangle ) {
-                bodiesToCheck.push( gameObject.shape.body );
+            if (gameObject.shape instanceof ShapeRectangle) {
+                bodiesToCheck.push(gameObject.shape.body);
             }
         }
 
@@ -416,21 +416,21 @@ export abstract class Character extends GameObject {
     private checkBottomCollision(): void {
         const bodiesToCheck: matter.Body[] = [];
 
-        for ( const movable of Main.game.level.movables ) {
-            bodiesToCheck.push( movable.shape.body );
+        for (const movable of Main.game.level.movables) {
+            bodiesToCheck.push(movable.shape.body);
         }
-        for ( const obstacle of Main.game.level.obstacles ) {
-            bodiesToCheck.push( obstacle.shape.body );
+        for (const obstacle of Main.game.level.obstacles) {
+            bodiesToCheck.push(obstacle.shape.body);
         }
-        for ( const sigsaw of Main.game.level.sigsaws ) {
-            bodiesToCheck.push( sigsaw.shape.body );
+        for (const sigsaw of Main.game.level.sigsaws) {
+            bodiesToCheck.push(sigsaw.shape.body);
         }
-        for ( const bounce of Main.game.level.bounces ) {
-            bodiesToCheck.push( bounce.shape.body );
+        for (const bounce of Main.game.level.bounces) {
+            bodiesToCheck.push(bounce.shape.body);
         }
-        for ( const platform of Main.game.level.platforms ) {
-            bodiesToCheck.push( platform.shape.body );
-            bodiesToCheck.push( platform.frictionShape.body );
+        for (const platform of Main.game.level.platforms) {
+            bodiesToCheck.push(platform.shape.body);
+            bodiesToCheck.push(platform.frictionShape.body);
         }
 
         /*
@@ -445,17 +445,17 @@ export abstract class Character extends GameObject {
         const MARGIN_X: number = 0;
         const MARGIN_Y: number = 25;
 
-        if ( USE_SINGLE_RAY_LINE ) {
+        if (USE_SINGLE_RAY_LINE) {
             // check colliding bodies for bottom ray line
             this.collidesBottom = matter.Query.ray(
                 bodiesToCheck,
                 matter.Vector.create(
-                    this.shape.body.position.x - ( this.shape.getWidth() / 2 ) + MARGIN_X,
-                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                    this.shape.body.position.x - (this.shape.getWidth() / 2) + MARGIN_X,
+                    this.shape.body.position.y + (this.shape.getHeight() / 2)
                 ),
                 matter.Vector.create(
-                    this.shape.body.position.x + ( this.shape.getWidth() / 2 ) - MARGIN_X,
-                    this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                    this.shape.body.position.x + (this.shape.getWidth() / 2) - MARGIN_X,
+                    this.shape.body.position.y + (this.shape.getHeight() / 2)
                 )
             ).length > 0;
         } else {
@@ -464,23 +464,23 @@ export abstract class Character extends GameObject {
                 matter.Query.ray(
                     bodiesToCheck,
                     matter.Vector.create(
-                        this.shape.body.position.x - ( this.shape.getWidth() / 2 ) + MARGIN_X,
-                        this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                        this.shape.body.position.x - (this.shape.getWidth() / 2) + MARGIN_X,
+                        this.shape.body.position.y + (this.shape.getHeight() / 2)
                     ),
                     matter.Vector.create(
-                        this.shape.body.position.x + ( this.shape.getWidth() / 2 ) - MARGIN_X,
-                        this.shape.body.position.y + ( this.shape.getHeight() / 2 )
+                        this.shape.body.position.x + (this.shape.getWidth() / 2) - MARGIN_X,
+                        this.shape.body.position.y + (this.shape.getHeight() / 2)
                     )
                 ).length > 0
                 || matter.Query.ray(
                     bodiesToCheck,
                     matter.Vector.create(
-                        this.shape.body.position.x - ( this.shape.getWidth()  / 2 ) + MARGIN_X,
-                        this.shape.body.position.y + ( this.shape.getHeight() / 2 ) + MARGIN_Y
+                        this.shape.body.position.x - (this.shape.getWidth()  / 2) + MARGIN_X,
+                        this.shape.body.position.y + (this.shape.getHeight() / 2) + MARGIN_Y
                     ),
                     matter.Vector.create(
-                        this.shape.body.position.x + ( this.shape.getWidth()  / 2 ) - MARGIN_X,
-                        this.shape.body.position.y + ( this.shape.getHeight() / 2 ) + MARGIN_Y
+                        this.shape.body.position.x + (this.shape.getWidth()  / 2) - MARGIN_X,
+                        this.shape.body.position.y + (this.shape.getHeight() / 2) + MARGIN_Y
                     )
                 ).length > 0
             );
@@ -489,7 +489,7 @@ export abstract class Character extends GameObject {
 
     private checkInteraction(): void {
         if (this.interactionRequest) {
-            for ( const door of Main.game.level.doors ) {
+            for (const door of Main.game.level.doors) {
                 door.checkInteraction();
             }
 

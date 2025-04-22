@@ -106,8 +106,8 @@ export class Camera {
         targetX: number,
         targetY: number
     ): matter.Bounds {
-        this.assignTargets( subjectX, subjectY, targetX, targetY );
-        this.calculateOffsets( allowAscendY );
+        this.assignTargets(subjectX, subjectY, targetX, targetY);
+        this.calculateOffsets(allowAscendY);
 
         return matter.Bounds.create(
             [
@@ -120,7 +120,7 @@ export class Camera {
     /** ****************************************************************************************************************
     *   Resets the camera targets and offsets to the current player position without buffering.
     *******************************************************************************************************************/
-    public reset( game: Game ): void {
+    public reset(game: Game): void {
         this.assignTargets(
             game.level.player.shape.body.position.x,
             game.level.player.shape.body.position.y,
@@ -157,18 +157,18 @@ export class Camera {
     *******************************************************************************************************************/
     private clipTargetsToLevelBounds(): void {
         // clip camera target x to level bounds
-        if ( this.targetX < 0 ) {
+        if (this.targetX < 0) {
             this.targetX = 0;
         }
-        if ( this.targetX > this.levelWidth - this.canvasWidth ) {
+        if (this.targetX > this.levelWidth - this.canvasWidth) {
             this.targetX = this.levelWidth - this.canvasWidth;
         }
 
         // clip camera target y to level bounds
-        if ( this.targetY < 0 ) {
+        if (this.targetY < 0) {
             this.targetY = 0;
         }
-        if ( this.targetY > this.levelHeight - this.canvasHeight ) {
+        if (this.targetY > this.levelHeight - this.canvasHeight) {
             this.targetY = this.levelHeight - this.canvasHeight;
         }
     }
@@ -178,58 +178,58 @@ export class Camera {
     *
     *   @param allowAscendY Specifies if the camera may ascend in this update.
     *******************************************************************************************************************/
-    private calculateOffsets( allowAscendY: boolean ): void {
+    private calculateOffsets(allowAscendY: boolean): void {
         // move horizontal camera offsets to camera target
         let cameraMoveX: number = 0.0;
-        if ( this.offsetX < this.targetX ) {
-            cameraMoveX = ( this.targetX - this.offsetX ) * this.movingSpeedX;
+        if (this.offsetX < this.targetX) {
+            cameraMoveX = (this.targetX - this.offsetX) * this.movingSpeedX;
 
-            if ( cameraMoveX < this.minimumCameraMove ) {
+            if (cameraMoveX < this.minimumCameraMove) {
                 cameraMoveX = this.minimumCameraMove;
             }
-            if ( cameraMoveX > this.maximumCameraMove ) {
+            if (cameraMoveX > this.maximumCameraMove) {
                 cameraMoveX = this.maximumCameraMove;
             }
 
             this.offsetX += cameraMoveX;
-            if ( this.offsetX > this.targetX ) {
+            if (this.offsetX > this.targetX) {
                 this.offsetX = this.targetX;
             }
-        } else if ( this.offsetX > this.targetX ) {
-            cameraMoveX = ( this.offsetX - this.targetX ) * this.movingSpeedX;
+        } else if (this.offsetX > this.targetX) {
+            cameraMoveX = (this.offsetX - this.targetX) * this.movingSpeedX;
 
-            if ( cameraMoveX < this.minimumCameraMove ) {
+            if (cameraMoveX < this.minimumCameraMove) {
                 cameraMoveX = this.minimumCameraMove;
             }
-            if ( cameraMoveX > this.maximumCameraMove ) {
+            if (cameraMoveX > this.maximumCameraMove) {
                 cameraMoveX = this.maximumCameraMove;
             }
 
             this.offsetX -= cameraMoveX;
-            if ( this.offsetX < this.targetX ) {
+            if (this.offsetX < this.targetX) {
                 this.offsetX = this.targetX;
             }
         }
 
         // buffer camera on ascending, if allowed
-        if ( (allowAscendY) && this.targetY < this.offsetY ) {
-            let cameraMoveY: number = ( this.offsetY - this.targetY ) * this.movingSpeedY;
-            if ( cameraMoveY < this.minimumCameraMove ) {
+        if ((allowAscendY) && this.targetY < this.offsetY) {
+            let cameraMoveY: number = (this.offsetY - this.targetY) * this.movingSpeedY;
+            if (cameraMoveY < this.minimumCameraMove) {
                 cameraMoveY = this.minimumCameraMove;
             }
             this.offsetY -= cameraMoveY;
-            if ( this.offsetY < this.targetY ) {
+            if (this.offsetY < this.targetY) {
                 this.offsetY = this.targetY;
             }
         }
 
         // direct assignment on falling down
-        if ( this.targetY > this.offsetY ) {
+        if (this.targetY > this.offsetY) {
             this.offsetY = this.targetY;
         }
 
         // floor offsets (important for renderer bounds! fuzzy drawing problems on images may appear otherwise!)
-        this.offsetX = Math.floor( this.offsetX );
-        this.offsetY = Math.floor( this.offsetY );
+        this.offsetX = Math.floor(this.offsetX);
+        this.offsetY = Math.floor(this.offsetY);
     }
 }

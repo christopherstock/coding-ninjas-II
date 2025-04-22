@@ -65,20 +65,20 @@ export class SiteTrigger extends Decoration {
         super.render();
 
         // check if player collides with this trigger
-        if ( this.checkPlayerCollision() ) {
-            if ( !this.sitePanelActive ) {
+        if (this.checkPlayerCollision()) {
+            if (!this.sitePanelActive) {
                 // get panel popup according to player facing direction
                 const panelPosition: SitePanelPosition = this.determinePanelPosition();
 
-                if ( Main.game.engine.siteSystem.show( this.content, panelPosition ) ) {
-                    Main.game.level.setShrineBookOpen( this.content, true );
+                if (Main.game.engine.siteSystem.show(this.content, panelPosition)) {
+                    Main.game.level.setShrineBookOpen(this.content, true);
                     this.sitePanelActive = true;
                 }
             }
         } else {
-            if ( this.sitePanelActive ) {
-                if ( Main.game.engine.siteSystem.hide() ) {
-                    Main.game.level.setShrineBookOpen( this.content, false );
+            if (this.sitePanelActive) {
+                if (Main.game.engine.siteSystem.hide()) {
+                    Main.game.level.setShrineBookOpen(this.content, false);
                     this.sitePanelActive = false;
                 }
             }
@@ -90,7 +90,7 @@ export class SiteTrigger extends Decoration {
     *******************************************************************************************************************/
     private checkPlayerCollision(): boolean {
         return (
-            matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds )
+            matter.Bounds.overlaps(this.shape.body.bounds, Main.game.level.player.shape.body.bounds)
         );
     }
 
@@ -100,10 +100,10 @@ export class SiteTrigger extends Decoration {
     *   @return The position of the panel to be shown.
     *******************************************************************************************************************/
     private determinePanelPosition(): SitePanelPosition {
-        switch ( this.sitePanelAppearance ) {
+        switch (this.sitePanelAppearance) {
             case SitePanelAppearance.PLAYER_FACING:
             {
-                if ( Main.game.level.player.facing === CharacterFacing.LEFT ) {
+                if (Main.game.level.player.facing === CharacterFacing.LEFT) {
                     return SitePanelPosition.LEFT;
                 }
 

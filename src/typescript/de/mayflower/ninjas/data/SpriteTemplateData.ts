@@ -648,10 +648,10 @@ export class SpriteTemplateData {
     public static getAllImagesToMirror(): string[] {
         const ret: string[] = [];
 
-        for ( const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES ) {
-            if ( spriteTemplate.mirrored === MirrorImage.YES ) {
-                for ( const image of spriteTemplate.imageIds ) {
-                    ret.push( image );
+        for (const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES) {
+            if (spriteTemplate.mirrored === MirrorImage.YES) {
+                for (const image of spriteTemplate.imageIds) {
+                    ret.push(image);
                 }
             }
         }
@@ -664,9 +664,9 @@ export class SpriteTemplateData {
     *
     *   @param imageSystem The image system to use.
     *******************************************************************************************************************/
-    public static assignAllImageSizes( imageSystem: ImageSystem ): void {
-        for ( const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES ) {
-            spriteTemplate.assignImageSizes( imageSystem );
+    public static assignAllImageSizes(imageSystem: ImageSystem): void {
+        for (const spriteTemplate of SpriteTemplateData.ALL_SPRITE_TEMPLATES) {
+            spriteTemplate.assignImageSizes(imageSystem);
         }
     }
 }

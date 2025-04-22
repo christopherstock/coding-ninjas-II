@@ -118,11 +118,11 @@ export enum BodyDensity
     /** Player */
     PLAYER      = BodyDensity.DEFAULT,
     /** Wood */
-    WOOD        = ( BodyDensity.DEFAULT * 4 ),
+    WOOD        = (BodyDensity.DEFAULT * 4),
     /** Metal */
     // METAL       = ( BodyDensity.DEFAULT * 10 ),
     /** Rubber */
-    RUBBER      = ( BodyDensity.DEFAULT / 10 ),
+    RUBBER      = (BodyDensity.DEFAULT / 10),
 
     /** Minimum body density. */
     MINIMUM     = 0.000001,

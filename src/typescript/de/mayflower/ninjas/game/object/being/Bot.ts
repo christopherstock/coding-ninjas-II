@@ -79,7 +79,7 @@ export class Bot extends Character {
         this.walkingTargetLeft  = walkingTargetLeft;
         this.walkingTargetRight = walkingTargetRight;
 
-        if ( this.facing === CharacterFacing.LEFT ) {
+        if (this.facing === CharacterFacing.LEFT) {
             this.currentPhase = EnemyMovementPhase.WALKING_LEFT;
         } else {
             this.currentPhase = EnemyMovementPhase.WALKING_RIGHT;
@@ -103,10 +103,10 @@ export class Bot extends Character {
     public render(): void {
         super.render();
 
-        if ( !this.isDead ) {
+        if (!this.isDead) {
             this.checkFallingDead();
 
-            if ( !this.isDying ) {
+            if (!this.isDying) {
                 this.moveAccordingToPattern();
                 this.clipToHorizontalLevelBounds();
 
@@ -125,7 +125,7 @@ export class Bot extends Character {
     *
     *   @param playerDirection The current direction of the player.
     *******************************************************************************************************************/
-    public onHitByPlayer( playerDirection: CharacterFacing ): void {
+    public onHitByPlayer(playerDirection: CharacterFacing): void {
         if (this.friendly) {
             return;
         }
@@ -134,7 +134,7 @@ export class Bot extends Character {
         this.isDying = true;
 
         // face the player
-        if ( playerDirection === CharacterFacing.LEFT ) {
+        if (playerDirection === CharacterFacing.LEFT) {
             this.facing = CharacterFacing.RIGHT;
         } else {
             this.facing = CharacterFacing.LEFT;
@@ -145,21 +145,21 @@ export class Bot extends Character {
         this.shape.body.isStatic = false;
 
         // bring body to foreground
-        Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
-        Main.game.engine.matterJsSystem.addToWorld(      this.shape.body );
+        Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
+        Main.game.engine.matterJsSystem.addToWorld(this.shape.body);
 
         // punch the enemy out of the screen in the player's direction
-        this.receivePunchBack( playerDirection );
+        this.receivePunchBack(playerDirection);
     }
 
     /** ****************************************************************************************************************
     *   Moves this enemy according to the current move pattern.
     *******************************************************************************************************************/
     private moveAccordingToPattern(): void {
-        switch ( this.currentPhase ) {
+        switch (this.currentPhase) {
             case EnemyMovementPhase.STANDING_LEFT:
             {
-                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT ) {
+                if (++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT) {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_RIGHT;
                 }
@@ -168,7 +168,7 @@ export class Bot extends Character {
 
             case EnemyMovementPhase.STANDING_RIGHT:
             {
-                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT ) {
+                if (++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT) {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_LEFT;
                 }
@@ -179,7 +179,7 @@ export class Bot extends Character {
             {
                 this.moveLeft();
 
-                if ( this.shape.body.position.x - this.shape.getWidth() / 2 <= this.walkingTargetLeft ) {
+                if (this.shape.body.position.x - this.shape.getWidth() / 2 <= this.walkingTargetLeft) {
                     this.currentPhase = EnemyMovementPhase.STANDING_LEFT;
                 }
                 break;
@@ -189,7 +189,7 @@ export class Bot extends Character {
             {
                 this.moveRight();
 
-                if ( this.shape.body.position.x - this.shape.getWidth() / 2 >= this.walkingTargetRight ) {
+                if (this.shape.body.position.x - this.shape.getWidth() / 2 >= this.walkingTargetRight) {
                     this.currentPhase = EnemyMovementPhase.STANDING_RIGHT;
                 }
                 break;
@@ -201,11 +201,11 @@ export class Bot extends Character {
     *   Check if the enemy falls to death by falling out of the level.
     *******************************************************************************************************************/
     private checkFallingDead(): void {
-        if ( this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height ) {
-            Debug.character.log( 'Character has fallen to dead' );
+        if (this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height) {
+            Debug.character.log('Character has fallen to dead');
 
             // remove character body from world
-            Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
+            Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
 
             // flag as dead
             this.isDead = true;
@@ -217,21 +217,21 @@ export class Bot extends Character {
     *******************************************************************************************************************/
     private checkPlayerCollision(): void {
         // only if player is not punched back
-        if ( Main.game.level.player.punchBackTicks === 0 ) {
+        if (Main.game.level.player.punchBackTicks === 0) {
             // check intersection of the player and the enemy
-            if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) ) {
-                Debug.enemy.log( 'Player hit by enemy! Player is punching back now!' );
+            if (matter.Bounds.overlaps(this.shape.body.bounds, Main.game.level.player.shape.body.bounds)) {
+                Debug.enemy.log('Player hit by enemy! Player is punching back now!');
 
                 let playerPunchBackDirection: CharacterFacing;
 
-                if ( Main.game.level.player.facing === CharacterFacing.LEFT ) {
+                if (Main.game.level.player.facing === CharacterFacing.LEFT) {
                     playerPunchBackDirection = CharacterFacing.RIGHT;
                 } else {
                     playerPunchBackDirection = CharacterFacing.LEFT;
                 }
 
                 // punch back the player into the players opposite direction!
-                Main.game.level.player.receivePunchBack( playerPunchBackDirection );
+                Main.game.level.player.receivePunchBack(playerPunchBackDirection);
 
                 // flag player as punched back
                 Main.game.level.player.punchBackTicks = SettingGame.PUNCH_BACK_TICKS;

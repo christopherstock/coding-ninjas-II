@@ -20,7 +20,7 @@ export class SiteContentFactory {
     *   @return The created JSX element.
     *******************************************************************************************************************/
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    public static createStepIndicator( content: SiteContent ): JSX.Element {
+    public static createStepIndicator(content: SiteContent): JSX.Element {
         const index: number = 2;
 
         /*
@@ -64,7 +64,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createImageFullWidth( src: string ): JSX.Element {
+    public static createImageFullWidth(src: string): JSX.Element {
         return <div className="sitePanel defaultImageContainer">
             <img
                 className="sitePanel defaultImage"
@@ -82,9 +82,9 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createImageFloating( float: any, src: string ): JSX.Element {
-        const marginLeft: string = ( float === 'right' ? '10px' : '0' );
-        const marginRight: string = ( float === 'left'  ? '10px' : '0' );
+    public static createImageFloating(float: any, src: string): JSX.Element {
+        const marginLeft: string = (float === 'right' ? '10px' : '0');
+        const marginRight: string = (float === 'left'  ? '10px' : '0');
 
         return <img
             style={
@@ -107,7 +107,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createHeadline( text: string ): JSX.Element {
+    public static createHeadline(text: string): JSX.Element {
         const className: string = 'sitePanel defaultHeadline';
 
         return <h1 className={ className }>
@@ -123,7 +123,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createParagraph( text: string, className: string = 'sitePanel defaultParagraph' ): JSX.Element {
+    public static createParagraph(text: string, className: string = 'sitePanel defaultParagraph'): JSX.Element {
         return <p
             className={ className }
             dangerouslySetInnerHTML={{ __html: text }}
@@ -138,7 +138,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createProgress( type: ProgressType, percent: number ): JSX.Element {
+    public static createProgress(type: ProgressType, percent: number): JSX.Element {
         return <antd.Progress type={ type } percent={ percent } status='active' />;
     }
 
@@ -149,7 +149,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createIcon( type: string ): JSX.Element {
+    public static createIcon(type: string): JSX.Element {
         return <antd.Icon type={ type } />;
     }
 
@@ -161,7 +161,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createAvatar( src: string, icon: string ): JSX.Element {
+    public static createAvatar(src: string, icon: string): JSX.Element {
         return <antd.Avatar
             src={ src }
             style={{ backgroundColor: SettingEngine.COLOR_PRIMARY_CSS }}
@@ -178,7 +178,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createTag( colorFg: string, colorBg: string, text: string ): JSX.Element {
+    public static createTag(colorFg: string, colorBg: string, text: string): JSX.Element {
         return <antd.Tag color={ colorFg } style={{ backgroundColor: colorBg }}>{ text }</antd.Tag>;
     }
 
@@ -191,7 +191,7 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createBadge( count: string, colorFg: string, colorBg: string ): JSX.Element {
+    public static createBadge(count: string, colorFg: string, colorBg: string): JSX.Element {
         return <antd.Badge count={ count } style={{ color: colorFg, backgroundColor: colorBg }} />;
     }
 
@@ -209,7 +209,7 @@ export class SiteContentFactory {
         iconOn: string,
         iconOff: string,
         defaultChecked: boolean,
-        onChange: ( checked: boolean )=> void
+        onChange: (checked: boolean)=> void
     ): JSX.Element {
         return <antd.Switch
             checkedChildren={   <antd.Icon type={ iconOn  } /> }
@@ -271,8 +271,8 @@ export class SiteContentFactory {
     ): JSX.Element {
         const contents: JSX.Element[] = [];
 
-        for ( let key: number = 0; key < pages.length; ++key ) {
-            contents.push( <div key={ key }>{ pages[ key ] }</div> );
+        for (let key: number = 0; key < pages.length; ++key) {
+            contents.push(<div key={ key }>{ pages[ key ] }</div>);
         }
 
         return <antd.Carousel
@@ -299,9 +299,9 @@ export class SiteContentFactory {
     ): JSX.Element {
         const contents: JSX.Element[] = [];
 
-        for ( let key: number = 0; key < pages.length; ++key ) {
+        for (let key: number = 0; key < pages.length; ++key) {
             contents.push(
-                <antd.Collapse.Panel header={ headers[ key ] } key={ String( key ) }>
+                <antd.Collapse.Panel header={ headers[ key ] } key={ String(key) }>
                     { pages[ key ] }
                 </antd.Collapse.Panel>
             );
@@ -328,15 +328,15 @@ export class SiteContentFactory {
     ): JSX.Element {
         const contents: JSX.Element[] = [];
 
-        for ( let key: number = 0; key < pages.length; ++key ) {
+        for (let key: number = 0; key < pages.length; ++key) {
             contents.push(
-                <antd.Tabs.TabPane tab={ headers[ key ] } key={ String( key ) }>
+                <antd.Tabs.TabPane tab={ headers[ key ] } key={ String(key) }>
                     { pages[ key ] }
                 </antd.Tabs.TabPane>
             );
         }
 
-        return <antd.Tabs defaultActiveKey={ String( defaultActiveTab ) }>
+        return <antd.Tabs defaultActiveKey={ String(defaultActiveTab) }>
             { contents }
         </antd.Tabs>;
     }
@@ -355,9 +355,9 @@ export class SiteContentFactory {
     ): JSX.Element {
         const contents: JSX.Element[] = [];
 
-        for ( let key: number = 0; key < items.length; ++key ) {
+        for (let key: number = 0; key < items.length; ++key) {
             contents.push(
-                <antd.Timeline.Item color={ colors[ key ] } key={ String( key ) } >
+                <antd.Timeline.Item color={ colors[ key ] } key={ String(key) } >
                     { items[ key ] }
                 </antd.Timeline.Item>
             );
@@ -382,13 +382,13 @@ export class SiteContentFactory {
         defaultValue: string,
         values: string[],
         labels: string[],
-        onChange: ( e: RadioChangeEvent )=> void
+        onChange: (e: RadioChangeEvent)=> void
     ): JSX.Element {
         const contents: JSX.Element[] = [];
 
-        for ( let key: number = 0; key < values.length; ++key ) {
+        for (let key: number = 0; key < values.length; ++key) {
             contents.push(
-                <antd.Radio.Button value={ values[ key ] } key={ String( key ) }>
+                <antd.Radio.Button value={ values[ key ] } key={ String(key) }>
                     { labels[ key ] }
                 </antd.Radio.Button>
             );

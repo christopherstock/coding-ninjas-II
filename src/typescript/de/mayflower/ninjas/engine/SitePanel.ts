@@ -32,13 +32,13 @@ export class SitePanel {
         this.createInnerRelativeContainer();
 
         // add inner to outer container
-        this.outerAbsoluteContainer.appendChild( this.innerRelativeContainer );
+        this.outerAbsoluteContainer.appendChild(this.innerRelativeContainer);
     }
 
     /** ****************************************************************************************************************
     *   Sets the position of the panel.
     *******************************************************************************************************************/
-    public setPosition( position: SitePanelPosition ): void {
+    public setPosition(position: SitePanelPosition): void {
         this.position = position;
     }
 
@@ -47,8 +47,8 @@ export class SitePanel {
     *
     *   @param visible Flags if the panel shall be visible.
     *******************************************************************************************************************/
-    public setVisible( visible: boolean ): void {
-        this.outerAbsoluteContainer.style.visibility = ( visible ? 'visible' : 'hidden' );
+    public setVisible(visible: boolean): void {
+        this.outerAbsoluteContainer.style.visibility = (visible ? 'visible' : 'hidden');
     }
 
     /** ****************************************************************************************************************
@@ -56,15 +56,15 @@ export class SitePanel {
     *
     *   @param src The source of the background image to set.
     *******************************************************************************************************************/
-    public setPanelBgImage( src: string ): void {
-        this.outerAbsoluteContainer.style.backgroundImage = ( 'url( ' + src + ')' );
+    public setPanelBgImage(src: string): void {
+        this.outerAbsoluteContainer.style.backgroundImage = ('url( ' + src + ')');
     }
 
     /** ****************************************************************************************************************
     *   Appends the outer container to the DOM.
     *******************************************************************************************************************/
     public addToDom(): void {
-        document.body.appendChild( this.outerAbsoluteContainer );
+        document.body.appendChild(this.outerAbsoluteContainer);
     }
 
     /** ****************************************************************************************************************
@@ -80,23 +80,23 @@ export class SitePanel {
     *   @param width  The new panel width.
     *   @param height The new panel height.
     *******************************************************************************************************************/
-    public updateSizeAndPosition( width: number, height: number ): void {
+    public updateSizeAndPosition(width: number, height: number): void {
         // outer container size
-        this.outerAbsoluteContainer.style.width  = String( width  ) + 'px';
-        this.outerAbsoluteContainer.style.height = String( height ) + 'px';
+        this.outerAbsoluteContainer.style.width  = String(width) + 'px';
+        this.outerAbsoluteContainer.style.height = String(height) + 'px';
 
-        this.outerAbsoluteContainer.style.backgroundSize  = String( width ) + 'px ' + String( height ) + 'px';
+        this.outerAbsoluteContainer.style.backgroundSize  = String(width) + 'px ' + String(height) + 'px';
 
         // debug outer container
         // this.outerAbsoluteContainer.style.backgroundColor = '#ff0000';
         this.outerAbsoluteContainer.style.backgroundColor = 'transparent';
 
         const CANVAS_OFFSET_X: number = (
-            ( window.innerWidth - Main.game.engine.canvasSystem.getPhysicalWidth() ) / 2
+            (window.innerWidth - Main.game.engine.canvasSystem.getPhysicalWidth()) / 2
         );
 
         // outer container position
-        switch ( this.position ) {
+        switch (this.position) {
             case SitePanelPosition.LEFT:
             {
                 this.outerAbsoluteContainer.style.left = String(
@@ -119,12 +119,12 @@ export class SitePanel {
             }
         }
         this.outerAbsoluteContainer.style.top = String(
-            ( ( Main.game.engine.canvasSystem.getPhysicalHeight() - height ) / 2 )
+            ((Main.game.engine.canvasSystem.getPhysicalHeight() - height) / 2)
         ) + 'px';
 
         // inner container size
         this.innerRelativeContainer.style.width  = String(
-            ( width - 2 * SettingGame.SITE_PANEL_BORDER_SIZE_INNER )
+            (width - 2 * SettingGame.SITE_PANEL_BORDER_SIZE_INNER)
         ) + 'px';
 
         // inner container position
@@ -150,7 +150,7 @@ export class SitePanel {
     *******************************************************************************************************************/
     public animateIn(): void {
         // set animation class
-        switch ( this.position ) {
+        switch (this.position) {
             case SitePanelPosition.LEFT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInLeft';
@@ -172,7 +172,7 @@ export class SitePanel {
     *******************************************************************************************************************/
     public animateOut(): void {
         // set animation class
-        switch ( this.position ) {
+        switch (this.position) {
             case SitePanelPosition.LEFT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutLeft';
@@ -202,26 +202,26 @@ export class SitePanel {
     *   Creates the outer container with absolute position.
     *******************************************************************************************************************/
     private createOuterAbsoluteContainer(): void {
-        this.outerAbsoluteContainer = document.createElement( 'div' );
+        this.outerAbsoluteContainer = document.createElement('div');
 
         this.outerAbsoluteContainer.setAttribute(
             'data-wow-duration',
-            String( SettingGame.SITE_PANEL_ANIMATION_DURATION )
+            String(SettingGame.SITE_PANEL_ANIMATION_DURATION)
             + 'ms'
         );
-        this.outerAbsoluteContainer.setAttribute( 'data-wow-delay',    '0ms' );
+        this.outerAbsoluteContainer.setAttribute('data-wow-delay',    '0ms');
     }
 
     /** ****************************************************************************************************************
     *   Creates the inner container with relative position.
     *******************************************************************************************************************/
     private createInnerRelativeContainer(): void {
-        this.innerRelativeContainer = document.createElement( 'div' );
+        this.innerRelativeContainer = document.createElement('div');
         this.innerRelativeContainer.className = 'sitePanel innerRelativeContainer';
 
         this.innerRelativeContainer.setAttribute(
             'data-wow-delay',
-            String( SettingGame.SITE_PANEL_ANIMATION_DURATION )
+            String(SettingGame.SITE_PANEL_ANIMATION_DURATION)
             + 'ms'
         );
     }

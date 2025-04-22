@@ -8,8 +8,8 @@ export class MathUtil {
     *   @param  angle   The angle in degrees.
     *   @return         The specified angle in radians.
     *******************************************************************************************************************/
-    public static angleToRad( angle: number ): number {
-        return ( angle * Math.PI / 180.0 );
+    public static angleToRad(angle: number): number {
+        return (angle * Math.PI / 180.0);
     }
 
     /** ****************************************************************************************************************
@@ -19,7 +19,7 @@ export class MathUtil {
     *   @param max
     *   @return {number}
     *******************************************************************************************************************/
-    public static getRandomInt( min: number, max: number ): number {
-        return Math.floor( ( Math.random() * ( max + 1 - min ) ) + min );
+    public static getRandomInt(min: number, max: number): number {
+        return Math.floor((Math.random() * (max + 1 - min)) + min);
     }
 }

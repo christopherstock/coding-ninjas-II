@@ -56,8 +56,8 @@ export class Platform extends GameObject {
             0.0
         );
 
-        if ( waypoints.length === 0 ) {
-            throw new Error( 'Platform requires at least one waypoint to be specified!' );
+        if (waypoints.length === 0) {
+            throw new Error('Platform requires at least one waypoint to be specified!');
         }
 
         this.speed     = speed;
@@ -65,7 +65,7 @@ export class Platform extends GameObject {
 
         this.frictionShape = new ShapeRectangle
         (
-            ( shape.getWidth() - ( 2 * Platform.FRICTION_SHAPE_MARGIN_X ) ),
+            (shape.getWidth() - (2 * Platform.FRICTION_SHAPE_MARGIN_X)),
             shape.getHeight(),
             DebugColor.COLOR_DEBUG_PLATFORM_FRICTION,
             StaticShape.YES,
@@ -89,19 +89,19 @@ export class Platform extends GameObject {
 
         // check if next waypoint is reached
         ++this.currentStep;
-        if ( this.currentStep > this.stepsTillNextWaypoint ) {
+        if (this.currentStep > this.stepsTillNextWaypoint) {
             this.assignNextWaypoint();
         }
 
         // TODO extract vector
 
         // move platform
-        matter.Body.setVelocity( this.shape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
-        matter.Body.translate(   this.shape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
+        matter.Body.setVelocity(this.shape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
+        matter.Body.translate(this.shape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
 
         // move friction shape
-        matter.Body.setVelocity( this.frictionShape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
-        matter.Body.translate(   this.frictionShape.body, matter.Vector.create( this.stepSizeX, this.stepSizeY ) );
+        matter.Body.setVelocity(this.frictionShape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
+        matter.Body.translate(this.frictionShape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
     }
 
     /** ****************************************************************************************************************
@@ -112,39 +112,39 @@ export class Platform extends GameObject {
         ++this.currentWaypointIndex;
 
         // assign current wp
-        if ( this.currentWaypointIndex >= this.waypoints.length ) {
+        if (this.currentWaypointIndex >= this.waypoints.length) {
             this.currentWaypointIndex = 0;
         }
         const currentWaypoint: matter.Vector = matter.Vector.create(
-            this.waypoints[ this.currentWaypointIndex ].x + ( this.shape.getWidth()  / 2 ),
-            this.waypoints[ this.currentWaypointIndex ].y + ( this.shape.getHeight() / 2 )
+            this.waypoints[ this.currentWaypointIndex ].x + (this.shape.getWidth()  / 2),
+            this.waypoints[ this.currentWaypointIndex ].y + (this.shape.getHeight() / 2)
         );
 
         // assign next wp
         let nextWaypointIndex: number = this.currentWaypointIndex + 1;
-        if ( nextWaypointIndex >= this.waypoints.length ) {
+        if (nextWaypointIndex >= this.waypoints.length) {
             nextWaypointIndex = 0;
         }
         const nextWaypoint: matter.Vector = matter.Vector.create(
-            this.waypoints[ nextWaypointIndex ].x + ( this.shape.getWidth()  / 2 ),
-            this.waypoints[ nextWaypointIndex ].y + ( this.shape.getHeight() / 2 )
+            this.waypoints[ nextWaypointIndex ].x + (this.shape.getWidth()  / 2),
+            this.waypoints[ nextWaypointIndex ].y + (this.shape.getHeight() / 2)
         );
 
         // set platform to starting waypoint
-        matter.Body.setPosition( this.shape.body,         currentWaypoint );
-        matter.Body.setPosition( this.frictionShape.body, currentWaypoint );
+        matter.Body.setPosition(this.shape.body,         currentWaypoint);
+        matter.Body.setPosition(this.frictionShape.body, currentWaypoint);
 
         // get deltas
-        const deltaX: number      = Math.abs( nextWaypoint.x - currentWaypoint.x );
-        const deltaY: number      = Math.abs( nextWaypoint.y - currentWaypoint.y );
-        const deltaDirect: number = Math.sqrt( ( deltaX * deltaX ) + ( deltaY * deltaY ) );
+        const deltaX: number      = Math.abs(nextWaypoint.x - currentWaypoint.x);
+        const deltaY: number      = Math.abs(nextWaypoint.y - currentWaypoint.y);
+        const deltaDirect: number = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY));
 
         // reset steps and calculate number of steps for reaching the next waypoint
         this.currentStep = 0;
         this.stepsTillNextWaypoint = deltaDirect / this.speed;
 
         // calculate step size
-        this.stepSizeX = ( nextWaypoint.x - currentWaypoint.x ) / this.stepsTillNextWaypoint;
-        this.stepSizeY = ( nextWaypoint.y - currentWaypoint.y ) / this.stepsTillNextWaypoint;
+        this.stepSizeX = (nextWaypoint.x - currentWaypoint.x) / this.stepsTillNextWaypoint;
+        this.stepSizeY = (nextWaypoint.y - currentWaypoint.y) / this.stepsTillNextWaypoint;
     }
 }

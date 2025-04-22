@@ -56,7 +56,7 @@ export class SigSaw extends GameObject {
             }
         );
 
-        Main.game.engine.matterJsSystem.addToWorld( this.constraint );
+        Main.game.engine.matterJsSystem.addToWorld(this.constraint);
     }
 
     /** ****************************************************************************************************************
@@ -75,15 +75,15 @@ export class SigSaw extends GameObject {
     private clipRotation(): void {
         const clipAngle: number = 15.0;
 
-        const minAngle: number = MathUtil.angleToRad( -clipAngle );
-        const maxAngle: number = MathUtil.angleToRad( clipAngle  );
+        const minAngle: number = MathUtil.angleToRad(-clipAngle);
+        const maxAngle: number = MathUtil.angleToRad(clipAngle);
 
-        if ( this.shape.body.angle < minAngle ) {
-            matter.Body.setAngle(           this.shape.body, minAngle );
-            matter.Body.setAngularVelocity( this.shape.body, 0.0       );
-        } else if ( this.shape.body.angle > maxAngle ) {
-            matter.Body.setAngle(           this.shape.body, maxAngle );
-            matter.Body.setAngularVelocity( this.shape.body, 0.0       );
+        if (this.shape.body.angle < minAngle) {
+            matter.Body.setAngle(this.shape.body, minAngle);
+            matter.Body.setAngularVelocity(this.shape.body, 0.0);
+        } else if (this.shape.body.angle > maxAngle) {
+            matter.Body.setAngle(this.shape.body, maxAngle);
+            matter.Body.setAngularVelocity(this.shape.body, 0.0);
         }
     }
 
@@ -91,14 +91,14 @@ export class SigSaw extends GameObject {
     *   Clips the rotation speed of the sigsaw.
     *******************************************************************************************************************/
     private clipRotationSpeed(): void {
-        if ( this.maxRotationSpeed === -1 ) {
+        if (this.maxRotationSpeed === -1) {
             return;
         }
 
-        if ( this.shape.body.angularVelocity < -this.maxRotationSpeed ) {
-            matter.Body.setAngularVelocity( this.shape.body, -this.maxRotationSpeed );
-        } else if ( this.shape.body.angularVelocity > this.maxRotationSpeed ) {
-            matter.Body.setAngularVelocity( this.shape.body, this.maxRotationSpeed );
+        if (this.shape.body.angularVelocity < -this.maxRotationSpeed) {
+            matter.Body.setAngularVelocity(this.shape.body, -this.maxRotationSpeed);
+        } else if (this.shape.body.angularVelocity > this.maxRotationSpeed) {
+            matter.Body.setAngularVelocity(this.shape.body, this.maxRotationSpeed);
         }
     }
 }

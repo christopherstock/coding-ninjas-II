@@ -39,7 +39,7 @@ export abstract class GameObjectFactory {
     *
     *   @return The created box.
     *******************************************************************************************************************/
-    public static createWoodenCrate( x: number, yBottom: number ): Movable {
+    public static createWoodenCrate(x: number, yBottom: number): Movable {
         const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(
             ImageData.CRATE_WOOD_1
         );
@@ -59,7 +59,7 @@ export abstract class GameObjectFactory {
             ),
             sprtiteTemplate,
             x,
-            ( yBottom - sprtiteTemplate.height )
+            (yBottom - sprtiteTemplate.height)
         );
     }
 
@@ -77,7 +77,7 @@ export abstract class GameObjectFactory {
         yBottom: number,
         imageId: string
     ): Movable {
-        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
 
         return new Movable
         (
@@ -94,7 +94,7 @@ export abstract class GameObjectFactory {
             ),
             sprtiteTemplate,
             x,
-            ( yBottom - sprtiteTemplate.height )
+            (yBottom - sprtiteTemplate.height)
         );
     }
 
@@ -114,7 +114,7 @@ export abstract class GameObjectFactory {
         imageId: string,
         angle: number
     ): Movable {
-        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
 
         return new Movable
         (
@@ -130,7 +130,7 @@ export abstract class GameObjectFactory {
             ),
             sprtiteTemplate,
             x,
-            ( yBottom - sprtiteTemplate.height )
+            (yBottom - sprtiteTemplate.height)
         );
     }
 
@@ -158,7 +158,7 @@ export abstract class GameObjectFactory {
             ImageData.STONE_SPHERE
         );
 
-        if ( spriteTemplate.width !== spriteTemplate.height ) {
+        if (spriteTemplate.width !== spriteTemplate.height) {
             throw new Error(
                 'Non-square sprite template dimensions for circular deco - sprite image ['
                 + spriteTemplate.imageIds[ 0 ]
@@ -180,7 +180,7 @@ export abstract class GameObjectFactory {
             ),
             spriteTemplate,
             x,
-            ( yBottom - spriteTemplate.height )
+            (yBottom - spriteTemplate.height)
         );
     }
 
@@ -192,7 +192,7 @@ export abstract class GameObjectFactory {
     *
     *   @return The created item.
     *******************************************************************************************************************/
-    public static createItem( x: number, y: number ): Item {
+    public static createItem(x: number, y: number): Item {
         return new Item
         (
             new ShapeRectangle
@@ -206,7 +206,7 @@ export abstract class GameObjectFactory {
                 BodyDensity.INFINITE,
                 BodyRestitution.DEFAULT
             ),
-            SpriteTemplate.createFromSingleImage( ImageData.ITEM ),
+            SpriteTemplate.createFromSingleImage(ImageData.ITEM),
             x,
             y
         );
@@ -250,7 +250,7 @@ export abstract class GameObjectFactory {
                 restitution
             ),
             xLeft,
-            ( yBottom - spriteTemplate.height ),
+            (yBottom - spriteTemplate.height),
             spriteTemplate,
             jumpPassThrough
         );
@@ -354,12 +354,12 @@ export abstract class GameObjectFactory {
         const vertices: matter.Vector[] = [];
 
         // shape ramp
-        vertices.push( matter.Vector.create( 0.0,   0.0             ) );
-        vertices.push( matter.Vector.create( width, deltaY          ) );
-        vertices.push( matter.Vector.create( width, height + deltaY ) );
-        vertices.push( matter.Vector.create( 0.0,   height          ) );
+        vertices.push(matter.Vector.create(0.0,   0.0));
+        vertices.push(matter.Vector.create(width, deltaY));
+        vertices.push(matter.Vector.create(width, height + deltaY));
+        vertices.push(matter.Vector.create(0.0,   height));
 
-        if ( deltaY <= 0.0 ) {
+        if (deltaY <= 0.0) {
             y += deltaY;
         }
 
@@ -466,7 +466,7 @@ export abstract class GameObjectFactory {
             ),
             spriteTemplate,
             xLeft,
-            ( yBottom - spriteTemplate.height )
+            (yBottom - spriteTemplate.height)
         );
     }
 
@@ -488,9 +488,9 @@ export abstract class GameObjectFactory {
         isStatic: StaticShape,
         spriteTemplate: SpriteTemplate
     ): Decoration {
-        if ( spriteTemplate.width !== spriteTemplate.height ) {
-            throw new Error( 'Non-square sprite template dimensions for circular deco - sprite image ['
-                + String( spriteTemplate.imageIds[ 0 ] )
+        if (spriteTemplate.width !== spriteTemplate.height) {
+            throw new Error('Non-square sprite template dimensions for circular deco - sprite image ['
+                + String(spriteTemplate.imageIds[ 0 ])
                 + ']'
             );
         }
@@ -509,7 +509,7 @@ export abstract class GameObjectFactory {
             ),
             spriteTemplate,
             xLeft,
-            ( yBottom - spriteTemplate.height )
+            (yBottom - spriteTemplate.height)
         );
     }
 
@@ -550,16 +550,16 @@ export abstract class GameObjectFactory {
             parallaxRatio
         );
 
-        switch ( decoPosition ) {
+        switch (decoPosition) {
             case DecoPosition.FG:
             {
-                level.parallaxFgs.push( parallaxDeco );
+                level.parallaxFgs.push(parallaxDeco);
                 break;
             }
 
             case DecoPosition.BG:
             {
-                level.parallaxBgs.push( parallaxDeco );
+                level.parallaxBgs.push(parallaxDeco);
                 break;
             }
         }
@@ -607,7 +607,7 @@ export abstract class GameObjectFactory {
             sitePanelAppearance
         );
 
-        level.siteTriggers.push( siteTrigger );
+        level.siteTriggers.push(siteTrigger);
     }
 
     /** ****************************************************************************************************************
@@ -625,7 +625,7 @@ export abstract class GameObjectFactory {
         imageId: string,
         action: GameAction
     ): void {
-        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
 
         const door: Door = new Door
         (
@@ -646,7 +646,7 @@ export abstract class GameObjectFactory {
             action
         );
 
-        level.doors.push( door );
+        level.doors.push(door);
     }
 
     /** ****************************************************************************************************************
@@ -684,7 +684,7 @@ export abstract class GameObjectFactory {
             maxRotationSpeed
         );
 
-        level.sigsaws.push( sigsaw );
+        level.sigsaws.push(sigsaw);
     }
 
     /** ****************************************************************************************************************
@@ -721,7 +721,7 @@ export abstract class GameObjectFactory {
             waypoints
         );
 
-        level.platforms.push( platform );
+        level.platforms.push(platform);
     }
 
     /** ****************************************************************************************************************
@@ -760,7 +760,7 @@ export abstract class GameObjectFactory {
             yTop
         );
 
-        level.bounces.push( bounce );
+        level.bounces.push(bounce);
     }
 
     /** ****************************************************************************************************************
@@ -775,20 +775,20 @@ export abstract class GameObjectFactory {
         spriteTemplate: SpriteTemplate,
         debugColor: DebugColor
     ): ShapeFreeForm {
-        const gapSizeX: number = ( spriteTemplate.width / 2 );
+        const gapSizeX: number = (spriteTemplate.width / 2);
         const gapSizeY: number = SettingMatter.PLAYER_EDGE_GAP_Y;
 
         const vertices: matter.Vector[] = [];
 
         // draw diamond path
-        vertices.push( matter.Vector.create( gapSizeX,                        0.0                              ) );
-        vertices.push( matter.Vector.create( spriteTemplate.width - gapSizeX, 0.0                              ) );
-        vertices.push( matter.Vector.create( spriteTemplate.width,            gapSizeY                         ) );
-        vertices.push( matter.Vector.create( spriteTemplate.width,            spriteTemplate.height - gapSizeY ) );
-        vertices.push( matter.Vector.create( spriteTemplate.width - gapSizeX, spriteTemplate.height            ) );
-        vertices.push( matter.Vector.create( gapSizeX,                        spriteTemplate.height            ) );
-        vertices.push( matter.Vector.create( 0.0,                             spriteTemplate.height - gapSizeY ) );
-        vertices.push( matter.Vector.create( 0.0,                             gapSizeY                         ) );
+        vertices.push(matter.Vector.create(gapSizeX,                        0.0));
+        vertices.push(matter.Vector.create(spriteTemplate.width - gapSizeX, 0.0));
+        vertices.push(matter.Vector.create(spriteTemplate.width,            gapSizeY));
+        vertices.push(matter.Vector.create(spriteTemplate.width,            spriteTemplate.height - gapSizeY));
+        vertices.push(matter.Vector.create(spriteTemplate.width - gapSizeX, spriteTemplate.height));
+        vertices.push(matter.Vector.create(gapSizeX,                        spriteTemplate.height));
+        vertices.push(matter.Vector.create(0.0,                             spriteTemplate.height - gapSizeY));
+        vertices.push(matter.Vector.create(0.0,                             gapSizeY));
 
         return new ShapeFreeForm
         (

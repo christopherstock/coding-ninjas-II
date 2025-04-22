@@ -36,12 +36,12 @@ export class Game {
     *******************************************************************************************************************/
     public launch(): void {
         // create the game engine
-        this.engine = new Engine( this );
+        this.engine = new Engine(this);
 
         // start the preloader after a short delay. this runs smoother for the user
         window.setTimeout(
             () => { this.engine.launch(); },
-            ( SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY )
+            (SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY)
         );
     }
 
@@ -49,7 +49,7 @@ export class Game {
     *   Starts the game loop.
     *******************************************************************************************************************/
     public start(): void {
-        Debug.init.log( 'Starting the game loop' );
+        Debug.init.log('Starting the game loop');
         Debug.init.log();
 
         // set the number of blend panel ticks
@@ -59,10 +59,10 @@ export class Game {
         this.engine.initMatterJS();
 
         // play bg sound
-        this.bgMusic = this.engine.soundSystem.playSound( SoundData.BG_CHINESE, true );
+        this.bgMusic = this.engine.soundSystem.playSound(SoundData.BG_CHINESE, true);
 
         // launch initial level
-        this.resetAndLaunchLevel( LevelId.LEVEL_START );
+        this.resetAndLaunchLevel(LevelId.LEVEL_START);
 
         // update camera bounds
         this.updateAndAssignCamera();
@@ -81,10 +81,10 @@ export class Game {
     *
     *   @param context The 2D rendering context to draw onto.
     *******************************************************************************************************************/
-    public paintHUD( context: CanvasRenderingContext2D ): void {
+    public paintHUD(context: CanvasRenderingContext2D): void {
         // paint blend overlay
-        if ( !SettingDebug.DISABLE_BLEND_PANEL ) {
-            this.paintBlendPanel( context );
+        if (!SettingDebug.DISABLE_BLEND_PANEL) {
+            this.paintBlendPanel(context);
         }
     }
 
@@ -93,11 +93,11 @@ export class Game {
     *
     *   @param enable Specifies if the background music shall be enabled or not.
     *******************************************************************************************************************/
-    public toggleBgMusic( enable: boolean ): void {
-        if ( this.bgMusic !== null ) {
-            if ( enable ) {
+    public toggleBgMusic(enable: boolean): void {
+        if (this.bgMusic !== null) {
+            if (enable) {
                 // noinspection JSIgnoredPromiseFromCall
-                this.bgMusic.play().then().catch( ( e: Error ) => { return e; } );
+                this.bgMusic.play().then().catch((e: Error) => { return e; });
             } else {
                 this.bgMusic.pause();
             }
@@ -118,7 +118,7 @@ export class Game {
             this.engine.canvasSystem.getWidth(),
             this.engine.canvasSystem.getHeight()
         );
-        this.camera.reset( this );
+        this.camera.reset(this);
     }
 
     /** ****************************************************************************************************************
@@ -129,7 +129,7 @@ export class Game {
     public startSlowMotionTicks(): void {
         Debug.engine.log(
             'Engine - setSlowMotion for ['
-            + String( SettingEngine.ENGINE_SLOW_MOTION_TICKS )
+            + String(SettingEngine.ENGINE_SLOW_MOTION_TICKS)
             + '] ticks'
         );
 
@@ -171,7 +171,7 @@ export class Game {
             this.level.playerInitialFacing = playerInitialFacing;
         }
 
-        this.level.init( this.engine.matterJsSystem );
+        this.level.init(this.engine.matterJsSystem);
 
         // reset panel
         this.engine.siteSystem.reset();
@@ -188,7 +188,7 @@ export class Game {
     *******************************************************************************************************************/
     private tickGame(): void {
         // start fpsMetet tick
-        if ( SettingDebug.DEBUG_MODE ) {
+        if (SettingDebug.DEBUG_MODE) {
             this.engine.fpsMeter.tickStart();
         }
 
@@ -196,13 +196,13 @@ export class Game {
         this.handleMenuKey();
 
         // render one game tick and update matter.js 2D engine
-        if ( this.slowMotionTicks === 0 || this.slowMotionTicks-- % 4 === 0 ) {
+        if (this.slowMotionTicks === 0 || this.slowMotionTicks-- % 4 === 0) {
             this.render();
             this.engine.matterJsSystem.updateEngine();
         }
 
         // stop fpsMeter tick
-        if ( SettingDebug.DEBUG_MODE ) {
+        if (SettingDebug.DEBUG_MODE) {
             this.engine.fpsMeter.tick();
         }
 
@@ -217,7 +217,7 @@ export class Game {
     *******************************************************************************************************************/
     private render(): void {
         // hide blend panel if active
-        if ( this.blendPanelTicks > 0 ) {
+        if (this.blendPanelTicks > 0) {
             --this.blendPanelTicks;
         }
 
@@ -235,19 +235,19 @@ export class Game {
     *   Handles pressed menu keys.
     *******************************************************************************************************************/
     private handleMenuKey(): void {
-        if ( SettingDebug.DEBUG_MODE ) {
-            if ( this.engine.keySystem.isPressed( KeyData.KEY_1 ) ) {
-                this.engine.keySystem.setNeedsRelease( KeyData.KEY_1 );
+        if (SettingDebug.DEBUG_MODE) {
+            if (this.engine.keySystem.isPressed(KeyData.KEY_1)) {
+                this.engine.keySystem.setNeedsRelease(KeyData.KEY_1);
 
-                Debug.init.log( 'Resetting and switching to level 1' );
-                this.resetAndLaunchLevel( LevelId.LEVEL_START );
+                Debug.init.log('Resetting and switching to level 1');
+                this.resetAndLaunchLevel(LevelId.LEVEL_START);
             }
 
-            if ( Main.game.engine.keySystem.isPressed( KeyData.KEY_2 ) ) {
-                Main.game.engine.keySystem.setNeedsRelease( KeyData.KEY_2 );
+            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_2)) {
+                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_2);
 
-                Debug.init.log( 'Resetting and switching to level 2' );
-                this.resetAndLaunchLevel( LevelId.LEVEL_HUT );
+                Debug.init.log('Resetting and switching to level 2');
+                this.resetAndLaunchLevel(LevelId.LEVEL_HUT);
             }
             /*
             if ( Main.game.engine.keySystem.isPressed( Key.KEY_3 ) )
@@ -266,8 +266,8 @@ export class Game {
     *
     *   @param context The 2D rendering context to draw onto.
     *******************************************************************************************************************/
-    private paintBlendPanel( context: CanvasRenderingContext2D ): void {
-        if ( this.blendPanelTicks > 0 ) {
+    private paintBlendPanel(context: CanvasRenderingContext2D): void {
+        if (this.blendPanelTicks > 0) {
             DrawUtil.fillRect(
                 context,
                 0,
@@ -275,7 +275,7 @@ export class Game {
                 this.engine.canvasSystem.getPhysicalWidth(),
                 this.engine.canvasSystem.getPhysicalHeight(),
                 'rgba( 0, 0, 0, '
-                + String( this.blendPanelTicks / SettingGame.BLEND_PANEL_TICKS )
+                + String(this.blendPanelTicks / SettingGame.BLEND_PANEL_TICKS)
                 + ' )'
             );
         }
@@ -293,6 +293,6 @@ export class Game {
             this.engine.siteSystem.getCameraTargetX(),
             this.engine.canvasSystem.getHeight() * SettingEngine.CAMERA_RATIO_Y
         );
-        this.engine.matterJsSystem.setRenderBounds( cameraBounds );
+        this.engine.matterJsSystem.setRenderBounds(cameraBounds);
     }
 }

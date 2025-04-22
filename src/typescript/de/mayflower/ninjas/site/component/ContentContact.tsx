@@ -9,13 +9,13 @@ import { ImageData } from '../../data/ImageData';
 *   A React component with the content for the 'contact' page.
 ***********************************************************************************************************************/
 export const ContentContact: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log( 'ContentContact.render() being invoked' );
+    Debug.react.log('ContentContact.render() being invoked');
 
     return <div>
 
-        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_CONTACT ) }
+        { SiteContentFactory.createStepIndicator(SiteContent.CONTENT_CONTACT) }
         { SiteContentFactory.createDivider() }
-        { SiteContentFactory.createHeadline( 'Contact Us!' ) }
+        { SiteContentFactory.createHeadline('Contact Us!') }
         { SiteContentFactory.createSpacerVertical() }
 
         <div className='card-flip-container'>

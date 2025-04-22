@@ -48,7 +48,7 @@ export class Shrine extends Decoration {
         this.decoBookClosed = decoBookClosed;
 
         // close the book initially
-        this.setBookOpen( false );
+        this.setBookOpen(false);
     }
 
     /** ****************************************************************************************************************
@@ -56,8 +56,8 @@ export class Shrine extends Decoration {
     *
     *   @boolean open Specifies if the open book should be shown.
     *******************************************************************************************************************/
-    public setBookOpen( open: boolean ): void {
-        this.decoBookOpen.setVisible(   open  );
-        this.decoBookClosed.setVisible( !open );
+    public setBookOpen(open: boolean): void {
+        this.decoBookOpen.setVisible(open);
+        this.decoBookClosed.setVisible(!open);
     }
 }

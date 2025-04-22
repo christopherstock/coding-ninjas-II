@@ -7,15 +7,15 @@ import { SiteContent } from '../SiteContentSystem';
 *   A React component with the content for the 'timeline' page.
 ***********************************************************************************************************************/
 export const ContentTimeline: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log( 'ContentTimeline.render() being invoked' );
+    Debug.react.log('ContentTimeline.render() being invoked');
 
     return <div>
 
-        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_TIMELINE ) }
+        { SiteContentFactory.createStepIndicator(SiteContent.CONTENT_TIMELINE) }
         { SiteContentFactory.createDivider() }
-        { SiteContentFactory.createHeadline( 'Project Timeline' ) }
+        { SiteContentFactory.createHeadline('Project Timeline') }
         { SiteContentFactory.createSpacerVertical() }
-        { SiteContentFactory.createParagraph( 'See the project\'s evolution timeline:' ) }
+        { SiteContentFactory.createParagraph('See the project\'s evolution timeline:') }
         { SiteContentFactory.createSpacerVertical() }
         {
             SiteContentFactory.createTimeline(

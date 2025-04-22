@@ -9,13 +9,13 @@ import { ImageData } from '../../data/ImageData';
 *   A React component with the content for the 'company' page.
 ***********************************************************************************************************************/
 export const ContentCompany: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log( 'ContentCompany.render() being invoked' );
+    Debug.react.log('ContentCompany.render() being invoked');
 
     return <div>
 
-        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_COMPANY ) }
+        { SiteContentFactory.createStepIndicator(SiteContent.CONTENT_COMPANY) }
         { SiteContentFactory.createDivider() }
-        { SiteContentFactory.createHeadline( 'Our Company' ) }
+        { SiteContentFactory.createHeadline('Our Company') }
         { SiteContentFactory.createSpacerVertical() }
         {
             SiteContentFactory.createParagraph(
