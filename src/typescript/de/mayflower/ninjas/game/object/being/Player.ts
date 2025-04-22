@@ -1,10 +1,21 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {SettingMatter} from "../../../setting/SettingMatter";
+import {CharacterSpriteData} from "../../../data/CharacterSpriteData";
+import {Main} from "../../../base/Main";
+import {KeySystem} from "../../../engine/hid/KeySystem";
+import {KeyData} from "../../../data/KeyData";
+import {SettingDebug} from "../../../setting/SettingDebug";
+import {Debug} from "../../../base/Debug";
+import {LevelId} from "../../level/Level";
+import {Character} from "./Character";
+import {CharacterFacing} from "./CharacterFacing";
 
 /** ********************************************************************************************************************
 *   Represents the player being controlled by the user.
 ***********************************************************************************************************************/
-export class Player extends ninjas.Character
+export class Player extends Character
 {
     /** ****************************************************************************************************************
     *   Creates a new player instance.
@@ -18,11 +29,11 @@ export class Player extends ninjas.Character
     *******************************************************************************************************************/
     public constructor
     (
-        shape          :ninjas.Shape,
+        shape          :Shape,
         x              :number,
         y              :number,
-        facing         :ninjas.CharacterFacing,
-        spriteTemplate :ninjas.SpriteTemplate,
+        facing         :CharacterFacing,
+        spriteTemplate :SpriteTemplate,
         initialFloat   :boolean
     )
     {
@@ -33,9 +44,9 @@ export class Player extends ninjas.Character
             x,
             y,
             facing,
-            ninjas.SettingMatter.PLAYER_SPEED_MOVE,
-            ninjas.SettingMatter.PLAYER_JUMP_POWER,
-            ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL
+            SettingMatter.PLAYER_SPEED_MOVE,
+            SettingMatter.PLAYER_JUMP_POWER,
+            CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL
         );
 
         if ( initialFloat )
@@ -57,7 +68,7 @@ export class Player extends ninjas.Character
 
         if ( !this.isDead )
         {
-            this.handleKeys( ninjas.Main.game.engine.keySystem );
+            this.handleKeys( Main.game.engine.keySystem );
             this.checkEnemyKill();
         }
 
@@ -72,7 +83,7 @@ export class Player extends ninjas.Character
     *
     *   @param keySystem The keySystem that holds current pressed key information.
     *******************************************************************************************************************/
-    private handleKeys( keySystem:ninjas.KeySystem ) : void
+    private handleKeys( keySystem:KeySystem ) : void
     {
         if ( this.punchBackTicks !== 0 )
         {
@@ -81,10 +92,10 @@ export class Player extends ninjas.Character
 
         if
         (
-            keySystem.isPressed( ninjas.KeyData.KEY_LEFT )
+            keySystem.isPressed( KeyData.KEY_LEFT )
             || (
-                !ninjas.SettingDebug.DISABLE_POINTER
-                && ninjas.Main.game.engine.pointerSystem.leftCanvasHalfPressed
+                !SettingDebug.DISABLE_POINTER
+                && Main.game.engine.pointerSystem.leftCanvasHalfPressed
             )
         )
         {
@@ -92,19 +103,19 @@ export class Player extends ninjas.Character
         }
         else if
         (
-            keySystem.isPressed( ninjas.KeyData.KEY_RIGHT )
+            keySystem.isPressed( KeyData.KEY_RIGHT )
             || (
-                !ninjas.SettingDebug.DISABLE_POINTER
-                && ninjas.Main.game.engine.pointerSystem.rightCanvasHalfPressed
+                !SettingDebug.DISABLE_POINTER
+                && Main.game.engine.pointerSystem.rightCanvasHalfPressed
             )
         )
         {
             this.moveRight();
         }
 
-        if ( keySystem.isPressed( ninjas.KeyData.KEY_UP ) )
+        if ( keySystem.isPressed( KeyData.KEY_UP ) )
         {
-            keySystem.setNeedsRelease( ninjas.KeyData.KEY_UP );
+            keySystem.setNeedsRelease( KeyData.KEY_UP );
 
             if ( this.collidesBottom )
             {
@@ -119,11 +130,11 @@ export class Player extends ninjas.Character
         }
 
         if (
-            !ninjas.SettingDebug.DISABLE_POINTER
-            && ninjas.Main.game.engine.pointerSystem.canvasTabbed
+            !SettingDebug.DISABLE_POINTER
+            && Main.game.engine.pointerSystem.canvasTabbed
         )
         {
-            ninjas.Main.game.engine.pointerSystem.canvasTabbed = false;
+            Main.game.engine.pointerSystem.canvasTabbed = false;
 
             if ( this.collidesBottom )
             {
@@ -131,16 +142,16 @@ export class Player extends ninjas.Character
             }
         }
 
-        if ( keySystem.isPressed( ninjas.KeyData.KEY_E ) )
+        if ( keySystem.isPressed( KeyData.KEY_E ) )
         {
-            keySystem.setNeedsRelease( ninjas.KeyData.KEY_E );
+            keySystem.setNeedsRelease( KeyData.KEY_E );
 
             this.requestInteraction();
         }
 
-        if ( keySystem.isPressed( ninjas.KeyData.KEY_SPACE ) )
+        if ( keySystem.isPressed( KeyData.KEY_SPACE ) )
         {
-            keySystem.setNeedsRelease( ninjas.KeyData.KEY_SPACE );
+            keySystem.setNeedsRelease( KeyData.KEY_SPACE );
 
             if ( !this.isAttacking() )
             {
@@ -158,7 +169,7 @@ export class Player extends ninjas.Character
         if ( this.shape.body.velocity.y > 0.0 )
         {
             // browse all enemies
-            for ( const enemy of ninjas.Main.game.level.enemies )
+            for ( const enemy of Main.game.level.enemies )
             {
                 // skip dead, friendly or non-blocking enemies
                 if ( enemy.isAlive() && !enemy.isFriendly() && enemy.isBlocking() )
@@ -166,14 +177,14 @@ export class Player extends ninjas.Character
                     // check intersection of the player and the enemy
                     if ( matter.Bounds.overlaps( this.shape.body.bounds, enemy.shape.body.bounds ) )
                     {
-                        ninjas.Debug.enemy.log( 'Enemy touched by player' );
+                        Debug.enemy.log( 'Enemy touched by player' );
 
                         const playerBottom:number = Math.floor(
                             this.shape.body.position.y  + this.shape.getHeight() / 2 );
                         const enemyTop:number     = Math.floor(
                             enemy.shape.body.position.y - enemy.shape.getHeight() / 2 );
 
-                        ninjas.Debug.enemy.log(
+                        Debug.enemy.log(
                             ' playerBottom [' + String(playerBottom) + '] enemyTop [' + String(enemyTop) + ']' );
 
                         const MAX_SINK_DELTA:number = 10;
@@ -183,7 +194,7 @@ export class Player extends ninjas.Character
                             enemy.onHitByPlayer( this.facing );
 
                             // enable slow motion
-                            ninjas.Main.game.startSlowMotionTicks();
+                            Main.game.startSlowMotionTicks();
                         }
                     }
                 }
@@ -197,19 +208,19 @@ export class Player extends ninjas.Character
     private checkFallToDeath() : void
     {
         // check if the bottom outside is reached
-        if ( this.shape.body.position.y > ( ninjas.Main.game.level.height - ( this.shape.getHeight() / 2 ) ) )
+        if ( this.shape.body.position.y > ( Main.game.level.height - ( this.shape.getHeight() / 2 ) ) )
         {
             // flag player as dead if not done yet
             if ( !this.isDead )
             {
                 this.isDead = true;
 
-                ninjas.Debug.engine.log( 'Player has fallen to death' );
+                Debug.engine.log( 'Player has fallen to death' );
 
                 window.setTimeout(
                     () :void =>
                     {
-                        ninjas.Main.game.resetAndLaunchLevel( ninjas.LevelId.LEVEL_START );
+                        Main.game.resetAndLaunchLevel( LevelId.LEVEL_START );
                     },
                     250
                 );

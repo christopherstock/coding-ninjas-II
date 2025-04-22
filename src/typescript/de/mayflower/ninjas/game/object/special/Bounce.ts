@@ -1,10 +1,14 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {GameObject} from "../GameObject";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {DebugColor} from "../../../setting/SettingDebug";
+import {Main} from "../../../base/Main";
 
 /** ********************************************************************************************************************
 *   Represents a bounce.
 ***********************************************************************************************************************/
-export class Bounce extends ninjas.GameObject
+export class Bounce extends GameObject
 {
     /** The constraint that builds the turning point for the bounce. */
     private         readonly            constraint                      :matter.Constraint                  = null;
@@ -17,7 +21,7 @@ export class Bounce extends ninjas.GameObject
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number )
+    public constructor( shape:Shape, spriteTemplate:SpriteTemplate, x:number, y:number )
     {
         super
         (
@@ -35,14 +39,14 @@ export class Bounce extends ninjas.GameObject
                 stiffness: 0.01,
                 length: 0,
                 render: {
-                    strokeStyle: ninjas.DebugColor.COLOR_DEBUG_BOUNCE_JOINT,
+                    strokeStyle: DebugColor.COLOR_DEBUG_BOUNCE_JOINT,
                     lineWidth: 0.0,
                     visible:   false,
                 },
             }
         );
 
-        ninjas.Main.game.engine.matterJsSystem.addToWorld( this.constraint );
+        Main.game.engine.matterJsSystem.addToWorld( this.constraint );
     }
 
     /** ****************************************************************************************************************

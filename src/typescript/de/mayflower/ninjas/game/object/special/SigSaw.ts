@@ -1,10 +1,15 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {GameObject} from "../GameObject";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {DebugColor} from "../../../setting/SettingDebug";
+import {Main} from "../../../base/Main";
+import {MathUtil} from "../../../util/MathUtil";
 
 /** ********************************************************************************************************************
 *   Represents a sigsaw.
 ***********************************************************************************************************************/
-export class SigSaw extends ninjas.GameObject
+export class SigSaw extends GameObject
 {
     /** The constraint that builds the turning point for the sigsaw. */
     private     readonly            constraint                      :matter.Constraint                  = null;
@@ -22,8 +27,8 @@ export class SigSaw extends ninjas.GameObject
     *******************************************************************************************************************/
     public constructor
     (
-        shape            :ninjas.Shape,
-        spriteTemplate   :ninjas.SpriteTemplate,
+        shape            :Shape,
+        spriteTemplate   :SpriteTemplate,
         x                :number,
         y                :number,
         maxRotationSpeed :number
@@ -48,14 +53,14 @@ export class SigSaw extends ninjas.GameObject
                 damping: 0.0,
                 length: 0,
                 render: {
-                    strokeStyle: ninjas.DebugColor.COLOR_DEBUG_SIGSAW_JOINT,
+                    strokeStyle: DebugColor.COLOR_DEBUG_SIGSAW_JOINT,
                     lineWidth: 0.0,
                     visible:   false,
                 },
             }
         );
 
-        ninjas.Main.game.engine.matterJsSystem.addToWorld( this.constraint );
+        Main.game.engine.matterJsSystem.addToWorld( this.constraint );
     }
 
     /** ****************************************************************************************************************
@@ -76,8 +81,8 @@ export class SigSaw extends ninjas.GameObject
     {
         const clipAngle :number = 15.0;
 
-        const minAngle :number = ninjas.MathUtil.angleToRad( -clipAngle );
-        const maxAngle :number = ninjas.MathUtil.angleToRad( clipAngle  );
+        const minAngle :number = MathUtil.angleToRad( -clipAngle );
+        const maxAngle :number = MathUtil.angleToRad( clipAngle  );
 
         if ( this.shape.body.angle < minAngle )
         {

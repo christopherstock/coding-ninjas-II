@@ -1,4 +1,20 @@
-import * as ninjas from '../ninjas';
+import {CanvasSystem} from "./ui/CanvasSystem";
+import {ImageSystem} from "./io/ImageSystem";
+import {SoundSystem} from "./io/SoundSystem";
+import {MatterJsSystem} from "./MatterJsSystem";
+import {SiteSystem} from "./SiteSystem";
+import {KeySystem} from "./hid/KeySystem";
+import {PointerSystem} from "./hid/PointerSystem";
+import {Preloader} from "./Preloader";
+import {Game} from "../game/Game";
+import {Debug} from "../base/Debug";
+import {SoundData} from "../data/SoundData";
+import {SpriteTemplate} from "./ui/SpriteTemplate";
+import {SettingDebug} from "../setting/SettingDebug";
+import {SettingEngine} from "../setting/SettingEngine";
+import {SettingGame} from "../setting/SettingGame";
+import {ImageData} from "../data/ImageData";
+import {SpriteTemplateData} from "../data/SpriteTemplateData";
 
 require( 'fpsmeter' );
 
@@ -8,36 +24,36 @@ require( 'fpsmeter' );
 export class Engine
 {
     /** The canvas element. */
-    public              canvasSystem            :ninjas.CanvasSystem            = null;
+    public              canvasSystem            :CanvasSystem            = null;
     /** The image system. */
-    public              imageSystem             :ninjas.ImageSystem             = null;
+    public              imageSystem             :ImageSystem             = null;
     /** The soundSystem system. */
-    public              soundSystem             :ninjas.SoundSystem             = null;
+    public              soundSystem             :SoundSystem             = null;
     /** The matterJS engine. */
-    public              matterJsSystem          :ninjas.MatterJsSystem          = null;
+    public              matterJsSystem          :MatterJsSystem          = null;
     /** The site system. */
-    public              siteSystem              :ninjas.SiteSystem              = null;
+    public              siteSystem              :SiteSystem              = null;
     /** The custom key system. */
-    public              keySystem               :ninjas.KeySystem               = null;
+    public              keySystem               :KeySystem               = null;
     /** The custom pointer system. */
-    public              pointerSystem           :ninjas.PointerSystem           = null;
+    public              pointerSystem           :PointerSystem           = null;
     /** The FPS counter. */
     public              fpsMeter                :FPSMeter                       = null;
 
     /** The preloader instance. */
-    public  readonly    preloader               :ninjas.Preloader               = null;
+    public  readonly    preloader               :Preloader               = null;
     /** The parent game instance. */
-    private readonly    game                    :ninjas.Game                    = null;
+    private readonly    game                    :Game                    = null;
 
     /** ***************************************************************************************************************
     *   Creates a new game engine.
     *
     *   @param game The parent game instance that uses this game engine.
     *******************************************************************************************************************/
-    public constructor( game:ninjas.Game )
+    public constructor( game:Game )
     {
         this.game      = game;
-        this.preloader = new ninjas.Preloader(
+        this.preloader = new Preloader(
             this,
             () =>
             {
@@ -59,8 +75,8 @@ export class Engine
     *******************************************************************************************************************/
     public initCanvas() : void
     {
-        ninjas.Debug.init.log( 'Initing canvas system' );
-        this.canvasSystem = new ninjas.CanvasSystem();
+        Debug.init.log( 'Initing canvas system' );
+        this.canvasSystem = new CanvasSystem();
         this.canvasSystem.updateDimensions();
     }
 
@@ -69,11 +85,11 @@ export class Engine
     *******************************************************************************************************************/
     public initImageSystem() : void
     {
-        ninjas.Debug.init.log( 'Initing image system' );
-        this.imageSystem = new ninjas.ImageSystem
+        Debug.init.log( 'Initing image system' );
+        this.imageSystem = new ImageSystem
         (
-            ninjas.ImageData.FILE_NAMES,
-            ninjas.SpriteTemplate.getAllImagesToMirror(),
+            ImageData.FILE_NAMES,
+            SpriteTemplateData.getAllImagesToMirror(),
             () => { this.onImagesLoaded(); }
         );
         this.imageSystem.loadImages();
@@ -84,7 +100,7 @@ export class Engine
     *******************************************************************************************************************/
     public initWindowResizeHandler() : void
     {
-        ninjas.Debug.init.log( 'Initing window resize handler' );
+        Debug.init.log( 'Initing window resize handler' );
 
         window.onresize = ( event:Event ) :void =>
         {
@@ -104,7 +120,7 @@ export class Engine
     *******************************************************************************************************************/
     public onPreloaderInitComplete() : void
     {
-        ninjas.Debug.init.log( 'Preloader initialization complete. Preloading all contents now.' );
+        Debug.init.log( 'Preloader initialization complete. Preloading all contents now.' );
         this.preloader.setLoadingPercentage( 5 );
 
         this.initImageSystem();
@@ -115,9 +131,9 @@ export class Engine
     *******************************************************************************************************************/
     public initMatterJS() : void
     {
-        ninjas.Debug.init.log( 'Initing 2D physics engine' );
+        Debug.init.log( 'Initing 2D physics engine' );
 
-        this.matterJsSystem = new ninjas.MatterJsSystem
+        this.matterJsSystem = new MatterJsSystem
         (
             this.canvasSystem,
             ( renderContext:CanvasRenderingContext2D ) => { this.game.paintHUD(  renderContext ); },
@@ -131,13 +147,13 @@ export class Engine
     *******************************************************************************************************************/
     private onImagesLoaded() : void
     {
-        ninjas.SpriteTemplate.assignAllImageSizes( this.imageSystem );
+        SpriteTemplateData.assignAllImageSizes( this.imageSystem );
 
         this.preloader.setLoadingPercentage( 80 );
 
-        ninjas.Debug.init.log( 'Initing sound system' );
-        this.soundSystem = new ninjas.SoundSystem(
-            ninjas.SoundData.FILE_NAMES,
+        Debug.init.log( 'Initing sound system' );
+        this.soundSystem = new SoundSystem(
+            SoundData.FILE_NAMES,
             () => { this.onSoundsLoaded(); }
         );
         this.soundSystem.loadSounds();
@@ -151,25 +167,25 @@ export class Engine
         this.preloader.setLoadingPercentage( 90 );
 
         // init site system
-        ninjas.Debug.init.log( 'Initing site system' );
-        this.siteSystem = new ninjas.SiteSystem();
+        Debug.init.log( 'Initing site system' );
+        this.siteSystem = new SiteSystem();
 
         // init key and pointer system
-        ninjas.Debug.init.log( 'Initing key system' );
-        this.keySystem = new ninjas.KeySystem();
-        ninjas.Debug.init.log( 'Initing pointer system' );
-        this.pointerSystem = new ninjas.PointerSystem();
+        Debug.init.log( 'Initing key system' );
+        this.keySystem = new KeySystem();
+        Debug.init.log( 'Initing pointer system' );
+        this.pointerSystem = new PointerSystem();
 
         // init window blur handler
         this.initWindowBlurHandler();
 
         // init FPS-counter
-        if ( ninjas.SettingDebug.DEBUG_MODE )
+        if ( SettingDebug.DEBUG_MODE )
         {
             this.initFpsCounter();
         }
 
-        ninjas.Debug.init.log( 'Initing game engine completed' );
+        Debug.init.log( 'Initing game engine completed' );
 
         this.preloader.setLoadingPercentage( 100 );
 
@@ -177,7 +193,7 @@ export class Engine
         window.setTimeout
         (
             () => { this.game.start(); },
-            ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : ninjas.SettingEngine.PRELOADER_DELAY )
+            ( SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY )
         );
     }
 
@@ -186,11 +202,11 @@ export class Engine
     *******************************************************************************************************************/
     private initWindowBlurHandler() : void
     {
-        ninjas.Debug.init.log( 'Initing window blur handler' );
+        Debug.init.log( 'Initing window blur handler' );
 
         window.onblur = ( event:Event ) :void =>
         {
-            ninjas.Debug.canvas.log( 'Detected window focus lost. Releasing all keys.' );
+            Debug.canvas.log( 'Detected window focus lost. Releasing all keys.' );
 
             this.keySystem.releaseAllKeys();
         };
@@ -201,7 +217,7 @@ export class Engine
     *******************************************************************************************************************/
     private initFpsCounter() : void
     {
-        ninjas.Debug.init.log( 'Initing FPS counter' );
+        Debug.init.log( 'Initing FPS counter' );
 
         this.fpsMeter = new FPSMeter(
             null,
@@ -211,8 +227,8 @@ export class Engine
                 position: 'absolute',
                 zIndex:   10,
                 top:      'auto',
-                right:    String( ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER ) + 'px',
-                bottom:   String( ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER ) + 'px',
+                right:    String( SettingGame.SITE_PANEL_BORDER_SIZE_OUTER ) + 'px',
+                bottom:   String( SettingGame.SITE_PANEL_BORDER_SIZE_OUTER ) + 'px',
                 left:     'auto',
                 margin:   '0',
                 heat:     1,

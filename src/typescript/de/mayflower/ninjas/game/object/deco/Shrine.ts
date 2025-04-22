@@ -1,17 +1,20 @@
-import * as ninjas from '../../../ninjas';
+import {Decoration} from "./Decoration";
+import {SiteContent} from "../../../site/SiteContentSystem";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding shrine decoration.
 ***********************************************************************************************************************/
-export class Shrine extends ninjas.Decoration
+export class Shrine extends Decoration
 {
     /** The site content this shrine is connected to. */
-    public                      content                 :ninjas.SiteContent                 = null;
+    public                      content                 :SiteContent                 = null;
 
     /** The decoration of the open book for this shrine. */
-    private     readonly        decoBookOpen            :ninjas.Decoration                  = null;
+    private     readonly        decoBookOpen            :Decoration                  = null;
     /** The decoration of the closed book for this shrine. */
-    private     readonly        decoBookClosed          :ninjas.Decoration                  = null;
+    private     readonly        decoBookClosed          :Decoration                  = null;
 
     /** ****************************************************************************************************************
     *   Creates a new Shrine.
@@ -26,13 +29,13 @@ export class Shrine extends ninjas.Decoration
     *******************************************************************************************************************/
     public constructor
     (
-        shape          :ninjas.Shape,
-        spriteTemplate :ninjas.SpriteTemplate,
+        shape          :Shape,
+        spriteTemplate :SpriteTemplate,
         x              :number,
         y              :number,
-        content        :ninjas.SiteContent,
-        decoBookOpen   :ninjas.Decoration,
-        decoBookClosed :ninjas.Decoration
+        content        :SiteContent,
+        decoBookOpen   :Decoration,
+        decoBookClosed :Decoration
     )
     {
         super

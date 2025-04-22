@@ -1,4 +1,4 @@
-import * as ninjas from '../../../ninjas';
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
 
 /** ********************************************************************************************************************
 *   Represents a character.
@@ -6,33 +6,33 @@ import * as ninjas from '../../../ninjas';
 export class CharacterSpriteSet
 {
     /** The sprite to use for standing left. */
-    public      readonly            spriteStandLeft                     :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteStandLeft                     :SpriteTemplate              = null;
     /** The sprite to use for standing right. */
-    public      readonly            spriteStandRight                    :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteStandRight                    :SpriteTemplate              = null;
     /** The sprite to use for walking left. */
-    public      readonly            spriteWalkLeft                      :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteWalkLeft                      :SpriteTemplate              = null;
     /** The sprite to use for walking right. */
-    public      readonly            spriteWalkRight                     :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteWalkRight                     :SpriteTemplate              = null;
     /** The sprite to use for gliding left. */
-    public      readonly            spriteGlideLeft                     :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteGlideLeft                     :SpriteTemplate              = null;
     /** The sprite to use for gliding right. */
-    public      readonly            spriteGlideRight                    :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteGlideRight                    :SpriteTemplate              = null;
     /** The sprite to use for falling left. */
-    public      readonly            spriteFallLeft                      :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteFallLeft                      :SpriteTemplate              = null;
     /** The sprite to use for falling right. */
-    public      readonly            spriteFallRight                     :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteFallRight                     :SpriteTemplate              = null;
     /** The sprite to use for jumping left. */
-    public      readonly            spriteJumpLeft                      :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteJumpLeft                      :SpriteTemplate              = null;
     /** The sprite to use for jumping right. */
-    public      readonly            spriteJumpRight                     :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteJumpRight                     :SpriteTemplate              = null;
     /** The sprite to use for dying left. */
-    public      readonly            spriteDieLeft                       :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteDieLeft                       :SpriteTemplate              = null;
     /** The sprite to use for dying right. */
-    public      readonly            spriteDieRight                      :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteDieRight                      :SpriteTemplate              = null;
     /** The sprite to use for dying left. */
-    public      readonly            spriteAttackLeft                    :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteAttackLeft                    :SpriteTemplate              = null;
     /** The sprite to use for dying right. */
-    public      readonly            spriteAttackRight                   :ninjas.SpriteTemplate              = null;
+    public      readonly            spriteAttackRight                   :SpriteTemplate              = null;
 
     /** ****************************************************************************************************************
     *   Creates a character sprite set.
@@ -54,20 +54,20 @@ export class CharacterSpriteSet
     *******************************************************************************************************************/
     public constructor
     (
-        spriteStandLeft   :ninjas.SpriteTemplate,
-        spriteStandRight  :ninjas.SpriteTemplate,
-        spriteWalkLeft    :ninjas.SpriteTemplate,
-        spriteWalkRight   :ninjas.SpriteTemplate,
-        spriteGlideLeft   :ninjas.SpriteTemplate,
-        spriteGlideRight  :ninjas.SpriteTemplate,
-        spriteFallLeft    :ninjas.SpriteTemplate,
-        spriteFallRight   :ninjas.SpriteTemplate,
-        spriteJumpLeft    :ninjas.SpriteTemplate,
-        spriteJumpRight   :ninjas.SpriteTemplate,
-        spriteDieLeft     :ninjas.SpriteTemplate,
-        spriteDieRight    :ninjas.SpriteTemplate,
-        spriteAttackLeft  :ninjas.SpriteTemplate,
-        spriteAttackRight :ninjas.SpriteTemplate
+        spriteStandLeft   :SpriteTemplate,
+        spriteStandRight  :SpriteTemplate,
+        spriteWalkLeft    :SpriteTemplate,
+        spriteWalkRight   :SpriteTemplate,
+        spriteGlideLeft   :SpriteTemplate,
+        spriteGlideRight  :SpriteTemplate,
+        spriteFallLeft    :SpriteTemplate,
+        spriteFallRight   :SpriteTemplate,
+        spriteJumpLeft    :SpriteTemplate,
+        spriteJumpRight   :SpriteTemplate,
+        spriteDieLeft     :SpriteTemplate,
+        spriteDieRight    :SpriteTemplate,
+        spriteAttackLeft  :SpriteTemplate,
+        spriteAttackRight :SpriteTemplate
     )
     {
         this.spriteStandLeft   = spriteStandLeft;

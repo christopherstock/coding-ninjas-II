@@ -1,5 +1,6 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../ninjas';
+import {Game} from "../../game/Game";
+import {SettingEngine} from "../../setting/SettingEngine";
 
 /** ********************************************************************************************************************
 *   Manages the camera that calculates the scrolling amounts.
@@ -128,14 +129,14 @@ export class Camera
     /** ****************************************************************************************************************
     *   Resets the camera targets and offsets to the current player position without buffering.
     *******************************************************************************************************************/
-    public reset( game:ninjas.Game )  : void
+    public reset( game:Game )  : void
     {
         this.assignTargets
         (
             game.level.player.shape.body.position.x,
             game.level.player.shape.body.position.y,
             game.engine.siteSystem.getCameraTargetX(),
-            game.engine.canvasSystem.getHeight() * ninjas.SettingEngine.CAMERA_RATIO_Y
+            game.engine.canvasSystem.getHeight() * SettingEngine.CAMERA_RATIO_Y
         );
 
         this.offsetX = this.targetX;

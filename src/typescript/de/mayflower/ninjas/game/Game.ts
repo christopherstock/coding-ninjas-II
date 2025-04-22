@@ -1,6 +1,18 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../ninjas';
-import {LevelId} from '../ninjas';
+import {Engine} from "../engine/Engine";
+import {Camera} from "../engine/ui/Camera";
+import {Level, LevelId} from "./level/Level";
+import {Debug} from "../base/Debug";
+import {SettingGame} from "../setting/SettingGame";
+import {SettingDebug} from "../setting/SettingDebug";
+import {SettingEngine} from "../setting/SettingEngine";
+import {SoundData} from "../data/SoundData";
+import {LevelStart} from "../data/level/LevelStart";
+import {LevelHut} from "../data/level/LevelHut";
+import {Main} from "../base/Main";
+import {KeyData} from "../data/KeyData";
+import {DrawUtil} from "../util/DrawUtil";
+import {CharacterFacing} from "./object/being/CharacterFacing";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -8,11 +20,11 @@ import {LevelId} from '../ninjas';
 export class Game
 {
     /** The game engine. */
-    public      engine                  :ninjas.Engine                  = null;
+    public      engine                  :Engine                  = null;
     /** The custom camera system. */
-    public      camera                  :ninjas.Camera                  = null;
+    public      camera                  :Camera                  = null;
     /** The custom level. */
-    public      level                   :ninjas.Level                   = null;
+    public      level                   :Level                   = null;
     /** The currently assigned background music. */
     private     bgMusic                 :HTMLAudioElement               = null;
     /** The remaining ticks for the blend panel to disappear. */
@@ -26,13 +38,13 @@ export class Game
     public launch() : void
     {
         // create the game engine
-        this.engine = new ninjas.Engine( this );
+        this.engine = new Engine( this );
 
         // start the preloader after a short delay. this runs smoother for the user
         window.setTimeout
         (
             () => { this.engine.launch(); },
-            ( ninjas.SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : ninjas.SettingEngine.PRELOADER_DELAY )
+            ( SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY )
         );
     }
 
@@ -41,20 +53,20 @@ export class Game
     *******************************************************************************************************************/
     public start() : void
     {
-        ninjas.Debug.init.log( 'Starting the game loop' );
-        ninjas.Debug.init.log();
+        Debug.init.log( 'Starting the game loop' );
+        Debug.init.log();
 
         // set the number of blend panel ticks
-        this.blendPanelTicks = ninjas.SettingGame.BLEND_PANEL_TICKS;
+        this.blendPanelTicks = SettingGame.BLEND_PANEL_TICKS;
 
         // init matter.js engine
         this.engine.initMatterJS();
 
         // play bg sound
-        this.bgMusic = this.engine.soundSystem.playSound( ninjas.SoundData.BG_CHINESE, true );
+        this.bgMusic = this.engine.soundSystem.playSound( SoundData.BG_CHINESE, true );
 
         // launch initial level
-        this.resetAndLaunchLevel( ninjas.LevelId.LEVEL_START );
+        this.resetAndLaunchLevel( LevelId.LEVEL_START );
 
         // update camera bounds
         this.updateAndAssignCamera();
@@ -76,7 +88,7 @@ export class Game
     public paintHUD( context:CanvasRenderingContext2D ) : void
     {
         // paint blend overlay
-        if ( !ninjas.SettingDebug.DISABLE_BLEND_PANEL )
+        if ( !SettingDebug.DISABLE_BLEND_PANEL )
         {
             this.paintBlendPanel( context );
         }
@@ -108,11 +120,11 @@ export class Game
     *******************************************************************************************************************/
     public resetCamera() : void
     {
-        this.camera = new ninjas.Camera(
-            ninjas.SettingEngine.CAMERA_MOVING_SPEED_X,
-            ninjas.SettingEngine.CAMERA_MOVING_SPEED_Y,
-            ninjas.SettingEngine.CAMERA_MOVING_MINIMUM,
-            ninjas.SettingEngine.CAMERA_MOVING_MAXIMUM,
+        this.camera = new Camera(
+            SettingEngine.CAMERA_MOVING_SPEED_X,
+            SettingEngine.CAMERA_MOVING_SPEED_Y,
+            SettingEngine.CAMERA_MOVING_MINIMUM,
+            SettingEngine.CAMERA_MOVING_MAXIMUM,
             this.level.width,
             this.level.height,
             this.engine.canvasSystem.getWidth(),
@@ -128,22 +140,22 @@ export class Game
     *******************************************************************************************************************/
     public startSlowMotionTicks() : void
     {
-        ninjas.Debug.engine.log(
+        Debug.engine.log(
             'Engine - setSlowMotion for ['
-            + String( ninjas.SettingEngine.ENGINE_SLOW_MOTION_TICKS )
+            + String( SettingEngine.ENGINE_SLOW_MOTION_TICKS )
             + '] ticks'
         );
 
-        this.slowMotionTicks = ninjas.SettingEngine.ENGINE_SLOW_MOTION_TICKS;
+        this.slowMotionTicks = SettingEngine.ENGINE_SLOW_MOTION_TICKS;
     }
 
     /** ****************************************************************************************************************
     *   Inits the level.
     *******************************************************************************************************************/
     public resetAndLaunchLevel(
-        levelId:ninjas.LevelId,
+        levelId:LevelId,
         playerStartX: number = null,
-        playerInitialFacing: ninjas.CharacterFacing = null
+        playerInitialFacing: CharacterFacing = null
     ) : void
     {
         // reset slow motion ticks
@@ -156,13 +168,13 @@ export class Game
         this.level = null;
         switch (levelId) {
             case LevelId.LEVEL_START:
-                this.level = new ninjas.LevelStart();
+                this.level = new LevelStart();
                 break;
             case LevelId.LEVEL_HUT:
-                this.level = new ninjas.LevelHut();
+                this.level = new LevelHut();
                 break;
             default:
-                this.level = new ninjas.LevelStart();
+                this.level = new LevelStart();
                 break;
         }
 
@@ -182,7 +194,7 @@ export class Game
         this.resetCamera();
 
         // reset keys
-        ninjas.Main.game.engine.keySystem.releaseAllKeys();
+        Main.game.engine.keySystem.releaseAllKeys();
     }
 
     /** ****************************************************************************************************************
@@ -191,7 +203,7 @@ export class Game
     private tickGame() : void
     {
         // start fpsMetet tick
-        if ( ninjas.SettingDebug.DEBUG_MODE )
+        if ( SettingDebug.DEBUG_MODE )
         {
             this.engine.fpsMeter.tickStart();
         }
@@ -207,7 +219,7 @@ export class Game
         }
 
         // stop fpsMeter tick
-        if ( ninjas.SettingDebug.DEBUG_MODE )
+        if ( SettingDebug.DEBUG_MODE )
         {
             this.engine.fpsMeter.tick();
         }
@@ -244,30 +256,30 @@ export class Game
     *******************************************************************************************************************/
     private handleMenuKey() : void
     {
-        if ( ninjas.SettingDebug.DEBUG_MODE )
+        if ( SettingDebug.DEBUG_MODE )
         {
-            if ( this.engine.keySystem.isPressed( ninjas.KeyData.KEY_1 ) )
+            if ( this.engine.keySystem.isPressed( KeyData.KEY_1 ) )
             {
-                this.engine.keySystem.setNeedsRelease( ninjas.KeyData.KEY_1 );
+                this.engine.keySystem.setNeedsRelease( KeyData.KEY_1 );
 
-                ninjas.Debug.init.log( 'Resetting and switching to level 1' );
-                this.resetAndLaunchLevel( ninjas.LevelId.LEVEL_START );
+                Debug.init.log( 'Resetting and switching to level 1' );
+                this.resetAndLaunchLevel( LevelId.LEVEL_START );
             }
 
-            if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.KeyData.KEY_2 ) )
+            if ( Main.game.engine.keySystem.isPressed( KeyData.KEY_2 ) )
             {
-                ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.KeyData.KEY_2 );
+                Main.game.engine.keySystem.setNeedsRelease( KeyData.KEY_2 );
 
-                ninjas.Debug.init.log( 'Resetting and switching to level 2' );
-                this.resetAndLaunchLevel( ninjas.LevelId.LEVEL_HUT );
+                Debug.init.log( 'Resetting and switching to level 2' );
+                this.resetAndLaunchLevel( LevelId.LEVEL_HUT );
             }
 /*
-            if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_3 ) )
+            if ( Main.game.engine.keySystem.isPressed( Key.KEY_3 ) )
             {
-                ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.Key.KEY_3 );
+                Main.game.engine.keySystem.setNeedsRelease( Key.KEY_3 );
 
-                ninjas.Debug.init.log( 'Resetting and switching to level 3' );
-                this.resetAndLaunchLevel( new ninjas.LevelEnchantedWoods() );
+                Debug.init.log( 'Resetting and switching to level 3' );
+                this.resetAndLaunchLevel( new LevelEnchantedWoods() );
             }
             */
         }
@@ -282,7 +294,7 @@ export class Game
     {
         if ( this.blendPanelTicks > 0 )
         {
-            ninjas.DrawUtil.fillRect
+            DrawUtil.fillRect
             (
                 context,
                 0,
@@ -290,7 +302,7 @@ export class Game
                 this.engine.canvasSystem.getPhysicalWidth(),
                 this.engine.canvasSystem.getPhysicalHeight(),
                 'rgba( 0, 0, 0, '
-                + String( this.blendPanelTicks / ninjas.SettingGame.BLEND_PANEL_TICKS )
+                + String( this.blendPanelTicks / SettingGame.BLEND_PANEL_TICKS )
                 + ' )'
             );
         }
@@ -307,7 +319,7 @@ export class Game
             this.level.player.shape.body.position.y,
             this.level.player.collidesBottom,
             this.engine.siteSystem.getCameraTargetX(),
-            this.engine.canvasSystem.getHeight() * ninjas.SettingEngine.CAMERA_RATIO_Y
+            this.engine.canvasSystem.getHeight() * SettingEngine.CAMERA_RATIO_Y
         );
         this.engine.matterJsSystem.setRenderBounds( cameraBounds );
     }

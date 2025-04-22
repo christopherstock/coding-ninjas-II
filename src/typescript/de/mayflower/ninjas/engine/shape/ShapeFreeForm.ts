@@ -1,10 +1,12 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../ninjas';
+import {Shape, StaticShape} from "./Shape";
+import {DebugColor} from "../../setting/SettingDebug";
+import {BodyDensity, BodyFriction, BodyRestitution} from "../../setting/SettingMatter";
 
 /** ********************************************************************************************************************
 *   A free form shape for a game object.
 ***********************************************************************************************************************/
-export class ShapeFreeForm extends ninjas.Shape
+export class ShapeFreeForm extends Shape
 {
     /** All vertices that build the free form. */
     public              vertices            :matter.Vector[]        = null;
@@ -28,12 +30,12 @@ export class ShapeFreeForm extends ninjas.Shape
     public constructor
     (
         vertices    :matter.Vector[],
-        debugColor  :ninjas.DebugColor,
-        isStatic    :ninjas.StaticShape,
+        debugColor  :DebugColor,
+        isStatic    :StaticShape,
         angle       :number,
-        friction    :ninjas.BodyFriction,
-        density     :ninjas.BodyDensity,
-        restitution :ninjas.BodyRestitution
+        friction    :BodyFriction,
+        density     :BodyDensity,
+        restitution :BodyRestitution
     )
     {
         super( debugColor, isStatic, angle, friction, density, restitution );

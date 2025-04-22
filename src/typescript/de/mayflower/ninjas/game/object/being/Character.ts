@@ -1,24 +1,23 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
-
-/** ********************************************************************************************************************
-*   Represents a character's facing direction.
-***********************************************************************************************************************/
-export enum CharacterFacing
-{
-    /** Facing left. */
-    LEFT,
-    /** Facing right. */
-    RIGHT,
-}
+import {GameObject} from "../GameObject";
+import {CharacterSpriteSet} from "./CharacterSpriteSet";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {SettingGame} from "../../../setting/SettingGame";
+import {Main} from "../../../base/Main";
+import {Debug} from "../../../base/Debug";
+import {Player} from "./Player";
+import {BodyFrictionAir} from "../../../setting/SettingMatter";
+import {ShapeRectangle} from "../../../engine/shape/ShapeRectangle";
+import {CharacterFacing} from "./CharacterFacing";
 
 /** ********************************************************************************************************************
 *   Represents a character.
 ***********************************************************************************************************************/
-export abstract class Character extends ninjas.GameObject
+export abstract class Character extends GameObject
 {
     /** The facing direction for this character. */
-    public                          facing                              :ninjas.CharacterFacing             = null;
+    public                          facing                              :CharacterFacing             = null;
     /** Flags if the character currently collides with the bottom sensor. */
     public                          collidesBottom                      :boolean                            = false;
 
@@ -46,7 +45,7 @@ export abstract class Character extends ninjas.GameObject
     private     readonly            jumpPower                           :number                             = 0.0;
 
     /** The sprite set to use for this character. */
-    private     readonly            spriteSet                           :ninjas.CharacterSpriteSet          = null;
+    private     readonly            spriteSet                           :CharacterSpriteSet          = null;
 
     /** ****************************************************************************************************************
     *   Creates a new character.
@@ -62,15 +61,15 @@ export abstract class Character extends ninjas.GameObject
     *******************************************************************************************************************/
     protected constructor
     (
-        shape          :ninjas.Shape,
-        spriteTemplate :ninjas.SpriteTemplate,
+        shape          :Shape,
+        spriteTemplate :SpriteTemplate,
         x              :number,
         y              :number,
-        facing         :ninjas.CharacterFacing,
+        facing         :CharacterFacing,
         speedMove      :number,
         jumpPower      :number,
 
-        spriteSet        :ninjas.CharacterSpriteSet
+        spriteSet        :CharacterSpriteSet
     )
     {
         super
@@ -126,14 +125,14 @@ export abstract class Character extends ninjas.GameObject
     {
         // the bounds of the smash depend on character bound and facing direction
         const attackRange :number = (
-            this.facing === ninjas.CharacterFacing.LEFT
-                ? -ninjas.SettingGame.PLAYER_ATTACK_RANGE
-                : ninjas.SettingGame.PLAYER_ATTACK_RANGE
+            this.facing === CharacterFacing.LEFT
+                ? -SettingGame.PLAYER_ATTACK_RANGE
+                : SettingGame.PLAYER_ATTACK_RANGE
         );
         const damageForce :number = (
-            this.facing === ninjas.CharacterFacing.LEFT
-                ? -ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
-                : ninjas.SettingGame.PLAYER_ATTACK_DAMAGE
+            this.facing === CharacterFacing.LEFT
+                ? -SettingGame.PLAYER_ATTACK_DAMAGE
+                : SettingGame.PLAYER_ATTACK_DAMAGE
         );
         const smashBounds :matter.Bounds = matter.Bounds.create(
             matter.Vertices.create(
@@ -152,11 +151,11 @@ export abstract class Character extends ninjas.GameObject
         );
 
         // check all movables
-        for ( const movable of ninjas.Main.game.level.movables )
+        for ( const movable of Main.game.level.movables )
         {
             if ( matter.Query.region( [ movable.shape.body ], smashBounds ).length > 0 )
             {
-                ninjas.Debug.character.log( 'Character hits a level object' );
+                Debug.character.log( 'Character hits a level object' );
 
                 matter.Body.setVelocity
                 (
@@ -167,20 +166,20 @@ export abstract class Character extends ninjas.GameObject
         }
 
         // check all enemies
-        for ( const enemy of ninjas.Main.game.level.enemies )
+        for ( const enemy of Main.game.level.enemies )
         {
             if ( matter.Query.region( [ enemy.shape.body ], smashBounds ).length > 0 )
             {
                 // skip dead enemies
                 if ( enemy.isAlive() && !enemy.isFriendly() )
                 {
-                    ninjas.Debug.character.log( 'Character hits an enemy' );
+                    Debug.character.log( 'Character hits an enemy' );
 
                     // hit enemy
                     enemy.onHitByPlayer( this.facing );
 
                     // enable slow motion
-                    ninjas.Main.game.startSlowMotionTicks();
+                    Main.game.startSlowMotionTicks();
                 }
             }
         }
@@ -191,15 +190,15 @@ export abstract class Character extends ninjas.GameObject
     *
     *   @param punchBackDirection The direction in which to punch back.
     *******************************************************************************************************************/
-    public receivePunchBack( punchBackDirection:ninjas.CharacterFacing ) : void
+    public receivePunchBack( punchBackDirection:CharacterFacing ) : void
     {
-        const forceX:number = ( this instanceof ninjas.Player ? 7.5  : 10.0 );
-        const forceY:number = ( this instanceof ninjas.Player ? 10.0 : 32.5 );
+        const forceX:number = ( this instanceof Player ? 7.5  : 10.0 );
+        const forceY:number = ( this instanceof Player ? 10.0 : 32.5 );
 
         // apply punch-back force
         switch ( punchBackDirection )
         {
-            case ninjas.CharacterFacing.LEFT:
+            case CharacterFacing.LEFT:
             {
                 matter.Body.setVelocity
                 (
@@ -209,7 +208,7 @@ export abstract class Character extends ninjas.GameObject
                 break;
             }
 
-            case ninjas.CharacterFacing.RIGHT:
+            case CharacterFacing.RIGHT:
             {
                 matter.Body.setVelocity
                 (
@@ -268,7 +267,7 @@ export abstract class Character extends ninjas.GameObject
     {
         matter.Body.translate( this.shape.body, matter.Vector.create( -this.speedMove, 0 ) );
         this.movesLeft = true;
-        this.facing    = ninjas.CharacterFacing.LEFT;
+        this.facing    = CharacterFacing.LEFT;
 
         // check in-air collision
         if ( !this.collidesBottom && this.isCollidingObstacle() )
@@ -285,7 +284,7 @@ export abstract class Character extends ninjas.GameObject
     {
         matter.Body.translate( this.shape.body, matter.Vector.create( this.speedMove, 0 ) );
         this.movesRight = true;
-        this.facing     = ninjas.CharacterFacing.RIGHT;
+        this.facing     = CharacterFacing.RIGHT;
 
         // check in-air collision
         if ( !this.collidesBottom && this.isCollidingObstacle() )
@@ -310,14 +309,14 @@ export abstract class Character extends ninjas.GameObject
 
     protected requestGliding() : void
     {
-        ninjas.Debug.character.log( 'Character requests gliding' );
+        Debug.character.log( 'Character requests gliding' );
 
         this.glidingRequest = true;
     }
 
     protected requestInteraction() : void
     {
-        ninjas.Debug.character.log( 'Character requests gliding' );
+        Debug.character.log( 'Character requests gliding' );
 
         this.interactionRequest = true;
     }
@@ -327,7 +326,7 @@ export abstract class Character extends ninjas.GameObject
     *******************************************************************************************************************/
     protected attack() : void
     {
-        ninjas.Debug.character.log( 'Character requests attack' );
+        Debug.character.log( 'Character requests attack' );
 
         this.attackingTicks = 15;
     }
@@ -361,9 +360,9 @@ export abstract class Character extends ninjas.GameObject
     *******************************************************************************************************************/
     protected openParachute() : void
     {
-        ninjas.Debug.character.log( 'Character opens parachute' );
+        Debug.character.log( 'Character opens parachute' );
 
-        this.shape.body.frictionAir = ninjas.BodyFrictionAir.GLIDING;
+        this.shape.body.frictionAir = BodyFrictionAir.GLIDING;
         this.isGliding = true;
     }
 
@@ -374,7 +373,7 @@ export abstract class Character extends ninjas.GameObject
     {
         if ( this.isDying )
         {
-            if ( this.facing === ninjas.CharacterFacing.LEFT )
+            if ( this.facing === CharacterFacing.LEFT )
             {
                 this.setSprite( this.spriteSet.spriteDieLeft );
             }
@@ -387,7 +386,7 @@ export abstract class Character extends ninjas.GameObject
         {
             if ( this.isGliding )
             {
-                if ( this.facing === ninjas.CharacterFacing.LEFT )
+                if ( this.facing === CharacterFacing.LEFT )
                 {
                     this.setSprite( this.spriteSet.spriteGlideLeft );
                 }
@@ -398,7 +397,7 @@ export abstract class Character extends ninjas.GameObject
             }
             else
             {
-                if ( this.facing === ninjas.CharacterFacing.LEFT )
+                if ( this.facing === CharacterFacing.LEFT )
                 {
                     this.setSprite( this.spriteSet.spriteFallLeft );
                 }
@@ -410,7 +409,7 @@ export abstract class Character extends ninjas.GameObject
         }
         else if ( this.isJumping() )
         {
-            if ( this.facing === ninjas.CharacterFacing.LEFT )
+            if ( this.facing === CharacterFacing.LEFT )
             {
                 this.setSprite( this.spriteSet.spriteJumpLeft );
             }
@@ -421,7 +420,7 @@ export abstract class Character extends ninjas.GameObject
         }
         else if ( this.isAttacking() )
         {
-            if ( this.facing === ninjas.CharacterFacing.LEFT )
+            if ( this.facing === CharacterFacing.LEFT )
             {
                 this.setSprite( this.spriteSet.spriteAttackLeft );
             }
@@ -442,7 +441,7 @@ export abstract class Character extends ninjas.GameObject
             }
             else
             {
-                if ( this.facing === ninjas.CharacterFacing.LEFT )
+                if ( this.facing === CharacterFacing.LEFT )
                 {
                     this.setSprite( this.spriteSet.spriteStandLeft );
                 }
@@ -459,9 +458,9 @@ export abstract class Character extends ninjas.GameObject
     *******************************************************************************************************************/
     private closeParachute() : void
     {
-        ninjas.Debug.character.log( 'Character closes parachute' );
+        Debug.character.log( 'Character closes parachute' );
 
-        this.shape.body.frictionAir = ninjas.BodyFrictionAir.DEFAULT;
+        this.shape.body.frictionAir = BodyFrictionAir.DEFAULT;
         this.isGliding = false;
     }
 
@@ -474,10 +473,10 @@ export abstract class Character extends ninjas.GameObject
     {
         const bodiesToCheck:matter.Body[] = [];
 
-        for ( const gameObject of ninjas.Main.game.level.obstacles )
+        for ( const gameObject of Main.game.level.obstacles )
         {
             // only consider rectangular obstacles
-            if ( gameObject.shape instanceof ninjas.ShapeRectangle )
+            if ( gameObject.shape instanceof ShapeRectangle )
             {
                 bodiesToCheck.push( gameObject.shape.body );
             }
@@ -498,23 +497,23 @@ export abstract class Character extends ninjas.GameObject
     {
         const bodiesToCheck:matter.Body[] = [];
 
-        for ( const movable of ninjas.Main.game.level.movables )
+        for ( const movable of Main.game.level.movables )
         {
             bodiesToCheck.push( movable.shape.body );
         }
-        for ( const obstacle of ninjas.Main.game.level.obstacles )
+        for ( const obstacle of Main.game.level.obstacles )
         {
             bodiesToCheck.push( obstacle.shape.body );
         }
-        for ( const sigsaw of ninjas.Main.game.level.sigsaws )
+        for ( const sigsaw of Main.game.level.sigsaws )
         {
             bodiesToCheck.push( sigsaw.shape.body );
         }
-        for ( const bounce of ninjas.Main.game.level.bounces )
+        for ( const bounce of Main.game.level.bounces )
         {
             bodiesToCheck.push( bounce.shape.body );
         }
-        for ( const platform of ninjas.Main.game.level.platforms )
+        for ( const platform of Main.game.level.platforms )
         {
             bodiesToCheck.push( platform.shape.body );
             bodiesToCheck.push( platform.frictionShape.body );
@@ -522,7 +521,7 @@ export abstract class Character extends ninjas.GameObject
 
         /*
         // ignore enemies!
-        for ( const gameObject of ninjas.Main.game.level.enemies )
+        for ( const gameObject of Main.game.level.enemies )
         {
             bodiesToCheck.push( gameObject.shape.body );
         }
@@ -584,7 +583,7 @@ export abstract class Character extends ninjas.GameObject
     {
         if (this.interactionRequest)
         {
-            for ( const door of ninjas.Main.game.level.doors )
+            for ( const door of Main.game.level.doors )
             {
                 if (door.checkPlayerInteraction()) {
 

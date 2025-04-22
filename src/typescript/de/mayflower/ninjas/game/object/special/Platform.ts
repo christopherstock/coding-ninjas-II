@@ -1,10 +1,15 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {GameObject} from "../GameObject";
+import {ShapeRectangle} from "../../../engine/shape/ShapeRectangle";
+import {Shape, StaticShape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {DebugColor} from "../../../setting/SettingDebug";
+import {BodyDensity, BodyFriction, BodyRestitution} from "../../../setting/SettingMatter";
 
 /** ********************************************************************************************************************
 *   Represents a platform that moves.
 ***********************************************************************************************************************/
-export class Platform extends ninjas.GameObject
+export class Platform extends GameObject
 {
     /** Medium moving speed. */
     public  static              SPEED_NORMAL                :number                         = 1.0;
@@ -12,7 +17,7 @@ export class Platform extends ninjas.GameObject
     public  static              FRICTION_SHAPE_MARGIN_X     :number                         = 15.0;
 
     /** The friction shape that has infinite static friction. */
-    public          readonly    frictionShape               :ninjas.ShapeRectangle          = null;
+    public          readonly    frictionShape               :ShapeRectangle          = null;
 
     /** The waypoints for this platform to move. */
     private         readonly    waypoints                   :matter.Vector[]                = null;
@@ -41,8 +46,8 @@ export class Platform extends ninjas.GameObject
     *******************************************************************************************************************/
     public constructor
     (
-        shape          :ninjas.Shape,
-        spriteTemplate :ninjas.SpriteTemplate,
+        shape          :Shape,
+        spriteTemplate :SpriteTemplate,
         speed          :number,
         waypoints      :matter.Vector[]
     )
@@ -63,16 +68,16 @@ export class Platform extends ninjas.GameObject
         this.speed     = speed;
         this.waypoints = waypoints;
 
-        this.frictionShape = new ninjas.ShapeRectangle
+        this.frictionShape = new ShapeRectangle
         (
             ( shape.getWidth() - ( 2 * Platform.FRICTION_SHAPE_MARGIN_X ) ),
             shape.getHeight(),
-            ninjas.DebugColor.COLOR_DEBUG_PLATFORM_FRICTION,
-            ninjas.StaticShape.YES,
+            DebugColor.COLOR_DEBUG_PLATFORM_FRICTION,
+            StaticShape.YES,
             0.0,
-            ninjas.BodyFriction.DEFAULT,
-            ninjas.BodyDensity.INFINITE,
-            ninjas.BodyRestitution.DEFAULT
+            BodyFriction.DEFAULT,
+            BodyDensity.INFINITE,
+            BodyRestitution.DEFAULT
         );
         this.frictionShape.body.frictionStatic = Infinity;
         // this.frictionShape.body.render.fillStyle = '#ffff00';

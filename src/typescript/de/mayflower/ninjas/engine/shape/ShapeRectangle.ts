@@ -1,10 +1,12 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../ninjas';
+import {Shape, StaticShape} from "./Shape";
+import {DebugColor} from "../../setting/SettingDebug";
+import {BodyDensity, BodyFriction, BodyRestitution} from "../../setting/SettingMatter";
 
 /** ********************************************************************************************************************
 *   Represents the shape of a game object.
 ***********************************************************************************************************************/
-export class ShapeRectangle extends ninjas.Shape
+export class ShapeRectangle extends Shape
 {
     /** The rectangle's width. */
     public              width           :number                 = 0.0;
@@ -27,12 +29,12 @@ export class ShapeRectangle extends ninjas.Shape
     (
         width       :number,
         height      :number,
-        debugColor  :ninjas.DebugColor,
-        isStatic    :ninjas.StaticShape,
+        debugColor  :DebugColor,
+        isStatic    :StaticShape,
         angle       :number,
-        friction    :ninjas.BodyFriction,
-        density     :ninjas.BodyDensity,
-        restitution :ninjas.BodyRestitution
+        friction    :BodyFriction,
+        density     :BodyDensity,
+        restitution :BodyRestitution
     )
     {
         super( debugColor, isStatic, angle, friction, density, restitution );

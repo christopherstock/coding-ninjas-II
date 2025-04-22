@@ -1,6 +1,11 @@
 import * as React    from 'react';
 import * as ReactDOM from 'react-dom';
-import * as ninjas   from '../ninjas';
+import {ContentWelcome} from "./component/ContentWelcome";
+import {ContentCompany} from "./component/ContentCompany";
+import {ContentServices} from "./component/ContentServices";
+import {ContentTechnology} from "./component/ContentTechnology";
+import {ContentTimeline} from "./component/ContentTimeline";
+import {ContentContact} from "./component/ContentContact";
 
 /** ********************************************************************************************************************
 *   Specifies all existing site contents.
@@ -27,7 +32,7 @@ export enum SiteContent
 export class SiteContentSystem
 {
     /** All already discovered contents. */
-    public                  discoveredContents          :ninjas.SiteContent[]           = [];
+    public                  discoveredContents          :SiteContent[]           = [];
 
     /** The site content for the 'welcome' page. */
     private                 contentWelcome              :JSX.Element                    = null;
@@ -47,12 +52,12 @@ export class SiteContentSystem
     *******************************************************************************************************************/
     public initAllContents() : void
     {
-        this.contentWelcome    = <ninjas.ContentWelcome    />;
-        this.contentCompany    = <ninjas.ContentCompany    />;
-        this.contentServices   = <ninjas.ContentServices   />;
-        this.contentTechnology = <ninjas.ContentTechnology />;
-        this.contentTimeline   = <ninjas.ContentTimeline   />;
-        this.contentContact    = <ninjas.ContentContact    />;
+        this.contentWelcome    = <ContentWelcome    />;
+        this.contentCompany    = <ContentCompany    />;
+        this.contentServices   = <ContentServices   />;
+        this.contentTechnology = <ContentTechnology />;
+        this.contentTimeline   = <ContentTimeline   />;
+        this.contentContact    = <ContentContact    />;
     }
 
     /** ****************************************************************************************************************

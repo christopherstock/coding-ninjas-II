@@ -1,5 +1,11 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {Decoration} from "../deco/Decoration";
+import {SiteContent} from "../../../site/SiteContentSystem";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {SitePanelPosition} from "../../../engine/SitePanel";
+import {Main} from "../../../base/Main";
+import {CharacterFacing} from "../being/CharacterFacing";
 
 /** ********************************************************************************************************************
 *   Specifies possible appearances for the site panel.
@@ -14,12 +20,12 @@ export enum SitePanelAppearance
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
 ***********************************************************************************************************************/
-export class SiteTrigger extends ninjas.Decoration
+export class SiteTrigger extends Decoration
 {
     /** The site content to show when this trigger is released. */
-    private     readonly            content                         :ninjas.SiteContent             = null;
+    private     readonly            content                         :SiteContent             = null;
     /** A fixed position for the panel to popup, if desired. */
-    private     readonly            sitePanelAppearance             :ninjas.SitePanelAppearance     = null;
+    private     readonly            sitePanelAppearance             :SitePanelAppearance     = null;
 
     /** Flags if the according site panel is currently displayed. */
     private                         sitePanelActive                 :boolean                        = false;
@@ -36,12 +42,12 @@ export class SiteTrigger extends ninjas.Decoration
     *******************************************************************************************************************/
     public constructor
     (
-        shape               :ninjas.Shape,
-        spriteTemplate      :ninjas.SpriteTemplate,
+        shape               :Shape,
+        spriteTemplate      :SpriteTemplate,
         x                   :number,
         y                   :number,
-        content             :ninjas.SiteContent,
-        sitePanelAppearance :ninjas.SitePanelAppearance
+        content             :SiteContent,
+        sitePanelAppearance :SitePanelAppearance
     )
     {
         super
@@ -69,11 +75,11 @@ export class SiteTrigger extends ninjas.Decoration
             if ( !this.sitePanelActive )
             {
                 // get panel popup according to player facing direction
-                const panelPosition:ninjas.SitePanelPosition = this.determinePanelPosition();
+                const panelPosition:SitePanelPosition = this.determinePanelPosition();
 
-                if ( ninjas.Main.game.engine.siteSystem.show( this.content, panelPosition ) )
+                if ( Main.game.engine.siteSystem.show( this.content, panelPosition ) )
                 {
-                    ninjas.Main.game.level.setShrineBookOpen( this.content, true );
+                    Main.game.level.setShrineBookOpen( this.content, true );
                     this.sitePanelActive = true;
                 }
             }
@@ -82,9 +88,9 @@ export class SiteTrigger extends ninjas.Decoration
         {
             if ( this.sitePanelActive )
             {
-                if ( ninjas.Main.game.engine.siteSystem.hide() )
+                if ( Main.game.engine.siteSystem.hide() )
                 {
-                    ninjas.Main.game.level.setShrineBookOpen( this.content, false );
+                    Main.game.level.setShrineBookOpen( this.content, false );
                     this.sitePanelActive = false;
                 }
             }
@@ -97,7 +103,7 @@ export class SiteTrigger extends ninjas.Decoration
     private checkPlayerCollision() : boolean
     {
         return (
-            matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds )
+            matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds )
         );
     }
 
@@ -106,28 +112,28 @@ export class SiteTrigger extends ninjas.Decoration
     *
     *   @return The position of the panel to be shown.
     *******************************************************************************************************************/
-    private determinePanelPosition() : ninjas.SitePanelPosition
+    private determinePanelPosition() : SitePanelPosition
     {
         switch ( this.sitePanelAppearance )
         {
             case SitePanelAppearance.PLAYER_FACING:
             {
-                if ( ninjas.Main.game.level.player.facing === ninjas.CharacterFacing.LEFT )
+                if ( Main.game.level.player.facing === CharacterFacing.LEFT )
                 {
-                    return ninjas.SitePanelPosition.LEFT;
+                    return SitePanelPosition.LEFT;
                 }
 
-                return ninjas.SitePanelPosition.RIGHT;
+                return SitePanelPosition.RIGHT;
             }
 
             case SitePanelAppearance.LEFT:
             {
-                return ninjas.SitePanelPosition.LEFT;
+                return SitePanelPosition.LEFT;
             }
 
             case SitePanelAppearance.RIGHT:
             {
-                return ninjas.SitePanelPosition.RIGHT;
+                return SitePanelPosition.RIGHT;
             }
         }
     }

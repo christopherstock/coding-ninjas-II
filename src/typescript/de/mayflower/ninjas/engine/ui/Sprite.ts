@@ -1,4 +1,9 @@
-import * as ninjas from '../../ninjas';
+import {SpriteTemplate} from "./SpriteTemplate";
+import {Main} from "../../base/Main";
+import {MathUtil} from "../../util/MathUtil";
+import {RandomFrames} from "./RandomFrames";
+import {MirrorImage} from "./MirrorImage";
+import {LoopSprite} from "./LoopSprite";
 
 /** ********************************************************************************************************************
 *   Represents one game sprite.
@@ -6,7 +11,7 @@ import * as ninjas from '../../ninjas';
 export class Sprite
 {
     /** The sprite template for this sprite. */
-    public                  template                                    :ninjas.SpriteTemplate  = null;
+    public                  template                                    :SpriteTemplate  = null;
 
     /** The id of the current frame for this sprite. */
     private                 currentFrame                                :number                 = 0;
@@ -18,13 +23,13 @@ export class Sprite
     *
     *   @param template The template for this sprite.
     *******************************************************************************************************************/
-    public constructor( template:ninjas.SpriteTemplate )
+    public constructor( template:SpriteTemplate )
     {
         this.template = template;
 
         this.currentTick  = 0;
 
-        if ( template.randomFrames !== ninjas.RandomFrames.NO )
+        if ( template.randomFrames !== RandomFrames.NO )
         {
             this.assignRandomFrame();
         }
@@ -49,7 +54,7 @@ export class Sprite
 
         // non-looped sprites end on the last frame
         if (
-            this.template.loop === ninjas.LoopSprite.NO
+            this.template.loop === LoopSprite.NO
             && this.currentFrame === this.template.imageIds.length - 1
         )
         {
@@ -66,7 +71,7 @@ export class Sprite
             this.currentTick = 0;
 
             // check if random frame shall be assigned
-            if ( this.template.randomFrames === ninjas.RandomFrames.ALL_FRAMES )
+            if ( this.template.randomFrames === RandomFrames.ALL_FRAMES )
             {
                 this.assignRandomFrame();
             }
@@ -97,12 +102,12 @@ export class Sprite
     {
         const imageId:string = this.template.imageIds[ this.currentFrame ];
 
-        if ( this.template.mirrored === ninjas.MirrorImage.YES )
+        if ( this.template.mirrored === MirrorImage.YES )
         {
-            return ninjas.Main.game.engine.imageSystem.getMirroredImage( imageId ).src;
+            return Main.game.engine.imageSystem.getMirroredImage( imageId ).src;
         }
 
-        return ninjas.Main.game.engine.imageSystem.getImage( imageId ).src;
+        return Main.game.engine.imageSystem.getImage( imageId ).src;
     }
 
     /** ****************************************************************************************************************
@@ -110,6 +115,6 @@ export class Sprite
     *******************************************************************************************************************/
     private assignRandomFrame() : void
     {
-        this.currentFrame = ninjas.MathUtil.getRandomInt( 0, ( this.template.imageIds.length - 1 ) );
+        this.currentFrame = MathUtil.getRandomInt( 0, ( this.template.imageIds.length - 1 ) );
     }
 }

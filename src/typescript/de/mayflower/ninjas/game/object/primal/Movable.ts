@@ -1,9 +1,11 @@
-import * as ninjas from '../../../ninjas';
+import {GameObject} from "../GameObject";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
 ***********************************************************************************************************************/
-export class Movable extends ninjas.GameObject
+export class Movable extends GameObject
 {
     /** ****************************************************************************************************************
     *   Creates a new movable.
@@ -15,8 +17,8 @@ export class Movable extends ninjas.GameObject
     *******************************************************************************************************************/
     public constructor
     (
-        shape          :ninjas.Shape,
-        spriteTemplate :ninjas.SpriteTemplate,
+        shape          :Shape,
+        spriteTemplate :SpriteTemplate,
         x              :number,
         y              :number
     )

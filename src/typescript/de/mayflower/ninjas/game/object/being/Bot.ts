@@ -1,5 +1,13 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {Character} from "./Character";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {CharacterSpriteSet} from "./CharacterSpriteSet";
+import {SettingMatter} from "../../../setting/SettingMatter";
+import {Main} from "../../../base/Main";
+import {SettingGame} from "../../../setting/SettingGame";
+import {Debug} from "../../../base/Debug";
+import {CharacterFacing} from "./CharacterFacing";
 
 /** ********************************************************************************************************************
 *   Represents the movement phases for an enemy.
@@ -19,7 +27,7 @@ export enum EnemyMovementPhase
 /** ********************************************************************************************************************
 *   Represents an enemy being controlled by the system.
 ***********************************************************************************************************************/
-export class Bot extends ninjas.Character
+export class Bot extends Character
 {
     /** The enemies' current movement phase. */
     private                     currentPhase            :EnemyMovementPhase         = null;
@@ -46,14 +54,14 @@ export class Bot extends ninjas.Character
     *******************************************************************************************************************/
     public constructor
     (
-        shape              :ninjas.Shape,
+        shape              :Shape,
         x                  :number,
         y                  :number,
         walkingTargetLeft  :number,
         walkingTargetRight :number,
-        facing             :ninjas.CharacterFacing,
-        spriteTemplate     :ninjas.SpriteTemplate,
-        characterSpriteSet :ninjas.CharacterSpriteSet,
+        facing             :CharacterFacing,
+        spriteTemplate     :SpriteTemplate,
+        characterSpriteSet :CharacterSpriteSet,
         friendly           :boolean,
         blocksPlayer       :boolean
     )
@@ -65,7 +73,7 @@ export class Bot extends ninjas.Character
             x,
             y,
             facing,
-            ninjas.SettingMatter.ENEMY_SPEED_MOVE,
+            SettingMatter.ENEMY_SPEED_MOVE,
             0,
             characterSpriteSet
         );
@@ -73,7 +81,7 @@ export class Bot extends ninjas.Character
         this.walkingTargetLeft  = walkingTargetLeft;
         this.walkingTargetRight = walkingTargetRight;
 
-        if ( this.facing === ninjas.CharacterFacing.LEFT )
+        if ( this.facing === CharacterFacing.LEFT )
         {
             this.currentPhase = EnemyMovementPhase.WALKING_LEFT;
         }
@@ -128,7 +136,7 @@ export class Bot extends ninjas.Character
     *
     *   @param playerDirection The current direction of the player.
     *******************************************************************************************************************/
-    public onHitByPlayer( playerDirection :ninjas.CharacterFacing ) : void
+    public onHitByPlayer( playerDirection :CharacterFacing ) : void
     {
         if (this.friendly)
         {
@@ -139,22 +147,22 @@ export class Bot extends ninjas.Character
         this.isDying = true;
 
         // face the player
-        if ( playerDirection === ninjas.CharacterFacing.LEFT )
+        if ( playerDirection === CharacterFacing.LEFT )
         {
-            this.facing = ninjas.CharacterFacing.RIGHT;
+            this.facing = CharacterFacing.RIGHT;
         }
         else
         {
-            this.facing = ninjas.CharacterFacing.LEFT;
+            this.facing = CharacterFacing.LEFT;
         }
 
         // disable body collisions
-        this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY;
+        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY;
         this.shape.body.isStatic = false;
 
         // bring body to foreground
-        ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
-        ninjas.Main.game.engine.matterJsSystem.addToWorld(      this.shape.body );
+        Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
+        Main.game.engine.matterJsSystem.addToWorld(      this.shape.body );
 
         // punch the enemy out of the screen in the player's direction
         this.receivePunchBack( playerDirection );
@@ -169,7 +177,7 @@ export class Bot extends ninjas.Character
         {
             case EnemyMovementPhase.STANDING_LEFT:
             {
-                if ( ++this.currentPhaseDelayTick >= ninjas.SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
+                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
                 {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_RIGHT;
@@ -179,7 +187,7 @@ export class Bot extends ninjas.Character
 
             case EnemyMovementPhase.STANDING_RIGHT:
             {
-                if ( ++this.currentPhaseDelayTick >= ninjas.SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
+                if ( ++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT )
                 {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_LEFT;
@@ -216,12 +224,12 @@ export class Bot extends ninjas.Character
     *******************************************************************************************************************/
     private checkFallingDead() : void
     {
-        if ( this.shape.body.position.y - this.shape.getHeight() / 2 > ninjas.Main.game.level.height )
+        if ( this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height )
         {
-            ninjas.Debug.character.log( 'Character has fallen to dead' );
+            Debug.character.log( 'Character has fallen to dead' );
 
             // remove character body from world
-            ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
+            Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
 
             // flag as dead
             this.isDead = true;
@@ -234,29 +242,29 @@ export class Bot extends ninjas.Character
     private checkPlayerCollision() : void
     {
         // only if player is not punched back
-        if ( ninjas.Main.game.level.player.punchBackTicks === 0 )
+        if ( Main.game.level.player.punchBackTicks === 0 )
         {
             // check intersection of the player and the enemy
-            if ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) )
+            if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) )
             {
-                ninjas.Debug.enemy.log( 'Player hit by enemy! Player is punching back now!' );
+                Debug.enemy.log( 'Player hit by enemy! Player is punching back now!' );
 
-                let playerPunchBackDirection:ninjas.CharacterFacing;
+                let playerPunchBackDirection:CharacterFacing;
 
-                if ( ninjas.Main.game.level.player.facing === ninjas.CharacterFacing.LEFT )
+                if ( Main.game.level.player.facing === CharacterFacing.LEFT )
                 {
-                    playerPunchBackDirection = ninjas.CharacterFacing.RIGHT;
+                    playerPunchBackDirection = CharacterFacing.RIGHT;
                 }
                 else
                 {
-                    playerPunchBackDirection = ninjas.CharacterFacing.LEFT;
+                    playerPunchBackDirection = CharacterFacing.LEFT;
                 }
 
                 // punch back the player into the players opposite direction!
-                ninjas.Main.game.level.player.receivePunchBack( playerPunchBackDirection );
+                Main.game.level.player.receivePunchBack( playerPunchBackDirection );
 
                 // flag player as punched back
-                ninjas.Main.game.level.player.punchBackTicks = ninjas.SettingGame.PUNCH_BACK_TICKS;
+                Main.game.level.player.punchBackTicks = SettingGame.PUNCH_BACK_TICKS;
             }
         }
     }

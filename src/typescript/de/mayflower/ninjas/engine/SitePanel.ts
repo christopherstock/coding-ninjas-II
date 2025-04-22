@@ -1,4 +1,5 @@
-import * as ninjas from '../ninjas';
+import {SettingGame} from "../setting/SettingGame";
+import {Main} from "../base/Main";
 
 /** ********************************************************************************************************************
 *   Contains all possible positions for the site panel.
@@ -22,7 +23,7 @@ export class SitePanel
     private                 innerRelativeContainer          :HTMLDivElement             = null;
 
     /** The position for this panel to show up. */
-    private                 position                        :ninjas.SitePanelPosition   = null;
+    private                 position                        :SitePanelPosition   = null;
 
     /** ****************************************************************************************************************
     *   Creates a new site panel.
@@ -39,7 +40,7 @@ export class SitePanel
     /** ****************************************************************************************************************
     *   Sets the position of the panel.
     *******************************************************************************************************************/
-    public setPosition( position:ninjas.SitePanelPosition ) : void
+    public setPosition( position:SitePanelPosition ) : void
     {
         this.position = position;
     }
@@ -101,48 +102,48 @@ export class SitePanel
         // debug offset ..
         const OFFSET :number = -100;
         const CANVAS_OFFSET_X :number = (
-            ( window.innerWidth - ninjas.Main.game.engine.canvasSystem.getPhysicalWidth() ) / 2
+            ( window.innerWidth - Main.game.engine.canvasSystem.getPhysicalWidth() ) / 2
         );
 
         // outer container position
         switch ( this.position )
         {
-            case ninjas.SitePanelPosition.LEFT:
+            case SitePanelPosition.LEFT:
             {
                 this.outerAbsoluteContainer.style.left = String(
-                    ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
+                    SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
                     + CANVAS_OFFSET_X
                 ) + 'px';
                 break;
             }
 
-            case ninjas.SitePanelPosition.RIGHT:
+            case SitePanelPosition.RIGHT:
             {
                 this.outerAbsoluteContainer.style.left = String(
                     (
-                        ninjas.Main.game.engine.canvasSystem.getPhysicalWidth()
+                        Main.game.engine.canvasSystem.getPhysicalWidth()
                         - width
-                        - ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
+                        - SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
                     )
                 ) + 'px';
                 break;
             }
         }
         this.outerAbsoluteContainer.style.top = String(
-            ( ( ninjas.Main.game.engine.canvasSystem.getPhysicalHeight() - height ) / 2 )
+            ( ( Main.game.engine.canvasSystem.getPhysicalHeight() - height ) / 2 )
         ) + 'px';
 
         // inner container size
         this.innerRelativeContainer.style.width  = String(
-            ( width - 2 * ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER )
+            ( width - 2 * SettingGame.SITE_PANEL_BORDER_SIZE_INNER )
         ) + 'px';
 
         // inner container position
         this.innerRelativeContainer.style.top  = String(
-            ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER_TOP
+            SettingGame.SITE_PANEL_BORDER_SIZE_INNER_TOP
         ) + 'px';
         this.innerRelativeContainer.style.left = String(
-            ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_INNER
+            SettingGame.SITE_PANEL_BORDER_SIZE_INNER
         ) + 'px';
     }
 
@@ -151,7 +152,7 @@ export class SitePanel
     *
     *   @return The current position of this panel.
     *******************************************************************************************************************/
-    public getPosition() : ninjas.SitePanelPosition
+    public getPosition() : SitePanelPosition
     {
         return this.position;
     }
@@ -164,14 +165,14 @@ export class SitePanel
         // set animation class
         switch ( this.position )
         {
-            case ninjas.SitePanelPosition.LEFT:
+            case SitePanelPosition.LEFT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInLeft';
                 this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
                 break;
             }
 
-            case ninjas.SitePanelPosition.RIGHT:
+            case SitePanelPosition.RIGHT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInRight';
                 this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
@@ -188,14 +189,14 @@ export class SitePanel
         // set animation class
         switch ( this.position )
         {
-            case ninjas.SitePanelPosition.LEFT:
+            case SitePanelPosition.LEFT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutLeft';
                 this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
                 break;
             }
 
-            case ninjas.SitePanelPosition.RIGHT:
+            case SitePanelPosition.RIGHT:
             {
                 // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutRight';
                 this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
@@ -223,7 +224,7 @@ export class SitePanel
 
         this.outerAbsoluteContainer.setAttribute(
             'data-wow-duration',
-            String( ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION )
+            String( SettingGame.SITE_PANEL_ANIMATION_DURATION )
             + 'ms'
         );
         this.outerAbsoluteContainer.setAttribute( 'data-wow-delay',    '0ms' );
@@ -239,7 +240,7 @@ export class SitePanel
 
         this.innerRelativeContainer.setAttribute(
             'data-wow-delay',
-            String( ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION )
+            String( SettingGame.SITE_PANEL_ANIMATION_DURATION )
             + 'ms'
         );
     }

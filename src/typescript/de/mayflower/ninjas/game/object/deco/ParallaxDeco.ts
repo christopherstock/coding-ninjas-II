@@ -1,10 +1,13 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {Decoration} from "./Decoration";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {Main} from "../../../base/Main";
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
 ***********************************************************************************************************************/
-export class ParallaxDeco extends ninjas.Decoration
+export class ParallaxDeco extends Decoration
 {
     /** The parallax ratio from this game object to the level width. Defaults to 1.0. */
     private     readonly        parallaxRatio           :number             = 0.0;
@@ -19,7 +22,7 @@ export class ParallaxDeco extends ninjas.Decoration
     *   @param parallaxRatio  The parallax ratio from this game object to the level width. Defaults to 1.0.
     *******************************************************************************************************************/
     public constructor(
-        shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number, parallaxRatio:number
+        shape:Shape, spriteTemplate:SpriteTemplate, x:number, y:number, parallaxRatio:number
     )
     {
         super
@@ -52,14 +55,14 @@ export class ParallaxDeco extends ninjas.Decoration
     *******************************************************************************************************************/
     private setParallaxPosition() : void
     {
-        const levelWidth  :number = ninjas.Main.game.level.width;
-        const levelHeight :number = ninjas.Main.game.level.height;
+        const levelWidth  :number = Main.game.level.width;
+        const levelHeight :number = Main.game.level.height;
 
-        const cameraOffsetX :number = ninjas.Main.game.camera.getOffsetX();
-        const cameraOffsetY :number = ninjas.Main.game.camera.getOffsetY();
+        const cameraOffsetX :number = Main.game.camera.getOffsetX();
+        const cameraOffsetY :number = Main.game.camera.getOffsetY();
 
-        const canvasWidth  :number = ninjas.Main.game.engine.canvasSystem.getWidth();
-        const canvasHeight :number = ninjas.Main.game.engine.canvasSystem.getHeight();
+        const canvasWidth  :number = Main.game.engine.canvasSystem.getWidth();
+        const canvasHeight :number = Main.game.engine.canvasSystem.getHeight();
 
         let imgOffsetX :number = (
             0 - ( this.shape.getWidth()  - canvasWidth  ) * cameraOffsetX / ( levelWidth  - canvasWidth  )

@@ -1,4 +1,6 @@
-import * as ninjas from '../../../ninjas';
+import {GameObject} from "../GameObject";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
 
 /** ********************************************************************************************************************
 *   Specifies if an obstacle allows jump pass through.
@@ -12,7 +14,7 @@ export enum JumpPassThrough
 /** ********************************************************************************************************************
 *   Represents a collidable and solid obstacle.
 ***********************************************************************************************************************/
-export class Obstacle extends ninjas.GameObject
+export class Obstacle extends GameObject
 {
     /** Specifies if the player shall be allowed to jump through this obstacle. */
     private     readonly        jumpPassThrough             :JumpPassThrough                    = null;
@@ -30,10 +32,10 @@ export class Obstacle extends ninjas.GameObject
     *******************************************************************************************************************/
     public constructor
     (
-        shape           :ninjas.Shape,
+        shape           :Shape,
         x               :number,
         y               :number,
-        spriteTemplate  :ninjas.SpriteTemplate,
+        spriteTemplate  :SpriteTemplate,
         jumpPassThrough :JumpPassThrough
     )
     {
@@ -64,22 +66,22 @@ export class Obstacle extends ninjas.GameObject
             if
             (
                     this.currentlyAllowPassThrough == JumpPassThrough.NO
-                &&  ninjas.Main.game.level.player.shape.body.velocity.y < 0.0
+                &&  Main.game.level.player.shape.body.velocity.y < 0.0
             )
             {
                 this.currentlyAllowPassThrough = JumpPassThrough.YES;
-                this.shape.body.collisionFilter = ninjas.SettingMatterJs.COLLISION_GROUP_PASS_THROUGH_OBSTACLES;
+                this.shape.body.collisionFilter = SettingMatterJs.COLLISION_GROUP_PASS_THROUGH_OBSTACLES;
             }
             // disable pass-through if player is not colliding
             else if
             (
                     this.currentlyAllowPassThrough == JumpPassThrough.YES
-                &&  !matter.Bounds.overlaps( ninjas.Main.game.level.player.shape.body.bounds,
+                &&  !matter.Bounds.overlaps( Main.game.level.player.shape.body.bounds,
                     this.shape.body.bounds )
             )
             {
                 this.currentlyAllowPassThrough = JumpPassThrough.NO;
-                this.shape.body.collisionFilter = ninjas.SettingMatterJs.COLLISION_GROUP_COLLIDING;
+                this.shape.body.collisionFilter = SettingMatterJs.COLLISION_GROUP_COLLIDING;
             }
         }
         */

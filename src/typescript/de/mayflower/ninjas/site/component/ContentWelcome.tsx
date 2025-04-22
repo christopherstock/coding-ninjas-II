@@ -1,37 +1,40 @@
 import * as React  from 'react';
-import * as ninjas from '../../ninjas';
+import {Debug} from "../../base/Debug";
+import {SiteContentFactory} from "../SiteContentFactory";
+import {Main} from "../../base/Main";
+import {ImageData} from "../../data/ImageData";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'welcome' page.
 ***********************************************************************************************************************/
 export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
 {
-    ninjas.Debug.react.log( 'ContentWelcome.render() being invoked' );
+    Debug.react.log( 'ContentWelcome.render() being invoked' );
 
     return <div>
 
-        { /* ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_WELCOME ) */ }
+        { /* SiteContentFactory.createStepIndicator( SiteContent.CONTENT_WELCOME ) */ }
 
-        { /* ninjas.SiteContentFactory.createDivider() */ }
+        { /* SiteContentFactory.createDivider() */ }
 
         {
-            ninjas.SiteContentFactory.createImageFullWidth(
-                ninjas.Main.game.engine.imageSystem.getImage(
-                    ninjas.ImageData.IMAGE_SITE_PANEL_LOGO
+            SiteContentFactory.createImageFullWidth(
+                Main.game.engine.imageSystem.getImage(
+                    ImageData.IMAGE_SITE_PANEL_LOGO
                 ).src
             )
         }
 
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
 
         { /*
 
         <a target='_blank' title='Würzburg Web Week' href='https://wueww.de/'>
             {
-                ninjas.SiteContentFactory.createImageFloating(
+                SiteContentFactory.createImageFloating(
                     'right',
-                    ninjas.Main.game.engine.imageSystem.getImage(
-                        ninjas.ImageData.IMAGE_SITE_PANEL_LOGO_WEBWEEK
+                    Main.game.engine.imageSystem.getImage(
+                        ImageData.IMAGE_SITE_PANEL_LOGO_WEBWEEK
                     ).src
                 )
             }
@@ -40,7 +43,7 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
         */ }
 
         {
-            ninjas.SiteContentFactory.createParagraph
+            SiteContentFactory.createParagraph
             (
                 'Welcome to the Demo of '
                 + '<a target=\'_blank\' title=\'Coding Ninjas II\' '
@@ -48,12 +51,12 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
             )
         }
 
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
 
-        { /* ninjas.SiteContentFactory.createDivider() */ }
+        { /* SiteContentFactory.createDivider() */ }
 
         {
-            ninjas.SiteContentFactory.createCarousel
+            SiteContentFactory.createCarousel
             (
                 'scrollx',
                 true,
@@ -61,26 +64,26 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
                 500,
                 [
                     <div className='carouselPage' style={ { 'backgroundImage': 'url( '
-                    + ninjas.Main.game.engine.imageSystem.getImage(
-                        ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP
+                    + Main.game.engine.imageSystem.getImage(
+                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_DESKTOP
                     ).src + ' )' } }>
                         <h3>React 16.13.1</h3>
                     </div>,
                     <div className='carouselPage' style={ { 'backgroundImage': 'url( '
-                    + ninjas.Main.game.engine.imageSystem.getImage(
-                        ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES
+                    + Main.game.engine.imageSystem.getImage(
+                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEBSITES
                     ).src + ' )' } }>
                         <h3>Ant Design 3.26.9</h3>
                     </div>,
                     <div className='carouselPage' style={ { 'backgroundImage': 'url( '
-                    + ninjas.Main.game.engine.imageSystem.getImage(
-                        ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE
+                    + Main.game.engine.imageSystem.getImage(
+                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_MOBILE
                     ).src + ' )' } }>
                         <h3>TypeScript 3.7.5</h3>
                     </div>,
                     <div className='carouselPage' style={ { 'backgroundImage': 'url( '
-                    + ninjas.Main.game.engine.imageSystem.getImage(
-                        ninjas.ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS
+                    + Main.game.engine.imageSystem.getImage(
+                        ImageData.IMAGE_SITE_PANEL_CAROUSEL_WEB_APPS
                     ).src + ' )' } }>
                         <h3>Webpack 4.41.6</h3>
                     </div>,
@@ -92,14 +95,14 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
 
         <a target='_blank' title='Coding Ninjas on GitHub'
             href='https://github.com/christopherstock/coding-ninjas'>
-            { ninjas.SiteContentFactory.createAvatar( '', 'github' ) }
+            { SiteContentFactory.createAvatar( '', 'github' ) }
         </a>
 
         */ }
 
         {
             /*
-            ninjas.SiteContentFactory.createParagraph
+            SiteContentFactory.createParagraph
             (
                 'Get the source on <a target=\'_blank\' title=\'Coding Ninjas on GitHub\' '
                 + 'href=\'https://github.com/christopherstock/coding-ninjas\'>GitHub</a>',
@@ -107,10 +110,10 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
             )
             */
         }
-        { /* ninjas.SiteContentFactory.createDivider() */ }
+        { /* SiteContentFactory.createDivider() */ }
         {
             /*
-            ninjas.SiteContentFactory.createParagraph
+            SiteContentFactory.createParagraph
             (
                 'Use the <span style=\'color: #b42157;\'>arrow keys</span> to move and jump around.<br>'
                 + 'Use the <span style=\'color: #b42157;\'>space bar</span> to open your parachute '
@@ -121,31 +124,31 @@ export const ContentWelcome :() => JSX.Element = () :JSX.Element =>
             )
             */
         }
-        { /* ninjas.SiteContentFactory.createDivider() */ }
+        { /* SiteContentFactory.createDivider() */ }
         {
             /*
-            ninjas.SiteContentFactory.createSwitch
+            SiteContentFactory.createSwitch
             (
                 'notification',
                 'poweroff',
-                !ninjas.ImageUtil.isMac(),
+                !ImageUtil.isMac(),
                 ( checked:boolean ) => {
 
-                    ninjas.Debug.sound.log( 'Toggle bg music to [' + String( checked ) + ']' );
+                    Debug.sound.log( 'Toggle bg music to [' + String( checked ) + ']' );
 
-                    ninjas.Main.game.toggleBgMusic( checked );
+                    Main.game.toggleBgMusic( checked );
                 }
             )
             */
         }
-        { /* ninjas.SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
+        { /* SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
 
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
 
-        { /* ninjas.SiteContentFactory.createDivider()                                        */ }
-        { ninjas.SiteContentFactory.createParagraph( 'Current progress of the project is:' ) }
-        { /* ninjas.SiteContentFactory.createSpacerVertical() */ }
-        { ninjas.SiteContentFactory.createProgress( 'line', 72.6 )        }
+        { /* SiteContentFactory.createDivider()                                        */ }
+        { SiteContentFactory.createParagraph( 'Current progress of the project is:' ) }
+        { /* SiteContentFactory.createSpacerVertical() */ }
+        { SiteContentFactory.createProgress( 'line', 72.6 )        }
 
     </div>;
 }

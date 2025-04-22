@@ -1,4 +1,6 @@
-import * as ninjas from '../../ninjas';
+import {SettingDebug} from "../../setting/SettingDebug";
+import {Debug} from "../../base/Debug";
+import {ImageUtil} from "../../util/ImageUtil";
 
 /** ********************************************************************************************************************
 *   Loads and manages all desired sounds.
@@ -37,7 +39,7 @@ export class SoundSystem
     *******************************************************************************************************************/
     public playSound( id:string, loop:boolean = false ) : HTMLAudioElement
     {
-        if ( !ninjas.SettingDebug.DISABLE_SOUNDS )
+        if ( !SettingDebug.DISABLE_SOUNDS )
         {
             if ( this.sounds[ id ] !== null )
             {
@@ -50,7 +52,7 @@ export class SoundSystem
                         () =>
                         {
 
-                            ninjas.Debug.sound.log( 'Clip ended - now repeating ..' );
+                            Debug.sound.log( 'Clip ended - now repeating ..' );
 
                             // noinspection JSIgnoredPromiseFromCall
                             clipClone.play().then().catch( ( e :Error ) => { return e; } );
@@ -73,7 +75,7 @@ export class SoundSystem
     *******************************************************************************************************************/
     public loadSounds() : void
     {
-        ninjas.Debug.sound.log( 'Preloading [' + String( this.fileNames.length ) + '] sounds' );
+        Debug.sound.log( 'Preloading [' + String( this.fileNames.length ) + '] sounds' );
 
         if (this.fileNames.length === 0) {
             this.onLoadComplete();
@@ -88,14 +90,14 @@ export class SoundSystem
                 this.sounds[ fileName ].onloadeddata = () :void => { this.onLoadSound(); };
                 this.sounds[ fileName ].onerror      = () :void => { this.onLoadSoundError(); };
 
-                if ( ninjas.ImageUtil.isMac() )
+                if ( ImageUtil.isMac() )
                 {
                     this.onLoadSound();
                 }
             }
             catch ( e )
             {
-                ninjas.Debug.sound.log( 'Error on creating Audio element: ' + String( e.message ) );
+                Debug.sound.log( 'Error on creating Audio element: ' + String( e.message ) );
                 this.onLoadSoundError();
             }
         }
@@ -108,7 +110,7 @@ export class SoundSystem
     {
         if ( ++this.loadedSoundCount >= this.fileNames.length )
         {
-            ninjas.Debug.sound.log( 'All [' + String( this.fileNames.length ) + '] sounds loaded' );
+            Debug.sound.log( 'All [' + String( this.fileNames.length ) + '] sounds loaded' );
 
             this.onLoadComplete();
         }
@@ -119,7 +121,7 @@ export class SoundSystem
     *******************************************************************************************************************/
     private onLoadSoundError() : void
     {
-        ninjas.Debug.sound.log( 'ERROR on loading audio element!' );
+        Debug.sound.log( 'ERROR on loading audio element!' );
 
         this.onLoadSound();
     }

@@ -1,4 +1,5 @@
-import * as ninjas from '../../ninjas';
+import {SettingEngine} from "../../setting/SettingEngine";
+import {Debug} from "../../base/Debug";
 
 /** ********************************************************************************************************************
 *   Manages the canvas.
@@ -48,22 +49,22 @@ export class CanvasSystem
         const windowHeight :number = window.innerHeight;
 
         // calculate scaling factors X and Y
-        const canvasScaleX :number = ( windowWidth  / ninjas.SettingEngine.CANVAS_MIN_WIDTH  );
-        const canvasScaleY :number = ( windowHeight / ninjas.SettingEngine.CANVAS_MIN_HEIGHT );
+        const canvasScaleX :number = ( windowWidth  / SettingEngine.CANVAS_MIN_WIDTH  );
+        const canvasScaleY :number = ( windowHeight / SettingEngine.CANVAS_MIN_HEIGHT );
 
         // pick smallest canvas scaling factor - lower clip to 1.0
         this.canvasScale  = Math.min( canvasScaleX, canvasScaleY );
         this.canvasScale  = Math.max( this.canvasScale, 1.0 );
 
         // remember target canvas size
-        this.canvasWidth  = ninjas.SettingEngine.CANVAS_MIN_WIDTH;
-        this.canvasHeight = ninjas.SettingEngine.CANVAS_MIN_HEIGHT;
+        this.canvasWidth  = SettingEngine.CANVAS_MIN_WIDTH;
+        this.canvasHeight = SettingEngine.CANVAS_MIN_HEIGHT;
 
         // set physical canvas element size
-        this.canvasPhysicalWidth  = ( ninjas.SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
-        this.canvasPhysicalHeight = ( ninjas.SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
+        this.canvasPhysicalWidth  = ( SettingEngine.CANVAS_MIN_WIDTH  * this.canvasScale );
+        this.canvasPhysicalHeight = ( SettingEngine.CANVAS_MIN_HEIGHT * this.canvasScale );
 
-        if ( ninjas.SettingEngine.NO_CANVAS_SCALING )
+        if ( SettingEngine.NO_CANVAS_SCALING )
         {
             this.canvasScale  = 1.0;
             this.canvasScale  = 1.0;
@@ -80,7 +81,7 @@ export class CanvasSystem
         // apply canvas scaling last
         this.canvasContext.scale( this.canvasScale, this.canvasScale );
 
-        ninjas.Debug.canvas.log(
+        Debug.canvas.log(
             'Updated canvas dimensions to ['
             + String( this.canvasWidth  )
             + ']x['

@@ -1,5 +1,4 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../ninjas';
 
 export enum GameActionType {
     SWITCH_TO_LEVEL,

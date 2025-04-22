@@ -1,5 +1,9 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../ninjas';
+import {Shape} from "../../engine/shape/Shape";
+import {Sprite} from "../../engine/ui/Sprite";
+import {SpriteTemplate} from "../../engine/ui/SpriteTemplate";
+import {SettingDebug} from "../../setting/SettingDebug";
+import {Main} from "../../base/Main";
 
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
@@ -7,10 +11,10 @@ import * as ninjas from '../../ninjas';
 export abstract class GameObject
 {
     /** Collision shape. */
-    public          shape                   :ninjas.Shape                   = null;
+    public          shape                   :Shape                   = null;
 
     /** Sprite. */
-    public          sprite                  :ninjas.Sprite                  = null;
+    public          sprite                  :Sprite                  = null;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.
@@ -22,8 +26,8 @@ export abstract class GameObject
     *******************************************************************************************************************/
     protected constructor
     (
-        shape          :ninjas.Shape,
-        spriteTemplate :ninjas.SpriteTemplate,
+        shape          :Shape,
+        spriteTemplate :SpriteTemplate,
         x              :number,
         y              :number
     )
@@ -71,7 +75,7 @@ export abstract class GameObject
     *
     *   @param spriteTemplate The sprite template to use for this new sprite.
     *******************************************************************************************************************/
-    protected setSprite( spriteTemplate:ninjas.SpriteTemplate ) : void
+    protected setSprite( spriteTemplate:SpriteTemplate ) : void
     {
         if ( spriteTemplate !== null )
         {
@@ -82,7 +86,7 @@ export abstract class GameObject
             }
 
             // assign new sprite and texture
-            this.sprite = new ninjas.Sprite( spriteTemplate );
+            this.sprite = new Sprite( spriteTemplate );
             this.setImageFromSprite();
 
             // do NOT update body shape dimensions! immediate collisions will occur and block the game!
@@ -95,7 +99,7 @@ export abstract class GameObject
     *******************************************************************************************************************/
     protected setImageFromSprite() : void
     {
-        if ( !ninjas.SettingDebug.DISABLE_SPRITES )
+        if ( !SettingDebug.DISABLE_SPRITES )
         {
             this.shape.body.render.sprite.texture = this.sprite.getCurrentFrameImageUrl();
             this.shape.body.render.sprite.xScale  = this.sprite.template.getScale();
@@ -138,12 +142,12 @@ export abstract class GameObject
         }
 
         // clip right bound
-        if ( this.shape.body.position.x > ninjas.Main.game.level.width - this.shape.getWidth() / 2 )
+        if ( this.shape.body.position.x > Main.game.level.width - this.shape.getWidth() / 2 )
         {
             matter.Body.setPosition(
                 this.shape.body,
                 {
-                    x: ninjas.Main.game.level.width - this.shape.getWidth() / 2,
+                    x: Main.game.level.width - this.shape.getWidth() / 2,
                     y: this.shape.body.position.y,
                 }
             );

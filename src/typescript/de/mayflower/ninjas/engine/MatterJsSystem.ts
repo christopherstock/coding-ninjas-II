@@ -1,5 +1,9 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../ninjas';
+import {SettingMatter} from "../setting/SettingMatter";
+import {SettingDebug} from "../setting/SettingDebug";
+import {SettingEngine} from "../setting/SettingEngine";
+import {Debug} from "../base/Debug";
+import {CanvasSystem} from "./ui/CanvasSystem";
 
 /** ********************************************************************************************************************
 *   Manages the Matter.js engine.
@@ -20,7 +24,7 @@ export class MatterJsSystem
     *******************************************************************************************************************/
     public constructor
     (
-        canvasSystem        :ninjas.CanvasSystem,
+        canvasSystem        :CanvasSystem,
         callbackAfterRender :( renderContext:CanvasRenderingContext2D ) => void,
         textureCache        :HTMLImageElement[]
     )
@@ -29,7 +33,7 @@ export class MatterJsSystem
         this.engine = matter.Engine.create();
         this.engine.world.gravity = {
             x: 0.0,
-            y: ninjas.SettingMatter.DEFAULT_GRAVITY_Y,
+            y: SettingMatter.DEFAULT_GRAVITY_Y,
             scale: 0.001,
         };
         this.engine.timing.timeScale = 1.0;
@@ -40,12 +44,12 @@ export class MatterJsSystem
                 canvas:  canvasSystem.getCanvas(),
                 engine:  this.engine,
                 options: {
-                    showCollisions:     ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
-                    showAxes:           ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
-                    showAngleIndicator: ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
-                    showVelocity:       ( ninjas.SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                    showCollisions:     ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                    showAxes:           ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                    showAngleIndicator: ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
+                    showVelocity:       ( SettingDebug.MATTERJS_DEBUG_VIEWS ),
 
-                    background:         ninjas.SettingEngine.COLOR_BG_MATTER_JS_CSS,
+                    background:         SettingEngine.COLOR_BG_MATTER_JS_CSS,
 
                     width:              canvasSystem.getWidth(),
                     height:             canvasSystem.getHeight(),
@@ -74,7 +78,7 @@ export class MatterJsSystem
 
         // set all loaded image as MatterJS texture cache
         this.renderer.textures = textureCache;
-        ninjas.Debug.init.log(
+        Debug.init.log(
             'Assigned ['
             + String( Object.keys( this.renderer.textures ).length )
             + '] textures to renderer texture cache '
@@ -118,7 +122,7 @@ export class MatterJsSystem
     /** ****************************************************************************************************************
     *   Updates the dimensions of the Matter.js rendering system.
     *******************************************************************************************************************/
-    public updateEngineDimensions( canvasSystem:ninjas.CanvasSystem ) : void
+    public updateEngineDimensions( canvasSystem:CanvasSystem ) : void
     {
         this.renderer.canvas.getContext('2d').scale( canvasSystem.getScale(), canvasSystem.getScale() );
 
@@ -128,7 +132,7 @@ export class MatterJsSystem
         this.renderer.options.width  = canvasSystem.getPhysicalWidth();
         this.renderer.options.height = canvasSystem.getPhysicalHeight();
 
-        ninjas.Debug.canvas.log( 'Updated matter.js engine dimensions according to canvas.' );
+        Debug.canvas.log( 'Updated matter.js engine dimensions according to canvas.' );
     }
 
     /** ****************************************************************************************************************
@@ -138,7 +142,7 @@ export class MatterJsSystem
     {
         matter.Engine.update(
             this.engine,
-            ninjas.SettingMatter.RENDER_DELTA_DEFAULT
+            SettingMatter.RENDER_DELTA_DEFAULT
         );
     }
 

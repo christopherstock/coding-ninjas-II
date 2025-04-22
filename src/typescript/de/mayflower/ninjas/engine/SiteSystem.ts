@@ -1,4 +1,13 @@
-import * as ninjas from '../ninjas';
+import {SitePanel, SitePanelPosition} from "./SitePanel";
+import {Debug} from "../base/Debug";
+import {Main} from "../base/Main";
+import {SettingEngine} from "../setting/SettingEngine";
+import {SettingGame} from "../setting/SettingGame";
+import {ImageData} from "../data/ImageData";
+import {SiteContent, SiteContentSystem} from "../site/SiteContentSystem";
+import {CanvasSystem} from "./ui/CanvasSystem";
+import {CharacterFacing} from "../game/object/being/CharacterFacing";
+
 const wow :any = require( 'wowjs' );
 
 /** ********************************************************************************************************************
@@ -22,12 +31,12 @@ export enum SitePanelAnimation
 export class SiteSystem
 {
     /** The content system. */
-    private     readonly    contentSystem               :ninjas.SiteContentSystem       = null;
+    private     readonly    contentSystem               :SiteContentSystem       = null;
     /** The active site panel. */
-    private     readonly    sitePanel                   :ninjas.SitePanel               = null;
+    private     readonly    sitePanel                   :SitePanel               = null;
 
     /** The current animation of the site panel. */
-    private                 animationState              :ninjas.SitePanelAnimation      = SitePanelAnimation.HIDDEN;
+    private                 animationState              :SitePanelAnimation      = SitePanelAnimation.HIDDEN;
     /** Flags if the panel is shown for the 1st time. */
     private                 firstShow                   :boolean                        = true;
 
@@ -52,10 +61,10 @@ export class SiteSystem
     *******************************************************************************************************************/
     public constructor()
     {
-        this.contentSystem = new ninjas.SiteContentSystem();
+        this.contentSystem = new SiteContentSystem();
         this.contentSystem.initAllContents();
 
-        this.sitePanel     = new ninjas.SitePanel();
+        this.sitePanel     = new SitePanel();
 
         this.updatePanelSizeAndPosition();
         this.initWowSystem();
@@ -69,16 +78,16 @@ export class SiteSystem
     *
     *   @return If showing the site succeeded.
     *******************************************************************************************************************/
-    public show( content:ninjas.SiteContent, position:ninjas.SitePanelPosition ) : boolean
+    public show( content:SiteContent, position:SitePanelPosition ) : boolean
     {
         // only show if hidden
-        if ( this.animationState !== ninjas.SitePanelAnimation.HIDDEN )
+        if ( this.animationState !== SitePanelAnimation.HIDDEN )
         {
             return false;
         }
 
-        ninjas.Debug.site.log( 'Showing site panel' );
-        this.animationState = ninjas.SitePanelAnimation.SHOWING;
+        Debug.site.log( 'Showing site panel' );
+        this.animationState = SitePanelAnimation.SHOWING;
 
         // set content for site panel
         this.contentSystem.mountContent( content, this.sitePanel.getMountPoint() );
@@ -99,16 +108,16 @@ export class SiteSystem
             this.sitePanel.setVisible( true );
         }
 
-        if ( position === ninjas.SitePanelPosition.RIGHT )
+        if ( position === SitePanelPosition.RIGHT )
         {
             this.sitePanel.setPanelBgImage(
-                ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_RIGHT ).src
+                Main.game.engine.imageSystem.getImage( ImageData.IMAGE_SITE_PANEL_BG_RIGHT ).src
             );
         }
         else
         {
             this.sitePanel.setPanelBgImage(
-                ninjas.Main.game.engine.imageSystem.getImage( ninjas.ImageData.IMAGE_SITE_PANEL_BG_LEFT ).src
+                Main.game.engine.imageSystem.getImage( ImageData.IMAGE_SITE_PANEL_BG_LEFT ).src
             );
         }
 
@@ -120,12 +129,12 @@ export class SiteSystem
         window.setTimeout(
             () =>
             {
-                if ( this.animationState === ninjas.SitePanelAnimation.SHOWING )
+                if ( this.animationState === SitePanelAnimation.SHOWING )
                 {
-                    this.animationState = ninjas.SitePanelAnimation.PRESENT;
+                    this.animationState = SitePanelAnimation.PRESENT;
                 }
             },
-            ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION
+            SettingGame.SITE_PANEL_ANIMATION_DURATION
         );
 
         return true;
@@ -136,7 +145,7 @@ export class SiteSystem
     *******************************************************************************************************************/
     public reset() : void
     {
-        this.animationState = ninjas.SitePanelAnimation.HIDDEN;
+        this.animationState = SitePanelAnimation.HIDDEN;
         this.sitePanel.removeFromDom();
     }
 
@@ -147,13 +156,13 @@ export class SiteSystem
     *******************************************************************************************************************/
     public hide() : boolean
     {
-        if ( this.animationState !== ninjas.SitePanelAnimation.PRESENT )
+        if ( this.animationState !== SitePanelAnimation.PRESENT )
         {
             return false;
         }
 
-        ninjas.Debug.site.log( 'Hiding site panel' );
-        this.animationState = ninjas.SitePanelAnimation.HIDING;
+        Debug.site.log( 'Hiding site panel' );
+        this.animationState = SitePanelAnimation.HIDING;
 
         this.sitePanel.animateOut();
         this.wowSystem.sync();
@@ -161,10 +170,10 @@ export class SiteSystem
         window.setTimeout(
             () =>
             {
-                this.animationState = ninjas.SitePanelAnimation.HIDDEN;
+                this.animationState = SitePanelAnimation.HIDDEN;
                 this.sitePanel.removeFromDom();
             },
-            ( ninjas.SettingGame.SITE_PANEL_ANIMATION_DURATION / 2 )
+            ( SettingGame.SITE_PANEL_ANIMATION_DURATION / 2 )
         );
 
         return true;
@@ -175,34 +184,34 @@ export class SiteSystem
     *******************************************************************************************************************/
     public updatePanelSizeAndPosition() : void
     {
-        const canvasSystem :ninjas.CanvasSystem = ninjas.Main.game.engine.canvasSystem;
+        const canvasSystem :CanvasSystem = Main.game.engine.canvasSystem;
 
         // calculate and clip panel size
         this.panelWidth = (
-            canvasSystem.getPhysicalWidth() / 2 - ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
+            canvasSystem.getPhysicalWidth() / 2 - SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
         );
-        if ( this.panelWidth < ninjas.SettingGame.SITE_PANEL_MIN_WIDTH )
+        if ( this.panelWidth < SettingGame.SITE_PANEL_MIN_WIDTH )
         {
-            this.panelWidth = ninjas.SettingGame.SITE_PANEL_MIN_WIDTH;
+            this.panelWidth = SettingGame.SITE_PANEL_MIN_WIDTH;
         }
-        else if ( this.panelWidth > ninjas.SettingGame.SITE_PANEL_MAX_WIDTH )
+        else if ( this.panelWidth > SettingGame.SITE_PANEL_MAX_WIDTH )
         {
-            this.panelWidth = ninjas.SettingGame.SITE_PANEL_MAX_WIDTH;
+            this.panelWidth = SettingGame.SITE_PANEL_MAX_WIDTH;
         }
 
         this.panelHeight = (
-            canvasSystem.getPhysicalHeight() - 2 * ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
+            canvasSystem.getPhysicalHeight() - 2 * SettingGame.SITE_PANEL_BORDER_SIZE_OUTER
         );
         if (
-            ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT !== -1
-            && this.panelHeight > ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT
+            SettingGame.SITE_PANEL_MAX_HEIGHT !== -1
+            && this.panelHeight > SettingGame.SITE_PANEL_MAX_HEIGHT
         )
         {
-            this.panelHeight = ninjas.SettingGame.SITE_PANEL_MAX_HEIGHT;
+            this.panelHeight = SettingGame.SITE_PANEL_MAX_HEIGHT;
         }
 
         // calculate panel size including border and left and right position
-        this.panelAndBorderWidth = this.panelWidth + ninjas.SettingGame.SITE_PANEL_BORDER_SIZE_OUTER;
+        this.panelAndBorderWidth = this.panelWidth + SettingGame.SITE_PANEL_BORDER_SIZE_OUTER;
         this.leftCameraTargetX   = (
             this.panelAndBorderWidth
             + ( ( canvasSystem.getPhysicalWidth() - this.panelAndBorderWidth ) / 2 )
@@ -228,40 +237,40 @@ export class SiteSystem
     {
         // center camera X if no panels are showing
         if (
-            ninjas.SettingEngine.CAMERA_ALWAYS_CENTER_X
-            || this.animationState === ninjas.SitePanelAnimation.HIDDEN
-            || this.animationState === ninjas.SitePanelAnimation.HIDING
+            SettingEngine.CAMERA_ALWAYS_CENTER_X
+            || this.animationState === SitePanelAnimation.HIDDEN
+            || this.animationState === SitePanelAnimation.HIDING
         )
         {
             // center camera X if desired
-            switch ( ninjas.Main.game.level.player.facing )
+            switch ( Main.game.level.player.facing )
             {
-                case ninjas.CharacterFacing.LEFT:
+                case CharacterFacing.LEFT:
                 {
                     return (
-                        ninjas.Main.game.engine.canvasSystem.getWidth()
-                        * ( 1.0 - ninjas.SettingEngine.CAMERA_RATIO_X )
+                        Main.game.engine.canvasSystem.getWidth()
+                        * ( 1.0 - SettingEngine.CAMERA_RATIO_X )
                     );
                 }
 
-                case ninjas.CharacterFacing.RIGHT:
+                case CharacterFacing.RIGHT:
                 {
                     return (
-                        ninjas.Main.game.engine.canvasSystem.getWidth()
-                        * ninjas.SettingEngine.CAMERA_RATIO_X
+                        Main.game.engine.canvasSystem.getWidth()
+                        * SettingEngine.CAMERA_RATIO_X
                     );
                 }
             }
 
             // target according to player facing
-            switch ( ninjas.Main.game.level.player.facing )
+            switch ( Main.game.level.player.facing )
             {
-                case ninjas.CharacterFacing.LEFT:
+                case CharacterFacing.LEFT:
                 {
                     return this.leftCameraTargetX;
                 }
 
-                case ninjas.CharacterFacing.RIGHT:
+                case CharacterFacing.RIGHT:
                 {
                     return this.rightCameraTargetX;
                 }
@@ -271,12 +280,12 @@ export class SiteSystem
         // target according to active site panel
         switch ( this.sitePanel.getPosition() )
         {
-            case ninjas.SitePanelPosition.LEFT:
+            case SitePanelPosition.LEFT:
             {
                 return this.leftCameraTargetX;
             }
 
-            case ninjas.SitePanelPosition.RIGHT:
+            case SitePanelPosition.RIGHT:
             {
                 return this.rightCameraTargetX;
             }
@@ -288,7 +297,7 @@ export class SiteSystem
     *******************************************************************************************************************/
     private initWowSystem() : void
     {
-        ninjas.Debug.init.log( 'Initing WOW animations' );
+        Debug.init.log( 'Initing WOW animations' );
 
         this.wowSystem = new wow.WOW(
             {

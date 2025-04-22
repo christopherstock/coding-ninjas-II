@@ -1,4 +1,5 @@
-import * as ninjas from '../../ninjas';
+import {Debug} from "../../base/Debug";
+import {Main} from "../../base/Main";
 
 /** ********************************************************************************************************************
 *   The pointer system that manages all pointer interactions.
@@ -17,9 +18,9 @@ export class PointerSystem
     *******************************************************************************************************************/
     public constructor()
     {
-        ninjas.Debug.pointer.log( 'Setup pointer system' );
+        Debug.pointer.log( 'Setup pointer system' );
 
-        const canvas:HTMLCanvasElement = ninjas.Main.game.engine.canvasSystem.getCanvas();
+        const canvas:HTMLCanvasElement = Main.game.engine.canvasSystem.getCanvas();
 
         // eslint-disable-next-line max-len
         canvas.addEventListener( 'onpointermove', ( event:Event ) => { this.onPointerMove( event as PointerEvent ); }, false );
@@ -44,7 +45,7 @@ export class PointerSystem
     *******************************************************************************************************************/
     public onPointerMove( event:PointerEvent ) : void
     {
-        ninjas.Debug.pointer.log( 'pointer move' );
+        Debug.pointer.log( 'pointer move' );
 
         event.preventDefault();
     }
@@ -56,15 +57,15 @@ export class PointerSystem
     *******************************************************************************************************************/
     public onPointerDown( event:PointerEvent ) : void
     {
-        ninjas.Debug.pointer.log( 'pointer down' );
+        Debug.pointer.log( 'pointer down' );
 
         event.preventDefault();
 
-        if ( ninjas.Main.game.level !== null )
+        if ( Main.game.level !== null )
         {
             const playerCenterX :number = (
-                ninjas.Main.game.level.player.shape.body.position.x
-            ) - ninjas.Main.game.camera.getOffsetX();
+                Main.game.level.player.shape.body.position.x
+            ) - Main.game.camera.getOffsetX();
 
             if ( event.clientX < playerCenterX )
             {
@@ -86,7 +87,7 @@ export class PointerSystem
     *******************************************************************************************************************/
     public onPointerUp( event:PointerEvent ) : void
     {
-        ninjas.Debug.pointer.log( 'pointer up' );
+        Debug.pointer.log( 'pointer up' );
 
         event.preventDefault();
 
@@ -101,7 +102,7 @@ export class PointerSystem
     *******************************************************************************************************************/
     public onTouchMove( event:TouchEvent ) : void
     {
-        ninjas.Debug.pointer.log( 'touch move' );
+        Debug.pointer.log( 'touch move' );
 
         event.preventDefault();
     }
@@ -113,15 +114,15 @@ export class PointerSystem
     *******************************************************************************************************************/
     public onTouchDown( event:TouchEvent ) : void
     {
-        ninjas.Debug.pointer.log( 'touch down' );
+        Debug.pointer.log( 'touch down' );
 
         event.preventDefault();
 
-        if ( ninjas.Main.game.level !== null )
+        if ( Main.game.level !== null )
         {
             const playerCenterX:number = (
-                ninjas.Main.game.level.player.shape.body.position.x
-            ) - ninjas.Main.game.camera.getOffsetX();
+                Main.game.level.player.shape.body.position.x
+            ) - Main.game.camera.getOffsetX();
 
             if ( event.touches[ 0 ].pageX < playerCenterX )
             {
@@ -143,7 +144,7 @@ export class PointerSystem
     *******************************************************************************************************************/
     public onTouchUp( event:TouchEvent ) : void
     {
-        ninjas.Debug.pointer.log( 'touch  up' );
+        Debug.pointer.log( 'touch  up' );
 
         event.preventDefault();
 

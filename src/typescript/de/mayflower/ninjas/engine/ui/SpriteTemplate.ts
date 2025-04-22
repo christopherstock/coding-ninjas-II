@@ -1,37 +1,10 @@
-import * as ninjas from '../../ninjas';
-
-/** ********************************************************************************************************************
-*   Possible decisions for mirroring an image.
-***********************************************************************************************************************/
-export enum MirrorImage
-{
-    YES,
-    NO,
-}
-
-/** ********************************************************************************************************************
-*   Possible decisions for looping a sprite.
-***********************************************************************************************************************/
-export enum LoopSprite
-{
-    /* Yes. */
-    YES,
-    /* No. */
-    NO,
-}
-
-/** ********************************************************************************************************************
-*   Specifies if this template should start with a random frame instead of frame 0 or use totally random frames.
-***********************************************************************************************************************/
-export enum RandomFrames
-{
-    /* No. */
-    NO,
-    /* Use random start frame instead of frame 0. */
-    ONLY_START_FRAME,
-    /** Assign random frame on each frame change. */
-    ALL_FRAMES,
-}
+import {ImageSystem} from "../io/ImageSystem";
+import {SpriteTemplateData} from "../../data/SpriteTemplateData";
+import {SettingGame} from "../../setting/SettingGame";
+import {Main} from "../../base/Main";
+import {MirrorImage} from "./MirrorImage";
+import {LoopSprite} from "./LoopSprite";
+import {RandomFrames} from "./RandomFrames";
 
 /** ********************************************************************************************************************
 *   The sprite template that specifies images and their meta information.
@@ -109,7 +82,7 @@ export class SpriteTemplate
     *
     *   @param imageSystem The image system to use.
     *******************************************************************************************************************/
-    private assignImageSizes( imageSystem:ninjas.ImageSystem ) : void
+    public assignImageSizes( imageSystem:ImageSystem ) : void
     {
         this.width  = imageSystem.getImage( this.imageIds[ 0 ] ).width;
         this.height = imageSystem.getImage( this.imageIds[ 0 ] ).height;
@@ -128,42 +101,6 @@ export class SpriteTemplate
     }
 
     /** ****************************************************************************************************************
-    *   Determines and returns an array of filenames for all images that needs to be mirrored.
-    *
-    *   @return An array with all filenames of images needing to be mirrored.
-    *******************************************************************************************************************/
-    public static getAllImagesToMirror() : string[]
-    {
-        const ret:string[] = [];
-
-        for ( const spriteTemplate of ninjas.SpriteTemplateData.ALL_SPRITE_TEMPLATES )
-        {
-            if ( spriteTemplate.mirrored === MirrorImage.YES )
-            {
-                for ( const image of spriteTemplate.imageIds )
-                {
-                    ret.push( image );
-                }
-            }
-        }
-
-        return ret;
-    }
-
-    /** ****************************************************************************************************************
-    *   Assigns the image dimensions of the first frame to all sprite templates.
-    *
-    *   @param imageSystem The image system to use.
-    *******************************************************************************************************************/
-    public static assignAllImageSizes( imageSystem:ninjas.ImageSystem ) : void
-    {
-        for ( const spriteTemplate of ninjas.SpriteTemplateData.ALL_SPRITE_TEMPLATES )
-        {
-            spriteTemplate.assignImageSizes( imageSystem );
-        }
-    }
-
-    /** ****************************************************************************************************************
     *   Creates a single framed sprite template of the specified image.
     *
     *   @param imageId The id of the image to use for this sprite.
@@ -178,11 +115,11 @@ export class SpriteTemplate
             MirrorImage.NO,
             LoopSprite.NO,
             RandomFrames.NO,
-            ninjas.SettingGame.DEFAULT_SPRITE_SCALE
+            SettingGame.DEFAULT_SPRITE_SCALE
         );
 
-        spriteTemplate.width  = ninjas.Main.game.engine.imageSystem.getImage( imageId ).width;
-        spriteTemplate.height = ninjas.Main.game.engine.imageSystem.getImage( imageId ).height;
+        spriteTemplate.width  = Main.game.engine.imageSystem.getImage( imageId ).width;
+        spriteTemplate.height = Main.game.engine.imageSystem.getImage( imageId ).height;
 
         return spriteTemplate;
     }

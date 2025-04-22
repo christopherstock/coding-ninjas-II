@@ -1,4 +1,6 @@
-import * as ninjas from '../../ninjas';
+import {Debug} from "../../base/Debug";
+import {Main} from "../../base/Main";
+import {ImageUtil} from "../../util/ImageUtil";
 
 /** ********************************************************************************************************************
 *   The system realizes dynamic image loading.
@@ -73,7 +75,7 @@ export class ImageSystem
     *******************************************************************************************************************/
     public loadImages() : void
     {
-        ninjas.Debug.image.log( 'Loading [' + String( this.fileNames.length ) + '] images' );
+        Debug.image.log( 'Loading [' + String( this.fileNames.length ) + '] images' );
 
         // load all images
         this.imagesToLoad = this.fileNames.length;
@@ -90,13 +92,13 @@ export class ImageSystem
     *******************************************************************************************************************/
     public mirrorImages() : void
     {
-        ninjas.Debug.image.log( 'Mirroring [' + String( this.mirroredFileNames.length ) + '] images' );
+        Debug.image.log( 'Mirroring [' + String( this.mirroredFileNames.length ) + '] images' );
 
         // mirror determined images
         this.imagesToMirrorCount = this.mirroredFileNames.length;
         for ( const mirroredFileName of this.mirroredFileNames )
         {
-            this.mirroredImages[ mirroredFileName ] = ninjas.ImageUtil.flipImageHorizontal(
+            this.mirroredImages[ mirroredFileName ] = ImageUtil.flipImageHorizontal(
                 this.originalImages[ mirroredFileName ],
                 () => { this.onMirrorImage(); }
             );
@@ -132,12 +134,12 @@ export class ImageSystem
     *******************************************************************************************************************/
     private onLoadImage( event:Event ) : void
     {
-        ninjas.Main.game.engine.preloader.setLoadingPercentage(
+        Main.game.engine.preloader.setLoadingPercentage(
             5 + ( 50 * this.loadedImageCount / this.imagesToLoad ) );
 
         if ( ++this.loadedImageCount === this.imagesToLoad )
         {
-            ninjas.Debug.image.log( 'All [' + String( this.imagesToLoad ) + '] images loaded' );
+            Debug.image.log( 'All [' + String( this.imagesToLoad ) + '] images loaded' );
 
             this.mirrorImages();
         }
@@ -148,13 +150,13 @@ export class ImageSystem
     *******************************************************************************************************************/
     private onMirrorImage() : void
     {
-        ninjas.Main.game.engine.preloader.setLoadingPercentage(
+        Main.game.engine.preloader.setLoadingPercentage(
             55 + ( 20 * this.mirroredImageCount / this.imagesToMirrorCount )
         );
 
         if ( ++this.mirroredImageCount === this.imagesToMirrorCount )
         {
-            ninjas.Debug.image.log( 'All [' + String( this.imagesToMirrorCount ) + '] images mirrored' );
+            Debug.image.log( 'All [' + String( this.imagesToMirrorCount ) + '] images mirrored' );
 
             this.onLoadComplete();
         }

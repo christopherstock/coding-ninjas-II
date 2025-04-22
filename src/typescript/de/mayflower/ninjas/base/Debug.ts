@@ -1,4 +1,5 @@
-import * as ninjas from '../ninjas';
+import {StringUtil} from "../util/StringUtil";
+import {SettingDebug} from "../setting/SettingDebug";
 
 /** ********************************************************************************************************************
 *   Represents a debug group whose logging can be enabled or disabled.
@@ -52,10 +53,10 @@ export class Debug
     *******************************************************************************************************************/
     public log( msg:string = '' ):void
     {
-        if ( ninjas.SettingDebug.DEBUG_MODE && this.debugEnabled )
+        if ( SettingDebug.DEBUG_MODE && this.debugEnabled )
         {
             // eslint-disable-next-line no-console
-            console.log( '[' + ninjas.StringUtil.getDateTimeString() + '] ' + msg );
+            console.log( '[' + StringUtil.getDateTimeString() + '] ' + msg );
         }
     }
 }

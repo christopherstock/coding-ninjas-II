@@ -1,5 +1,7 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../ninjas';
+import {DebugColor, SettingDebug} from "../../setting/SettingDebug";
+import {BodyDensity, BodyFriction, BodyFrictionAir, BodyRestitution, SettingMatter} from "../../setting/SettingMatter";
+import {MathUtil} from "../../util/MathUtil";
 
 /** ********************************************************************************************************************
 *   Specifies if a shape is static or not.
@@ -36,32 +38,32 @@ export abstract class Shape
     *******************************************************************************************************************/
     protected constructor
     (
-        debugColor  :ninjas.DebugColor,
-        isStatic    :ninjas.StaticShape,
+        debugColor  :DebugColor,
+        isStatic    :StaticShape,
         angle       :number,
-        friction    :ninjas.BodyFriction,
-        density     :ninjas.BodyDensity,
-        restitution :ninjas.BodyRestitution
+        friction    :BodyFriction,
+        density     :BodyDensity,
+        restitution :BodyRestitution
     )
     {
         this.options = {
             render:
             {
                 fillStyle:   (
-                    ninjas.SettingDebug.BG_FOR_MATTER_BODY ? debugColor : ninjas.DebugColor.COLOR_TRANSPARENT ),
+                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT ),
                 strokeStyle: (
-                    ninjas.SettingDebug.BG_FOR_MATTER_BODY ? debugColor : ninjas.DebugColor.COLOR_TRANSPARENT ),
+                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT ),
                 opacity:     1.0,
                 lineWidth:   1.0,
             },
-            isStatic:        ( isStatic === ninjas.StaticShape.YES ),
-            collisionFilter: ninjas.SettingMatter.COLLISION_GROUP_COLLIDING,
+            isStatic:        ( isStatic === StaticShape.YES ),
+            collisionFilter: SettingMatter.COLLISION_GROUP_COLLIDING,
 
             friction:        friction,
-            frictionAir:     ninjas.BodyFrictionAir.DEFAULT,
+            frictionAir:     BodyFrictionAir.DEFAULT,
             // frictionStatic:  0.5,
 
-            angle:           ninjas.MathUtil.angleToRad( angle ),
+            angle:           MathUtil.angleToRad( angle ),
             density:         density,
 
             restitution:     restitution,

@@ -1,10 +1,15 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {GameObject} from "../GameObject";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {SettingMatter} from "../../../setting/SettingMatter";
+import {Main} from "../../../base/Main";
+import {Debug} from "../../../base/Debug";
 
 /** ********************************************************************************************************************
 *   Represents a pickable item.
 ***********************************************************************************************************************/
-export class Item extends ninjas.GameObject
+export class Item extends GameObject
 {
     /** Indicates if this item has been picked. */
     public          picked                      :boolean                        = null;
@@ -17,7 +22,7 @@ export class Item extends ninjas.GameObject
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number )
+    public constructor( shape:Shape, spriteTemplate:SpriteTemplate, x:number, y:number )
     {
         super
         (
@@ -27,7 +32,7 @@ export class Item extends ninjas.GameObject
             y
         );
 
-        this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_ITEM;
+        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_ITEM;
     }
 
     /** ****************************************************************************************************************
@@ -48,9 +53,9 @@ export class Item extends ninjas.GameObject
     *******************************************************************************************************************/
     private checkPicked() : void
     {
-        if ( matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds ) )
+        if ( matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds ) )
         {
-            ninjas.Debug.item.log( 'Player picked item' );
+            Debug.item.log( 'Player picked item' );
 
             this.pick();
         }
@@ -65,6 +70,6 @@ export class Item extends ninjas.GameObject
         this.picked = true;
 
         // remove item body
-        ninjas.Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
+        Main.game.engine.matterJsSystem.removeFromWorld( this.shape.body );
     }
 }

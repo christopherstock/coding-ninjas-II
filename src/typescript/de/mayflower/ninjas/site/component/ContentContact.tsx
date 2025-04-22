@@ -1,27 +1,31 @@
 import * as React  from 'react';
-import * as ninjas from '../../ninjas';
+import {SiteContentFactory} from "../SiteContentFactory";
+import {Debug} from "../../base/Debug";
+import {SiteContent} from "../SiteContentSystem";
+import {Main} from "../../base/Main";
+import {ImageData} from "../../data/ImageData";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'contact' page.
 ***********************************************************************************************************************/
 export const ContentContact :() => JSX.Element = () :JSX.Element =>
 {
-    ninjas.Debug.react.log( 'ContentContact.render() being invoked' );
+    Debug.react.log( 'ContentContact.render() being invoked' );
 
     return <div>
 
-        { ninjas.SiteContentFactory.createStepIndicator( ninjas.SiteContent.CONTENT_CONTACT ) }
-        { ninjas.SiteContentFactory.createDivider() }
-        { ninjas.SiteContentFactory.createHeadline( 'Contact Us!' ) }
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createStepIndicator( SiteContent.CONTENT_CONTACT ) }
+        { SiteContentFactory.createDivider() }
+        { SiteContentFactory.createHeadline( 'Contact Us!' ) }
+        { SiteContentFactory.createSpacerVertical() }
 
         <div className='card-flip-container'>
             <div className='card-flipper'>
                 <div className='card-front' style={
                     {
                         backgroundImage: 'url( '
-                        + ninjas.Main.game.engine.imageSystem.getImage(
-                            ninjas.ImageData.IMAGE_SITE_PANEL_OFFICE_WZBG
+                        + Main.game.engine.imageSystem.getImage(
+                            ImageData.IMAGE_SITE_PANEL_OFFICE_WZBG
                         ).src
                         + ' )',
                     }
@@ -40,15 +44,15 @@ export const ContentContact :() => JSX.Element = () :JSX.Element =>
             </div>
         </div>
 
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
 
         <div className='card-flip-container'>
             <div className='card-flipper'>
                 <div className='card-front' style={
                     {
                         backgroundImage: 'url( '
-                        + ninjas.Main.game.engine.imageSystem.getImage(
-                            ninjas.ImageData.IMAGE_SITE_PANEL_OFFICE_MUC
+                        + Main.game.engine.imageSystem.getImage(
+                            ImageData.IMAGE_SITE_PANEL_OFFICE_MUC
                         ).src
                         + ' )',
                     }
@@ -67,15 +71,15 @@ export const ContentContact :() => JSX.Element = () :JSX.Element =>
             </div>
         </div>
 
-        { ninjas.SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createSpacerVertical() }
 
         <div className='card-flip-container'>
             <div className='card-flipper'>
                 <div className='card-front' style={
                     {
                         backgroundImage: 'url( '
-                        + ninjas.Main.game.engine.imageSystem.getImage(
-                            ninjas.ImageData.IMAGE_SITE_PANEL_OFFICE_BER
+                        + Main.game.engine.imageSystem.getImage(
+                            ImageData.IMAGE_SITE_PANEL_OFFICE_BER
                         ).src
                         + ' )',
                     }

@@ -1,9 +1,12 @@
-import * as ninjas from '../../../ninjas';
+import {GameObject} from "../GameObject";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {SettingMatter} from "../../../setting/SettingMatter";
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
 ***********************************************************************************************************************/
-export class Decoration extends ninjas.GameObject
+export class Decoration extends GameObject
 {
     /** ****************************************************************************************************************
     *   Creates a new decoration.
@@ -13,7 +16,7 @@ export class Decoration extends ninjas.GameObject
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
     *******************************************************************************************************************/
-    public constructor( shape:ninjas.Shape, spriteTemplate:ninjas.SpriteTemplate, x:number, y:number  )
+    public constructor( shape:Shape, spriteTemplate:SpriteTemplate, x:number, y:number  )
     {
         super
         (
@@ -23,6 +26,6 @@ export class Decoration extends ninjas.GameObject
             y
         );
 
-        this.shape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_DECO;
+        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DECO;
     }
 }

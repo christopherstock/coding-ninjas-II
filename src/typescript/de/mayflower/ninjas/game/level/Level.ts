@@ -1,4 +1,19 @@
-import * as ninjas from '../../ninjas';
+import {Player} from "../object/being/Player";
+import {Bot} from "../object/being/Bot";
+import {Obstacle} from "../object/primal/Obstacle";
+import {Movable} from "../object/primal/Movable";
+import {Decoration} from "../object/deco/Decoration";
+import {SiteTrigger} from "../object/special/SiteTrigger";
+import {SigSaw} from "../object/special/SigSaw";
+import {Bounce} from "../object/special/Bounce";
+import {Platform} from "../object/special/Platform";
+import {ParallaxDeco} from "../object/deco/ParallaxDeco";
+import {Shrine} from "../object/deco/Shrine";
+import {Door} from "../object/special/Door";
+import {MatterJsSystem} from "../../engine/MatterJsSystem";
+import {KeySystem} from "../../engine/hid/KeySystem";
+import {SiteContent} from "../../site/SiteContentSystem";
+import {CharacterFacing} from "../object/being/CharacterFacing";
 
 export enum LevelId {
     LEVEL_START,
@@ -13,25 +28,25 @@ export abstract class Level
     public      playerStartX            :number                         = 0.0;
     public      playerStartY            :number                         = 0.0;
     public      playerInitialFloat      :boolean                        = false;
-    public      playerInitialFacing     :ninjas.CharacterFacing         = ninjas.CharacterFacing.RIGHT;
+    public      playerInitialFacing     :CharacterFacing         = CharacterFacing.RIGHT;
 
     public      width                   :number                         = 0.0;
     public      height                  :number                         = 0.0;
 
-    public      player                  :ninjas.Player                  = null;
-    public      enemies                 :ninjas.Bot[]                   = [];
-    public      obstacles               :ninjas.Obstacle[]              = [];
-    public      movables                :ninjas.Movable[]               = [];
-    public      decosBg                 :ninjas.Decoration[]            = [];
-    public      decosFg                 :ninjas.Decoration[]            = [];
-    public      siteTriggers            :ninjas.SiteTrigger[]           = [];
-    public      sigsaws                 :ninjas.SigSaw[]                = [];
-    public      bounces                 :ninjas.Bounce[]                = [];
-    public      platforms               :ninjas.Platform[]              = [];
-    public      parallaxBgs             :ninjas.ParallaxDeco[]          = [];
-    public      parallaxFgs             :ninjas.ParallaxDeco[]          = [];
-    public      shrines                 :ninjas.Shrine[]                = [];
-    public      doors                   :ninjas.Door[]                = [];
+    public      player                  :Player                  = null;
+    public      enemies                 :Bot[]                   = [];
+    public      obstacles               :Obstacle[]              = [];
+    public      movables                :Movable[]               = [];
+    public      decosBg                 :Decoration[]            = [];
+    public      decosFg                 :Decoration[]            = [];
+    public      siteTriggers            :SiteTrigger[]           = [];
+    public      sigsaws                 :SigSaw[]                = [];
+    public      bounces                 :Bounce[]                = [];
+    public      platforms               :Platform[]              = [];
+    public      parallaxBgs             :ParallaxDeco[]          = [];
+    public      parallaxFgs             :ParallaxDeco[]          = [];
+    public      shrines                 :Shrine[]                = [];
+    public      doors                   :Door[]                = [];
 
     /** ****************************************************************************************************************
     *   Sets the player and the game objects.
@@ -43,7 +58,7 @@ export abstract class Level
     *
     *   @param matterJsSystem The matter.js instance to add all elements to.
     *******************************************************************************************************************/
-    public init( matterJsSystem:ninjas.MatterJsSystem ) : void
+    public init( matterJsSystem:MatterJsSystem ) : void
     {
         this.createGameObjects();
 
@@ -109,7 +124,7 @@ export abstract class Level
     *
     *   @param keySystem The keySystem of the engine.
     *******************************************************************************************************************/
-    public render( keySystem:ninjas.KeySystem ) : void
+    public render( keySystem:KeySystem ) : void
     {
         for ( const decoBg of this.decosBg )
         {
@@ -183,7 +198,7 @@ export abstract class Level
     *   @param content The site content of the shrine to toggle the book.
     *   @param open    Specifies if the book shall be opened.
     *******************************************************************************************************************/
-    public setShrineBookOpen( content:ninjas.SiteContent, open:boolean ) : void
+    public setShrineBookOpen( content:SiteContent, open:boolean ) : void
     {
         for ( const gameObject of this.shrines )
         {

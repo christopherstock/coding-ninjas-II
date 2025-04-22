@@ -1,5 +1,29 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../ninjas';
+import { Movable } from './primal/Movable';
+import { Platform } from './special/Platform';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import {ImageData} from "../../data/ImageData";
+import { ShapeRectangle } from '../../engine/shape/ShapeRectangle';
+import { DebugColor } from '../../setting/SettingDebug';
+import { StaticShape } from '../../engine/shape/Shape';
+import {BodyDensity, BodyFriction, BodyRestitution, SettingMatter} from '../../setting/SettingMatter';
+import {ShapeCircle} from "../../engine/shape/ShapeCircle";
+import {Item} from "./primal/Item";
+import {JumpPassThrough, Obstacle} from "./primal/Obstacle";
+import {ShapeFreeForm} from "../../engine/shape/ShapeFreeForm";
+import {CharacterSpriteSet} from "./being/CharacterSpriteSet";
+import {Bot} from "./being/Bot";
+import {Decoration} from "./deco/Decoration";
+import {Level} from "../level/Level";
+import {DecoPosition} from "./GameObjectBundleFactory";
+import {ParallaxDeco} from "./deco/ParallaxDeco";
+import {SiteContent} from "../../site/SiteContentSystem";
+import {Door} from "./special/Door";
+import {SigSaw} from "./special/SigSaw";
+import {Bounce} from "./special/Bounce";
+import {SitePanelAppearance, SiteTrigger} from "./special/SiteTrigger";
+import {GameAction} from "./GameAction";
+import {CharacterFacing} from "./being/CharacterFacing";
 
 /** ********************************************************************************************************************
 *   Creates customized instances of game objects.
@@ -16,24 +40,24 @@ export abstract class GameObjectFactory
     *
     *   @return The created box.
     *******************************************************************************************************************/
-    public static createWoodenCrate( x:number, yBottom:number ):ninjas.Movable
+    public static createWoodenCrate( x:number, yBottom:number ):Movable
     {
-        const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
-            ninjas.ImageData.IMAGE_CRATE_WOOD_1
+        const sprtiteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage(
+            ImageData.IMAGE_CRATE_WOOD_1
         );
 
-        return new ninjas.Movable
+        return new Movable
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 sprtiteTemplate.width,
                 sprtiteTemplate.height,
-                ninjas.DebugColor.COLOR_DEBUG_MOVABLE,
-                ninjas.StaticShape.NO,
+                DebugColor.COLOR_DEBUG_MOVABLE,
+                StaticShape.NO,
                 0.0,
-                ninjas.BodyFriction.NONE,
-                ninjas.BodyDensity.WOOD,
-                ninjas.BodyRestitution.WOOD
+                BodyFriction.NONE,
+                BodyDensity.WOOD,
+                BodyRestitution.WOOD
             ),
             sprtiteTemplate,
             x,
@@ -56,22 +80,22 @@ export abstract class GameObjectFactory
         yBottom :number,
         imageId :string
     )
-    : ninjas.Movable
+    : Movable
     {
-        const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+        const sprtiteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
-        return new ninjas.Movable
+        return new Movable
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 sprtiteTemplate.width,
                 sprtiteTemplate.height,
-                ninjas.DebugColor.COLOR_DEBUG_MOVABLE,
-                ninjas.StaticShape.NO,
+                DebugColor.COLOR_DEBUG_MOVABLE,
+                StaticShape.NO,
                 0.0,
                 0.001,
-                ninjas.BodyDensity.DEFAULT,
-                ninjas.BodyRestitution.RUBBER
+                BodyDensity.DEFAULT,
+                BodyRestitution.RUBBER
             ),
             sprtiteTemplate,
             x,
@@ -96,21 +120,21 @@ export abstract class GameObjectFactory
         imageId :string,
         angle   :number
     )
-    : ninjas.Movable
+    : Movable
     {
-        const sprtiteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+        const sprtiteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
-        return new ninjas.Movable
+        return new Movable
         (
-            new ninjas.ShapeCircle
+            new ShapeCircle
             (
                 sprtiteTemplate.width,
-                ninjas.DebugColor.COLOR_DEBUG_MOVABLE,
-                ninjas.StaticShape.NO,
+                DebugColor.COLOR_DEBUG_MOVABLE,
+                StaticShape.NO,
                 angle,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.DEFAULT,
-                ninjas.BodyRestitution.RUBBER
+                BodyFriction.DEFAULT,
+                BodyDensity.DEFAULT,
+                BodyRestitution.RUBBER
             ),
             sprtiteTemplate,
             x,
@@ -135,14 +159,14 @@ export abstract class GameObjectFactory
     (
         x           :number,
         yBottom     :number,
-        friction    :ninjas.BodyFriction,
-        density     :ninjas.BodyDensity,
-        restitution :ninjas.BodyRestitution
+        friction    :BodyFriction,
+        density     :BodyDensity,
+        restitution :BodyRestitution
     )
-    : ninjas.Movable
+    : Movable
     {
-        const spriteTemplate:ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage(
-            ninjas.ImageData.IMAGE_STONE_SPHERE
+        const spriteTemplate:SpriteTemplate = SpriteTemplate.createFromSingleImage(
+            ImageData.IMAGE_STONE_SPHERE
         );
 
         if ( spriteTemplate.width !== spriteTemplate.height )
@@ -154,13 +178,13 @@ export abstract class GameObjectFactory
             );
         }
 
-        return new ninjas.Movable
+        return new Movable
         (
-            new ninjas.ShapeCircle
+            new ShapeCircle
             (
                 spriteTemplate.width,
-                ninjas.DebugColor.COLOR_DEBUG_MOVABLE,
-                ninjas.StaticShape.NO,
+                DebugColor.COLOR_DEBUG_MOVABLE,
+                StaticShape.NO,
                 0.0,
                 friction,
                 density,
@@ -180,22 +204,22 @@ export abstract class GameObjectFactory
     *
     *   @return The created item.
     *******************************************************************************************************************/
-    public static createItem( x:number, y:number ):ninjas.Item
+    public static createItem( x:number, y:number ):Item
     {
-        return new ninjas.Item
+        return new Item
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 30.0,
                 52.0,
-                ninjas.DebugColor.COLOR_DEBUG_ITEM,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_DEBUG_ITEM,
+                StaticShape.YES,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.DEFAULT,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
-            ninjas.SpriteTemplate.createFromSingleImage( ninjas.ImageData.IMAGE_ITEM ),
+            SpriteTemplate.createFromSingleImage( ImageData.IMAGE_ITEM ),
             x,
             y
         );
@@ -219,25 +243,25 @@ export abstract class GameObjectFactory
     (
         xLeft           :number,
         yBottom         :number,
-        spriteTemplate  :ninjas.SpriteTemplate,
+        spriteTemplate  :SpriteTemplate,
         angle           :number = 0,
-        jumpPassThrough :ninjas.JumpPassThrough = ninjas.JumpPassThrough.NO,
-        staticShape     :ninjas.StaticShape = ninjas.StaticShape.YES,
-        density         :ninjas.BodyDensity = ninjas.BodyDensity.DEFAULT,
-        restitution     :ninjas.BodyRestitution = ninjas.BodyRestitution.DEFAULT
+        jumpPassThrough :JumpPassThrough = JumpPassThrough.NO,
+        staticShape     :StaticShape = StaticShape.YES,
+        density         :BodyDensity = BodyDensity.DEFAULT,
+        restitution     :BodyRestitution = BodyRestitution.DEFAULT
     )
-    : ninjas.Obstacle
+    : Obstacle
     {
-        return new ninjas.Obstacle
+        return new Obstacle
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 spriteTemplate.width,
                 spriteTemplate.height,
-                ninjas.DebugColor.COLOR_DEBUG_OBSTACLE,
+                DebugColor.COLOR_DEBUG_OBSTACLE,
                 staticShape,
                 angle,
-                ninjas.BodyFriction.OBSTACLE,
+                BodyFriction.OBSTACLE,
                 density,
                 restitution
             ),
@@ -267,22 +291,22 @@ export abstract class GameObjectFactory
         width           :number,
         height          :number,
         angle           :number,
-        jumpPassThrough :ninjas.JumpPassThrough
+        jumpPassThrough :JumpPassThrough
     )
-    : ninjas.Obstacle
+    : Obstacle
     {
-        return new ninjas.Obstacle
+        return new Obstacle
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 width,
                 height,
-                ninjas.DebugColor.COLOR_DEBUG_OBSTACLE,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_DEBUG_OBSTACLE,
+                StaticShape.YES,
                 angle,
-                ninjas.BodyFriction.OBSTACLE,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.OBSTACLE,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
             xLeft,
             yTop,
@@ -303,26 +327,26 @@ export abstract class GameObjectFactory
     *   @return The created obstacle.
     *******************************************************************************************************************/
     public static createFreeForm(
-        x:number, y:number, vertices:matter.Vector[], angle:number, spriteTemplate:ninjas.SpriteTemplate
+        x:number, y:number, vertices:matter.Vector[], angle:number, spriteTemplate:SpriteTemplate
     )
-    : ninjas.Obstacle
+    : Obstacle
     {
-        return new ninjas.Obstacle
+        return new Obstacle
         (
-            new ninjas.ShapeFreeForm
+            new ShapeFreeForm
             (
                 vertices,
-                ninjas.DebugColor.COLOR_DEBUG_OBSTACLE,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_DEBUG_OBSTACLE,
+                StaticShape.YES,
                 angle,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.DEFAULT,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
             x,
             y,
             spriteTemplate,
-            ninjas.JumpPassThrough.NO
+            JumpPassThrough.NO
         );
     }
 
@@ -346,10 +370,10 @@ export abstract class GameObjectFactory
         width           :number,
         height          :number,
         deltaY          :number,
-        spriteTemplate  :ninjas.SpriteTemplate,
-        jumpPassThrough :ninjas.JumpPassThrough
+        spriteTemplate  :SpriteTemplate,
+        jumpPassThrough :JumpPassThrough
     )
-    : ninjas.Obstacle
+    : Obstacle
     {
         const vertices :matter.Vector[] = [];
 
@@ -364,17 +388,17 @@ export abstract class GameObjectFactory
             y += deltaY;
         }
 
-        return new ninjas.Obstacle
+        return new Obstacle
         (
-            new ninjas.ShapeFreeForm
+            new ShapeFreeForm
             (
                 vertices,
-                ninjas.DebugColor.COLOR_DEBUG_OBSTACLE,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_DEBUG_OBSTACLE,
+                StaticShape.YES,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.DEFAULT,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
             x,
             y,
@@ -397,27 +421,27 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createBot
     (
-        spriteTemplate     :ninjas.SpriteTemplate,
+        spriteTemplate     :SpriteTemplate,
         x                  :number,
         yBottom            :number,
-        facingDirection    :ninjas.CharacterFacing,
+        facingDirection    :CharacterFacing,
         walkingTargetLeft  :number,
         walkingTargetRight :number,
-        characterSpriteSet :ninjas.CharacterSpriteSet,
+        characterSpriteSet :CharacterSpriteSet,
         friendly           :boolean,
         blocksPlayer       :boolean
     )
-    : ninjas.Bot
+    : Bot
     {
-        const diamondShape = GameObjectFactory.createCharacterDiamondShape( spriteTemplate, ninjas.DebugColor.COLOR_DEBUG_ENEMY );
+        const diamondShape = GameObjectFactory.createCharacterDiamondShape( spriteTemplate, DebugColor.COLOR_DEBUG_ENEMY );
         if (blocksPlayer) {
-            diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_COLLIDING;
+            diamondShape.body.collisionFilter = SettingMatter.COLLISION_GROUP_COLLIDING;
         } else {
             diamondShape.body.isStatic = true;
-            diamondShape.body.collisionFilter = ninjas.SettingMatter.COLLISION_GROUP_NON_COLLIDING_BOT;
+            diamondShape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_BOT;
         }
 
-        return new ninjas.Bot
+        return new Bot
         (
             diamondShape,
             x,
@@ -447,24 +471,24 @@ export abstract class GameObjectFactory
     (
         xLeft          :number,
         yBottom        :number,
-        isStatic       :ninjas.StaticShape,
-        spriteTemplate :ninjas.SpriteTemplate,
-        debugColor     :ninjas.DebugColor = ninjas.DebugColor.COLOR_DEBUG_DECORATION
+        isStatic       :StaticShape,
+        spriteTemplate :SpriteTemplate,
+        debugColor     :DebugColor = DebugColor.COLOR_DEBUG_DECORATION
     )
-    : ninjas.Decoration
+    : Decoration
     {
-        return new ninjas.Decoration
+        return new Decoration
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 spriteTemplate.width,
                 spriteTemplate.height,
                 debugColor,
                 isStatic,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.RUBBER,
-                ninjas.BodyRestitution.RUBBER
+                BodyFriction.DEFAULT,
+                BodyDensity.RUBBER,
+                BodyRestitution.RUBBER
             ),
             spriteTemplate,
             xLeft,
@@ -488,10 +512,10 @@ export abstract class GameObjectFactory
     (
         xLeft          :number,
         yBottom        :number,
-        isStatic       :ninjas.StaticShape,
-        spriteTemplate :ninjas.SpriteTemplate
+        isStatic       :StaticShape,
+        spriteTemplate :SpriteTemplate
     )
-    : ninjas.Decoration
+    : Decoration
     {
         if ( spriteTemplate.width !== spriteTemplate.height )
         {
@@ -501,17 +525,17 @@ export abstract class GameObjectFactory
             );
         }
 
-        return new ninjas.Decoration
+        return new Decoration
         (
-            new ninjas.ShapeCircle
+            new ShapeCircle
             (
                 spriteTemplate.width,
-                ninjas.DebugColor.COLOR_DEBUG_DECORATION,
+                DebugColor.COLOR_DEBUG_DECORATION,
                 isStatic,
                 0.0,
-                ninjas.BodyFriction.RUBBER,
-                ninjas.BodyDensity.RUBBER,
-                ninjas.BodyRestitution.RUBBER
+                BodyFriction.RUBBER,
+                BodyDensity.RUBBER,
+                BodyRestitution.RUBBER
             ),
             spriteTemplate,
             xLeft,
@@ -531,27 +555,27 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createParallaxDeco
     (
-        level          :ninjas.Level,
+        level          :Level,
         x              :number,
         y              :number,
         parallaxRatio  :number,
-        decoPosition   :ninjas.DecoPosition,
-        spriteTemplate :ninjas.SpriteTemplate
+        decoPosition   :DecoPosition,
+        spriteTemplate :SpriteTemplate
     )
     : void
     {
-        const parallaxDeco :ninjas.ParallaxDeco = new ninjas.ParallaxDeco
+        const parallaxDeco :ParallaxDeco = new ParallaxDeco
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 spriteTemplate.width,
                 spriteTemplate.height,
-                ninjas.DebugColor.COLOR_TRANSPARENT,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_TRANSPARENT,
+                StaticShape.YES,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.DEFAULT,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             x,
@@ -561,13 +585,13 @@ export abstract class GameObjectFactory
 
         switch ( decoPosition )
         {
-            case ninjas.DecoPosition.FG:
+            case DecoPosition.FG:
             {
                 level.parallaxFgs.push( parallaxDeco );
                 break;
             }
 
-            case ninjas.DecoPosition.BG:
+            case DecoPosition.BG:
             {
                 level.parallaxBgs.push( parallaxDeco );
                 break;
@@ -589,29 +613,29 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createSiteTrigger
     (
-        level               :ninjas.Level,
+        level               :Level,
         x                   :number,
         yBottom             :number,
         width               :number,
         height              :number,
-        content             :ninjas.SiteContent,
-        sitePanelAppearance :ninjas.SitePanelAppearance,
-        spriteTemplate      :ninjas.SpriteTemplate
+        content             :SiteContent,
+        sitePanelAppearance :SitePanelAppearance,
+        spriteTemplate      :SpriteTemplate
     )
     : void
     {
-        const siteTrigger :ninjas.SiteTrigger = new ninjas.SiteTrigger
+        const siteTrigger :SiteTrigger = new SiteTrigger
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 width,
                 height,
-                ninjas.DebugColor.COLOR_DEBUG_SITE_TRIGGER,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_DEBUG_SITE_TRIGGER,
+                StaticShape.YES,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.DEFAULT,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             x,
@@ -633,28 +657,28 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createDoor
     (
-        level               :ninjas.Level,
+        level               :Level,
         x                   :number,
         yBottom             :number,
         imageId             :string,
-        action              :ninjas.GameAction
+        action              :GameAction
     )
     : void
     {
-        const spriteTemplate :ninjas.SpriteTemplate = ninjas.SpriteTemplate.createFromSingleImage( imageId );
+        const spriteTemplate :SpriteTemplate = SpriteTemplate.createFromSingleImage( imageId );
 
-        const door :ninjas.Door = new ninjas.Door
+        const door :Door = new Door
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 spriteTemplate.width,
                 spriteTemplate.height,
-                ninjas.DebugColor.COLOR_DEBUG_SITE_TRIGGER,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_DEBUG_SITE_TRIGGER,
+                StaticShape.YES,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.DEFAULT,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             x,
@@ -676,26 +700,26 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createSigsaw
     (
-        level            :ninjas.Level,
+        level            :Level,
         xLeft            :number,
         yTop             :number,
-        spriteTemplate   :ninjas.SpriteTemplate,
+        spriteTemplate   :SpriteTemplate,
         maxRotationSpeed :number
     )
     : void
     {
-        const sigsaw :ninjas.SigSaw = new ninjas.SigSaw
+        const sigsaw :SigSaw = new SigSaw
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 spriteTemplate.width,
                 spriteTemplate.height,
-                ninjas.DebugColor.COLOR_DEBUG_SIGSAW,
-                ninjas.StaticShape.NO,
+                DebugColor.COLOR_DEBUG_SIGSAW,
+                StaticShape.NO,
                 0.0,
                 2.5,
                 0.001,
-                ninjas.BodyRestitution.DEFAULT
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             xLeft,
@@ -718,25 +742,25 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createPlatform
     (
-        level          :ninjas.Level,
-        spriteTemplate :ninjas.SpriteTemplate,
+        level          :Level,
+        spriteTemplate :SpriteTemplate,
         speed          :number,
         waypoints      :matter.Vector[]
     )
     : void
     {
-        const platform :ninjas.Platform = new ninjas.Platform
+        const platform :Platform = new Platform
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 spriteTemplate.width,
                 spriteTemplate.height,
-                ninjas.DebugColor.COLOR_DEBUG_PLATFORM,
-                ninjas.StaticShape.YES,
+                DebugColor.COLOR_DEBUG_PLATFORM,
+                StaticShape.YES,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
-                ninjas.BodyDensity.INFINITE,
-                ninjas.BodyRestitution.DEFAULT
+                BodyFriction.DEFAULT,
+                BodyDensity.INFINITE,
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             speed,
@@ -758,26 +782,26 @@ export abstract class GameObjectFactory
     *   @return The created decoration.
     *******************************************************************************************************************/
     public static createBounce(
-        level          :ninjas.Level,
+        level          :Level,
         xLeft          :number,
         yTop           :number,
-        spriteTemplate :ninjas.SpriteTemplate,
+        spriteTemplate :SpriteTemplate,
         density        :number
     )
     : void
     {
-        const bounce :ninjas.Bounce = new ninjas.Bounce
+        const bounce :Bounce = new Bounce
         (
-            new ninjas.ShapeRectangle
+            new ShapeRectangle
             (
                 spriteTemplate.width,
                 spriteTemplate.height,
-                ninjas.DebugColor.COLOR_DEBUG_BOUNCE,
-                ninjas.StaticShape.NO,
+                DebugColor.COLOR_DEBUG_BOUNCE,
+                StaticShape.NO,
                 0.0,
-                ninjas.BodyFriction.DEFAULT,
+                BodyFriction.DEFAULT,
                 density,
-                ninjas.BodyRestitution.DEFAULT
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             xLeft,
@@ -797,13 +821,13 @@ export abstract class GameObjectFactory
     *******************************************************************************************************************/
     public static createCharacterDiamondShape
     (
-        spriteTemplate :ninjas.SpriteTemplate,
-        debugColor     :ninjas.DebugColor
+        spriteTemplate :SpriteTemplate,
+        debugColor     :DebugColor
     )
-    : ninjas.ShapeFreeForm
+    : ShapeFreeForm
     {
         const gapSizeX :number = ( spriteTemplate.width / 2 );
-        const gapSizeY :number = ninjas.SettingMatter.PLAYER_EDGE_GAP_Y;
+        const gapSizeY :number = SettingMatter.PLAYER_EDGE_GAP_Y;
 
         const vertices :matter.Vector[] = [];
 
@@ -817,15 +841,15 @@ export abstract class GameObjectFactory
         vertices.push( matter.Vector.create( 0.0,                             spriteTemplate.height - gapSizeY ) );
         vertices.push( matter.Vector.create( 0.0,                             gapSizeY                         ) );
 
-        return new ninjas.ShapeFreeForm
+        return new ShapeFreeForm
         (
             vertices,
             debugColor,
-            ninjas.StaticShape.NO,
+            StaticShape.NO,
             0.0,
-            ninjas.BodyFriction.PLAYER,
-            ninjas.BodyDensity.PLAYER,
-            ninjas.BodyRestitution.DEFAULT
+            BodyFriction.PLAYER,
+            BodyDensity.PLAYER,
+            BodyRestitution.DEFAULT
         );
     }
 }

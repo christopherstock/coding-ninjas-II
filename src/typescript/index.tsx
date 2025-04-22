@@ -1,13 +1,13 @@
-require( './de/mayflower/ninjas/css/custom.less' );
+import {Main} from "./de/mayflower/ninjas/base/Main";
 
-import * as ninjas from './de/mayflower/ninjas/ninjas';
+require( './de/mayflower/ninjas/css/custom.less' );
 
 /** ********************************************************************************************************************
 *   Being invoked when the page is loaded completely.
 ***********************************************************************************************************************/
 window.onload = () :void =>
 {
-    ninjas.Main.main();
+    Main.main();
 };
 
 /** ********************************************************************************************************************

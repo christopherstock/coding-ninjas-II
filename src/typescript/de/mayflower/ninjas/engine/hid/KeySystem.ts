@@ -1,4 +1,4 @@
-import * as ninjas from '../../ninjas';
+import {Debug} from "../../base/Debug";
 
 /** ********************************************************************************************************************
 *   The key system that manages all pressed keys.
@@ -37,7 +37,7 @@ export class KeySystem
         {
             this.keysPressed[ keyID ] = true;
 
-            ninjas.Debug.key.log( 'key pressed ['  + keyID + ']' );
+            Debug.key.log( 'key pressed ['  + keyID + ']' );
         }
     }
 
@@ -55,7 +55,7 @@ export class KeySystem
         this.keysPressed[     keyID ] = false;
         this.keysNeedRelease[ keyID ] = false;
 
-        ninjas.Debug.key.log( 'key released ['  + keyID + ']' );
+        Debug.key.log( 'key released ['  + keyID + ']' );
     }
 
     /** ****************************************************************************************************************

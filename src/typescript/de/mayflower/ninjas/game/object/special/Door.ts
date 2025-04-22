@@ -1,12 +1,16 @@
 import * as matter from 'matter-js';
-import * as ninjas from '../../../ninjas';
+import {Decoration} from "../deco/Decoration";
+import {GameAction} from "../GameAction";
+import {Shape} from "../../../engine/shape/Shape";
+import {SpriteTemplate} from "../../../engine/ui/SpriteTemplate";
+import {Main} from "../../../base/Main";
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
 ***********************************************************************************************************************/
-export class Door extends ninjas.Decoration
+export class Door extends Decoration
 {
-    private action: ninjas.GameAction = null;
+    private action: GameAction = null;
 
     /** ****************************************************************************************************************
     *   Creates a new Door.
@@ -20,11 +24,11 @@ export class Door extends ninjas.Decoration
     *******************************************************************************************************************/
     public constructor
     (
-        shape               :ninjas.Shape,
-        spriteTemplate      :ninjas.SpriteTemplate,
+        shape               :Shape,
+        spriteTemplate      :SpriteTemplate,
         x                   :number,
         y                   :number,
-        action              :ninjas.GameAction
+        action              :GameAction
     )
     {
         super
@@ -51,13 +55,13 @@ export class Door extends ninjas.Decoration
     *******************************************************************************************************************/
     public checkPlayerInteraction() : boolean
     {
-        const doorActivated: boolean = matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds );
+        const doorActivated: boolean = matter.Bounds.overlaps( this.shape.body.bounds, Main.game.level.player.shape.body.bounds );
 
         if (doorActivated) {
-            ninjas.Main.game.resetAndLaunchLevel(
+            Main.game.resetAndLaunchLevel(
                 this.action.data.targetLevel,
                 this.action.data.playerStartX,
-                ninjas.Main.game.level.player.facing
+                Main.game.level.player.facing
             );
         }
 

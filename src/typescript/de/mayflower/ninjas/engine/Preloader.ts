@@ -1,4 +1,7 @@
-import * as ninjas from '../ninjas';
+import {DrawUtil} from "../util/DrawUtil";
+import {Engine} from "./Engine";
+import {Debug} from "../base/Debug";
+import {SettingEngine} from "../setting/SettingEngine";
 
 /** ********************************************************************************************************************
 *   Handles the whole preloading process for the web app.
@@ -6,7 +9,7 @@ import * as ninjas from '../ninjas';
 export class Preloader
 {
     /** The parent engine instance. */
-    private     readonly        engine                            :ninjas.Engine                    = null;
+    private     readonly        engine                            :Engine                    = null;
     /** The callback to invoke when the preloader is set up. */
     private     readonly        onPreloaderSetup                :() => void                         = null;
 
@@ -25,7 +28,7 @@ export class Preloader
     *   @param engine           The parent game engine.
     *   @param onPreloaderSetup The callback to invoke when the preloading is set up.
     *******************************************************************************************************************/
-    public constructor( engine:ninjas.Engine, onPreloaderSetup:() => void )
+    public constructor( engine:Engine, onPreloaderSetup:() => void )
     {
         this.engine           = engine;
         this.onPreloaderSetup = onPreloaderSetup;
@@ -36,7 +39,7 @@ export class Preloader
     *******************************************************************************************************************/
     public preload() : void
     {
-        ninjas.Debug.init.log( 'Preloading all game components' );
+        Debug.init.log( 'Preloading all game components' );
 
         // bring on the canvas and init the resize handler
         this.engine.initCanvas();
@@ -46,8 +49,8 @@ export class Preloader
         this.imageLoaded  = new Image();
         this.imageUnloaded = new Image();
 
-        this.imageLoaded.src  = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderLoaded.png';
-        this.imageUnloaded.src = ninjas.SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderUnloaded.png';
+        this.imageLoaded.src  = SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderLoaded.png';
+        this.imageUnloaded.src = SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderUnloaded.png';
 
         this.imageLoaded.onload  = () :void => { this.preloaderImageLoaded(); };
         this.imageUnloaded.onload = () :void => { this.preloaderImageLoaded(); };
@@ -73,7 +76,7 @@ export class Preloader
     {
         if ( ++this.loadedImageCount === 2 )
         {
-            ninjas.Debug.init.log( 'All preloader images loaded.' );
+            Debug.init.log( 'All preloader images loaded.' );
 
             this.onPreloaderImageLoadComplete();
         }
@@ -97,14 +100,14 @@ export class Preloader
     private drawPreloader() : void
     {
         // clear canvas
-        ninjas.DrawUtil.fillRect
+        DrawUtil.fillRect
         (
             this.engine.canvasSystem.getCanvasContext(),
             0,
             0,
             this.engine.canvasSystem.getWidth(),
             this.engine.canvasSystem.getHeight(),
-            ninjas.SettingEngine.COLOR_BG_PRELOADER_CSS
+            SettingEngine.COLOR_BG_PRELOADER_CSS
         );
 
         // calc image location
@@ -116,7 +119,7 @@ export class Preloader
         const monoImageWidth :number = ( this.imageUnloaded.width - gayImageWidth );
 
         // draw mono image
-        ninjas.DrawUtil.drawImageScaledClipped
+        DrawUtil.drawImageScaledClipped
         (
             this.engine.canvasSystem.getCanvasContext(),
             this.imageUnloaded,
@@ -131,7 +134,7 @@ export class Preloader
         );
 
         // draw gay image clipped
-        ninjas.DrawUtil.drawImageScaledClipped
+        DrawUtil.drawImageScaledClipped
         (
             this.engine.canvasSystem.getCanvasContext(),
             this.imageLoaded,
