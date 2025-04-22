@@ -43,7 +43,7 @@ export enum DebugColor
     /** The debug color for the player block. */
     COLOR_DEBUG_PLAYER              = '#7cd1ee',
     /** The debug color for the enemy block. */
-    COLOR_DEBUG_ENEMY               = '#ff7e68',
+    COLOR_DEBUG_BOT                 = '#ff7e68',
     /** The debug color for a box. */
     COLOR_DEBUG_MOVABLE             = '#ffbf54',
     /** The debug color for an obstacle. */

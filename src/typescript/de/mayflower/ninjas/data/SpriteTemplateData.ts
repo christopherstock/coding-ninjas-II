@@ -367,7 +367,6 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 stand right'. */
     public      static  BLUE_NINJA_GUY_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
@@ -389,7 +388,6 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 walk left'. */
     public      static  BLUE_NINJA_GUY_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
@@ -411,7 +409,6 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 walk right'. */
     public      static  BLUE_NINJA_GUY_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
@@ -433,7 +430,6 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 walk left'. */
     public      static  RED_NINJA_GIRL_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
@@ -455,7 +451,6 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 walk right'. */
     public      static  RED_NINJA_GIRL_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
@@ -477,7 +472,6 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 die left'. */
     public      static  BLUE_NINJA_GUY_DIE_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
@@ -494,7 +488,6 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 die right'. */
     public      static  BLUE_NINJA_GUY_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [

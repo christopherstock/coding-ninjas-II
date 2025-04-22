@@ -18,13 +18,13 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 *   The level data for the dev level.
 ***********************************************************************************************************************/
 export class LevelStart extends Level {
-    public  playerStartX: number                             = 2480;
-    public  playerStartY: number                             = 2000;
-    public  playerInitialFloat: boolean                            = false;
-    public  playerInitialFacing: CharacterFacing             = CharacterFacing.RIGHT;
+    public  playerStartX: number = 2480;
+    public  playerStartY: number = 2000;
+    public  playerInitialFloat: boolean = false;
+    public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
 
-    public  width: number                             = 12500;
-    public  height: number                             = 2500;
+    public  width: number = 12500;
+    public  height: number = 2500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.

@@ -23,7 +23,7 @@ export class Debug {
     /** Debugs character events. */
     public      static  readonly    character: Debug              = new Debug(false);
     /** Debugs enemy events. */
-    public      static  readonly    enemy: Debug              = new Debug(false);
+    public      static  readonly    bot: Debug              = new Debug(false);
     /** Debugs site events. */
     public      static  readonly    site: Debug              = new Debug(false);
     /** Debugs react events. */

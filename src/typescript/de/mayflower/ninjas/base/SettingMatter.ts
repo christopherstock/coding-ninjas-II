@@ -15,7 +15,7 @@ export class SettingMatter {
     public  static  readonly    PLAYER_EDGE_GAP_Y: number                     = 7.5;
 
     /** The enemies' moving speed X. */
-    public  static  readonly    ENEMY_SPEED_MOVE: number                     = 3.0;
+    public  static  readonly    BOT_SPEED_MOVE: number                     = 3.0;
 
     /** The default vertical gravity for all objects. */
     public  static  readonly    DEFAULT_GRAVITY_Y: number                     = 2.0;
@@ -45,7 +45,7 @@ export class SettingMatter {
         };
 
     /** The collision group for all non-colliding dead enemies. */
-    public  static  readonly    COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY: matter.ICollisionFilter    =
+    public  static  readonly    COLLISION_GROUP_NON_COLLIDING_DEAD_BOT: matter.ICollisionFilter    =
         {
             category: 0x0008,
             mask:     0x0008,

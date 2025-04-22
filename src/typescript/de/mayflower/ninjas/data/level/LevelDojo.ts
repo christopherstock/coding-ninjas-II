@@ -14,13 +14,13 @@ import { SpriteTemplateData } from '../SpriteTemplateData';
 *   The level data for the DoJo level.
 ***********************************************************************************************************************/
 export class LevelDojo extends Level {
-    public  playerStartX: number = 1400;
-    public  playerStartY: number = 1400;
-    public  playerInitialFloat: boolean = false;
-    public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
+    public playerStartX: number = 1400;
+    public playerStartY: number = 1400;
+    public playerInitialFloat: boolean = false;
+    public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
 
-    public  width: number = 2500;
-    public  height: number = 2500;
+    public width: number = 2500;
+    public height: number = 2500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.

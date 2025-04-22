@@ -82,6 +82,8 @@ module.exports = {
             before: false,
             after: true
         }],
+        'keyword-spacing': 'off',
+        '@typescript-eslint/keyword-spacing': ['warn', { 'before': true, 'after': true }],
         '@typescript-eslint/unified-signatures': 'warn',
         '@typescript-eslint/prefer-readonly': 'warn',
         '@typescript-eslint/no-use-before-define': 'off',
@@ -185,7 +187,6 @@ module.exports = {
         'space-before-function-paren': ['warn', 'never'],
         'space-in-parens': ['warn'],
         'space-infix-ops': ['warn'],
-        'keyword-spacing': ['warn'],
         'spaced-comment': ['warn', 'always', {
             markers: ['/'],
             line: {

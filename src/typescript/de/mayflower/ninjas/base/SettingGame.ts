@@ -18,7 +18,7 @@ export class SettingGame {
     public      static  readonly    PUNCH_BACK_TICKS: number                     = 75;
 
     /** Enemy ticks for standing phases. */
-    public      static  readonly    ENEMY_TICKS_STANDING_DEFAULT: number                     = 250;
+    public      static  readonly    BOT_TICKS_STANDING_DEFAULT: number                     = 250;
 
     /** The number of ticks for the initial blend panel to disappear. */
     public      static  readonly    BLEND_PANEL_TICKS: number                     = 100;

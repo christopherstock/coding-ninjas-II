@@ -552,6 +552,7 @@ export abstract class GameObjectBundleFactory {
     /** ****************************************************************************************************************
     *   Creates an enemy and adds it to the level stack.
     *
+    *   @param spriteTemplate     Sprite Template to use for the enemy.
     *   @param level              The level to add the enemy to.
     *   @param xLeft              Anchor X.
     *   @param yBottom            Anchor bottom Y.
@@ -559,6 +560,7 @@ export abstract class GameObjectBundleFactory {
     *   @param walkingTargetLeft  Left walking target X.
     *   @param walkingTargetRight Right walking target X.
     *   @param characterSpriteSet The sprite set to use for this enemy.
+    *   @param blocksPlayer       If the enemy body collides with the player.
     *******************************************************************************************************************/
     public static createEnemy(
         spriteTemplate: SpriteTemplate,

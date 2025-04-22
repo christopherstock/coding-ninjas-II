@@ -71,7 +71,7 @@ export class Bot extends Character {
             x,
             y,
             facing,
-            SettingMatter.ENEMY_SPEED_MOVE,
+            SettingMatter.BOT_SPEED_MOVE,
             0,
             characterSpriteSet
         );
@@ -141,7 +141,7 @@ export class Bot extends Character {
         }
 
         // disable body collisions
-        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_ENEMY;
+        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_BOT;
         this.shape.body.isStatic = false;
 
         // bring body to foreground
@@ -159,7 +159,7 @@ export class Bot extends Character {
         switch (this.currentPhase) {
             case EnemyMovementPhase.STANDING_LEFT:
             {
-                if (++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT) {
+                if (++this.currentPhaseDelayTick >= SettingGame.BOT_TICKS_STANDING_DEFAULT) {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_RIGHT;
                 }
@@ -168,7 +168,7 @@ export class Bot extends Character {
 
             case EnemyMovementPhase.STANDING_RIGHT:
             {
-                if (++this.currentPhaseDelayTick >= SettingGame.ENEMY_TICKS_STANDING_DEFAULT) {
+                if (++this.currentPhaseDelayTick >= SettingGame.BOT_TICKS_STANDING_DEFAULT) {
                     this.currentPhaseDelayTick = 0;
                     this.currentPhase          = EnemyMovementPhase.WALKING_LEFT;
                 }
@@ -220,7 +220,7 @@ export class Bot extends Character {
         if (Main.game.level.player.punchBackTicks === 0) {
             // check intersection of the player and the enemy
             if (matter.Bounds.overlaps(this.shape.body.bounds, Main.game.level.player.shape.body.bounds)) {
-                Debug.enemy.log('Player hit by enemy! Player is punching back now!');
+                Debug.bot.log('Player hit by enemy! Player is punching back now!');
 
                 let playerPunchBackDirection: CharacterFacing;
 

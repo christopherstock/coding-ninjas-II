@@ -151,14 +151,14 @@ export class Player extends Character {
                 if (enemy.isAlive() && !enemy.isFriendly() && enemy.isBlocking()) {
                     // check intersection of the player and the enemy
                     if (matter.Bounds.overlaps(this.shape.body.bounds, enemy.shape.body.bounds)) {
-                        Debug.enemy.log('Enemy touched by player');
+                        Debug.bot.log('Enemy touched by player');
 
                         const playerBottom: number = Math.floor(
                             this.shape.body.position.y  + this.shape.getHeight() / 2);
                         const enemyTop: number     = Math.floor(
                             enemy.shape.body.position.y - enemy.shape.getHeight() / 2);
 
-                        Debug.enemy.log(
+                        Debug.bot.log(
                             ' playerBottom [' + String(playerBottom) + '] enemyTop [' + String(enemyTop) + ']');
 
                         const MAX_SINK_DELTA: number = 10;

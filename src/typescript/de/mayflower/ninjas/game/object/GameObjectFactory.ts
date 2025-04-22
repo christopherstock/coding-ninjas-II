@@ -409,7 +409,7 @@ export abstract class GameObjectFactory {
     ): Bot {
         const diamondShape = GameObjectFactory.createCharacterDiamondShape(
             spriteTemplate,
-            DebugColor.COLOR_DEBUG_ENEMY
+            DebugColor.COLOR_DEBUG_BOT
         );
         if (blocksPlayer) {
             diamondShape.body.collisionFilter = SettingMatter.COLLISION_GROUP_COLLIDING;
