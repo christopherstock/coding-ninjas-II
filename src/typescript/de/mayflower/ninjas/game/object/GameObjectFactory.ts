@@ -391,6 +391,8 @@ export abstract class GameObjectFactory {
     *   @param walkingTargetLeft  Left walking target X.
     *   @param walkingTargetRight Right walking target X.
     *   @param characterSpriteSet The sprite set to use for this enemy.
+    *   @param friendly           If the bot is not an enemy but a friend.
+    *   @param blocksPlayer       If the bots body is able to collide with the player.
     *
     *   @return The created enemy.
     *******************************************************************************************************************/

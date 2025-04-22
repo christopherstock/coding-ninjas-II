@@ -13,10 +13,8 @@ export class GameAction {
     /** ****************************************************************************************************************
     *   Creates a new game object.
     *
-    *   @param shape          The shape for this object.
-    *   @param spriteTemplate The sprite template to use for this game object.
-    *   @param x              Startup position X.
-    *   @param y              Startup position Y.
+    *   @param type           Action type
+    *   @param data           Data for this action to pass
     *******************************************************************************************************************/
     public constructor(
         type: GameActionType,

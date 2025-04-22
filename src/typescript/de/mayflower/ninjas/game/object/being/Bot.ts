@@ -50,6 +50,8 @@ export class Bot extends Character {
     *   @param facing             The initial facing direction of this character.
     *   @param spriteTemplate     The sprite template to use for this game object.
     *   @param characterSpriteSet The sprite set to use for this character.
+    *   @param friendly           If the bot is not an enemy but a friend.
+    *   @param blocksPlayer       If the bots body is able to collide with the player.
     *******************************************************************************************************************/
     public constructor(
         shape: Shape,

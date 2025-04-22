@@ -4,17 +4,17 @@
 *   All adjustments and balancings for the application.
 ***********************************************************************************************************************/
 export class SettingGame {
-    /** The application's internal name. */
+    /** The applications internal name. */
     public      static  readonly    TITLE: string                     = (
-        'Coding Ninjas II - gifted with second sight, (c) 2023 Mayflower GmbH, v1.0.0'
+        'Coding Ninjas II - gifted with second sight, (c) 2025 Mayflower GmbH, v1.0.0'
     );
 
     /** The distance the player can reach with an attack of his katana. */
     public      static  readonly    PLAYER_ATTACK_RANGE: number                     = 60;
-    /** The force the player dispenses on  with an attack of his katana. */
+    /** The force the player dispenses on with an attack of his katana. */
     public      static  readonly    PLAYER_ATTACK_DAMAGE: number                     = 50;
 
-    /** The player's ticks being paralized on being punched back. */
+    /** The players ticks being paralized on being punched back. */
     public      static  readonly    PUNCH_BACK_TICKS: number                     = 75;
 
     /** Enemy ticks for standing phases. */
