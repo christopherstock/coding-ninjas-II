@@ -54,10 +54,11 @@ export class Door extends ninjas.Decoration
         const doorActivated: boolean = matter.Bounds.overlaps( this.shape.body.bounds, ninjas.Main.game.level.player.shape.body.bounds );
 
         if (doorActivated) {
-            this.action.data.targetLevel.playerStartX = this.action.data.playerStartX;
-            this.action.data.targetLevel.playerInitialFacing = ninjas.Main.game.level.player.facing;
-
-            ninjas.Main.game.resetAndLaunchLevel( this.action.data.targetLevel );
+            ninjas.Main.game.resetAndLaunchLevel(
+                this.action.data.targetLevel,
+                this.action.data.playerStartX,
+                ninjas.Main.game.level.player.facing
+            );
         }
 
         return doorActivated;

@@ -40,7 +40,7 @@ export class LevelStart extends ninjas.Level
         ninjas.GameObjectBundleFactory.createSolidGround( this, 0, 2000, 40,  5, ninjas.Slope.NONE, ninjas.CapHorz.NONE, ninjas.GroundData.TILESET_SNOW );
 
         // door
-        ninjas.GameObjectFactory.createDoor( this, 2300, 2000, ninjas.ImageData.IMAGE_DOOR_1, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: new ninjas.LevelHut(), playerStartX: 1020 } ) );
+        ninjas.GameObjectFactory.createDoor( this, 2300, 2000, ninjas.ImageData.IMAGE_DOOR_1, new ninjas.GameAction(ninjas.GameActionType.SWITCH_TO_LEVEL, { targetLevel: ninjas.LevelId.LEVEL_HUT, playerStartX: 1020 } ) );
 
         // enemies
         ninjas.GameObjectBundleFactory.createEnemy( ninjas.SpriteTemplateData.SPRITE_BLUE_NINJA_STAND_LEFT, this, 0, 2000, ninjas.CharacterFacing.RIGHT, 0, 1500, ninjas.CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );

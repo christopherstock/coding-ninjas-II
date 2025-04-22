@@ -1,5 +1,6 @@
 import * as matter from 'matter-js';
 import * as ninjas from '../ninjas';
+import {LevelId} from '../ninjas';
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -53,7 +54,7 @@ export class Game
         this.bgMusic = this.engine.soundSystem.playSound( ninjas.SoundData.BG_CHINESE, true );
 
         // launch initial level
-        this.resetAndLaunchLevel( new ninjas.LevelStart() );
+        this.resetAndLaunchLevel( ninjas.LevelId.LEVEL_START );
 
         // update camera bounds
         this.updateAndAssignCamera();
@@ -139,7 +140,11 @@ export class Game
     /** ****************************************************************************************************************
     *   Inits the level.
     *******************************************************************************************************************/
-    public resetAndLaunchLevel( levelToLaunch:ninjas.Level ) : void
+    public resetAndLaunchLevel(
+        levelId:ninjas.LevelId,
+        playerStartX: number = null,
+        playerInitialFacing: ninjas.CharacterFacing = null
+    ) : void
     {
         // reset slow motion ticks
         this.slowMotionTicks = 0;
@@ -148,7 +153,26 @@ export class Game
         this.engine.matterJsSystem.resetWorld();
 
         // assign and init level
-        this.level = levelToLaunch;
+        this.level = null;
+        switch (levelId) {
+            case LevelId.LEVEL_START:
+                this.level = new ninjas.LevelStart();
+                break;
+            case LevelId.LEVEL_HUT:
+                this.level = new ninjas.LevelHut();
+                break;
+            default:
+                this.level = new ninjas.LevelStart();
+                break;
+        }
+console.log('facing:', playerInitialFacing );
+        if (playerStartX !== null) {
+            this.level.playerStartX = playerStartX;
+        }
+        if (playerInitialFacing !== null) {
+            this.level.playerInitialFacing = playerInitialFacing;
+        }
+
         this.level.init( this.engine.matterJsSystem );
 
         // reset panel
@@ -227,7 +251,7 @@ export class Game
                 this.engine.keySystem.setNeedsRelease( ninjas.KeyData.KEY_1 );
 
                 ninjas.Debug.init.log( 'Resetting and switching to level 1' );
-                this.resetAndLaunchLevel( new ninjas.LevelStart() );
+                this.resetAndLaunchLevel( ninjas.LevelId.LEVEL_START );
             }
 
             if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.KeyData.KEY_2 ) )
@@ -235,7 +259,7 @@ export class Game
                 ninjas.Main.game.engine.keySystem.setNeedsRelease( ninjas.KeyData.KEY_2 );
 
                 ninjas.Debug.init.log( 'Resetting and switching to level 2' );
-                this.resetAndLaunchLevel( new ninjas.LevelHut() );
+                this.resetAndLaunchLevel( ninjas.LevelId.LEVEL_HUT );
             }
 /*
             if ( ninjas.Main.game.engine.keySystem.isPressed( ninjas.Key.KEY_3 ) )

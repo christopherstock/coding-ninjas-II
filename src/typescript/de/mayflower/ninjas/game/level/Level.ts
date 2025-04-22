@@ -1,13 +1,15 @@
 import * as ninjas from '../../ninjas';
 
+export enum LevelId {
+    LEVEL_START,
+    LEVEL_HUT,
+}
+
 /** ********************************************************************************************************************
 *   Represents the current level.
 ***********************************************************************************************************************/
 export abstract class Level
 {
-    public static readonly LEVEL_START = 0;
-    public static readonly LEVEL_HUT = 1;
-
     public      playerStartX            :number                         = 0.0;
     public      playerStartY            :number                         = 0.0;
     public      playerInitialFloat      :boolean                        = false;

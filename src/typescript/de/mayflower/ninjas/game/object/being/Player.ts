@@ -209,7 +209,7 @@ export class Player extends ninjas.Character
                 window.setTimeout(
                     () :void =>
                     {
-                        ninjas.Main.game.resetAndLaunchLevel( new ninjas.LevelStart() );
+                        ninjas.Main.game.resetAndLaunchLevel( ninjas.LevelId.LEVEL_START );
                     },
                     250
                 );
