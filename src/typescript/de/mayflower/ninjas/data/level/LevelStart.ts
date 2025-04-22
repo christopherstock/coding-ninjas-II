@@ -91,12 +91,6 @@ export class LevelStart extends Level {
         // flasks on the floor
         GameObjectBundleFactory.createMovableRect( this, x+2633, 2100, ImageData.FLASK_2 );
         GameObjectBundleFactory.createMovableRect( this, x+2684, 2100, ImageData.FLASK_1 );
-
-        // statue
-        // GameObjectBundleFactory.createObstacle(this, 2000, 2000, ImageData.STATUE_3 );
-
-        // dojo
-        // GameObjectBundleFactory.createDecoImage(this, 4600, 2100, DecoPosition.BG, ImageData.DOJO );
     }
 
     /** ****************************************************************************************************************
@@ -248,19 +242,6 @@ export class LevelStart extends Level {
 
         // dojo
         GameObjectBundleFactory.createDecoImage(  this, 13400, 2100, DecoPosition.BG, ImageData.DOJO );
-
-        // chandelier
-        GameObjectBundleFactory.createDecoImage(   this, 13673, 1805, DecoPosition.FG, ImageData.CHANDELIER );
-        GameObjectBundleFactory.createDecoSprite(  this, 13666, 1601, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
-        GameObjectBundleFactory.createDecoSprite(  this, 13720, 1586, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
-        GameObjectBundleFactory.createDecoSprite(  this, 13854, 1588, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
-        GameObjectBundleFactory.createDecoSprite(  this, 13905, 1617, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
-
-        // candles
-        GameObjectBundleFactory.createCandle( this, 13500, 2100, DecoPosition.FG );
-        GameObjectBundleFactory.createCandle( this, 13600, 2100, DecoPosition.FG );
-        GameObjectBundleFactory.createCandle( this, 14000, 2100, DecoPosition.FG );
-        GameObjectBundleFactory.createCandle( this, 14100, 2100, DecoPosition.FG );
 
         // enemies
         GameObjectBundleFactory.createEnemy( SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT, this, 12000, 2100, CharacterFacing.RIGHT, 10000, 11150, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA );
