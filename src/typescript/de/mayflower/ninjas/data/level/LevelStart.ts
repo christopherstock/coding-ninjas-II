@@ -78,6 +78,20 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createWaterArea(   this, 7680, 2260, 6, 4, ImageData.IMAGE_WATER_CENTER );
         GameObjectBundleFactory.createBridge(      this, 7750, 2100 );
 
+        // table with flasks
+        const x = 4000;
+        GameObjectBundleFactory.createMovableRect( this, x+2420, 2100, ImageData.IMAGE_TABLE_1 );
+        GameObjectBundleFactory.createMovableRect( this, x+2430, 1930, ImageData.IMAGE_FLASK_1 );
+        GameObjectBundleFactory.createMovableRect( this, x+2462, 1930, ImageData.IMAGE_FLASK_2 );
+        GameObjectBundleFactory.createMovableRect( this, x+2513, 1930, ImageData.IMAGE_FLASK_3 );
+
+        // pot
+        GameObjectBundleFactory.createMovableRect( this, x+2558, 2100, ImageData.IMAGE_POT_1 );
+
+        // flasks on the floor
+        GameObjectBundleFactory.createMovableRect( this, x+2633, 2100, ImageData.IMAGE_FLASK_2 );
+        GameObjectBundleFactory.createMovableRect( this, x+2684, 2100, ImageData.IMAGE_FLASK_1 );
+
         // statue
         // GameObjectBundleFactory.createObstacle(this, 2000, 2000, ImageData.IMAGE_STATUE_3 );
 
@@ -101,19 +115,6 @@ export class LevelStart extends Level {
 
         // grass
         GameObjectBundleFactory.createDecoSprite( this, 2660, 2000, DecoPosition.FG, SpriteTemplateData.SPRITE_GRASS_1 );
-
-        // table with flasks
-        GameObjectBundleFactory.createObstacle(    this, 2420, 2000, ImageData.IMAGE_TABLE_1 );
-        GameObjectBundleFactory.createMovableRect( this, 2430, 1830, ImageData.IMAGE_FLASK_1 );
-        GameObjectBundleFactory.createMovableRect( this, 2462, 1830, ImageData.IMAGE_FLASK_2 );
-        GameObjectBundleFactory.createMovableRect( this, 2513, 1830, ImageData.IMAGE_FLASK_3 );
-
-        // pot
-        GameObjectBundleFactory.createMovableRect( this, 2558, 2000, ImageData.IMAGE_POT_1 );
-
-        // flasks on the floor
-        GameObjectBundleFactory.createMovableRect( this, 2633, 2000, ImageData.IMAGE_FLASK_2 );
-        GameObjectBundleFactory.createMovableRect( this, 2684, 2000, ImageData.IMAGE_FLASK_1 );
     }
 
     /** ****************************************************************************************************************
