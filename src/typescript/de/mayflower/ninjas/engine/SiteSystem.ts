@@ -269,7 +269,7 @@ export class SiteSystem {
     *   Inits the WOW animation system.
     *******************************************************************************************************************/
     private initWowSystem(): void {
-        Debug.init.log('Initing WOW animations');
+        Debug.init.log('Init WOW animations');
 
         this.wowSystem = new wow.WOW(
             {

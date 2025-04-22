@@ -78,7 +78,7 @@ export class MatterJsSystem {
         Debug.init.log(
             'Assigned ['
             + String(Object.keys(this.renderer.textures).length)
-            + '] textures to renderer texture cache '
+            + '] textures to matter.js renderer texture cache'
         );
 
         // disable blurry image drawing!

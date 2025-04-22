@@ -36,7 +36,7 @@ export class Preloader {
     *   Shows the preloader and starts preloading all initialization contents.
     *******************************************************************************************************************/
     public preload(): void {
-        Debug.init.log('Preloading all game components');
+        Debug.init.log('Init all game components');
 
         // bring on the canvas and init the resize handler
         this.engine.initCanvas();
@@ -70,7 +70,7 @@ export class Preloader {
     *******************************************************************************************************************/
     private preloaderImageLoaded(): void {
         if (++this.loadedImageCount === 2) {
-            Debug.init.log('All preloader images loaded.');
+            Debug.init.log('Init preloader images complete');
 
             this.onPreloaderImageLoadComplete();
         }

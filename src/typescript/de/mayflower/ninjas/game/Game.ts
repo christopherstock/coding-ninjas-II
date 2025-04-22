@@ -50,7 +50,6 @@ export class Game {
     *******************************************************************************************************************/
     public start(): void {
         Debug.init.log('Starting the game loop');
-        Debug.init.log();
 
         // set the number of blend panel ticks
         this.blendPanelTicks = SettingGame.BLEND_PANEL_TICKS;

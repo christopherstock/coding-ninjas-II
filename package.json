@@ -68,6 +68,7 @@
         "antd": "3.26.9",
         "fpsmeter": "0.3.1",
         "matter-js": "0.14.1",
+        "poly-decomp": "^0.2.1",
         "moment": "2.24.0",
         "rc-scroll-anim": "2.7.4",
         "rc-tween-one": "2.6.8",

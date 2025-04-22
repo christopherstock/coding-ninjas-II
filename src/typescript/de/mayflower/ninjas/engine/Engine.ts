@@ -69,7 +69,7 @@ export class Engine {
     *   Inits the canvas of the game engine.
     *******************************************************************************************************************/
     public initCanvas(): void {
-        Debug.init.log('Initing canvas system');
+        Debug.init.log('Init canvas system');
         this.canvasSystem = new CanvasSystem();
         this.canvasSystem.updateDimensions();
     }
@@ -78,7 +78,7 @@ export class Engine {
     *   Inits the canvas of the game engine.
     *******************************************************************************************************************/
     public initImageSystem(): void {
-        Debug.init.log('Initing image system');
+        Debug.init.log('Init image system');
         this.imageSystem = new ImageSystem
         (
             ImageData.FILE_NAMES,
@@ -92,7 +92,7 @@ export class Engine {
     *   Inits the window resize handler.
     *******************************************************************************************************************/
     public initWindowResizeHandler(): void {
-        Debug.init.log('Initing window resize handler');
+        Debug.init.log('Init window resize handler');
 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         window.onresize = (event: Event): void => {
@@ -110,7 +110,7 @@ export class Engine {
     *   Being invoked when the preloader is set up.
     *******************************************************************************************************************/
     public onPreloaderInitComplete(): void {
-        Debug.init.log('Preloader initialization complete. Preloading all contents now.');
+        Debug.init.log('Init preloader complete. Now loading contents');
         this.preloader.setLoadingPercentage(5);
 
         this.initImageSystem();
@@ -120,7 +120,7 @@ export class Engine {
     *   Inits the 2D engine.
     *******************************************************************************************************************/
     public initMatterJS(): void {
-        Debug.init.log('Initing 2D physics engine');
+        Debug.init.log('Starting the 2D physics engine');
 
         this.matterJsSystem = new MatterJsSystem
         (
@@ -139,7 +139,7 @@ export class Engine {
 
         this.preloader.setLoadingPercentage(80);
 
-        Debug.init.log('Initing sound system');
+        Debug.init.log('Init sound system');
         this.soundSystem = new SoundSystem(
             SoundData.FILE_NAMES,
             () => { this.onSoundsLoaded(); }
@@ -154,13 +154,13 @@ export class Engine {
         this.preloader.setLoadingPercentage(90);
 
         // init site system
-        Debug.init.log('Initing site system');
+        Debug.init.log('Init site system');
         this.siteSystem = new SiteSystem();
 
         // init key and pointer system
-        Debug.init.log('Initing key system');
+        Debug.init.log('Init key system');
         this.keySystem = new KeySystem();
-        Debug.init.log('Initing pointer system');
+        Debug.init.log('Init pointer system');
         this.pointerSystem = new PointerSystem();
 
         // init window blur handler
@@ -171,7 +171,8 @@ export class Engine {
             this.initFpsCounter();
         }
 
-        Debug.init.log('Initing game engine completed');
+        Debug.init.log('Init game engine completed');
+        Debug.init.log();
 
         this.preloader.setLoadingPercentage(100);
 
@@ -186,7 +187,7 @@ export class Engine {
     *   Inits the window blur handler.
     *******************************************************************************************************************/
     private initWindowBlurHandler(): void {
-        Debug.init.log('Initing window blur handler');
+        Debug.init.log('Init window blur handler');
 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         window.onblur = (event: Event): void => {
@@ -200,7 +201,7 @@ export class Engine {
     *   Inits the FPS counter.
     *******************************************************************************************************************/
     private initFpsCounter(): void {
-        Debug.init.log('Initing FPS counter');
+        Debug.init.log('Init FPS counter');
 
         this.fpsMeter = new FPSMeter(
             null,
