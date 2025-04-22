@@ -196,7 +196,7 @@ export class Game {
         this.handleMenuKey();
 
         // render one game tick and update matter.js 2D engine
-        if ( this.slowMotionTicks === 0 || this.slowMotionTicks-- % 2 === 0 ) {
+        if ( this.slowMotionTicks === 0 || this.slowMotionTicks-- % 4 === 0 ) {
             this.render();
             this.engine.matterJsSystem.updateEngine();
         }
