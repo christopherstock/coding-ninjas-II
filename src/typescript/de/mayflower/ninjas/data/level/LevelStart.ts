@@ -56,7 +56,7 @@ export class LevelStart extends Level {
         // friends
         GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 2000, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
         GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL, false );
-        GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,    this, 5000, 2000, CharacterFacing.RIGHT, 3750, 5000, CharacterSpriteData.CHARACTER_SPRITE_SET_RED_NINJA_GIRL, false );
+        GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_LEFT,    this, 5000, 2000, CharacterFacing.RIGHT, 3750, 5000, CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GUY, false );
         GameObjectBundleFactory.createFriend( SpriteTemplateData.SPRITE_BLUE_NINJA_WALK_LEFT,         this, 4500, 2000, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.CHARACTER_SPRITE_SET_BLUE_NINJA, false );
 
         // trees

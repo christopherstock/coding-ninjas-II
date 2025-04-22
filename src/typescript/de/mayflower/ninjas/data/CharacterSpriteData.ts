@@ -60,4 +60,22 @@ export class CharacterSpriteData {
         SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
         SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
+
+    /** The character sprite set for the 'Masked Ninja Girl'. */
+    public  static  CHARACTER_SPRITE_SET_MASKED_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_LEFT,
+        SpriteTemplateData.SPRITE_BLUE_NINJA_DIE_RIGHT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
+    );
 }

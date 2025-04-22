@@ -302,20 +302,63 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'enemy ninja 1 stand left'. */
+    public      static  SPRITE_MASKED_NINJA_GUY_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
+    (
+        [
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_1,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_2,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_3,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_4,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_5,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_6,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_7,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_8,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_9,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.YES,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    /** Sprite 'red ninja girl stand right'. */
+    public      static  SPRITE_MASKED_NINJA_GUY_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
+    (
+        [
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_1,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_2,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_3,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_4,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_5,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_6,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_7,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_8,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_9,
+            ImageData.IMAGE_MASKED_NINJA_GUY_STAND_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.NO,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    /** Sprite 'blue ninja guy stand left'. */
     public      static  SPRITE_BLUE_NINJA_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_1,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_2,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_3,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_4,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_5,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_6,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_7,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_8,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_9,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_10,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_1,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_2,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_3,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_4,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_5,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_6,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_7,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_8,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_9,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_10,
         ],
         4,
         MirrorImage.YES,
@@ -328,16 +371,16 @@ export class SpriteTemplateData {
     public      static  SPRITE_BLUE_NINJA_1_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_1,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_2,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_3,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_4,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_5,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_6,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_7,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_8,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_9,
-            ImageData.IMAGE_BLUE_NINJA_STAND_RIGHT_FRAME_10,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_1,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_2,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_3,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_4,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_5,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_6,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_7,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_8,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_9,
+            ImageData.IMAGE_BLUE_NINJA_GUY_STAND_RIGHT_FRAME_10,
         ],
         4,
         MirrorImage.NO,
@@ -350,16 +393,16 @@ export class SpriteTemplateData {
     public      static  SPRITE_BLUE_NINJA_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_1,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_2,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_3,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_4,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_5,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_6,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_7,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_8,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_9,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_10,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_1,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_2,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_3,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_4,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_5,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_6,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_7,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_8,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_9,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_10,
         ],
         4,
         MirrorImage.YES,
@@ -372,16 +415,16 @@ export class SpriteTemplateData {
     public      static  SPRITE_BLUE_NINJA_1_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_1,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_2,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_3,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_4,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_5,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_6,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_7,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_8,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_9,
-            ImageData.IMAGE_BLUE_NINJA_WALK_RIGHT_FRAME_10,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_1,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_2,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_3,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_4,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_5,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_6,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_7,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_8,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_9,
+            ImageData.IMAGE_BLUE_NINJA_GUY_WALK_RIGHT_FRAME_10,
         ],
         4,
         MirrorImage.NO,
@@ -438,11 +481,11 @@ export class SpriteTemplateData {
     public      static  SPRITE_BLUE_NINJA_DIE_LEFT: SpriteTemplate         = new SpriteTemplate
     (
         [
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_1,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_2,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_3,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_4,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_5,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_2,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_3,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_4,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_5,
         ],
         16,
         MirrorImage.YES,
@@ -455,11 +498,11 @@ export class SpriteTemplateData {
     public      static  SPRITE_BLUE_NINJA_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate
     (
         [
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_1,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_2,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_3,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_4,
-            ImageData.IMAGE_BLUE_NINJA_DIE_RIGHT_FRAME_5,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_2,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_3,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_4,
+            ImageData.IMAGE_BLUE_NINJA_GUY_DIE_RIGHT_FRAME_5,
         ],
         16,
         MirrorImage.NO,
@@ -589,6 +632,8 @@ export class SpriteTemplateData {
             SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
             SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_LEFT,
             SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_RIGHT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_LEFT,
+            SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_RIGHT,
             SpriteTemplateData.SPRITE_WATER_TOP,
             SpriteTemplateData.SPRITE_GRASS_1,
             SpriteTemplateData.SPRITE_FLAME_1_BIG,
