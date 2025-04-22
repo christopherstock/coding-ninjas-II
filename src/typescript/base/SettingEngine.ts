@@ -16,7 +16,7 @@ export class SettingEngine {
     public  static  readonly    PRELOADER_DELAY: number             = 250;
 
     /** Slow Motion ticks for the game engine. */
-    public  static  readonly    ENGINE_SLOW_MOTION_TICKS: number             = 150;
+    public  static  readonly    ENGINE_SLOW_MOTION_TICKS: number             = 0; // 150;
 
     /** The color of the matter.js canvas bg. */
     public  static  readonly    COLOR_BG_MATTER_JS_CSS: string             = '#000000';
