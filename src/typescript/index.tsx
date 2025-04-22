@@ -1,6 +1,6 @@
-import { Main } from './de/mayflower/ninjas/base/Main';
+import { Main } from './base/Main';
 
-require('./de/mayflower/ninjas/css/custom.less');
+require('./css/custom.less');
 
 /** ********************************************************************************************************************
 *   Being invoked when the page is loaded completely.

@@ -6,7 +6,7 @@ import { SettingDebug } from '../base/SettingDebug';
 ***********************************************************************************************************************/
 export class Debug {
     /** Debugs the init / preloading system. */
-    public      static  readonly    init: Debug              = new Debug(true);
+    public      static  readonly    init: Debug              = new Debug(false);
     /** Debugs canvas events. */
     public      static  readonly    canvas: Debug              = new Debug(true);
 

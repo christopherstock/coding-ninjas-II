@@ -1,9 +1,9 @@
 import { Game } from '../game/Game';
-import { SettingGame } from '../base/SettingGame';
+import { SettingGame } from './SettingGame';
 import { Debug } from './Debug';
 
 /** ********************************************************************************************************************
-*   The main class contains the application's points of entry and termination.
+*   The main class contains the applications points of entry and termination.
 ***********************************************************************************************************************/
 export class Main {
     /** The singleton game instance. */
