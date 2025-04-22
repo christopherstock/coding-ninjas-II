@@ -165,7 +165,7 @@ export class Game
                 this.level = new ninjas.LevelStart();
                 break;
         }
-console.log('facing:', playerInitialFacing );
+
         if (playerStartX !== null) {
             this.level.playerStartX = playerStartX;
         }
