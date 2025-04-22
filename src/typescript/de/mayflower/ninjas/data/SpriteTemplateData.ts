@@ -345,6 +345,49 @@ export class SpriteTemplateData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
+
+    public      static  MASKED_NINJA_GUY_WALK_LEFT: SpriteTemplate         = new SpriteTemplate
+    (
+        [
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_1,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_2,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_3,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_4,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_5,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_6,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_7,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_8,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_9,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.YES,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    public      static  MASKED_NINJA_GUY_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate
+    (
+        [
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_1,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_2,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_3,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_4,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_5,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_6,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_7,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_8,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_9,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.NO,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
     /** Sprite 'blue ninja guy stand left'. */
     public      static  BLUE_NINJA_GUY_STAND_LEFT: SpriteTemplate         = new SpriteTemplate
     (
@@ -627,6 +670,8 @@ export class SpriteTemplateData {
             SpriteTemplateData.RED_NINJA_GIRL_WALK_RIGHT,
             SpriteTemplateData.MASKED_NINJA_GUY_STAND_LEFT,
             SpriteTemplateData.MASKED_NINJA_GUY_STAND_RIGHT,
+            SpriteTemplateData.MASKED_NINJA_GUY_WALK_LEFT,
+            SpriteTemplateData.MASKED_NINJA_GUY_WALK_RIGHT,
             SpriteTemplateData.WATER_TOP,
             SpriteTemplateData.GRASS_1,
             SpriteTemplateData.FLAME_1_BIG,

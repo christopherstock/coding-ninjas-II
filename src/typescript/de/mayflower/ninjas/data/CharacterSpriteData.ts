@@ -65,8 +65,8 @@ export class CharacterSpriteData {
     public  static  MASKED_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
         SpriteTemplateData.MASKED_NINJA_GUY_STAND_LEFT,
         SpriteTemplateData.MASKED_NINJA_GUY_STAND_RIGHT,
-        SpriteTemplateData.MASKED_NINJA_GUY_STAND_LEFT,
-        SpriteTemplateData.MASKED_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GUY_WALK_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GUY_WALK_RIGHT,
         SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_LEFT,
         SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_RIGHT,
         SpriteTemplateData.MASKED_NINJA_GIRL_FALL_LEFT,

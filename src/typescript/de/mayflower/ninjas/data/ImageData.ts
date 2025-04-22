@@ -115,6 +115,16 @@ export class ImageData {
     public static MASKED_NINJA_GUY_STAND_RIGHT_FRAME_8:  string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/stand/08.png';
     public static MASKED_NINJA_GUY_STAND_RIGHT_FRAME_9:  string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/stand/09.png';
     public static MASKED_NINJA_GUY_STAND_RIGHT_FRAME_10: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/stand/10.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_1: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/01.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_2: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/02.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_3: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/03.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_4: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/04.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_5: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/05.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_6: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/06.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_7: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/07.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_8: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/08.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_9: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/09.png';
+    public static MASKED_NINJA_GUY_WALK_RIGHT_FRAME_10: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/10.png';
 
     public static CRATE_WOOD_1: string         = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood1.png';
     public static ITEM: string         = SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
@@ -362,6 +372,16 @@ export class ImageData {
             ImageData.MASKED_NINJA_GUY_STAND_RIGHT_FRAME_8,
             ImageData.MASKED_NINJA_GUY_STAND_RIGHT_FRAME_9,
             ImageData.MASKED_NINJA_GUY_STAND_RIGHT_FRAME_10,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_1,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_2,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_3,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_4,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_5,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_6,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_7,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_8,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_9,
+            ImageData.MASKED_NINJA_GUY_WALK_RIGHT_FRAME_10,
 
             ImageData.ITEM,
             ImageData.CRATE_WOOD_1,
