@@ -42,7 +42,7 @@ export class Player extends Character {
             facing,
             SettingMatter.PLAYER_SPEED_MOVE,
             SettingMatter.PLAYER_JUMP_POWER,
-            CharacterSpriteData.CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL
+            CharacterSpriteData.MASKED_NINJA_GIRL
         );
 
         if ( initialFloat ) {

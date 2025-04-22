@@ -8,74 +8,74 @@ import { SpriteTemplateData } from './SpriteTemplateData';
 ***********************************************************************************************************************/
 export class CharacterSpriteData {
     /** The character sprite set for the 'Masked Ninja Girl'. */
-    public  static  CHARACTER_SPRITE_SET_MASKED_NINJA_GIRL: CharacterSpriteSet  = new CharacterSpriteSet(
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
+    public  static  MASKED_NINJA_GIRL: CharacterSpriteSet  = new CharacterSpriteSet(
+        SpriteTemplateData.MASKED_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_STAND_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_WALK_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_WALK_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_FALL_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_FALL_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_JUMP_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_JUMP_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
     /** The character sprite set for the 'Blue Ninja Guy'. */
-    public  static  CHARACTER_SPRITE_SET_BLUE_NINJA: CharacterSpriteSet  = new CharacterSpriteSet(
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_WALK_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_WALK_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
+    public  static  BLUE_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
+        SpriteTemplateData.BLUE_NINJA_GUY_STAND_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_WALK_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_WALK_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_WALK_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_WALK_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_STAND_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_STAND_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
     /** The character sprite set for the 'Red Ninja Girl'. */
-    public  static  CHARACTER_SPRITE_SET_RED_NINJA_GIRL: CharacterSpriteSet  = new CharacterSpriteSet(
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_LEFT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_WALK_RIGHT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_LEFT,
-        SpriteTemplateData.SPRITE_RED_NINJA_GIRL_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
+    public  static  RED_NINJA_GIRL: CharacterSpriteSet  = new CharacterSpriteSet(
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_RIGHT,
+        SpriteTemplateData.RED_NINJA_GIRL_WALK_LEFT,
+        SpriteTemplateData.RED_NINJA_GIRL_WALK_RIGHT,
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_RIGHT,
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_RIGHT,
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_LEFT,
+        SpriteTemplateData.RED_NINJA_GIRL_STAND_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
     /** The character sprite set for the 'Masked Ninja Girl'. */
-    public  static  CHARACTER_SPRITE_SET_MASKED_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GUY_STAND_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_GLIDE_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_FALL_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_JUMP_RIGHT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_LEFT,
-        SpriteTemplateData.SPRITE_BLUE_NINJA_GUY_DIE_RIGHT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_LEFT,
-        SpriteTemplateData.SPRITE_MASKED_NINJA_GIRL_ATTACK_RIGHT
+    public  static  MASKED_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
+        SpriteTemplateData.MASKED_NINJA_GUY_STAND_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GUY_STAND_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GUY_STAND_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_FALL_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_FALL_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_JUMP_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_JUMP_RIGHT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_LEFT,
+        SpriteTemplateData.BLUE_NINJA_GUY_DIE_RIGHT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteTemplateData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 }

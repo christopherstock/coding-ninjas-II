@@ -74,10 +74,10 @@ export class LevelDojo extends Level {
         y = -700;
 
         GameObjectBundleFactory.createDecoImage(   this, x+13673, y+1805, DecoPosition.FG, ImageData.CHANDELIER );
-        GameObjectBundleFactory.createDecoSprite(  this, x+13666, y+1601, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
-        GameObjectBundleFactory.createDecoSprite(  this, x+13720, y+1586, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
-        GameObjectBundleFactory.createDecoSprite(  this, x+13854, y+1588, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
-        GameObjectBundleFactory.createDecoSprite(  this, x+13905, y+1617, DecoPosition.FG, SpriteTemplateData.SPRITE_FLAME_1_BIG );
+        GameObjectBundleFactory.createDecoSprite(  this, x+13666, y+1601, DecoPosition.FG, SpriteTemplateData.FLAME_1_BIG );
+        GameObjectBundleFactory.createDecoSprite(  this, x+13720, y+1586, DecoPosition.FG, SpriteTemplateData.FLAME_1_BIG );
+        GameObjectBundleFactory.createDecoSprite(  this, x+13854, y+1588, DecoPosition.FG, SpriteTemplateData.FLAME_1_BIG );
+        GameObjectBundleFactory.createDecoSprite(  this, x+13905, y+1617, DecoPosition.FG, SpriteTemplateData.FLAME_1_BIG );
 
         // candles
         GameObjectBundleFactory.createCandle( this, x+13500, y+2100, DecoPosition.FG );
