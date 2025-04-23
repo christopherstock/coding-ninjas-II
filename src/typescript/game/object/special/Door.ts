@@ -58,6 +58,7 @@ export class Door extends Decoration {
             Main.game.resetAndLaunchLevel(
                 this.action.data.targetLevel,
                 this.action.data.playerStartX,
+                this.action.data.playerStartY,
                 Main.game.level.player.facing
             );
         }

@@ -26,7 +26,7 @@ export enum LevelId {
 export abstract class Level {
     public      playerStartX: number                         = 0.0;
     public      playerStartY: number                         = 0.0;
-    public      playerInitialFloat: boolean                        = false;
+    public      playerInitialFloat: boolean                  = false;
     public      playerInitialFacing: CharacterFacing         = CharacterFacing.RIGHT;
 
     public      width: number                         = 0.0;

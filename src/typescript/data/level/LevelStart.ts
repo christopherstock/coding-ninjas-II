@@ -97,10 +97,11 @@ export class LevelStart extends Level {
 
         // TODO GameObject.createHouseFront
 
-        // house with door to next level
+        // house
         GameObjectBundleFactory.createDecoImage(this, 6500, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
         GameObjectBundleFactory.createDecoImage(this, 6480, 1850, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
-        GameObjectFactory.createDoor(this, 6705, 2089, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020 }));
+        // door to garden
+        GameObjectFactory.createDoor(this, 6705, 2089, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
     }
 
     /** ****************************************************************************************************************

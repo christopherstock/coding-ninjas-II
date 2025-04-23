@@ -11,7 +11,7 @@ export class SettingMatter {
     /** The force the player dispenses on with an attack of his katana. */
     public static readonly PLAYER_ATTACK_FORCE: number          = 7.5;
     /** The players jump force. */
-    public static readonly PLAYER_JUMP_POWER: number            = -17.75;
+    public static readonly PLAYER_JUMP_POWER: number            = -10.50;
     /** The players speed in world coordinate per tick. */
     public static readonly PLAYER_SPEED_MOVE: number            = 7.5;
     /** The players gap size y of its physical body corners. */
@@ -87,7 +87,7 @@ export enum BodyFrictionAir
 export enum BodyDensity
 {
     DEFAULT     = 0.001,
-    PLAYER      = 0.005,
+    PLAYER      = 0.0035,
     TABLE       = 0.1,
     WOOD        = 0.004,
     METAL       = 0.01,

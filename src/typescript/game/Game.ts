@@ -142,6 +142,7 @@ export class Game {
     public resetAndLaunchLevel(
         levelId: LevelId,
         playerStartX: number = null,
+        playerStartY: number = null,
         playerInitialFacing: CharacterFacing = null
     ): void {
         // reset slow motion ticks
@@ -169,6 +170,9 @@ export class Game {
 
         if (playerStartX !== null) {
             this.level.playerStartX = playerStartX;
+        }
+        if (playerStartY !== null) {
+            this.level.playerStartY = playerStartY;
         }
         if (playerInitialFacing !== null) {
             this.level.playerInitialFacing = playerInitialFacing;
