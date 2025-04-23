@@ -48,14 +48,16 @@ export class LevelStart extends Level {
         // ground
         GameObjectBundleFactory.createSolidGround(this, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE, TilesetData.TILESET_SNOW);
 
+        // statue and door to DoJo
+        GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
+        GameObjectBundleFactory.createDecoImage(this, 2700, 2000, DecoPosition.BG, ImageData.STATUE_1);
+
+        return;
+
         // trees and door to market
         GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.BG, ImageData.TREE_2);
         GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
         GameObjectFactory.createDoor(this, 1700, 2000, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 1020 }));
-
-        // statue and door to DoJo
-        GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
-        GameObjectBundleFactory.createDecoImage(this, 2700, 2000, DecoPosition.BG, ImageData.STATUE_1);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD);

@@ -3,6 +3,7 @@ import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { Debug } from '../../../base/Debug';
 import { Main } from '../../../base/Main';
+import {ImageUtil} from "../../../util/ImageUtil";
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
@@ -66,6 +67,18 @@ export class Movable extends GameObject {
         this.energy -= damage;
         Debug.character.log('New level object energy: [' + String(this.energy) + ']');
 
+        // flip img for fun
+        const img = new Image();
+        img.src = this.shape.body.render.sprite.texture;
+        img.onload = () => {
+            const flippedImg = ImageUtil.flipImageHorizontal(
+                img,
+                () => {}
+            );
+            this.shape.body.render.sprite.texture = flippedImg.src;
+        }
+
+        // smaller scale (testwise)
         this.shape.body.render.sprite.xScale = 0.90;
         this.shape.body.render.sprite.yScale = 0.90;
 
@@ -82,5 +95,7 @@ export class Movable extends GameObject {
     private break(): void {
         this.broken = true;
         this.vanishCountdown = 100;
+
+        this.shape.body.render.sprite.yScale = 0.90;
     }
 }
