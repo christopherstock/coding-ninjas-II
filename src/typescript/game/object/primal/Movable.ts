@@ -64,8 +64,16 @@ export class Movable extends GameObject {
 
         this.energy -= damage;
         Debug.character.log('New level object energy: [' + String(this.energy) + ']');
+
+        this.shape.body.render.sprite.xScale = 0.90;
+        this.shape.body.render.sprite.yScale = 0.90;
+
+        // this.shape.body.render.sprite.
+        // this.shape.body.render.
+
         if (this.energy <= 0.0) {
             Debug.character.log('Game Object BREAKS!');
+            // add particle effect etc!
             this.break();
         }
     }
