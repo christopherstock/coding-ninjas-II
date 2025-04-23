@@ -241,6 +241,16 @@ export class ImageData {
     static readonly GROUND_SNOW_SOLID_ASCENDING_TOP: string             = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidAscendingTop.png';
     static readonly GROUND_SNOW_SOLID_DESCENDING_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidDescendingTop.png';
 
+    static readonly GROUND_GREENFIELD_SOLID_TOP: string                       = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidTop.png';
+    static readonly GROUND_GREENFIELD_SOLID_LEFT_TOP: string                  = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftTop.png';
+    static readonly GROUND_GREENFIELD_SOLID_RIGHT_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightTop.png';
+    static readonly GROUND_GREENFIELD_SOLID_CENTER: string                    = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidCenter.png';
+    static readonly GROUND_GREENFIELD_SOLID_BOTTOM: string                    = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidBottom.png';
+    static readonly GROUND_GREENFIELD_SOLID_LEFT_BOTTOM: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftBottom.png';
+    static readonly GROUND_GREENFIELD_SOLID_RIGHT_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightBottom.png';
+    static readonly GROUND_GREENFIELD_SOLID_LEFT: string                      = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeft.png';
+    static readonly GROUND_GREENFIELD_SOLID_RIGHT: string                     = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRight.png';
+
     static readonly BG_JAPAN: string                                    = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
     static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
     static readonly BG_TOWN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown.png';
@@ -511,6 +521,16 @@ export class ImageData {
             ImageData.GROUND_SNOW_SOLID_RIGHT,
             ImageData.GROUND_SNOW_SOLID_ASCENDING_TOP,
             ImageData.GROUND_SNOW_SOLID_DESCENDING_TOP,
+
+            ImageData.GROUND_GREENFIELD_SOLID_TOP,
+            ImageData.GROUND_GREENFIELD_SOLID_LEFT_TOP,
+            ImageData.GROUND_GREENFIELD_SOLID_RIGHT_TOP,
+            ImageData.GROUND_GREENFIELD_SOLID_CENTER,
+            ImageData.GROUND_GREENFIELD_SOLID_BOTTOM,
+            ImageData.GROUND_GREENFIELD_SOLID_LEFT_BOTTOM,
+            ImageData.GROUND_GREENFIELD_SOLID_RIGHT_BOTTOM,
+            ImageData.GROUND_GREENFIELD_SOLID_LEFT,
+            ImageData.GROUND_GREENFIELD_SOLID_RIGHT,
 
             ImageData.BG_JAPAN,
             ImageData.BG_MOUNT_FUJI,

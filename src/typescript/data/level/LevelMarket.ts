@@ -5,7 +5,7 @@ import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../gam
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
 import { ImageData } from '../ImageData';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { GroundData } from '../GroundData';
+import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { SpriteData } from '../SpriteData';
@@ -38,11 +38,11 @@ export class LevelMarket extends Level {
     *******************************************************************************************************************/
     private addMarketSetup(): void {
         // ground
-        GameObjectBundleFactory.createSolidGround(this, 0, 1400, 40,  3, Slope.NONE, CapHorz.NONE, GroundData.TILESET_DARK_GROUND);
+        GameObjectBundleFactory.createSolidGround(this, 0, 1400, 40,  3, Slope.NONE, CapHorz.NONE, TilesetData.TILESET_DARK_GROUND);
 
         // walls
-        GameObjectBundleFactory.createSolidGround(this, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
-        GameObjectBundleFactory.createSolidGround(this, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE, TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE, TilesetData.TILESET_SNOW);
 
         // door back to start level
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_7, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6730, playerStartY: 2100 }));

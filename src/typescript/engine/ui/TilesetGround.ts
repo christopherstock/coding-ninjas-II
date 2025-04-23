@@ -1,7 +1,7 @@
 /** ********************************************************************************************************************
 *   Represents all different images for one ground set.
 ***********************************************************************************************************************/
-export class GroundImageSet {
+export class TilesetGround {
     /** The image for the solid left tile. */
     public      readonly            solidLeft: string             = null;
     /** The image for the solid right tile. */

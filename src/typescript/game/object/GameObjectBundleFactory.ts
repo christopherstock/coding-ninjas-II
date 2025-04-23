@@ -4,7 +4,7 @@ import { SpriteData } from '../../data/SpriteData';
 import { DebugColor } from '../../base/SettingDebug';
 import { ImageData } from '../../data/ImageData';
 import { StaticShape } from '../../engine/shape/Shape';
-import { GroundImageSet } from '../../engine/ui/GroundImageSet';
+import { TilesetGround } from '../../engine/ui/TilesetGround';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { ShapeRectangle } from '../../engine/shape/ShapeRectangle';
 import { BodyDensity, BodyFriction, BodyRestitution } from '../../base/SettingMatter';
@@ -235,7 +235,7 @@ export abstract class GameObjectBundleFactory {
         lengthVert: number,
         slope: Slope,
         capHorz: CapHorz,
-        ground: GroundImageSet
+        ground: TilesetGround
     ): void {
         let leftTopTile: SpriteTemplate = null;
         let topTile: SpriteTemplate = null;
