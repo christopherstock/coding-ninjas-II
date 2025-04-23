@@ -76,6 +76,7 @@ export class Player extends Character {
     *
     *   @param keySystem The keySystem that holds current pressed key information.
     *******************************************************************************************************************/
+    // eslint-disable-next-line complexity
     private handleKeys(keySystem: KeySystem): void {
         if (this.punchBackTicks !== 0) {
             return;

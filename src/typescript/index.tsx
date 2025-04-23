@@ -13,5 +13,5 @@ window.onload = (): void => {
 *   Being invoked when the page is left.
 ***********************************************************************************************************************/
 window.onunload = (): void => {
-    // do explicit unloads
+    // room for explicit unloads
 };

@@ -11,10 +11,10 @@ import { LevelDojo } from '../data/level/LevelDojo';
 import { Main } from '../base/Main';
 import { KeyData } from '../data/KeyData';
 import { DrawUtil } from '../util/DrawUtil';
+import { LevelGarden } from '../data/level/LevelGarden';
+import { LevelMarket } from '../data/level/LevelMarket';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
-import {LevelGarden} from "../data/level/LevelGarden";
-import {LevelMarket} from "../data/level/LevelMarket";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.

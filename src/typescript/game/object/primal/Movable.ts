@@ -1,8 +1,8 @@
 import { GameObject } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import {Debug} from "../../../base/Debug";
-import {Main} from "../../../base/Main";
+import { Debug } from '../../../base/Debug';
+import { Main } from '../../../base/Main';
 
 /** ********************************************************************************************************************
 *   Represents a movable box.

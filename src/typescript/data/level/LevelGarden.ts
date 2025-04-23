@@ -8,7 +8,6 @@ import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { SpriteData } from '../SpriteData';
 
 /** ********************************************************************************************************************
 *   The level data for the Garden level.
