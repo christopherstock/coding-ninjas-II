@@ -1,11 +1,17 @@
 import { GameObject } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import {Debug} from "../../../base/Debug";
+import {Main} from "../../../base/Main";
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
 ***********************************************************************************************************************/
 export class Movable extends GameObject {
+    public energy: number = 100.0;
+    public broken: boolean = false;
+    public vanishCountdown: number = 0.0;
+
     /** ****************************************************************************************************************
     *   Creates a new movable.
     *
@@ -35,5 +41,37 @@ export class Movable extends GameObject {
         super.render();
 
         // this.clipToHorizontalLevelBounds();
+
+        if (this.energy < 100.0) {
+            this.shape.body.render.opacity = 0.3 + 0.7 * this.energy / 100.0;
+        }
+
+        if (this.broken && this.vanishCountdown > 0) {
+            --this.vanishCountdown;
+            if (this.vanishCountdown === 0) {
+                Debug.character.log('Broken Game Object vanishes');
+
+                // vanish this broken movable
+                Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
+            }
+        }
+    }
+
+    public hurt(damage: number): void {
+        if (this.broken) {
+            return;
+        }
+
+        this.energy -= damage;
+        Debug.character.log('New level object energy: [' + String(this.energy) + ']');
+        if (this.energy <= 0.0) {
+            Debug.character.log('Game Object BREAKS!');
+            this.break();
+        }
+    }
+
+    private break(): void {
+        this.broken = true;
+        this.vanishCountdown = 100;
     }
 }
