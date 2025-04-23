@@ -238,7 +238,9 @@ export class ImageData {
 
     static readonly BG_JAPAN: string                                    = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
     static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
-    static readonly BG_TOWN_1: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown1.png';
+    static readonly BG_TOWN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown.png';
+    static readonly BG_ALLEY: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgAlley.jpg';
+    static readonly BG_STREET: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgStreet.jpg';
 
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
@@ -500,7 +502,9 @@ export class ImageData {
 
             ImageData.BG_JAPAN,
             ImageData.BG_MOUNT_FUJI,
-            ImageData.BG_TOWN_1,
+            ImageData.BG_TOWN,
+            ImageData.BG_ALLEY,
+            ImageData.BG_STREET,
 
             ImageData.BILLBOARD,
             ImageData.BILLBOARD_WELCOME,

@@ -27,8 +27,11 @@ export class PointerSystem {
         // eslint-disable-next-line max-len
         window.addEventListener('onpointerup',   (event: Event) => { this.onPointerUp(event as PointerEvent); }, { passive: false });
 
+        // eslint-disable-next-line max-len
         canvas.addEventListener('pointermove', (event: PointerEvent) => { this.onPointerMove(event); }, { passive: false });
+        // eslint-disable-next-line max-len
         canvas.addEventListener('pointerdown', (event: PointerEvent) => { this.onPointerDown(event); }, { passive: false });
+        // eslint-disable-next-line max-len
         window.addEventListener('pointerup',   (event: PointerEvent) => { this.onPointerUp(event); }, { passive: false });
 
         canvas.addEventListener('touchmove',   (event: TouchEvent) => { this.onTouchMove(event); }, { passive: false });

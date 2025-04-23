@@ -4,7 +4,7 @@ import { Sprite } from '../../engine/ui/Sprite';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
-import {Debug} from "../../base/Debug";
+import { Debug } from '../../base/Debug';
 
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
@@ -66,7 +66,7 @@ export abstract class GameObject {
         }
 
         this.energy -= damage;
-        Debug.character.log('New level object energy: [' + this.energy + ']');
+        Debug.character.log('New level object energy: [' + String(this.energy) + ']');
         if (this.energy <= 0.0) {
             Debug.character.log('Game Object BREAKS!');
             this.broken = true;
