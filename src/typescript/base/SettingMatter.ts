@@ -9,9 +9,9 @@ export class SettingMatter {
     /** The default vertical gravity for all objects. */
     public static readonly DEFAULT_GRAVITY_Y: number            = 2.0;
     /** The force the player dispenses on with an attack of his katana. */
-    public static readonly PLAYER_ATTACK_DAMAGE: number         = 5;
+    public static readonly PLAYER_ATTACK_FORCE: number          = 7.5;
     /** The players jump force. */
-    public static readonly PLAYER_JUMP_POWER: number            = -3.25;
+    public static readonly PLAYER_JUMP_POWER: number            = -17.75;
     /** The players speed in world coordinate per tick. */
     public static readonly PLAYER_SPEED_MOVE: number            = 7.5;
     /** The players gap size y of its physical body corners. */
@@ -61,9 +61,9 @@ export class SettingMatter {
 *******************************************************************************************************************/
 export enum BodyFriction
 {
-    WOOD            = 1.0,
     DEFAULT         = 0.1,
-    PLAYER          = 0.1,
+    PLAYER          = 0.75,
+    WOOD            = 1.0,
     GLASS           = 0.01,
     DEFAULT_MOVABLE = 0.001,
     OBSTACLE        = 0.001,
@@ -87,7 +87,7 @@ export enum BodyFrictionAir
 export enum BodyDensity
 {
     DEFAULT     = 0.001,
-    PLAYER      = 0.001,
+    PLAYER      = 0.005,
     TABLE       = 0.1,
     WOOD        = 0.004,
     METAL       = 0.01,

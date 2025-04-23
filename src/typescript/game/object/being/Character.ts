@@ -111,8 +111,8 @@ export abstract class Character extends GameObject {
         );
         const damageForce: number = (
             this.facing === CharacterFacing.LEFT
-                ? -SettingMatter.PLAYER_ATTACK_DAMAGE
-                : SettingMatter.PLAYER_ATTACK_DAMAGE
+                ? -SettingMatter.PLAYER_ATTACK_FORCE
+                : SettingMatter.PLAYER_ATTACK_FORCE
         );
         const smashBounds: matter.Bounds = matter.Bounds.create(
             matter.Vertices.create(
