@@ -155,6 +155,9 @@ export class ImageData {
     static readonly DOOR_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door2.png';
     static readonly DOOR_3: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door3.png';
     static readonly DOOR_4: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door4.png';
+    static readonly DOOR_5: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door5.png';
+    static readonly DOOR_6: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door6.png';
+    static readonly DOOR_7: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door7.png';
     static readonly HOUSE_FRONT_1: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront1.jpg';
     static readonly HOUSE_ROOF_1: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof1.png';
 
@@ -420,6 +423,9 @@ export class ImageData {
             ImageData.DOOR_2,
             ImageData.DOOR_3,
             ImageData.DOOR_4,
+            ImageData.DOOR_5,
+            ImageData.DOOR_6,
+            ImageData.DOOR_7,
             ImageData.HOUSE_FRONT_1,
             ImageData.HOUSE_ROOF_1,
 
