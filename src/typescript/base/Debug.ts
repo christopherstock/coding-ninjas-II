@@ -6,6 +6,7 @@ import { SettingDebug } from './SettingDebug';
 ***********************************************************************************************************************/
 export class Debug {
     public static readonly character: Debug     = new Debug(true);
+    public static readonly welcome: Debug       = new Debug(true);
     public static readonly init: Debug          = new Debug(false);
     public static readonly canvas: Debug        = new Debug(false);
     public static readonly key: Debug           = new Debug(false);

@@ -17,8 +17,8 @@ export class Main {
         document.title = SettingGame.TITLE;
 
         // acclaim debug console
-        Debug.init.log(SettingGame.TITLE);
-        Debug.init.log();
+        Debug.welcome.log(SettingGame.TITLE);
+        Debug.welcome.log();
 
         // init and start the game engine
         Main.game = new Game();
