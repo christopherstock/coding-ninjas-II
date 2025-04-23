@@ -48,6 +48,10 @@ export abstract class GameObject {
             }
         }
 
+        if (this.energy < 100.0) {
+            this.shape.body.render.opacity = 0.3 + 0.7 * this.energy / 100.0;
+        }
+
         if (this.broken && this.vanishCountdown > 0) {
             --this.vanishCountdown;
             if (this.vanishCountdown === 0) {
