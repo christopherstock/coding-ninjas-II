@@ -22,6 +22,7 @@ export abstract class Character extends GameObject {
     public attackingTicks: number                       = 0;
 
     protected glidingRequest: boolean                   = false;
+    protected paraCloseRequest: boolean                   = false;
     protected interactionRequest: boolean               = false;
 
     protected isGliding: boolean                        = false;
@@ -269,13 +270,19 @@ export abstract class Character extends GameObject {
     }
 
     protected requestGliding(): void {
-        Debug.character.log('Character requests gliding');
+        Debug.character.log('Character requests para open');
 
         this.glidingRequest = true;
     }
 
+    protected requestParaClose(): void {
+        Debug.character.log('Character requests para close');
+
+        this.paraCloseRequest = true;
+    }
+
     protected requestInteraction(): void {
-        Debug.character.log('Character requests gliding');
+        Debug.character.log('Character requests interaction');
 
         this.interactionRequest = true;
     }
@@ -303,6 +310,10 @@ export abstract class Character extends GameObject {
             if (this.glidingRequest && this.isFalling()) {
                 this.openParachute();
                 this.glidingRequest = false;
+            }
+            if (this.paraCloseRequest && this.isGliding) {
+                this.closeParachute();
+                this.paraCloseRequest = false;
             }
         }
     }

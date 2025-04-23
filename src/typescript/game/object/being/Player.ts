@@ -113,6 +113,14 @@ export class Player extends Character {
             }
         }
 
+        if (keySystem.isPressed(KeyData.KEY_DOWN)) {
+            keySystem.setNeedsRelease(KeyData.KEY_DOWN);
+
+            if (this.isGliding) {
+                this.requestParaClose();
+            }
+        }
+
         if (
             !SettingDebug.DISABLE_POINTER
             && Main.game.engine.pointerSystem.canvasTabbed
