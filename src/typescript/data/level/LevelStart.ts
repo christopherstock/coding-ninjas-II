@@ -51,7 +51,7 @@ export class LevelStart extends Level {
         // statue and door to DoJo
         GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
         GameObjectBundleFactory.createDecoImage(this, 2700, 2000, DecoPosition.BG, ImageData.STATUE_1);
-/*
+        /*
         return;
 
         // trees and door to market
@@ -69,7 +69,7 @@ export class LevelStart extends Level {
 */
         // enemies
         GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 0, 2000, CharacterFacing.RIGHT, 0, 1500, CharacterSpriteData.BLUE_NINJA_GUY, false);
-return;
+        return;
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 2000, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
         GameObjectBundleFactory.createFriend(SpriteData.MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.MASKED_NINJA_GIRL, false);

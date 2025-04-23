@@ -3,16 +3,16 @@ import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { Debug } from '../../../base/Debug';
 import { Main } from '../../../base/Main';
-import {ImageUtil} from "../../../util/ImageUtil";
-import {SettingMatter} from "../../../base/SettingMatter";
+import { ImageUtil } from '../../../util/ImageUtil';
+import { SettingMatter } from '../../../base/SettingMatter';
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
 ***********************************************************************************************************************/
 export class Movable extends GameObject {
     public energy: number = 100.0;
-    public broken: boolean = false;
-    public disappeared: boolean = false;
+    public isBreaking: boolean = false;
+    public isBroken: boolean = false;
 
     /** ****************************************************************************************************************
     *   Creates a new movable.
@@ -42,9 +42,9 @@ export class Movable extends GameObject {
     public render(): void {
         super.render();
 
-        if (this.broken && !this.disappeared) {
+        if (this.isBreaking && !this.isBroken) {
             if (this.checkFallingDead()) {
-                this.disappeared = true;
+                this.isBroken = true;
             }
         }
 
@@ -52,7 +52,7 @@ export class Movable extends GameObject {
     }
 
     public hurt(damage: number): void {
-        if (this.broken) {
+        if (this.isBreaking || this.isBroken) {
             return;
         }
 
@@ -63,10 +63,10 @@ export class Movable extends GameObject {
         // darken img
         const img = new Image();
         img.src = this.shape.body.render.sprite.texture;
-        img.onload = () => {
+        img.onload = (): void => {
             const darkenedImg = ImageUtil.darkenImage(
                 img,
-                () => {}
+                (): void => { /* */ }
             );
             this.shape.body.render.sprite.texture = darkenedImg.src;
         }
@@ -86,7 +86,7 @@ export class Movable extends GameObject {
     }
 
     private break(): void {
-        this.broken = true;
+        this.isBreaking = true;
 
         // freeze & make non-collidable
         // this.shape.body.isStatic = true;

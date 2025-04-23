@@ -4,7 +4,7 @@ import { Sprite } from '../../engine/ui/Sprite';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
-import {Debug} from "../../base/Debug";
+import { Debug } from '../../base/Debug';
 
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.

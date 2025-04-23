@@ -135,7 +135,7 @@ export abstract class Character extends GameObject {
         for (const movable of Main.game.level.movables) {
             if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
                 // hurt movable
-                if (!movable.broken) {
+                if (!movable.isBreaking) {
                     Debug.character.log('Character hits a level object (movable)');
 
                     movable.hurt(34.0);
