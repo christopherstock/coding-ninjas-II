@@ -13,6 +13,7 @@ import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { CharacterSpriteData } from '../CharacterSpriteData';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -53,7 +54,7 @@ export class LevelStart extends Level {
         // statue
         GameObjectBundleFactory.createDecoImage(this, 2700, 2000, DecoPosition.BG, ImageData.STATUE_1);
 
-        // billboard "welcome"
+        // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD);
         GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD_WELCOME);
 
@@ -82,7 +83,7 @@ export class LevelStart extends Level {
 
         // table with flasks
         const x = 4000;
-        GameObjectBundleFactory.createMovableRect(this, x + 2420, 2100, ImageData.TABLE_1);
+        GameObjectBundleFactory.createMovableRect(this, x + 2420, 2100, ImageData.TABLE_1, BodyDensity.TABLE, BodyFriction.WOOD);
         GameObjectBundleFactory.createMovableRect(this, x + 2430, 1930, ImageData.FLASK_1);
         GameObjectBundleFactory.createMovableRect(this, x + 2462, 1930, ImageData.FLASK_2);
         GameObjectBundleFactory.createMovableRect(this, x + 2513, 1930, ImageData.FLASK_3);

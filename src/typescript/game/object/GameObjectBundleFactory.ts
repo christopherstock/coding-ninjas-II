@@ -460,12 +460,16 @@ export abstract class GameObjectBundleFactory {
         level: Level,
         xLeft: number,
         yBottom: number,
-        imageId: string
+        imageId: string,
+        density: number = BodyDensity.DEFAULT,
+        friction: number = BodyFriction.DEFAULT_MOVABLE,
     ): void {
         const movable: Movable = GameObjectFactory.createMovableRect(
             xLeft,
             yBottom,
-            imageId
+            imageId,
+            density,
+            friction
         );
 
         level.movables.push(movable);

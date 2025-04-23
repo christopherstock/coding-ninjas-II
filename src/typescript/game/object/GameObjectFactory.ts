@@ -75,7 +75,9 @@ export abstract class GameObjectFactory {
     public static createMovableRect(
         x: number,
         yBottom: number,
-        imageId: string
+        imageId: string,
+        density: number,
+        friction: number
     ): Movable {
         const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
 
@@ -88,8 +90,8 @@ export abstract class GameObjectFactory {
                 DebugColor.COLOR_DEBUG_MOVABLE,
                 StaticShape.NO,
                 0.0,
-                0.001,
-                BodyDensity.DEFAULT,
+                friction,
+                density,
                 BodyRestitution.RUBBER
             ),
             sprtiteTemplate,

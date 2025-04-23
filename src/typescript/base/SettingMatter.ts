@@ -11,7 +11,7 @@ export class SettingMatter {
     /** The force the player dispenses on with an attack of his katana. */
     public static readonly PLAYER_ATTACK_DAMAGE: number         = 5;
     /** The players jump force. */
-    public static readonly PLAYER_JUMP_POWER: number            = -3.50;
+    public static readonly PLAYER_JUMP_POWER: number            = -3.25;
     /** The players speed in world coordinate per tick. */
     public static readonly PLAYER_SPEED_MOVE: number            = 7.5;
     /** The players gap size y of its physical body corners. */
@@ -61,14 +61,15 @@ export class SettingMatter {
 *******************************************************************************************************************/
 export enum BodyFriction
 {
-    DEFAULT     = 0.1,
-    OBSTACLE    = BodyFriction.DEFAULT,
-    PLAYER      = BodyFriction.DEFAULT,
-    RUBBER      = 0.001,
-    WOOD        = BodyFriction.DEFAULT,
-    // GLASS       = 0.01,
-    // MINIMUM     = 0.001,
-    NONE        = 0.0,
+    WOOD            = 1.0,
+    DEFAULT         = 0.1,
+    PLAYER          = 0.1,
+    GLASS           = 0.01,
+    DEFAULT_MOVABLE = 0.001,
+    OBSTACLE        = 0.001,
+    RUBBER          = 0.001,
+    MINIMUM         = 0.001,
+    NONE            = 0.0,
 }
 
 /** ****************************************************************************************************************
@@ -86,10 +87,11 @@ export enum BodyFrictionAir
 export enum BodyDensity
 {
     DEFAULT     = 0.001,
-    PLAYER      = BodyDensity.DEFAULT,
-    WOOD        = (BodyDensity.DEFAULT * 4),
-    // METAL       = ( BodyDensity.DEFAULT * 10 ),
-    RUBBER      = (BodyDensity.DEFAULT / 10),
+    PLAYER      = 0.001,
+    TABLE       = 0.1,
+    WOOD        = 0.004,
+    METAL       = 0.01,
+    RUBBER      = 0.0001,
     MINIMUM     = 0.000001,
     INFINITE    = Infinity,
 }
