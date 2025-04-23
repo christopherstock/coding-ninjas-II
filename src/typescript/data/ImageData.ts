@@ -130,7 +130,8 @@ export class ImageData {
     static readonly ITEM: string                                        = SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
     static readonly STONE_SPHERE: string                                = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'stoneSphere.png';
     static readonly BOULDER_1: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
-    static readonly BRIDGE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge.png';
+    static readonly BRIDGE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge1.png';
+    static readonly BRIDGE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge2.png';
     static readonly TREE_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
     static readonly TREE_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
     static readonly TABLE_1: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'table1.png';
@@ -400,6 +401,7 @@ export class ImageData {
             ImageData.STONE_SPHERE,
             ImageData.BOULDER_1,
             ImageData.BRIDGE_1,
+            ImageData.BRIDGE_2,
             ImageData.TREE_1,
             ImageData.TREE_2,
             ImageData.TABLE_1,

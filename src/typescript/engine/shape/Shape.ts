@@ -22,10 +22,10 @@ export enum StaticShape
 ***********************************************************************************************************************/
 export abstract class Shape {
     /** The body rendering options for this shape. */
-    public                  options: matter.IBodyDefinition         = null;
+    options: matter.IBodyDefinition     = null;
 
     /** The shape's body. */
-    public                  body: matter.Body                    = null;
+    body: matter.Body                   = null;
 
     /** ****************************************************************************************************************
     *   Creates a new game object shape.

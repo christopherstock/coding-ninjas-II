@@ -134,13 +134,21 @@ export abstract class Character extends GameObject {
         // check all movables
         for (const movable of Main.game.level.movables) {
             if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
-                Debug.character.log('Character hits a level object (movable)');
+                // hurt movable
+                if (!movable.broken) {
+                    Debug.character.log('Character hits a level object (movable)');
 
-                movable.hurt(25.0);
-                matter.Body.setVelocity(
-                    movable.shape.body,
-                    matter.Vector.create(damageForce, -10.0)
-                );
+                    movable.hurt(25.0);
+                    matter.Body.setVelocity(
+                        movable.shape.body,
+                        matter.Vector.create(damageForce, -10.0)
+                    );
+
+                    // remove broken movables
+                    if (movable.broken) {
+                        Main.game.engine.matterJsSystem.removeFromWorld(movable.shape.body);
+                    }
+                }
             }
         }
 

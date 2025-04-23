@@ -79,7 +79,7 @@ export class LevelStart extends Level {
 
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 7680, 2260, 6, 4, ImageData.WATER_CENTER);
-        GameObjectBundleFactory.createBridge(this, 7750, 2100);
+        GameObjectBundleFactory.createBridge(this, 7750, 2100, true);
 
         // table with flasks
         const x = 5000;

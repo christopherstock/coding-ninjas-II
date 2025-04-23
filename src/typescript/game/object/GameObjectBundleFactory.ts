@@ -432,9 +432,10 @@ export abstract class GameObjectBundleFactory {
     public static createBridge(
         level: Level,
         xLeft: number,
-        yBottom: number
+        yBottom: number,
+        onlyHalf: boolean = false
     ): void {
-        const WIDTH_TOTAL: number = 700;
+        const WIDTH_TOTAL: number = (onlyHalf ? 350 : 700);
         // let WIDTH_SLOPE :number = 128;
         // let ALTITUDE    :number = 30;
 
@@ -444,7 +445,7 @@ export abstract class GameObjectBundleFactory {
         // level.obstacles.push( GameObjectFactory.createElevatedRamp( xLeft + WIDTH_TOTAL - WIDTH_SLOPE, yBottom - ALTITUDE, WIDTH_SLOPE, 10, ALTITUDE, null, JumpPassThrough.NO ) );
 
         // add deco
-        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(ImageData.BRIDGE_1);
+        const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(onlyHalf ? ImageData.BRIDGE_2 : ImageData.BRIDGE_1);
         level.decosFg.push(GameObjectFactory.createDecorationRect(xLeft - 115, yBottom + 121, StaticShape.YES, sprtiteTemplate));
     }
 
