@@ -14,6 +14,7 @@ import { DrawUtil } from '../util/DrawUtil';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
 import {LevelGarden} from "../data/level/LevelGarden";
+import {LevelMarket} from "../data/level/LevelMarket";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -163,6 +164,9 @@ export class Game {
             case LevelId.LEVEL_GARDEN:
                 this.level = new LevelGarden();
                 break;
+            case LevelId.LEVEL_MARKET:
+                this.level = new LevelMarket();
+                break;
             default:
                 this.level = new LevelStart();
                 break;
@@ -262,6 +266,13 @@ export class Game {
 
                 Debug.init.log('Resetting and switching to level 3');
                 this.resetAndLaunchLevel(LevelId.LEVEL_GARDEN);
+            }
+
+            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_4)) {
+                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_4);
+
+                Debug.init.log('Resetting and switching to level 4');
+                this.resetAndLaunchLevel(LevelId.LEVEL_MARKET);
             }
         }
     }

@@ -48,10 +48,13 @@ export class LevelStart extends Level {
         // ground
         GameObjectBundleFactory.createSolidGround(this, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
 
-        // door to DoJo
-        GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
+        // trees and door to market
+        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.BG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectFactory.createDoor(this, 1700, 2000, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 1020 }));
 
-        // statue
+        // statue and door to DoJo
+        GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
         GameObjectBundleFactory.createDecoImage(this, 2700, 2000, DecoPosition.BG, ImageData.STATUE_1);
 
         // billboard 'welcome'
@@ -59,8 +62,6 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD_WELCOME);
 
         // trees and lion statue
-        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.BG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
         GameObjectBundleFactory.createDecoImage(this, 3900, 2000, DecoPosition.FG, ImageData.TREE_2);
         GameObjectBundleFactory.createDecoImage(this, 4550, 2000, DecoPosition.BG, ImageData.STATUE_LION);
 
