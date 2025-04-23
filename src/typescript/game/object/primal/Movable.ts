@@ -4,6 +4,7 @@ import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { Debug } from '../../../base/Debug';
 import { Main } from '../../../base/Main';
 import {ImageUtil} from "../../../util/ImageUtil";
+import {SettingMatter} from "../../../base/SettingMatter";
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
@@ -11,7 +12,7 @@ import {ImageUtil} from "../../../util/ImageUtil";
 export class Movable extends GameObject {
     public energy: number = 100.0;
     public broken: boolean = false;
-    public vanishCountdown: number = 0.0;
+    public disappeared: boolean = false;
 
     /** ****************************************************************************************************************
     *   Creates a new movable.
@@ -41,21 +42,13 @@ export class Movable extends GameObject {
     public render(): void {
         super.render();
 
-        // this.clipToHorizontalLevelBounds();
-
-        if (this.energy < 100.0) {
-            this.shape.body.render.opacity = 0.5 + ((0.5 * this.energy) / 100.0);
-        }
-
-        if (this.broken && this.vanishCountdown > 0) {
-            --this.vanishCountdown;
-            if (this.vanishCountdown === 0) {
-                Debug.character.log('Broken Game Object vanishes');
-
-                // vanish this broken movable
-                Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
+        if (this.broken && !this.disappeared) {
+            if (this.checkFallingDead()) {
+                this.disappeared = true;
             }
         }
+
+        // this.clipToHorizontalLevelBounds();
     }
 
     public hurt(damage: number): void {
@@ -67,15 +60,15 @@ export class Movable extends GameObject {
         this.energy -= damage;
         Debug.character.log('New level object energy: [' + String(this.energy) + ']');
 
-        // flip img for fun
+        // darken img
         const img = new Image();
         img.src = this.shape.body.render.sprite.texture;
         img.onload = () => {
-            const flippedImg = ImageUtil.flipImageHorizontal(
+            const darkenedImg = ImageUtil.darkenImage(
                 img,
                 () => {}
             );
-            this.shape.body.render.sprite.texture = flippedImg.src;
+            this.shape.body.render.sprite.texture = darkenedImg.src;
         }
 
         // smaller scale (testwise)
@@ -94,8 +87,16 @@ export class Movable extends GameObject {
 
     private break(): void {
         this.broken = true;
-        this.vanishCountdown = 100;
 
-        this.shape.body.render.sprite.yScale = 0.90;
+        // freeze & make non-collidable
+        // this.shape.body.isStatic = true;
+        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT;
+
+        // bring body to foreground
+        Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
+        Main.game.engine.matterJsSystem.addToWorld(this.shape.body);
+
+        // remove from world ?
+        // Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
     }
 }

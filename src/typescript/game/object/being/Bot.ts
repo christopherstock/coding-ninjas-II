@@ -104,7 +104,9 @@ export class Bot extends Character {
         super.render();
 
         if (!this.isDead) {
-            this.checkFallingDead();
+            if (this.checkFallingDead()) {
+                this.isDead = true;
+            }
 
             if (!this.isDying) {
                 this.moveAccordingToPattern();
@@ -141,7 +143,7 @@ export class Bot extends Character {
         }
 
         // disable body collisions
-        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_BOT;
+        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT;
         this.shape.body.isStatic = false;
 
         // bring body to foreground
@@ -194,21 +196,6 @@ export class Bot extends Character {
                 }
                 break;
             }
-        }
-    }
-
-    /** ****************************************************************************************************************
-    *   Check if the enemy falls to death by falling out of the level.
-    *******************************************************************************************************************/
-    private checkFallingDead(): void {
-        if (this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height) {
-            Debug.character.log('Character has fallen to dead');
-
-            // remove character body from world
-            Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
-
-            // flag as dead
-            this.isDead = true;
         }
     }
 

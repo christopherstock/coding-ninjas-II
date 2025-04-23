@@ -37,7 +37,7 @@ export class SettingMatter {
         group:    0x0004,
     };
 
-    public  static  readonly    COLLISION_GROUP_NON_COLLIDING_DEAD_BOT: matter.ICollisionFilter    = {
+    public  static  readonly    COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT: matter.ICollisionFilter    = {
         category: 0x0008,
         mask:     0x0008,
         group:    0x0008,

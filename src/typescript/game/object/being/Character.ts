@@ -138,7 +138,7 @@ export abstract class Character extends GameObject {
                 if (!movable.broken) {
                     Debug.character.log('Character hits a level object (movable)');
 
-                    movable.hurt(25.0);
+                    movable.hurt(34.0);
                     matter.Body.setVelocity(
                         movable.shape.body,
                         matter.Vector.create(damageForce, -10.0)

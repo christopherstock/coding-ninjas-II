@@ -4,6 +4,7 @@ import { Sprite } from '../../engine/ui/Sprite';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
+import {Debug} from "../../base/Debug";
 
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
@@ -55,6 +56,23 @@ export abstract class GameObject {
         } else {
             this.shape.body.render.sprite.texture = null;
         }
+    }
+
+    /** ****************************************************************************************************************
+    *   Check if the enemy falls to death by falling out of the level.
+    *******************************************************************************************************************/
+    protected checkFallingDead(): boolean {
+        if (this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height) {
+            Debug.character.log('Game object has fallen to dead');
+
+            // remove character body from world
+            Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
+
+            // flag as dead
+            return true;
+        }
+
+        return false;
     }
 
     /** ****************************************************************************************************************
