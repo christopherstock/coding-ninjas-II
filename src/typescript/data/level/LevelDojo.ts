@@ -1,7 +1,13 @@
 /* eslint-disable max-len */
 
 import { Level, LevelId } from '../../game/level/Level';
-import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import {
+    CapHorz,
+    CapVert,
+    DecoPosition,
+    GameObjectBundleFactory,
+    Slope
+} from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
 import { ImageData } from '../ImageData';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
@@ -41,13 +47,11 @@ export class LevelDojo extends Level {
     *******************************************************************************************************************/
     private addHomeShrine(): void {
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 40,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 18,  3, Slope.NONE, CapHorz.NONE);
 
         // walls
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  9, Slope.NONE, CapHorz.NONE);
-
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
-
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 2432, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
 
         // door
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 2320 }));

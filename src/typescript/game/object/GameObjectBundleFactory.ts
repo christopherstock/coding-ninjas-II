@@ -49,6 +49,17 @@ export enum CapHorz
 }
 
 /** ********************************************************************************************************************
+*   Specifies capping for vertical compound edges.
+***********************************************************************************************************************/
+export enum CapVert
+{
+    NONE,
+    ONLY_TOP,
+    ONLY_BOTTOM,
+    BOTH,
+}
+
+/** ********************************************************************************************************************
 *   All different crate types.
 ***********************************************************************************************************************/
 export enum CrateType
@@ -235,7 +246,8 @@ export abstract class GameObjectBundleFactory {
         lengthHorz: number,
         lengthVert: number,
         slope: Slope,
-        capHorz: CapHorz
+        capHorz: CapHorz = CapHorz.BOTH,
+        capVert: CapVert = CapVert.BOTH
     ): void {
         let leftTopTile: SpriteTemplate = null;
         let topTile: SpriteTemplate = null;
@@ -302,7 +314,11 @@ export abstract class GameObjectBundleFactory {
                     } else if (tileX === lengthHorz - 1 && (capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH)) {
                         level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, rightTopTile));
                     } else {
-                        level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, topTile));
+                        if (capVert === CapVert.ONLY_BOTTOM || capVert === CapVert.NONE) {
+                            level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, centerTile));
+                        } else {
+                            level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, topTile));
+                        }
                     }
 
                     drawY += firstLineAlt;
@@ -317,7 +333,11 @@ export abstract class GameObjectBundleFactory {
                     } else if (tileX === lengthHorz - 1 && (capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH)) {
                         level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, rightBottomTile));
                     } else {
-                        level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, bottomTile));
+                        if (capVert === CapVert.ONLY_TOP || capVert === CapVert.NONE) {
+                            level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, centerTile));
+                        } else {
+                            level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, bottomTile));
+                        }
                     }
 
                     drawY += firstLineAlt;
