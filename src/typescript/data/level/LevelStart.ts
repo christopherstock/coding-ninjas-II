@@ -46,7 +46,7 @@ export class LevelStart extends Level {
     *******************************************************************************************************************/
     private addHomeShrine(): void {
         // ground
-        GameObjectBundleFactory.createSolidGround(this, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE, TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE);
 
         // statue and door to DoJo
         GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
@@ -77,8 +77,8 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createFriend(SpriteData.BLUE_NINJA_GUY_WALK_LEFT,         this, 4500, 2000, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
         // slope down and solid ground
-        GameObjectBundleFactory.createSolidGround(this, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE,  TilesetData.TILESET_SNOW);
-        GameObjectBundleFactory.createSolidGround(this, 5760, 2100, 15, 5, Slope.NONE,       CapHorz.NONE,  TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 15, 5, Slope.NONE,       CapHorz.NONE);
 
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 7680, 2260, 6, 4, ImageData.WATER_CENTER);
@@ -112,7 +112,7 @@ export class LevelStart extends Level {
     *******************************************************************************************************************/
     private addFirstPlateau(): void {
         // ground
-        GameObjectBundleFactory.createSolidGround(this, 2400, 2000, 5,  5, Slope.NONE, CapHorz.BOTH, TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 2400, 2000, 5,  5, Slope.NONE, CapHorz.BOTH);
 
         // site trigger
         GameObjectFactory.createSiteTrigger(this, 2000, 2000, 800, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.LEFT, null);
@@ -146,7 +146,7 @@ export class LevelStart extends Level {
     *******************************************************************************************************************/
     private addThirdPlateau(): void {
         // ground
-        GameObjectBundleFactory.createSolidGround(this, 4460, 2000, 5,  5, Slope.NONE, CapHorz.BOTH, TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 4460, 2000, 5,  5, Slope.NONE, CapHorz.BOTH);
 
         // statue
         GameObjectBundleFactory.createDecoImage(this, 4580, 2000, DecoPosition.BG, ImageData.STATUE_2);
@@ -187,7 +187,7 @@ export class LevelStart extends Level {
     *******************************************************************************************************************/
     private addFifthPlateau(): void {
         // ground
-        GameObjectBundleFactory.createSolidGround(this, 6620, 2000, 5,  5, Slope.NONE, CapHorz.BOTH, TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 6620, 2000, 5,  5, Slope.NONE, CapHorz.BOTH);
 
         // statue
         GameObjectBundleFactory.createDecoImage(this, 6780, 2000, DecoPosition.BG, ImageData.STATUE_1);
@@ -230,12 +230,12 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createBridge(this, 11220, 2100);
 
         // ground
-        GameObjectBundleFactory.createSolidGround(this, 8250, 2000, 10, 5, Slope.NONE,       CapHorz.LEFT,  TilesetData.TILESET_SNOW);
-        GameObjectBundleFactory.createSolidGround(this, 9530, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE,  TilesetData.TILESET_SNOW);
-        GameObjectBundleFactory.createSolidGround(this, 10170, 2100, 8,  5, Slope.NONE,       CapHorz.RIGHT, TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 8250, 2000, 10, 5, Slope.NONE,       CapHorz.LEFT);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 9530, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 10170, 2100, 8,  5, Slope.NONE,       CapHorz.RIGHT);
 
         // ground after bridge
-        GameObjectBundleFactory.createSolidGround(this, 11870, 2100, 20, 5, Slope.NONE,      CapHorz.BOTH,  TilesetData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 11870, 2100, 20, 5, Slope.NONE,      CapHorz.BOTH);
 
         // tree
         GameObjectBundleFactory.createDecoImage(this, 10030, 2100, DecoPosition.BG, ImageData.TREE_1);

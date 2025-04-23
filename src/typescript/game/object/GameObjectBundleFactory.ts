@@ -229,13 +229,13 @@ export abstract class GameObjectBundleFactory {
     // eslint-disable-next-line complexity
     public static createSolidGround(
         level: Level,
+        ground: TilesetGround,
         xLeft: number,
         yTop: number,
         lengthHorz: number,
         lengthVert: number,
         slope: Slope,
-        capHorz: CapHorz,
-        ground: TilesetGround
+        capHorz: CapHorz
     ): void {
         let leftTopTile: SpriteTemplate = null;
         let topTile: SpriteTemplate = null;
