@@ -154,6 +154,7 @@ export class ImageData {
     public static DOOR_1: string                                        = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
     public static DOOR_2: string                                        = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door2.png';
     public static DOOR_3: string                                        = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door3.png';
+    public static DOOR_4: string                                        = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door4.png';
 
     public static GRASS_1_FRAME_1: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/01.png';
     public static GRASS_1_FRAME_2: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/02.png';
@@ -414,6 +415,7 @@ export class ImageData {
             ImageData.DOOR_1,
             ImageData.DOOR_2,
             ImageData.DOOR_3,
+            ImageData.DOOR_4,
 
             ImageData.GRASS_1_FRAME_1,
             ImageData.GRASS_1_FRAME_2,

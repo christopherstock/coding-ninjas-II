@@ -47,7 +47,7 @@ export class LevelStart extends Level {
         // ground
         GameObjectBundleFactory.createSolidGround(this, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
 
-        // door
+        // door to DoJo
         GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
 
         // statue
@@ -93,6 +93,9 @@ export class LevelStart extends Level {
         // flasks on the floor
         GameObjectBundleFactory.createMovableRect(this, x + 2633, 2100, ImageData.FLASK_2);
         GameObjectBundleFactory.createMovableRect(this, x + 2684, 2100, ImageData.FLASK_1);
+
+        // door to next level
+        GameObjectFactory.createDoor(this, 7000, 2100, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
     }
 
     /** ****************************************************************************************************************
