@@ -1,18 +1,18 @@
 /* eslint-disable max-len */
 
 import * as matter from 'matter-js';
-import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
-import {GroundData} from '../GroundData';
-import {ImageData} from '../ImageData';
-import {Level, LevelId} from '../../game/level/Level';
-import {GameObjectFactory} from '../../game/object/GameObjectFactory';
-import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
-import {SpriteTemplateData} from '../SpriteTemplateData';
-import {SiteContent} from '../../site/SiteContentSystem';
-import {SitePanelAppearance} from '../../game/object/special/SiteTrigger';
-import {GameAction, GameActionType} from '../../game/object/GameAction';
-import {CharacterSpriteData} from '../CharacterSpriteData';
-import {CharacterFacing} from '../../game/object/being/CharacterFacing';
+import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import { GroundData } from '../GroundData';
+import { ImageData } from '../ImageData';
+import { Level, LevelId } from '../../game/level/Level';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { SpriteTemplateData } from '../SpriteTemplateData';
+import { SiteContent } from '../../site/SiteContentSystem';
+import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { CharacterSpriteData } from '../CharacterSpriteData';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.

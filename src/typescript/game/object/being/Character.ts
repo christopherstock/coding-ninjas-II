@@ -5,7 +5,7 @@ import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { SettingGame } from '../../../base/SettingGame';
 import { Main } from '../../../base/Main';
 import { Debug } from '../../../base/Debug';
-import { BodyFrictionAir } from '../../../base/SettingMatter';
+import {BodyFrictionAir, SettingMatter} from '../../../base/SettingMatter';
 import { ShapeRectangle } from '../../../engine/shape/ShapeRectangle';
 import { Player } from './Player';
 import { CharacterSpriteSet } from './CharacterSpriteSet';
@@ -122,8 +122,8 @@ export abstract class Character extends GameObject {
         );
         const damageForce: number = (
             this.facing === CharacterFacing.LEFT
-                ? -SettingGame.PLAYER_ATTACK_DAMAGE
-                : SettingGame.PLAYER_ATTACK_DAMAGE
+                ? -SettingMatter.PLAYER_ATTACK_DAMAGE
+                : SettingMatter.PLAYER_ATTACK_DAMAGE
         );
         const smashBounds: matter.Bounds = matter.Bounds.create(
             matter.Vertices.create(
