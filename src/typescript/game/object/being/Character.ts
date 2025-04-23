@@ -143,11 +143,6 @@ export abstract class Character extends GameObject {
                         movable.shape.body,
                         matter.Vector.create(damageForce, -10.0)
                     );
-
-                    // remove broken movables
-                    if (movable.broken) {
-                        Main.game.engine.matterJsSystem.removeFromWorld(movable.shape.body);
-                    }
                 }
             }
         }
