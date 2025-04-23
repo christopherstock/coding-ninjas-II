@@ -2,14 +2,8 @@
 
 ## Primary
 
-```
-TODO breakable items
-```
-
 ## Secondary
 ```
-TODO stop gliding?
-TODO offset x/y param for all plateaus!
 TODO remove all unused confusing panel images!
 TODO fix moving plateau
 TODO door for walking through / changing level
@@ -18,12 +12,8 @@ TODO door for walking through / changing level
 ## MVP (Demo)
 
 ```
-TODO Add canvas upscaling / downscaling
-TODO Adjust all matter.js adjustments (PlayerMass etc.) and store them in SettingsMatter.
-TODO Revise ALL physical attributes!
-
 TODO Enable one-timer for closing site panels.
-TODO Enable ENTER press for closing site panels.
+TODO Enable ENTER/ESCAPE press for closing site panels.
 TODO Add event triggers! ( for falling obstacles, new enemies etc )
 ```
 
