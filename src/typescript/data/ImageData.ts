@@ -246,6 +246,7 @@ export class ImageData {
     static readonly BG_TOWN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown.png';
     static readonly BG_ALLEY: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgAlley.jpg';
     static readonly BG_STREET: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgStreet.jpg';
+    static readonly BG_GARDEN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgGarden.jpg';
 
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
@@ -515,6 +516,7 @@ export class ImageData {
             ImageData.BG_TOWN,
             ImageData.BG_ALLEY,
             ImageData.BG_STREET,
+            ImageData.BG_GARDEN,
 
             ImageData.BILLBOARD,
             ImageData.BILLBOARD_WELCOME,

@@ -11,6 +11,7 @@ export class KeyData {
 
     public static KEY_1: string      = '1';
     public static KEY_2: string      = '2';
+    public static KEY_3: string      = '3';
 
     public static KEY_SPACE: string  = ' ';
 

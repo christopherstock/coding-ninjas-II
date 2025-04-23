@@ -13,6 +13,7 @@ import { KeyData } from '../data/KeyData';
 import { DrawUtil } from '../util/DrawUtil';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
+import {LevelGarden} from "../data/level/LevelGarden";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -158,6 +159,9 @@ export class Game {
             case LevelId.LEVEL_DOJO:
                 this.level = new LevelDojo();
                 break;
+            case LevelId.LEVEL_GARDEN:
+                this.level = new LevelGarden();
+                break;
             default:
                 this.level = new LevelStart();
                 break;
@@ -248,15 +252,13 @@ export class Game {
                 Debug.init.log('Resetting and switching to level 2');
                 this.resetAndLaunchLevel(LevelId.LEVEL_DOJO);
             }
-            /*
-            if ( Main.game.engine.keySystem.isPressed( Key.KEY_3 ) )
-            {
-                Main.game.engine.keySystem.setNeedsRelease( Key.KEY_3 );
 
-                Debug.init.log( 'Resetting and switching to level 3' );
-                this.resetAndLaunchLevel( new LevelEnchantedWoods() );
+            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_3)) {
+                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_3);
+
+                Debug.init.log('Resetting and switching to level 3');
+                this.resetAndLaunchLevel(LevelId.LEVEL_GARDEN);
             }
-            */
         }
     }
 

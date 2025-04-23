@@ -1,0 +1,56 @@
+/* eslint-disable max-len */
+
+import { Level, LevelId } from '../../game/level/Level';
+import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { ImageData } from '../ImageData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { GroundData } from '../GroundData';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { SpriteTemplateData } from '../SpriteTemplateData';
+
+/** ********************************************************************************************************************
+*   The level data for the Garden level.
+***********************************************************************************************************************/
+export class LevelGarden extends Level {
+    public playerStartX: number = 1400;
+    public playerStartY: number = 1400;
+    public playerInitialFloat: boolean = false;
+    public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
+
+    public width: number = 15000;
+    public height: number = 4500;
+
+    /** ****************************************************************************************************************
+    *   Inits a new level.
+    *******************************************************************************************************************/
+    protected createGameObjects(): void {
+
+        GameObjectBundleFactory.createPlayer(this);
+        GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_GARDEN));
+
+        this.addGardenSetup();
+    }
+
+    /** ****************************************************************************************************************
+    *   Adds the garden setup.
+    *******************************************************************************************************************/
+    private addGardenSetup(): void {
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, 0, 1400, 40,  3, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
+
+        // walls
+        GameObjectBundleFactory.createSolidGround(this, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
+        GameObjectBundleFactory.createSolidGround(this, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
+
+        // door
+        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6705 }));
+
+        // table with flasks and pots
+        const x = -1800;
+        const y = -700;
+        GameObjectBundleFactory.createMovableRect(this, x + 2558, y + 2100, ImageData.POT_1);
+        GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1);
+    }
+}
