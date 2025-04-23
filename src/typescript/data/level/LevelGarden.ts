@@ -44,8 +44,8 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createSolidGround(this, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
         GameObjectBundleFactory.createSolidGround(this, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE, GroundData.TILESET_SNOW);
 
-        // door
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6705 }));
+        // door back to start level
+        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6730, playerStartY: 2100 }));
 
         // table with flasks and pots
         const x = -1800;
