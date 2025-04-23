@@ -21,19 +21,19 @@ export class PointerSystem {
         const canvas: HTMLCanvasElement = Main.game.engine.canvasSystem.getCanvas();
 
         // eslint-disable-next-line max-len
-        canvas.addEventListener('onpointermove', (event: Event) => { this.onPointerMove(event as PointerEvent); }, false);
+        canvas.addEventListener('onpointermove', (event: Event) => { this.onPointerMove(event as PointerEvent); }, { passive: false });
         // eslint-disable-next-line max-len
-        canvas.addEventListener('onpointerdown', (event: Event) => { this.onPointerDown(event as PointerEvent); }, false);
+        canvas.addEventListener('onpointerdown', (event: Event) => { this.onPointerDown(event as PointerEvent); }, { passive: false });
         // eslint-disable-next-line max-len
-        window.addEventListener('onpointerup',   (event: Event) => { this.onPointerUp(event as PointerEvent); }, false);
+        window.addEventListener('onpointerup',   (event: Event) => { this.onPointerUp(event as PointerEvent); }, { passive: false });
 
-        canvas.addEventListener('pointermove', (event: PointerEvent) => { this.onPointerMove(event); }, false);
-        canvas.addEventListener('pointerdown', (event: PointerEvent) => { this.onPointerDown(event); }, false);
-        window.addEventListener('pointerup',   (event: PointerEvent) => { this.onPointerUp(event); }, false);
+        canvas.addEventListener('pointermove', (event: PointerEvent) => { this.onPointerMove(event); }, { passive: false });
+        canvas.addEventListener('pointerdown', (event: PointerEvent) => { this.onPointerDown(event); }, { passive: false });
+        window.addEventListener('pointerup',   (event: PointerEvent) => { this.onPointerUp(event); }, { passive: false });
 
-        canvas.addEventListener('touchmove',   (event: TouchEvent) => { this.onTouchMove(event); }, false);
-        canvas.addEventListener('touchstart',  (event: TouchEvent) => { this.onTouchDown(event); }, false);
-        window.addEventListener('touchend',    (event: TouchEvent) => { this.onTouchUp(event); }, false);
+        canvas.addEventListener('touchmove',   (event: TouchEvent) => { this.onTouchMove(event); }, { passive: false });
+        canvas.addEventListener('touchstart',  (event: TouchEvent) => { this.onTouchDown(event); }, { passive: false });
+        window.addEventListener('touchend',    (event: TouchEvent) => { this.onTouchUp(event); }, { passive: false });
     }
 
     /** ****************************************************************************************************************
