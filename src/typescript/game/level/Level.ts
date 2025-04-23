@@ -59,16 +59,12 @@ export abstract class Level {
     public init(matterJsSystem: MatterJsSystem): void {
         this.createGameObjects();
 
-        // order affects z layer
-
+        // adding to world order affects Z layer
         for (const parallaxBg of this.parallaxBgs) {
             matterJsSystem.addToWorld(parallaxBg.shape.body);
         }
         for (const siteTrigger of this.siteTriggers) {
             matterJsSystem.addToWorld(siteTrigger.shape.body);
-        }
-        for (const door of this.doors) {
-            matterJsSystem.addToWorld(door.shape.body);
         }
         for (const sigsaw of this.sigsaws) {
             matterJsSystem.addToWorld(sigsaw.shape.body);
@@ -86,6 +82,9 @@ export abstract class Level {
         for (const decoBg of this.decosBg) {
             matterJsSystem.addToWorld(decoBg.shape.body);
         }
+        for (const door of this.doors) {
+            matterJsSystem.addToWorld(door.shape.body);
+        }
         for (const movable of this.movables) {
             matterJsSystem.addToWorld(movable.shape.body);
         }
@@ -93,14 +92,13 @@ export abstract class Level {
             matterJsSystem.addToWorld(enemy.shape.body);
         }
 
-        // player last - highest Z layer
         matterJsSystem.addToWorld(this.player.shape.body);
 
-        for (const gameObject of this.decosFg) {
-            matterJsSystem.addToWorld(gameObject.shape.body);
+        for (const decoFg of this.decosFg) {
+            matterJsSystem.addToWorld(decoFg.shape.body);
         }
-        for (const gameObject of this.parallaxFgs) {
-            matterJsSystem.addToWorld(gameObject.shape.body);
+        for (const parallaxFg of this.parallaxFgs) {
+            matterJsSystem.addToWorld(parallaxFg.shape.body);
         }
     }
 

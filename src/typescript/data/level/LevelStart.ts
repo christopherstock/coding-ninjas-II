@@ -82,7 +82,7 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createBridge(this, 7750, 2100);
 
         // table with flasks
-        const x = 4000;
+        const x = 5000;
         GameObjectBundleFactory.createMovableRect(this, x + 2420, 2100, ImageData.TABLE_1, BodyDensity.TABLE, BodyFriction.WOOD);
         GameObjectBundleFactory.createMovableRect(this, x + 2430, 1930, ImageData.FLASK_1);
         GameObjectBundleFactory.createMovableRect(this, x + 2462, 1930, ImageData.FLASK_2);
@@ -95,8 +95,11 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createMovableRect(this, x + 2633, 2100, ImageData.FLASK_2);
         GameObjectBundleFactory.createMovableRect(this, x + 2684, 2100, ImageData.FLASK_1);
 
-        // door to next level
-        GameObjectFactory.createDoor(this, 7000, 2100, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
+        // TODO GameObject.createHouseFront
+
+        // house with door to next level
+        GameObjectBundleFactory.createDecoImage(this, 6500, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
+        GameObjectFactory.createDoor(this, 6705, 2055, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
     }
 
     /** ****************************************************************************************************************
