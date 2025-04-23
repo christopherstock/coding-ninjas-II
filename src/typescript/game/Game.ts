@@ -19,17 +19,17 @@ import { CharacterFacing } from './object/being/CharacterFacing';
 ***********************************************************************************************************************/
 export class Game {
     /** The game engine. */
-    public      engine: Engine                  = null;
+    public engine: Engine                       = null;
     /** The custom camera system. */
-    public      camera: Camera                  = null;
+    public camera: Camera                       = null;
     /** The custom level. */
-    public      level: Level                   = null;
+    public level: Level                         = null;
     /** The currently assigned background music. */
-    private     bgMusic: HTMLAudioElement               = null;
+    private bgMusic: HTMLAudioElement           = null;
     /** The remaining ticks for the blend panel to disappear. */
-    private     blendPanelTicks: number                         = 0;
+    private blendPanelTicks: number             = 0;
     /** Number of ticks for the engine to run in slow motion. */
-    private     slowMotionTicks: number                         = 0;
+    private slowMotionTicks: number             = 0;
 
     /** ****************************************************************************************************************
     *   Shows the preloader.
@@ -122,17 +122,17 @@ export class Game {
 
     /** ****************************************************************************************************************
     *   Sets slow motion game engine speed for a specified period.
-    *
-    *   TODO prune!
     *******************************************************************************************************************/
     public startSlowMotionTicks(): void {
-        Debug.engine.log(
-            'Engine - setSlowMotion for ['
-            + String(SettingEngine.ENGINE_SLOW_MOTION_TICKS)
-            + '] ticks'
-        );
+        if (SettingEngine.ENGINE_SLOW_MOTION_TICKS > 0) {
+            Debug.engine.log(
+                'Engine - setSlowMotion for ['
+                + String(SettingEngine.ENGINE_SLOW_MOTION_TICKS)
+                + '] ticks'
+            );
 
-        this.slowMotionTicks = SettingEngine.ENGINE_SLOW_MOTION_TICKS;
+            this.slowMotionTicks = SettingEngine.ENGINE_SLOW_MOTION_TICKS;
+        }
     }
 
     /** ****************************************************************************************************************

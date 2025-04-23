@@ -462,7 +462,7 @@ export abstract class GameObjectBundleFactory {
         yBottom: number,
         imageId: string,
         density: number = BodyDensity.DEFAULT,
-        friction: number = BodyFriction.DEFAULT_MOVABLE,
+        friction: number = BodyFriction.DEFAULT_MOVABLE
     ): void {
         const movable: Movable = GameObjectFactory.createMovableRect(
             xLeft,

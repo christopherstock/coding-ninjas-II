@@ -5,7 +5,7 @@ import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { SettingGame } from '../../../base/SettingGame';
 import { Main } from '../../../base/Main';
 import { Debug } from '../../../base/Debug';
-import {BodyFrictionAir, SettingMatter} from '../../../base/SettingMatter';
+import { BodyFrictionAir, SettingMatter } from '../../../base/SettingMatter';
 import { ShapeRectangle } from '../../../engine/shape/ShapeRectangle';
 import { Player } from './Player';
 import { CharacterSpriteSet } from './CharacterSpriteSet';
@@ -15,36 +15,25 @@ import { CharacterFacing } from './CharacterFacing';
 *   Represents a character.
 ***********************************************************************************************************************/
 export abstract class Character extends GameObject {
-    /** The facing direction for this character. */
-    public                          facing: CharacterFacing             = null;
-    /** Flags if the character currently collides with the bottom sensor. */
-    public                          collidesBottom: boolean                            = false;
+    public facing: CharacterFacing                      = null;
+    public collidesBottom: boolean                      = false;
 
-    /** Ticks the character is paralized by being punched back. */
-    public                          punchBackTicks: number                             = 0;
+    public punchBackTicks: number                       = 0;
+    public attackingTicks: number                       = 0;
 
-    /** Ticks the character is currently attacking. */
-    public                          attackingTicks: number                             = 0;
+    protected glidingRequest: boolean                   = false;
+    protected interactionRequest: boolean               = false;
 
-    protected                       glidingRequest: boolean                            = false;
-    protected                       interactionRequest: boolean                            = false;
+    protected isGliding: boolean                        = false;
+    protected isDying: boolean                          = false;
+    protected isDead: boolean                           = false;
+    protected isMovingLeft: boolean                     = false;
+    protected isMobineRight: boolean                    = false;
 
-    protected                       isGliding: boolean                            = false;
-    protected                       isDying: boolean                            = false;
-    protected                       isDead: boolean                            = false;
+    private readonly speedMove: number                  = 0.0;
+    private readonly jumpPower: number                  = 0.0;
 
-    /** Flags if the character is currently moving left. */
-    protected                       movesLeft: boolean                            = false;
-    /** Flags if the character is currently moving right. */
-    protected                       movesRight: boolean                            = false;
-
-    /** The speed for horizontal movements. */
-    private     readonly            speedMove: number                             = 0.0;
-    /** The jump power to apply for this character. */
-    private     readonly            jumpPower: number                             = 0.0;
-
-    /** The sprite set to use for this character. */
-    private     readonly            spriteSet: CharacterSpriteSet          = null;
+    private readonly spriteSet: CharacterSpriteSet      = null;
 
     /** ****************************************************************************************************************
     *   Creates a new character.
@@ -91,8 +80,8 @@ export abstract class Character extends GameObject {
     public render(): void {
         super.render();
 
-        this.movesLeft  = false;
-        this.movesRight = false;
+        this.isMovingLeft  = false;
+        this.isMobineRight = false;
 
         if (this.punchBackTicks > 0) {
             --this.punchBackTicks;
@@ -144,8 +133,9 @@ export abstract class Character extends GameObject {
         // check all movables
         for (const movable of Main.game.level.movables) {
             if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
-                Debug.character.log('Character hits a level object');
+                Debug.character.log('Character hits a level object (movable)');
 
+                movable.hurt(25.0);
                 matter.Body.setVelocity(
                     movable.shape.body,
                     matter.Vector.create(damageForce, -10.0)
@@ -176,8 +166,8 @@ export abstract class Character extends GameObject {
     *   @param punchBackDirection The direction in which to punch back.
     *******************************************************************************************************************/
     public receivePunchBack(punchBackDirection: CharacterFacing): void {
-        const forceX: number = (this instanceof Player ? 7.5  : 10.0);
-        const forceY: number = (this instanceof Player ? 10.0 : 32.5);
+        const forceX: number = (this instanceof Player ? 7.5  : 5.5);
+        const forceY: number = (this instanceof Player ? 10.0 : 16.5);
 
         // apply punch-back force
         switch (punchBackDirection) {
@@ -242,7 +232,7 @@ export abstract class Character extends GameObject {
     *******************************************************************************************************************/
     protected moveLeft(): void {
         matter.Body.translate(this.shape.body, matter.Vector.create(-this.speedMove, 0));
-        this.movesLeft = true;
+        this.isMovingLeft = true;
         this.facing    = CharacterFacing.LEFT;
 
         // check in-air collision
@@ -257,7 +247,7 @@ export abstract class Character extends GameObject {
     *******************************************************************************************************************/
     protected moveRight(): void {
         matter.Body.translate(this.shape.body, matter.Vector.create(this.speedMove, 0));
-        this.movesRight = true;
+        this.isMobineRight = true;
         this.facing     = CharacterFacing.RIGHT;
 
         // check in-air collision
@@ -364,9 +354,9 @@ export abstract class Character extends GameObject {
                 this.setSprite(this.spriteSet.spriteAttackRight);
             }
         } else {
-            if (this.movesLeft) {
+            if (this.isMovingLeft) {
                 this.setSprite(this.spriteSet.spriteWalkLeft);
-            } else if (this.movesRight) {
+            } else if (this.isMobineRight) {
                 this.setSprite(this.spriteSet.spriteWalkRight);
             } else {
                 if (this.facing === CharacterFacing.LEFT) {

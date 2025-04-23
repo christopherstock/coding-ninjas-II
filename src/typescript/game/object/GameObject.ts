@@ -4,16 +4,16 @@ import { Sprite } from '../../engine/ui/Sprite';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
+import {Debug} from "../../base/Debug";
 
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
 ***********************************************************************************************************************/
 export abstract class GameObject {
-    /** Collision shape. */
-    public          shape: Shape                   = null;
-
-    /** Sprite. */
-    public          sprite: Sprite                  = null;
+    public shape: Shape   = null;
+    public sprite: Sprite = null;
+    public energy: number = 100.0;
+    public broken: boolean = false;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.
@@ -57,6 +57,19 @@ export abstract class GameObject {
             this.setImageFromSprite();
         } else {
             this.shape.body.render.sprite.texture = null;
+        }
+    }
+
+    public hurt(damage: number): void {
+        if (this.broken) {
+            return;
+        }
+
+        this.energy -= damage;
+        Debug.character.log('New level object energy: [' + this.energy + ']');
+        if (this.energy <= 0.0) {
+            Debug.character.log('Game Object BREAKS!');
+            this.broken = true;
         }
     }
 

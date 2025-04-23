@@ -13,7 +13,7 @@ import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { CharacterSpriteData } from '../CharacterSpriteData';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
+import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.

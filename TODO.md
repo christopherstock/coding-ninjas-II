@@ -3,14 +3,12 @@
 ## Primary
 
 ```
-TODO Update all npm packages (from hackathon 2022 frontend)
-TODO Change slogan
-TODO Move to MF GitLab
-TODO Add GitLab CI/CD pipeline
+TODO breakable items
 ```
 
 ## Secondary
 ```
+TODO stop gliding?
 TODO offset x/y param for all plateaus!
 TODO remove all unused confusing panel images!
 TODO fix moving plateau
@@ -35,6 +33,7 @@ TODO Add event triggers! ( for falling obstacles, new enemies etc )
 TODO Group AND PRUNE all deco images into subfolders.
 TODO Introduce AliveState for character (alive, dying, dead)
 TODO Improve image sequence handling in ImageData (FILE_NAMES) by class access?
+TODO Add GitLab CI/CD pipeline
 TODO Remove static access on Main.game.
 
 TODO Add slow motion fx with fewer rendering time!
