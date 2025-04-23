@@ -1,6 +1,6 @@
 import { Level } from '../level/Level';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { SpriteTemplateData } from '../../data/SpriteTemplateData';
+import { SpriteData } from '../../data/SpriteData';
 import { DebugColor } from '../../base/SettingDebug';
 import { ImageData } from '../../data/ImageData';
 import { StaticShape } from '../../engine/shape/Shape';
@@ -87,18 +87,18 @@ export abstract class GameObjectBundleFactory {
     *   @param level The level instance to add the player to.
     *******************************************************************************************************************/
     public static createPlayer(level: Level): void {
-        const dimensionSprite: SpriteTemplate = SpriteTemplateData.MASKED_NINJA_GIRL_STAND_LEFT;
+        const dimensionSprite: SpriteTemplate = SpriteData.MASKED_NINJA_GIRL_STAND_LEFT;
         const firstSprite: SpriteTemplate = (
             level.playerInitialFloat
                 ? (
                     level.playerInitialFacing === CharacterFacing.LEFT
-                        ? SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_LEFT
-                        : SpriteTemplateData.MASKED_NINJA_GIRL_GLIDE_RIGHT
+                        ? SpriteData.MASKED_NINJA_GIRL_GLIDE_LEFT
+                        : SpriteData.MASKED_NINJA_GIRL_GLIDE_RIGHT
                 )
                 : (
                     level.playerInitialFacing === CharacterFacing.LEFT
-                        ? SpriteTemplateData.MASKED_NINJA_GIRL_STAND_LEFT
-                        : SpriteTemplateData.MASKED_NINJA_GIRL_STAND_RIGHT
+                        ? SpriteData.MASKED_NINJA_GIRL_STAND_LEFT
+                        : SpriteData.MASKED_NINJA_GIRL_STAND_RIGHT
                 )
         );
 
@@ -380,7 +380,7 @@ export abstract class GameObjectBundleFactory {
         height: number,
         tileCenterImage: string
     ): void {
-        const tileTop: SpriteTemplate = SpriteTemplateData.WATER_TOP;
+        const tileTop: SpriteTemplate = SpriteData.WATER_TOP;
         const tileCenter: SpriteTemplate = SpriteTemplate.createFromSingleImage(tileCenterImage);
 
         // draw area
@@ -719,16 +719,16 @@ export abstract class GameObjectBundleFactory {
 
         if (candleLeft) {
             GameObjectBundleFactory.createDecoImage(level, xLeft - 80,  yBottom,       DecoPosition.FG, ImageData.CANDELABRA);
-            GameObjectBundleFactory.createDecoSprite(level, xLeft - 88,  yBottom - 222, DecoPosition.FG, SpriteTemplateData.FLAME_1_BIG);
-            GameObjectBundleFactory.createDecoSprite(level, xLeft - 68,  yBottom - 178, DecoPosition.FG, SpriteTemplateData.FLAME_1_SMALL);
-            GameObjectBundleFactory.createDecoSprite(level, xLeft - 106, yBottom - 182, DecoPosition.FG, SpriteTemplateData.FLAME_1_SMALL);
+            GameObjectBundleFactory.createDecoSprite(level, xLeft - 88,  yBottom - 222, DecoPosition.FG, SpriteData.FLAME_1_BIG);
+            GameObjectBundleFactory.createDecoSprite(level, xLeft - 68,  yBottom - 178, DecoPosition.FG, SpriteData.FLAME_1_SMALL);
+            GameObjectBundleFactory.createDecoSprite(level, xLeft - 106, yBottom - 182, DecoPosition.FG, SpriteData.FLAME_1_SMALL);
         }
 
         if (candleRight) {
             GameObjectBundleFactory.createDecoImage(level, xLeft + 164, yBottom,       DecoPosition.FG, ImageData.CANDELABRA);
-            GameObjectBundleFactory.createDecoSprite(level, xLeft + 156, yBottom - 222, DecoPosition.FG, SpriteTemplateData.FLAME_1_BIG);
-            GameObjectBundleFactory.createDecoSprite(level, xLeft + 176, yBottom - 178, DecoPosition.FG, SpriteTemplateData.FLAME_1_SMALL);
-            GameObjectBundleFactory.createDecoSprite(level, xLeft + 138, yBottom - 182, DecoPosition.FG, SpriteTemplateData.FLAME_1_SMALL);
+            GameObjectBundleFactory.createDecoSprite(level, xLeft + 156, yBottom - 222, DecoPosition.FG, SpriteData.FLAME_1_BIG);
+            GameObjectBundleFactory.createDecoSprite(level, xLeft + 176, yBottom - 178, DecoPosition.FG, SpriteData.FLAME_1_SMALL);
+            GameObjectBundleFactory.createDecoSprite(level, xLeft + 138, yBottom - 182, DecoPosition.FG, SpriteData.FLAME_1_SMALL);
         }
     }
 
@@ -788,6 +788,6 @@ export abstract class GameObjectBundleFactory {
         position: DecoPosition
     ): void {
         GameObjectBundleFactory.createDecoImage(level, xLeft,      yBottom,       position, ImageData.CANDLE);
-        GameObjectBundleFactory.createDecoSprite(level, xLeft - 17, yBottom - 153, position, SpriteTemplateData.FLAME_1_BIG);
+        GameObjectBundleFactory.createDecoSprite(level, xLeft - 17, yBottom - 153, position, SpriteData.FLAME_1_BIG);
     }
 }

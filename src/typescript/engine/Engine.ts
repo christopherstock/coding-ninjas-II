@@ -5,7 +5,7 @@ import { SettingDebug } from '../base/SettingDebug';
 import { SettingEngine } from '../base/SettingEngine';
 import { SettingGame } from '../base/SettingGame';
 import { ImageData } from '../data/ImageData';
-import { SpriteTemplateData } from '../data/SpriteTemplateData';
+import { SpriteData } from '../data/SpriteData';
 import { CanvasSystem } from './ui/CanvasSystem';
 import { ImageSystem } from './io/ImageSystem';
 import { SoundSystem } from './io/SoundSystem';
@@ -82,7 +82,7 @@ export class Engine {
         this.imageSystem = new ImageSystem
         (
             ImageData.FILE_NAMES,
-            SpriteTemplateData.getAllImagesToMirror(),
+            SpriteData.getAllImagesToMirror(),
             () => { this.onImagesLoaded(); }
         );
         this.imageSystem.loadImages();
@@ -135,7 +135,7 @@ export class Engine {
     *   Being invoked when all images are loaded.
     *******************************************************************************************************************/
     private onImagesLoaded(): void {
-        SpriteTemplateData.assignAllImageSizes(this.imageSystem);
+        SpriteData.assignAllImageSizes(this.imageSystem);
 
         this.preloader.setLoadingPercentage(80);
 
