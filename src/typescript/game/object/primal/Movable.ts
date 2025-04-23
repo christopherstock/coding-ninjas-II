@@ -43,7 +43,7 @@ export class Movable extends GameObject {
         // this.clipToHorizontalLevelBounds();
 
         if (this.energy < 100.0) {
-            this.shape.body.render.opacity = 0.3 + 0.7 * this.energy / 100.0;
+            this.shape.body.render.opacity = 0.5 + ((0.5 * this.energy) / 100.0);
         }
 
         if (this.broken && this.vanishCountdown > 0) {
@@ -62,6 +62,7 @@ export class Movable extends GameObject {
             return;
         }
 
+        // TODO add particle effect / decos on hurt/smash!
         this.energy -= damage;
         Debug.character.log('New level object energy: [' + String(this.energy) + ']');
 
@@ -73,7 +74,7 @@ export class Movable extends GameObject {
 
         if (this.energy <= 0.0) {
             Debug.character.log('Game Object BREAKS!');
-            // add particle effect etc!
+            // TODO add particle effect / decos on breaking etc!
             this.break();
         }
     }
