@@ -75,9 +75,9 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createCandle(this, x + 13980, y + 2100, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, x + 14080, y + 2100, DecoPosition.FG);
 
-        // billboard 'welcome'
+        // billboard 'websites'
         GameObjectBundleFactory.createDecoImage(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+        GameObjectBundleFactory.createDecoImage(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEBSITES);
 
         // door to garden
         GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));

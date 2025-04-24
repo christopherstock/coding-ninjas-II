@@ -281,6 +281,7 @@ export class ImageData {
 
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
+    static readonly BILLBOARD_WEBSITES: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebsites.png';
 
     static readonly SITE_PANEL_LOGO: string                             = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
     static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft_a90.png';
@@ -588,6 +589,7 @@ export class ImageData {
 
         ImageData.BILLBOARD,
         ImageData.BILLBOARD_WELCOME,
+        ImageData.BILLBOARD_WEBSITES,
 
         ImageData.SITE_PANEL_LOGO,
         ImageData.SITE_PANEL_BG_LEFT,
