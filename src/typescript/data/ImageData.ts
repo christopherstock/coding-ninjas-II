@@ -162,6 +162,7 @@ export class ImageData {
     static readonly HOUSE_FRONT_1: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront1.jpg';
     static readonly HOUSE_FRONT_2: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront2.jpg';
     static readonly HOUSE_ROOF_1: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof1.png';
+    static readonly HOUSE_ROOF_2: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof2.png';
 
     static readonly GRASS_1_FRAME_1: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/01.png';
     static readonly GRASS_1_FRAME_2: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/02.png';
@@ -462,6 +463,7 @@ export class ImageData {
         ImageData.HOUSE_FRONT_1,
         ImageData.HOUSE_FRONT_2,
         ImageData.HOUSE_ROOF_1,
+        ImageData.HOUSE_ROOF_2,
 
         ImageData.GRASS_1_FRAME_1,
         ImageData.GRASS_1_FRAME_2,
