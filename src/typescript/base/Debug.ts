@@ -11,7 +11,7 @@ export class Debug {
     public static readonly canvas: Debug        = new Debug(false);
     public static readonly key: Debug           = new Debug(false);
     public static readonly image: Debug         = new Debug(false);
-    public static readonly sound: Debug         = new Debug(true);
+    public static readonly sound: Debug         = new Debug(false);
     public static readonly pointer: Debug       = new Debug(false);
     public static readonly item: Debug          = new Debug(false);
     public static readonly bot: Debug           = new Debug(false);
