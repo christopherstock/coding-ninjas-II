@@ -87,8 +87,8 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createCandle(this, 4540, 2000, DecoPosition.FG);
 
         // boulder and bush
-        GameObjectBundleFactory.createDecoImage(this, 5970, 2100, DecoPosition.BG, ImageData.BOULDER_1);
-        GameObjectBundleFactory.createDecoImage(this, 5800, 2100, DecoPosition.FG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, 5760, 2100, DecoPosition.FG, ImageData.BUSH_2);
 
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
