@@ -283,6 +283,7 @@ export class ImageData {
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
     static readonly BILLBOARD_WEBSITES: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebsites.png';
     static readonly BILLBOARD_GAMES: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardGames.png';
+    static readonly BILLBOARD_WEB_APPS: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebapps.png';
 
     static readonly SITE_PANEL_LOGO: string                             = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
     static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft_a90.png';
@@ -592,6 +593,7 @@ export class ImageData {
         ImageData.BILLBOARD_WELCOME,
         ImageData.BILLBOARD_WEBSITES,
         ImageData.BILLBOARD_GAMES,
+        ImageData.BILLBOARD_WEB_APPS,
 
         ImageData.SITE_PANEL_LOGO,
         ImageData.SITE_PANEL_BG_LEFT,
