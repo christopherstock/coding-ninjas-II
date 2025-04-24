@@ -35,81 +35,94 @@ export class LevelStart extends Level {
         // parallax bg "Mount Fuji"
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_MOUNT_FUJI));
 
-        // home shrine
-        this.addHomeShrine();
+        this.addUpperGround();
+        this.addSlopeGround();
+        this.addLowerGround();
     }
 
-    /** ****************************************************************************************************************
-    *   Adds the startup shrine.
-    *******************************************************************************************************************/
-    private addHomeShrine(): void {
+    private addUpperGround(): void {
+
+        const x = 0;
+
         // site trigger
-        GameObjectFactory.createSiteTrigger(this, 500, 2000, 750, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
+        GameObjectFactory.createSiteTrigger(this, x + 500, 2000, 750, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
 
         // enemies
-        GameObjectBundleFactory.createEnemy(this, 200, 2000, CharacterFacing.RIGHT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
-        GameObjectBundleFactory.createEnemy(this, 1700, 2000, CharacterFacing.LEFT, 200, 1700, CharacterSpriteData.MASKED_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 200, 2000, CharacterFacing.RIGHT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 1700, 2000, CharacterFacing.LEFT, 200, 1700, CharacterSpriteData.MASKED_NINJA_GUY, false);
 
         // trees
-        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 1200, 2000, DecoPosition.FG, ImageData.TREE_1);
 
         // statue with bush
-        GameObjectBundleFactory.createCandle(this, 2170, 2000, DecoPosition.BG);
-        GameObjectBundleFactory.createDecoImage(this, 2060, 2022, DecoPosition.BG, ImageData.BUSH_2);
-        GameObjectBundleFactory.createDecoImage(this, 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
-        GameObjectBundleFactory.createDecoImage(this, 1885, 2000, DecoPosition.FG, ImageData.BUSH_1);
-        GameObjectBundleFactory.createCandle(this, 1930, 2000, DecoPosition.FG);
+        GameObjectBundleFactory.createCandle(this, x + 2170, 2000, DecoPosition.BG);
+        GameObjectBundleFactory.createDecoImage(this, x + 2060, 2022, DecoPosition.BG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, x + 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 1885, 2000, DecoPosition.FG, ImageData.BUSH_1);
+        GameObjectBundleFactory.createCandle(this, x + 1930, 2000, DecoPosition.FG);
 
         // billboard 'welcome'
-        GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+        GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
+        GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
         // grass
-        GameObjectBundleFactory.createDecoSprite(this, 2500, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, 2550, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, 2600, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, 3050, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, 3100, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, 3150, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 2500, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 2550, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 2600, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 3050, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 3100, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 3150, 2000, DecoPosition.FG, SpriteData.GRASS_2);
 
         // lion statue with trees and grass
-        GameObjectBundleFactory.createDecoImage(this, 3600, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
-        GameObjectBundleFactory.createDecoImage(this, 4285, 2000, DecoPosition.BG, ImageData.STATUE_LION);
-        GameObjectBundleFactory.createDecoImage(this, 4600, 2000, DecoPosition.FG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoSprite(this, 4080, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, 4130, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, 4180, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, 4480, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, 4530, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, 4580, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createCandle(this, 4200, 2000, DecoPosition.FG);
-        GameObjectBundleFactory.createCandle(this, 4540, 2000, DecoPosition.FG);
+        GameObjectBundleFactory.createDecoImage(this, x + 3630, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
+        GameObjectBundleFactory.createDecoImage(this, x + 4265, 2000, DecoPosition.BG, ImageData.STATUE_LION);
+        GameObjectBundleFactory.createDecoImage(this, x + 4580, 2000, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4080, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4130, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4180, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4480, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4530, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4580, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createCandle(this, x + 4200, 2000, DecoPosition.FG);
+        GameObjectBundleFactory.createCandle(this, x + 4540, 2000, DecoPosition.FG);
+
+        // upper ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 0,    2000, 40,  5, Slope.NONE, CapHorz.NONE);
+    }
+
+    private addSlopeGround(): void {
+        const x = 5920;
 
         // boulder and bush
-        GameObjectBundleFactory.createDecoImage(this, 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
-        GameObjectBundleFactory.createDecoImage(this, 5760, 2100, DecoPosition.FG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, x - 5920 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x - 5920 + 5760, 2100, DecoPosition.FG, ImageData.BUSH_2);
+
+        // slope
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x - 5920 + 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
+    }
+
+    private addLowerGround(): void {
+        const x = 5870;
 
         // friend
-        GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 5870, 2100, CharacterFacing.RIGHT, 5870, 6800, CharacterSpriteData.RED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT, this, x - 5870 + 5870, 2100, CharacterFacing.RIGHT, 5870, 6800, CharacterSpriteData.RED_NINJA_GIRL, false);
 
         // house with door to DoJo
-        GameObjectBundleFactory.createDecoImage(this, 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
-        GameObjectBundleFactory.createDecoImage(this, 6380, 1810, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
-        GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectBundleFactory.createDecoImage(this, x - 5870 + 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
+        GameObjectBundleFactory.createDecoImage(this, x - 5870 + 6380, 1810, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
+        GameObjectFactory.createDoor(this, x - 5870 + 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // wooden crates
-        GameObjectBundleFactory.createMovableRect(this, 6950, 2100, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 7095, 2100, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 7240, 2100, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 7020, 1975, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 7155, 1975, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 6950, 2100, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7095, 2100, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7240, 2100, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7020, 1975, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7155, 1975, ImageData.CRATE_WOOD);
 
         // bridge and blue water
-        GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
-        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 10, 4, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createBridge(this, x - 5870 + 7110, 2100, true);
+        GameObjectBundleFactory.createWaterArea(this, x - 5870 + 7040, 2260, 10, 4, ImageData.WATER_CENTER);
 
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0,    2000, 40,  5, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
+        // lower ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x - 5870 + 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
     }
 }
