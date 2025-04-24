@@ -5,33 +5,33 @@ import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 ***********************************************************************************************************************/
 export class CharacterSpriteSet {
     /** The sprite to use for standing left. */
-    public      readonly            spriteStandLeft: SpriteTemplate              = null;
+    public readonly spriteStandLeft: SpriteTemplate         = null;
     /** The sprite to use for standing right. */
-    public      readonly            spriteStandRight: SpriteTemplate              = null;
+    public readonly spriteStandRight: SpriteTemplate        = null;
     /** The sprite to use for walking left. */
-    public      readonly            spriteWalkLeft: SpriteTemplate              = null;
+    public readonly spriteWalkLeft: SpriteTemplate          = null;
     /** The sprite to use for walking right. */
-    public      readonly            spriteWalkRight: SpriteTemplate              = null;
+    public readonly spriteWalkRight: SpriteTemplate         = null;
     /** The sprite to use for gliding left. */
-    public      readonly            spriteGlideLeft: SpriteTemplate              = null;
+    public readonly spriteGlideLeft: SpriteTemplate         = null;
     /** The sprite to use for gliding right. */
-    public      readonly            spriteGlideRight: SpriteTemplate              = null;
+    public readonly spriteGlideRight: SpriteTemplate        = null;
     /** The sprite to use for falling left. */
-    public      readonly            spriteFallLeft: SpriteTemplate              = null;
+    public readonly spriteFallLeft: SpriteTemplate          = null;
     /** The sprite to use for falling right. */
-    public      readonly            spriteFallRight: SpriteTemplate              = null;
+    public readonly spriteFallRight: SpriteTemplate         = null;
     /** The sprite to use for jumping left. */
-    public      readonly            spriteJumpLeft: SpriteTemplate              = null;
+    public readonly spriteJumpLeft: SpriteTemplate          = null;
     /** The sprite to use for jumping right. */
-    public      readonly            spriteJumpRight: SpriteTemplate              = null;
+    public readonly spriteJumpRight: SpriteTemplate         = null;
     /** The sprite to use for dying left. */
-    public      readonly            spriteDieLeft: SpriteTemplate              = null;
+    public readonly spriteDieLeft: SpriteTemplate           = null;
     /** The sprite to use for dying right. */
-    public      readonly            spriteDieRight: SpriteTemplate              = null;
+    public readonly spriteDieRight: SpriteTemplate          = null;
     /** The sprite to use for dying left. */
-    public      readonly            spriteAttackLeft: SpriteTemplate              = null;
+    public readonly spriteAttackLeft: SpriteTemplate        = null;
     /** The sprite to use for dying right. */
-    public      readonly            spriteAttackRight: SpriteTemplate              = null;
+    public readonly spriteAttackRight: SpriteTemplate       = null;
 
     /** ****************************************************************************************************************
     *   Creates a character sprite set.

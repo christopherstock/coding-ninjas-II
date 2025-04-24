@@ -1,10 +1,10 @@
-import {GameObjectState, GameObject} from '../GameObject';
-import {Shape} from '../../../engine/shape/Shape';
-import {SpriteTemplate} from '../../../engine/ui/SpriteTemplate';
-import {Debug} from '../../../base/Debug';
-import {Main} from '../../../base/Main';
-import {ImageUtil} from '../../../util/ImageUtil';
-import {SettingMatter} from '../../../base/SettingMatter';
+import { GameObjectState, GameObject } from '../GameObject';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { Debug } from '../../../base/Debug';
+import { Main } from '../../../base/Main';
+import { ImageUtil } from '../../../util/ImageUtil';
+import { SettingMatter } from '../../../base/SettingMatter';
 
 /** ********************************************************************************************************************
 *   Represents a movable box.

@@ -1,15 +1,15 @@
 import * as matter from 'matter-js';
-import {GameObject, GameObjectState} from '../GameObject';
-import {Shape} from '../../../engine/shape/Shape';
-import {SpriteTemplate} from '../../../engine/ui/SpriteTemplate';
-import {SettingGame} from '../../../base/SettingGame';
-import {Main} from '../../../base/Main';
-import {Debug} from '../../../base/Debug';
-import {BodyFrictionAir, SettingMatter} from '../../../base/SettingMatter';
-import {ShapeRectangle} from '../../../engine/shape/ShapeRectangle';
-import {Player} from './Player';
-import {CharacterSpriteSet} from './CharacterSpriteSet';
-import {CharacterFacing} from './CharacterFacing';
+import { GameObject, GameObjectState } from '../GameObject';
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { SettingGame } from '../../../base/SettingGame';
+import { Main } from '../../../base/Main';
+import { Debug } from '../../../base/Debug';
+import { BodyFrictionAir, SettingMatter } from '../../../base/SettingMatter';
+import { ShapeRectangle } from '../../../engine/shape/ShapeRectangle';
+import { Player } from './Player';
+import { CharacterSpriteSet } from './CharacterSpriteSet';
+import { CharacterFacing } from './CharacterFacing';
 
 /** ********************************************************************************************************************
 *   Represents a character.

@@ -6,7 +6,7 @@ import {
     CapVert,
     DecoPosition,
     GameObjectBundleFactory,
-    Slope
+    Slope,
 } from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
 import { ImageData } from '../ImageData';

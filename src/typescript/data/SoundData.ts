@@ -8,8 +8,7 @@ export class SoundData {
     public      static      BG_CHINESE: string                 = SettingEngine.PATH_SOUND + 'bg/chinese.mp3';
 
     /** An array holding all filenames of all sounds to load. */
-    public      static      FILE_NAMES: string[]               =
-        [
-            SoundData.BG_CHINESE,
-        ];
+    public      static      FILE_NAMES: string[]               = [
+        SoundData.BG_CHINESE,
+    ];
 }

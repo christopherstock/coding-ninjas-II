@@ -1,12 +1,12 @@
-import {Shape} from '../../../engine/shape/Shape';
-import {SpriteTemplate} from '../../../engine/ui/SpriteTemplate';
-import {SettingMatter} from '../../../base/SettingMatter';
-import {Main} from '../../../base/Main';
-import {SettingGame} from '../../../base/SettingGame';
-import {CharacterSpriteSet} from './CharacterSpriteSet';
-import {Character} from './Character';
-import {CharacterFacing} from './CharacterFacing';
-import {GameObjectState} from "../GameObject";
+import { Shape } from '../../../engine/shape/Shape';
+import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { SettingMatter } from '../../../base/SettingMatter';
+import { Main } from '../../../base/Main';
+import { SettingGame } from '../../../base/SettingGame';
+import { GameObjectState } from '../GameObject';
+import { CharacterSpriteSet } from './CharacterSpriteSet';
+import { Character } from './Character';
+import { CharacterFacing } from './CharacterFacing';
 
 /** ********************************************************************************************************************
 *   Represents the movement phases for an enemy.
