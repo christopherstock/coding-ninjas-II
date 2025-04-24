@@ -37,9 +37,6 @@ export class LevelMarket extends Level {
     *   Adds the garden setup.
     *******************************************************************************************************************/
     private addMarketSetup(): void {
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 80,  3, Slope.NONE, CapHorz.NONE);
-
         // walls
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
@@ -58,11 +55,14 @@ export class LevelMarket extends Level {
         // house with door to garden
         GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
         GameObjectBundleFactory.createDecoImage(this, 3480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 2020, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
 
         // house with door to start
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
         GameObjectBundleFactory.createDecoImage(this, 4180, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
         GameObjectFactory.createDoor(this, 4405, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 250, playerStartY: 2000 }));
+
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 80,  3, Slope.NONE, CapHorz.NONE);
     }
 }

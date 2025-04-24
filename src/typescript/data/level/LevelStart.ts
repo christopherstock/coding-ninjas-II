@@ -84,8 +84,8 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 4600, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
 
         // bridge and blue water
-        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 20, 4, ImageData.WATER_CENTER);
         GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
+        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 20, 4, ImageData.WATER_CENTER);
 
         // wooden crates
         GameObjectBundleFactory.createMovableRect(this, 6950, 2100, ImageData.CRATE_WOOD);

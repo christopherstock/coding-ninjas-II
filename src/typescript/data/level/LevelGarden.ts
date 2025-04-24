@@ -1,13 +1,7 @@
 /* eslint-disable max-len */
 
 import { Level, LevelId } from '../../game/level/Level';
-import {
-    CapHorz,
-    CapVert,
-    DecoPosition,
-    GameObjectBundleFactory,
-    Slope,
-} from '../../game/object/GameObjectBundleFactory';
+import { CapHorz, CapVert, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
 import { ImageData } from '../ImageData';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
@@ -51,18 +45,19 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD);
         GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
 
-        // door to market
-        GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725 }));
+        // bridge and blue water
+        GameObjectBundleFactory.createBridge(this, 2374, 1400);
+        GameObjectBundleFactory.createWaterArea(this, 2304, 1560, 6, 4, ImageData.WATER_CENTER);
 
         // pots
-        const x = -1800;
-        const y = -700;
-        GameObjectBundleFactory.createMovableRect(this, x + 2558, y + 2100, ImageData.POT_1);
-        GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1);
+        GameObjectBundleFactory.createMovableRect(this, -1800 + 2558, -700 + 2100, ImageData.POT_1);
+        GameObjectBundleFactory.createMovableRect(this, -1800 + 2058, -700 + 2100, ImageData.POT_1);
 
-        // ground and walls
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 1400, 55,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
-        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
-        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 6912, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        // door to market
+        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725 }));
+
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
     }
 }
