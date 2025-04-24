@@ -46,6 +46,9 @@ export class LevelGarden extends Level {
         // door back to DoJo
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2030, playerStartY: 1400 }));
 
+        // stone obstacle
+        GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
+
         // door to market
         GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 1020 }));
 
