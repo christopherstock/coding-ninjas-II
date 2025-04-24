@@ -46,7 +46,7 @@ export class LevelDojo extends Level {
     *******************************************************************************************************************/
     private addHomeShrine(): void {
         // door back to start
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6630, playerStartY: 2100 }));
+        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6620, playerStartY: 2100 }));
 
         // table with flasks and pots
         let x = -1500;
@@ -79,7 +79,7 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createDecoImage(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
 
         // door to garden
-        GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020, playerStartY: 1400 }));
 
         // ground and walls
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 26,  3, Slope.NONE, CapHorz.NONE);

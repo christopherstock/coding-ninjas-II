@@ -1,7 +1,13 @@
 /* eslint-disable max-len */
 
 import { Level, LevelId } from '../../game/level/Level';
-import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import {
+    CapHorz,
+    CapVert,
+    DecoPosition,
+    GameObjectBundleFactory,
+    Slope
+} from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
 import { ImageData } from '../ImageData';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
@@ -13,7 +19,7 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 *   The level data for the Garden level.
 ***********************************************************************************************************************/
 export class LevelGarden extends Level {
-    public width: number = 15000;
+    public width: number = 7040;
     public height: number = 4500;
     public playerStartX: number = 250;
     public playerStartY: number = 1400;
@@ -35,15 +41,8 @@ export class LevelGarden extends Level {
     *   Adds the garden setup.
     *******************************************************************************************************************/
     private addGardenSetup(): void {
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 1400, 40,  3, Slope.NONE, CapHorz.NONE);
-
-        // walls
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
-
         // door back to DoJo
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2030, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 6000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2820, playerStartY: 1400 }));
 
         // stone obstacle
         GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
@@ -56,5 +55,10 @@ export class LevelGarden extends Level {
         const y = -700;
         GameObjectBundleFactory.createMovableRect(this, x + 2558, y + 2100, ImageData.POT_1);
         GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1);
+
+        // ground and walls
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 128, 1400, 53,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 6912, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
     }
 }

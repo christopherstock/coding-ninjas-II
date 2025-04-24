@@ -55,8 +55,8 @@ export enum CapHorz
 export enum CapVert
 {
     NONE,
-    ONLY_TOP,
-    ONLY_BOTTOM,
+    TOP,
+    BOTTOM,
     BOTH,
 }
 
@@ -315,7 +315,7 @@ export abstract class GameObjectBundleFactory {
                     } else if (tileX === lengthHorz - 1 && (capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH)) {
                         level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, rightTopTile));
                     } else {
-                        if (capVert === CapVert.ONLY_BOTTOM || capVert === CapVert.NONE) {
+                        if (capVert === CapVert.BOTTOM || capVert === CapVert.NONE) {
                             level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, centerTile));
                         } else {
                             level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, topTile));
@@ -334,7 +334,7 @@ export abstract class GameObjectBundleFactory {
                     } else if (tileX === lengthHorz - 1 && (capHorz === CapHorz.RIGHT || capHorz === CapHorz.BOTH)) {
                         level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, rightBottomTile));
                     } else {
-                        if (capVert === CapVert.ONLY_TOP || capVert === CapVert.NONE) {
+                        if (capVert === CapVert.TOP || capVert === CapVert.NONE) {
                             level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, centerTile));
                         } else {
                             level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, drawY + GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, bottomTile));

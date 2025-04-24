@@ -83,11 +83,6 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 4285, 2000, DecoPosition.BG, ImageData.STATUE_LION);
         GameObjectBundleFactory.createDecoImage(this, 4600, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
 
-        // house with door to DoJo
-        GameObjectBundleFactory.createDecoImage(this, 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
-        GameObjectBundleFactory.createDecoImage(this, 6380, 1850, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
-        GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
-
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 20, 4, ImageData.WATER_CENTER);
         GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
@@ -99,6 +94,11 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createMovableRect(this, 7020, 1975, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7155, 1975, ImageData.CRATE_WOOD);
 
+        // house with door to DoJo
+        GameObjectBundleFactory.createDecoImage(this, 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
+        GameObjectBundleFactory.createDecoImage(this, 6380, 1850, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
+        GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
+
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0,    2000, 40,  5, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
@@ -106,7 +106,7 @@ export class LevelStart extends Level {
     }
 
     /** ****************************************************************************************************************
-    *   Adds the special spare parts (plateau etc)
+    *   Adds the special spare parts (plateaus etc)
     *******************************************************************************************************************/
     private addSpareParts(): void {
         // site trigger
@@ -118,7 +118,8 @@ export class LevelStart extends Level {
         // platform
         GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(5260, 2000), matter.Vector.create(6000, 2000) ]);
 
-
+        // bounce
+        GameObjectFactory.createBounce(this, 7460, 2000, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
     }
 
     /** ****************************************************************************************************************
@@ -138,9 +139,6 @@ export class LevelStart extends Level {
     *   Adds the 4th plateau (bounce).
     *******************************************************************************************************************/
     private addFourthPlateau(): void {
-        // bounce
-        GameObjectFactory.createBounce(this, 7460, 2000, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
-
         // wooden crates
         GameObjectBundleFactory.createMovableRect(this, 5600, 2000, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 5725, 2000, ImageData.CRATE_WOOD);
@@ -159,15 +157,6 @@ export class LevelStart extends Level {
     *   Adds the 5th plateau.
     *******************************************************************************************************************/
     private addFifthPlateau(): void {
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 6620, 2000, 5,  5, Slope.NONE, CapHorz.BOTH);
-
-        // statue
-        GameObjectBundleFactory.createDecoImage(this, 6780, 2000, DecoPosition.BG, ImageData.STATUE_1);
-
-        // bush
-        GameObjectBundleFactory.createDecoImage(this, 6690, 2000, DecoPosition.FG, ImageData.BUSH_1);
-
         // candles
         GameObjectBundleFactory.createCandle(this, 6930, 2000, DecoPosition.BG);
         GameObjectBundleFactory.createCandle(this, 7060, 2000, DecoPosition.FG);
@@ -179,23 +168,9 @@ export class LevelStart extends Level {
     }
 
     /** ****************************************************************************************************************
-    *   Adds the 6th plateau (platform).
-    *******************************************************************************************************************/
-    private addSixthPlateau(): void {
-    }
-
-    /** ****************************************************************************************************************
     *   Adds the 7th plateau (main).
     *******************************************************************************************************************/
     private addSeventhPlateau(): void {
-        // bushes and tree before dojo
-        GameObjectBundleFactory.createDecoImage(this, 12000, 2100, DecoPosition.FG, ImageData.BUSH_1);
-        GameObjectBundleFactory.createDecoImage(this, 12070, 2120, DecoPosition.BG, ImageData.BUSH_2);
-        GameObjectBundleFactory.createDecoImage(this, 12500, 2100, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
-
-        // statue before bridge
-        GameObjectBundleFactory.createDecoImage(this, 10850, 2100, DecoPosition.BG, ImageData.STATUE_3);
-
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 11150, 2260, 6, 4, ImageData.WATER_CENTER);
         GameObjectBundleFactory.createBridge(this, 11220, 2100);
@@ -207,9 +182,6 @@ export class LevelStart extends Level {
 
         // ground after bridge
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 11870, 2100, 20, 5, Slope.NONE,      CapHorz.BOTH);
-
-        // tree
-        GameObjectBundleFactory.createDecoImage(this, 10030, 2100, DecoPosition.BG, ImageData.TREE_1);
 
         // site trigger
         // GameObjectFactory.createSiteTrigger( this, 11400, 2100, 3000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null );
