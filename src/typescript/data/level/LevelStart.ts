@@ -96,7 +96,7 @@ export class LevelStart extends Level {
 
         // house with door to DoJo
         GameObjectBundleFactory.createDecoImage(this, 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
-        GameObjectBundleFactory.createDecoImage(this, 6380, 1770, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
+        GameObjectBundleFactory.createDecoImage(this, 6380, 1810, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
         GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
 
         // ground
