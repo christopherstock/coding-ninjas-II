@@ -24,8 +24,8 @@ export class LevelDojo extends Level {
     public height: number = 2500;
     public playerStartX: number = 250;
     public playerStartY: number = 1400;
-    public playerInitialFloat: boolean = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
+    public playerInitialFloat: boolean = false;
 
     /** ****************************************************************************************************************
     *   Inits a new level.

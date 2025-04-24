@@ -29,8 +29,8 @@ export abstract class Level {
     public height: number                       = 0.0;
     public playerStartX: number                 = 0.0;
     public playerStartY: number                 = 0.0;
-    public playerInitialFloat: boolean          = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
+    public playerInitialFloat: boolean          = false;
 
     public player: Player                       = null;
     public enemies: Bot[]                       = [];

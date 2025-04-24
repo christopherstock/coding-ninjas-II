@@ -22,8 +22,8 @@ export class LevelStart extends Level {
     public  height: number = 2500;
     public  playerStartX: number = 250;
     public  playerStartY: number = 1250;
-    public  playerInitialFloat: boolean = true;
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
+    public  playerInitialFloat: boolean = true;
 
     /** ****************************************************************************************************************
     *   Inits a new level.
@@ -42,20 +42,22 @@ export class LevelStart extends Level {
 
     private addUpperGround(): void {
 
-        const x = 0;
+        let x = 0;
 
         // site trigger
         GameObjectFactory.createSiteTrigger(this, x + 0, 2000, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
-
         // tree
         GameObjectBundleFactory.createDecoImage(this, x + 500, 2000, DecoPosition.FG, ImageData.TREE_1);
 
         // statue with bush
-        GameObjectBundleFactory.createCandle(this, x + 2170, 2000, DecoPosition.BG);
-        GameObjectBundleFactory.createDecoImage(this, x + 2060, 2022, DecoPosition.BG, ImageData.BUSH_2);
-        GameObjectBundleFactory.createDecoImage(this, x + 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
-        GameObjectBundleFactory.createDecoImage(this, x + 1885, 2000, DecoPosition.FG, ImageData.BUSH_1);
-        GameObjectBundleFactory.createCandle(this, x + 1930, 2000, DecoPosition.FG);
+        const y = x;
+        x = 2170 - 200;
+        GameObjectBundleFactory.createCandle(this, x - 2170 + 2170, 2000, DecoPosition.BG);
+        GameObjectBundleFactory.createDecoImage(this, x - 2170 + 2060, 2022, DecoPosition.BG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, x - 2170 + 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
+        GameObjectBundleFactory.createDecoImage(this, x - 2170 + 1885, 2000, DecoPosition.FG, ImageData.BUSH_1);
+        GameObjectBundleFactory.createCandle(this, x - 2170 + 1930, 2000, DecoPosition.FG);
+        x = y;
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
