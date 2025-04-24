@@ -48,7 +48,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
 
         // door to market
-        GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 1020 }));
+        GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725 }));
 
         // pots
         const x = -1800;
@@ -57,8 +57,8 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1);
 
         // ground and walls
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 128, 1400, 53,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 6912, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 1400, 55,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 6912, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
     }
 }

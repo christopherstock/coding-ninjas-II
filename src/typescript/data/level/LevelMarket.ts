@@ -44,9 +44,6 @@ export class LevelMarket extends Level {
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
 
-        // door back to Garden
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_7, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 2030, playerStartY: 1400 }));
-
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 1400, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
         GameObjectBundleFactory.createFriend(SpriteData.MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 1400, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.MASKED_NINJA_GIRL, false);
@@ -58,12 +55,12 @@ export class LevelMarket extends Level {
         GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD);
         GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
 
-        // house with door to garden?
+        // house with door to garden
         GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
         GameObjectBundleFactory.createDecoImage(this, 3480, 1150, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
-        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 250, playerStartY: 2000 }));
+        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 2020, playerStartY: 1400 }));
 
-        // house with door to garden 2
+        // house with door to start
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
         GameObjectBundleFactory.createDecoImage(this, 4180, 1150, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
         GameObjectFactory.createDoor(this, 4405, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 250, playerStartY: 2000 }));
