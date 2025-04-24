@@ -13,7 +13,6 @@ import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { CharacterSpriteData } from '../CharacterSpriteData';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -54,7 +53,7 @@ export class LevelStart extends Level {
 
         // trees
         GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.FG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.BG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
 
         // statue
         GameObjectBundleFactory.createDecoImage(this, 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
