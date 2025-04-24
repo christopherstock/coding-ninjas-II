@@ -66,11 +66,9 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
         GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
 
-        // tree
+        // tree and lion statue
         GameObjectBundleFactory.createDecoImage(this, 3600, 2000, DecoPosition.FG, ImageData.TREE_2);
-
-        // lion statue
-        GameObjectBundleFactory.createDecoImage(this, 4550, 2000, DecoPosition.BG, ImageData.STATUE_LION);
+        GameObjectBundleFactory.createDecoImage(this, 4250, 2000, DecoPosition.BG, ImageData.STATUE_LION);
 
         // slope down
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
@@ -78,12 +76,12 @@ export class LevelStart extends Level {
         // solid bottom ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
 
-        // bridge and blue water
-        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 6, 4, ImageData.WATER_CENTER);
-        GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
-
         // door to DoJo
-        GameObjectFactory.createDoor(this, 6600, 2100, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
+        GameObjectFactory.createDoor(this, 6600, 2100, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
+
+        // bridge and blue water
+        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 20, 4, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
     }
 
     /** ****************************************************************************************************************

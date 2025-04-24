@@ -53,8 +53,12 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 2432, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
 
-        // door
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 2320 }));
+        // door back to start
+        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6630, playerStartY: 2100 }));
+
+        // door to garden
+        GameObjectFactory.createDoor(this, 1500, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
+
 
         // table with flasks and pots
         let x = -1800;
