@@ -811,4 +811,16 @@ export abstract class GameObjectBundleFactory {
         GameObjectBundleFactory.createDecoImage(level, xLeft,      yBottom,       position, ImageData.CANDLE);
         GameObjectBundleFactory.createDecoSprite(level, xLeft - 17, yBottom - 153, position, SpriteData.FLAME_1_BIG);
     }
+
+    public static createStatusShrine(
+        level: Level,
+        xLeft: number,
+        yBottom: number
+    ): void {
+        GameObjectBundleFactory.createCandle(level, xLeft, yBottom, DecoPosition.BG);
+        GameObjectBundleFactory.createDecoImage(level, xLeft - 110, yBottom + 22, DecoPosition.BG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(level, xLeft - 170, yBottom, DecoPosition.BG, ImageData.STATUE_1);
+        GameObjectBundleFactory.createDecoImage(level, xLeft - 285, yBottom, DecoPosition.FG, ImageData.BUSH_1);
+        GameObjectBundleFactory.createCandle(level, xLeft - 240, yBottom, DecoPosition.FG);
+    }
 }

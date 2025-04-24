@@ -42,22 +42,14 @@ export class LevelStart extends Level {
 
     private addUpperGround(): void {
 
-        let x = 0;
+        const x = 0;
 
-        // site trigger
+        // site trigger with tree
         GameObjectFactory.createSiteTrigger(this, x + 0, 2000, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
-        // tree
         GameObjectBundleFactory.createDecoImage(this, x + 500, 2000, DecoPosition.FG, ImageData.TREE_1);
 
-        // statue with bush
-        const y = x;
-        x = 2170 - 200;
-        GameObjectBundleFactory.createCandle(this, x - 2170 + 2170, 2000, DecoPosition.BG);
-        GameObjectBundleFactory.createDecoImage(this, x - 2170 + 2060, 2022, DecoPosition.BG, ImageData.BUSH_2);
-        GameObjectBundleFactory.createDecoImage(this, x - 2170 + 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
-        GameObjectBundleFactory.createDecoImage(this, x - 2170 + 1885, 2000, DecoPosition.FG, ImageData.BUSH_1);
-        GameObjectBundleFactory.createCandle(this, x - 2170 + 1930, 2000, DecoPosition.FG);
-        x = y;
+        // statue shrine
+        GameObjectBundleFactory.createStatusShrine(this, x + 1425, 2000);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);

@@ -42,23 +42,23 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
 
         {
             SiteContentFactory.createParagraph(
-                'Welcome to the Demo of '
-                + '<a target=\'_blank\' title=\'Coding Ninjas II\' '
-                + 'href=\'https://developercamp.io/\'>Coding Ninjas II</a>.<br>'
+                'Welcome to the demo of '
+                + '<span class=\'special\'>Coding Ninjas II</span>.<br>'
                 + '<br>'
                 + 'This is an interactive website presentation,<br>'
-                + 'combined with a jump \'n run experience.<br>'
+                + 'combined with a <span class=\'special\'>Jump \'n Run</span> experience.<br>'
                 + '<br>'
-                + '<span style=\'color: #b42157;\'>&#x2190; &#x2192;</span> Walk<br>'
-                + '<span style=\'color: #b42157;\'>&#x2191;</span> Jump<br>'
-                + '<span style=\'color: #b42157;\'>&#x2191; &#x2193;</span> Open &amp; Close Parachute (in Air)<br>'
-                + '<span style=\'color: #b42157;\'>E</span> Open Door<br>'
-                + '<span style=\'color: #b42157;\'>SPACE</span> Strike Katana<br>',
+                + 'Use the following <span class=\'special\'>keys</span> to navigate through this website:<br>'
+                + '<br>'
+                + '<span class=\'special\'>&#x2190; &#x2192;</span> Walk<br>'
+                + '<span class=\'special\'>&#x2191;</span> Jump<br>'
+                + '<span class=\'special\'>&#x2191; &#x2193;</span> Open/Close Parachute (in Air)<br>'
+                + '<span class=\'special\'>E</span> Open Door<br>'
+                + '<span class=\'special\'>SPACE</span> Strike Katana<br>',
                 'right'
             )
         }
 
-        { SiteContentFactory.createSpacerVertical() }
         { SiteContentFactory.createSpacerVertical() }
 
         {
@@ -97,8 +97,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         }
 
         { SiteContentFactory.createSpacerVertical() }
-        { SiteContentFactory.createSpacerVertical() }
-        { SiteContentFactory.createParagraph('Current progress of the project is:', 'right') }
+        { SiteContentFactory.createParagraph('Project Progress:', 'right') }
         { SiteContentFactory.createProgress('line', 58.7)        }
 
     </div>;
