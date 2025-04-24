@@ -54,7 +54,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createMovableRect(this, -1800 + 2058, -700 + 2100, ImageData.POT_1);
 
         // door to market
-        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725 }));
+        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725, playerStartY: 1400 }));
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);

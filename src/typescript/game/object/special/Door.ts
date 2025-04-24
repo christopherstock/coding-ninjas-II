@@ -59,7 +59,9 @@ export class Door extends Decoration {
                 this.action.data.targetLevel,
                 this.action.data.playerStartX,
                 this.action.data.playerStartY,
-                Main.game.level.player.facing
+                this.action.data.playerInitFacing !== undefined
+                    ? this.action.data.playerInitFacing
+                    : Main.game.level.player.facing
             );
         }
 

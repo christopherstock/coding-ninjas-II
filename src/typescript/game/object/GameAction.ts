@@ -1,14 +1,23 @@
+import {LevelId} from "../level/Level";
+import {CharacterFacing} from "./being/CharacterFacing";
+
 export enum GameActionType {
     SWITCH_TO_LEVEL,
+}
+
+export type GameActionSwitchLevel = {
+    playerStartX?: number,
+    playerStartY?: number,
+    targetLevel?: LevelId,
+    playerInitFacing?: CharacterFacing,
 }
 
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
 ***********************************************************************************************************************/
 export class GameAction {
-    /** Collision shape. */
-    public          type: GameActionType                 = null;
-    public          data: any                            = null;
+    public type: GameActionType        = null;
+    public data: GameActionSwitchLevel = null;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.
@@ -18,7 +27,7 @@ export class GameAction {
     *******************************************************************************************************************/
     public constructor(
         type: GameActionType,
-        data: any
+        data: GameActionSwitchLevel
     ) {
         this.type = type;
         this.data = data;
