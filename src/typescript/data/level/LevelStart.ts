@@ -86,6 +86,8 @@ export class LevelStart extends Level {
     private addSlopeGround(): void {
         const x = 5920 + 0;
 
+        // DODO 2 slopes/steps
+
         // boulder and bush
         GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.BG, ImageData.BOULDER_1);
         GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
