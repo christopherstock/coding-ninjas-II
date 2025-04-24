@@ -4,17 +4,15 @@
 https://christopherstock.github.io/coding-ninjas-II/dist/
 
 ## Tech Stack
-- Node.js v.12.18.3
-- TODO
+- Node.js v.16.16.0 LTS
 
 ---
 
 # Primary npm Targets
 
 ## Install all Node.js packages
-Be sure to run with Node.js LTS 16.16.0! 
 ```
-npm install --force
+npm install --legacy-peer-deps
 ```
 
 ## Start the Webpack Dev Server and build the project

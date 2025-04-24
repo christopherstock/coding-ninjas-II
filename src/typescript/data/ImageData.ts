@@ -222,8 +222,6 @@ export class ImageData {
 
     static readonly WATER_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'water1/waterCenter.png';
 
-    static readonly ACID1_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'acid1/center.png';
-
     static readonly GROUND_DARK_SOLID_LEFT: string                      = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidLeft.png';
     static readonly GROUND_DARK_SOLID_RIGHT: string                     = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidRight.png';
     static readonly GROUND_DARK_SOLID_TOP: string                       = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDark/' + 'solidTop.png';
@@ -532,7 +530,6 @@ export class ImageData {
         ImageData.WATER_TOP_FRAME_8,
 
         ImageData.WATER_CENTER,
-        ImageData.ACID1_CENTER,
 
         ImageData.GROUND_DARK_SOLID_LEFT,
         ImageData.GROUND_DARK_SOLID_RIGHT,

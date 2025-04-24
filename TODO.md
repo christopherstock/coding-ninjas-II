@@ -46,16 +46,15 @@ TODO Add Camera joyride on level startup?
 
 ## New Game Features
 ```
+TODO Add new ninja sprites.
+TODO Particle fx on smashed crates, startup window etc.
 TODO Green bubbling water - fix tiles. etc.
 TODO Create different ground tilesets.
 TODO Doors that warp.
 TODO Add 'katana strike' action in air.
 TODO Add more cool flask images.
-TODO Particle fx smashed crates, startup window etc.
-TODO Add new ninja sprites.
-TODO Add 'crouch' action.
+TODO Add 'crouch- and crouch+slide' action.
 TODO Add secondary attack action.
-TODO Add 'crouch slide' action.
 TODO Much more air friction for parachute.
 TODO Add 'shuriken throw' action.
 TODO Friendly Bots that talk to you.
