@@ -68,15 +68,12 @@ export class LevelStart extends Level {
         // enemies
         GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 0, 2000, CharacterFacing.RIGHT, 0, 1500, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
-        // friends
-        GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 2000, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
-        GameObjectBundleFactory.createFriend(SpriteData.MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 2000, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.MASKED_NINJA_GIRL, false);
-        GameObjectBundleFactory.createFriend(SpriteData.MASKED_NINJA_GUY_STAND_LEFT,    this, 5000, 2000, CharacterFacing.RIGHT, 3750, 5000, CharacterSpriteData.MASKED_NINJA_GUY, false);
-        GameObjectBundleFactory.createFriend(SpriteData.BLUE_NINJA_GUY_WALK_LEFT,         this, 4500, 2000, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.BLUE_NINJA_GUY, false);
-
         // slope down and solid ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 15, 5, Slope.NONE,       CapHorz.NONE);
+
+
+
 
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 7680, 2260, 6, 4, ImageData.WATER_CENTER);
@@ -98,11 +95,6 @@ export class LevelStart extends Level {
 
         // TODO GameObject.createHouseFront
 
-        // house
-        GameObjectBundleFactory.createDecoImage(this, 6500, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
-        GameObjectBundleFactory.createDecoImage(this, 6480, 1850, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
-        // door to garden
-        GameObjectFactory.createDoor(this, 6705, 2089, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
     }
 
     /** ****************************************************************************************************************
