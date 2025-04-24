@@ -147,6 +147,14 @@ export class Player extends Character {
                 this.attack();
             }
         }
+
+        if (keySystem.isPressed(KeyData.KEY_ESCAPE)) {
+            keySystem.setNeedsRelease(KeyData.KEY_ESCAPE);
+
+            for (const trigger of Main.game.level.siteTriggers) {
+                trigger.dismiss = true;
+            }
+        }
     }
 
     /** ****************************************************************************************************************

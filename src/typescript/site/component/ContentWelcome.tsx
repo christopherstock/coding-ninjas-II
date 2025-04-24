@@ -25,21 +25,6 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
 
         { SiteContentFactory.createSpacerVertical() }
 
-        { /*
-
-        <a target='_blank' title='Würzburg Web Week' href='https://wueww.de/'>
-            {
-                SiteContentFactory.createImageFloating(
-                    'right',
-                    Main.game.engine.imageSystem.getImage(
-                        ImageData.SITE_PANEL_LOGO_WEBWEEK
-                    ).src
-                )
-            }
-        </a>
-
-        */ }
-
         {
             SiteContentFactory.createParagraph(
                 'Welcome to the demo of '
@@ -48,16 +33,43 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 + 'This is an interactive website presentation,<br>'
                 + 'combined with a <span class=\'special\'>Jump \'n Run</span> experience.<br>'
                 + '<br>'
-                + 'Use the following <span class=\'special\'>keys</span> to navigate through this website:<br>'
-                + '<br>'
-                + '<span class=\'special\'>&#x2190; &#x2192;</span> Walk<br>'
-                + '<span class=\'special\'>&#x2191;</span> Jump<br>'
-                + '<span class=\'special\'>&#x2191; &#x2193;</span> Open/Close Parachute (in Air)<br>'
-                + '<span class=\'special\'>E</span> Open Door<br>'
-                + '<span class=\'special\'>SPACE</span> Strike Katana<br>',
+                + 'The following <span class=\'special\'>keys</span> control your player:<br>',
                 'right'
             )
         }
+
+        { SiteContentFactory.createSpacerVertical() }
+
+        <table style={{ textAlign: 'right', width: '100%' }}>
+            <tbody>
+                <tr>
+                    <td style={{ verticalAlign: 'top' }}>
+                        {
+                            SiteContentFactory.createParagraph(
+                                '<span class=\'special\'>&#x2190; &#x2192;</span><br>'
+                                + '<span class=\'special\'>&#x2191;</span><br>'
+                                + '<span class=\'special\'>&#x2191; &#x2193;</span><br>'
+                                + '<span class=\'special\'>E</span><br>'
+                                + '<span class=\'special\'>SPACE</span><br>',
+                                'right'
+                            )
+                        }
+                    </td>
+                    <td style={{ width: '240px', verticalAlign: 'top' }}>
+                        {
+                            SiteContentFactory.createParagraph(
+                                'Walk<br>'
+                                + 'Jump<br>'
+                                + 'Open/Close Parachute (in air)<br>'
+                                + 'Open Door<br>'
+                                + 'Strike Katana<br>',
+                                'right'
+                            )
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         { SiteContentFactory.createSpacerVertical() }
 

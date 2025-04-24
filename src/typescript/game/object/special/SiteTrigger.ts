@@ -21,13 +21,10 @@ export enum SitePanelAppearance
 *   Represents a non-colliding decoration.
 ***********************************************************************************************************************/
 export class SiteTrigger extends Decoration {
-    /** The site content to show when this trigger is released. */
     private readonly content: SiteContent                       = null;
-    /** A fixed position for the panel to popup, if desired. */
     private readonly sitePanelAppearance: SitePanelAppearance   = null;
-
-    /** Flags if the according site panel is currently displayed. */
     private sitePanelActive: boolean                            = false;
+    public dismiss: boolean                                     = false;
 
     /** ****************************************************************************************************************
     *   Creates a new site trigger.
@@ -66,16 +63,26 @@ export class SiteTrigger extends Decoration {
 
         // check if player collides with this trigger
         if (this.checkPlayerCollision()) {
-            if (!this.sitePanelActive) {
-                // get panel popup according to player facing direction
-                const panelPosition: SitePanelPosition = this.determinePanelPosition();
+            if (this.dismiss) {
+                if (this.sitePanelActive) {
+                    if (Main.game.engine.siteSystem.hide()) {
+                        Main.game.level.setShrineBookOpen(this.content, false);
+                        this.sitePanelActive = false;
+                    }
+                }
+            } else {
+                if (!this.sitePanelActive) {
+                    // get panel popup according to player facing direction
+                    const panelPosition: SitePanelPosition = this.determinePanelPosition();
 
-                if (Main.game.engine.siteSystem.show(this.content, panelPosition)) {
-                    Main.game.level.setShrineBookOpen(this.content, true);
-                    this.sitePanelActive = true;
+                    if (Main.game.engine.siteSystem.show(this.content, panelPosition)) {
+                        Main.game.level.setShrineBookOpen(this.content, true);
+                        this.sitePanelActive = true;
+                    }
                 }
             }
         } else {
+            this.dismiss = false;
             if (this.sitePanelActive) {
                 if (Main.game.engine.siteSystem.hide()) {
                     Main.game.level.setShrineBookOpen(this.content, false);

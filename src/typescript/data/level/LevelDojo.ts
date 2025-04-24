@@ -61,7 +61,7 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createMovableRect(this, x + 2133, y + 2100, ImageData.FLASK_2);
         GameObjectBundleFactory.createMovableRect(this, x + 2184, y + 2100, ImageData.FLASK_1);
 
-        // chandelier and candles
+        // chandelier
         x = -12300;
         y = -700;
         GameObjectBundleFactory.createDecoImage(this, x + 13673, y + 1805, DecoPosition.FG, ImageData.CHANDELIER);
@@ -69,10 +69,11 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createDecoSprite(this, x + 13720, y + 1586, DecoPosition.FG, SpriteData.FLAME_1_BIG);
         GameObjectBundleFactory.createDecoSprite(this, x + 13854, y + 1588, DecoPosition.FG, SpriteData.FLAME_1_BIG);
         GameObjectBundleFactory.createDecoSprite(this, x + 13905, y + 1617, DecoPosition.FG, SpriteData.FLAME_1_BIG);
-        GameObjectBundleFactory.createCandle(this, x + 13500, y + 2100, DecoPosition.FG);
-        GameObjectBundleFactory.createCandle(this, x + 13600, y + 2100, DecoPosition.FG);
-        GameObjectBundleFactory.createCandle(this, x + 14000, y + 2100, DecoPosition.FG);
-        GameObjectBundleFactory.createCandle(this, x + 14100, y + 2100, DecoPosition.FG);
+        // candles
+        GameObjectBundleFactory.createCandle(this, x + 13520, y + 2100, DecoPosition.FG);
+        GameObjectBundleFactory.createCandle(this, x + 13620, y + 2100, DecoPosition.FG);
+        GameObjectBundleFactory.createCandle(this, x + 13980, y + 2100, DecoPosition.FG);
+        GameObjectBundleFactory.createCandle(this, x + 14080, y + 2100, DecoPosition.FG);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD);
@@ -80,6 +81,11 @@ export class LevelDojo extends Level {
 
         // door to garden
         GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));
+
+        // crates
+        GameObjectBundleFactory.createMovableRect(this, 3000, 1400, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 3145, 1400, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 3070, 1275, ImageData.CRATE_WOOD);
 
         // ground and walls
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 26,  3, Slope.NONE, CapHorz.NONE);
