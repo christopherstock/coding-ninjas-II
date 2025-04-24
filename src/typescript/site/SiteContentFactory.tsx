@@ -122,10 +122,10 @@ export class SiteContentFactory {
     *
     *   @return The created JSX element.
     *******************************************************************************************************************/
-    public static createParagraph(text: string, textAlign:any ='left'): JSX.Element {
+    public static createParagraph(text: string, textAlign: any = 'left'): JSX.Element {
         return <p
             className={ 'sitePanel defaultParagraph' }
-            style={{textAlign: textAlign}}
+            style={{ textAlign: textAlign }}
             dangerouslySetInnerHTML={{ __html: text }}
         />
     }

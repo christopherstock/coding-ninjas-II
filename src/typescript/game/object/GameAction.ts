@@ -1,5 +1,5 @@
-import {LevelId} from "../level/Level";
-import {CharacterFacing} from "./being/CharacterFacing";
+import { LevelId } from '../level/Level';
+import { CharacterFacing } from './being/CharacterFacing';
 
 export enum GameActionType {
     SWITCH_TO_LEVEL,

@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 
+import * as matter from 'matter-js';
 import { Level, LevelId } from '../../game/level/Level';
 import { CapHorz, CapVert, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
@@ -8,7 +9,6 @@ import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import * as matter from "matter-js";
 
 /** ********************************************************************************************************************
 *   The level data for the Garden level.
@@ -51,7 +51,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createWaterArea(this, 2304, 1560, 6, 4, ImageData.WATER_CENTER);
 
         // pots
-        //GameObjectBundleFactory.createMovableRect(this, -1800 + 2058, -700 + 2100, ImageData.POT_1);
+        // GameObjectBundleFactory.createMovableRect(this, -1800 + 2058, -700 + 2100, ImageData.POT_1);
         GameObjectBundleFactory.createMovableRect(this, -1800 + 2558, -700 + 2100, ImageData.POT_1);
 
         // door to market

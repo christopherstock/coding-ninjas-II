@@ -1,18 +1,18 @@
 /* eslint-disable max-len */
 
-import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
-import {TilesetData} from '../TilesetData';
-import {ImageData} from '../ImageData';
-import {Level, LevelId} from '../../game/level/Level';
-import {GameObjectFactory} from '../../game/object/GameObjectFactory';
-import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
-import {SpriteData} from '../SpriteData';
-import {SiteContent} from '../../site/SiteContentSystem';
-import {SitePanelAppearance} from '../../game/object/special/SiteTrigger';
-import {GameAction, GameActionType} from '../../game/object/GameAction';
-import {CharacterSpriteData} from '../CharacterSpriteData';
-import {CharacterFacing} from '../../game/object/being/CharacterFacing';
-import {MirrorImage} from '../../engine/ui/MirrorImage';
+import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import { TilesetData } from '../TilesetData';
+import { ImageData } from '../ImageData';
+import { Level, LevelId } from '../../game/level/Level';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { SpriteData } from '../SpriteData';
+import { SiteContent } from '../../site/SiteContentSystem';
+import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { CharacterSpriteData } from '../CharacterSpriteData';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
