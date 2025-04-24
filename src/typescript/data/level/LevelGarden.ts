@@ -50,8 +50,8 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createWaterArea(this, 2304, 1560, 6, 4, ImageData.WATER_CENTER);
 
         // pots
+        //GameObjectBundleFactory.createMovableRect(this, -1800 + 2058, -700 + 2100, ImageData.POT_1);
         GameObjectBundleFactory.createMovableRect(this, -1800 + 2558, -700 + 2100, ImageData.POT_1);
-        GameObjectBundleFactory.createMovableRect(this, -1800 + 2058, -700 + 2100, ImageData.POT_1);
 
         // door to market
         GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725, playerStartY: 1400 }));

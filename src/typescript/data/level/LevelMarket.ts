@@ -15,9 +15,9 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 *   The level data for the Garden level.
 ***********************************************************************************************************************/
 export class LevelMarket extends Level {
-    public width: number = 15000;
+    public width: number = 7680;
     public height: number = 4500;
-    public playerStartX: number = 4500;
+    public playerStartX: number = 250;
     public playerStartY: number = 1400;
     public playerInitialFloat: boolean = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -55,7 +55,7 @@ export class LevelMarket extends Level {
         // house with door to garden
         GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
         GameObjectBundleFactory.createDecoImage(this, 3480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // house with door to start
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
@@ -63,6 +63,6 @@ export class LevelMarket extends Level {
         GameObjectFactory.createDoor(this, 4405, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 250, playerStartY: 2000 }));
 
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 80,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
     }
 }

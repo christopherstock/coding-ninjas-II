@@ -19,7 +19,7 @@ import { MirrorImage } from '../../engine/ui/MirrorImage';
 *   The level data for the dev level.
 ***********************************************************************************************************************/
 export class LevelStart extends Level {
-    public  width: number = 12500;
+    public  width: number = 8320;
     public  height: number = 2500;
     public  playerStartX: number = 250;
     public  playerStartY: number = 2000;
@@ -94,16 +94,16 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 6380, 1810, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
         GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
 
-        // bridge and blue water
-        GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
-        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 20, 4, ImageData.WATER_CENTER);
-
         // wooden crates
         GameObjectBundleFactory.createMovableRect(this, 6950, 2100, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7095, 2100, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7240, 2100, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7020, 1975, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7155, 1975, ImageData.CRATE_WOOD);
+
+        // bridge and blue water
+        GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
+        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 10, 4, ImageData.WATER_CENTER);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0,    2000, 40,  5, Slope.NONE, CapHorz.NONE);
