@@ -135,7 +135,7 @@ export class Player extends Character {
                 this.jump();
             }
         }
-/*
+        /*
         if (keySystem.isPressed(KeyData.KEY_E)) {
             keySystem.setNeedsRelease(KeyData.KEY_E);
 
