@@ -61,7 +61,7 @@ export class LevelMarket extends Level {
         GameObjectBundleFactory.createDecoImage(this, 3480, 1150, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
         GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
 
-        // house with door to garden?
+        // house with door to garden 2
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
         GameObjectBundleFactory.createDecoImage(this, 4180, 1150, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
         GameObjectFactory.createDoor(this, 4405, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));

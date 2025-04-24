@@ -72,26 +72,9 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 15, 5, Slope.NONE,       CapHorz.NONE);
 
-
-
-
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 7680, 2260, 6, 4, ImageData.WATER_CENTER);
         GameObjectBundleFactory.createBridge(this, 7750, 2100, true);
-
-        // table with flasks
-        const x = 5000;
-        GameObjectBundleFactory.createMovableRect(this, x + 2420, 2100, ImageData.TABLE_1, BodyDensity.TABLE, BodyFriction.WOOD);
-        GameObjectBundleFactory.createMovableRect(this, x + 2430, 1930, ImageData.FLASK_1);
-        GameObjectBundleFactory.createMovableRect(this, x + 2462, 1930, ImageData.FLASK_2);
-        GameObjectBundleFactory.createMovableRect(this, x + 2513, 1930, ImageData.FLASK_3);
-
-        // pot
-        GameObjectBundleFactory.createMovableRect(this, x + 2558, 2100, ImageData.POT_1);
-
-        // flasks on the floor
-        GameObjectBundleFactory.createMovableRect(this, x + 2633, 2100, ImageData.FLASK_2);
-        GameObjectBundleFactory.createMovableRect(this, x + 2684, 2100, ImageData.FLASK_1);
 
         // TODO GameObject.createHouseFront
 

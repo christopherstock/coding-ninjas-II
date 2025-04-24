@@ -46,7 +46,7 @@ export class LevelGarden extends Level {
         // door back to start level
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6730, playerStartY: 2100 }));
 
-        // table with flasks and pots
+        // pots
         const x = -1800;
         const y = -700;
         GameObjectBundleFactory.createMovableRect(this, x + 2558, y + 2100, ImageData.POT_1);
