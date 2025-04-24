@@ -13,6 +13,7 @@ import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { CharacterSpriteData } from '../CharacterSpriteData';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -52,8 +53,8 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 1700, 2000, CharacterFacing.LEFT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
         // trees
-        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.FG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
+        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_1);
 
         // statue
         GameObjectBundleFactory.createDecoImage(this, 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
@@ -63,8 +64,9 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
 
         // tree and lion statue
-        GameObjectBundleFactory.createDecoImage(this, 3600, 2000, DecoPosition.FG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoImage(this, 4250, 2000, DecoPosition.BG, ImageData.STATUE_LION);
+        GameObjectBundleFactory.createDecoImage(this, 3600, 2000, DecoPosition.FG, ImageData.TREE_1);
+        GameObjectBundleFactory.createDecoImage(this, 4285, 2000, DecoPosition.BG, ImageData.STATUE_LION);
+        GameObjectBundleFactory.createDecoImage(this, 4600, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
 
         // slope down
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
@@ -193,7 +195,7 @@ export class LevelStart extends Level {
         // bushes and tree before dojo
         GameObjectBundleFactory.createDecoImage(this, 12000, 2100, DecoPosition.FG, ImageData.BUSH_1);
         GameObjectBundleFactory.createDecoImage(this, 12070, 2120, DecoPosition.BG, ImageData.BUSH_2);
-        GameObjectBundleFactory.createDecoImage(this, 12500, 2100, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 12500, 2100, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
 
         // statue before bridge
         GameObjectBundleFactory.createDecoImage(this, 10850, 2100, DecoPosition.BG, ImageData.STATUE_3);

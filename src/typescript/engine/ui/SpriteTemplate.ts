@@ -98,11 +98,11 @@ export class SpriteTemplate {
     *
     *   @return The SpriteTemplate from the specified image.
     *******************************************************************************************************************/
-    public static createFromSingleImage(imageId: string): SpriteTemplate {
+    public static createFromSingleImage(imageId: string, mirror: MirrorImage = MirrorImage.NO): SpriteTemplate {
         const spriteTemplate: SpriteTemplate = new SpriteTemplate(
             [ imageId ],
             0,
-            MirrorImage.NO,
+            mirror,
             LoopSprite.NO,
             RandomFrames.NO,
             SettingGame.DEFAULT_SPRITE_SCALE

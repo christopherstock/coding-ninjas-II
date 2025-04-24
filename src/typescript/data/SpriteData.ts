@@ -694,6 +694,10 @@ export class SpriteData {
             }
         }
 
+        for (const image of ImageData.IMAGES_TO_MIRROR) {
+            ret.push(image);
+        }
+
         return ret;
     }
 

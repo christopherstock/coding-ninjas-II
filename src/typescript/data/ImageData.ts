@@ -133,7 +133,6 @@ export class ImageData {
     static readonly BRIDGE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge1.png';
     static readonly BRIDGE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge2.png';
     static readonly TREE_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
-    static readonly TREE_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
     static readonly TABLE_1: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'table1.png';
     static readonly STATUE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
     static readonly STATUE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
@@ -287,6 +286,12 @@ export class ImageData {
     static readonly PLATFORM_1: string                                  = SettingEngine.PATH_IMAGE_PLATFORM + 'platform1.png';
 
     /** All image filenames to load. */
+    static readonly IMAGES_TO_MIRROR: string[]                                =
+        [
+            ImageData.TREE_1,
+        ];
+
+    /** All image filenames to load. */
     static readonly FILE_NAMES: string[]                                =
         [
             ImageData.MASKED_NINJA_GIRL_STAND_RIGHT_FRAME_1,
@@ -416,7 +421,6 @@ export class ImageData {
             ImageData.BRIDGE_1,
             ImageData.BRIDGE_2,
             ImageData.TREE_1,
-            ImageData.TREE_2,
             ImageData.TABLE_1,
             ImageData.STATUE_1,
             ImageData.STATUE_2,

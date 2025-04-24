@@ -8,6 +8,7 @@ import { TilesetGround } from '../../engine/ui/TilesetGround';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { ShapeRectangle } from '../../engine/shape/ShapeRectangle';
 import { BodyDensity, BodyFriction, BodyRestitution } from '../../base/SettingMatter';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { Player } from './being/Player';
 import { GameObjectFactory } from './GameObjectFactory';
 import { JumpPassThrough, Obstacle } from './primal/Obstacle';
@@ -536,9 +537,10 @@ export abstract class GameObjectBundleFactory {
         xLeft: number,
         yBottom: number,
         position: DecoPosition,
-        imageId: string
+        imageId: string,
+        mirror: MirrorImage = MirrorImage.NO
     ): void {
-        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId, mirror);
 
         GameObjectBundleFactory.createDecoSprite(
             level,
