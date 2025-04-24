@@ -60,15 +60,15 @@ export class LevelMarket extends Level {
         // house
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
         GameObjectBundleFactory.createDecoImage(this, 4180, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
-        GameObjectBundleFactory.createDecoImage(this, 4405, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        GameObjectBundleFactory.createDecoImage(this, 4405 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
+        // GameObjectBundleFactory.createDecoImage(this, 4405, 1389, DecoPosition.BG, ImageData.DOOR_4);
+        // GameObjectBundleFactory.createDecoImage(this, 4405 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
         // GameObjectFactory.createDoor(this, 4405, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 250, playerStartY: 2000 }));
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 4900, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
         GameObjectBundleFactory.createDecoImage(this, 4880, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
-        GameObjectBundleFactory.createDecoImage(this, 5105, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        GameObjectBundleFactory.createDecoImage(this, 5105 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
+        // GameObjectBundleFactory.createDecoImage(this, 5105, 1389, DecoPosition.BG, ImageData.DOOR_4);
+        // GameObjectBundleFactory.createDecoImage(this, 5105 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 5600, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
@@ -79,8 +79,8 @@ export class LevelMarket extends Level {
         // house
         GameObjectBundleFactory.createDecoImage(this, 6300, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, 6280, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        GameObjectBundleFactory.createDecoImage(this, 6505, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        GameObjectBundleFactory.createDecoImage(this, 6505 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
+        // GameObjectBundleFactory.createDecoImage(this, 6505, 1389, DecoPosition.BG, ImageData.DOOR_4);
+        // GameObjectBundleFactory.createDecoImage(this, 6505 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
