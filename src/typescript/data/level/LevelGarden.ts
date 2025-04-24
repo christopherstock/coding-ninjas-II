@@ -47,6 +47,10 @@ export class LevelGarden extends Level {
         // stone obstacle
         GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
 
+        // billboard 'welcome'
+        GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD);
+        GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+
         // door to market
         GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725 }));
 
