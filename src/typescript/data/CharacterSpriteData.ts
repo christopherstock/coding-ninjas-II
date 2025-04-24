@@ -7,7 +7,6 @@ import { SpriteData } from './SpriteData';
 *   This class holds different character sprite combinations.
 ***********************************************************************************************************************/
 export class CharacterSpriteData {
-    /** The character sprite set for the 'Masked Ninja Girl'. */
     public  static  MASKED_NINJA_GIRL: CharacterSpriteSet  = new CharacterSpriteSet(
         SpriteData.MASKED_NINJA_GIRL_STAND_LEFT,
         SpriteData.MASKED_NINJA_GIRL_STAND_RIGHT,
@@ -25,7 +24,6 @@ export class CharacterSpriteData {
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
-    /** The character sprite set for the 'Blue Ninja Guy'. */
     public  static  BLUE_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
         SpriteData.BLUE_NINJA_GUY_STAND_LEFT,
         SpriteData.BLUE_NINJA_GUY_STAND_RIGHT,
@@ -43,7 +41,6 @@ export class CharacterSpriteData {
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
-    /** The character sprite set for the 'Red Ninja Girl'. */
     public  static  RED_NINJA_GIRL: CharacterSpriteSet  = new CharacterSpriteSet(
         SpriteData.RED_NINJA_GIRL_STAND_LEFT,
         SpriteData.RED_NINJA_GIRL_STAND_RIGHT,
@@ -61,7 +58,6 @@ export class CharacterSpriteData {
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
-    /** The character sprite set for the 'Masked Ninja Girl'. */
     public  static  MASKED_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
         SpriteData.MASKED_NINJA_GUY_STAND_LEFT,
         SpriteData.MASKED_NINJA_GUY_STAND_RIGHT,
