@@ -41,7 +41,7 @@ export abstract class GameObjectFactory {
     *******************************************************************************************************************/
     public static createWoodenCrate(x: number, yBottom: number): Movable {
         const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(
-            ImageData.CRATE_WOOD_1
+            ImageData.CRATE_WOOD
         );
 
         return new Movable

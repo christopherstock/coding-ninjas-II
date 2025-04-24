@@ -56,8 +56,12 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
         GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_1);
 
-        // statue
+        // statue with bush and grass
         GameObjectBundleFactory.createDecoImage(this, 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
+        GameObjectBundleFactory.createDecoImage(this, 1900, 2000, DecoPosition.FG, ImageData.BUSH_1);
+        GameObjectBundleFactory.createDecoSprite(this, 2300, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 2350, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 2400, 2000, DecoPosition.FG, SpriteData.GRASS_1);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
@@ -80,40 +84,36 @@ export class LevelStart extends Level {
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 20, 4, ImageData.WATER_CENTER);
         GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
+
+        // wooden crates
+        GameObjectBundleFactory.createMovableRect(this, 6950, 2100, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 7095, 2100, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 7240, 2100, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 7020, 1975, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 7155, 1975, ImageData.CRATE_WOOD);
     }
 
     /** ****************************************************************************************************************
-    *   Adds the 1st plateau (startup shrine).
+    *   Adds the special spare parts (plateau etc)
     *******************************************************************************************************************/
-    private addFirstPlateau(): void {
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 2400, 2000, 5,  5, Slope.NONE, CapHorz.BOTH);
-
+    private addSpareParts(): void {
         // site trigger
         GameObjectFactory.createSiteTrigger(this, 2000, 2000, 800, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.LEFT, null);
 
-        // status with bush
-        GameObjectBundleFactory.createDecoImage(this, 2780, 2000, DecoPosition.BG, ImageData.STATUE_3);
-        GameObjectBundleFactory.createDecoImage(this, 2830, 2000, DecoPosition.FG, ImageData.BUSH_1);
+        // sigsaw
+        GameObjectFactory.createSigsaw(this, 3400, 2000, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
 
-        // grass
-        GameObjectBundleFactory.createDecoSprite(this, 2660, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+
+
     }
 
     /** ****************************************************************************************************************
     *   Adds the 2nd plateau (sigsaw).
     *******************************************************************************************************************/
     private addSecondPlateau(): void {
-        // sigsaw
-        GameObjectFactory.createSigsaw(this, 3400, 2000, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
 
         // stone obstacle
         GameObjectBundleFactory.createObstacle(this, 3991, 2150, ImageData.STONE_SPHERE);
-
-        // wooden crates
-        // GameObjectBundleFactory.createMovableRect( this, 1841, 2000, ImageData.CRATE_WOOD_1 );
-        GameObjectBundleFactory.createMovableRect(this, 3966, 2000, ImageData.CRATE_WOOD_1);
-        // GameObjectBundleFactory.createMovableRect( this, 1924, 1875, ImageData.CRATE_WOOD_1 );
     }
 
     /** ****************************************************************************************************************
@@ -144,11 +144,11 @@ export class LevelStart extends Level {
         GameObjectFactory.createBounce(this, 7460, 2000, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
 
         // wooden crates
-        GameObjectBundleFactory.createMovableRect(this, 5600, 2000, ImageData.CRATE_WOOD_1);
-        GameObjectBundleFactory.createMovableRect(this, 5725, 2000, ImageData.CRATE_WOOD_1);
-        GameObjectBundleFactory.createMovableRect(this, 5884, 2000, ImageData.CRATE_WOOD_1);
-        GameObjectBundleFactory.createMovableRect(this, 6041, 2000, ImageData.CRATE_WOOD_1);
-        GameObjectBundleFactory.createMovableRect(this, 6166, 2000, ImageData.CRATE_WOOD_1);
+        GameObjectBundleFactory.createMovableRect(this, 5600, 2000, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 5725, 2000, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 5884, 2000, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 6041, 2000, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 6166, 2000, ImageData.CRATE_WOOD);
 
         // stones
         GameObjectBundleFactory.createMovableRect(this, 5650, 1900, ImageData.STONE_SPHERE);
@@ -175,9 +175,9 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createCandle(this, 7060, 2000, DecoPosition.FG);
 
         // wooden crate
-        GameObjectBundleFactory.createMovableRect(this, 6980, 2000, ImageData.CRATE_WOOD_1);
-        GameObjectBundleFactory.createMovableRect(this, 7095, 2000, ImageData.CRATE_WOOD_1);
-        GameObjectBundleFactory.createMovableRect(this, 7042, 1875, ImageData.CRATE_WOOD_1);
+        GameObjectBundleFactory.createMovableRect(this, 6980, 2000, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 7095, 2000, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 7042, 1875, ImageData.CRATE_WOOD);
     }
 
     /** ****************************************************************************************************************
