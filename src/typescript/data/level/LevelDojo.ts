@@ -59,7 +59,6 @@ export class LevelDojo extends Level {
         // door to garden
         GameObjectFactory.createDoor(this, 1500, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
 
-
         // table with flasks and pots
         let x = -1800;
         let y = -700;
@@ -102,10 +101,5 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createMovableRect(this, x + 2462, y + 1930, ImageData.FLASK_2);
         GameObjectBundleFactory.createMovableRect(this, x + 2513, y + 1930, ImageData.FLASK_3);
         GameObjectBundleFactory.createMovableRect(this, x + 2558, y + 2100, ImageData.POT_1);
-
-        // statue
-        // GameObjectBundleFactory.createObstacle(this, 2000, 2000, ImageData.STATUE_3 );
-
-        // ground
     }
 }
