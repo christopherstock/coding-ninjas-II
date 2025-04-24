@@ -1,19 +1,18 @@
 /* eslint-disable max-len */
 
-import * as matter from 'matter-js';
-import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
-import { TilesetData } from '../TilesetData';
-import { ImageData } from '../ImageData';
-import { Level, LevelId } from '../../game/level/Level';
-import { GameObjectFactory } from '../../game/object/GameObjectFactory';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { SpriteData } from '../SpriteData';
-import { SiteContent } from '../../site/SiteContentSystem';
-import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { CharacterSpriteData } from '../CharacterSpriteData';
-import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { MirrorImage } from '../../engine/ui/MirrorImage';
+import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
+import {TilesetData} from '../TilesetData';
+import {ImageData} from '../ImageData';
+import {Level, LevelId} from '../../game/level/Level';
+import {GameObjectFactory} from '../../game/object/GameObjectFactory';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {SpriteData} from '../SpriteData';
+import {SiteContent} from '../../site/SiteContentSystem';
+import {SitePanelAppearance} from '../../game/object/special/SiteTrigger';
+import {GameAction, GameActionType} from '../../game/object/GameAction';
+import {CharacterSpriteData} from '../CharacterSpriteData';
+import {CharacterFacing} from '../../game/object/being/CharacterFacing';
+import {MirrorImage} from '../../engine/ui/MirrorImage';
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -95,7 +94,7 @@ export class LevelStart extends Level {
         // house with door to DoJo
         GameObjectBundleFactory.createDecoImage(this, 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
         GameObjectBundleFactory.createDecoImage(this, 6380, 1810, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
-        GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // wooden crates
         GameObjectBundleFactory.createMovableRect(this, 6950, 2100, ImageData.CRATE_WOOD);

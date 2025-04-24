@@ -44,20 +44,28 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
             SiteContentFactory.createParagraph(
                 'Welcome to the Demo of '
                 + '<a target=\'_blank\' title=\'Coding Ninjas II\' '
-                + 'href=\'https://developercamp.io/\'>Coding Ninjas II</a>.',
+                + 'href=\'https://developercamp.io/\'>Coding Ninjas II</a>.<br>'
+                + '<br>'
+                + 'This is an interactive website presentation,<br>'
+                + 'combined with a jump \'n run experience.<br>'
+                + '<br>'
+                + '<span style=\'color: #b42157;\'>&#x2190; &#x2192;</span> Walk<br>'
+                + '<span style=\'color: #b42157;\'>&#x2191;</span> Jump<br>'
+                + '<span style=\'color: #b42157;\'>&#x2191; &#x2193;</span> Open &amp; Close Parachute (in Air)<br>'
+                + '<span style=\'color: #b42157;\'>E</span> Open Door<br>'
+                + '<span style=\'color: #b42157;\'>SPACE</span> Strike Katana<br>',
                 'right'
             )
         }
 
         { SiteContentFactory.createSpacerVertical() }
-
-        { /* SiteContentFactory.createDivider() */ }
+        { SiteContentFactory.createSpacerVertical() }
 
         {
             SiteContentFactory.createCarousel(
                 'scrollx',
                 true,
-                1250,
+                2500,
                 500,
                 [
                     <div className='carouselPage' style={{ 'backgroundImage': 'url( '
@@ -89,62 +97,9 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         }
 
         { SiteContentFactory.createSpacerVertical() }
-        { /* SiteContentFactory.createDivider() */ }
+        { SiteContentFactory.createSpacerVertical() }
         { SiteContentFactory.createParagraph('Current progress of the project is:', 'right') }
-        { /* SiteContentFactory.createSpacerVertical() */ }
         { SiteContentFactory.createProgress('line', 58.7)        }
-
-        { /*
-
-        <a target='_blank' title='Coding Ninjas on GitHub'
-            href='https://github.com/christopherstock/coding-ninjas'>
-            { SiteContentFactory.createAvatar( '', 'github' ) }
-        </a>
-
-        */ }
-
-        {
-            /*
-            SiteContentFactory.createParagraph
-            (
-                'Get the source on <a target=\'_blank\' title=\'Coding Ninjas on GitHub\' '
-                + 'href=\'https://github.com/christopherstock/coding-ninjas\'>GitHub</a>',
-                'sitePanel defaultParagraph avatarLine'
-            )
-            */
-        }
-        { /* SiteContentFactory.createDivider() */ }
-        {
-            /*
-            SiteContentFactory.createParagraph
-            (
-                'Use the <span style=\'color: #b42157;\'>arrow keys</span> to move and jump around.<br>'
-                + 'Use the <span style=\'color: #b42157;\'>space bar</span> to open your parachute '
-                + 'while in air.<br>'
-                + 'The user interfaces can be operated using <span style=\'color: #b42157;\'>'
-                + 'your mouse</span>.<br>'
-                + 'Can you find all <span style=\'color: #b42157;\'>six shrines?</span>.<br>'
-            )
-            */
-        }
-        { /* SiteContentFactory.createDivider() */ }
-        {
-            /*
-            SiteContentFactory.createSwitch
-            (
-                'notification',
-                'poweroff',
-                !ImageUtil.isMac(),
-                ( checked:boolean ) => {
-
-                    Debug.sound.log( 'Toggle bg music to [' + String( checked ) + ']' );
-
-                    Main.game.toggleBgMusic( checked );
-                }
-            )
-            */
-        }
-        { /* SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
 
     </div>;
 }
