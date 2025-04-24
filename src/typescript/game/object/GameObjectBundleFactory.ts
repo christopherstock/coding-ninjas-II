@@ -590,7 +590,6 @@ export abstract class GameObjectBundleFactory {
     *   @param blocksPlayer       If the enemy body collides with the player.
     *******************************************************************************************************************/
     public static createEnemy(
-        spriteTemplate: SpriteTemplate,
         level: Level,
         xLeft: number,
         yBottom: number,
@@ -601,7 +600,7 @@ export abstract class GameObjectBundleFactory {
         blocksPlayer: boolean = true
     ): void {
         const enemy: Bot = GameObjectFactory.createBot(
-            spriteTemplate,
+            characterSpriteSet.spriteStandLeft,
             xLeft,
             yBottom,
             facingDirection,
