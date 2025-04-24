@@ -19,7 +19,7 @@ import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 *   The level data for the dev level.
 ***********************************************************************************************************************/
 export class LevelStart extends Level {
-    public  playerStartX: number = 2480;
+    public  playerStartX: number = 250;
     public  playerStartY: number = 2000;
     public  playerInitialFloat: boolean = false;
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -48,36 +48,42 @@ export class LevelStart extends Level {
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE);
 
-        // statue and door to DoJo
-        GameObjectFactory.createDoor(this, 2300, 2000, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
-        GameObjectBundleFactory.createDecoImage(this, 2700, 2000, DecoPosition.BG, ImageData.STATUE_1);
+        // enemies
+        GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 200, 2000, CharacterFacing.RIGHT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 1700, 2000, CharacterFacing.LEFT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
-        // trees and door to market
-        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.BG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_2);
-        GameObjectFactory.createDoor(this, 1700, 2000, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 1020 }));
+        // trees
+        GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.BG, ImageData.TREE_2);
+
+        // statue
+        GameObjectBundleFactory.createDecoImage(this, 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
+
+        // door to market
+        // GameObjectFactory.createDoor(this, 1700, 2000, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 1020 }));
 
         // billboard 'welcome'
-        GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, 3000, 2000, DecoPosition.BG, ImageData.BILLBOARD_WELCOME);
+        GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
+        GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
 
-        // trees and lion statue
-        GameObjectBundleFactory.createDecoImage(this, 3900, 2000, DecoPosition.FG, ImageData.TREE_2);
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, 3600, 2000, DecoPosition.FG, ImageData.TREE_2);
+
+        // lion statue
         GameObjectBundleFactory.createDecoImage(this, 4550, 2000, DecoPosition.BG, ImageData.STATUE_LION);
 
-        // enemies
-        GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 0, 2000, CharacterFacing.RIGHT, 0, 1500, CharacterSpriteData.BLUE_NINJA_GUY, false);
-
-        // slope down and solid ground
+        // slope down
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 15, 5, Slope.NONE,       CapHorz.NONE);
+
+        // solid bottom ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
 
         // bridge and blue water
-        GameObjectBundleFactory.createWaterArea(this, 7680, 2260, 6, 4, ImageData.WATER_CENTER);
-        GameObjectBundleFactory.createBridge(this, 7750, 2100, true);
+        GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 6, 4, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createBridge(this, 7110, 2100, true);
 
-        // TODO GameObject.createHouseFront
-
+        // door to DoJo
+        GameObjectFactory.createDoor(this, 6600, 2100, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020 }));
     }
 
     /** ****************************************************************************************************************
