@@ -150,7 +150,6 @@ export class ImageData {
     static readonly FLASK_2: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask2.png';
     static readonly FLASK_3: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask3.png';
     static readonly POT_1: string                                       = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot1.png';
-    static readonly DOJO: string                                        = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'dojo.jpg';
     static readonly DOOR_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
     static readonly DOOR_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door2.png';
     static readonly DOOR_3: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door3.png';
@@ -457,7 +456,6 @@ export class ImageData {
         ImageData.FLASK_2,
         ImageData.FLASK_3,
         ImageData.POT_1,
-        ImageData.DOJO,
         ImageData.DOOR_1,
         ImageData.DOOR_2,
         ImageData.DOOR_3,

@@ -109,9 +109,6 @@ export class LevelStart extends Level {
     *   Adds the special spare parts (plateaus etc)
     *******************************************************************************************************************/
     private addSpareParts(): void {
-        // site trigger
-        GameObjectFactory.createSiteTrigger(this, 2000, 2000, 800, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.LEFT, null);
-
         // sigsaw
         GameObjectFactory.createSigsaw(this, 3400, 2000, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
 
@@ -120,25 +117,20 @@ export class LevelStart extends Level {
 
         // bounce
         GameObjectFactory.createBounce(this, 7460, 2000, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
+
+        // site trigger
+        GameObjectFactory.createSiteTrigger(this, 2000, 2000, 800, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.LEFT, null);
     }
 
     /** ****************************************************************************************************************
     *   Adds the 3rd plateau.
     *******************************************************************************************************************/
     private addThirdPlateau(): void {
-        // statue
-        GameObjectBundleFactory.createDecoImage(this, 4580, 2000, DecoPosition.BG, ImageData.STATUE_2);
-
         // candles
         GameObjectBundleFactory.createCandle(this, 4765, 2000, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, 4865, 2000, DecoPosition.BG);
         GameObjectBundleFactory.createCandle(this, 4965, 2000, DecoPosition.FG);
-    }
 
-    /** ****************************************************************************************************************
-    *   Adds the 4th plateau (bounce).
-    *******************************************************************************************************************/
-    private addFourthPlateau(): void {
         // wooden crates
         GameObjectBundleFactory.createMovableRect(this, 5600, 2000, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 5725, 2000, ImageData.CRATE_WOOD);
@@ -151,12 +143,7 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createMovableRect(this, 5750, 1900, ImageData.STONE_SPHERE);
         GameObjectBundleFactory.createMovableRect(this, 5900, 1900, ImageData.STONE_SPHERE);
         GameObjectBundleFactory.createMovableRect(this, 6070, 1900, ImageData.STONE_SPHERE);
-    }
 
-    /** ****************************************************************************************************************
-    *   Adds the 5th plateau.
-    *******************************************************************************************************************/
-    private addFifthPlateau(): void {
         // candles
         GameObjectBundleFactory.createCandle(this, 6930, 2000, DecoPosition.BG);
         GameObjectBundleFactory.createCandle(this, 7060, 2000, DecoPosition.FG);
@@ -165,26 +152,6 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createMovableRect(this, 6980, 2000, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7095, 2000, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7042, 1875, ImageData.CRATE_WOOD);
-    }
-
-    /** ****************************************************************************************************************
-    *   Adds the 7th plateau (main).
-    *******************************************************************************************************************/
-    private addSeventhPlateau(): void {
-        // bridge and blue water
-        GameObjectBundleFactory.createWaterArea(this, 11150, 2260, 6, 4, ImageData.WATER_CENTER);
-        GameObjectBundleFactory.createBridge(this, 11220, 2100);
-
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 8250, 2000, 10, 5, Slope.NONE,       CapHorz.LEFT);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 9530, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 10170, 2100, 8,  5, Slope.NONE,       CapHorz.RIGHT);
-
-        // ground after bridge
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 11870, 2100, 20, 5, Slope.NONE,      CapHorz.BOTH);
-
-        // site trigger
-        // GameObjectFactory.createSiteTrigger( this, 11400, 2100, 3000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null );
 
         // movables
         GameObjectBundleFactory.createMovableRect(this, 9350, 2000, ImageData.POT_1);
@@ -193,12 +160,6 @@ export class LevelStart extends Level {
         // boulder and bush
         GameObjectBundleFactory.createDecoImage(this, 9000, 2000, DecoPosition.BG, ImageData.BOULDER_1);
         GameObjectBundleFactory.createDecoImage(this, 8800, 2000, DecoPosition.FG, ImageData.BUSH_2);
-
-        // final statue
-        GameObjectBundleFactory.createObstacle(this, 14300, 2100, ImageData.STATUE_1);
-
-        // dojo
-        GameObjectBundleFactory.createDecoImage(this, 13400, 2100, DecoPosition.BG, ImageData.DOJO);
 
         // enemies
         GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 12000, 2100, CharacterFacing.RIGHT, 10000, 11150, CharacterSpriteData.BLUE_NINJA_GUY);
