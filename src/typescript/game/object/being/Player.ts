@@ -1,16 +1,17 @@
 import * as matter from 'matter-js';
-import { Shape } from '../../../engine/shape/Shape';
-import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { SettingMatter } from '../../../base/SettingMatter';
-import { CharacterSpriteData } from '../../../data/CharacterSpriteData';
-import { Main } from '../../../base/Main';
-import { KeySystem } from '../../../engine/hid/KeySystem';
-import { KeyData } from '../../../data/KeyData';
-import { SettingDebug } from '../../../base/SettingDebug';
-import { Debug } from '../../../base/Debug';
-import { LevelId } from '../../level/Level';
-import { Character } from './Character';
-import { CharacterFacing } from './CharacterFacing';
+import {Shape} from '../../../engine/shape/Shape';
+import {SpriteTemplate} from '../../../engine/ui/SpriteTemplate';
+import {SettingMatter} from '../../../base/SettingMatter';
+import {CharacterSpriteData} from '../../../data/CharacterSpriteData';
+import {Main} from '../../../base/Main';
+import {KeySystem} from '../../../engine/hid/KeySystem';
+import {KeyData} from '../../../data/KeyData';
+import {SettingDebug} from '../../../base/SettingDebug';
+import {Debug} from '../../../base/Debug';
+import {LevelId} from '../../level/Level';
+import {Character} from './Character';
+import {CharacterFacing} from './CharacterFacing';
+import {GameObjectState} from "../GameObject";
 
 /** ********************************************************************************************************************
 *   Represents the player being controlled by the user.
@@ -60,7 +61,7 @@ export class Player extends Character {
     public render(): void {
         super.render();
 
-        if (!this.isDead) {
+        if (this.state !== GameObjectState.DEAD) {
             this.handleKeys(Main.game.engine.keySystem);
             this.checkEnemyKill();
         }
@@ -157,7 +158,7 @@ export class Player extends Character {
             // browse all enemies
             for (const enemy of Main.game.level.enemies) {
                 // skip dead, friendly or non-blocking enemies
-                if (enemy.isAlive() && !enemy.isFriendly() && enemy.isBlocking()) {
+                if (enemy.state === GameObjectState.ALIVE && !enemy.isFriendly() && enemy.isBlocking()) {
                     // check intersection of the player and the enemy
                     if (matter.Bounds.overlaps(this.shape.body.bounds, enemy.shape.body.bounds)) {
                         Debug.bot.log('Enemy touched by player');
@@ -191,8 +192,8 @@ export class Player extends Character {
         // check if the bottom outside is reached
         if (this.shape.body.position.y > (Main.game.level.height - (this.shape.getHeight() / 2))) {
             // flag player as dead if not done yet
-            if (!this.isDead) {
-                this.isDead = true;
+            if (this.state !== GameObjectState.DEAD) {
+                this.state = GameObjectState.DEAD;
 
                 Debug.engine.log('Player has fallen to death');
 

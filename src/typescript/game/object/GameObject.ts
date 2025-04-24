@@ -6,12 +6,19 @@ import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
 import { Debug } from '../../base/Debug';
 
+export enum GameObjectState {
+    ALIVE,
+    DYING,
+    DEAD,
+}
+
 /** ********************************************************************************************************************
 *   The abstract class of all game objects.
 ***********************************************************************************************************************/
 export abstract class GameObject {
     public shape: Shape   = null;
     public sprite: Sprite = null;
+    public state: GameObjectState = GameObjectState.ALIVE;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.

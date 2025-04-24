@@ -1,11 +1,12 @@
-import { Shape } from '../../../engine/shape/Shape';
-import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { SettingMatter } from '../../../base/SettingMatter';
-import { Main } from '../../../base/Main';
-import { SettingGame } from '../../../base/SettingGame';
-import { CharacterSpriteSet } from './CharacterSpriteSet';
-import { Character } from './Character';
-import { CharacterFacing } from './CharacterFacing';
+import {Shape} from '../../../engine/shape/Shape';
+import {SpriteTemplate} from '../../../engine/ui/SpriteTemplate';
+import {SettingMatter} from '../../../base/SettingMatter';
+import {Main} from '../../../base/Main';
+import {SettingGame} from '../../../base/SettingGame';
+import {CharacterSpriteSet} from './CharacterSpriteSet';
+import {Character} from './Character';
+import {CharacterFacing} from './CharacterFacing';
+import {GameObjectState} from "../GameObject";
 
 /** ********************************************************************************************************************
 *   Represents the movement phases for an enemy.
@@ -101,12 +102,12 @@ export class Bot extends Character {
     public render(): void {
         super.render();
 
-        if (!this.isDead) {
+        if (this.state !== GameObjectState.DEAD) {
             if (this.checkFallingDead()) {
-                this.isDead = true;
+                this.state = GameObjectState.DEAD;
             }
 
-            if (!this.isDying) {
+            if (this.state !== GameObjectState.DYING) {
                 this.moveAccordingToPattern();
                 this.clipToHorizontalLevelBounds();
 
@@ -131,7 +132,7 @@ export class Bot extends Character {
         }
 
         // flag as dying
-        this.isDying = true;
+        this.state = GameObjectState.DYING;
 
         // face the player
         if (playerDirection === CharacterFacing.LEFT) {

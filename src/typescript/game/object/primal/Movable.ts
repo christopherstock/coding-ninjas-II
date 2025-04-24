@@ -1,18 +1,16 @@
-import { GameObject } from '../GameObject';
-import { Shape } from '../../../engine/shape/Shape';
-import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { Debug } from '../../../base/Debug';
-import { Main } from '../../../base/Main';
-import { ImageUtil } from '../../../util/ImageUtil';
-import { SettingMatter } from '../../../base/SettingMatter';
+import {GameObjectState, GameObject} from '../GameObject';
+import {Shape} from '../../../engine/shape/Shape';
+import {SpriteTemplate} from '../../../engine/ui/SpriteTemplate';
+import {Debug} from '../../../base/Debug';
+import {Main} from '../../../base/Main';
+import {ImageUtil} from '../../../util/ImageUtil';
+import {SettingMatter} from '../../../base/SettingMatter';
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
 ***********************************************************************************************************************/
 export class Movable extends GameObject {
     public energy: number = 100.0;
-    public isBreaking: boolean = false;
-    public isBroken: boolean = false;
 
     /** ****************************************************************************************************************
     *   Creates a new movable.
@@ -42,9 +40,9 @@ export class Movable extends GameObject {
     public render(): void {
         super.render();
 
-        if (this.isBreaking && !this.isBroken) {
+        if (this.state === GameObjectState.DYING) {
             if (this.checkFallingDead()) {
-                this.isBroken = true;
+                this.state = GameObjectState.DEAD;
             }
         }
 
@@ -52,7 +50,7 @@ export class Movable extends GameObject {
     }
 
     public hurt(damage: number): void {
-        if (this.isBreaking || this.isBroken) {
+        if (this.state !== GameObjectState.ALIVE) {
             return;
         }
 
@@ -86,7 +84,7 @@ export class Movable extends GameObject {
     }
 
     private break(): void {
-        this.isBreaking = true;
+        this.state = GameObjectState.DYING;
 
         // freeze & make non-collidable
         // this.shape.body.isStatic = true;

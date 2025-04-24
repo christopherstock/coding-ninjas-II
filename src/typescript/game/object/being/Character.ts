@@ -1,15 +1,15 @@
 import * as matter from 'matter-js';
-import { GameObject } from '../GameObject';
-import { Shape } from '../../../engine/shape/Shape';
-import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { SettingGame } from '../../../base/SettingGame';
-import { Main } from '../../../base/Main';
-import { Debug } from '../../../base/Debug';
-import { BodyFrictionAir, SettingMatter } from '../../../base/SettingMatter';
-import { ShapeRectangle } from '../../../engine/shape/ShapeRectangle';
-import { Player } from './Player';
-import { CharacterSpriteSet } from './CharacterSpriteSet';
-import { CharacterFacing } from './CharacterFacing';
+import {GameObject, GameObjectState} from '../GameObject';
+import {Shape} from '../../../engine/shape/Shape';
+import {SpriteTemplate} from '../../../engine/ui/SpriteTemplate';
+import {SettingGame} from '../../../base/SettingGame';
+import {Main} from '../../../base/Main';
+import {Debug} from '../../../base/Debug';
+import {BodyFrictionAir, SettingMatter} from '../../../base/SettingMatter';
+import {ShapeRectangle} from '../../../engine/shape/ShapeRectangle';
+import {Player} from './Player';
+import {CharacterSpriteSet} from './CharacterSpriteSet';
+import {CharacterFacing} from './CharacterFacing';
 
 /** ********************************************************************************************************************
 *   Represents a character.
@@ -21,15 +21,13 @@ export abstract class Character extends GameObject {
     public punchBackTicks: number                       = 0;
     public attackingTicks: number                       = 0;
 
+    protected isGliding: boolean                        = false;
+    protected isMovingLeft: boolean                     = false;
+    protected isMovingRight: boolean                    = false;
+
     protected glidingRequest: boolean                   = false;
     protected paraCloseRequest: boolean                   = false;
     protected interactionRequest: boolean               = false;
-
-    protected isGliding: boolean                        = false;
-    protected isDying: boolean                          = false;
-    protected isDead: boolean                           = false;
-    protected isMovingLeft: boolean                     = false;
-    protected isMobineRight: boolean                    = false;
 
     private readonly speedMove: number                  = 0.0;
     private readonly jumpPower: number                  = 0.0;
@@ -82,7 +80,7 @@ export abstract class Character extends GameObject {
         super.render();
 
         this.isMovingLeft  = false;
-        this.isMobineRight = false;
+        this.isMovingRight = false;
 
         if (this.punchBackTicks > 0) {
             --this.punchBackTicks;
@@ -134,8 +132,8 @@ export abstract class Character extends GameObject {
         // check all movables
         for (const movable of Main.game.level.movables) {
             if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
-                // hurt movable
-                if (!movable.isBreaking) {
+                // hurt movable if alive
+                if (movable.state === GameObjectState.ALIVE) {
                     Debug.character.log('Character hits a level object (movable)');
 
                     movable.hurt(34.0);
@@ -150,8 +148,8 @@ export abstract class Character extends GameObject {
         // check all enemies
         for (const enemy of Main.game.level.enemies) {
             if (matter.Query.region([ enemy.shape.body ], smashBounds).length > 0) {
-                // skip dead enemies
-                if (enemy.isAlive() && !enemy.isFriendly()) {
+                // only hurt alive enemies
+                if (enemy.state === GameObjectState.ALIVE && !enemy.isFriendly()) {
                     Debug.character.log('Character hits an enemy');
 
                     // hit enemy
@@ -223,15 +221,6 @@ export abstract class Character extends GameObject {
     }
 
     /** ****************************************************************************************************************
-    *   Checks if this character is alive. That means that he is not dead and is not currently dying.
-    *
-    *   @return <code>true</code> if this character is alive.
-    *******************************************************************************************************************/
-    public isAlive(): boolean {
-        return (!this.isDead && !this.isDying);
-    }
-
-    /** ****************************************************************************************************************
     *   Moves this character left.
     *******************************************************************************************************************/
     protected moveLeft(): void {
@@ -251,7 +240,7 @@ export abstract class Character extends GameObject {
     *******************************************************************************************************************/
     protected moveRight(): void {
         matter.Body.translate(this.shape.body, matter.Vector.create(this.speedMove, 0));
-        this.isMobineRight = true;
+        this.isMovingRight = true;
         this.facing     = CharacterFacing.RIGHT;
 
         // check in-air collision
@@ -335,7 +324,7 @@ export abstract class Character extends GameObject {
     *   Assigns the current sprite to the player according to his current state.
     *******************************************************************************************************************/
     protected assignCurrentSprite(): void {
-        if (this.isDying) {
+        if (this.state === GameObjectState.DYING) {
             if (this.facing === CharacterFacing.LEFT) {
                 this.setSprite(this.spriteSet.spriteDieLeft);
             } else {
@@ -370,7 +359,7 @@ export abstract class Character extends GameObject {
         } else {
             if (this.isMovingLeft) {
                 this.setSprite(this.spriteSet.spriteWalkLeft);
-            } else if (this.isMobineRight) {
+            } else if (this.isMovingRight) {
                 this.setSprite(this.spriteSet.spriteWalkRight);
             } else {
                 if (this.facing === CharacterFacing.LEFT) {

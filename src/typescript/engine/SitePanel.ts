@@ -6,9 +6,7 @@ import { Main } from '../base/Main';
 ***********************************************************************************************************************/
 export enum SitePanelPosition
 {
-    /** Site panel appearing left. */
     LEFT,
-    /** Site panel appearing right. */
     RIGHT,
 }
 
