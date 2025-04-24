@@ -73,10 +73,6 @@ export abstract class Level {
         for (const bounce of this.bounces) {
             matterJsSystem.addToWorld(bounce.shape.body);
         }
-        for (const platform of this.platforms) {
-            matterJsSystem.addToWorld(platform.shape.body);
-            matterJsSystem.addToWorld(platform.frictionShape.body);
-        }
         for (const obstacle of this.obstacles) {
             matterJsSystem.addToWorld(obstacle.shape.body);
         }
@@ -88,6 +84,10 @@ export abstract class Level {
         }
         for (const movable of this.movables) {
             matterJsSystem.addToWorld(movable.shape.body);
+        }
+        for (const platform of this.platforms) {
+            matterJsSystem.addToWorld(platform.shape.body);
+            matterJsSystem.addToWorld(platform.frictionShape.body);
         }
         for (const enemy of this.enemies) {
             matterJsSystem.addToWorld(enemy.shape.body);

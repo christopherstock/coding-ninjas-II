@@ -8,6 +8,7 @@ import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import * as matter from "matter-js";
 
 /** ********************************************************************************************************************
 *   The level data for the Garden level.
@@ -55,6 +56,15 @@ export class LevelGarden extends Level {
 
         // door to market
         GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 3725, playerStartY: 1400 }));
+
+        // magic items
+
+        // sigsaw
+        GameObjectFactory.createSigsaw(this, 3200, 1250, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
+        // platform
+        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(5260, 1250), matter.Vector.create(6000, 1250) ]);
+        // bounce
+        GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);

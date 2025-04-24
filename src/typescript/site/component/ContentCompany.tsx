@@ -11,7 +11,7 @@ import { ImageData } from '../../data/ImageData';
 export const ContentCompany: ()=> JSX.Element = (): JSX.Element => {
     Debug.react.log('ContentCompany.render() being invoked');
 
-    return <div>
+    return <div style={{textAlign: 'right'}}>
 
         { SiteContentFactory.createStepIndicator(SiteContent.CONTENT_COMPANY) }
         { SiteContentFactory.createDivider() }

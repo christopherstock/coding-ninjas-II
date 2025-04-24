@@ -10,10 +10,9 @@ import { ImageData } from '../../data/ImageData';
 export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
     Debug.react.log('ContentWelcome.render() being invoked');
 
-    return <div>
+    return <div style={{ textAlign: 'right' }}>
 
         { /* SiteContentFactory.createStepIndicator( SiteContent.CONTENT_WELCOME ) */ }
-
         { /* SiteContentFactory.createDivider() */ }
 
         {
@@ -45,7 +44,8 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
             SiteContentFactory.createParagraph(
                 'Welcome to the Demo of '
                 + '<a target=\'_blank\' title=\'Coding Ninjas II\' '
-                + 'href=\'https://developercamp.io/\'>Coding Ninjas II</a>.'
+                + 'href=\'https://developercamp.io/\'>Coding Ninjas II</a>.',
+                'right'
             )
         }
 
@@ -87,6 +87,12 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 ]
             )
         }
+
+        { SiteContentFactory.createSpacerVertical() }
+        { /* SiteContentFactory.createDivider() */ }
+        { SiteContentFactory.createParagraph('Current progress of the project is:', 'right') }
+        { /* SiteContentFactory.createSpacerVertical() */ }
+        { SiteContentFactory.createProgress('line', 58.7)        }
 
         { /*
 
@@ -139,13 +145,6 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
             */
         }
         { /* SiteContentFactory.createParagraph( 'Toggle background music' ) */ }
-
-        { SiteContentFactory.createSpacerVertical() }
-
-        { /* SiteContentFactory.createDivider()                                        */ }
-        { SiteContentFactory.createParagraph('Current progress of the project is:') }
-        { /* SiteContentFactory.createSpacerVertical() */ }
-        { SiteContentFactory.createProgress('line', 72.6)        }
 
     </div>;
 }

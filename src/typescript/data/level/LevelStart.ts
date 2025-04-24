@@ -44,6 +44,9 @@ export class LevelStart extends Level {
     *   Adds the startup shrine.
     *******************************************************************************************************************/
     private addHomeShrine(): void {
+        // site trigger
+        GameObjectFactory.createSiteTrigger(this, 500, 2000, 750, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
+
         // enemies
         GameObjectBundleFactory.createEnemy(this, 200, 2000, CharacterFacing.RIGHT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
         GameObjectBundleFactory.createEnemy(this, 1700, 2000, CharacterFacing.LEFT, 200, 1700, CharacterSpriteData.MASKED_NINJA_GUY, false);
@@ -109,22 +112,5 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0,    2000, 40,  5, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
-    }
-
-    /** ****************************************************************************************************************
-    *   Adds the special spare parts (plateaus etc)
-    *******************************************************************************************************************/
-    private addSpareParts(): void {
-        // sigsaw
-        GameObjectFactory.createSigsaw(this, 3400, 2000, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
-
-        // platform
-        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(5260, 2000), matter.Vector.create(6000, 2000) ]);
-
-        // bounce
-        GameObjectFactory.createBounce(this, 7460, 2000, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
-
-        // site trigger
-        GameObjectFactory.createSiteTrigger(this, 2000, 2000, 800, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.LEFT, null);
     }
 }
