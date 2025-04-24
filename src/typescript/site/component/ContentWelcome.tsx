@@ -110,7 +110,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
 
         { SiteContentFactory.createSpacerVertical() }
         { SiteContentFactory.createParagraph('Project Progress:', 'right') }
-        { SiteContentFactory.createProgress('line', 58.7)        }
+        { SiteContentFactory.createProgress('line', 61.8) }
 
     </div>;
 }

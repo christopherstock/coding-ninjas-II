@@ -42,9 +42,9 @@ export class LevelGarden extends Level {
         // stone obstacle
         GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
 
-        // billboard 'welcome'
+        // billboard 'games'
         GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+        GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD_GAMES);
 
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 2374, 1400);

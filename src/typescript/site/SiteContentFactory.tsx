@@ -139,7 +139,7 @@ export class SiteContentFactory {
     *   @return The created JSX element.
     *******************************************************************************************************************/
     public static createProgress(type: ProgressType, percent: number): JSX.Element {
-        return <antd.Progress  type={ type } percent={ percent } status='active' />;
+        return <antd.Progress type={ type } percent={ percent } status='active' />;
     }
 
     /** ****************************************************************************************************************

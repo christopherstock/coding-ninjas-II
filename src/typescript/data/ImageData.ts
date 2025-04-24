@@ -261,20 +261,20 @@ export class ImageData {
     static readonly GROUND_SNOW_SOLID_ASCENDING_TOP: string             = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidAscendingTop.png';
     static readonly GROUND_SNOW_SOLID_DESCENDING_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidDescendingTop.png';
 
-    static readonly GROUND_GREENFIELD_SOLID_TOP: string                       = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidTop.png';
-    static readonly GROUND_GREENFIELD_SOLID_LEFT_TOP: string                  = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftTop.png';
-    static readonly GROUND_GREENFIELD_SOLID_RIGHT_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightTop.png';
-    static readonly GROUND_GREENFIELD_SOLID_CENTER: string                    = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidCenter.png';
-    static readonly GROUND_GREENFIELD_SOLID_BOTTOM: string                    = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidBottom.png';
-    static readonly GROUND_GREENFIELD_SOLID_LEFT_BOTTOM: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftBottom.png';
-    static readonly GROUND_GREENFIELD_SOLID_RIGHT_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightBottom.png';
-    static readonly GROUND_GREENFIELD_SOLID_LEFT: string                      = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeft.png';
-    static readonly GROUND_GREENFIELD_SOLID_RIGHT: string                     = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRight.png';
+    static readonly GROUND_GREENFIELD_SOLID_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidTop.png';
+    static readonly GROUND_GREENFIELD_SOLID_LEFT_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftTop.png';
+    static readonly GROUND_GREENFIELD_SOLID_RIGHT_TOP: string           = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightTop.png';
+    static readonly GROUND_GREENFIELD_SOLID_CENTER: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidCenter.png';
+    static readonly GROUND_GREENFIELD_SOLID_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidBottom.png';
+    static readonly GROUND_GREENFIELD_SOLID_LEFT_BOTTOM: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftBottom.png';
+    static readonly GROUND_GREENFIELD_SOLID_RIGHT_BOTTOM: string        = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightBottom.png';
+    static readonly GROUND_GREENFIELD_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeft.png';
+    static readonly GROUND_GREENFIELD_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRight.png';
 
     static readonly BG_JAPAN: string                                    = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
     static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
-    static readonly BG_TOWN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown.png';
-    static readonly BG_ALLEY: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgAlley.jpg';
+    static readonly BG_TOWN: string                                     = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown.png';
+    static readonly BG_ALLEY: string                                    = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgAlley.jpg';
     static readonly BG_STREET: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgStreet.jpg';
     static readonly BG_GARDEN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgGarden.jpg';
     static readonly BG_MARKET: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMarket.jpg';
@@ -282,6 +282,7 @@ export class ImageData {
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
     static readonly BILLBOARD_WEBSITES: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebsites.png';
+    static readonly BILLBOARD_GAMES: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardGames.png';
 
     static readonly SITE_PANEL_LOGO: string                             = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
     static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft_a90.png';
@@ -307,7 +308,7 @@ export class ImageData {
     static readonly PLATFORM_1: string                                  = SettingEngine.PATH_IMAGE_PLATFORM + 'platform1.png';
 
     /** All image filenames to load. */
-    static readonly IMAGES_TO_MIRROR: string[]                                =
+    static readonly IMAGES_TO_MIRROR: string[]                          =
         [
             ImageData.TREE_1,
             ImageData.TREE_2,
@@ -590,6 +591,7 @@ export class ImageData {
         ImageData.BILLBOARD,
         ImageData.BILLBOARD_WELCOME,
         ImageData.BILLBOARD_WEBSITES,
+        ImageData.BILLBOARD_GAMES,
 
         ImageData.SITE_PANEL_LOGO,
         ImageData.SITE_PANEL_BG_LEFT,
