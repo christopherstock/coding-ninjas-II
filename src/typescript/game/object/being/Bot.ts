@@ -27,16 +27,12 @@ export enum EnemyMovementPhase
 *   Represents an enemy being controlled by the system.
 ***********************************************************************************************************************/
 export class Bot extends Character {
-    /** The enemies' current movement phase. */
-    private                     currentPhase: EnemyMovementPhase         = null;
-    /** The current delay tick between movement phases. */
-    private                     currentPhaseDelayTick: number                     = 0;
-    /** Left walking target X. */
-    private     readonly        walkingTargetLeft: number                     = 0;
-    /** Right walking target X. */
-    private     readonly        walkingTargetRight: number                     = 0;
-    private     readonly        friendly: boolean                    = false;
-    private     readonly        blocksPlayer: boolean                    = false;
+    private currentPhase: EnemyMovementPhase            = null;
+    private currentPhaseDelayTick: number               = 0;
+    private readonly walkingTargetLeft: number          = 0;
+    private readonly walkingTargetRight: number         = 0;
+    private readonly friendly: boolean                  = false;
+    private readonly blocksPlayer: boolean              = false;
 
     /** ****************************************************************************************************************
     *   Creates a new enemy.

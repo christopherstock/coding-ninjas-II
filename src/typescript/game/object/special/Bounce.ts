@@ -10,7 +10,7 @@ import { Main } from '../../../base/Main';
 ***********************************************************************************************************************/
 export class Bounce extends GameObject {
     /** The constraint that builds the turning point for the bounce. */
-    private         readonly            constraint: matter.Constraint                  = null;
+    private readonly constraint: matter.Constraint                  = null;
 
     /** ****************************************************************************************************************
     *   Creates a new bounce.

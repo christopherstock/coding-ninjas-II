@@ -90,18 +90,18 @@ export class LevelStart extends Level {
     }
 
     private addSlopeGround(): void {
-        const x = 5920;
+        const x = 5920 + 0;
 
         // boulder and bush
-        GameObjectBundleFactory.createDecoImage(this, x - 5920 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
-        GameObjectBundleFactory.createDecoImage(this, x - 5920 + 5760, 2100, DecoPosition.FG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.BG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
 
         // slope
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x - 5920 + 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
     }
 
     private addLowerGround(): void {
-        const x = 5870;
+        const x = 5870 + 0;
 
         // friend
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT, this, x - 5870 + 5870, 2100, CharacterFacing.RIGHT, 5870, 6800, CharacterSpriteData.RED_NINJA_GIRL, false);

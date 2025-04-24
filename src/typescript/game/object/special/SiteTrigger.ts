@@ -22,12 +22,12 @@ export enum SitePanelAppearance
 ***********************************************************************************************************************/
 export class SiteTrigger extends Decoration {
     /** The site content to show when this trigger is released. */
-    private     readonly            content: SiteContent             = null;
+    private readonly content: SiteContent                       = null;
     /** A fixed position for the panel to popup, if desired. */
-    private     readonly            sitePanelAppearance: SitePanelAppearance     = null;
+    private readonly sitePanelAppearance: SitePanelAppearance   = null;
 
     /** Flags if the according site panel is currently displayed. */
-    private                         sitePanelActive: boolean                        = false;
+    private sitePanelActive: boolean                            = false;
 
     /** ****************************************************************************************************************
     *   Creates a new site trigger.

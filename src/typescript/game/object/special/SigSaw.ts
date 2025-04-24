@@ -11,9 +11,9 @@ import { MathUtil } from '../../../util/MathUtil';
 ***********************************************************************************************************************/
 export class SigSaw extends GameObject {
     /** The constraint that builds the turning point for the sigsaw. */
-    private     readonly            constraint: matter.Constraint                  = null;
+    private readonly constraint: matter.Constraint  = null;
     /** The maximum rotation speed per tick. */
-    private     readonly            maxRotationSpeed: number                             = 0.0;
+    private readonly maxRotationSpeed: number       = 0.0;
 
     /** ****************************************************************************************************************
     *   Creates a new sigsaw.
