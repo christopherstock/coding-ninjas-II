@@ -10,6 +10,6 @@ export class SoundData {
     /** An array holding all filenames of all sounds to load. */
     public      static      FILE_NAMES: string[]               =
         [
-        // SoundData.BG_CHINESE,
+            SoundData.BG_CHINESE,
         ];
 }

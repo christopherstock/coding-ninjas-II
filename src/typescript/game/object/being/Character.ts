@@ -494,7 +494,7 @@ export abstract class Character extends GameObject {
     private checkInteraction(): void {
         if (this.interactionRequest) {
             for (const door of Main.game.level.doors) {
-                if (door.checkInteraction()) break;
+                if (door.checkInteraction()) {break;}
             }
 
             this.interactionRequest = false;

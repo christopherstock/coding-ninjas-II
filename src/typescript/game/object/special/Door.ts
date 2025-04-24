@@ -55,8 +55,6 @@ export class Door extends Decoration {
         );
 
         if (doorActivated) {
-            console.log('door activated!', this.shape.body.bounds);
-            console.log(' body:', Main.game.level.player.shape.body.bounds);
             Main.game.resetAndLaunchLevel(
                 this.action.data.targetLevel,
                 this.action.data.playerStartX,

@@ -1,37 +1,29 @@
 # TODO List
 
 ## Primary
+```
+```
 
 ## Secondary
 ```
-TODO remove all unused confusing panel images!
-TODO fix moving plateau
-TODO door for walking through / changing level
 ```
 
 ## MVP (Demo)
-
 ```
+TODO Add event triggers! ( for falling obstacles, new enemies etc )
+TODO remove all unused confusing panel images!
+TODO fix moving plateau
 TODO Enable one-timer for closing site panels.
 TODO Enable ENTER/ESCAPE press for closing site panels.
-TODO Add event triggers! ( for falling obstacles, new enemies etc )
 ```
 
 ## Cleanup
-
 ```
-TODO Group AND PRUNE all deco images into subfolders.
 TODO Introduce AliveState for character (alive, dying, dead)
+TODO Group AND PRUNE all deco images into subfolders?
 TODO Improve image sequence handling in ImageData (FILE_NAMES) by class access?
+TODO Remove static access on Main.game?
 TODO Add GitLab CI/CD pipeline
-TODO Remove static access on Main.game.
-
-TODO Add slow motion fx with fewer rendering time!
-TODO Add primal Ant Design components:
-https://ant.design/components/steps/
-https://ant.design/components/badge/
-https://ant.design/components/carousel/
-https://ant.design/components/progress/
 ```
 
 ## New Engine Features
@@ -62,6 +54,7 @@ TODO Add more cool flask images.
 TODO Particle fx smashed crates, startup window etc.
 TODO Add new ninja sprites.
 TODO Add 'crouch' action.
+TODO Add secondary attack action.
 TODO Add 'crouch slide' action.
 TODO Much more air friction for parachute.
 TODO Add 'shuriken throw' action.

@@ -7,7 +7,7 @@ export class SettingDebug {
     public static readonly BG_FOR_MATTER_BODY: boolean              = (false && SettingDebug.DEBUG_MODE);
     public static readonly NO_DELAY_AROUND_PRELOADER: boolean       = (false && SettingDebug.DEBUG_MODE);
     public static readonly DISABLE_SPRITES: boolean                 = (false && SettingDebug.DEBUG_MODE);
-    public static readonly DISABLE_SOUNDS: boolean                  = (true && SettingDebug.DEBUG_MODE);
+    public static readonly DISABLE_SOUNDS: boolean                  = (false && SettingDebug.DEBUG_MODE);
     public static readonly DISABLE_BLEND_PANEL: boolean             = (false && SettingDebug.DEBUG_MODE);
     public static readonly DISABLE_POINTER: boolean                 = (true && SettingDebug.DEBUG_MODE);
     public static readonly MATTERJS_DEBUG_VIEWS: boolean            = (false && SettingDebug.DEBUG_MODE);
