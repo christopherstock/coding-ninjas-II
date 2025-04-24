@@ -30,7 +30,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 'Welcome to the demo of '
                 + '<span class=\'special\'>Coding Ninjas II</span><br>'
                 + '<br>'
-                + 'This is an interactive website presentation<br>'
+                + 'This is an interactive project portfolio<br>'
                 + 'combined with a <span class=\'special\'>Jump \'n Run</span> experience.<br>'
                 + '<br>'
                 + 'The following <span class=\'special\'>keys</span> control your player:<br>',
