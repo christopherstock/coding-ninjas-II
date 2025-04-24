@@ -567,7 +567,6 @@ export class SpriteData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
-    /** Sprite 'grass 1'. */
     static  GRASS_1: SpriteTemplate         = new SpriteTemplate
     (
         [
@@ -583,6 +582,29 @@ export class SpriteData {
             ImageData.GRASS_1_FRAME_10,
             ImageData.GRASS_1_FRAME_11,
             ImageData.GRASS_1_FRAME_12,
+        ],
+        12,
+        MirrorImage.NO,
+        LoopSprite.YES,
+        RandomFrames.ONLY_START_FRAME,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    static  GRASS_2: SpriteTemplate         = new SpriteTemplate
+    (
+        [
+            ImageData.GRASS_2_FRAME_1,
+            ImageData.GRASS_2_FRAME_2,
+            ImageData.GRASS_2_FRAME_3,
+            ImageData.GRASS_2_FRAME_4,
+            ImageData.GRASS_2_FRAME_5,
+            ImageData.GRASS_2_FRAME_6,
+            ImageData.GRASS_2_FRAME_7,
+            ImageData.GRASS_2_FRAME_8,
+            ImageData.GRASS_2_FRAME_9,
+            ImageData.GRASS_2_FRAME_10,
+            ImageData.GRASS_2_FRAME_11,
+            ImageData.GRASS_2_FRAME_12,
         ],
         12,
         MirrorImage.NO,
@@ -674,6 +696,7 @@ export class SpriteData {
             SpriteData.MASKED_NINJA_GUY_WALK_RIGHT,
             SpriteData.WATER_TOP,
             SpriteData.GRASS_1,
+            SpriteData.GRASS_2,
             SpriteData.FLAME_1_BIG,
             SpriteData.FLAME_1_SMALL,
         ];

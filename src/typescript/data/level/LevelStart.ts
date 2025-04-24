@@ -45,9 +45,6 @@ export class LevelStart extends Level {
     *   Adds the startup shrine.
     *******************************************************************************************************************/
     private addHomeShrine(): void {
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 2000, 40,  5, Slope.NONE, CapHorz.NONE);
-
         // enemies
         GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 200, 2000, CharacterFacing.RIGHT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
         GameObjectBundleFactory.createEnemy(SpriteData.BLUE_NINJA_GUY_STAND_LEFT, this, 1700, 2000, CharacterFacing.LEFT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
@@ -56,30 +53,41 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 400, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
         GameObjectBundleFactory.createDecoImage(this, 1200, 2000, DecoPosition.FG, ImageData.TREE_1);
 
-        // statue with bush and grass
+        // statue with bush
         GameObjectBundleFactory.createDecoImage(this, 2000, 2000, DecoPosition.BG, ImageData.STATUE_1);
+        GameObjectBundleFactory.createDecoImage(this, 2030, 2022, DecoPosition.BG, ImageData.BUSH_2);
         GameObjectBundleFactory.createDecoImage(this, 1900, 2000, DecoPosition.FG, ImageData.BUSH_1);
-        GameObjectBundleFactory.createDecoSprite(this, 2300, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, 2350, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, 2400, 2000, DecoPosition.FG, SpriteData.GRASS_1);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
         GameObjectBundleFactory.createDecoImage(this, 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+
+        // grass
+        GameObjectBundleFactory.createDecoSprite(this, 2300, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 2350, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 2400, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 2600, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, 2650, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, 2700, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, 2900, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 2950, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 3000, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 3200, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, 3250, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, 3300, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, 3500, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 3550, 2000, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, 3600, 2000, DecoPosition.FG, SpriteData.GRASS_1);
 
         // tree and lion statue
         GameObjectBundleFactory.createDecoImage(this, 3600, 2000, DecoPosition.FG, ImageData.TREE_1);
         GameObjectBundleFactory.createDecoImage(this, 4285, 2000, DecoPosition.BG, ImageData.STATUE_LION);
         GameObjectBundleFactory.createDecoImage(this, 4600, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
 
-        // slope down
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
-
-        // solid bottom ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
-
-        // door to DoJo
-        GameObjectFactory.createDoor(this, 6600, 2100, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
+        // house with door to DoJo
+        GameObjectBundleFactory.createDecoImage(this, 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
+        GameObjectBundleFactory.createDecoImage(this, 6380, 1850, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
+        GameObjectFactory.createDoor(this, 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400 }));
 
         // bridge and blue water
         GameObjectBundleFactory.createWaterArea(this, 7040, 2260, 20, 4, ImageData.WATER_CENTER);
@@ -91,6 +99,11 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createMovableRect(this, 7240, 2100, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7020, 1975, ImageData.CRATE_WOOD);
         GameObjectBundleFactory.createMovableRect(this, 7155, 1975, ImageData.CRATE_WOOD);
+
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0,    2000, 40,  5, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
     }
 
     /** ****************************************************************************************************************
@@ -103,6 +116,8 @@ export class LevelStart extends Level {
         // sigsaw
         GameObjectFactory.createSigsaw(this, 3400, 2000, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
 
+        // platform
+        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(5260, 2000), matter.Vector.create(6000, 2000) ]);
 
 
     }
@@ -111,9 +126,6 @@ export class LevelStart extends Level {
     *   Adds the 3rd plateau.
     *******************************************************************************************************************/
     private addThirdPlateau(): void {
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 4460, 2000, 5,  5, Slope.NONE, CapHorz.BOTH);
-
         // statue
         GameObjectBundleFactory.createDecoImage(this, 4580, 2000, DecoPosition.BG, ImageData.STATUE_2);
 
@@ -121,10 +133,6 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createCandle(this, 4765, 2000, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, 4865, 2000, DecoPosition.BG);
         GameObjectBundleFactory.createCandle(this, 4965, 2000, DecoPosition.FG);
-
-        // bushes
-        GameObjectBundleFactory.createDecoImage(this, 4630, 2000, DecoPosition.FG, ImageData.BUSH_1);
-        GameObjectBundleFactory.createDecoImage(this, 4690, 2000, DecoPosition.BG, ImageData.BUSH_2);
     }
 
     /** ****************************************************************************************************************
@@ -175,8 +183,6 @@ export class LevelStart extends Level {
     *   Adds the 6th plateau (platform).
     *******************************************************************************************************************/
     private addSixthPlateau(): void {
-        // platform
-        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(5260, 2000), matter.Vector.create(6000, 2000) ]);
     }
 
     /** ****************************************************************************************************************

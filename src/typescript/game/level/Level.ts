@@ -25,28 +25,28 @@ export enum LevelId {
 *   Represents the current level.
 ***********************************************************************************************************************/
 export abstract class Level {
-    public      playerStartX: number                         = 0.0;
-    public      playerStartY: number                         = 0.0;
-    public      playerInitialFloat: boolean                  = false;
-    public      playerInitialFacing: CharacterFacing         = CharacterFacing.RIGHT;
+    public playerStartX: number                 = 0.0;
+    public playerStartY: number                 = 0.0;
+    public playerInitialFloat: boolean          = false;
+    public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
 
-    public      width: number                         = 0.0;
-    public      height: number                         = 0.0;
+    public width: number                        = 0.0;
+    public height: number                       = 0.0;
 
-    public      player: Player                  = null;
-    public      enemies: Bot[]                   = [];
-    public      obstacles: Obstacle[]              = [];
-    public      movables: Movable[]               = [];
-    public      decosBg: Decoration[]            = [];
-    public      decosFg: Decoration[]            = [];
-    public      siteTriggers: SiteTrigger[]           = [];
-    public      sigsaws: SigSaw[]                = [];
-    public      bounces: Bounce[]                = [];
-    public      platforms: Platform[]              = [];
-    public      parallaxBgs: ParallaxDeco[]          = [];
-    public      parallaxFgs: ParallaxDeco[]          = [];
-    public      shrines: Shrine[]                = [];
-    public      doors: Door[]                = [];
+    public player: Player                       = null;
+    public enemies: Bot[]                       = [];
+    public obstacles: Obstacle[]                = [];
+    public movables: Movable[]                  = [];
+    public decosBg: Decoration[]                = [];
+    public decosFg: Decoration[]                = [];
+    public siteTriggers: SiteTrigger[]          = [];
+    public sigsaws: SigSaw[]                    = [];
+    public bounces: Bounce[]                    = [];
+    public platforms: Platform[]                = [];
+    public parallaxBgs: ParallaxDeco[]          = [];
+    public parallaxFgs: ParallaxDeco[]          = [];
+    public shrines: Shrine[]                    = [];
+    public doors: Door[]                        = [];
 
     /** ****************************************************************************************************************
     *   Sets the player and the game objects.

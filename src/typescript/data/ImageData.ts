@@ -176,6 +176,19 @@ export class ImageData {
     static readonly GRASS_1_FRAME_11: string                            = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/11.png';
     static readonly GRASS_1_FRAME_12: string                            = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/12.png';
 
+    static readonly GRASS_2_FRAME_1: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/01.png';
+    static readonly GRASS_2_FRAME_2: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/02.png';
+    static readonly GRASS_2_FRAME_3: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/03.png';
+    static readonly GRASS_2_FRAME_4: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/04.png';
+    static readonly GRASS_2_FRAME_5: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/05.png';
+    static readonly GRASS_2_FRAME_6: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/06.png';
+    static readonly GRASS_2_FRAME_7: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/07.png';
+    static readonly GRASS_2_FRAME_8: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/08.png';
+    static readonly GRASS_2_FRAME_9: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/09.png';
+    static readonly GRASS_2_FRAME_10: string                            = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/10.png';
+    static readonly GRASS_2_FRAME_11: string                            = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/11.png';
+    static readonly GRASS_2_FRAME_12: string                            = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass2/12.png';
+
     static readonly FLAME_1_FRAME_1: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/01.png';
     static readonly FLAME_1_FRAME_2: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/02.png';
     static readonly FLAME_1_FRAME_3: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'flame1/03.png';
@@ -463,6 +476,19 @@ export class ImageData {
             ImageData.GRASS_1_FRAME_10,
             ImageData.GRASS_1_FRAME_11,
             ImageData.GRASS_1_FRAME_12,
+
+            ImageData.GRASS_2_FRAME_1,
+            ImageData.GRASS_2_FRAME_2,
+            ImageData.GRASS_2_FRAME_3,
+            ImageData.GRASS_2_FRAME_4,
+            ImageData.GRASS_2_FRAME_5,
+            ImageData.GRASS_2_FRAME_6,
+            ImageData.GRASS_2_FRAME_7,
+            ImageData.GRASS_2_FRAME_8,
+            ImageData.GRASS_2_FRAME_9,
+            ImageData.GRASS_2_FRAME_10,
+            ImageData.GRASS_2_FRAME_11,
+            ImageData.GRASS_2_FRAME_12,
 
             ImageData.FLAME_1_FRAME_1,
             ImageData.FLAME_1_FRAME_2,
