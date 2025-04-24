@@ -161,8 +161,14 @@ export class ImageData {
     static readonly DOOR_8: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door8.png';
     static readonly HOUSE_FRONT_1: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront1.jpg';
     static readonly HOUSE_FRONT_2: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront2.jpg';
+    static readonly HOUSE_FRONT_3: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront3.jpg';
+    static readonly HOUSE_FRONT_4: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront4.jpg';
+    static readonly HOUSE_FRONT_5: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseFront5.jpg';
     static readonly HOUSE_ROOF_1: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof1.png';
     static readonly HOUSE_ROOF_2: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof2.png';
+    static readonly HOUSE_ROOF_3: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof3.png';
+    static readonly HOUSE_ROOF_4: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof4.png';
+    static readonly HOUSE_ROOF_5: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'houseRoof5.png';
 
     static readonly GRASS_1_FRAME_1: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/01.png';
     static readonly GRASS_1_FRAME_2: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'grass1/02.png';
@@ -462,8 +468,14 @@ export class ImageData {
         ImageData.DOOR_8,
         ImageData.HOUSE_FRONT_1,
         ImageData.HOUSE_FRONT_2,
+        ImageData.HOUSE_FRONT_3,
+        ImageData.HOUSE_FRONT_4,
+        ImageData.HOUSE_FRONT_5,
         ImageData.HOUSE_ROOF_1,
         ImageData.HOUSE_ROOF_2,
+        ImageData.HOUSE_ROOF_3,
+        ImageData.HOUSE_ROOF_4,
+        ImageData.HOUSE_ROOF_5,
 
         ImageData.GRASS_1_FRAME_1,
         ImageData.GRASS_1_FRAME_2,
