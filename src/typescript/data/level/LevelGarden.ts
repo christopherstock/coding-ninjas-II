@@ -13,7 +13,7 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 *   The level data for the Garden level.
 ***********************************************************************************************************************/
 export class LevelGarden extends Level {
-    public playerStartX: number = 1400;
+    public playerStartX: number = 250;
     public playerStartY: number = 1400;
     public playerInitialFloat: boolean = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -43,8 +43,11 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
 
-        // door back to start level
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6730, playerStartY: 2100 }));
+        // door back to DoJo
+        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2030, playerStartY: 1400 }));
+
+        // door to market
+        GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_MARKET, playerStartX: 1020 }));
 
         // pots
         const x = -1800;

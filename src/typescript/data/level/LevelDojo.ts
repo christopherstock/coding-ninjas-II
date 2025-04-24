@@ -20,7 +20,7 @@ import { SpriteData } from '../SpriteData';
 *   The level data for the DoJo level.
 ***********************************************************************************************************************/
 export class LevelDojo extends Level {
-    public playerStartX: number = 1400;
+    public playerStartX: number = 250;
     public playerStartY: number = 1400;
     public playerInitialFloat: boolean = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -56,18 +56,9 @@ export class LevelDojo extends Level {
         // door back to start
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6630, playerStartY: 2100 }));
 
-        // door to garden
-        GameObjectFactory.createDoor(this, 1500, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
-
         // table with flasks and pots
-        let x = -1800;
+        let x = -1500;
         let y = -700;
-        GameObjectBundleFactory.createMovableRect(this, x + 2420, y + 2100, ImageData.TABLE_1);
-        GameObjectBundleFactory.createMovableRect(this, x + 2430, y + 1930, ImageData.FLASK_1);
-        GameObjectBundleFactory.createMovableRect(this, x + 2462, y + 1930, ImageData.FLASK_2);
-        GameObjectBundleFactory.createMovableRect(this, x + 2513, y + 1930, ImageData.FLASK_3);
-        GameObjectBundleFactory.createMovableRect(this, x + 2558, y + 2100, ImageData.POT_1);
-
         GameObjectBundleFactory.createMovableRect(this, x + 1920, y + 2100, ImageData.TABLE_1);
         GameObjectBundleFactory.createMovableRect(this, x + 1930, y + 1930, ImageData.FLASK_1);
         GameObjectBundleFactory.createMovableRect(this, x + 1962, y + 1930, ImageData.FLASK_2);
@@ -75,31 +66,23 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1);
 
         // flasks on the floor
-        GameObjectBundleFactory.createMovableRect(this, x + 2633, y + 2100, ImageData.FLASK_2);
-        GameObjectBundleFactory.createMovableRect(this, x + 2684, y + 2100, ImageData.FLASK_1);
+        GameObjectBundleFactory.createMovableRect(this, x + 2133, y + 2100, ImageData.FLASK_2);
+        GameObjectBundleFactory.createMovableRect(this, x + 2184, y + 2100, ImageData.FLASK_1);
 
-        // chandelier
+        // chandelier and candles
         x = -12300;
         y = -700;
-
         GameObjectBundleFactory.createDecoImage(this, x + 13673, y + 1805, DecoPosition.FG, ImageData.CHANDELIER);
         GameObjectBundleFactory.createDecoSprite(this, x + 13666, y + 1601, DecoPosition.FG, SpriteData.FLAME_1_BIG);
         GameObjectBundleFactory.createDecoSprite(this, x + 13720, y + 1586, DecoPosition.FG, SpriteData.FLAME_1_BIG);
         GameObjectBundleFactory.createDecoSprite(this, x + 13854, y + 1588, DecoPosition.FG, SpriteData.FLAME_1_BIG);
         GameObjectBundleFactory.createDecoSprite(this, x + 13905, y + 1617, DecoPosition.FG, SpriteData.FLAME_1_BIG);
-
-        // candles
         GameObjectBundleFactory.createCandle(this, x + 13500, y + 2100, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, x + 13600, y + 2100, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, x + 14000, y + 2100, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, x + 14100, y + 2100, DecoPosition.FG);
 
-        // table with flasks
-        x = -500;
-        GameObjectBundleFactory.createMovableRect(this, x + 2420, y + 2100, ImageData.TABLE_1);
-        GameObjectBundleFactory.createMovableRect(this, x + 2430, y + 1930, ImageData.FLASK_1);
-        GameObjectBundleFactory.createMovableRect(this, x + 2462, y + 1930, ImageData.FLASK_2);
-        GameObjectBundleFactory.createMovableRect(this, x + 2513, y + 1930, ImageData.FLASK_3);
-        GameObjectBundleFactory.createMovableRect(this, x + 2558, y + 2100, ImageData.POT_1);
+        // door to garden
+        GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
     }
 }
