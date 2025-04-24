@@ -1,10 +1,8 @@
-import * as matter from 'matter-js';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { SettingMatter } from '../../../base/SettingMatter';
 import { Main } from '../../../base/Main';
 import { SettingGame } from '../../../base/SettingGame';
-import { Debug } from '../../../base/Debug';
 import { CharacterSpriteSet } from './CharacterSpriteSet';
 import { Character } from './Character';
 import { CharacterFacing } from './CharacterFacing';
@@ -202,6 +200,7 @@ export class Bot extends Character {
     /** ****************************************************************************************************************
     *   Check if the enemy collides with the player.
     *******************************************************************************************************************/
+/*
     private checkPlayerCollision(): void {
         // only if player is not punched back
         if (Main.game.level.player.punchBackTicks === 0) {
@@ -225,4 +224,5 @@ export class Bot extends Character {
             }
         }
     }
+*/
 }

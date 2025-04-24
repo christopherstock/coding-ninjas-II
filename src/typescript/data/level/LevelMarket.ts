@@ -15,7 +15,7 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 *   The level data for the Garden level.
 ***********************************************************************************************************************/
 export class LevelMarket extends Level {
-    public playerStartX: number = 250;
+    public playerStartX: number = 4500;
     public playerStartY: number = 1400;
     public playerInitialFloat: boolean = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
