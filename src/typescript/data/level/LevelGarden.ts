@@ -62,7 +62,7 @@ export class LevelGarden extends Level {
         // sigsaw
         GameObjectFactory.createSigsaw(this, 3200, 1250, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
         // platform
-        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(5260, 1250), matter.Vector.create(6000, 1250) ]);
+        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(4000, 1250), matter.Vector.create(5000, 1250) ]);
         // bounce
         GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
 
