@@ -107,7 +107,9 @@ export class Player extends Character {
             keySystem.setNeedsRelease(KeyData.KEY_UP);
 
             if (this.collidesBottom) {
-                this.jump();
+                if (!this.requestInteraction()) {
+                    this.jump();
+                }
             } else {
                 if (!this.isGliding && !this.glidingRequest && !this.collidesBottom) {
                     this.requestGliding();
@@ -133,13 +135,13 @@ export class Player extends Character {
                 this.jump();
             }
         }
-
+/*
         if (keySystem.isPressed(KeyData.KEY_E)) {
             keySystem.setNeedsRelease(KeyData.KEY_E);
 
             this.requestInteraction();
         }
-
+*/
         if (keySystem.isPressed(KeyData.KEY_SPACE)) {
             keySystem.setNeedsRelease(KeyData.KEY_SPACE);
 

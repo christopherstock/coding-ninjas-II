@@ -284,8 +284,8 @@ export class ImageData {
     static readonly BILLBOARD_WEB_APPS: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebapps.png';
 
     static readonly SITE_PANEL_LOGO: string                             = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
-    static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft_a90.png';
-    static readonly SITE_PANEL_BG_RIGHT: string                         = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight_a90.png';
+    static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
+    static readonly SITE_PANEL_BG_RIGHT: string                         = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight.png';
     static readonly SITE_PANEL_CAROUSEL_DESKTOP: string                 = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
     static readonly SITE_PANEL_CAROUSEL_MOBILE: string                  = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselMobile.jpg';
     static readonly SITE_PANEL_CAROUSEL_WEB_APPS: string                = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebApps.jpg';

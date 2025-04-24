@@ -27,7 +27,6 @@ export abstract class Character extends GameObject {
 
     protected glidingRequest: boolean                   = false;
     protected paraCloseRequest: boolean                   = false;
-    protected interactionRequest: boolean               = false;
 
     private readonly speedMove: number                  = 0.0;
     private readonly jumpPower: number                  = 0.0;
@@ -93,7 +92,6 @@ export abstract class Character extends GameObject {
         }
 
         this.resetRotation();
-        this.checkInteraction();
         this.checkBottomCollision();
         this.checkParachuteState();
     }
@@ -273,10 +271,16 @@ export abstract class Character extends GameObject {
         this.paraCloseRequest = true;
     }
 
-    protected requestInteraction(): void {
+    protected requestInteraction(): boolean {
         Debug.character.log('Character requests interaction');
 
-        this.interactionRequest = true;
+        for (const door of Main.game.level.doors) {
+            if (door.checkInteraction()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /** ****************************************************************************************************************
@@ -477,16 +481,6 @@ export abstract class Character extends GameObject {
                     )
                 ).length > 0
             );
-        }
-    }
-
-    private checkInteraction(): void {
-        if (this.interactionRequest) {
-            for (const door of Main.game.level.doors) {
-                if (door.checkInteraction()) {break;}
-            }
-
-            this.interactionRequest = false;
         }
     }
 }
