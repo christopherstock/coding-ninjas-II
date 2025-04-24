@@ -20,13 +20,12 @@ import { SpriteData } from '../SpriteData';
 *   The level data for the DoJo level.
 ***********************************************************************************************************************/
 export class LevelDojo extends Level {
+    public width: number = 3584;
+    public height: number = 2500;
     public playerStartX: number = 250;
     public playerStartY: number = 1400;
     public playerInitialFloat: boolean = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
-
-    public width: number = 2500;
-    public height: number = 2500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.
@@ -46,13 +45,6 @@ export class LevelDojo extends Level {
     *   Adds the startup shrine.
     *******************************************************************************************************************/
     private addHomeShrine(): void {
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 18,  3, Slope.NONE, CapHorz.NONE);
-
-        // walls
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 2432, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
-
         // door back to start
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6630, playerStartY: 2100 }));
 
@@ -82,7 +74,16 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createCandle(this, x + 14000, y + 2100, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, x + 14100, y + 2100, DecoPosition.FG);
 
+        // billboard 'welcome'
+        GameObjectBundleFactory.createDecoImage(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD);
+        GameObjectBundleFactory.createDecoImage(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+
         // door to garden
-        GameObjectFactory.createDoor(this, 2000, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 1020, playerStartY: 1400 }));
+
+        // ground and walls
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 26,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 3456, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
     }
 }

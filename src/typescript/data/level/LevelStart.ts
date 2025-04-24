@@ -19,13 +19,12 @@ import { MirrorImage } from '../../engine/ui/MirrorImage';
 *   The level data for the dev level.
 ***********************************************************************************************************************/
 export class LevelStart extends Level {
+    public  width: number = 12500;
+    public  height: number = 2500;
     public  playerStartX: number = 250;
     public  playerStartY: number = 2000;
     public  playerInitialFloat: boolean = false;
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
-
-    public  width: number = 12500;
-    public  height: number = 2500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.

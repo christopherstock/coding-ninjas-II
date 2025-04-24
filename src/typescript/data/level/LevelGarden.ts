@@ -13,13 +13,12 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 *   The level data for the Garden level.
 ***********************************************************************************************************************/
 export class LevelGarden extends Level {
+    public width: number = 15000;
+    public height: number = 4500;
     public playerStartX: number = 250;
     public playerStartY: number = 1400;
     public playerInitialFloat: boolean = false;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
-
-    public width: number = 15000;
-    public height: number = 4500;
 
     /** ****************************************************************************************************************
     *   Inits a new level.
