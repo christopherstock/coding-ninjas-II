@@ -22,7 +22,7 @@ export class SettingEngine {
     static readonly COLOR_PRIMARY_CSS: string                   = '#b42157';
 
     /** Center camera according to player facing Specifies if the camera shall center the horizontal axis on panels rushing in. */
-    static readonly CAMERA_ALWAYS_CENTER_X: boolean             = false;
+    static readonly CENTER_CAMERA_X_ON_PANELS: boolean             = true;
     /** The camera ration for the horizontal axis. */
     static readonly CAMERA_RATIO_X: number                      = 0.4;
     /** The camera ration for the vertical axis. */

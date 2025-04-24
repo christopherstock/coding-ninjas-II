@@ -151,15 +151,15 @@ export class SitePanel {
         switch (this.position) {
             case SitePanelPosition.LEFT:
             {
-                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInLeft';
-                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
+                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
+                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow slideInLeft';
                 break;
             }
 
             case SitePanelPosition.RIGHT:
             {
-                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceInRight';
-                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
+                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeIn';
+                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow slideInRight';
                 break;
             }
         }
@@ -173,15 +173,15 @@ export class SitePanel {
         switch (this.position) {
             case SitePanelPosition.LEFT:
             {
-                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutLeft';
-                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
+                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
+                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow slideOutLeft';
                 break;
             }
 
             case SitePanelPosition.RIGHT:
             {
-                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow bounceOutRight';
-                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
+                // this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow fadeOut';
+                this.outerAbsoluteContainer.className = 'sitePanel outerAbsoluteContainer wow slideOutRight';
                 break;
             }
         }

@@ -20,14 +20,14 @@ export class SettingGame {
     /** The default scale factor for all sprites. */
     public static readonly DEFAULT_SPRITE_SCALE: number                         = 1.0;
 
+    /** The duration for showing and hiding the site panel in ms. */
+    public static readonly SITE_PANEL_ANIMATION_DURATION: number                = 2500;
     /** The minimum width for the site panel. */
     public static readonly SITE_PANEL_MIN_WIDTH: number                         = 600;
     /** The maximum width for the site panel. */
     public static readonly SITE_PANEL_MAX_WIDTH: number                         = 600;
     /** The maximum height for the site panel. -1 disables the check. */
     public static readonly SITE_PANEL_MAX_HEIGHT: number                        = -1;
-    /** The duration for showing and hiding the site panel in ms. */
-    public static readonly SITE_PANEL_ANIMATION_DURATION: number                = 500;
     /** The outer border size for the site panel and all HUD elements in px. */
     public static readonly SITE_PANEL_BORDER_SIZE_OUTER: number                 = 0;
     /** The inner border size for the inner site panel container. */

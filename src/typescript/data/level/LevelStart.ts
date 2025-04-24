@@ -21,8 +21,8 @@ export class LevelStart extends Level {
     public  width: number = 8320;
     public  height: number = 2500;
     public  playerStartX: number = 250;
-    public  playerStartY: number = 2000;
-    public  playerInitialFloat: boolean = false;
+    public  playerStartY: number = 1250;
+    public  playerInitialFloat: boolean = true;
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
 
     /** ****************************************************************************************************************
@@ -45,14 +45,10 @@ export class LevelStart extends Level {
         const x = 0;
 
         // site trigger
-        GameObjectFactory.createSiteTrigger(this, x + 500, 2000, 750, 550, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
+        GameObjectFactory.createSiteTrigger(this, x + 0, 2000, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
 
-        // enemies
-        GameObjectBundleFactory.createEnemy(this, x + 200, 2000, CharacterFacing.RIGHT, 200, 1700, CharacterSpriteData.BLUE_NINJA_GUY, false);
-        GameObjectBundleFactory.createEnemy(this, x + 1700, 2000, CharacterFacing.LEFT, 200, 1700, CharacterSpriteData.MASKED_NINJA_GUY, false);
-
-        // trees
-        GameObjectBundleFactory.createDecoImage(this, x + 1200, 2000, DecoPosition.FG, ImageData.TREE_1);
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 500, 2000, DecoPosition.FG, ImageData.TREE_1);
 
         // statue with bush
         GameObjectBundleFactory.createCandle(this, x + 2170, 2000, DecoPosition.BG);
@@ -71,6 +67,10 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoSprite(this, x + 3050, 2000, DecoPosition.FG, SpriteData.GRASS_2);
         GameObjectBundleFactory.createDecoSprite(this, x + 3100, 2000, DecoPosition.FG, SpriteData.GRASS_2);
         GameObjectBundleFactory.createDecoSprite(this, x + 3150, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+
+        // enemies
+        GameObjectBundleFactory.createEnemy(this, x + 3350, 2000, CharacterFacing.RIGHT, 3350, 4850, CharacterSpriteData.BLUE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 4850, 2000, CharacterFacing.LEFT, 3350, 4850, CharacterSpriteData.MASKED_NINJA_GUY, false);
 
         // lion statue with trees and grass
         GameObjectBundleFactory.createDecoImage(this, x + 3630, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);

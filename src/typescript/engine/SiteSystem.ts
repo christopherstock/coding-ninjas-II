@@ -214,7 +214,7 @@ export class SiteSystem {
     public getCameraTargetX(): number {
         // center camera X if no panels are showing
         if (
-            SettingEngine.CAMERA_ALWAYS_CENTER_X
+            SettingEngine.CENTER_CAMERA_X_ON_PANELS
             || this.animationState === SitePanelAnimation.HIDDEN
             || this.animationState === SitePanelAnimation.HIDING
         ) {
