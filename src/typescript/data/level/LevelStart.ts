@@ -49,7 +49,7 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 500, 2000, DecoPosition.FG, ImageData.TREE_1);
 
         // statue shrine
-        GameObjectBundleFactory.createStatusShrine(this, x + 1425, 2000);
+        GameObjectBundleFactory.createStatusShrine(this, x + 1625, 2000);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);

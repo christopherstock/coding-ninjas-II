@@ -28,9 +28,9 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         {
             SiteContentFactory.createParagraph(
                 'Welcome to the demo of '
-                + '<span class=\'special\'>Coding Ninjas II</span>.<br>'
+                + '<span class=\'special\'>Coding Ninjas II</span><br>'
                 + '<br>'
-                + 'This is an interactive website presentation,<br>'
+                + 'This is an interactive website presentation<br>'
                 + 'combined with a <span class=\'special\'>Jump \'n Run</span> experience.<br>'
                 + '<br>'
                 + 'The following <span class=\'special\'>keys</span> control your player:<br>',
@@ -55,12 +55,12 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                             )
                         }
                     </td>
-                    <td style={{ width: '240px', verticalAlign: 'top' }}>
+                    <td style={{ width: '230px', verticalAlign: 'top' }}>
                         {
                             SiteContentFactory.createParagraph(
                                 'Walk<br>'
                                 + 'Jump<br>'
-                                + 'Open/Close Parachute (in air)<br>'
+                                + 'Open/Close Parachute (in Air)<br>'
                                 + 'Open Door<br>'
                                 + 'Strike Katana<br>',
                                 'right'

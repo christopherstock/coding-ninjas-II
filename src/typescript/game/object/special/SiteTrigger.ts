@@ -61,7 +61,6 @@ export class SiteTrigger extends Decoration {
     public render(): void {
         super.render();
 
-        // check if player collides with this trigger
         if (this.checkPlayerCollision()) {
             if (this.dismiss) {
                 if (this.sitePanelActive) {
@@ -83,6 +82,7 @@ export class SiteTrigger extends Decoration {
             }
         } else {
             this.dismiss = false;
+
             if (this.sitePanelActive) {
                 if (Main.game.engine.siteSystem.hide()) {
                     Main.game.level.setShrineBookOpen(this.content, false);

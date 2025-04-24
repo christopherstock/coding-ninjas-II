@@ -83,9 +83,9 @@ export class LevelDojo extends Level {
         GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));
 
         // crates
-        GameObjectBundleFactory.createMovableRect(this, 3000, 1400, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 3145, 1400, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 3070, 1275, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 3060, 1400, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 3205, 1400, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 3130, 1275, ImageData.CRATE_WOOD);
 
         // ground and walls
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 26,  3, Slope.NONE, CapHorz.NONE);
