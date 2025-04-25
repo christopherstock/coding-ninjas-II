@@ -10,8 +10,8 @@ export class SettingEngine {
 
     static readonly PRELOADER_DELAY: number                     = 250;
 
-    static readonly DARKEN_PANEL_TICKS_DOOR_SWITCH: number      = 75;
-    static readonly DARKEN_PANEL_TICKS_STARTUP: number          = 300;
+    static readonly DARKEN_PANEL_TICKS_DOOR_SWITCH: number      = 50;
+    static readonly DARKEN_PANEL_TICKS_STARTUP: number          = 250;
     static readonly ENGINE_SLOW_MOTION_TICKS: number            = 0; // 150;
 
     static readonly COLOR_BG_MATTER_JS_CSS: string              = '#000000';
