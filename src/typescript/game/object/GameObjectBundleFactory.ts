@@ -12,7 +12,7 @@ import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { Player } from './being/Player';
 import { GameObjectFactory } from './GameObjectFactory';
 import { JumpPassThrough, Obstacle } from './primal/Obstacle';
-import { Movable } from './primal/Movable';
+import {Breakable, Movable} from './primal/Movable';
 import { CharacterSpriteSet } from './being/CharacterSpriteSet';
 import { Bot } from './being/Bot';
 import { Decoration } from './deco/Decoration';
@@ -485,7 +485,7 @@ export abstract class GameObjectBundleFactory {
         imageId: string,
         density: number = BodyDensity.DEFAULT,
         friction: number = BodyFriction.DEFAULT_MOVABLE,
-        breakable: boolean = false
+        breakable: Breakable = Breakable.NO
     ): void {
         const movable: Movable = GameObjectFactory.createMovableRect(
             xLeft,

@@ -16,7 +16,7 @@ export enum Breakable {
 *   Represents a movable box.
 ***********************************************************************************************************************/
 export class Movable extends GameObject {
-    public breakable: boolean = false;
+    public breakable: Breakable = Breakable.NO;
     public energy: number = 100.0;
 
     /** ****************************************************************************************************************
@@ -32,7 +32,7 @@ export class Movable extends GameObject {
         spriteTemplate: SpriteTemplate,
         x: number,
         y: number,
-        breakable: boolean = false
+        breakable: Breakable = Breakable.NO
     ) {
         super(
             shape,

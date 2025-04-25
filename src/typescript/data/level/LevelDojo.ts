@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import { Level, LevelId } from '../../game/level/Level';
+import {Level, LevelId} from '../../game/level/Level';
 import {
     CapHorz,
     CapVert,
@@ -8,14 +8,15 @@ import {
     GameObjectBundleFactory,
     Slope,
 } from '../../game/object/GameObjectBundleFactory';
-import { GameObjectFactory } from '../../game/object/GameObjectFactory';
-import { ImageData } from '../ImageData';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { TilesetData } from '../TilesetData';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { SpriteData } from '../SpriteData';
+import {GameObjectFactory} from '../../game/object/GameObjectFactory';
+import {ImageData} from '../ImageData';
+import {GameAction, GameActionType} from '../../game/object/GameAction';
+import {TilesetData} from '../TilesetData';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {CharacterFacing} from '../../game/object/being/CharacterFacing';
+import {SpriteData} from '../SpriteData';
 import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
+import {Breakable} from "../../game/object/primal/Movable";
 
 /** ********************************************************************************************************************
 *   The level data for the DoJo level.
@@ -53,14 +54,14 @@ export class LevelDojo extends Level {
         let x = -1500;
         let y = -700;
         GameObjectBundleFactory.createMovableRect(this, x + 1920, y + 2100, ImageData.TABLE_1);
-        GameObjectBundleFactory.createMovableRect(this, x + 1930, y + 1930, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, true);
-        GameObjectBundleFactory.createMovableRect(this, x + 1962, y + 1930, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, true);
-        GameObjectBundleFactory.createMovableRect(this, x + 2013, y + 1930, ImageData.FLASK_3, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, true);
-        GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, true);
+        GameObjectBundleFactory.createMovableRect(this, x + 1930, y + 1930, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 1962, y + 1930, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 2013, y + 1930, ImageData.FLASK_3, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1);
 
         // flasks on the floor
-        GameObjectBundleFactory.createMovableRect(this, x + 2133, y + 2100, ImageData.FLASK_2);
-        GameObjectBundleFactory.createMovableRect(this, x + 2184, y + 2100, ImageData.FLASK_1);
+        GameObjectBundleFactory.createMovableRect(this, x + 2133, y + 2100, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 2184, y + 2100, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // chandelier
         x = -12300;
@@ -84,9 +85,9 @@ export class LevelDojo extends Level {
         GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));
 
         // crates
-        GameObjectBundleFactory.createMovableRect(this, 3060, 1400, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 3205, 1400, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, 3130, 1275, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, 3205, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, 3130, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // ground and walls
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 26,  3, Slope.NONE, CapHorz.NONE);

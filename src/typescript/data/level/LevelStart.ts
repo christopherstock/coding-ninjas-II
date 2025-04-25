@@ -13,6 +13,8 @@ import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { CharacterSpriteData } from '../CharacterSpriteData';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
+import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
+import {Breakable} from "../../game/object/primal/Movable";
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -108,11 +110,11 @@ export class LevelStart extends Level {
         GameObjectFactory.createDoor(this, x - 5870 + 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // wooden crates
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 6950, 2100, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7095, 2100, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7240, 2100, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7020, 1975, ImageData.CRATE_WOOD);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7155, 1975, ImageData.CRATE_WOOD);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 6950, 2100, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7095, 2100, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7240, 2100, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7020, 1975, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7155, 1975, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, x - 5870 + 7110, 2100, true);
