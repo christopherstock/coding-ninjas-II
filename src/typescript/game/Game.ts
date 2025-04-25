@@ -53,9 +53,6 @@ export class Game {
     public start(): void {
         DebugLog.init.log('Starting the game loop');
 
-        // set the number of blend panel ticks
-        this.blendPanelTicks = SettingGame.BLEND_PANEL_TICKS;
-
         // init matter.js engine
         this.engine.initMatterJS();
 
@@ -64,6 +61,9 @@ export class Game {
 
         // launch initial level
         this.resetAndLaunchLevel(LevelId.LEVEL_START);
+
+        // set the number of blend panel ticks
+        this.startBlendPanelAnim();
 
         // update camera bounds
         this.updateAndAssignCamera();
@@ -194,6 +194,10 @@ export class Game {
         Main.game.engine.keySystem.releaseAllKeys();
     }
 
+    public startBlendPanelAnim(): void {
+        this.blendPanelTicks = SettingEngine.BLEND_PANEL_TICKS;
+    }
+
     /** ****************************************************************************************************************
     *   Being invoked each tick of the game loop in order to render the game.
     *******************************************************************************************************************/
@@ -227,9 +231,12 @@ export class Game {
     *   Renders all game components.
     *******************************************************************************************************************/
     private render(): void {
-        // hide blend panel if active
         if (this.blendPanelTicks > 0) {
+            this.level.player.setFrozen(true);
             --this.blendPanelTicks;
+            if (this.blendPanelTicks === 0) {
+                this.level.player.setFrozen(false);
+            }
         }
 
         // render level
@@ -291,7 +298,7 @@ export class Game {
                 this.engine.canvasSystem.getPhysicalWidth(),
                 this.engine.canvasSystem.getPhysicalHeight(),
                 'rgba( 0, 0, 0, '
-                + String(this.blendPanelTicks / SettingGame.BLEND_PANEL_TICKS)
+                + String(this.blendPanelTicks / SettingEngine.BLEND_PANEL_TICKS)
                 + ' )'
             );
         }

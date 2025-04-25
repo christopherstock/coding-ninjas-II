@@ -55,6 +55,7 @@ export class Door extends Decoration {
         );
 
         if (doorActivated) {
+            Main.game.startBlendPanelAnim();
             Main.game.resetAndLaunchLevel(
                 this.action.data.targetLevel,
                 this.action.data.playerStartX,

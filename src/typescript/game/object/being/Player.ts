@@ -17,6 +17,8 @@ import { CharacterFacing } from './CharacterFacing';
 *   Represents the player being controlled by the user.
 ***********************************************************************************************************************/
 export class Player extends Character {
+    private frozen = false;
+
     /** ****************************************************************************************************************
     *   Creates a new player instance.
     *
@@ -61,7 +63,7 @@ export class Player extends Character {
     public render(): void {
         super.render();
 
-        if (this.state !== GameObjectState.DEAD) {
+        if (this.state !== GameObjectState.DEAD && !this.frozen) {
             this.handleKeys(Main.game.engine.keySystem);
             this.checkEnemyKill();
         }
@@ -70,6 +72,10 @@ export class Player extends Character {
         this.assignCurrentSprite();
 
         this.checkFallToDeath();
+    }
+
+    public setFrozen(frozen: boolean) {
+        this.frozen = frozen;
     }
 
     /** ****************************************************************************************************************

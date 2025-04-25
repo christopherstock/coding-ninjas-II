@@ -2,44 +2,44 @@
 
 ## MVP (Primary)
 ```
-Fade Effect on switching levels
-TODO Add event triggers! ( for falling obstacles, new enemies etc )
-TODO remove all unused confusing panel images!
-TODO fix moving plateau?
-TODO Add destroyable obstacles.
-TODO Add 'destroyable' flag for Movables
+- Fade Effect on switching levels
+- Add event triggers! ( for falling obstacles, new enemies etc )
+- remove all unused confusing panel images!
+- fix moving plateau?
+- Add destroyable obstacles.
+- Add 'destroyable' flag for Movables
 ```
 
 ## Possible New Game/Engine Features
 ```
-TODO Add decoration particle effects on smashing objects / windows etc.
-TODO Add destroyable movables.
-TODO Debug Disable Pointer control.
-TODO Add canvas max width?
-TODO Add GitLab CI/CD pipeline
-TODO Improve image sequence handling in ImageData (FILE_NAMES) by class access?
-TODO Fix falling/standing-flickering when player lands on flask.
-TODO Remove static access on Main.game?
-TODO Enable Panels popping up left AND right?
-TODO Setting for light or dark preloader.
-TODO Enum 'Wearpon' with according damage values?
-TODO Create HUD ( for picked items etc )?
-TODO create class HUD with own paint-method.
-TODO Add Camera joyride on level startup?
-TODO Add new ninja sprites.
-TODO Particle fx on smashed crates, startup window etc.
-TODO Green bubbling water - fix tiles. etc.
-TODO Create different ground tilesets.
-TODO Doors that warp.
-TODO Add 'katana strike' action in air.
-TODO Add more cool flask images.
-TODO Add 'crouch- and crouch+slide' action.
-TODO Add secondary attack action.
-TODO Add 'shuriken throw' action.
-TODO Friendly Bots that talk to you.
-TODO Sound effects for ninja girl actions and enemies
-TODO Player shooting or throwing objects.
-TODO Collectables.
-TODO Create item pickup HUD effect?
-TODO Selectable panel animations?
+- Add decoration particle effects on smashing objects / windows etc.
+- Add destroyable movables.
+- Debug Disable Pointer control.
+- Add canvas max width?
+- Add GitLab CI/CD pipeline
+- Improve image sequence handling in ImageData (FILE_NAMES) by class access?
+- Fix falling/standing-flickering when player lands on flask.
+- Remove static access on Main.game?
+- Enable Panels popping up left AND right?
+- Setting for light or dark preloader.
+- Enum 'Wearpon' with according damage values?
+- Create HUD ( for picked items etc )?
+- create class HUD with own paint-method.
+- Add Camera joyride on level startup?
+- Add new ninja sprites.
+- Particle fx on smashed crates, startup window etc.
+- Green bubbling water - fix tiles. etc.
+- Create different ground tilesets.
+- Doors that warp.
+- Add 'katana strike' action in air.
+- Add more cool flask images.
+- Add 'crouch- and crouch+slide' action.
+- Add secondary attack action.
+- Add 'shuriken throw' action.
+- Friendly Bots that talk to you.
+- Sound effects for ninja girl actions and enemies
+- Player shooting or throwing objects.
+- Collectables.
+- Create item pickup HUD effect?
+- Selectable panel animations?
 ```
