@@ -14,6 +14,7 @@ import { LevelGarden } from '../data/level/LevelGarden';
 import { LevelMarket } from '../data/level/LevelMarket';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
+import {BlendPanel} from "../engine/ui/BlendPanel";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -25,10 +26,7 @@ export class Game {
     private bgMusic: HTMLAudioElement               = null;
     private slowMotionTicks: number                 = 0;
 
-    // TODO extract to class BlendPanel
-    private blendPanelTicks: number                 = 0;
-    private blendPanelCompleteCallback: ()=> void   = null;
-    private blendPanelTotalTicks: number            = 0;
+    private blendPanel: BlendPanel                  = new BlendPanel();
 
     /** ****************************************************************************************************************
     *   Shows the preloader.
@@ -170,9 +168,9 @@ export class Game {
     }
 
     public startDarkenPanelFadeOut(ticks: number = SettingEngine.BLEND_PANEL_TICKS, fadeIn: boolean = false, onComplete: ()=> void = (): void => { /* */ }): void {
-        this.blendPanelTicks = (fadeIn ? -ticks : ticks);
-        this.blendPanelTotalTicks = ticks;
-        this.blendPanelCompleteCallback = onComplete;
+        this.blendPanel.blendPanelTicks = (fadeIn ? -ticks : ticks);
+        this.blendPanel.blendPanelTotalTicks = ticks;
+        this.blendPanel.blendPanelCompleteCallback = onComplete;
     }
 
     /** ****************************************************************************************************************
@@ -208,19 +206,19 @@ export class Game {
     *   Renders all game components.
     *******************************************************************************************************************/
     private render(): void {
-        if (this.blendPanelTicks > 0) {
+        if (this.blendPanel.blendPanelTicks > 0) {
             this.level.player.setFrozen(true);
-            --this.blendPanelTicks;
-            if (this.blendPanelTicks === 0) {
+            --this.blendPanel.blendPanelTicks;
+            if (this.blendPanel.blendPanelTicks === 0) {
                 this.level.player.setFrozen(false);
-                this.blendPanelCompleteCallback();
+                this.blendPanel.blendPanelCompleteCallback();
             }
-        } else if (this.blendPanelTicks < 0) {
+        } else if (this.blendPanel.blendPanelTicks < 0) {
             this.level.player.setFrozen(true);
-            ++this.blendPanelTicks;
-            if (this.blendPanelTicks === 0) {
+            ++this.blendPanel.blendPanelTicks;
+            if (this.blendPanel.blendPanelTicks === 0) {
                 this.level.player.setFrozen(false);
-                this.blendPanelCompleteCallback();
+                this.blendPanel.blendPanelCompleteCallback();
             }
         }
 
@@ -275,13 +273,13 @@ export class Game {
     *   @param context The 2D rendering context to draw onto.
     *******************************************************************************************************************/
     private paintBlendPanel(context: CanvasRenderingContext2D): void {
-        if (this.blendPanelTicks !== 0) {
+        if (this.blendPanel.blendPanelTicks !== 0) {
 
             let darkenRatio = 0;
-            if (this.blendPanelTicks > 0) {
-                darkenRatio = this.blendPanelTicks;
-            } else if (this.blendPanelTicks < 0) {
-                darkenRatio = this.blendPanelTotalTicks - Math.abs(this.blendPanelTicks);
+            if (this.blendPanel.blendPanelTicks > 0) {
+                darkenRatio = this.blendPanel.blendPanelTicks;
+            } else if (this.blendPanel.blendPanelTicks < 0) {
+                darkenRatio = this.blendPanel.blendPanelTotalTicks - Math.abs(this.blendPanel.blendPanelTicks);
             }
 
             DrawUtil.fillRect(
@@ -291,7 +289,7 @@ export class Game {
                 this.engine.canvasSystem.getPhysicalWidth(),
                 this.engine.canvasSystem.getPhysicalHeight(),
                 'rgba( 0, 0, 0, '
-                + String(darkenRatio / this.blendPanelTotalTicks)
+                + String(darkenRatio / this.blendPanel.blendPanelTotalTicks)
                 + ' )'
             );
         }
