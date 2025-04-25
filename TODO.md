@@ -2,11 +2,9 @@
 
 ## MVP (Primary)
 ```
-- Add destroyable obstacles.
 - Add 'destroyable' flag for Movables
-
+- Add destroyable obstacles.
 - Add Player 'speech' system. ('no entry')
-
 - Add event triggers! ( for falling obstacles, new enemies etc )
 - remove all unused confusing panel images!
 - fix moving plateau?

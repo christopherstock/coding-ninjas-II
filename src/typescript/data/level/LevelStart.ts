@@ -89,8 +89,8 @@ export class LevelStart extends Level {
         // DODO 2 slopes/steps
 
         // boulder and bush
-        GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.BG, ImageData.BOULDER_1);
         GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
 
         // slope
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x - 5920 + 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);

@@ -77,7 +77,8 @@ export abstract class GameObjectFactory {
         yBottom: number,
         imageId: string,
         density: number,
-        friction: number
+        friction: number,
+        breakable: boolean = false
     ): Movable {
         const sprtiteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
 
@@ -96,7 +97,8 @@ export abstract class GameObjectFactory {
             ),
             sprtiteTemplate,
             x,
-            (yBottom - sprtiteTemplate.height)
+            (yBottom - sprtiteTemplate.height),
+            breakable
         );
     }
 

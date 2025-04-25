@@ -5,11 +5,18 @@ import { DebugLog } from '../../../base/DebugLog';
 import { Main } from '../../../base/Main';
 import { ImageUtil } from '../../../util/ImageUtil';
 import { SettingMatter } from '../../../base/SettingMatter';
+import * as matter from "matter-js";
+
+export enum Breakable {
+    NO,
+    YES,
+}
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
 ***********************************************************************************************************************/
 export class Movable extends GameObject {
+    public breakable: boolean = false;
     public energy: number = 100.0;
 
     /** ****************************************************************************************************************
@@ -24,7 +31,8 @@ export class Movable extends GameObject {
         shape: Shape,
         spriteTemplate: SpriteTemplate,
         x: number,
-        y: number
+        y: number,
+        breakable: boolean = false
     ) {
         super(
             shape,
@@ -32,6 +40,8 @@ export class Movable extends GameObject {
             x,
             y
         );
+
+        this.breakable = breakable;
     }
 
     /** ****************************************************************************************************************
@@ -49,8 +59,18 @@ export class Movable extends GameObject {
         // this.clipToHorizontalLevelBounds();
     }
 
-    public hurt(damage: number): void {
+    public hurt(damage: number, damageForce: number): void {
         if (this.state !== GameObjectState.ALIVE) {
+            return;
+        }
+
+        DebugLog.character.log('Character hits a level object (movable)');
+        matter.Body.setVelocity(
+            this.shape.body,
+            matter.Vector.create(damageForce, -10.0)
+        );
+
+        if (!this.breakable) {
             return;
         }
 
@@ -70,8 +90,8 @@ export class Movable extends GameObject {
         }
 
         // smaller scale (testwise)
-        this.shape.body.render.sprite.xScale = 0.90;
-        this.shape.body.render.sprite.yScale = 0.90;
+        // this.shape.body.render.sprite.xScale = 0.90;
+        // this.shape.body.render.sprite.yScale = 0.90;
 
         // this.shape.body.render.sprite.
         // this.shape.body.render.
