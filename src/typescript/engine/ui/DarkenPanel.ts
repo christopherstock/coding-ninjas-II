@@ -59,7 +59,7 @@ export class DarkenPanel {
     }
 
     public startFadeOut(
-        ticks: number = SettingEngine.BLEND_PANEL_TICKS,
+        ticks: number = SettingEngine.DARKEN_PANEL_TICKS_DOOR_SWITCH,
         fadeIn: boolean = false,
         onComplete: ()=> void = (): void => { /* */ }
     ): void {

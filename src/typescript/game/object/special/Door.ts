@@ -57,7 +57,7 @@ export class Door extends Decoration {
 
         if (doorActivated) {
             Main.game.startDarkenPanelFadeOut(
-                SettingEngine.BLEND_PANEL_TICKS,
+                SettingEngine.DARKEN_PANEL_TICKS_DOOR_SWITCH,
                 true,
                 () => {
                     Main.game.startDarkenPanelFadeOut();

@@ -26,7 +26,7 @@ export class Game {
     private bgMusic: HTMLAudioElement               = null;
     private slowMotionTicks: number                 = 0;
 
-    private blendPanel: DarkenPanel                  = new DarkenPanel();
+    private darkenPanel: DarkenPanel                = new DarkenPanel();
 
     /** ****************************************************************************************************************
     *   Shows the preloader.
@@ -54,7 +54,7 @@ export class Game {
         this.updateAndAssignCamera();
         this.engine.matterJsSystem.startRenderer();
 
-        Main.game.startDarkenPanelFadeOut(SettingEngine.BLEND_PANEL_TICKS_STARTUP);
+        Main.game.startDarkenPanelFadeOut(SettingEngine.DARKEN_PANEL_TICKS_STARTUP);
 
         window.requestAnimationFrame(
             () => { this.tickGame(); }
@@ -69,7 +69,7 @@ export class Game {
     public paintHUD(context: CanvasRenderingContext2D): void {
         // paint blend overlay
         if (!SettingDebug.DISABLE_BLEND_PANEL) {
-            this.blendPanel.paint(context, this.engine.canvasSystem);
+            this.darkenPanel.paint(context, this.engine.canvasSystem);
         }
     }
 
@@ -168,11 +168,11 @@ export class Game {
     }
 
     public startDarkenPanelFadeOut(
-        ticks: number = SettingEngine.BLEND_PANEL_TICKS,
+        ticks: number = SettingEngine.DARKEN_PANEL_TICKS_DOOR_SWITCH,
         fadeIn: boolean = false,
         onComplete: ()=> void = (): void => { /* */ }
     ): void {
-        this.blendPanel.startFadeOut(ticks, fadeIn, onComplete);
+        this.darkenPanel.startFadeOut(ticks, fadeIn, onComplete);
     }
 
     /** ****************************************************************************************************************
@@ -208,7 +208,7 @@ export class Game {
     *   Renders all game components.
     *******************************************************************************************************************/
     private render(): void {
-        this.blendPanel.render(this.level.player);
+        this.darkenPanel.render(this.level.player);
 
         // render level
         this.level.render();
