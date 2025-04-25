@@ -2,7 +2,6 @@ import * as matter from 'matter-js';
 import { Engine } from '../engine/Engine';
 import { Camera } from '../engine/ui/Camera';
 import { DebugLog } from '../base/DebugLog';
-import { SettingGame } from '../base/SettingGame';
 import { SettingDebug } from '../base/SettingDebug';
 import { SettingEngine } from '../base/SettingEngine';
 import { SoundData } from '../data/SoundData';
@@ -20,13 +19,16 @@ import { CharacterFacing } from './object/being/CharacterFacing';
 *   Specifies the game logic and all primal components of the game.
 ***********************************************************************************************************************/
 export class Game {
-    public engine: Engine                       = null;
-    public camera: Camera                       = null;
-    public level: Level                         = null;
-    private bgMusic: HTMLAudioElement           = null;
-    private blendPanelTicks: number             = 0;
-    private blendPanelCompleteCallback: ()=> void = null;
-    private slowMotionTicks: number             = 0;
+    public engine: Engine                           = null;
+    public camera: Camera                           = null;
+    public level: Level                             = null;
+    private bgMusic: HTMLAudioElement               = null;
+    private slowMotionTicks: number                 = 0;
+
+    // TODO extract to class BlendPanel
+    private blendPanelTicks: number                 = 0;
+    private blendPanelCompleteCallback: ()=> void   = null;
+    private blendPanelTotalTicks: number            = 0;
 
     /** ****************************************************************************************************************
     *   Shows the preloader.
@@ -53,6 +55,8 @@ export class Game {
         this.resetAndLaunchLevel(LevelId.LEVEL_START);
         this.updateAndAssignCamera();
         this.engine.matterJsSystem.startRenderer();
+
+        Main.game.startDarkenPanelFadeOut(SettingEngine.BLEND_PANEL_TICKS_STARTUP);
 
         window.requestAnimationFrame(
             () => { this.tickGame(); }
@@ -119,9 +123,6 @@ export class Game {
         }
     }
 
-    /** ****************************************************************************************************************
-    *   Inits the level.
-    *******************************************************************************************************************/
     public resetAndLaunchLevel(
         levelId: LevelId,
         playerStartX: number = null,
@@ -166,12 +167,11 @@ export class Game {
         this.engine.siteSystem.reset();
         this.resetCamera();
         Main.game.engine.keySystem.releaseAllKeys();
-
-        this.startBlendPanelAnim();
     }
 
-    public startBlendPanelAnim(onComplete: ()=> void = (): void => { /* */ }): void {
-        this.blendPanelTicks = SettingEngine.BLEND_PANEL_TICKS;
+    public startDarkenPanelFadeOut(ticks: number = SettingEngine.BLEND_PANEL_TICKS, fadeIn: boolean = false, onComplete: ()=> void = (): void => { /* */ }): void {
+        this.blendPanelTicks = (fadeIn ? -ticks : ticks);
+        this.blendPanelTotalTicks = ticks;
         this.blendPanelCompleteCallback = onComplete;
     }
 
@@ -211,6 +211,13 @@ export class Game {
         if (this.blendPanelTicks > 0) {
             this.level.player.setFrozen(true);
             --this.blendPanelTicks;
+            if (this.blendPanelTicks === 0) {
+                this.level.player.setFrozen(false);
+                this.blendPanelCompleteCallback();
+            }
+        } else if (this.blendPanelTicks < 0) {
+            this.level.player.setFrozen(true);
+            ++this.blendPanelTicks;
             if (this.blendPanelTicks === 0) {
                 this.level.player.setFrozen(false);
                 this.blendPanelCompleteCallback();
@@ -268,7 +275,15 @@ export class Game {
     *   @param context The 2D rendering context to draw onto.
     *******************************************************************************************************************/
     private paintBlendPanel(context: CanvasRenderingContext2D): void {
-        if (this.blendPanelTicks > 0) {
+        if (this.blendPanelTicks !== 0) {
+
+            let darkenRatio = 0;
+            if (this.blendPanelTicks > 0) {
+                darkenRatio = this.blendPanelTicks;
+            } else if (this.blendPanelTicks < 0) {
+                darkenRatio = this.blendPanelTotalTicks - Math.abs(this.blendPanelTicks);
+            }
+
             DrawUtil.fillRect(
                 context,
                 0,
@@ -276,7 +291,7 @@ export class Game {
                 this.engine.canvasSystem.getPhysicalWidth(),
                 this.engine.canvasSystem.getPhysicalHeight(),
                 'rgba( 0, 0, 0, '
-                + String(this.blendPanelTicks / SettingEngine.BLEND_PANEL_TICKS)
+                + String(darkenRatio / this.blendPanelTotalTicks)
                 + ' )'
             );
         }

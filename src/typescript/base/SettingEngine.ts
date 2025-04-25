@@ -7,13 +7,15 @@ export class SettingEngine {
     static readonly CANVAS_MIN_WIDTH: number                    = 800;
     static readonly CANVAS_MIN_HEIGHT: number                   = 600;
     static readonly NO_CANVAS_SCALING: boolean                  = true;
+
     static readonly PRELOADER_DELAY: number                     = 250;
+    static readonly BLEND_PANEL_TICKS: number                   = 75;
+    static readonly BLEND_PANEL_TICKS_STARTUP: number           = 300;
     static readonly ENGINE_SLOW_MOTION_TICKS: number            = 0; // 150;
+
     static readonly COLOR_BG_MATTER_JS_CSS: string              = '#000000';
     static readonly COLOR_BG_PRELOADER_CSS: string              = '#000000';
     static readonly COLOR_PRIMARY_CSS: string                   = '#b42157';
-
-    static readonly BLEND_PANEL_TICKS: number                   = 100;
 
     static readonly CENTER_CAMERA_X_ON_PANELS: boolean          = true;
     static readonly CAMERA_RATIO_X: number                      = 0.4;

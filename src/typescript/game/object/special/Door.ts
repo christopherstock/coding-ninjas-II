@@ -4,6 +4,7 @@ import { GameAction } from '../GameAction';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { Main } from '../../../base/Main';
+import {SettingEngine} from "../../../base/SettingEngine";
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
@@ -55,18 +56,21 @@ export class Door extends Decoration {
         );
 
         if (doorActivated) {
-            Main.game.startBlendPanelAnim(() => {
-                console.log('blend complete');
-
-                Main.game.resetAndLaunchLevel(
-                    this.action.data.targetLevel,
-                    this.action.data.playerStartX,
-                    this.action.data.playerStartY,
-                    this.action.data.playerInitFacing !== undefined
-                        ? this.action.data.playerInitFacing
-                        : Main.game.level.player.facing
-                );
-            });
+            Main.game.startDarkenPanelFadeOut(
+                SettingEngine.BLEND_PANEL_TICKS,
+                true,
+                () => {
+                    Main.game.startDarkenPanelFadeOut();
+                    Main.game.resetAndLaunchLevel(
+                        this.action.data.targetLevel,
+                        this.action.data.playerStartX,
+                        this.action.data.playerStartY,
+                        this.action.data.playerInitFacing !== undefined
+                            ? this.action.data.playerInitFacing
+                            : Main.game.level.player.facing
+                    );
+                }
+            );
         }
 
         return doorActivated;
