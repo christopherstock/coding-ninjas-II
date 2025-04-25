@@ -1,5 +1,5 @@
 import * as React  from 'react';
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 import { SiteContentFactory } from '../SiteContentFactory';
 import { Main } from '../../base/Main';
 import { ImageData } from '../../data/ImageData';
@@ -8,7 +8,7 @@ import { ImageData } from '../../data/ImageData';
 *   A React component with the content for the 'welcome' page.
 ***********************************************************************************************************************/
 export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log('ContentWelcome.render() being invoked');
+    DebugLog.react.log('ContentWelcome.render() being invoked');
 
     return <div style={{ textAlign: 'right' }}>
 

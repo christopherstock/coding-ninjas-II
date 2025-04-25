@@ -1,5 +1,5 @@
 import { SettingEngine } from '../../base/SettingEngine';
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 
 /** ********************************************************************************************************************
 *   Manages the canvas.
@@ -77,7 +77,7 @@ export class CanvasSystem {
         // apply canvas scaling last
         this.canvasContext.scale(this.canvasScale, this.canvasScale);
 
-        Debug.canvas.log(
+        DebugLog.canvas.log(
             'Updated canvas dimensions to ['
             + String(this.canvasWidth)
             + ']x['

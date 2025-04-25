@@ -1,4 +1,4 @@
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 import { Main } from '../../base/Main';
 
 /** ********************************************************************************************************************
@@ -16,7 +16,7 @@ export class PointerSystem {
     *   Creates a new key system.
     *******************************************************************************************************************/
     public constructor() {
-        Debug.pointer.log('Setup pointer system');
+        DebugLog.pointer.log('Setup pointer system');
 
         const canvas: HTMLCanvasElement = Main.game.engine.canvasSystem.getCanvas();
 
@@ -45,7 +45,7 @@ export class PointerSystem {
     *   @param event The system's propagated pointer event.
     *******************************************************************************************************************/
     public onPointerMove(event: PointerEvent): void {
-        Debug.pointer.log('pointer move');
+        DebugLog.pointer.log('pointer move');
 
         event.preventDefault();
     }
@@ -56,7 +56,7 @@ export class PointerSystem {
     *   @param event The system's propagated pointer event.
     *******************************************************************************************************************/
     public onPointerDown(event: PointerEvent): void {
-        Debug.pointer.log('pointer down');
+        DebugLog.pointer.log('pointer down');
 
         event.preventDefault();
 
@@ -81,7 +81,7 @@ export class PointerSystem {
     *   @param event The system's propagated pointer event.
     *******************************************************************************************************************/
     public onPointerUp(event: PointerEvent): void {
-        Debug.pointer.log('pointer up');
+        DebugLog.pointer.log('pointer up');
 
         event.preventDefault();
 
@@ -95,7 +95,7 @@ export class PointerSystem {
     *   @param event The system's propagated touch event.
     *******************************************************************************************************************/
     public onTouchMove(event: TouchEvent): void {
-        Debug.pointer.log('touch move');
+        DebugLog.pointer.log('touch move');
 
         event.preventDefault();
     }
@@ -106,7 +106,7 @@ export class PointerSystem {
     *   @param event The system's propagated touch  event.
     *******************************************************************************************************************/
     public onTouchDown(event: TouchEvent): void {
-        Debug.pointer.log('touch down');
+        DebugLog.pointer.log('touch down');
 
         event.preventDefault();
 
@@ -131,7 +131,7 @@ export class PointerSystem {
     *   @param event The system's propagated touch  event.
     *******************************************************************************************************************/
     public onTouchUp(event: TouchEvent): void {
-        Debug.pointer.log('touch  up');
+        DebugLog.pointer.log('touch  up');
 
         event.preventDefault();
 

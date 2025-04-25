@@ -1,4 +1,4 @@
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 import { Main } from '../../base/Main';
 import { ImageUtil } from '../../util/ImageUtil';
 
@@ -69,7 +69,7 @@ export class ImageSystem {
     *   Loads all specified image files into system memory.
     *******************************************************************************************************************/
     public loadImages(): void {
-        Debug.image.log('Loading [' + String(this.fileNames.length) + '] images');
+        DebugLog.image.log('Loading [' + String(this.fileNames.length) + '] images');
 
         // load all images
         this.imagesToLoad = this.fileNames.length;
@@ -84,7 +84,7 @@ export class ImageSystem {
     *   Mirrors all specified image files in system memory.
     *******************************************************************************************************************/
     public mirrorImages(): void {
-        Debug.image.log('Mirroring [' + String(this.mirroredFileNames.length) + '] images');
+        DebugLog.image.log('Mirroring [' + String(this.mirroredFileNames.length) + '] images');
 
         // mirror determined images
         this.imagesToMirrorCount = this.mirroredFileNames.length;
@@ -126,7 +126,7 @@ export class ImageSystem {
             5 + (50 * this.loadedImageCount / this.imagesToLoad));
 
         if (++this.loadedImageCount === this.imagesToLoad) {
-            Debug.image.log('All [' + String(this.imagesToLoad) + '] images loaded');
+            DebugLog.image.log('All [' + String(this.imagesToLoad) + '] images loaded');
 
             this.mirrorImages();
         }
@@ -141,7 +141,7 @@ export class ImageSystem {
         );
 
         if (++this.mirroredImageCount === this.imagesToMirrorCount) {
-            Debug.image.log('All [' + String(this.imagesToMirrorCount) + '] images mirrored');
+            DebugLog.image.log('All [' + String(this.imagesToMirrorCount) + '] images mirrored');
 
             this.onLoadComplete();
         }

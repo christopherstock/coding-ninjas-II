@@ -7,7 +7,7 @@ import { Main } from '../../../base/Main';
 import { KeySystem } from '../../../engine/hid/KeySystem';
 import { KeyData } from '../../../data/KeyData';
 import { SettingDebug } from '../../../base/SettingDebug';
-import { Debug } from '../../../base/Debug';
+import { DebugLog } from '../../../base/DebugLog';
 import { LevelId } from '../../level/Level';
 import { GameObjectState } from '../GameObject';
 import { Character } from './Character';
@@ -171,14 +171,14 @@ export class Player extends Character {
                 if (enemy.state === GameObjectState.ALIVE && !enemy.isFriendly() && enemy.isBlocking()) {
                     // check intersection of the player and the enemy
                     if (matter.Bounds.overlaps(this.shape.body.bounds, enemy.shape.body.bounds)) {
-                        Debug.bot.log('Enemy touched by player');
+                        DebugLog.bot.log('Enemy touched by player');
 
                         const playerBottom: number = Math.floor(
                             this.shape.body.position.y  + this.shape.getHeight() / 2);
                         const enemyTop: number     = Math.floor(
                             enemy.shape.body.position.y - enemy.shape.getHeight() / 2);
 
-                        Debug.bot.log(
+                        DebugLog.bot.log(
                             ' playerBottom [' + String(playerBottom) + '] enemyTop [' + String(enemyTop) + ']');
 
                         const MAX_SINK_DELTA: number = 10;
@@ -205,7 +205,7 @@ export class Player extends Character {
             if (this.state !== GameObjectState.DEAD) {
                 this.state = GameObjectState.DEAD;
 
-                Debug.engine.log('Player has fallen to death');
+                DebugLog.engine.log('Player has fallen to death');
 
                 window.setTimeout(
                     (): void => {

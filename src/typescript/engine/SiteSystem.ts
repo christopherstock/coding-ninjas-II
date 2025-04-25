@@ -1,4 +1,4 @@
-import { Debug } from '../base/Debug';
+import { DebugLog } from '../base/DebugLog';
 import { Main } from '../base/Main';
 import { SettingEngine } from '../base/SettingEngine';
 import { SettingGame } from '../base/SettingGame';
@@ -82,7 +82,7 @@ export class SiteSystem {
             return false;
         }
 
-        Debug.site.log('Showing site panel');
+        DebugLog.site.log('Showing site panel');
         this.animationState = SitePanelAnimation.SHOWING;
 
         // set content for site panel
@@ -146,7 +146,7 @@ export class SiteSystem {
             return false;
         }
 
-        Debug.site.log('Hiding site panel');
+        DebugLog.site.log('Hiding site panel');
         this.animationState = SitePanelAnimation.HIDING;
 
         this.sitePanel.animateOut();
@@ -269,7 +269,7 @@ export class SiteSystem {
     *   Inits the WOW animation system.
     *******************************************************************************************************************/
     private initWowSystem(): void {
-        Debug.init.log('Init WOW animations');
+        DebugLog.init.log('Init WOW animations');
 
         this.wowSystem = new wow.WOW(
             {

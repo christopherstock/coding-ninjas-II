@@ -1,7 +1,7 @@
 import * as matter from 'matter-js';
 import { Engine } from '../engine/Engine';
 import { Camera } from '../engine/ui/Camera';
-import { Debug } from '../base/Debug';
+import { DebugLog } from '../base/DebugLog';
 import { SettingGame } from '../base/SettingGame';
 import { SettingDebug } from '../base/SettingDebug';
 import { SettingEngine } from '../base/SettingEngine';
@@ -51,7 +51,7 @@ export class Game {
     *   Starts the game loop.
     *******************************************************************************************************************/
     public start(): void {
-        Debug.init.log('Starting the game loop');
+        DebugLog.init.log('Starting the game loop');
 
         // set the number of blend panel ticks
         this.blendPanelTicks = SettingGame.BLEND_PANEL_TICKS;
@@ -127,7 +127,7 @@ export class Game {
     *******************************************************************************************************************/
     public startSlowMotionTicks(): void {
         if (SettingEngine.ENGINE_SLOW_MOTION_TICKS > 0) {
-            Debug.engine.log(
+            DebugLog.engine.log(
                 'Engine - setSlowMotion for ['
                 + String(SettingEngine.ENGINE_SLOW_MOTION_TICKS)
                 + '] ticks'
@@ -250,28 +250,28 @@ export class Game {
             if (this.engine.keySystem.isPressed(KeyData.KEY_1)) {
                 this.engine.keySystem.setNeedsRelease(KeyData.KEY_1);
 
-                Debug.init.log('Resetting and switching to level 1');
+                DebugLog.init.log('Resetting and switching to level 1');
                 this.resetAndLaunchLevel(LevelId.LEVEL_START);
             }
 
             if (Main.game.engine.keySystem.isPressed(KeyData.KEY_2)) {
                 Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_2);
 
-                Debug.init.log('Resetting and switching to level 2');
+                DebugLog.init.log('Resetting and switching to level 2');
                 this.resetAndLaunchLevel(LevelId.LEVEL_DOJO);
             }
 
             if (Main.game.engine.keySystem.isPressed(KeyData.KEY_3)) {
                 Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_3);
 
-                Debug.init.log('Resetting and switching to level 3');
+                DebugLog.init.log('Resetting and switching to level 3');
                 this.resetAndLaunchLevel(LevelId.LEVEL_GARDEN);
             }
 
             if (Main.game.engine.keySystem.isPressed(KeyData.KEY_4)) {
                 Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_4);
 
-                Debug.init.log('Resetting and switching to level 4');
+                DebugLog.init.log('Resetting and switching to level 4');
                 this.resetAndLaunchLevel(LevelId.LEVEL_MARKET);
             }
         }

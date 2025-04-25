@@ -4,7 +4,7 @@ import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { SettingMatter } from '../../../base/SettingMatter';
 import { Main } from '../../../base/Main';
-import { Debug } from '../../../base/Debug';
+import { DebugLog } from '../../../base/DebugLog';
 
 /** ********************************************************************************************************************
 *   Represents a pickable item.
@@ -48,7 +48,7 @@ export class Item extends GameObject {
     *******************************************************************************************************************/
     private checkPicked(): void {
         if (matter.Bounds.overlaps(this.shape.body.bounds, Main.game.level.player.shape.body.bounds)) {
-            Debug.item.log('Player picked item');
+            DebugLog.item.log('Player picked item');
 
             this.pick();
         }

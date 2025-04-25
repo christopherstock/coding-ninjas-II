@@ -2,7 +2,7 @@ import * as matter from 'matter-js';
 import { SettingMatter } from '../base/SettingMatter';
 import { SettingDebug } from '../base/SettingDebug';
 import { SettingEngine } from '../base/SettingEngine';
-import { Debug } from '../base/Debug';
+import { DebugLog } from '../base/DebugLog';
 import { CanvasSystem } from './ui/CanvasSystem';
 
 /** ********************************************************************************************************************
@@ -75,7 +75,7 @@ export class MatterJsSystem {
 
         // set all loaded image as MatterJS texture cache
         this.renderer.textures = textureCache;
-        Debug.init.log(
+        DebugLog.init.log(
             'Assigned ['
             + String(Object.keys(this.renderer.textures).length)
             + '] textures to matter.js renderer texture cache'
@@ -125,7 +125,7 @@ export class MatterJsSystem {
         this.renderer.options.width  = canvasSystem.getPhysicalWidth();
         this.renderer.options.height = canvasSystem.getPhysicalHeight();
 
-        Debug.canvas.log('Updated matter.js engine dimensions according to canvas.');
+        DebugLog.canvas.log('Updated matter.js engine dimensions according to canvas.');
     }
 
     /** ****************************************************************************************************************

@@ -1,5 +1,5 @@
 import * as React  from 'react';
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 import { SiteContentFactory } from '../SiteContentFactory';
 import { SiteContent } from '../SiteContentSystem';
 
@@ -7,7 +7,7 @@ import { SiteContent } from '../SiteContentSystem';
 *   A React component with the content for the 'timeline' page.
 ***********************************************************************************************************************/
 export const ContentTimeline: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log('ContentTimeline.render() being invoked');
+    DebugLog.react.log('ContentTimeline.render() being invoked');
 
     return <div>
 

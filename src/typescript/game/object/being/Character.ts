@@ -4,7 +4,7 @@ import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { SettingGame } from '../../../base/SettingGame';
 import { Main } from '../../../base/Main';
-import { Debug } from '../../../base/Debug';
+import { DebugLog } from '../../../base/DebugLog';
 import { BodyFrictionAir, SettingMatter } from '../../../base/SettingMatter';
 import { ShapeRectangle } from '../../../engine/shape/ShapeRectangle';
 import { Player } from './Player';
@@ -132,7 +132,7 @@ export abstract class Character extends GameObject {
             if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
                 // hurt movable if alive
                 if (movable.state === GameObjectState.ALIVE) {
-                    Debug.character.log('Character hits a level object (movable)');
+                    DebugLog.character.log('Character hits a level object (movable)');
 
                     movable.hurt(34.0);
                     matter.Body.setVelocity(
@@ -148,7 +148,7 @@ export abstract class Character extends GameObject {
             if (matter.Query.region([ enemy.shape.body ], smashBounds).length > 0) {
                 // only hurt alive enemies
                 if (enemy.state === GameObjectState.ALIVE && !enemy.isFriendly()) {
-                    Debug.character.log('Character hits an enemy');
+                    DebugLog.character.log('Character hits an enemy');
 
                     // hit enemy
                     enemy.onHitByPlayer(this.facing);
@@ -260,19 +260,19 @@ export abstract class Character extends GameObject {
     }
 
     protected requestGliding(): void {
-        Debug.character.log('Character requests para open');
+        DebugLog.character.log('Character requests para open');
 
         this.glidingRequest = true;
     }
 
     protected requestParaClose(): void {
-        Debug.character.log('Character requests para close');
+        DebugLog.character.log('Character requests para close');
 
         this.paraCloseRequest = true;
     }
 
     protected requestInteraction(): boolean {
-        Debug.character.log('Character requests interaction');
+        DebugLog.character.log('Character requests interaction');
 
         for (const door of Main.game.level.doors) {
             if (door.checkInteraction()) {
@@ -287,7 +287,7 @@ export abstract class Character extends GameObject {
     *   Requests attacking for the player.
     *******************************************************************************************************************/
     protected attack(): void {
-        Debug.character.log('Character requests attack');
+        DebugLog.character.log('Character requests attack');
 
         this.attackingTicks = 15;
     }
@@ -318,7 +318,7 @@ export abstract class Character extends GameObject {
     *   Open character's parachute.
     *******************************************************************************************************************/
     protected openParachute(): void {
-        Debug.character.log('Character opens parachute');
+        DebugLog.character.log('Character opens parachute');
 
         this.shape.body.frictionAir = BodyFrictionAir.GLIDING;
         this.isGliding = true;
@@ -379,7 +379,7 @@ export abstract class Character extends GameObject {
     *   Closes character's parachute.
     *******************************************************************************************************************/
     private closeParachute(): void {
-        Debug.character.log('Character closes parachute');
+        DebugLog.character.log('Character closes parachute');
 
         this.shape.body.frictionAir = BodyFrictionAir.DEFAULT;
         this.isGliding = false;

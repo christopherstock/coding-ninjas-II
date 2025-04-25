@@ -4,7 +4,7 @@ import { Sprite } from '../../engine/ui/Sprite';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 
 export enum GameObjectState {
     ALIVE,
@@ -70,7 +70,7 @@ export abstract class GameObject {
     *******************************************************************************************************************/
     protected checkFallingDead(): boolean {
         if (this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height) {
-            Debug.character.log('Game object has fallen to dead');
+            DebugLog.character.log('Game object has fallen to dead');
 
             // remove character body from world
             Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);

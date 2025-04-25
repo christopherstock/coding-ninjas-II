@@ -1,4 +1,4 @@
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 
 /** ********************************************************************************************************************
 *   The key system that manages all pressed keys.
@@ -33,7 +33,7 @@ export class KeySystem {
         if (!this.keysNeedRelease[ keyID ] && !this.keysPressed[ keyID ]) {
             this.keysPressed[ keyID ] = true;
 
-            Debug.key.log('key pressed ['  + keyID + ']');
+            DebugLog.key.log('key pressed ['  + keyID + ']');
         }
     }
 
@@ -50,7 +50,7 @@ export class KeySystem {
         this.keysPressed[     keyID ] = false;
         this.keysNeedRelease[ keyID ] = false;
 
-        Debug.key.log('key released ['  + keyID + ']');
+        DebugLog.key.log('key released ['  + keyID + ']');
     }
 
     /** ****************************************************************************************************************

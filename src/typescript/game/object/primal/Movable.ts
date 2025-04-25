@@ -1,7 +1,7 @@
 import { GameObjectState, GameObject } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { Debug } from '../../../base/Debug';
+import { DebugLog } from '../../../base/DebugLog';
 import { Main } from '../../../base/Main';
 import { ImageUtil } from '../../../util/ImageUtil';
 import { SettingMatter } from '../../../base/SettingMatter';
@@ -56,7 +56,7 @@ export class Movable extends GameObject {
 
         // TODO add particle effect / decos on hurt/smash!
         this.energy -= damage;
-        Debug.character.log('New level object energy: [' + String(this.energy) + ']');
+        DebugLog.character.log('New level object energy: [' + String(this.energy) + ']');
 
         // darken img
         const img = new Image();
@@ -77,7 +77,7 @@ export class Movable extends GameObject {
         // this.shape.body.render.
 
         if (this.energy <= 0.0) {
-            Debug.character.log('Game Object BREAKS!');
+            DebugLog.character.log('Game Object BREAKS!');
             // TODO add particle effect / decos on breaking etc!
             this.break();
         }

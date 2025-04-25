@@ -1,13 +1,13 @@
 import * as React  from 'react';
 import { SiteContentFactory } from '../SiteContentFactory';
-import { Debug } from '../../base/Debug';
+import { DebugLog } from '../../base/DebugLog';
 import { SiteContent } from '../SiteContentSystem';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'services' page.
 ***********************************************************************************************************************/
 export const ContentServices: ()=> JSX.Element = (): JSX.Element => {
-    Debug.react.log('ContentServices.render() being invoked');
+    DebugLog.react.log('ContentServices.render() being invoked');
 
     return <div>
 

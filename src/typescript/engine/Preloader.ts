@@ -1,5 +1,5 @@
 import { DrawUtil } from '../util/DrawUtil';
-import { Debug } from '../base/Debug';
+import { DebugLog } from '../base/DebugLog';
 import { SettingEngine } from '../base/SettingEngine';
 import { Engine } from './Engine';
 
@@ -36,7 +36,7 @@ export class Preloader {
     *   Shows the preloader and starts preloading all initialization contents.
     *******************************************************************************************************************/
     public preload(): void {
-        Debug.init.log('Init all game components');
+        DebugLog.init.log('Init all game components');
 
         // bring on the canvas and init the resize handler
         this.engine.initCanvas();
@@ -70,7 +70,7 @@ export class Preloader {
     *******************************************************************************************************************/
     private preloaderImageLoaded(): void {
         if (++this.loadedImageCount === 2) {
-            Debug.init.log('Init preloader images complete');
+            DebugLog.init.log('Init preloader images complete');
 
             this.onPreloaderImageLoadComplete();
         }

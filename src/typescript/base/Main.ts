@@ -1,6 +1,6 @@
 import { Game } from '../game/Game';
 import { SettingGame } from './SettingGame';
-import { Debug } from './Debug';
+import { DebugLog } from './DebugLog';
 
 /** ********************************************************************************************************************
 *   The main class contains the applications points of entry and termination.
@@ -13,12 +13,10 @@ export class Main {
     *   This method is invoked when the application starts.
     *******************************************************************************************************************/
     public static main(): void {
-        // set webpage title
         document.title = SettingGame.TITLE;
 
-        // acclaim debug console
-        Debug.welcome.log(SettingGame.TITLE);
-        Debug.welcome.log();
+        DebugLog.welcome.log(SettingGame.TITLE);
+        DebugLog.welcome.log();
 
         // init and start the game engine
         Main.game = new Game();
