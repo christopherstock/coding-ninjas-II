@@ -67,10 +67,7 @@ export class Game {
     *   @param context The 2D rendering context to draw onto.
     *******************************************************************************************************************/
     public paintHUD(context: CanvasRenderingContext2D): void {
-        // paint blend overlay
-        if (!SettingDebug.DISABLE_BLEND_PANEL) {
-            this.darkenPanel.paint(context, this.engine.canvasSystem);
-        }
+        this.darkenPanel.paint(context, this.engine.canvasSystem);
     }
 
     /** ****************************************************************************************************************

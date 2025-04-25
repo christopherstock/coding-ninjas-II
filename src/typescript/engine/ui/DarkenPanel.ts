@@ -2,6 +2,7 @@ import {DrawUtil} from "../../util/DrawUtil";
 import {CanvasSystem} from "./CanvasSystem";
 import {Player} from "../../game/object/being/Player";
 import {SettingEngine} from "../../base/SettingEngine";
+import {SettingDebug} from "../../base/SettingDebug";
 
 /** ********************************************************************************************************************
 *   Manages the dark blend panel overview.
@@ -63,6 +64,11 @@ export class DarkenPanel {
         fadeIn: boolean = false,
         onComplete: ()=> void = (): void => { /* */ }
     ): void {
+        if (SettingDebug.DISABLE_DARKEN_PANEL) {
+            onComplete();
+            return;
+        }
+
         this.currentTick = (fadeIn ? -ticks : ticks);
         this.totalTicks = ticks;
         this.onCompleteCallback = onComplete;
