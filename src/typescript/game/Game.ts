@@ -14,7 +14,7 @@ import { LevelGarden } from '../data/level/LevelGarden';
 import { LevelMarket } from '../data/level/LevelMarket';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
-import {BlendPanel} from "../engine/ui/BlendPanel";
+import {DarkenPanel} from "../engine/ui/DarkenPanel";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -26,7 +26,7 @@ export class Game {
     private bgMusic: HTMLAudioElement               = null;
     private slowMotionTicks: number                 = 0;
 
-    private blendPanel: BlendPanel                  = new BlendPanel();
+    private blendPanel: DarkenPanel                  = new DarkenPanel();
 
     /** ****************************************************************************************************************
     *   Shows the preloader.
@@ -69,7 +69,7 @@ export class Game {
     public paintHUD(context: CanvasRenderingContext2D): void {
         // paint blend overlay
         if (!SettingDebug.DISABLE_BLEND_PANEL) {
-            this.paintBlendPanel(context);
+            this.blendPanel.paint(context, this.engine.canvasSystem);
         }
     }
 
@@ -167,10 +167,12 @@ export class Game {
         Main.game.engine.keySystem.releaseAllKeys();
     }
 
-    public startDarkenPanelFadeOut(ticks: number = SettingEngine.BLEND_PANEL_TICKS, fadeIn: boolean = false, onComplete: ()=> void = (): void => { /* */ }): void {
-        this.blendPanel.blendPanelTicks = (fadeIn ? -ticks : ticks);
-        this.blendPanel.blendPanelTotalTicks = ticks;
-        this.blendPanel.blendPanelCompleteCallback = onComplete;
+    public startDarkenPanelFadeOut(
+        ticks: number = SettingEngine.BLEND_PANEL_TICKS,
+        fadeIn: boolean = false,
+        onComplete: ()=> void = (): void => { /* */ }
+    ): void {
+        this.blendPanel.startFadeOut(ticks, fadeIn, onComplete);
     }
 
     /** ****************************************************************************************************************
@@ -206,21 +208,7 @@ export class Game {
     *   Renders all game components.
     *******************************************************************************************************************/
     private render(): void {
-        if (this.blendPanel.blendPanelTicks > 0) {
-            this.level.player.setFrozen(true);
-            --this.blendPanel.blendPanelTicks;
-            if (this.blendPanel.blendPanelTicks === 0) {
-                this.level.player.setFrozen(false);
-                this.blendPanel.blendPanelCompleteCallback();
-            }
-        } else if (this.blendPanel.blendPanelTicks < 0) {
-            this.level.player.setFrozen(true);
-            ++this.blendPanel.blendPanelTicks;
-            if (this.blendPanel.blendPanelTicks === 0) {
-                this.level.player.setFrozen(false);
-                this.blendPanel.blendPanelCompleteCallback();
-            }
-        }
+        this.blendPanel.render(this.level.player);
 
         // render level
         this.level.render();
@@ -264,34 +252,6 @@ export class Game {
                 DebugLog.init.log('Resetting and switching to level 4');
                 this.resetAndLaunchLevel(LevelId.LEVEL_MARKET);
             }
-        }
-    }
-
-    /** ****************************************************************************************************************
-    *   Paints the blend panel overlay over the entire canvas.
-    *
-    *   @param context The 2D rendering context to draw onto.
-    *******************************************************************************************************************/
-    private paintBlendPanel(context: CanvasRenderingContext2D): void {
-        if (this.blendPanel.blendPanelTicks !== 0) {
-
-            let darkenRatio = 0;
-            if (this.blendPanel.blendPanelTicks > 0) {
-                darkenRatio = this.blendPanel.blendPanelTicks;
-            } else if (this.blendPanel.blendPanelTicks < 0) {
-                darkenRatio = this.blendPanel.blendPanelTotalTicks - Math.abs(this.blendPanel.blendPanelTicks);
-            }
-
-            DrawUtil.fillRect(
-                context,
-                0,
-                0,
-                this.engine.canvasSystem.getPhysicalWidth(),
-                this.engine.canvasSystem.getPhysicalHeight(),
-                'rgba( 0, 0, 0, '
-                + String(darkenRatio / this.blendPanel.blendPanelTotalTicks)
-                + ' )'
-            );
         }
     }
 

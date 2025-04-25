@@ -2,7 +2,6 @@
 
 ## MVP (Primary)
 ```
-- Fade Effect on switching levels
 - Add event triggers! ( for falling obstacles, new enemies etc )
 - remove all unused confusing panel images!
 - fix moving plateau?
