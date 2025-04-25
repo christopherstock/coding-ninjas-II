@@ -127,6 +127,7 @@ export class ImageData {
     static readonly MASKED_NINJA_GUY_WALK_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/walk/10.png';
 
     static readonly CRATE_WOOD: string                                  = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
+    static readonly CRATE_STEEL: string                                 = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateSteel.png';
     static readonly ITEM: string                                        = SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
     static readonly STONE_SPHERE: string                                = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'stoneSphere.png';
     static readonly BOULDER_1: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
@@ -427,6 +428,7 @@ export class ImageData {
 
         ImageData.ITEM,
         ImageData.CRATE_WOOD,
+        ImageData.CRATE_STEEL,
         ImageData.STONE_SPHERE,
         ImageData.BOULDER_1,
         ImageData.BRIDGE_1,

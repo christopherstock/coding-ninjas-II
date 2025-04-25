@@ -3,18 +3,15 @@
 ## MVP (Primary)
 ```
 - Add destroyable obstacles.
-- Add Player 'speech' system. ('no entry')
 - Add event triggers! ( for falling obstacles, new enemies etc )
-- moving 'no entry' sign on trying to open closed door?
-- fix moving plateau?
-
-- remove all unused confusing panel images!
 ```
 
 ## Possible New Game/Engine Features
 ```
+- moving 'no entry' sign on trying to open closed door?
+- Add Player 'speech' system. ('no entry')?
+- fix moving plateau?
 - Add decoration particle effects on smashing objects / windows etc.
-- Add destroyable movables.
 - Debug Disable Pointer control.
 - Add canvas max width?
 - Add GitLab CI/CD pipeline

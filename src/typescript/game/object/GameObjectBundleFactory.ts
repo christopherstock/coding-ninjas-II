@@ -723,8 +723,8 @@ export abstract class GameObjectBundleFactory {
                 StaticShape.YES,
                 0.0,
                 BodyFriction.DEFAULT,
-                BodyDensity.RUBBER,
-                BodyRestitution.RUBBER
+                BodyDensity.DEFAULT,
+                BodyRestitution.DEFAULT
             ),
             spriteShrine,
             xLeft,

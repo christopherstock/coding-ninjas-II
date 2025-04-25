@@ -93,7 +93,7 @@ export abstract class GameObjectFactory {
                 0.0,
                 friction,
                 density,
-                BodyRestitution.RUBBER
+                BodyRestitution.DEFAULT // BodyRestitution.RUBBER
             ),
             sprtiteTemplate,
             x,
@@ -130,7 +130,7 @@ export abstract class GameObjectFactory {
                 angle,
                 BodyFriction.DEFAULT,
                 BodyDensity.DEFAULT,
-                BodyRestitution.RUBBER
+                BodyRestitution.DEFAULT // BodyRestitution.RUBBER
             ),
             sprtiteTemplate,
             x,
@@ -465,8 +465,8 @@ export abstract class GameObjectFactory {
                 isStatic,
                 0.0,
                 BodyFriction.DEFAULT,
-                BodyDensity.RUBBER,
-                BodyRestitution.RUBBER
+                BodyDensity.DEFAULT,
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             xLeft,
@@ -507,9 +507,9 @@ export abstract class GameObjectFactory {
                 DebugColor.COLOR_DEBUG_DECORATION,
                 isStatic,
                 0.0,
-                BodyFriction.RUBBER,
-                BodyDensity.RUBBER,
-                BodyRestitution.RUBBER
+                BodyFriction.DEFAULT,
+                BodyDensity.DEFAULT,
+                BodyRestitution.DEFAULT
             ),
             spriteTemplate,
             xLeft,

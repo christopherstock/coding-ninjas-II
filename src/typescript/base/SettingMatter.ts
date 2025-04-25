@@ -63,11 +63,12 @@ export enum BodyFriction
 {
     DEFAULT         = 0.1,
     PLAYER          = 0.75,
-    WOOD            = 1.0,
-    GLASS           = 0.01,
+    METAL           = 1.0,
     DEFAULT_MOVABLE = 0.001,
     OBSTACLE        = 0.001,
     RUBBER          = 0.001,
+    WOOD            = 1.0,
+    GLASS           = 0.01,
     MINIMUM         = 0.001,
     NONE            = 0.0,
 }
@@ -89,8 +90,9 @@ export enum BodyDensity
     DEFAULT     = 0.001,
     PLAYER      = 0.0035,
     TABLE       = 0.1,
+    METAL       = 0.2,
+
     WOOD        = 0.004,
-    METAL       = 0.01,
     RUBBER      = 0.0001,
     MINIMUM     = 0.000001,
     INFINITE    = Infinity,
