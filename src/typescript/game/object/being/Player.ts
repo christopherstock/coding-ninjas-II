@@ -17,7 +17,7 @@ import { CharacterFacing } from './CharacterFacing';
 *   Represents the player being controlled by the user.
 ***********************************************************************************************************************/
 export class Player extends Character {
-    private frozen = false;
+    private frozen: boolean = false;
 
     /** ****************************************************************************************************************
     *   Creates a new player instance.
@@ -74,7 +74,7 @@ export class Player extends Character {
         this.checkFallToDeath();
     }
 
-    public setFrozen(frozen: boolean) {
+    public setFrozen(frozen: boolean): void {
         this.frozen = frozen;
     }
 

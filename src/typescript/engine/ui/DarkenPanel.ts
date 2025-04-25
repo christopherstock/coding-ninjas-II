@@ -1,8 +1,8 @@
-import {DrawUtil} from "../../util/DrawUtil";
-import {CanvasSystem} from "./CanvasSystem";
-import {Player} from "../../game/object/being/Player";
-import {SettingEngine} from "../../base/SettingEngine";
-import {SettingDebug} from "../../base/SettingDebug";
+import { DrawUtil } from '../../util/DrawUtil';
+import { Player } from '../../game/object/being/Player';
+import { SettingEngine } from '../../base/SettingEngine';
+import { SettingDebug } from '../../base/SettingDebug';
+import { CanvasSystem } from './CanvasSystem';
 
 /** ********************************************************************************************************************
 *   Manages the dark blend panel overview.

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import {Level, LevelId} from '../../game/level/Level';
+import { Level, LevelId } from '../../game/level/Level';
 import {
     CapHorz,
     CapVert,
@@ -8,15 +8,15 @@ import {
     GameObjectBundleFactory,
     Slope,
 } from '../../game/object/GameObjectBundleFactory';
-import {GameObjectFactory} from '../../game/object/GameObjectFactory';
-import {ImageData} from '../ImageData';
-import {GameAction, GameActionType} from '../../game/object/GameAction';
-import {TilesetData} from '../TilesetData';
-import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
-import {CharacterFacing} from '../../game/object/being/CharacterFacing';
-import {SpriteData} from '../SpriteData';
-import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
-import {Breakable} from "../../game/object/primal/Movable";
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { ImageData } from '../ImageData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { TilesetData } from '../TilesetData';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { SpriteData } from '../SpriteData';
+import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
+import { Breakable } from '../../game/object/primal/Movable';
 
 /** ********************************************************************************************************************
 *   The level data for the DoJo level.

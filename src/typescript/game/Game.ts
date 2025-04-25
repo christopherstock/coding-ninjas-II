@@ -9,12 +9,11 @@ import { LevelStart } from '../data/level/LevelStart';
 import { LevelDojo } from '../data/level/LevelDojo';
 import { Main } from '../base/Main';
 import { KeyData } from '../data/KeyData';
-import { DrawUtil } from '../util/DrawUtil';
 import { LevelGarden } from '../data/level/LevelGarden';
 import { LevelMarket } from '../data/level/LevelMarket';
+import { DarkenPanel } from '../engine/ui/DarkenPanel';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
-import {DarkenPanel} from "../engine/ui/DarkenPanel";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -26,7 +25,7 @@ export class Game {
     private bgMusic: HTMLAudioElement               = null;
     private slowMotionTicks: number                 = 0;
 
-    private darkenPanel: DarkenPanel                = new DarkenPanel();
+    private readonly darkenPanel: DarkenPanel                = new DarkenPanel();
 
     /** ****************************************************************************************************************
     *   Shows the preloader.

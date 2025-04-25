@@ -284,24 +284,13 @@ export class ImageData {
     static readonly BILLBOARD_GAMES: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardGames.png';
     static readonly BILLBOARD_WEB_APPS: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebapps.png';
 
-    static readonly SITE_PANEL_LOGO: string                             = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
+    static readonly SITE_PANEL_LOGO_GAME: string                        = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
     static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
     static readonly SITE_PANEL_BG_RIGHT: string                         = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight.png';
     static readonly SITE_PANEL_CAROUSEL_DESKTOP: string                 = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
     static readonly SITE_PANEL_CAROUSEL_MOBILE: string                  = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselMobile.jpg';
     static readonly SITE_PANEL_CAROUSEL_WEB_APPS: string                = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebApps.jpg';
     static readonly SITE_PANEL_CAROUSEL_WEBSITES: string                = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebsites.jpg';
-    static readonly SITE_PANEL_LOGO_ANT_DESIGN: string                  = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoAntDesign.png';
-    static readonly SITE_PANEL_LOGO_MATTER_JS: string                   = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoMatterJs.png';
-    static readonly SITE_PANEL_LOGO_NODE_JS: string                     = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoNodeJs.png';
-    static readonly SITE_PANEL_LOGO_REACT: string                       = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoReact.png';
-    static readonly SITE_PANEL_LOGO_TYPE_SCRIPT: string                 = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoTypeScript.png';
-    static readonly SITE_PANEL_LOGO_WEBPACK: string                     = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebpack.png';
-    static readonly SITE_PANEL_LOGO_WEBWEEK: string                     = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoWebWeek.png';
-
-    static readonly SITE_PANEL_OFFICE_WZBG: string                      = SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeWzbg.jpg';
-    static readonly SITE_PANEL_OFFICE_MUC: string                       = SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeMuc.jpg';
-    static readonly SITE_PANEL_OFFICE_BER: string                       = SettingEngine.PATH_IMAGE_SITE_PANEL + 'officeBer.jpg';
 
     static readonly SIGSAW_1: string                                    = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsaw1.png';
     static readonly BOUNCE_1: string                                    = SettingEngine.PATH_IMAGE_BOUNCE + 'bounce1.png';
@@ -594,25 +583,13 @@ export class ImageData {
         ImageData.BILLBOARD_GAMES,
         ImageData.BILLBOARD_WEB_APPS,
 
-        ImageData.SITE_PANEL_LOGO,
+        ImageData.SITE_PANEL_LOGO_GAME,
         ImageData.SITE_PANEL_BG_LEFT,
         ImageData.SITE_PANEL_BG_RIGHT,
         ImageData.SITE_PANEL_CAROUSEL_DESKTOP,
         ImageData.SITE_PANEL_CAROUSEL_MOBILE,
         ImageData.SITE_PANEL_CAROUSEL_WEB_APPS,
         ImageData.SITE_PANEL_CAROUSEL_WEBSITES,
-
-        ImageData.SITE_PANEL_LOGO_ANT_DESIGN,
-        ImageData.SITE_PANEL_LOGO_MATTER_JS,
-        ImageData.SITE_PANEL_LOGO_NODE_JS,
-        ImageData.SITE_PANEL_LOGO_REACT,
-        ImageData.SITE_PANEL_LOGO_TYPE_SCRIPT,
-        ImageData.SITE_PANEL_LOGO_WEBPACK,
-        ImageData.SITE_PANEL_LOGO_WEBWEEK,
-
-        ImageData.SITE_PANEL_OFFICE_WZBG,
-        ImageData.SITE_PANEL_OFFICE_MUC,
-        ImageData.SITE_PANEL_OFFICE_BER,
 
         ImageData.SIGSAW_1,
         ImageData.BOUNCE_1,

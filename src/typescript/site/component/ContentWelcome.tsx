@@ -18,7 +18,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         {
             SiteContentFactory.createImageFullWidth(
                 Main.game.engine.imageSystem.getImage(
-                    ImageData.SITE_PANEL_LOGO
+                    ImageData.SITE_PANEL_LOGO_GAME
                 ).src
             )
         }

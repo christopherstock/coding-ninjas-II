@@ -4,7 +4,7 @@ import { GameAction } from '../GameAction';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { Main } from '../../../base/Main';
-import {SettingEngine} from "../../../base/SettingEngine";
+import { SettingEngine } from '../../../base/SettingEngine';
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding decoration.
