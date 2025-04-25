@@ -20,17 +20,12 @@ import { CharacterFacing } from './object/being/CharacterFacing';
 *   Specifies the game logic and all primal components of the game.
 ***********************************************************************************************************************/
 export class Game {
-    /** The game engine. */
     public engine: Engine                       = null;
-    /** The custom camera system. */
     public camera: Camera                       = null;
-    /** The custom level. */
     public level: Level                         = null;
-    /** The currently assigned background music. */
     private bgMusic: HTMLAudioElement           = null;
-    /** The remaining ticks for the blend panel to disappear. */
     private blendPanelTicks: number             = 0;
-    /** Number of ticks for the engine to run in slow motion. */
+    private blendPanelCompleteCallback: ()=> void = null;
     private slowMotionTicks: number             = 0;
 
     /** ****************************************************************************************************************
@@ -53,25 +48,12 @@ export class Game {
     public start(): void {
         DebugLog.init.log('Starting the game loop');
 
-        // init matter.js engine
         this.engine.initMatterJS();
-
-        // play bg sound
         this.bgMusic = this.engine.soundSystem.playSound(SoundData.BG_CHINESE, true);
-
-        // launch initial level
         this.resetAndLaunchLevel(LevelId.LEVEL_START);
-
-        // set the number of blend panel ticks
-        this.startBlendPanelAnim();
-
-        // update camera bounds
         this.updateAndAssignCamera();
-
-        // start the renderer
         this.engine.matterJsSystem.startRenderer();
 
-        // invoke engine ticks repeatedly
         window.requestAnimationFrame(
             () => { this.tickGame(); }
         );
@@ -146,10 +128,8 @@ export class Game {
         playerStartY: number = null,
         playerInitialFacing: CharacterFacing = null
     ): void {
-        // reset slow motion ticks
         this.slowMotionTicks = 0;
 
-        // clear world
         this.engine.matterJsSystem.resetWorld();
 
         // assign and init level
@@ -183,19 +163,16 @@ export class Game {
         }
 
         this.level.init(this.engine.matterJsSystem);
-
-        // reset panel
         this.engine.siteSystem.reset();
-
-        // reset camera
         this.resetCamera();
-
-        // reset keys
         Main.game.engine.keySystem.releaseAllKeys();
+
+        this.startBlendPanelAnim();
     }
 
-    public startBlendPanelAnim(): void {
+    public startBlendPanelAnim(onComplete: ()=> void = (): void => { /* */ }): void {
         this.blendPanelTicks = SettingEngine.BLEND_PANEL_TICKS;
+        this.blendPanelCompleteCallback = onComplete;
     }
 
     /** ****************************************************************************************************************
@@ -236,6 +213,7 @@ export class Game {
             --this.blendPanelTicks;
             if (this.blendPanelTicks === 0) {
                 this.level.player.setFrozen(false);
+                this.blendPanelCompleteCallback();
             }
         }
 

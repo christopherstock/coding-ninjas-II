@@ -55,15 +55,18 @@ export class Door extends Decoration {
         );
 
         if (doorActivated) {
-            Main.game.startBlendPanelAnim();
-            Main.game.resetAndLaunchLevel(
-                this.action.data.targetLevel,
-                this.action.data.playerStartX,
-                this.action.data.playerStartY,
-                this.action.data.playerInitFacing !== undefined
-                    ? this.action.data.playerInitFacing
-                    : Main.game.level.player.facing
-            );
+            Main.game.startBlendPanelAnim(() => {
+                console.log('blend complete');
+
+                Main.game.resetAndLaunchLevel(
+                    this.action.data.targetLevel,
+                    this.action.data.playerStartX,
+                    this.action.data.playerStartY,
+                    this.action.data.playerInitFacing !== undefined
+                        ? this.action.data.playerInitFacing
+                        : Main.game.level.player.facing
+                );
+            });
         }
 
         return doorActivated;
