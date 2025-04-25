@@ -2,11 +2,15 @@
 
 ## MVP (Primary)
 ```
+- Add destroyable obstacles.
+- Add 'destroyable' flag for Movables
+
+- Add Player 'speech' system. ('no entry')
+
 - Add event triggers! ( for falling obstacles, new enemies etc )
 - remove all unused confusing panel images!
 - fix moving plateau?
-- Add destroyable obstacles.
-- Add 'destroyable' flag for Movables
+- moving 'no entry' sign on trying to open closed door?
 ```
 
 ## Possible New Game/Engine Features

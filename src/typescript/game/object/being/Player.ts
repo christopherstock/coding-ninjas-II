@@ -113,9 +113,7 @@ export class Player extends Character {
             keySystem.setNeedsRelease(KeyData.KEY_UP);
 
             if (this.collidesBottom) {
-                if (!this.requestInteraction()) {
-                    this.jump();
-                }
+                this.jump();
             } else {
                 if (!this.isGliding && !this.glidingRequest && !this.collidesBottom) {
                     this.requestGliding();
@@ -128,6 +126,8 @@ export class Player extends Character {
 
             if (this.isGliding) {
                 this.requestParaClose();
+            } else if (this.collidesBottom) {
+                this.requestInteraction();
             }
         }
 

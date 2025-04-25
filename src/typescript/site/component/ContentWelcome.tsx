@@ -48,6 +48,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                             SiteContentFactory.createParagraph(
                                 '<span class=\'special\'>&#x2190; &#x2192;</span><br>'
                                 + '<span class=\'special\'>&#x2191;</span><br>'
+                                + '<span class=\'special\'>&#x2193;</span><br>'
                                 + '<span class=\'special\'>&#x2191; &#x2193;</span><br>'
                                 + '<span class=\'special\'>SPACE</span><br>',
                                 'right'
@@ -58,7 +59,8 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                         {
                             SiteContentFactory.createParagraph(
                                 'Walk<br>'
-                                + 'Jump &amp; Open Doors<br>'
+                                + 'Jump<br>'
+                                + 'Open Doors<br>'
                                 + 'Open/Close Parachute (in Air)<br>'
                                 + 'Strike Katana<br>',
                                 'right'
