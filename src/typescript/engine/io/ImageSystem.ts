@@ -74,6 +74,8 @@ export class ImageSystem {
         // load all images
         this.imagesToLoad = this.fileNames.length;
         for (const fileName of this.fileNames) {
+            DebugLog.image.log(' Loading Image [' + fileName + ']');
+
             this.originalImages[ fileName ]        = new Image();
             this.originalImages[ fileName ].src    = fileName;
             this.originalImages[ fileName ].onload = (event: Event): void => { this.onLoadImage(event); };
@@ -93,6 +95,7 @@ export class ImageSystem {
                 this.originalImages[ mirroredFileName ],
                 () => { this.onMirrorImage(); }
             );
+            DebugLog.image.log(' Completed Mirroring Image [' + mirroredFileName + ']');
         }
     }
 

@@ -5,21 +5,22 @@ import { SettingDebug } from './SettingDebug';
 *   Represents a debug group whose logging can be enabled or disabled.
 ***********************************************************************************************************************/
 export class DebugLog {
-    static readonly welcome: DebugLog       = new DebugLog(true);
-    static readonly init: DebugLog          = new DebugLog(false);
-    static readonly character: DebugLog     = new DebugLog(false);
-    static readonly canvas: DebugLog        = new DebugLog(false);
-    static readonly key: DebugLog           = new DebugLog(false);
-    static readonly image: DebugLog         = new DebugLog(false);
-    static readonly sound: DebugLog         = new DebugLog(false);
-    static readonly pointer: DebugLog       = new DebugLog(false);
-    static readonly item: DebugLog          = new DebugLog(false);
-    static readonly bot: DebugLog           = new DebugLog(false);
-    static readonly engine: DebugLog        = new DebugLog(false);
-    static readonly site: DebugLog          = new DebugLog(false);
-    static readonly react: DebugLog         = new DebugLog(false);
+    static readonly welcome: DebugLog           = new DebugLog(true);
 
-    private readonly loggingEnabled: boolean  = false;
+    static readonly init: DebugLog              = new DebugLog(false);
+    static readonly image: DebugLog             = new DebugLog(false);
+    static readonly character: DebugLog         = new DebugLog(false);
+    static readonly canvas: DebugLog            = new DebugLog(false);
+    static readonly key: DebugLog               = new DebugLog(false);
+    static readonly sound: DebugLog             = new DebugLog(false);
+    static readonly pointer: DebugLog           = new DebugLog(false);
+    static readonly item: DebugLog              = new DebugLog(false);
+    static readonly bot: DebugLog               = new DebugLog(false);
+    static readonly engine: DebugLog            = new DebugLog(false);
+    static readonly site: DebugLog              = new DebugLog(false);
+    static readonly react: DebugLog             = new DebugLog(false);
+
+    private readonly loggingEnabled: boolean    = false;
 
     /** ****************************************************************************************************************
     *   Constructs a new debug group.
