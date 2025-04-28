@@ -2,6 +2,7 @@
 
 ## MVP (Primary)
 ```
+- Debug toggle for BG music
 - Add destroyable obstacles.
 - Add event triggers! ( for falling obstacles, new enemies etc )
 ```

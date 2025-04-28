@@ -41,6 +41,11 @@ export class LevelMarket extends Level {
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
 
+        // house
+        GameObjectBundleFactory.createDecoImage(this, 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
+        GameObjectBundleFactory.createDecoImage(this, 480, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
+        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_WAREHOUSE, playerStartX: 500, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 1400, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
         GameObjectBundleFactory.createFriend(SpriteData.MASKED_NINJA_GIRL_STAND_LEFT, this, 4000, 1400, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.MASKED_NINJA_GIRL, false);

@@ -15,6 +15,7 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { Breakable } from '../../game/object/primal/Movable';
+import {SettingDebug} from "../../base/SettingDebug";
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.
@@ -23,9 +24,9 @@ export class LevelStart extends Level {
     public  width: number = 8320;
     public  height: number = 2500;
     public  playerStartX: number = 250;
-    public  playerStartY: number = 1250;
+    public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
-    public  playerInitialFloat: boolean = true;
+    public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
 
     /** ****************************************************************************************************************
     *   Inits a new level.

@@ -39,21 +39,7 @@ export class SoundSystem {
         if (!SettingDebug.DISABLE_SOUNDS) {
             if (this.sounds[ id ] !== null) {
                 const clipClone: HTMLAudioElement = this.sounds[ id ].cloneNode(true);
-
-                if (loop) {
-                    clipClone.addEventListener(
-                        'ended',
-                        () => {
-
-                            DebugLog.sound.log('Clip ended - now repeating ..');
-
-                            // noinspection JSIgnoredPromiseFromCall
-                            clipClone.play().then().catch((e: Error) => { return e; });
-                        }
-                    );
-                }
-
-                // noinspection JSIgnoredPromiseFromCall
+                clipClone.loop = loop;
                 clipClone.play().then().catch((e: Error) => { return e; });
 
                 return clipClone;
