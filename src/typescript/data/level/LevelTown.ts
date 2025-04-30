@@ -78,7 +78,7 @@ export class LevelTown extends Level {
         // house
         GameObjectBundleFactory.createDecoImage(this, 5600, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
         GameObjectBundleFactory.createDecoImage(this, 5580, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_5);
-        GameObjectBundleFactory.createDecoImage(this, 5805, 1389, DecoPosition.BG, ImageData.DOOR_4);
+        // GameObjectBundleFactory.createDecoImage(this, 5805, 1389, DecoPosition.BG, ImageData.DOOR_4);
         // GameObjectBundleFactory.createDecoImage(this, 5805 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
         // house

@@ -2,9 +2,12 @@
 
 ## MVP (Primary)
 ```
+- New Level: Harbor
+- New Level: Market ?
+- New Level: Warehouse ?
+- Complete game levels
 - Outro BlendPanel!
 - User toggle for BG music
-- Complete game levels
 - Links on Billboards
 - Strike in Air
 - Add destroyable obstacles.
