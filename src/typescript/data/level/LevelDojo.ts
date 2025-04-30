@@ -36,8 +36,8 @@ export class LevelDojo extends Level {
         // player
         GameObjectBundleFactory.createPlayer(this);
 
-        // parallax bg "Mount Fuji"
-        GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_TOWN));
+        // parallax bg "DoJo"
+        GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_DOJO));
 
         // home shrine
         this.addHomeShrine();
