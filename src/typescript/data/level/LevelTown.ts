@@ -14,7 +14,7 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 /** ********************************************************************************************************************
 *   The level data for the Garden level.
 ***********************************************************************************************************************/
-export class LevelMarket extends Level {
+export class LevelTown extends Level {
     public width: number = 7680;
     public height: number = 4500;
     public playerStartX: number = 250;
@@ -28,15 +28,15 @@ export class LevelMarket extends Level {
     protected createGameObjects(): void {
 
         GameObjectBundleFactory.createPlayer(this);
-        GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_MARKET));
+        GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_TOWN));
 
-        this.addMarketSetup();
+        this.addTownSetup();
     }
 
     /** ****************************************************************************************************************
     *   Adds the garden setup.
     *******************************************************************************************************************/
-    private addMarketSetup(): void {
+    private addTownSetup(): void {
         // walls
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
@@ -44,7 +44,7 @@ export class LevelMarket extends Level {
         // house
         GameObjectBundleFactory.createDecoImage(this, 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, 480, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_WAREHOUSE, playerStartX: 500, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 500, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 1400, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
@@ -79,7 +79,7 @@ export class LevelMarket extends Level {
         GameObjectBundleFactory.createDecoImage(this, 5600, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
         GameObjectBundleFactory.createDecoImage(this, 5580, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_5);
         GameObjectBundleFactory.createDecoImage(this, 5805, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        GameObjectBundleFactory.createDecoImage(this, 5805 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
+        // GameObjectBundleFactory.createDecoImage(this, 5805 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 6300, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);

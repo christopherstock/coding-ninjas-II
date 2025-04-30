@@ -10,7 +10,7 @@ import { LevelDojo } from '../data/level/LevelDojo';
 import { Main } from '../base/Main';
 import { KeyData } from '../data/KeyData';
 import { LevelGarden } from '../data/level/LevelGarden';
-import { LevelMarket } from '../data/level/LevelMarket';
+import { LevelTown } from '../data/level/LevelTown';
 import { DarkenPanel } from '../engine/ui/DarkenPanel';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
@@ -139,8 +139,8 @@ export class Game {
             case LevelId.LEVEL_GARDEN:
                 this.level = new LevelGarden();
                 break;
-            case LevelId.LEVEL_MARKET:
-                this.level = new LevelMarket();
+            case LevelId.LEVEL_TOWN:
+                this.level = new LevelTown();
                 break;
             default:
                 this.level = new LevelStart();
@@ -246,7 +246,7 @@ export class Game {
                 Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_4);
 
                 DebugLog.init.log('Resetting and switching to level 4');
-                this.resetAndLaunchLevel(LevelId.LEVEL_MARKET);
+                this.resetAndLaunchLevel(LevelId.LEVEL_TOWN);
             }
         }
     }
