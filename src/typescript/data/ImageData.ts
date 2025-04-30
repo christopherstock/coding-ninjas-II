@@ -271,19 +271,18 @@ export class ImageData {
     static readonly GROUND_GREENFIELD_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeft.png';
     static readonly GROUND_GREENFIELD_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRight.png';
 
-    static readonly BG_JAPAN: string                                    = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bg.jpg';
     static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
     static readonly BG_TOWN: string                                     = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown.png';
     static readonly BG_ALLEY: string                                    = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgAlley.jpg';
     static readonly BG_STREET: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgStreet.jpg';
     static readonly BG_GARDEN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgGarden.jpg';
-    // static readonly BG_MARKET: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMarket.jpg';
 
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
     static readonly BILLBOARD_WEBSITES: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebsites.png';
     static readonly BILLBOARD_GAMES: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardGames.png';
     static readonly BILLBOARD_WEB_APPS: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebapps.png';
+    static readonly BILLBOARD_APPLICATION_PAPER: string                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardApplicationPaper.png';
 
     static readonly SITE_PANEL_LOGO_GAME: string                        = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
     static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
@@ -571,13 +570,11 @@ export class ImageData {
         ImageData.GROUND_GREENFIELD_SOLID_LEFT,
         ImageData.GROUND_GREENFIELD_SOLID_RIGHT,
 
-        ImageData.BG_JAPAN,
         ImageData.BG_MOUNT_FUJI,
         ImageData.BG_TOWN,
         ImageData.BG_ALLEY,
         ImageData.BG_STREET,
         ImageData.BG_GARDEN,
-        // ImageData.BG_MARKET,
 
         ImageData.BILLBOARD,
         ImageData.BILLBOARD_WELCOME,
