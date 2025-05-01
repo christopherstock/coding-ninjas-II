@@ -1,21 +1,19 @@
 # TODO List
 
-## MVP (Primary)
+## Primary: MVP
 ```
-- New Level: Harbor
-- New Level: Market ?
-- New Level: Warehouse ?
-- Complete game levels
-- Outro BlendPanel!
 - User toggle for BG music
-- Links on Billboards
-- Strike in Air
+- Links (and pointer icon) on Billboards
 - Add destroyable obstacles.
+- Strike in Air
 - Add event triggers! ( for falling obstacles, new enemies etc )
 - Add decoration particle effects on smashing objects / windows etc.?
+- New Levels: Harbor, Market & Warehouse
+- Complete game levels
+- Outro BlendPanel!
 ```
 
-## Possible New Game/Engine Features
+## Secondary: Possible New Game/Engine Features
 ```
 - moving 'no entry' sign on trying to open closed door?
 - fix moving plateau?
