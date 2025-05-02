@@ -11,6 +11,7 @@
 - New Levels: Harbor, Market & Warehouse
 - Complete game levels
 - Outro BlendPanel!
+- Meta Infos in HTML
 ```
 
 ## Secondary: Possible New Game/Engine Features
