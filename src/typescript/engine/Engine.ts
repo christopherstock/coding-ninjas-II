@@ -14,6 +14,7 @@ import { SiteSystem } from './SiteSystem';
 import { KeySystem } from './hid/KeySystem';
 import { PointerSystem } from './hid/PointerSystem';
 import { Preloader } from './Preloader';
+import { MouseSystem } from './hid/MouseSystem';
 
 require('fpsmeter');
 
@@ -21,27 +22,17 @@ require('fpsmeter');
 *   Specifies the game engine and its systems.
 ***********************************************************************************************************************/
 export class Engine {
-    /** The canvas element. */
-    public              canvasSystem: CanvasSystem            = null;
-    /** The image system. */
-    public              imageSystem: ImageSystem             = null;
-    /** The soundSystem system. */
-    public              soundSystem: SoundSystem             = null;
-    /** The matterJS engine. */
-    public              matterJsSystem: MatterJsSystem          = null;
-    /** The site system. */
-    public              siteSystem: SiteSystem              = null;
-    /** The custom key system. */
-    public              keySystem: KeySystem               = null;
-    /** The custom pointer system. */
-    public              pointerSystem: PointerSystem           = null;
-    /** The FPS counter. */
-    public              fpsMeter: FPSMeter                       = null;
-
-    /** The preloader instance. */
-    public  readonly    preloader: Preloader               = null;
-    /** The parent game instance. */
-    private readonly    game: Game                    = null;
+    public canvasSystem: CanvasSystem               = null;
+    public imageSystem: ImageSystem                 = null;
+    public soundSystem: SoundSystem                 = null;
+    public matterJsSystem: MatterJsSystem           = null;
+    public siteSystem: SiteSystem                   = null;
+    public keySystem: KeySystem                     = null;
+    public pointerSystem: PointerSystem             = null;
+    public mouseSystem: MouseSystem               = null;
+    public fpsMeter: FPSMeter                       = null;
+    public readonly preloader: Preloader            = null;
+    private readonly game: Game                     = null;
 
     /** ***************************************************************************************************************
     *   Creates a new game engine.
@@ -157,11 +148,14 @@ export class Engine {
         DebugLog.init.log('Init site system');
         this.siteSystem = new SiteSystem();
 
-        // init key and pointer system
+        this.initMatterJS();
+
         DebugLog.init.log('Init key system');
         this.keySystem = new KeySystem();
         DebugLog.init.log('Init pointer system');
         this.pointerSystem = new PointerSystem();
+        DebugLog.init.log('Init mouse system');
+        this.mouseSystem = new MouseSystem();
 
         // init window blur handler
         this.initWindowBlurHandler();

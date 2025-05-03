@@ -6,6 +6,7 @@
 - User toggle for BG music
 - Add destroyable obstacles
 - Update Meta Infos in HTML
+- one billboard for every Top Project!
 - Strike in Air
 - New Levels: Harbor, Market & Warehouse
 - Outro BlendPanel!

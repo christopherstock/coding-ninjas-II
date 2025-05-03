@@ -1,4 +1,5 @@
 import * as matter from 'matter-js';
+import * as Matter from 'matter-js';
 import { Engine } from '../engine/Engine';
 import { Camera } from '../engine/ui/Camera';
 import { DebugLog } from '../base/DebugLog';
@@ -14,6 +15,7 @@ import { LevelTown } from '../data/level/LevelTown';
 import { DarkenPanel } from '../engine/ui/DarkenPanel';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
+import {MouseSystem} from "../engine/hid/MouseSystem";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -46,8 +48,6 @@ export class Game {
     *******************************************************************************************************************/
     public start(): void {
         DebugLog.init.log('Starting the game loop');
-
-        this.engine.initMatterJS();
         this.bgMusic = this.engine.soundSystem.playSound(SoundData.BG_CHINESE, true);
         this.resetAndLaunchLevel(LevelId.LEVEL_START);
         this.updateAndAssignCamera();
@@ -175,21 +175,17 @@ export class Game {
     *   Being invoked each tick of the game loop in order to render the game.
     *******************************************************************************************************************/
     private tickGame(): void {
-        // start fpsMetet tick
         if (SettingDebug.DEBUG_MODE) {
             this.engine.fpsMeter.tickStart();
         }
 
-        // handle menu keys
         this.handleMenuKey();
 
-        // render one game tick and update matter.js 2D engine
         if (this.slowMotionTicks === 0 || this.slowMotionTicks-- % 4 === 0) {
             this.render();
             this.engine.matterJsSystem.updateEngine();
         }
 
-        // stop fpsMeter tick
         if (SettingDebug.DEBUG_MODE) {
             this.engine.fpsMeter.tick();
         }

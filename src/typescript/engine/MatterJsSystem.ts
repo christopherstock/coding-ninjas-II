@@ -153,4 +153,8 @@ export class MatterJsSystem {
     public setRenderBounds(bounds: matter.Bounds): void {
         this.renderer.bounds = bounds;
     }
+
+    public getEngine(): matter.Engine {
+        return this.engine;
+    }
 }
