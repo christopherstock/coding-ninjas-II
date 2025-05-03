@@ -2,16 +2,16 @@
 
 ## Primary: MVP
 ```
-- User toggle for BG music
 - Links (and pointer icon) on Billboards
-- Add destroyable obstacles.
+- User toggle for BG music
+- Add destroyable obstacles
+- Update Meta Infos in HTML
 - Strike in Air
-- Add event triggers! ( for falling obstacles, new enemies etc )
-- Add decoration particle effects on smashing objects / windows etc.?
 - New Levels: Harbor, Market & Warehouse
-- Complete game levels
 - Outro BlendPanel!
-- Meta Infos in HTML
+- Complete game levels
+- Add event triggers ( for falling obstacles, new enemies etc )
+- Add decoration particle effects on smashing objects / windows etc.
 ```
 
 ## Secondary: Possible New Game/Engine Features
