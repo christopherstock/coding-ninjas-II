@@ -16,7 +16,7 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { SpriteData } from '../SpriteData';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
-import {Breakable} from "../../game/object/GameObject";
+import { Breakable } from '../../game/object/GameObject';
 
 /** ********************************************************************************************************************
 *   The level data for the DoJo level.

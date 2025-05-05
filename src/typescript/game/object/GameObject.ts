@@ -5,8 +5,8 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
 import { DebugLog } from '../../base/DebugLog';
-import {ImageUtil} from "../../util/ImageUtil";
-import {SettingMatter} from "../../base/SettingMatter";
+import { ImageUtil } from '../../util/ImageUtil';
+import { SettingMatter } from '../../base/SettingMatter';
 
 export enum GameObjectState {
     ALIVE,

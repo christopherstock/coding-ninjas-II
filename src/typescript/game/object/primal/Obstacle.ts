@@ -1,4 +1,4 @@
-import {Breakable, GameObject} from '../GameObject';
+import { Breakable, GameObject } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 

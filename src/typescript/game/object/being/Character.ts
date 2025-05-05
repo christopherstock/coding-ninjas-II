@@ -363,8 +363,7 @@ export abstract class Character extends GameObject {
             } else {
                 this.setSprite(this.spriteSet.spriteJumpRight);
             }
-        }
-        else {
+        } else {
             if (this.isMovingLeft) {
                 this.setSprite(this.spriteSet.spriteWalkLeft);
             } else if (this.isMovingRight) {

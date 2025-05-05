@@ -1,5 +1,5 @@
 import * as matter from 'matter-js';
-import {GameObjectState, GameObject, Breakable} from '../GameObject';
+import { GameObjectState, GameObject, Breakable } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { DebugLog } from '../../../base/DebugLog';

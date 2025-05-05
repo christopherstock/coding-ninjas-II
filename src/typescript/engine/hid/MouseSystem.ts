@@ -24,7 +24,7 @@ export class MouseSystem {
 
             for (const deco of decos) {
                 const img: string = deco.sprite.template.imageIds[0];
-                if (!img.includes('billboard')) continue;
+                if (!img.includes('billboard')) {continue;}
 
                 if (
                     event.clientX >= deco.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
