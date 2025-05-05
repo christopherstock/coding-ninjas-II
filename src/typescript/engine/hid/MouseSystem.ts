@@ -24,6 +24,8 @@ export class MouseSystem {
 
             for (const deco of decos) {
                 const img: string = deco.sprite.template.imageIds[0];
+                if (!img.includes('billboard')) continue;
+
                 if (
                     event.clientX >= deco.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
                     && event.clientX < (
@@ -34,6 +36,10 @@ export class MouseSystem {
                         deco.shape.body.bounds.min.y + deco.shape.getHeight() - Main.game.camera.getOffsetY()
                     )
                 ) {
+                    const leftHalf = event.clientX < (
+                        deco.shape.body.bounds.min.x + deco.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
+                    );
+
                     if (
                         Main.game.level.id === LevelId.LEVEL_START
                         && img === ImageData.BILLBOARD_WELCOME
@@ -46,9 +52,7 @@ export class MouseSystem {
                         && img === ImageData.BILLBOARD_WEBSITES
                     ) {
                         if (
-                            event.clientX < (
-                                deco.shape.body.bounds.min.x + deco.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
-                            )
+                            leftHalf
                         ) {
                             window.open('https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/', '_blank');
                         } else {

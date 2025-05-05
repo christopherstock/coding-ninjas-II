@@ -10,17 +10,17 @@ import { RandomFrames } from './RandomFrames';
 ***********************************************************************************************************************/
 export class SpriteTemplate {
     /** All image ids this sprite consists of. */
-    public                  imageIds: string[]               = null;
+    public imageIds: string[]           = null;
     /** The number of ticks between frame changes. */
-    public                  ticksBetweenFrames: number                 = 0;
+    public ticksBetweenFrames: number   = 0;
     /** Specifies if all frames in this sprite should be mirrored. */
-    public                  mirrored: MirrorImage            = null;
+    public mirrored: MirrorImage        = null;
     /** Specifies if the frame animation should be repeated infinitely. */
-    public                  loop: LoopSprite             = null;
+    public loop: LoopSprite             = null;
     /** Specifies random behaviour in frame assignment. */
-    public                  randomFrames: RandomFrames           = null;
+    public randomFrames: RandomFrames   = null;
     /** The scale factor for drawing this sprite. Defaults to 1.0. */
-    public                  scale: number                 = 0;
+    public scale: number                = 0;
 
     /** Flags if this sprite has only one frame. */
     public                  singleFramed: boolean                = false;
