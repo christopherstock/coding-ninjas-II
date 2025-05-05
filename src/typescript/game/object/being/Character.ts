@@ -87,7 +87,7 @@ export abstract class Character extends GameObject {
         if (this.attackingTicks > 0) {
             --this.attackingTicks;
             if (this.attackingTicks === 7) {
-                this.performSmash();
+                this.performStrike();
             }
         }
 
@@ -99,7 +99,9 @@ export abstract class Character extends GameObject {
     /** ****************************************************************************************************************
     *   Lets this character perform a smash/attack into the level.
     *******************************************************************************************************************/
-    public performSmash(): void {
+    public performStrike(): void {
+        const DAMAGE_PER_STRIKE = 34.0;
+
         // the bounds of the smash depend on character bound and facing direction
         const attackRange: number = (
             this.facing === CharacterFacing.LEFT
@@ -130,7 +132,14 @@ export abstract class Character extends GameObject {
         // check all movables
         for (const movable of Main.game.level.movables) {
             if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
-                movable.hurt(34.0, damageForce);
+                movable.hurt(DAMAGE_PER_STRIKE, damageForce);
+            }
+        }
+
+        // check all obstacles
+        for (const obstacle of Main.game.level.obstacles) {
+            if (matter.Query.region([ obstacle.shape.body ], smashBounds).length > 0) {
+                obstacle.hurt(DAMAGE_PER_STRIKE, damageForce);
             }
         }
 

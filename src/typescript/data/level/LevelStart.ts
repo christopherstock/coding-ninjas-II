@@ -1,20 +1,20 @@
 /* eslint-disable max-len */
 
-import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
-import { TilesetData } from '../TilesetData';
-import { ImageData } from '../ImageData';
-import { Level, LevelId } from '../../game/level/Level';
-import { GameObjectFactory } from '../../game/object/GameObjectFactory';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { SpriteData } from '../SpriteData';
-import { SiteContent } from '../../site/SiteContentSystem';
-import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { CharacterSpriteData } from '../CharacterSpriteData';
-import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { MirrorImage } from '../../engine/ui/MirrorImage';
-import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
-import { SettingDebug } from '../../base/SettingDebug';
+import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
+import {TilesetData} from '../TilesetData';
+import {ImageData} from '../ImageData';
+import {Level, LevelId} from '../../game/level/Level';
+import {GameObjectFactory} from '../../game/object/GameObjectFactory';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {SpriteData} from '../SpriteData';
+import {SiteContent} from '../../site/SiteContentSystem';
+import {SitePanelAppearance} from '../../game/object/special/SiteTrigger';
+import {GameAction, GameActionType} from '../../game/object/GameAction';
+import {CharacterSpriteData} from '../CharacterSpriteData';
+import {CharacterFacing} from '../../game/object/being/CharacterFacing';
+import {MirrorImage} from '../../engine/ui/MirrorImage';
+import {BodyDensity, BodyFriction} from '../../base/SettingMatter';
+import {SettingDebug} from '../../base/SettingDebug';
 import {Breakable} from "../../game/object/GameObject";
 
 /** ********************************************************************************************************************
@@ -54,6 +54,9 @@ export class LevelStart extends Level {
 
         // statue shrine
         GameObjectBundleFactory.createStatusShrine(this, x + 1625, 2000);
+
+        // destroyable statue
+        GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.STATUE_1, Breakable.YES);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);

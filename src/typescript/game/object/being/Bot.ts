@@ -99,9 +99,7 @@ export class Bot extends Character {
         super.render();
 
         if (this.state !== GameObjectState.DEAD) {
-            if (this.checkFallingDead()) {
-                this.state = GameObjectState.DEAD;
-            }
+            this.checkFallingDead();
 
             if (this.state !== GameObjectState.DYING) {
                 this.moveAccordingToPattern();

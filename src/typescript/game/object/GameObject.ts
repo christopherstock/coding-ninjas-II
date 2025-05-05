@@ -63,9 +63,7 @@ export abstract class GameObject {
         }
 
         if (this.state === GameObjectState.DYING) {
-            if (this.checkFallingDead()) {
-                this.state = GameObjectState.DEAD;
-            }
+            this.checkFallingDead();
         }
     }
 
@@ -85,7 +83,7 @@ export abstract class GameObject {
     /** ****************************************************************************************************************
     *   Check if the enemy falls to death by falling out of the level.
     *******************************************************************************************************************/
-    protected checkFallingDead(): boolean {
+    protected checkFallingDead(): void {
         if (this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height) {
             DebugLog.character.log('Game object has fallen to dead');
 
@@ -93,10 +91,8 @@ export abstract class GameObject {
             Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
 
             // flag as dead
-            return true;
+            this.state = GameObjectState.DEAD;
         }
-
-        return false;
     }
 
     /** ****************************************************************************************************************
@@ -174,19 +170,14 @@ export abstract class GameObject {
     }
 
     public hurt(damage: number, damageForce: number): void {
-        if (this.state !== GameObjectState.ALIVE) {
+        if (
+            !this.breakable
+            || this.state !== GameObjectState.ALIVE
+        ) {
             return;
         }
 
         DebugLog.character.log('Character hits a level object (movable)');
-        matter.Body.setVelocity(
-            this.shape.body,
-            matter.Vector.create(damageForce, -10.0)
-        );
-
-        if (!this.breakable) {
-            return;
-        }
 
         // TODO add particle effect / decos on hurt/smash!
         this.energy -= damage;
@@ -215,14 +206,20 @@ export abstract class GameObject {
             // TODO add particle effect / decos on breaking etc!
             this.break();
         }
+
+        matter.Body.setVelocity(
+            this.shape.body,
+            matter.Vector.create(damageForce, -10.0)
+        );
     }
 
     private break(): void {
         this.state = GameObjectState.DYING;
 
         // freeze & make non-collidable
-        // this.shape.body.isStatic = true;
+        this.shape.body.isStatic = false;
         this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT;
+        this.shape.body.mass = 1.0;
 
         // bring body to foreground
         Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
