@@ -1,11 +1,6 @@
-import * as matter from 'matter-js';
-import { GameObjectState, GameObject, Breakable } from '../GameObject';
+import { GameObject, Breakable } from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
-import { DebugLog } from '../../../base/DebugLog';
-import { Main } from '../../../base/Main';
-import { ImageUtil } from '../../../util/ImageUtil';
-import { SettingMatter } from '../../../base/SettingMatter';
 
 /** ********************************************************************************************************************
 *   Represents a movable box.
