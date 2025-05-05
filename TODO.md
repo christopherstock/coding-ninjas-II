@@ -1,13 +1,13 @@
 # TODO List
 
 ## Doing
+- 🧪 User toggle for BG music
 
 ## Primary: MVP
-- 🧪 User toggle for BG music
 - 🧪 New Levels: Harbor, Market & Warehouse
 - 🧪 Outro BlendPanel!
 - 🧪 Complete game levels
-- 🧪 Add event triggers ( for falling obstacles, new enemies etc )
+- 🧪 Add event triggers (for falling obstacles, new enemies etc.)
 - 🧪 Add decoration particle effects on smashing objects / windows etc.
 
 ## Secondary: Possible New Game/Engine Features
@@ -15,7 +15,6 @@
 - ⛏️ fix moving plateau?
 - ⛏️ Debug Disable Pointer control.
 - ⛏️ Add canvas max width?
-- ⛏️ Add GitLab CI/CD pipeline
 - ⛏️ Add Player 'speech' system. ('no entry')?
 - ⛏️ Create HUD ( for picked items etc )?
 - ⛏️ create class HUD with own paint-method.
@@ -26,6 +25,7 @@
 - ⛏️ Add more cool flask images.
 - ⛏️ Add 'crouch- and crouch+slide' action.
 - ⛏️ Enum 'Wearpon' with according damage values?
+- ⛏️ Add GitLab CI/CD pipeline
 - ⛏️ Add secondary attack action.
 - ⛏️ Add 'shuriken throw' action.
 - ⛏️ Friendly Bots that talk to you.
