@@ -73,8 +73,10 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         </table>
 
         { SiteContentFactory.createSpacerVertical() }
-        { SiteContentFactory.createParagraph('Project progress:', 'right') }
-        { SiteContentFactory.createProgress('line', 76.1) }
+        <div>
+            { SiteContentFactory.createParagraph('Project progress:', 'right') }
+            { SiteContentFactory.createProgress('line', 76.1) }
+        </div>
 
         { SiteContentFactory.createSpacerVertical() }
         { SiteContentFactory.createParagraph('Toggle background music:', 'right') }

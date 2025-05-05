@@ -1,7 +1,6 @@
 # TODO List
 
 ## Doing
-- 🧪 User toggle for BG music
 
 ## Primary: MVP
 - 🧪 New Levels: Harbor, Market & Warehouse
