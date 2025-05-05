@@ -66,6 +66,13 @@ export class MouseSystem {
                     ) {
                         window.open('https://christopherstock.github.io/OutRunMF/dist/', '_blank');
                     }
+
+                    if (
+                        Main.game.level.id === LevelId.LEVEL_TOWN
+                        && img === ImageData.BILLBOARD_3D_DEV
+                    ) {
+                        window.open('https://christopherstock.github.io/babylon-zero/dist/', '_blank');
+                    }
                 }
             }
         }

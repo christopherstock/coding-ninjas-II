@@ -56,7 +56,7 @@ export class LevelTown extends Level {
 
         // billboard 'web apps'
         GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEB_APPS);
+        GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_3D_DEV);
 
         // house with door to garden
         GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
