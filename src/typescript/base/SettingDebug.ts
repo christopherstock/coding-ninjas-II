@@ -2,7 +2,7 @@
 *   All debug settings.
 ***********************************************************************************************************************/
 export class SettingDebug {
-    public static readonly DEBUG_MODE: boolean                      = true;
+    public static readonly DEBUG_MODE: boolean                      = false;
 
     public static readonly DISABLE_SOUNDS: boolean                  = (true  && SettingDebug.DEBUG_MODE);
     public static readonly DISABLE_POINTER: boolean                 = (true  && SettingDebug.DEBUG_MODE);
