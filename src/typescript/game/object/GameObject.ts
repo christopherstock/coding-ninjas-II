@@ -36,6 +36,7 @@ export abstract class GameObject {
     *   @param spriteTemplate The sprite template to use for this game object.
     *   @param x              Startup position X.
     *   @param y              Startup position Y.
+    *   @param breakable      If the game object can be destroyed.
     *******************************************************************************************************************/
     protected constructor(
         shape: Shape,

@@ -1,11 +1,9 @@
 # TODO List
 
 ## Doing
-- 🧪 Add destroyable obstacles
 
 ## Primary: MVP
 - 🧪 User toggle for BG music
-- 🧪 enable Katana Strike in Air
 - 🧪 New Levels: Harbor, Market & Warehouse
 - 🧪 Outro BlendPanel!
 - 🧪 Complete game levels
