@@ -35,4 +35,13 @@ export class StringUtil {
     public static getDateTimeString(): string {
         return new moment().format('DD.MM.YYYY HH:mm:ss');
     }
+
+    /** *************************************************************************************************************
+        *   Checks if the target device is a mac.
+        *
+        *   @return <code>true</code> if the target device is a mac.
+        ***************************************************************************************************************/
+    public static isMac(): boolean {
+        return (/iPad|iPhone|iPod/.test(navigator.userAgent));
+    }
 }

@@ -3,6 +3,7 @@ import { DebugLog } from '../../base/DebugLog';
 import { SiteContentFactory } from '../SiteContentFactory';
 import { Main } from '../../base/Main';
 import { ImageData } from '../../data/ImageData';
+import { StringUtil } from '../../util/StringUtil';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'welcome' page.
@@ -72,6 +73,26 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         </table>
 
         { SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createParagraph('Project progress:', 'right') }
+        { SiteContentFactory.createProgress('line', 76.1) }
+
+        { SiteContentFactory.createSpacerVertical() }
+        { SiteContentFactory.createParagraph('Toggle background music:', 'right') }
+        {
+            SiteContentFactory.createSwitch(
+                'notification',
+                'poweroff',
+                !StringUtil.isMac(),
+                (checked: boolean) => {
+
+                    DebugLog.sound.log('Toggle bg music to [' + String(checked) + ']');
+
+                    Main.game.toggleBgMusic(checked);
+                }
+            )
+        }
+
+        { SiteContentFactory.createSpacerVertical() }
 
         {
             SiteContentFactory.createCarousel(
@@ -107,10 +128,6 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 ]
             )
         }
-
-        { SiteContentFactory.createSpacerVertical() }
-        { SiteContentFactory.createParagraph('Project Progress:', 'right') }
-        { SiteContentFactory.createProgress('line', 73.6) }
 
     </div>;
 }

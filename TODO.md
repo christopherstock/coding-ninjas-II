@@ -9,6 +9,7 @@
 - 🧪 Complete game levels
 - 🧪 Add event triggers (for falling obstacles, new enemies etc.)
 - 🧪 Add decoration particle effects on smashing objects / windows etc.
+- ⛏️ Add 'katana strike' sprites in air.
 
 ## Secondary: Possible New Game/Engine Features
 - ⛏️ moving 'no entry' sign on trying to open closed door?
@@ -21,13 +22,9 @@
 - ⛏️ Add Camera joyride on level startup?
 - ⛏️ Add new ninja sprites.
 - ⛏️ Particle fx on smashed crates, startup window etc.
-- ⛏️ Add 'katana strike' action in air.
 - ⛏️ Add more cool flask images.
 - ⛏️ Add 'crouch- and crouch+slide' action.
 - ⛏️ Enum 'Wearpon' with according damage values?
-- ⛏️ Add GitLab CI/CD pipeline
-- ⛏️ Add secondary attack action.
-- ⛏️ Add 'shuriken throw' action.
 - ⛏️ Friendly Bots that talk to you.
 - ⛏️ Sound effects for ninja girl actions and enemies
 - ⛏️ Player shooting or throwing objects.
@@ -37,3 +34,5 @@
 - ⛏️ Create item pickup HUD effect?
 - ⛏️ Selectable panel animations?
 - ⛏️ Remove static access on Main.game?
+- ⛏️ Add secondary attack action.
+- ⛏️ Add 'shuriken throw' action.
