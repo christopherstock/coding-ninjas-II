@@ -4,10 +4,9 @@
 export class SettingDebug {
     public static readonly DEBUG_MODE: boolean                      = true;
 
-    public static readonly DISABLE_SOUNDS: boolean                  = (false  && SettingDebug.DEBUG_MODE);
-
-    public static readonly DISABLE_POINTER: boolean                 = (true  && SettingDebug.DEBUG_MODE);
-    public static readonly DISABLE_DARKEN_PANEL: boolean            = (true  && SettingDebug.DEBUG_MODE);
+    public static readonly DISABLE_SOUNDS: boolean                  = (true && SettingDebug.DEBUG_MODE);
+    public static readonly DISABLE_POINTER: boolean                 = (true && SettingDebug.DEBUG_MODE);
+    public static readonly DISABLE_DARKEN_PANEL: boolean            = (true && SettingDebug.DEBUG_MODE);
     public static readonly NO_FLOATING_STARTUP: boolean             = (true && SettingDebug.DEBUG_MODE);
 
     public static readonly BG_FOR_MATTER_BODY: boolean              = (false && SettingDebug.DEBUG_MODE);
