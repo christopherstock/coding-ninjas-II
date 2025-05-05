@@ -2,10 +2,11 @@
 
 ## Primary: MVP
 ```
-- Links (and pointer icon) on Billboards
+- pointer icons on Billboards
 - User toggle for BG music
 - Add destroyable obstacles
 - Update Meta Infos in HTML
+- force landscape mode
 - one billboard for every Top Project!
 - Strike in Air
 - New Levels: Harbor, Market & Warehouse
