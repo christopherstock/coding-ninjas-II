@@ -14,8 +14,8 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
-import { Breakable } from '../../game/object/primal/Movable';
 import { SettingDebug } from '../../base/SettingDebug';
+import {Breakable} from "../../game/object/GameObject";
 
 /** ********************************************************************************************************************
 *   The level data for the dev level.

@@ -5,11 +5,18 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Main } from '../../base/Main';
 import { DebugLog } from '../../base/DebugLog';
+import {ImageUtil} from "../../util/ImageUtil";
+import {SettingMatter} from "../../base/SettingMatter";
 
 export enum GameObjectState {
     ALIVE,
     DYING,
     DEAD,
+}
+
+export enum Breakable {
+    NO,
+    YES,
 }
 
 /** ********************************************************************************************************************
@@ -19,6 +26,8 @@ export abstract class GameObject {
     public shape: Shape   = null;
     public sprite: Sprite = null;
     public state: GameObjectState = GameObjectState.ALIVE;
+    public breakable: Breakable = Breakable.NO;
+    public energy: number = 100.0;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.
@@ -32,10 +41,12 @@ export abstract class GameObject {
         shape: Shape,
         spriteTemplate: SpriteTemplate,
         x: number,
-        y: number
+        y: number,
+        breakable: Breakable = Breakable.NO
     ) {
         this.shape = shape;
         this.setSprite(spriteTemplate);
+        this.breakable = breakable;
 
         matter.Body.translate(this.shape.body, matter.Vector.create(x, y));
     }
@@ -48,6 +59,12 @@ export abstract class GameObject {
             // render sprite and check frame change
             if (this.sprite.render()) {
                 this.setImageFromSprite();
+            }
+        }
+
+        if (this.state === GameObjectState.DYING) {
+            if (this.checkFallingDead()) {
+                this.state = GameObjectState.DEAD;
             }
         }
     }
@@ -94,7 +111,7 @@ export abstract class GameObject {
                 return;
             }
 
-            // assign new sprite and texture
+            // assign new sprite and 1st image/texture
             this.sprite = new Sprite(spriteTemplate);
             this.setImageFromSprite();
 
@@ -154,5 +171,64 @@ export abstract class GameObject {
                 }
             );
         }
+    }
+
+    public hurt(damage: number, damageForce: number): void {
+        if (this.state !== GameObjectState.ALIVE) {
+            return;
+        }
+
+        DebugLog.character.log('Character hits a level object (movable)');
+        matter.Body.setVelocity(
+            this.shape.body,
+            matter.Vector.create(damageForce, -10.0)
+        );
+
+        if (!this.breakable) {
+            return;
+        }
+
+        // TODO add particle effect / decos on hurt/smash!
+        this.energy -= damage;
+        DebugLog.character.log('New level object energy: [' + String(this.energy) + ']');
+
+        // darken img
+        const img = new Image();
+        img.src = this.shape.body.render.sprite.texture;
+        img.onload = (): void => {
+            const darkenedImg = ImageUtil.darkenImage(
+                img,
+                (): void => { /* */ }
+            );
+            this.shape.body.render.sprite.texture = darkenedImg.src;
+        }
+
+        // smaller scale (testwise)
+        // this.shape.body.render.sprite.xScale = 0.90;
+        // this.shape.body.render.sprite.yScale = 0.90;
+
+        // this.shape.body.render.sprite.
+        // this.shape.body.render.
+
+        if (this.energy <= 0.0) {
+            DebugLog.character.log('Game Object BREAKS!');
+            // TODO add particle effect / decos on breaking etc!
+            this.break();
+        }
+    }
+
+    private break(): void {
+        this.state = GameObjectState.DYING;
+
+        // freeze & make non-collidable
+        // this.shape.body.isStatic = true;
+        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT;
+
+        // bring body to foreground
+        Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
+        Main.game.engine.matterJsSystem.addToWorld(this.shape.body);
+
+        // remove from world ?
+        // Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
     }
 }

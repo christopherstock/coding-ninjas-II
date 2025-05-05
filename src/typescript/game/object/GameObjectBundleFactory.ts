@@ -12,12 +12,13 @@ import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { Player } from './being/Player';
 import { GameObjectFactory } from './GameObjectFactory';
 import { JumpPassThrough, Obstacle } from './primal/Obstacle';
-import { Breakable, Movable } from './primal/Movable';
+import { Movable } from './primal/Movable';
 import { CharacterSpriteSet } from './being/CharacterSpriteSet';
 import { Bot } from './being/Bot';
 import { Decoration } from './deco/Decoration';
 import { Shrine } from './deco/Shrine';
 import { CharacterFacing } from './being/CharacterFacing';
+import {Breakable} from "./GameObject";
 
 /* eslint-disable max-len */
 

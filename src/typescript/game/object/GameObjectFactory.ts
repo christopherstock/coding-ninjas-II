@@ -17,13 +17,14 @@ import { Decoration } from './deco/Decoration';
 import { DecoPosition } from './GameObjectBundleFactory';
 import { ParallaxDeco } from './deco/ParallaxDeco';
 import { Platform } from './special/Platform';
-import { Breakable, Movable } from './primal/Movable';
+import { Movable } from './primal/Movable';
 import { Door } from './special/Door';
 import { SigSaw } from './special/SigSaw';
 import { Bounce } from './special/Bounce';
 import { SitePanelAppearance, SiteTrigger } from './special/SiteTrigger';
 import { GameAction } from './GameAction';
 import { CharacterFacing } from './being/CharacterFacing';
+import {Breakable} from "./GameObject";
 
 /** ********************************************************************************************************************
 *   Creates customized instances of game objects.

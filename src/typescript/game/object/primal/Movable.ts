@@ -1,5 +1,5 @@
 import * as matter from 'matter-js';
-import { GameObjectState, GameObject } from '../GameObject';
+import {GameObjectState, GameObject, Breakable} from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { DebugLog } from '../../../base/DebugLog';
@@ -7,18 +7,10 @@ import { Main } from '../../../base/Main';
 import { ImageUtil } from '../../../util/ImageUtil';
 import { SettingMatter } from '../../../base/SettingMatter';
 
-export enum Breakable {
-    NO,
-    YES,
-}
-
 /** ********************************************************************************************************************
 *   Represents a movable box.
 ***********************************************************************************************************************/
 export class Movable extends GameObject {
-    public breakable: Breakable = Breakable.NO;
-    public energy: number = 100.0;
-
     /** ****************************************************************************************************************
     *   Creates a new movable.
     *
@@ -38,83 +30,8 @@ export class Movable extends GameObject {
             shape,
             spriteTemplate,
             x,
-            y
+            y,
+            breakable
         );
-
-        this.breakable = breakable;
-    }
-
-    /** ****************************************************************************************************************
-    *   Renders this movable.
-    *******************************************************************************************************************/
-    public render(): void {
-        super.render();
-
-        if (this.state === GameObjectState.DYING) {
-            if (this.checkFallingDead()) {
-                this.state = GameObjectState.DEAD;
-            }
-        }
-
-        // this.clipToHorizontalLevelBounds();
-    }
-
-    public hurt(damage: number, damageForce: number): void {
-        if (this.state !== GameObjectState.ALIVE) {
-            return;
-        }
-
-        DebugLog.character.log('Character hits a level object (movable)');
-        matter.Body.setVelocity(
-            this.shape.body,
-            matter.Vector.create(damageForce, -10.0)
-        );
-
-        if (!this.breakable) {
-            return;
-        }
-
-        // TODO add particle effect / decos on hurt/smash!
-        this.energy -= damage;
-        DebugLog.character.log('New level object energy: [' + String(this.energy) + ']');
-
-        // darken img
-        const img = new Image();
-        img.src = this.shape.body.render.sprite.texture;
-        img.onload = (): void => {
-            const darkenedImg = ImageUtil.darkenImage(
-                img,
-                (): void => { /* */ }
-            );
-            this.shape.body.render.sprite.texture = darkenedImg.src;
-        }
-
-        // smaller scale (testwise)
-        // this.shape.body.render.sprite.xScale = 0.90;
-        // this.shape.body.render.sprite.yScale = 0.90;
-
-        // this.shape.body.render.sprite.
-        // this.shape.body.render.
-
-        if (this.energy <= 0.0) {
-            DebugLog.character.log('Game Object BREAKS!');
-            // TODO add particle effect / decos on breaking etc!
-            this.break();
-        }
-    }
-
-    private break(): void {
-        this.state = GameObjectState.DYING;
-
-        // freeze & make non-collidable
-        // this.shape.body.isStatic = true;
-        this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT;
-
-        // bring body to foreground
-        Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
-        Main.game.engine.matterJsSystem.addToWorld(this.shape.body);
-
-        // remove from world ?
-        // Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
     }
 }

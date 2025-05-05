@@ -1,4 +1,4 @@
-import { GameObject } from '../GameObject';
+import {Breakable, GameObject} from '../GameObject';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 
@@ -34,13 +34,15 @@ export class Obstacle extends GameObject {
         x: number,
         y: number,
         spriteTemplate: SpriteTemplate,
-        jumpPassThrough: JumpPassThrough
+        jumpPassThrough: JumpPassThrough,
+        breakable: Breakable = Breakable.NO
     ) {
         super(
             shape,
             spriteTemplate,
             x,
-            y
+            y,
+            breakable
         );
 
         this.jumpPassThrough = jumpPassThrough;

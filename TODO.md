@@ -1,12 +1,10 @@
 # TODO List
 
 ## Doing
-- 🧪 Update Meta Infos in HTML
-- 🧪 force landscape mode
+- 🧪 Add destroyable obstacles
 
 ## Primary: MVP
 - 🧪 User toggle for BG music
-- 🧪 Add destroyable obstacles
 - 🧪 enable Katana Strike in Air
 - 🧪 New Levels: Harbor, Market & Warehouse
 - 🧪 Outro BlendPanel!
