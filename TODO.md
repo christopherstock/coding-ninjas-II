@@ -2,18 +2,18 @@
 
 ## Primary: MVP
 ```
-- pointer icons on Billboards
-- User toggle for BG music
-- Add destroyable obstacles
-- Update Meta Infos in HTML
-- force landscape mode
-- one billboard for every Top Project!
-- Strike in Air
-- New Levels: Harbor, Market & Warehouse
-- Outro BlendPanel!
-- Complete game levels
-- Add event triggers ( for falling obstacles, new enemies etc )
-- Add decoration particle effects on smashing objects / windows etc.
+- 🧪 complete billboards
+- 🧪 create one billboard for every Top Project!
+- 🧪 User toggle for BG music
+- 🧪 Add destroyable obstacles
+- 🧪 Update Meta Infos in HTML
+- 🧪 force landscape mode
+- 🧪 enable Katana Strike in Air
+- 🧪 New Levels: Harbor, Market & Warehouse
+- 🧪 Outro BlendPanel!
+- 🧪 Complete game levels
+- 🧪 Add event triggers ( for falling obstacles, new enemies etc )
+- 🧪 Add decoration particle effects on smashing objects / windows etc.
 ```
 
 ## Secondary: Possible New Game/Engine Features

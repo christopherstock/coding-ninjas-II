@@ -21,6 +21,7 @@ import { SettingDebug } from '../../base/SettingDebug';
 *   The level data for the dev level.
 ***********************************************************************************************************************/
 export class LevelStart extends Level {
+    public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 8320;
     public  height: number = 2500;
     public  playerStartX: number = 250;

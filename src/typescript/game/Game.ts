@@ -1,5 +1,4 @@
 import * as matter from 'matter-js';
-import * as Matter from 'matter-js';
 import { Engine } from '../engine/Engine';
 import { Camera } from '../engine/ui/Camera';
 import { DebugLog } from '../base/DebugLog';
@@ -15,7 +14,6 @@ import { LevelTown } from '../data/level/LevelTown';
 import { DarkenPanel } from '../engine/ui/DarkenPanel';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
-import {MouseSystem} from "../engine/hid/MouseSystem";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.

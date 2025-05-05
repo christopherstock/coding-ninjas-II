@@ -22,6 +22,7 @@ import { Breakable } from '../../game/object/primal/Movable';
 *   The level data for the DoJo level.
 ***********************************************************************************************************************/
 export class LevelDojo extends Level {
+    public id: LevelId = LevelId.LEVEL_DOJO;
     public width: number = 3584;
     public height: number = 2500;
     public playerStartX: number = 250;

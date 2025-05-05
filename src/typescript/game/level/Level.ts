@@ -27,6 +27,7 @@ export enum LevelId {
 *   Represents the current level.
 ***********************************************************************************************************************/
 export abstract class Level {
+    public id: LevelId                          = null;
     public width: number                        = 0.0;
     public height: number                       = 0.0;
     public playerStartX: number                 = 0.0;
