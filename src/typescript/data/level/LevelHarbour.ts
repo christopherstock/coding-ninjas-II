@@ -77,6 +77,6 @@ export class LevelHarbour extends Level {
         // GameObjectBundleFactory.createDecoImage(this, 6505 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 */
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
     }
 }

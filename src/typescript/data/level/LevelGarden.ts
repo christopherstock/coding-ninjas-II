@@ -59,7 +59,7 @@ export class LevelGarden extends Level {
         GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
 
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GREENFIELD, 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
     }
 }

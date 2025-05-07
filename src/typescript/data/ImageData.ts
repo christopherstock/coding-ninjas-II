@@ -261,15 +261,25 @@ export class ImageData {
     static readonly GROUND_SNOW_SOLID_ASCENDING_TOP: string             = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidAscendingTop.png';
     static readonly GROUND_SNOW_SOLID_DESCENDING_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidDescendingTop.png';
 
-    static readonly GROUND_GREENFIELD_SOLID_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidTop.png';
-    static readonly GROUND_GREENFIELD_SOLID_LEFT_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftTop.png';
-    static readonly GROUND_GREENFIELD_SOLID_RIGHT_TOP: string           = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightTop.png';
-    static readonly GROUND_GREENFIELD_SOLID_CENTER: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidCenter.png';
-    static readonly GROUND_GREENFIELD_SOLID_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidBottom.png';
-    static readonly GROUND_GREENFIELD_SOLID_LEFT_BOTTOM: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeftBottom.png';
-    static readonly GROUND_GREENFIELD_SOLID_RIGHT_BOTTOM: string        = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRightBottom.png';
-    static readonly GROUND_GREENFIELD_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeft.png';
-    static readonly GROUND_GREENFIELD_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRight.png';
+    static readonly GROUND_GRASS_SOLID_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidTop.png';
+    static readonly GROUND_GRASS_SOLID_LEFT_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeftTop.png';
+    static readonly GROUND_GRASS_SOLID_RIGHT_TOP: string           = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRightTop.png';
+    static readonly GROUND_GRASS_SOLID_CENTER: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidCenter.png';
+    static readonly GROUND_GRASS_SOLID_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidBottom.png';
+    static readonly GROUND_GRASS_SOLID_LEFT_BOTTOM: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeftBottom.png';
+    static readonly GROUND_GRASS_SOLID_RIGHT_BOTTOM: string        = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRightBottom.png';
+    static readonly GROUND_GRASS_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeft.png';
+    static readonly GROUND_GRASS_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRight.png';
+
+    static readonly GROUND_DESERT_SOLID_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidTop.png';
+    static readonly GROUND_DESERT_SOLID_LEFT_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeftTop.png';
+    static readonly GROUND_DESERT_SOLID_RIGHT_TOP: string           = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRightTop.png';
+    static readonly GROUND_DESERT_SOLID_CENTER: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidCenter.png';
+    static readonly GROUND_DESERT_SOLID_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidBottom.png';
+    static readonly GROUND_DESERT_SOLID_LEFT_BOTTOM: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeftBottom.png';
+    static readonly GROUND_DESERT_SOLID_RIGHT_BOTTOM: string        = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRightBottom.png';
+    static readonly GROUND_DESERT_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeft.png';
+    static readonly GROUND_DESERT_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRight.png';
 
     static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
     static readonly BG_DOJO: string                                     = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgDojo.jpg';
@@ -561,15 +571,25 @@ export class ImageData {
         ImageData.GROUND_SNOW_SOLID_ASCENDING_TOP,
         ImageData.GROUND_SNOW_SOLID_DESCENDING_TOP,
 
-        ImageData.GROUND_GREENFIELD_SOLID_TOP,
-        ImageData.GROUND_GREENFIELD_SOLID_LEFT_TOP,
-        ImageData.GROUND_GREENFIELD_SOLID_RIGHT_TOP,
-        ImageData.GROUND_GREENFIELD_SOLID_CENTER,
-        ImageData.GROUND_GREENFIELD_SOLID_BOTTOM,
-        ImageData.GROUND_GREENFIELD_SOLID_LEFT_BOTTOM,
-        ImageData.GROUND_GREENFIELD_SOLID_RIGHT_BOTTOM,
-        ImageData.GROUND_GREENFIELD_SOLID_LEFT,
-        ImageData.GROUND_GREENFIELD_SOLID_RIGHT,
+        ImageData.GROUND_GRASS_SOLID_TOP,
+        ImageData.GROUND_GRASS_SOLID_LEFT_TOP,
+        ImageData.GROUND_GRASS_SOLID_RIGHT_TOP,
+        ImageData.GROUND_GRASS_SOLID_CENTER,
+        ImageData.GROUND_GRASS_SOLID_BOTTOM,
+        ImageData.GROUND_GRASS_SOLID_LEFT_BOTTOM,
+        ImageData.GROUND_GRASS_SOLID_RIGHT_BOTTOM,
+        ImageData.GROUND_GRASS_SOLID_LEFT,
+        ImageData.GROUND_GRASS_SOLID_RIGHT,
+
+        ImageData.GROUND_DESERT_SOLID_TOP,
+        ImageData.GROUND_DESERT_SOLID_LEFT_TOP,
+        ImageData.GROUND_DESERT_SOLID_RIGHT_TOP,
+        ImageData.GROUND_DESERT_SOLID_CENTER,
+        ImageData.GROUND_DESERT_SOLID_BOTTOM,
+        ImageData.GROUND_DESERT_SOLID_LEFT_BOTTOM,
+        ImageData.GROUND_DESERT_SOLID_RIGHT_BOTTOM,
+        ImageData.GROUND_DESERT_SOLID_LEFT,
+        ImageData.GROUND_DESERT_SOLID_RIGHT,
 
         ImageData.BG_MOUNT_FUJI,
         ImageData.BG_DOJO,
