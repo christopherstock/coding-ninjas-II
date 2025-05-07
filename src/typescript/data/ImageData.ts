@@ -271,13 +271,11 @@ export class ImageData {
     static readonly GROUND_GREENFIELD_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidLeft.png';
     static readonly GROUND_GREENFIELD_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGreenfield/' + 'solidRight.png';
 
-    static readonly BG_ALLEY: string                                    = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgAlley.jpg';
+    static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
     static readonly BG_DOJO: string                                     = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgDojo.jpg';
     static readonly BG_GARDEN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgGarden.jpg';
-    static readonly BG_HARBOUR: string                                  = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgHarbour.jpg';
-    static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
-    static readonly BG_STREET: string                                   = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgStreet.jpg';
     static readonly BG_TOWN: string                                     = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgTown.jpg';
+    static readonly BG_HARBOUR: string                                  = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgHarbour.jpg';
 
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
@@ -573,13 +571,11 @@ export class ImageData {
         ImageData.GROUND_GREENFIELD_SOLID_LEFT,
         ImageData.GROUND_GREENFIELD_SOLID_RIGHT,
 
-        ImageData.BG_ALLEY,
+        ImageData.BG_MOUNT_FUJI,
         ImageData.BG_DOJO,
         ImageData.BG_GARDEN,
-        ImageData.BG_HARBOUR,
-        ImageData.BG_MOUNT_FUJI,
-        ImageData.BG_STREET,
         ImageData.BG_TOWN,
+        ImageData.BG_HARBOUR,
 
         ImageData.BILLBOARD,
         ImageData.BILLBOARD_WELCOME,
