@@ -14,6 +14,9 @@ export enum SiteContent
 {
     /** The 'welcome' page. */
     CONTENT_WELCOME,
+
+    // TODO prune!
+
     /** The 'company' page. */
     CONTENT_COMPANY,
     /** The 'services' page. */

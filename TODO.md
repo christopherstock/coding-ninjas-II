@@ -1,14 +1,15 @@
 # TODO List
 
 ## Doing
+- 🌺🧪 format Outro BlendPanel (left)!
 - 🌺 New Level(s): Harbor (Market & Warehouse?)
+- 🧪 Complete game levels
 
 ## Primary: MVP
-- 🧪 Outro BlendPanel!
-- 🧪 Complete game levels
 - 🧪 Add event triggers (for falling obstacles, new enemies etc.)
 - 🧪 Add decoration particle effects on smashing objects / windows etc.
 - 🧪️ Add 'katana strike' sprites in air.
+- 🧪️ More Ninja Sprites (Enemies & Friends)
 
 ## Secondary: Possible New Game/Engine Features
 - ⛏️ moving 'no entry' sign on trying to open closed door?
