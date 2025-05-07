@@ -171,10 +171,15 @@ export abstract class GameObject {
     }
 
     public hurt(damage: number, damageForce: number): void {
-        if (
-            !this.breakable
-            || this.state !== GameObjectState.ALIVE
-        ) {
+        // apply force on non-static objects
+        if (!this.shape.body.isStatic) {
+            matter.Body.setVelocity(
+                this.shape.body,
+                matter.Vector.create(damageForce, -10.0)
+            );
+        }
+
+        if (!this.breakable || this.state !== GameObjectState.ALIVE) {
             return;
         }
 
@@ -185,6 +190,24 @@ export abstract class GameObject {
         DebugLog.character.log('New level object energy: [' + String(this.energy) + ']');
 
         // darken img
+        this.darkenImage();
+
+        // check if game object breaks
+        if (this.energy <= 0.0) {
+            DebugLog.character.log('Game Object BREAKS!');
+            this.break();
+
+            // TODO add particle effect / decos on breaking etc!
+
+            // apply force on break
+            matter.Body.setVelocity(
+                this.shape.body,
+                matter.Vector.create(damageForce, -10.0)
+            );
+        }
+    }
+
+    private darkenImage(): void {
         const img = new Image();
         img.src = this.shape.body.render.sprite.texture;
         img.onload = (): void => {
@@ -194,24 +217,6 @@ export abstract class GameObject {
             );
             this.shape.body.render.sprite.texture = darkenedImg.src;
         }
-
-        // smaller scale (testwise)
-        // this.shape.body.render.sprite.xScale = 0.90;
-        // this.shape.body.render.sprite.yScale = 0.90;
-
-        // this.shape.body.render.sprite.
-        // this.shape.body.render.
-
-        if (this.energy <= 0.0) {
-            DebugLog.character.log('Game Object BREAKS!');
-            // TODO add particle effect / decos on breaking etc!
-            this.break();
-        }
-
-        matter.Body.setVelocity(
-            this.shape.body,
-            matter.Vector.create(damageForce, -10.0)
-        );
     }
 
     private break(): void {
@@ -221,6 +226,8 @@ export abstract class GameObject {
         this.shape.body.isStatic = false;
         this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT;
         this.shape.body.mass = 1.0;
+        this.shape.body.friction = 1.0;
+        this.shape.body.restitution = 0.0;
 
         // bring body to foreground
         Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);

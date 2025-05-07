@@ -55,8 +55,12 @@ export class LevelStart extends Level {
         // statue shrine
         GameObjectBundleFactory.createStatusShrine(this, x + 1625, 2000);
 
-        // destroyable statue
-        GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.STATUE_1, Breakable.YES);
+        // destroyable crates
+        GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2125, 2000, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2250, 2000, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2062, 1875, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2187, 1875, ImageData.CRATE_WOOD, Breakable.YES);
 
         // billboard 'welcome'
         GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
