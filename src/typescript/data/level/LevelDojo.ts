@@ -1,13 +1,7 @@
 /* eslint-disable max-len */
 
 import { Level, LevelId } from '../../game/level/Level';
-import {
-    CapHorz,
-    CapVert,
-    DecoPosition,
-    GameObjectBundleFactory,
-    Slope,
-} from '../../game/object/GameObjectBundleFactory';
+import { CapHorz, CapVert, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
 import { ImageData } from '../ImageData';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
@@ -18,9 +12,6 @@ import { SpriteData } from '../SpriteData';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { Breakable } from '../../game/object/GameObject';
 
-/** ********************************************************************************************************************
-*   The level data for the DoJo level.
-***********************************************************************************************************************/
 export class LevelDojo extends Level {
     public id: LevelId = LevelId.LEVEL_DOJO;
     public width: number = 3584;
@@ -30,9 +21,6 @@ export class LevelDojo extends Level {
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
 
-    /** ****************************************************************************************************************
-    *   Inits a new level.
-    *******************************************************************************************************************/
     protected createGameObjects(): void {
         // player
         GameObjectBundleFactory.createPlayer(this);
@@ -44,9 +32,6 @@ export class LevelDojo extends Level {
         this.addHomeShrine();
     }
 
-    /** ****************************************************************************************************************
-    *   Adds the startup shrine.
-    *******************************************************************************************************************/
     private addHomeShrine(): void {
         // door back to start
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6620, playerStartY: 2100 }));

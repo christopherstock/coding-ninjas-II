@@ -17,9 +17,6 @@ import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { SettingDebug } from '../../base/SettingDebug';
 import { Breakable } from '../../game/object/GameObject';
 
-/** ********************************************************************************************************************
-*   The level data for the dev level.
-***********************************************************************************************************************/
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 8320;
@@ -29,9 +26,6 @@ export class LevelStart extends Level {
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
 
-    /** ****************************************************************************************************************
-    *   Inits a new level.
-    *******************************************************************************************************************/
     protected createGameObjects(): void {
         // player
         GameObjectBundleFactory.createPlayer(this);

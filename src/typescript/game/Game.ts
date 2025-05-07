@@ -14,6 +14,7 @@ import { LevelTown } from '../data/level/LevelTown';
 import { DarkenPanel } from '../engine/ui/DarkenPanel';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
+import {LevelHarbour} from "../data/level/LevelHarbour";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.
@@ -140,6 +141,9 @@ export class Game {
             case LevelId.LEVEL_TOWN:
                 this.level = new LevelTown();
                 break;
+            case LevelId.LEVEL_HARBOUR:
+                this.level = new LevelHarbour();
+                break;
             default:
                 this.level = new LevelStart();
                 break;
@@ -241,6 +245,13 @@ export class Game {
 
                 DebugLog.init.log('Resetting and switching to level 4');
                 this.resetAndLaunchLevel(LevelId.LEVEL_TOWN);
+            }
+
+            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_5)) {
+                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_5);
+
+                DebugLog.init.log('Resetting and switching to level 5');
+                this.resetAndLaunchLevel(LevelId.LEVEL_HARBOUR);
             }
         }
     }

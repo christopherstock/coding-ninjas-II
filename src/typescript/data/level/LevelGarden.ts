@@ -10,9 +10,6 @@ import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 
-/** ********************************************************************************************************************
-*   The level data for the Garden level.
-***********************************************************************************************************************/
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
     public width: number = 7040;
@@ -22,9 +19,6 @@ export class LevelGarden extends Level {
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
 
-    /** ****************************************************************************************************************
-    *   Inits a new level.
-    *******************************************************************************************************************/
     protected createGameObjects(): void {
 
         GameObjectBundleFactory.createPlayer(this);
@@ -33,9 +27,6 @@ export class LevelGarden extends Level {
         this.addGardenSetup();
     }
 
-    /** ****************************************************************************************************************
-    *   Adds the garden setup.
-    *******************************************************************************************************************/
     private addGardenSetup(): void {
         // door back to DoJo
         GameObjectFactory.createDoor(this, 6000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2820, playerStartY: 1400 }));

@@ -20,8 +20,6 @@ export enum LevelId {
     LEVEL_GARDEN,
     LEVEL_TOWN,
     LEVEL_HARBOUR,
-    // LEVEL_MARKET,
-    // LEVEL_WAREHOUSE,
 }
 
 /** ********************************************************************************************************************
