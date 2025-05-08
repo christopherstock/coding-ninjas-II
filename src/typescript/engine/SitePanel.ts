@@ -14,13 +14,9 @@ export enum SitePanelPosition
 *   Represents a site panel that shows a site content.
 ***********************************************************************************************************************/
 export class SitePanel {
-    /** The outer container div. */
-    private                 outerAbsoluteContainer: HTMLDivElement             = null;
-    /** The inner container div. */
-    private                 innerRelativeContainer: HTMLDivElement             = null;
-
-    /** The position for this panel to show up. */
-    private                 position: SitePanelPosition   = null;
+    private outerAbsoluteContainer: HTMLDivElement  = null;
+    private innerRelativeContainer: HTMLDivElement  = null;
+    private position: SitePanelPosition             = null;
 
     /** ****************************************************************************************************************
     *   Creates a new site panel.

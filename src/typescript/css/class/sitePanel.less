@@ -12,7 +12,18 @@
     div.sitePanel.innerRelativeContainer
     {
         position:           relative;
+    }
+
+    div.sitePanel.outerAbsoluteContainer.slideInLeft .innerRelativeContainer
+    {
+        background:         yellow !important;
         text-align:         left;
+    }
+
+    div.sitePanel.outerAbsoluteContainer.slideInRight .innerRelativeContainer
+    {
+        background:         red !important;
+        text-align:         right;
     }
 
     h1.sitePanel.defaultHeadline
@@ -37,7 +48,6 @@
         margin:             0;
         color:              @color-text-fg;
         font-size:          16px;
-        text-align:         left;
         line-height:        20px;
         text-shadow:        1px 1px @color-shadow;
     }
@@ -74,7 +84,6 @@
         list-style:         none;
         margin:             0;
         padding:            0;
-        text-align:         left;
         display:            inline-block;
     }
 
