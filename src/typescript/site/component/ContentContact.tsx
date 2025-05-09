@@ -24,7 +24,7 @@ export const ContentContact: ()=> JSX.Element = (): JSX.Element => {
                     {
                         backgroundImage: 'url( '
                         + Main.game.engine.imageSystem.getImage(
-                            ImageData.SITE_PANEL_LOGO_GAME
+                            ImageData.SITE_PANEL_CAROUSEL_MOBILE
                         ).src
                         + ' )',
                     }
@@ -51,7 +51,7 @@ export const ContentContact: ()=> JSX.Element = (): JSX.Element => {
                     {
                         backgroundImage: 'url( '
                         + Main.game.engine.imageSystem.getImage(
-                            ImageData.SITE_PANEL_LOGO_GAME
+                            ImageData.SITE_PANEL_CAROUSEL_WEB_APPS
                         ).src
                         + ' )',
                     }
@@ -78,7 +78,7 @@ export const ContentContact: ()=> JSX.Element = (): JSX.Element => {
                     {
                         backgroundImage: 'url( '
                         + Main.game.engine.imageSystem.getImage(
-                            ImageData.SITE_PANEL_LOGO_GAME
+                            ImageData.SITE_PANEL_CAROUSEL_WEBSITES
                         ).src
                         + ' )',
                     }
