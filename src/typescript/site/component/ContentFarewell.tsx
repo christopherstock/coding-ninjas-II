@@ -24,7 +24,7 @@ export const ContentFarewell: ()=> JSX.Element = (): JSX.Element => {
 
         {
             SiteContentFactory.createParagraph(
-                'You have reached the end of the Coding Ninjas II world.<br>'
+                'You have reached the end of the <span class=\'special\'>Coding Ninjas II</span> world.<br>'
                 + '<br>'
                 + 'Thanks for your interests in my project portfolio.<br>'
                 + ' Have a good day and stay safe and sound my friend! 💜 🌺',
