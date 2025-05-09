@@ -12,9 +12,9 @@ import { KeyData } from '../data/KeyData';
 import { LevelGarden } from '../data/level/LevelGarden';
 import { LevelTown } from '../data/level/LevelTown';
 import { DarkenPanel } from '../engine/ui/DarkenPanel';
+import { LevelHarbour } from '../data/level/LevelHarbour';
 import { Level, LevelId } from './level/Level';
 import { CharacterFacing } from './object/being/CharacterFacing';
-import {LevelHarbour} from "../data/level/LevelHarbour";
 
 /** ********************************************************************************************************************
 *   Specifies the game logic and all primal components of the game.

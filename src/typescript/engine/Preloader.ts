@@ -46,8 +46,8 @@ export class Preloader {
         this.imageLoaded  = new Image();
         this.imageUnloaded = new Image();
 
-        this.imageLoaded.src  = SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderLoaded.png';
-        this.imageUnloaded.src = SettingEngine.PATH_IMAGE_PRELOADER + 'preloaderUnloaded.png';
+        this.imageLoaded.src  = SettingEngine.PATH_IMAGE_PRELOADER + 'loaded.png';
+        this.imageUnloaded.src = SettingEngine.PATH_IMAGE_PRELOADER + 'unloaded.png';
 
         this.imageLoaded.onload  = (): void => { this.preloaderImageLoaded(); };
         this.imageUnloaded.onload = (): void => { this.preloaderImageLoaded(); };

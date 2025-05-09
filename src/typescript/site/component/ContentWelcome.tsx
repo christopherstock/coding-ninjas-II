@@ -13,13 +13,10 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
 
     return <div style={{ textAlign: 'right' }}>
 
-        { /* SiteContentFactory.createStepIndicator( SiteContent.CONTENT_WELCOME ) */ }
-        { /* SiteContentFactory.createDivider() */ }
-
         {
             SiteContentFactory.createImageFullWidth(
                 Main.game.engine.imageSystem.getImage(
-                    ImageData.SITE_PANEL_LOGO_GAME
+                    ImageData.SITE_PANEL_LOGO_RIGHT
                 ).src
             )
         }
@@ -75,7 +72,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         { SiteContentFactory.createSpacerVertical() }
         <div>
             { SiteContentFactory.createParagraph('Project progress:', 'right') }
-            { SiteContentFactory.createProgress('line', 76.1) }
+            { SiteContentFactory.createProgress('line', 81.6) }
         </div>
 
         { SiteContentFactory.createSpacerVertical() }

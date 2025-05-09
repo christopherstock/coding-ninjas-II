@@ -277,9 +277,10 @@ export class SiteContentFactory {
 
         return <antd.Carousel
             effect={ effect }
-            autoplay={ true }
+            autoplay={ autoplay }
             autoplaySpeed={ autoplaySpeed }
             speed={ changeSpeed }
+            className="tester"
         >
             { contents }
         </antd.Carousel>;

@@ -1,7 +1,7 @@
 import * as React    from 'react';
 import * as ReactDOM from 'react-dom';
 import { ContentWelcome } from './component/ContentWelcome';
-import { ContentServices } from './component/ContentServices';
+import { ContentFarewell } from './component/ContentFarewell';
 
 /** ********************************************************************************************************************
 *   Specifies all existing site contents.
@@ -9,7 +9,7 @@ import { ContentServices } from './component/ContentServices';
 export enum SiteContent
 {
     CONTENT_WELCOME,
-    CONTENT_SERVICES,
+    CONTENT_FAREWELL,
 }
 
 /** ********************************************************************************************************************
@@ -25,8 +25,8 @@ export class SiteContentSystem {
     *   Inits all site contents.
     *******************************************************************************************************************/
     public initAllContents(): void {
-        this.contentWelcome    = <ContentWelcome    />;
-        this.contentServices   = <ContentServices   />;
+        this.contentWelcome    = <ContentWelcome  />;
+        this.contentServices   = <ContentFarewell />;
     }
 
     /** ****************************************************************************************************************
@@ -55,7 +55,7 @@ export class SiteContentSystem {
                 break;
             }
 
-            case SiteContent.CONTENT_SERVICES:
+            case SiteContent.CONTENT_FAREWELL:
             {
                 elementToMount = this.contentServices;
                 break;

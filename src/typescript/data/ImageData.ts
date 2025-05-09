@@ -295,13 +295,15 @@ export class ImageData {
     static readonly BILLBOARD_3D_DEV: string                            = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard3dDev.png';
     static readonly BILLBOARD_APPLICATION_PAPER: string                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardApplicationPaper.png';
 
-    static readonly SITE_PANEL_LOGO_GAME: string                        = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoGame.png';
+    static readonly SITE_PANEL_LOGO_LEFT: string                        = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoLeft.png';
+    static readonly SITE_PANEL_LOGO_RIGHT: string                       = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoRight.png';
     static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
     static readonly SITE_PANEL_BG_RIGHT: string                         = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgRight.png';
     static readonly SITE_PANEL_CAROUSEL_DESKTOP: string                 = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselDesktop.jpg';
     static readonly SITE_PANEL_CAROUSEL_MOBILE: string                  = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselMobile.jpg';
     static readonly SITE_PANEL_CAROUSEL_WEB_APPS: string                = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebApps.jpg';
     static readonly SITE_PANEL_CAROUSEL_WEBSITES: string                = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebsites.jpg';
+    static readonly SITE_PANEL_SIGNATURE_CHRIS: string                  = SettingEngine.PATH_IMAGE_SITE_PANEL + 'chris.png';
 
     static readonly SIGSAW_1: string                                    = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsaw1.png';
     static readonly BOUNCE_1: string                                    = SettingEngine.PATH_IMAGE_BOUNCE + 'bounce1.png';
@@ -605,13 +607,15 @@ export class ImageData {
         ImageData.BILLBOARD_3D_DEV,
         ImageData.BILLBOARD_APPLICATION_PAPER,
 
-        ImageData.SITE_PANEL_LOGO_GAME,
+        ImageData.SITE_PANEL_LOGO_LEFT,
+        ImageData.SITE_PANEL_LOGO_RIGHT,
         ImageData.SITE_PANEL_BG_LEFT,
         ImageData.SITE_PANEL_BG_RIGHT,
         ImageData.SITE_PANEL_CAROUSEL_DESKTOP,
         ImageData.SITE_PANEL_CAROUSEL_MOBILE,
         ImageData.SITE_PANEL_CAROUSEL_WEB_APPS,
         ImageData.SITE_PANEL_CAROUSEL_WEBSITES,
+        ImageData.SITE_PANEL_SIGNATURE_CHRIS,
 
         ImageData.SIGSAW_1,
         ImageData.BOUNCE_1,
