@@ -33,7 +33,7 @@ export class LevelHarbour extends Level {
         GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);
 
         // site trigger 'end of game reached'
-        GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_CONTACT, SitePanelAppearance.LEFT, null);
+        GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_SERVICES, SitePanelAppearance.LEFT, null);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);

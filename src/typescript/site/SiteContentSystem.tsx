@@ -1,64 +1,32 @@
 import * as React    from 'react';
 import * as ReactDOM from 'react-dom';
 import { ContentWelcome } from './component/ContentWelcome';
-import { ContentCompany } from './component/ContentCompany';
 import { ContentServices } from './component/ContentServices';
-import { ContentTechnology } from './component/ContentTechnology';
-import { ContentTimeline } from './component/ContentTimeline';
-import { ContentContact } from './component/ContentContact';
 
 /** ********************************************************************************************************************
 *   Specifies all existing site contents.
 ***********************************************************************************************************************/
 export enum SiteContent
 {
-    /** The 'welcome' page. */
     CONTENT_WELCOME,
-
-    // TODO prune!
-
-    /** The 'company' page. */
-    CONTENT_COMPANY,
-    /** The 'services' page. */
     CONTENT_SERVICES,
-    /** The 'technology' page. */
-    CONTENT_TECHNOLOGY,
-    /** The 'timeline' page. */
-    CONTENT_TIMELINE,
-    /** The 'contact' page. */
-    CONTENT_CONTACT,
 }
 
 /** ********************************************************************************************************************
 *   Manages all site contents for the site panel.
 ***********************************************************************************************************************/
 export class SiteContentSystem {
-    /** All already discovered contents. */
-    public                  discoveredContents: SiteContent[]           = [];
+    public  discoveredContents: SiteContent[]       = [];
 
-    /** The site content for the 'welcome' page. */
-    private                 contentWelcome: JSX.Element                    = null;
-    /** The site content for the 'company' page. */
-    private                 contentCompany: JSX.Element                    = null;
-    /** The site content for the 'services' page. */
-    private                 contentServices: JSX.Element                    = null;
-    /** The site content for the 'technology' page. */
-    private                 contentTechnology: JSX.Element                    = null;
-    /** The site content for the 'timeline' page. */
-    private                 contentTimeline: JSX.Element                    = null;
-    /** The site content for the 'contact' page. */
-    private                 contentContact: JSX.Element                    = null;
+    private contentWelcome: JSX.Element             = null;
+    private contentServices: JSX.Element            = null;
 
     /** ****************************************************************************************************************
     *   Inits all site contents.
     *******************************************************************************************************************/
     public initAllContents(): void {
         this.contentWelcome    = <ContentWelcome    />;
-        this.contentCompany    = <ContentCompany    />;
         this.contentServices   = <ContentServices   />;
-        this.contentTechnology = <ContentTechnology />;
-        this.contentTimeline   = <ContentTimeline   />;
-        this.contentContact    = <ContentContact    />;
     }
 
     /** ****************************************************************************************************************
@@ -87,32 +55,9 @@ export class SiteContentSystem {
                 break;
             }
 
-            case SiteContent.CONTENT_COMPANY:
-            {
-                elementToMount = this.contentCompany;
-                break;
-            }
             case SiteContent.CONTENT_SERVICES:
             {
                 elementToMount = this.contentServices;
-                break;
-            }
-
-            case SiteContent.CONTENT_TECHNOLOGY:
-            {
-                elementToMount = this.contentTechnology;
-                break;
-            }
-
-            case SiteContent.CONTENT_TIMELINE:
-            {
-                elementToMount = this.contentTimeline;
-                break;
-            }
-
-            case SiteContent.CONTENT_CONTACT:
-            {
-                elementToMount = this.contentContact;
                 break;
             }
         }

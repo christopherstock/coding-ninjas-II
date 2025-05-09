@@ -15,8 +15,10 @@
             "node_modules/@types"
         ]
     },
-
     "include": [                                /* TypeScript sources to include. */
         "src/**/*"
+    ],
+    "exclude": [                                /* TypeScript sources to exclude. */
+        "node_modules/**/*"
     ]
 }

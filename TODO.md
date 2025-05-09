@@ -4,6 +4,7 @@
 - 🌺🧪 format Outro BlendPanel (left)!
 - 🌺 New Level(s): Harbor (Market & Warehouse?)
 - 🧪 Complete game levels
+- billboard mouse hand hover
 
 ## Primary: MVP
 - 🧪 Add event triggers (for falling obstacles, new enemies etc.)

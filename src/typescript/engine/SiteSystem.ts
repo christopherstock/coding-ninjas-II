@@ -29,31 +29,21 @@ export enum SitePanelAnimation
 *   Manages the communication between the game and the company presentation.
 ***********************************************************************************************************************/
 export class SiteSystem {
-    /** The content system. */
-    private     readonly    contentSystem: SiteContentSystem       = null;
-    /** The active site panel. */
-    private     readonly    sitePanel: SitePanel               = null;
+    private readonly contentSystem: SiteContentSystem   = null;
+    private readonly activeSitePanel: SitePanel         = null;
 
-    /** The current animation of the site panel. */
-    private                 animationState: SitePanelAnimation      = SitePanelAnimation.HIDDEN;
-    /** Flags if the panel is shown for the 1st time. */
-    private                 firstShow: boolean                        = true;
+    private animationState: SitePanelAnimation          = SitePanelAnimation.HIDDEN;
+    private firstShow: boolean                          = true;
 
-    /** The current width of the panel. */
-    private                 panelWidth: number                         = 0;
-    /** The current height of the panel. */
-    private                 panelHeight: number                         = 0;
+    private panelWidth: number                          = 0;
+    private panelHeight: number                         = 0;
 
-    /** The current width of the panel including border size. */
-    private                 panelAndBorderWidth: number                         = 0;
+    private panelAndBorderWidth: number                 = 0;
 
-    /** The left camera target X if the border is shown right. */
-    private                 leftCameraTargetX: number                         = 0;
-    /** The right camera target X if the border is shown left. */
-    private                 rightCameraTargetX: number                         = 0;
+    private leftCameraTargetX: number                   = 0;
+    private rightCameraTargetX: number                  = 0;
 
-    /** The WOW animation system. */
-    private                 wowSystem: any                            = null;
+    private wowSystem: any                              = null;
 
     /** ****************************************************************************************************************
     *   Creates a new site system.
@@ -62,7 +52,7 @@ export class SiteSystem {
         this.contentSystem = new SiteContentSystem();
         this.contentSystem.initAllContents();
 
-        this.sitePanel     = new SitePanel();
+        this.activeSitePanel     = new SitePanel();
 
         this.updatePanelSizeAndPosition();
         this.initWowSystem();
@@ -86,33 +76,33 @@ export class SiteSystem {
         this.animationState = SitePanelAnimation.SHOWING;
 
         // set content for site panel
-        this.contentSystem.mountContent(content, this.sitePanel.getMountPoint());
+        this.contentSystem.mountContent(content, this.activeSitePanel.getMountPoint());
 
-        this.sitePanel.setPosition(position);
+        this.activeSitePanel.setPosition(position);
         this.updatePanelSizeAndPosition();
 
         if (this.firstShow) {
             this.firstShow = false;
 
             // set visibility to 'hidden' fixes unanimated flickering the panel on 1st creation!
-            this.sitePanel.setVisible(false);
+            this.activeSitePanel.setVisible(false);
         } else {
             // set visibility to 'visible' fixes unanimated flickering the panel on 1st creation!
-            this.sitePanel.setVisible(true);
+            this.activeSitePanel.setVisible(true);
         }
 
         if (position === SitePanelPosition.RIGHT) {
-            this.sitePanel.setPanelBgImage(
+            this.activeSitePanel.setPanelBgImage(
                 Main.game.engine.imageSystem.getImage(ImageData.SITE_PANEL_BG_RIGHT).src
             );
         } else {
-            this.sitePanel.setPanelBgImage(
+            this.activeSitePanel.setPanelBgImage(
                 Main.game.engine.imageSystem.getImage(ImageData.SITE_PANEL_BG_LEFT).src
             );
         }
 
-        this.sitePanel.animateIn();
-        this.sitePanel.addToDom();
+        this.activeSitePanel.animateIn();
+        this.activeSitePanel.addToDom();
 
         this.wowSystem.sync();
 
@@ -133,7 +123,7 @@ export class SiteSystem {
     *******************************************************************************************************************/
     public reset(): void {
         this.animationState = SitePanelAnimation.HIDDEN;
-        this.sitePanel.removeFromDom();
+        this.activeSitePanel.removeFromDom();
     }
 
     /** ****************************************************************************************************************
@@ -149,13 +139,13 @@ export class SiteSystem {
         DebugLog.site.log('Hiding site panel');
         this.animationState = SitePanelAnimation.HIDING;
 
-        this.sitePanel.animateOut();
+        this.activeSitePanel.animateOut();
         this.wowSystem.sync();
 
         window.setTimeout(
             () => {
                 this.animationState = SitePanelAnimation.HIDDEN;
-                this.sitePanel.removeFromDom();
+                this.activeSitePanel.removeFromDom();
             },
             (SettingGame.SITE_PANEL_ANIMATION_DURATION / 2)
         );
@@ -200,7 +190,7 @@ export class SiteSystem {
         );
 
         // update panel size and position
-        this.sitePanel.updateSizeAndPosition(
+        this.activeSitePanel.updateSizeAndPosition(
             this.panelWidth,
             this.panelHeight
         );
@@ -252,7 +242,7 @@ export class SiteSystem {
         }
 
         // target according to active site panel
-        switch (this.sitePanel.getPosition()) {
+        switch (this.activeSitePanel.getPosition()) {
             case SitePanelPosition.LEFT:
             {
                 return this.leftCameraTargetX;
