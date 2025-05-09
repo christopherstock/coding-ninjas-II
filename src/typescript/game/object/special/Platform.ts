@@ -93,15 +93,15 @@ export class Platform extends GameObject {
             this.assignNextWaypoint();
         }
 
-        // TODO extract vector
+        const movement = matter.Vector.create(this.stepSizeX, this.stepSizeY);
 
         // move platform
-        matter.Body.setVelocity(this.shape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
-        matter.Body.translate(this.shape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
+        matter.Body.setVelocity(this.shape.body, movement);
+        matter.Body.translate(this.shape.body, movement);
 
         // move friction shape
-        matter.Body.setVelocity(this.frictionShape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
-        matter.Body.translate(this.frictionShape.body, matter.Vector.create(this.stepSizeX, this.stepSizeY));
+        matter.Body.setVelocity(this.frictionShape.body, movement);
+        matter.Body.translate(this.frictionShape.body, movement);
     }
 
     /** ****************************************************************************************************************
