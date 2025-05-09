@@ -78,7 +78,13 @@ export class MouseSystem {
             if (
                 Main.game.level.id === LevelId.LEVEL_TOWN
             ) {
-                window.open('https://christopherstock.github.io/babylon-zero/dist/', '_blank');
+                if (
+                    leftHalf
+                ) {
+                    window.open('https://christopherstock.github.io/babylon-zero/dist/', '_blank');
+                } else {
+                    window.open('https://github.com/christopherstock/shooter-gradle', '_blank');
+                }
             }
         }
     }
