@@ -37,53 +37,40 @@ export class MouseSystem {
             const img: string = deco.sprite.template.imageIds[0];
             if (!img.includes('billboard')) {continue;}
 */
-        if (
-            event.clientX >= relevantBillboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
-                    && event.clientX < (
-                        relevantBillboard.shape.body.bounds.min.x + relevantBillboard.shape.getWidth() - Main.game.camera.getOffsetX()
-                    )
-                    && event.clientY >= relevantBillboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
-                    && event.clientY < (
-                        relevantBillboard.shape.body.bounds.min.y + relevantBillboard.shape.getHeight() - Main.game.camera.getOffsetY()
-                    )
-        ) {
+        if (this.eventInsideBillboard(event, relevantBillboard)) {
             const leftHalf = event.clientX < (
                 relevantBillboard.shape.body.bounds.min.x + relevantBillboard.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
             );
 
-            if (
-                Main.game.level.id === LevelId.LEVEL_START
-            ) {
-                window.open('https://www.christopherstock.de', '_blank');
-            }
-
-            if (
-                Main.game.level.id === LevelId.LEVEL_DOJO
-            ) {
-                if (
-                    leftHalf
-                ) {
-                    window.open('https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/', '_blank');
-                } else {
-                    window.open('https://www.winklerundschorn.de', '_blank');
+            switch (Main.game.level.id) {
+                case LevelId.LEVEL_START: {
+                    window.open('https://www.christopherstock.de', '_blank');
+                    break;
                 }
-            }
 
-            if (
-                Main.game.level.id === LevelId.LEVEL_GARDEN
-            ) {
-                window.open('https://christopherstock.github.io/OutRunMF/dist/', '_blank');
-            }
+                case LevelId.LEVEL_DOJO: {
+                    if (leftHalf) {
+                        window.open('https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/', '_blank');
+                    } else {
+                        window.open('https://www.winklerundschorn.de', '_blank');
+                    }
+                    break;
+                }
 
-            if (
-                Main.game.level.id === LevelId.LEVEL_TOWN
-            ) {
-                if (
-                    leftHalf
-                ) {
-                    window.open('https://christopherstock.github.io/babylon-zero/dist/', '_blank');
-                } else {
-                    window.open('https://github.com/christopherstock/shooter-gradle', '_blank');
+                case LevelId.LEVEL_GARDEN: {
+                    window.open('https://christopherstock.github.io/OutRunMF/dist/', '_blank');
+                    break;
+                }
+
+                case LevelId.LEVEL_TOWN: {
+                    if (
+                        leftHalf
+                    ) {
+                        window.open('https://christopherstock.github.io/babylon-zero/dist/', '_blank');
+                    } else {
+                        window.open('https://github.com/christopherstock/shooter-gradle', '_blank');
+                    }
+                    break;
                 }
             }
         }
@@ -91,22 +78,18 @@ export class MouseSystem {
 
     private onMove(event: PointerEvent): void {
         if (Main.game.level === null) {
+            document.body.style.cursor = 'default';
             return;
         }
 
         // get the billboard Deco object for this level
         const relevantBillboard: Decoration = this.getRelevantBillboard();
         if (relevantBillboard === null) {
+            document.body.style.cursor = 'default';
             return;
         }
 
-        // TODO redundant calc!
-        const handOverBillboard: boolean = (
-            event.clientX >= relevantBillboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
-            && event.clientX < (relevantBillboard.shape.body.bounds.min.x + relevantBillboard.shape.getWidth() - Main.game.camera.getOffsetX())
-            && event.clientY >= relevantBillboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
-            && event.clientY < (relevantBillboard.shape.body.bounds.min.y + relevantBillboard.shape.getHeight() - Main.game.camera.getOffsetY())
-        );
+        const handOverBillboard: boolean = this.eventInsideBillboard(event, relevantBillboard);
 
         document.body.style.cursor = handOverBillboard ? 'pointer' : 'default';
     }
@@ -129,5 +112,14 @@ export class MouseSystem {
         }
 
         return null;
+    }
+
+    private eventInsideBillboard(event: MouseEvent, relevantBillboard: Decoration): boolean {
+        return (
+            event.clientX >= relevantBillboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
+            && event.clientX < (relevantBillboard.shape.body.bounds.min.x + relevantBillboard.shape.getWidth() - Main.game.camera.getOffsetX())
+            && event.clientY >= relevantBillboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
+            && event.clientY < (relevantBillboard.shape.body.bounds.min.y + relevantBillboard.shape.getHeight() - Main.game.camera.getOffsetY())
+        );
     }
 }
