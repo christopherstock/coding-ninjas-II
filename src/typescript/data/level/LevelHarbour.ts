@@ -37,5 +37,8 @@ export class LevelHarbour extends Level {
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
+
+        // water areas
+        GameObjectBundleFactory.createWaterArea(this, 6000, 1400 + 64, 14, 4, ImageData.WATER_CENTER);
     }
 }

@@ -85,14 +85,10 @@ export enum DecoPosition
 *   Creates bundled instances of game objects.
 ***********************************************************************************************************************/
 export abstract class GameObjectBundleFactory {
-    /** The collision height of the flying ground. */
-    private             static          readonly        HEIGHT_FLYING_GROUND: number     = 90;
-    /** The altitude of elevated grounds. */
-    private             static          readonly        ALTITUDE: number     = 20;
-    /** Ground tile width. */
-    private             static          readonly        GROUND_TILE_WIDTH: number     = 128;
-    /** Ground tile height. */
-    private             static          readonly        GROUND_TILE_HEIGHT: number     = 128;
+    private static readonly HEIGHT_FLYING_GROUND: number    = 90;
+    private static readonly ALTITUDE: number                = 20;
+    private static readonly GROUND_TILE_WIDTH: number       = 128;
+    private static readonly GROUND_TILE_HEIGHT: number      = 128;
 
     /** ****************************************************************************************************************
     *   Creates the player.
@@ -409,9 +405,9 @@ export abstract class GameObjectBundleFactory {
         for (let tileX: number = 0; tileX < length; ++tileX) {
             for (let tileY: number = 0; tileY < height; ++tileY) {
                 if (tileY === 0) {
-                    level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileTop));
+                    level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + GameObjectBundleFactory.GROUND_TILE_HEIGHT + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileTop));
                 } else {
-                    level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileCenter));
+                    level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + GameObjectBundleFactory.GROUND_TILE_HEIGHT + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileCenter));
                 }
             }
         }
