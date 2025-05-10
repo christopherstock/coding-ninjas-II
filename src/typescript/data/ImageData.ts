@@ -145,8 +145,6 @@ export class ImageData {
     static readonly STATUE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
     static readonly STATUE_3: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue3.png';
     static readonly STATUE_LION: string                                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statueLion.png';
-    static readonly BOOK_CLOSED: string                                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookClosed.png';
-    static readonly BOOK_OPEN: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bookOpen.png';
     static readonly CANDELABRA: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candelabra.png';
     static readonly CHANDELIER: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
     static readonly CANDLE: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
@@ -310,9 +308,13 @@ export class ImageData {
     static readonly SITE_PANEL_CAROUSEL_WEBSITES: string                = SettingEngine.PATH_IMAGE_SITE_PANEL + 'carouselWebsites.jpg';
     static readonly SITE_PANEL_SIGNATURE_CHRIS: string                  = SettingEngine.PATH_IMAGE_SITE_PANEL + 'chris.png';
 
-    static readonly SIGSAW_1: string                                    = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsaw1.png';
-    static readonly BOUNCE_1: string                                    = SettingEngine.PATH_IMAGE_BOUNCE + 'bounce1.png';
-    static readonly PLATFORM_1: string                                  = SettingEngine.PATH_IMAGE_PLATFORM + 'platform1.png';
+    static readonly SIGSAW_SMALL: string                                = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsawSmall.png';
+    static readonly SIGSAW_MEDIUM: string                               = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsawMedium.png';
+    static readonly SIGSAW_LARGE: string                                = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsawLarge.png';
+    static readonly BOUNCE_SMALL: string                                = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceSmall.png';
+    static readonly BOUNCE_MEDIUM: string                               = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceMedium.png';
+    static readonly BOUNCE_LARGE: string                                = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceLarge.png';
+    static readonly PLATFORM_SMALL: string                              = SettingEngine.PATH_IMAGE_PLATFORM + 'platformSmall.png';
 
     /** All image filenames to load. */
     static readonly IMAGES_TO_MIRROR: string[]                          =
@@ -462,8 +464,6 @@ export class ImageData {
         ImageData.STATUE_2,
         ImageData.STATUE_3,
         ImageData.STATUE_LION,
-        ImageData.BOOK_CLOSED,
-        ImageData.BOOK_OPEN,
         ImageData.CANDELABRA,
         ImageData.CHANDELIER,
         ImageData.CANDLE,
@@ -627,8 +627,12 @@ export class ImageData {
         ImageData.SITE_PANEL_CAROUSEL_WEBSITES,
         ImageData.SITE_PANEL_SIGNATURE_CHRIS,
 
-        ImageData.SIGSAW_1,
-        ImageData.BOUNCE_1,
-        ImageData.PLATFORM_1,
+        ImageData.SIGSAW_SMALL,
+        ImageData.SIGSAW_MEDIUM,
+        ImageData.SIGSAW_LARGE,
+        ImageData.BOUNCE_SMALL,
+        ImageData.BOUNCE_MEDIUM,
+        ImageData.BOUNCE_LARGE,
+        ImageData.PLATFORM_SMALL,
     ];
 }

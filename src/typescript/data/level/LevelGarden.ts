@@ -12,11 +12,11 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
-    public width: number = 7040;
-    public height: number = 4500;
-    public playerStartX: number = 250;
+    public width: number = 12500;
+    public height: number = 12500;
+    public playerStartX: number = 12000; // 250;
     public playerStartY: number = 1400;
-    public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
+    public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
     public playerInitialFloat: boolean = false;
 
     protected createGameObjects(): void {
@@ -28,11 +28,20 @@ export class LevelGarden extends Level {
     }
 
     private addGardenSetup(): void {
-        // door back to DoJo
-        GameObjectFactory.createDoor(this, 6000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2820, playerStartY: 1400 }));
+        const x: number = 6000;
 
-        // stone obstacle
-        GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
+        // door back to DoJo
+        GameObjectFactory.createDoor(this, x + 6000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2820, playerStartY: 1400 }));
+
+        // boulders
+        GameObjectBundleFactory.createDecoImage(this, x + 5400, 1420, DecoPosition.BG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 5500, 1400, DecoPosition.FG, ImageData.BOULDER_1);
+
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+
+        if (true) return;
 
         // billboard 'games'
         GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD);
@@ -42,9 +51,9 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createBridge(this, 2374, 1400);
         GameObjectBundleFactory.createWaterArea(this, 2304, 1560, 6, 4, ImageData.WATER_CENTER);
 
-        // pots
-        // GameObjectBundleFactory.createMovableRect(this, -1800 + 2058, -700 + 2100, ImageData.POT_1);
-        GameObjectBundleFactory.createMovableRect(this, -1800 + 2558, -700 + 2100, ImageData.POT_1);
+        // pots and stone sphere
+        // GameObjectBundleFactory.createMovableRect(this, -1800 + 2558, -700 + 2100, ImageData.POT_1);
+        // GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
 
         // door to town
         GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 3725, playerStartY: 1400 }));
@@ -52,14 +61,10 @@ export class LevelGarden extends Level {
         // magic items
 
         // sigsaw
-        GameObjectFactory.createSigsaw(this, 3200, 1250, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_1), -1);
+        GameObjectFactory.createSigsaw(this, 3200, 1250, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_SMALL), -1);
         // platform
-        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_1), 3.5, [ matter.Vector.create(4000, 1300), matter.Vector.create(5000, 1300) ]);
+        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_SMALL), 3.5, [ matter.Vector.create(4000, 1300), matter.Vector.create(5000, 1300) ]);
         // bounce
-        GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_1), 0.00075);
-
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
     }
 }
