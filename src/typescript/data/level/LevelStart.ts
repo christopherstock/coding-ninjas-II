@@ -34,8 +34,8 @@ export class LevelStart extends Level {
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_MOUNT_FUJI));
 
         this.addUpperGround();
-        this.addSlopeGround();
-        this.addLowerGround();
+        // this.addSlopeGround();
+        // this.addLowerGround();
     }
 
     private addUpperGround(): void {
