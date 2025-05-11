@@ -1,9 +1,8 @@
 import { DebugLog } from '../../base/DebugLog';
 import { Main } from '../../base/Main';
-import { ImageData } from '../../data/ImageData';
 import { LevelId } from '../../game/level/Level';
 import { Decoration } from '../../game/object/deco/Decoration';
-import {Billboard} from "../../game/object/deco/Billboard";
+import { Billboard } from '../../game/object/deco/Billboard';
 
 /* eslint-disable max-len */
 

@@ -48,7 +48,7 @@ export class LevelStart extends Level {
 
         // statue shrine
         GameObjectBundleFactory.createStatusShrine(this, x + 1625, 2000);
-/*
+        /*
         // destroyable crates
         GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
         GameObjectBundleFactory.createObstacle(this, x + 2125, 2000, ImageData.CRATE_WOOD, Breakable.YES);

@@ -1,4 +1,3 @@
-import { SiteContent } from '../../../site/SiteContentSystem';
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { Decoration } from './Decoration';
