@@ -3,6 +3,7 @@ import { Main } from '../../base/Main';
 import { ImageData } from '../../data/ImageData';
 import { LevelId } from '../../game/level/Level';
 import { Decoration } from '../../game/object/deco/Decoration';
+import {Billboard} from "../../game/object/deco/Billboard";
 
 /* eslint-disable max-len */
 
@@ -25,7 +26,7 @@ export class MouseSystem {
             return;
         }
 
-        // get the billboard Deco object for this level
+        // get the billboard object for this level
         const relevantBillboard: Decoration = this.getRelevantBillboard();
         if (relevantBillboard === null) {
             return;
@@ -82,7 +83,7 @@ export class MouseSystem {
             return;
         }
 
-        // get the billboard Deco object for this level
+        // get the billboard object for this level
         const relevantBillboard: Decoration = this.getRelevantBillboard();
         if (relevantBillboard === null) {
             document.body.style.cursor = 'default';
@@ -94,20 +95,12 @@ export class MouseSystem {
         document.body.style.cursor = handOverBillboard ? 'pointer' : 'default';
     }
 
-    private getRelevantBillboard(): Decoration {
+    private getRelevantBillboard(): Billboard {
         const decos = Main.game.level.decosFg.concat(Main.game.level.decosBg);
 
         for (const deco of decos) {
-            const img: string = deco.sprite.template.imageIds[0];
-            if (!img.includes('billboard')) {continue;}
-
-            if (
-                (Main.game.level.id === LevelId.LEVEL_START     && img === ImageData.BILLBOARD_WELCOME)
-                || (Main.game.level.id === LevelId.LEVEL_DOJO   && img === ImageData.BILLBOARD_WEBSITES)
-                || (Main.game.level.id === LevelId.LEVEL_GARDEN && img === ImageData.BILLBOARD_GAMES)
-                || (Main.game.level.id === LevelId.LEVEL_TOWN   && img === ImageData.BILLBOARD_3D_DEV)
-            ) {
-                return deco;
+            if (deco instanceof Billboard) {
+                return deco
             }
         }
 

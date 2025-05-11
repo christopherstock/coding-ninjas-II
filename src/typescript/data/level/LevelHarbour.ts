@@ -29,8 +29,7 @@ export class LevelHarbour extends Level {
 
     private addHarbourSetup(): void {
         // billboard 'application paper service'
-        GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);
+        GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);
 
         // site trigger 'end of game reached'
         GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_FAREWELL, SitePanelAppearance.LEFT, null);

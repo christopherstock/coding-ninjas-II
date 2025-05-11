@@ -44,8 +44,7 @@ export class LevelGarden extends Level {
         if (true) return;
 
         // billboard 'games'
-        GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_GAMES);
+        GameObjectBundleFactory.createBillboard(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_GAMES);
 
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 2374, 1400);

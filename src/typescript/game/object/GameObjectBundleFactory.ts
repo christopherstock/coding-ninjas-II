@@ -700,7 +700,6 @@ export abstract class GameObjectBundleFactory {
         imageId: string
     ): void {
         GameObjectBundleFactory.createDecoImage(level, xLeft, yBottom, position, ImageData.BILLBOARD);
-        // GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, position, imageId);
 
         const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
         const billboard: Billboard = new Billboard
