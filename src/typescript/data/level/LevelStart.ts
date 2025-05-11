@@ -57,8 +57,7 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createObstacle(this, x + 2187, 1875, ImageData.CRATE_WOOD, Breakable.YES);
 */
         // billboard 'welcome'
-        GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD);
-        GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+        GameObjectBundleFactory.createBillboard(this, x + 2500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
 
         // grass
         GameObjectBundleFactory.createDecoSprite(this, x + 2500, 2000, DecoPosition.FG, SpriteData.GRASS_1);

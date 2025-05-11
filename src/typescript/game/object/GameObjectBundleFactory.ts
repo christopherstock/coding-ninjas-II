@@ -1,24 +1,23 @@
-import { Level } from '../level/Level';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { SpriteData } from '../../data/SpriteData';
-import { DebugColor } from '../../base/SettingDebug';
-import { ImageData } from '../../data/ImageData';
-import { StaticShape } from '../../engine/shape/Shape';
-import { TilesetGround } from '../../engine/ui/TilesetGround';
-import { SiteContent } from '../../site/SiteContentSystem';
-import { ShapeRectangle } from '../../engine/shape/ShapeRectangle';
-import { BodyDensity, BodyFriction, BodyRestitution } from '../../base/SettingMatter';
-import { MirrorImage } from '../../engine/ui/MirrorImage';
-import { Player } from './being/Player';
-import { GameObjectFactory } from './GameObjectFactory';
-import { JumpPassThrough, Obstacle } from './primal/Obstacle';
-import { Movable } from './primal/Movable';
-import { CharacterSpriteSet } from './being/CharacterSpriteSet';
-import { Bot } from './being/Bot';
-import { Decoration } from './deco/Decoration';
-import { Shrine } from './deco/Shrine';
-import { CharacterFacing } from './being/CharacterFacing';
-import { Breakable } from './GameObject';
+import {Level} from '../level/Level';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {SpriteData} from '../../data/SpriteData';
+import {DebugColor} from '../../base/SettingDebug';
+import {ImageData} from '../../data/ImageData';
+import {StaticShape} from '../../engine/shape/Shape';
+import {TilesetGround} from '../../engine/ui/TilesetGround';
+import {ShapeRectangle} from '../../engine/shape/ShapeRectangle';
+import {BodyDensity, BodyFriction, BodyRestitution} from '../../base/SettingMatter';
+import {MirrorImage} from '../../engine/ui/MirrorImage';
+import {Player} from './being/Player';
+import {GameObjectFactory} from './GameObjectFactory';
+import {JumpPassThrough, Obstacle} from './primal/Obstacle';
+import {Movable} from './primal/Movable';
+import {CharacterSpriteSet} from './being/CharacterSpriteSet';
+import {Bot} from './being/Bot';
+import {Decoration} from './deco/Decoration';
+import {CharacterFacing} from './being/CharacterFacing';
+import {Breakable} from './GameObject';
+import {Billboard} from "./deco/Billboard";
 
 /* eslint-disable max-len */
 
@@ -688,6 +687,50 @@ export abstract class GameObjectBundleFactory {
             case DecoPosition.BG:
             {
                 level.decosBg.push(deco);
+                break;
+            }
+        }
+    }
+
+    public static createBillboard(
+        level: Level,
+        xLeft: number,
+        yBottom: number,
+        position: DecoPosition,
+        imageId: string
+    ): void {
+        GameObjectBundleFactory.createDecoImage(level, xLeft, yBottom, position, ImageData.BILLBOARD);
+        // GameObjectBundleFactory.createDecoImage(this, x + 2500, 2000, position, imageId);
+
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
+        const billboard: Billboard = new Billboard
+        (
+            new ShapeRectangle
+            (
+                spriteTemplate.width,
+                spriteTemplate.height,
+                DebugColor.COLOR_DEBUG_DECORATION,
+                StaticShape.YES,
+                0.0,
+                BodyFriction.DEFAULT,
+                BodyDensity.DEFAULT,
+                BodyRestitution.DEFAULT
+            ),
+            spriteTemplate,
+            xLeft,
+            (yBottom - spriteTemplate.height)
+        );
+
+        switch (position) {
+            case DecoPosition.FG:
+            {
+                level.decosFg.push(billboard);
+                break;
+            }
+
+            case DecoPosition.BG:
+            {
+                level.decosBg.push(billboard);
                 break;
             }
         }
