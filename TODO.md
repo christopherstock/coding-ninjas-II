@@ -1,7 +1,6 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 multiple billboards ?
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 - 🌺🧪 Fix annoying edge block
 

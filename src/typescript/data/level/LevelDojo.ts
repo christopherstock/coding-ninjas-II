@@ -34,7 +34,7 @@ export class LevelDojo extends Level {
 
     private addHomeShrine(): void {
         // door back to start
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 6620, playerStartY: 2100 }));
+        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 15595, playerStartY: 2240 }));
 
         // table with flasks and pots
         let x = -1500;

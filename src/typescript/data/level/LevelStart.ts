@@ -12,21 +12,23 @@ import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { SettingDebug } from '../../base/SettingDebug';
+import {CharacterSpriteData} from "../CharacterSpriteData";
+import {GameAction, GameActionType} from "../../game/object/GameAction";
+import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
+import {Breakable} from "../../game/object/GameObject";
 
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
-    public  width: number = 18000;
+    public  width: number = 18066;
     public  height: number = 2500;
-    public  playerStartX: number = 11008; // 6000; // 250;
+    public  playerStartX: number = 14848; // 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
 
     protected createGameObjects(): void {
-        // player
         GameObjectBundleFactory.createPlayer(this);
 
-        // parallax bg "Mount Fuji"
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_MOUNT_FUJI));
 
         this.addStartingZone();
@@ -135,27 +137,27 @@ export class LevelStart extends Level {
 
     private addSeaside(): void {
         const x = 14848;
-        const y = 2000 + 240;
-        /*
+        const y = 2240;
+
         // friend
-        GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT, this, x - 5870 + 5870, 2100, CharacterFacing.RIGHT, 5870, 6800, CharacterSpriteData.RED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT, this, x + 300, y, CharacterFacing.RIGHT, x + 300, x + 1144, CharacterSpriteData.RED_NINJA_GIRL, false);
 
         // house with door to DoJo
-        GameObjectBundleFactory.createDecoImage(this, x - 5870 + 6400, 2100, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
-        GameObjectBundleFactory.createDecoImage(this, x - 5870 + 6380, 1810, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
-        GameObjectFactory.createDoor(this, x - 5870 + 6600, 2089, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectBundleFactory.createDecoImage(this, x - 5870 + 6400, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
+        GameObjectBundleFactory.createDecoImage(this, x - 5870 + 6380, y - 290, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
+        GameObjectFactory.createDoor(this, x - 5870 + 6600, y, ImageData.DOOR_1, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 1020, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+
+        // bridge and water
+        GameObjectBundleFactory.createBridge(this, x + 75 - 5870 + 7110, y, true);
+        GameObjectBundleFactory.createWaterArea(this, x - 5870 + 7040, 2260, 16, 4, ImageData.WATER_CENTER);
 
         // crates
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 6950, 2100, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7095, 2100, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7240, 2100, ImageData.CRATE_STEEL, BodyDensity.METAL, BodyFriction.METAL, Breakable.NO);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7020, 1975, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7155, 1975, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 6950, 2100 + 140, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7095, 2100 + 140, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7240, 2100 + 140, ImageData.CRATE_STEEL, BodyDensity.METAL, BodyFriction.METAL, Breakable.NO);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7020, 1975 + 140, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 5870 + 7155, 1975 + 140, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
-        // bridge and blue water
-        GameObjectBundleFactory.createBridge(this, x - 5870 + 7110, 2100, true);
-        GameObjectBundleFactory.createWaterArea(this, x - 5870 + 7040, 2260, 10, 4, ImageData.WATER_CENTER);
-*/
         // lower ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 10, 5, Slope.NONE,       CapHorz.NONE);
     }
