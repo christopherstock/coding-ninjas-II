@@ -1,7 +1,6 @@
 # TODOs
 
 ## Doing
-- 🧪️ More Ninja Sprites (Enemies & Friends)
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 - 🌺🧪 Fix annoying edge block
 
@@ -12,7 +11,6 @@
 
 ## Secondary: Possible New Game/Engine Features
 - ⛏️ fix moving plateau?
-- ⛏️ Add new ninja sprites.
 - ⛏️ Add canvas max width?
 - ⛏️ Sound effects for ninja girl actions and enemies
 - ⛏️ moving 'no entry' sign on trying to open closed door?
