@@ -101,12 +101,7 @@ export class Bot extends Character {
         if (this.state !== GameObjectState.DEAD) {
             this.checkFallingDead();
 
-            if (this.state === GameObjectState.DYING) {
-                this.dyingScale += 0.0175;
-
-                this.shape.body.render.sprite.xScale = 1.0 + this.dyingScale;
-                this.shape.body.render.sprite.yScale = 1.0 + this.dyingScale;
-            } else {
+            if (this.state !== GameObjectState.DYING) {
                 this.moveAccordingToPattern();
                 this.clipToHorizontalLevelBounds();
 

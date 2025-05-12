@@ -58,6 +58,13 @@ export abstract class GameObject {
     *******************************************************************************************************************/
     public render(): void {
         if (this.sprite !== null) {
+            if (this.state === GameObjectState.DYING) {
+                this.dyingScale += 0.0175;
+
+                this.shape.body.render.sprite.xScale = 1.0 + this.dyingScale;
+                this.shape.body.render.sprite.yScale = 1.0 + this.dyingScale;
+            }
+
             // render sprite and check frame change
             if (this.sprite.render()) {
                 this.setImageFromSprite();

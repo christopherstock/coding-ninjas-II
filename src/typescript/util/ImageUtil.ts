@@ -37,12 +37,14 @@ export class ImageUtil {
     *   @return The newly created but not already loaded mirrored image.
     *******************************************************************************************************************/
     public static darkenImage(original: HTMLImageElement, onLoadCallack: ()=> void): HTMLImageElement {
+        const DARKEN_FACTOR = '95%';
+
         const canvas: HTMLCanvasElement = document.createElement('canvas');
         canvas.width  = original.width;
         canvas.height = original.height;
 
         const context: CanvasRenderingContext2D = canvas.getContext('2d');
-        context.filter = 'brightness(65%)';
+        context.filter = 'brightness(' + DARKEN_FACTOR + ')';
         context.scale(1, 1);
         context.drawImage(original, 0, 0);
 
