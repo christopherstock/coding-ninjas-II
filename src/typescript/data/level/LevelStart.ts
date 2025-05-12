@@ -72,8 +72,10 @@ export class LevelStart extends Level {
 
     private addStepsUp(): void {
         const x = 6144;
+        const y = 2000 - 100;
 
-        GameObjectBundleFactory.createBillboard(this, x + 75, 2000 - 100, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+        // billboard
+        GameObjectBundleFactory.createBillboard(this, x + 75, y + 75, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
 
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, 2000, 6,  5, Slope.ASCENDING, CapHorz.NONE);
@@ -140,6 +142,9 @@ export class LevelStart extends Level {
         // masked ninja guy
         const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
         GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 535, CharacterSpriteData.WHITE_NINJA_GUY, false);
+
+        // billboard
+        GameObjectBundleFactory.createBillboard(this, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 800, y + 2 * 120 + 240, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
 
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 12,  5, Slope.DESCENDING, CapHorz.NONE);
