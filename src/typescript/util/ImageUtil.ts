@@ -1,4 +1,4 @@
-import {MathUtil} from "./MathUtil";
+import { MathUtil } from './MathUtil';
 
 /** ********************************************************************************************************************
 *   Offers additional Input/Output functionality.
