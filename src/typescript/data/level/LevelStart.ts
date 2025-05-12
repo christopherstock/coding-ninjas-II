@@ -21,7 +21,7 @@ export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 16000;
     public  height: number = 2500;
-    public  playerStartX: number = 11008; // 6000; // 250;
+    public  playerStartX: number = 3000; // 11008; // 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
@@ -53,6 +53,7 @@ export class LevelStart extends Level {
 
         // billboard 'welcome' with grass
         GameObjectBundleFactory.createBillboard(this, x + 3500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+        GameObjectBundleFactory.createBillboard(this, x + 4500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.google.de');
         GameObjectBundleFactory.createDecoSprite(this, x + 3500, 2000, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createDecoSprite(this, x + 3550, 2000, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createDecoSprite(this, x + 3600, 2000, DecoPosition.FG, SpriteData.GRASS_1);

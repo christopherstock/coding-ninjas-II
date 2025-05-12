@@ -1,6 +1,5 @@
 import { DebugLog } from '../../base/DebugLog';
 import { Main } from '../../base/Main';
-import { LevelId } from '../../game/level/Level';
 import { Decoration } from '../../game/object/deco/Decoration';
 import { Billboard } from '../../game/object/deco/Billboard';
 
@@ -25,21 +24,18 @@ export class MouseSystem {
             return;
         }
 
-        // get the billboard object for this level
-        const relevantBillboard: Billboard = this.getRelevantBillboard();
-        if (relevantBillboard === null) {
-            return;
-        }
+        const relevantBillboards: Billboard[] = this.getRelevantBillboards();
+        for (const billboard of relevantBillboards) {
+            if (this.eventInsideBillboard(event, billboard)) {
+                const leftHalf = event.clientX < (
+                    billboard.shape.body.bounds.min.x + billboard.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
+                );
 
-        if (this.eventInsideBillboard(event, relevantBillboard)) {
-            const leftHalf = event.clientX < (
-                relevantBillboard.shape.body.bounds.min.x + relevantBillboard.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
-            );
-
-            if (leftHalf) {
-                window.open(relevantBillboard.urlLeftHalf, '_blank');
-            } else {
-                window.open(relevantBillboard.urlRightHalf, '_blank');
+                if (leftHalf) {
+                    window.open(billboard.urlLeftHalf, '_blank');
+                } else {
+                    window.open(billboard.urlRightHalf, '_blank');
+                }
             }
         }
     }
@@ -50,30 +46,30 @@ export class MouseSystem {
             return;
         }
 
-        // get the billboard object for this level
-        const relevantBillboard: Decoration = this.getRelevantBillboard();
-        if (relevantBillboard === null) {
-            document.body.style.cursor = 'default';
-            return;
-        }
-
-        const handOverBillboard: boolean = this.eventInsideBillboard(event, relevantBillboard);
-
-        document.body.style.cursor = handOverBillboard ? 'pointer' : 'default';
-    }
-
-    // TODO enable multiple billboards
-
-    private getRelevantBillboard(): Billboard {
-        const decos = Main.game.level.decosFg.concat(Main.game.level.decosBg);
-
-        for (const deco of decos) {
-            if (deco instanceof Billboard) {
-                return deco
+        const relevantBillboards: Billboard[] = this.getRelevantBillboards();
+        for (const billboard of relevantBillboards) {
+            if (this.eventInsideBillboard(event, billboard)) {
+                document.body.style.cursor = 'pointer';
+                return;
             }
         }
 
-        return null;
+        document.body.style.cursor = 'default';
+    }
+
+    // TODO move to Level
+
+    private getRelevantBillboards(): Billboard[] {
+        const decos = Main.game.level.decosFg.concat(Main.game.level.decosBg);
+        const billboards: Billboard[] = [];
+
+        for (const deco of decos) {
+            if (deco instanceof Billboard) {
+                billboards.push(deco);
+            }
+        }
+
+        return billboards;
     }
 
     private eventInsideBillboard(event: MouseEvent, relevantBillboard: Decoration): boolean {
