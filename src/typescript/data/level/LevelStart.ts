@@ -12,10 +12,10 @@ import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { SettingDebug } from '../../base/SettingDebug';
-import {CharacterSpriteData} from "../CharacterSpriteData";
-import {GameAction, GameActionType} from "../../game/object/GameAction";
-import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
-import {Breakable} from "../../game/object/GameObject";
+import { CharacterSpriteData } from '../CharacterSpriteData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
+import { Breakable } from '../../game/object/GameObject';
 
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
@@ -28,7 +28,6 @@ export class LevelStart extends Level {
 
     protected createGameObjects(): void {
         GameObjectBundleFactory.createPlayer(this);
-
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_MOUNT_FUJI));
 
         this.addStartingZone();
@@ -93,7 +92,7 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 6 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.ASCENDING, CapHorz.NONE);
 
-        // fence ?
+        // fence
         GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, DecoPosition.FG, ImageData.FENCE_LEFT);
         GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
         GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
