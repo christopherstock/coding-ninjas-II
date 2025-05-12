@@ -93,7 +93,7 @@ export abstract class GameObject {
     *   Check if the enemy falls to death by falling out of the level.
     *******************************************************************************************************************/
     protected checkFallingDead(): void {
-        if (this.shape.body.position.y - this.shape.getHeight() / 2 > Main.game.level.height) {
+        if (this.shape.body.position.y - this.shape.getHeight() > Main.game.level.height) {
             DebugLog.character.log('Game object has fallen to dead');
 
             // remove character body from world

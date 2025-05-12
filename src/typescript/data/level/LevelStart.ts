@@ -20,7 +20,7 @@ import { Breakable } from '../../game/object/GameObject';
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 18066;
-    public  height: number = 2500;
+    public  height: number = 5000;
     public  playerStartX: number = 11008; // 14848; // 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
