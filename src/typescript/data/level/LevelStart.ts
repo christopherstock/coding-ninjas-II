@@ -68,25 +68,10 @@ export class LevelStart extends Level {
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 0, 2000, 48,  5, Slope.NONE, CapHorz.NONE);
-        /*
-        // enemies
-*/
-        /*
-        // destroyable crates
-        GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2125, 2000, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2250, 2000, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2062, 1875, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2187, 1875, ImageData.CRATE_WOOD, Breakable.YES);
-*/
     }
 
     private addStepsUp(): void {
         const x = 6144;
-
-        // boulder and bush
-        // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
-        // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
 
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, 2000, 6,  5, Slope.ASCENDING, CapHorz.NONE);
@@ -99,13 +84,24 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, fenceX + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
         GameObjectBundleFactory.createDecoImage(this, fenceX + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
 
+        // boulder and bush
+        GameObjectBundleFactory.createDecoImage(this, fenceX + 550 - 6020 + 5760, 2000 - 120, DecoPosition.BG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, fenceX + 550 - 6020 + 5920, 2000 - 120, DecoPosition.BG, ImageData.BOULDER_1);
+
         // masked ninja
-        GameObjectBundleFactory.createEnemy(this, fenceX, 2000 - 120, CharacterFacing.LEFT, fenceX, fenceX + 600, CharacterSpriteData.MASKED_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, fenceX, 2000 - 120, CharacterFacing.LEFT, fenceX, fenceX + 590, CharacterSpriteData.MASKED_NINJA_GUY, false);
     }
 
     private addUpperGround(): void {
         const x = 8448;
         const y = 2000 - 240;
+
+        // crates
+        GameObjectBundleFactory.createMovableRect(this, x - 800 - 5870 + 6950, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 800 -5870 + 7095, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 800 -5870 + 7240, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 800 -5870 + 7020, y - 125, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 800 -5870 + 7155, y - 125, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // lion statue with grass
         GameObjectBundleFactory.createDecoImage(this, x - 200 + 1265, y, DecoPosition.BG, ImageData.STATUE_LION);

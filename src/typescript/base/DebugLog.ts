@@ -10,7 +10,7 @@ export class DebugLog {
     static readonly sound: DebugLog             = new DebugLog(false);
     static readonly init: DebugLog              = new DebugLog(false);
     static readonly image: DebugLog             = new DebugLog(false);
-    static readonly character: DebugLog         = new DebugLog(false);
+    static readonly character: DebugLog         = new DebugLog(true);
     static readonly canvas: DebugLog            = new DebugLog(false);
     static readonly key: DebugLog               = new DebugLog(false);
     static readonly pointer: DebugLog           = new DebugLog(false);

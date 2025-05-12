@@ -78,5 +78,14 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 26,  3, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 3456, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+
+        /*
+        // destroyable crates
+        GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2125, 2000, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2250, 2000, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2062, 1875, ImageData.CRATE_WOOD, Breakable.YES);
+        GameObjectBundleFactory.createObstacle(this, x + 2187, 1875, ImageData.CRATE_WOOD, Breakable.YES);
+*/
     }
 }

@@ -186,19 +186,25 @@ export abstract class GameObject {
     }
 
     public hurtNonPlayer(damage: number, damageForceX: number): void {
-        // apply force on non-static objects
+        if (!this.breakable || this.state !== GameObjectState.ALIVE) {
+            return;
+        }
+
+        DebugLog.character.log('Character hits a level object (alive)');
+
+        // apply velocity & rotation forces on non-static objects
         if (!this.shape.body.isStatic) {
             matter.Body.setVelocity(
                 this.shape.body,
                 matter.Vector.create(damageForceX, -10.0)
             );
+
+            matter.Body.setAngularVelocity(
+                this.shape.body,
+                (damageForceX < 0.0 ? -0.05 : 0.05)
+            );
         }
 
-        if (!this.breakable || this.state !== GameObjectState.ALIVE) {
-            return;
-        }
-
-        DebugLog.character.log('Character hits a level object (movable)');
 
         // TODO add particle effect / decos on hurt/smash!
         this.energy -= damage;
