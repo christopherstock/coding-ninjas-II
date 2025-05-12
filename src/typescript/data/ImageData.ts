@@ -154,6 +154,28 @@ export class ImageData {
     static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/10.png';
     static readonly BLACK_NINJA_GUY_DIE_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/die/01.png';
 
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_1:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/01.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_2:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/02.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_3:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/03.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_4:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/04.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_5:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/05.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_6:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/06.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_7:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/07.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_8:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/08.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_9:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/09.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_10: string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/10.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_1: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/01.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_2: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/02.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_3: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/03.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_4: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/04.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_5: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/05.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_6: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/06.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_7: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/07.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_8: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/08.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_9: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/09.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/10.png';
+    static readonly WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/die/01.png';
+
     static readonly CRATE_WOOD: string                                  = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
     static readonly CRATE_STEEL: string                                 = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateSteel.png';
     static readonly ITEM: string                                        = SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
@@ -500,6 +522,28 @@ export class ImageData {
         ImageData.BLACK_NINJA_GUY_WALK_RIGHT_FRAME_9,
         ImageData.BLACK_NINJA_GUY_WALK_RIGHT_FRAME_10,
         ImageData.BLACK_NINJA_GUY_DIE_RIGHT_FRAME_1,
+
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_1,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_2,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_3,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_4,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_5,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_6,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_7,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_8,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_9,
+        ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_10,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_1,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_2,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_3,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_4,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_5,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_6,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_7,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_8,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_9,
+        ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_10,
+        ImageData.WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1,
 
         ImageData.ITEM,
         ImageData.CRATE_WOOD,

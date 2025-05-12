@@ -1,13 +1,13 @@
 # TODOs
 
 ## Doing
+- 🧪️ More Ninja Sprites (Enemies & Friends)
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 - 🌺🧪 Fix annoying edge block
 
 ## Primary: MVP
 - 🧪 Add decoration particle effects on smashing objects / windows etc.
 - 🧪️ Add 'katana strike' sprites in air.
-- 🧪️ More Ninja Sprites (Enemies & Friends)
 - 🧪 Add event triggers (for falling obstacles, new enemies etc.)
 
 ## Secondary: Possible New Game/Engine Features

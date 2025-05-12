@@ -660,6 +660,109 @@ export class SpriteData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
+    static WHITE_NINJA_GUY_STAND_LEFT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_1,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_2,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_3,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_4,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_5,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_6,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_7,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_8,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_9,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.YES,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    static WHITE_NINJA_GUY_STAND_RIGHT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_1,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_2,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_3,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_4,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_5,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_6,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_7,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_8,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_9,
+            ImageData.WHITE_NINJA_GUY_STAND_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.NO,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    static WHITE_NINJA_GUY_WALK_LEFT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_1,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_2,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_3,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_4,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_5,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_6,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_7,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_8,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_9,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.YES,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    static WHITE_NINJA_GUY_WALK_RIGHT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_1,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_2,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_3,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_4,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_5,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_6,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_7,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_8,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_9,
+            ImageData.WHITE_NINJA_GUY_WALK_RIGHT_FRAME_10,
+        ],
+        4,
+        MirrorImage.NO,
+        LoopSprite.YES,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+
+    static WHITE_NINJA_GUY_DIE_LEFT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1,
+        ],
+        16,
+        MirrorImage.YES,
+        LoopSprite.NO,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    static WHITE_NINJA_GUY_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1,
+        ],
+        16,
+        MirrorImage.NO,
+        LoopSprite.NO,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
     static WATER_TOP: SpriteTemplate         = new SpriteTemplate(
         [
             ImageData.WATER_TOP_FRAME_1,
@@ -809,6 +912,12 @@ export class SpriteData {
             SpriteData.BLACK_NINJA_GUY_WALK_RIGHT,
             SpriteData.BLACK_NINJA_GUY_DIE_LEFT,
             SpriteData.BLACK_NINJA_GUY_DIE_RIGHT,
+            SpriteData.WHITE_NINJA_GUY_STAND_LEFT,
+            SpriteData.WHITE_NINJA_GUY_STAND_RIGHT,
+            SpriteData.WHITE_NINJA_GUY_WALK_LEFT,
+            SpriteData.WHITE_NINJA_GUY_WALK_RIGHT,
+            SpriteData.WHITE_NINJA_GUY_DIE_LEFT,
+            SpriteData.WHITE_NINJA_GUY_DIE_RIGHT,
             SpriteData.WATER_TOP,
             SpriteData.GRASS_1,
             SpriteData.GRASS_2,

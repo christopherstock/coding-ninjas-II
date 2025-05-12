@@ -139,7 +139,7 @@ export class LevelStart extends Level {
 
         // masked ninja girl
         const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
-        GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 600, CharacterSpriteData.MASKED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 600, CharacterSpriteData.WHITE_NINJA_GUY, false);
     }
 
     private addSeaside(): void {
