@@ -108,7 +108,7 @@ export abstract class Character extends GameObject {
                 ? -SettingGame.PLAYER_ATTACK_RANGE
                 : SettingGame.PLAYER_ATTACK_RANGE
         );
-        const damageForce: number = (
+        const damageForceX: number = (
             this.facing === CharacterFacing.LEFT
                 ? -SettingMatter.PLAYER_ATTACK_FORCE
                 : SettingMatter.PLAYER_ATTACK_FORCE
@@ -132,14 +132,14 @@ export abstract class Character extends GameObject {
         // check all movables
         for (const movable of Main.game.level.movables) {
             if (matter.Query.region([ movable.shape.body ], smashBounds).length > 0) {
-                movable.hurt(DAMAGE_PER_STRIKE, damageForce);
+                movable.hurtNonPlayer(DAMAGE_PER_STRIKE, damageForceX);
             }
         }
 
         // check all obstacles
         for (const obstacle of Main.game.level.obstacles) {
             if (matter.Query.region([ obstacle.shape.body ], smashBounds).length > 0) {
-                obstacle.hurt(DAMAGE_PER_STRIKE, damageForce);
+                obstacle.hurtNonPlayer(DAMAGE_PER_STRIKE, damageForceX);
             }
         }
 
@@ -166,8 +166,8 @@ export abstract class Character extends GameObject {
     *   @param punchBackDirection The direction in which to punch back.
     *******************************************************************************************************************/
     public receivePunchBack(punchBackDirection: CharacterFacing): void {
-        const forceX: number = (this instanceof Player ? 7.5  : 5.5);
-        const forceY: number = (this instanceof Player ? 10.0 : 16.5);
+        const forceX: number = (this instanceof Player ? 7.5  : 8.75);
+        const forceY: number = (this instanceof Player ? 10.0 : 17.5);
 
         // apply punch-back force
         switch (punchBackDirection) {

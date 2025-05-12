@@ -476,10 +476,10 @@ export class SpriteData {
 
     static BLUE_NINJA_GUY_DIE_LEFT: SpriteTemplate         = new SpriteTemplate(
         [
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_2,
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_3,
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_4,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_2,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_3,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_4,
             ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_5,
         ],
         16,
@@ -491,11 +491,12 @@ export class SpriteData {
 
     static BLUE_NINJA_GUY_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate(
         [
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_2,
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_3,
-            ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_4,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_1,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_2,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_3,
+            // ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_4,
             ImageData.BLUE_NINJA_GUY_DIE_RIGHT_FRAME_5,
+
         ],
         16,
         MirrorImage.NO,
@@ -506,10 +507,10 @@ export class SpriteData {
 
     static MASKED_NINJA_GUY_DIE_LEFT: SpriteTemplate         = new SpriteTemplate(
         [
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_1,
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_2,
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_3,
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_4,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_1,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_2,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_3,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_4,
             ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_5,
         ],
         16,
@@ -521,10 +522,10 @@ export class SpriteData {
 
     static MASKED_NINJA_GUY_DIE_RIGHT: SpriteTemplate         = new SpriteTemplate(
         [
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_1,
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_2,
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_3,
-            ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_4,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_1,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_2,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_3,
+            // ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_4,
             ImageData.MASKED_NINJA_GUY_DIE_RIGHT_FRAME_5,
         ],
         16,

@@ -21,7 +21,7 @@ export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 18066;
     public  height: number = 2500;
-    public  playerStartX: number = 14848; // 6000; // 250;
+    public  playerStartX: number = 6144; // 14848; // 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
@@ -63,12 +63,13 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, 6000 - 285, 2000, DecoPosition.FG, ImageData.BUSH_2);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 160, 2000 + 22, DecoPosition.BG, ImageData.BUSH_1);
 
+        // blue ninja
+        GameObjectBundleFactory.createEnemy(this, x + 5100, 2000, CharacterFacing.RIGHT, x + 5100, x + 5100 + 758, CharacterSpriteData.BLUE_NINJA_GUY, false);
+
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 0, 2000, 48,  5, Slope.NONE, CapHorz.NONE);
         /*
         // enemies
-        GameObjectBundleFactory.createEnemy(this, x + 4350, 2000, CharacterFacing.RIGHT, 4350, 5850, CharacterSpriteData.BLUE_NINJA_GUY, false);
-        GameObjectBundleFactory.createEnemy(this, x + 5850, 2000, CharacterFacing.LEFT, 4350, 5850, CharacterSpriteData.MASKED_NINJA_GUY, false);
 */
         /*
         // destroyable crates
@@ -93,9 +94,13 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.ASCENDING, CapHorz.NONE);
 
         // fence
-        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, DecoPosition.FG, ImageData.FENCE_LEFT);
-        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
-        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
+        const fenceX = x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
+        GameObjectBundleFactory.createDecoImage(this, fenceX, 2000 - 120, DecoPosition.FG, ImageData.FENCE_LEFT);
+        GameObjectBundleFactory.createDecoImage(this, fenceX + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, fenceX + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
+
+        // masked ninja
+        GameObjectBundleFactory.createEnemy(this, fenceX, 2000 - 120, CharacterFacing.LEFT, fenceX, fenceX + 600, CharacterSpriteData.MASKED_NINJA_GUY, false);
     }
 
     private addUpperGround(): void {

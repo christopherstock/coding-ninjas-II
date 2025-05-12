@@ -23,11 +23,12 @@ export enum Breakable {
 *   The abstract class of all game objects.
 ***********************************************************************************************************************/
 export abstract class GameObject {
-    public shape: Shape   = null;
-    public sprite: Sprite = null;
-    public state: GameObjectState = GameObjectState.ALIVE;
-    public breakable: Breakable = Breakable.NO;
-    public energy: number = 100.0;
+    public shape: Shape             = null;
+    public sprite: Sprite           = null;
+    public state: GameObjectState   = GameObjectState.ALIVE;
+    public breakable: Breakable     = Breakable.NO;
+    public energy: number           = 100.0;
+    protected dyingScale: number    = 0.0;
 
     /** ****************************************************************************************************************
     *   Creates a new game object.
@@ -123,8 +124,15 @@ export abstract class GameObject {
     protected setImageFromSprite(): void {
         if (!SettingDebug.DISABLE_SPRITES) {
             this.shape.body.render.sprite.texture = this.sprite.getCurrentFrameImageUrl();
-            this.shape.body.render.sprite.xScale  = this.sprite.template.getScale();
-            this.shape.body.render.sprite.yScale  = this.sprite.template.getScale();
+
+            if (this.dyingScale === 0.0) {
+                this.shape.body.render.sprite.xScale  = this.sprite.template.getScale();
+                this.shape.body.render.sprite.yScale  = this.sprite.template.getScale();
+            } else {
+                this.shape.body.render.sprite.xScale  = 1.0 + this.dyingScale;
+                this.shape.body.render.sprite.yScale  = 1.0 + this.dyingScale;
+            }
+
         }
     }
 
@@ -170,12 +178,12 @@ export abstract class GameObject {
         }
     }
 
-    public hurt(damage: number, damageForce: number): void {
+    public hurtNonPlayer(damage: number, damageForceX: number): void {
         // apply force on non-static objects
         if (!this.shape.body.isStatic) {
             matter.Body.setVelocity(
                 this.shape.body,
-                matter.Vector.create(damageForce, -10.0)
+                matter.Vector.create(damageForceX, -10.0)
             );
         }
 
@@ -202,7 +210,7 @@ export abstract class GameObject {
             // apply force on break
             matter.Body.setVelocity(
                 this.shape.body,
-                matter.Vector.create(damageForce, -10.0)
+                matter.Vector.create(damageForceX, -10.0)
             );
         }
     }
