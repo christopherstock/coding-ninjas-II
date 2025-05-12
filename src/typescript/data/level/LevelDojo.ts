@@ -39,11 +39,11 @@ export class LevelDojo extends Level {
         // table with flasks and pots
         let x = -1500;
         let y = -700;
-        GameObjectBundleFactory.createMovableRect(this, x + 1920, y + 2100, ImageData.TABLE_1);
+        GameObjectBundleFactory.createMovableRect(this, x + 1920, y + 2100, ImageData.TABLE_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 1930, y + 1930, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 1962, y + 1930, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 2013, y + 1930, ImageData.FLASK_3, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1);
+        GameObjectBundleFactory.createMovableRect(this, x + 2058, y + 2100, ImageData.POT_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // flasks on the floor
         GameObjectBundleFactory.createMovableRect(this, x + 2133, y + 2100, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
