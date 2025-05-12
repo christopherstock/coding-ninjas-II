@@ -74,4 +74,21 @@ export class CharacterSpriteData {
         SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
+
+    public  static  BLACK_NINJA_GUY: CharacterSpriteSet  = new CharacterSpriteSet(
+        SpriteData.BLACK_NINJA_GUY_STAND_LEFT,
+        SpriteData.BLACK_NINJA_GUY_STAND_RIGHT,
+        SpriteData.BLACK_NINJA_GUY_WALK_LEFT,
+        SpriteData.BLACK_NINJA_GUY_WALK_RIGHT,
+        SpriteData.BLUE_NINJA_GUY_WALK_LEFT,
+        SpriteData.BLUE_NINJA_GUY_WALK_RIGHT,
+        SpriteData.BLUE_NINJA_GUY_STAND_LEFT,
+        SpriteData.BLUE_NINJA_GUY_STAND_RIGHT,
+        SpriteData.BLUE_NINJA_GUY_STAND_LEFT,
+        SpriteData.BLUE_NINJA_GUY_STAND_RIGHT,
+        SpriteData.BLACK_NINJA_GUY_DIE_LEFT,
+        SpriteData.BLACK_NINJA_GUY_DIE_RIGHT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
+    );
 }

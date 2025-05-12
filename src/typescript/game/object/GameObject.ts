@@ -139,7 +139,6 @@ export abstract class GameObject {
                 this.shape.body.render.sprite.xScale  = 1.0 + this.dyingScale;
                 this.shape.body.render.sprite.yScale  = 1.0 + this.dyingScale;
             }
-
         }
     }
 
