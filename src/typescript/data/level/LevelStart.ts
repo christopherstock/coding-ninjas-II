@@ -63,7 +63,7 @@ export class LevelStart extends Level {
         // tree, boulders & bushes
         GameObjectBundleFactory.createDecoImage(this, x + 4830, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
         GameObjectBundleFactory.createDecoImage(this, x + 5200, 2020, DecoPosition.BG, ImageData.BOULDER_1);
-        GameObjectBundleFactory.createDecoImage(this, x + 5300, 2000, DecoPosition.FG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 5300, 2000, DecoPosition.FG, ImageData.BOULDER_2);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 285, 2000, DecoPosition.FG, ImageData.BUSH_2);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 160, 2000 + 22, DecoPosition.BG, ImageData.BUSH_1);
 

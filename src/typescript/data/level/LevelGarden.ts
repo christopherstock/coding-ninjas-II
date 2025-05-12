@@ -35,7 +35,7 @@ export class LevelGarden extends Level {
 
         // boulders
         GameObjectBundleFactory.createDecoImage(this, x + 5400, 1420, DecoPosition.BG, ImageData.BOULDER_1);
-        GameObjectBundleFactory.createDecoImage(this, x + 5500, 1400, DecoPosition.FG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 5500, 1400, DecoPosition.FG, ImageData.BOULDER_2);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
