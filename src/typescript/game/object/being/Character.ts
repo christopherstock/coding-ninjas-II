@@ -334,6 +334,12 @@ export abstract class Character extends GameObject {
             } else {
                 this.setSprite(this.spriteSet.spriteDieRight);
             }
+        } else if (this.isAttacking()) {
+            if (this.facing === CharacterFacing.LEFT) {
+                this.setSprite(this.spriteSet.spriteAttackLeft);
+            } else {
+                this.setSprite(this.spriteSet.spriteAttackRight);
+            }
         } else if (this.isFalling()) {
             if (this.isGliding) {
                 if (this.facing === CharacterFacing.LEFT) {
@@ -349,14 +355,8 @@ export abstract class Character extends GameObject {
                 }
             }
 
-            // TODO sprites for jumping & attacking
+            // TODO add sprites for jumping & attacking
 
-        } else if (this.isAttacking()) {
-            if (this.facing === CharacterFacing.LEFT) {
-                this.setSprite(this.spriteSet.spriteAttackLeft);
-            } else {
-                this.setSprite(this.spriteSet.spriteAttackRight);
-            }
         } else if (this.isJumping()) {
             if (this.facing === CharacterFacing.LEFT) {
                 this.setSprite(this.spriteSet.spriteJumpLeft);

@@ -84,10 +84,10 @@ export enum DecoPosition
 *   Creates bundled instances of game objects.
 ***********************************************************************************************************************/
 export abstract class GameObjectBundleFactory {
+    public static readonly GROUND_TILE_WIDTH: number       = 128;
+    public static readonly GROUND_TILE_HEIGHT: number      = 128;
     private static readonly HEIGHT_FLYING_GROUND: number    = 90;
     private static readonly ALTITUDE: number                = 20;
-    private static readonly GROUND_TILE_WIDTH: number       = 128;
-    private static readonly GROUND_TILE_HEIGHT: number      = 128;
 
     /** ****************************************************************************************************************
     *   Creates the player.

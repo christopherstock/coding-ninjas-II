@@ -19,9 +19,9 @@ import { Breakable } from '../../game/object/GameObject';
 
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
-    public  width: number = 8320;
+    public  width: number = 16000;
     public  height: number = 2500;
-    public  playerStartX: number = 250;
+    public  playerStartX: number = 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
@@ -34,12 +34,13 @@ export class LevelStart extends Level {
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_MOUNT_FUJI));
 
         this.addStartingZone();
-        // this.addSlopeGround();
+        this.addSteps();
+        this.addUpperGround();
         // this.addLowerGround();
     }
 
     private addStartingZone(): void {
-        let x = 0;
+        const x = 0;
 
         // site trigger with tree
         GameObjectFactory.createSiteTrigger(this, x + 0, 2000, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
@@ -95,22 +96,28 @@ export class LevelStart extends Level {
 */
     }
 
-    private addSlopeGround(): void {
-        const x = 5920 + 0;
-
-        // DODO 2 slopes/steps
+    private addSteps(): void {
+        const x = 6144;
 
         // boulder and bush
-        GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
-        GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
+        // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
+        // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
 
-        // slope
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x - 5920 + 5120, 2000, 5,  5, Slope.DESCENDING, CapHorz.NONE);
+        // steps
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, 2000, 6,  5, Slope.ASCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 6 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.ASCENDING, CapHorz.NONE);
     }
 
-    private addLowerGround(): void {
-        const x = 5870 + 0;
+    private addUpperGround(): void {
+        const x = 8448;
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 8448, 2000 - 240, 20,  5, Slope.NONE, CapHorz.NONE);
+    }
 
+    private addSeaside(): void {
+        const x = 8448;
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 8448, 2000 - 240, 6,  5, Slope.NONE, CapHorz.NONE);
+/*
         // friend
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT, this, x - 5870 + 5870, 2100, CharacterFacing.RIGHT, 5870, 6800, CharacterSpriteData.RED_NINJA_GIRL, false);
 
@@ -132,5 +139,6 @@ export class LevelStart extends Level {
 
         // lower ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x - 5870 + 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
+*/
     }
 }
