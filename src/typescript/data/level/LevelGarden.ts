@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 
-import * as matter from 'matter-js';
 import { Level, LevelId } from '../../game/level/Level';
 import { CapHorz, CapVert, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
@@ -41,8 +40,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
 
-        if (1 === 1) {return;}
-
+        /*
         // billboard 'games'
         GameObjectBundleFactory.createBillboard(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_GAMES, 'https://christopherstock.github.io/OutRunMF/dist/');
 
@@ -65,5 +63,6 @@ export class LevelGarden extends Level {
         GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_SMALL), 3.5, [ matter.Vector.create(4000, 1300), matter.Vector.create(5000, 1300) ]);
         // bounce
         GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
+*/
     }
 }

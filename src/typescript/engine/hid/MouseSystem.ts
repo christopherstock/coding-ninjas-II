@@ -24,8 +24,8 @@ export class MouseSystem {
             return;
         }
 
-        const relevantBillboards: Billboard[] = this.getRelevantBillboards();
-        for (const billboard of relevantBillboards) {
+        const billboards: Billboard[] = Main.game.level.getBillboards();
+        for (const billboard of billboards) {
             if (this.eventInsideBillboard(event, billboard)) {
                 const leftHalf = event.clientX < (
                     billboard.shape.body.bounds.min.x + billboard.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
@@ -46,8 +46,8 @@ export class MouseSystem {
             return;
         }
 
-        const relevantBillboards: Billboard[] = this.getRelevantBillboards();
-        for (const billboard of relevantBillboards) {
+        const billboards: Billboard[] = Main.game.level.getBillboards();
+        for (const billboard of billboards) {
             if (this.eventInsideBillboard(event, billboard)) {
                 document.body.style.cursor = 'pointer';
                 return;
@@ -57,27 +57,12 @@ export class MouseSystem {
         document.body.style.cursor = 'default';
     }
 
-    // TODO move to Level
-
-    private getRelevantBillboards(): Billboard[] {
-        const decos = Main.game.level.decosFg.concat(Main.game.level.decosBg);
-        const billboards: Billboard[] = [];
-
-        for (const deco of decos) {
-            if (deco instanceof Billboard) {
-                billboards.push(deco);
-            }
-        }
-
-        return billboards;
-    }
-
-    private eventInsideBillboard(event: MouseEvent, relevantBillboard: Decoration): boolean {
+    private eventInsideBillboard(event: MouseEvent, billboard: Decoration): boolean {
         return (
-            event.clientX >= relevantBillboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
-            && event.clientX < (relevantBillboard.shape.body.bounds.min.x + relevantBillboard.shape.getWidth() - Main.game.camera.getOffsetX())
-            && event.clientY >= relevantBillboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
-            && event.clientY < (relevantBillboard.shape.body.bounds.min.y + relevantBillboard.shape.getHeight() - Main.game.camera.getOffsetY())
+            event.clientX >= billboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
+            && event.clientX < (billboard.shape.body.bounds.min.x + billboard.shape.getWidth() - Main.game.camera.getOffsetX())
+            && event.clientY >= billboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
+            && event.clientY < (billboard.shape.body.bounds.min.y + billboard.shape.getHeight() - Main.game.camera.getOffsetY())
         );
     }
 }

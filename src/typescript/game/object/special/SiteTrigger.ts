@@ -65,7 +65,6 @@ export class SiteTrigger extends Decoration {
             if (this.dismiss) {
                 if (this.sitePanelActive) {
                     if (Main.game.engine.siteSystem.hide()) {
-                        Main.game.level.setShrineBookOpen(this.content, false);
                         this.sitePanelActive = false;
                     }
                 }
@@ -75,7 +74,6 @@ export class SiteTrigger extends Decoration {
                     const panelPosition: SitePanelPosition = this.determinePanelPosition();
 
                     if (Main.game.engine.siteSystem.show(this.content, panelPosition)) {
-                        Main.game.level.setShrineBookOpen(this.content, true);
                         this.sitePanelActive = true;
                     }
                 }
@@ -85,7 +83,6 @@ export class SiteTrigger extends Decoration {
 
             if (this.sitePanelActive) {
                 if (Main.game.engine.siteSystem.hide()) {
-                    Main.game.level.setShrineBookOpen(this.content, false);
                     this.sitePanelActive = false;
                 }
             }

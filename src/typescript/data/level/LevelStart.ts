@@ -9,19 +9,15 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { SpriteData } from '../SpriteData';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { CharacterSpriteData } from '../CharacterSpriteData';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
-import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { SettingDebug } from '../../base/SettingDebug';
-import { Breakable } from '../../game/object/GameObject';
 
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
-    public  width: number = 16000;
+    public  width: number = 18000;
     public  height: number = 2500;
-    public  playerStartX: number = 3000; // 11008; // 6000; // 250;
+    public  playerStartX: number = 11008; // 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
@@ -37,8 +33,7 @@ export class LevelStart extends Level {
         this.addStepsUp();
         this.addUpperGround();
         this.addStepsDown();
-
-        // this.addSeaside();
+        this.addSeaside();
     }
 
     private addStartingZone(): void {
@@ -53,7 +48,6 @@ export class LevelStart extends Level {
 
         // billboard 'welcome' with grass
         GameObjectBundleFactory.createBillboard(this, x + 3500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
-        GameObjectBundleFactory.createBillboard(this, x + 4500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.google.de');
         GameObjectBundleFactory.createDecoSprite(this, x + 3500, 2000, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createDecoSprite(this, x + 3550, 2000, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createDecoSprite(this, x + 3600, 2000, DecoPosition.FG, SpriteData.GRASS_1);
@@ -70,7 +64,7 @@ export class LevelStart extends Level {
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 0, 2000, 48,  5, Slope.NONE, CapHorz.NONE);
-/*
+        /*
         // enemies
         GameObjectBundleFactory.createEnemy(this, x + 4350, 2000, CharacterFacing.RIGHT, 4350, 5850, CharacterSpriteData.BLUE_NINJA_GUY, false);
         GameObjectBundleFactory.createEnemy(this, x + 5850, 2000, CharacterFacing.LEFT, 4350, 5850, CharacterSpriteData.MASKED_NINJA_GUY, false);
@@ -107,9 +101,8 @@ export class LevelStart extends Level {
         const x = 8448;
         const y = 2000 - 240;
 
-        // lion statue with trees and grass
+        // lion statue with grass
         GameObjectBundleFactory.createDecoImage(this, x - 200 + 1265, y, DecoPosition.BG, ImageData.STATUE_LION);
-        GameObjectBundleFactory.createDecoImage(this, x - 200 + 1580, y, DecoPosition.FG, ImageData.TREE_2);
         GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1080, y, DecoPosition.FG, SpriteData.GRASS_2);
         GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1130, y, DecoPosition.FG, SpriteData.GRASS_2);
         GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1180, y, DecoPosition.FG, SpriteData.GRASS_2);
@@ -118,6 +111,9 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1580, y, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createCandle(this, x - 200 + 1200, y, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, x - 200 + 1540, y, DecoPosition.FG);
+
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 1580, y, DecoPosition.FG, ImageData.TREE_2);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 20,  5, Slope.NONE, CapHorz.NONE);
@@ -132,22 +128,15 @@ export class LevelStart extends Level {
         // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
 
         // steps
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 6,  5, Slope.DESCENDING, CapHorz.NONE);
-/*
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 6 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.ASCENDING, CapHorz.NONE);
-
-        // fence ?
-        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, DecoPosition.FG, ImageData.FENCE_LEFT);
-        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
-        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
-*/
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 12,  5, Slope.DESCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, y + 2 * 120, 6,  5, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH, y + 2 * 120, 12,  5, Slope.DESCENDING, CapHorz.NONE);
     }
 
     private addSeaside(): void {
-        const x = 8448;
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 8448, 2000 - 240, 6,  5, Slope.NONE, CapHorz.NONE);
-/*
+        const x = 14848;
+        const y = 2000 + 240;
+        /*
         // friend
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT, this, x - 5870 + 5870, 2100, CharacterFacing.RIGHT, 5870, 6800, CharacterSpriteData.RED_NINJA_GIRL, false);
 
@@ -166,9 +155,8 @@ export class LevelStart extends Level {
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, x - 5870 + 7110, 2100, true);
         GameObjectBundleFactory.createWaterArea(this, x - 5870 + 7040, 2260, 10, 4, ImageData.WATER_CENTER);
-
-        // lower ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x - 5870 + 5760, 2100, 10, 5, Slope.NONE,       CapHorz.NONE);
 */
+        // lower ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 10, 5, Slope.NONE,       CapHorz.NONE);
     }
 }

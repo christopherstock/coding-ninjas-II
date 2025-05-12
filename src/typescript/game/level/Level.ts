@@ -8,11 +8,10 @@ import { SigSaw } from '../object/special/SigSaw';
 import { Bounce } from '../object/special/Bounce';
 import { Platform } from '../object/special/Platform';
 import { ParallaxDeco } from '../object/deco/ParallaxDeco';
-import { Shrine } from '../object/deco/Shrine';
 import { Door } from '../object/special/Door';
 import { MatterJsSystem } from '../../engine/MatterJsSystem';
-import { SiteContent } from '../../site/SiteContentSystem';
 import { CharacterFacing } from '../object/being/CharacterFacing';
+import { Billboard } from '../object/deco/Billboard';
 
 export enum LevelId {
     LEVEL_START,
@@ -46,7 +45,6 @@ export abstract class Level {
     public platforms: Platform[]                = [];
     public parallaxBgs: ParallaxDeco[]          = [];
     public parallaxFgs: ParallaxDeco[]          = [];
-    public shrines: Shrine[]                    = [];
     public doors: Door[]                        = [];
 
     /** ****************************************************************************************************************
@@ -112,9 +110,6 @@ export abstract class Level {
         for (const decoBg of this.decosBg) {
             decoBg.render();
         }
-        for (const shrine of this.shrines) {
-            shrine.render();
-        }
         for (const siteTrigger of this.siteTriggers) {
             siteTrigger.render();
         }
@@ -161,21 +156,16 @@ export abstract class Level {
         }
     }
 
-    /** ****************************************************************************************************************
-    *   Opens or closes the book of the specified shrine visible.
-    *
-    *   @param content The site content of the shrine to toggle the book.
-    *   @param open    Specifies if the book shall be opened.
-    *******************************************************************************************************************/
-    public setShrineBookOpen(content: SiteContent, open: boolean): void {
-        for (const gameObject of this.shrines) {
-            if (gameObject.content === content) {
-                if (open) {
-                    gameObject.setBookOpen(true);
-                } else {
-                    gameObject.setBookOpen(false);
-                }
+    public getBillboards(): Billboard[] {
+        const decos = this.decosFg.concat(this.decosBg);
+        const billboards: Billboard[] = [];
+
+        for (const deco of decos) {
+            if (deco instanceof Billboard) {
+                billboards.push(deco);
             }
         }
+
+        return billboards;
     }
 }
