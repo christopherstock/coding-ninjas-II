@@ -73,6 +73,8 @@ export class LevelStart extends Level {
     private addStepsUp(): void {
         const x = 6144;
 
+        GameObjectBundleFactory.createBillboard(this, x + 75, 2000 - 100, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, 2000, 6,  5, Slope.ASCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 6 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.NONE, CapHorz.NONE);

@@ -26,7 +26,7 @@ export abstract class Character extends GameObject {
     protected isMovingRight: boolean                    = false;
 
     protected glidingRequest: boolean                   = false;
-    protected paraCloseRequest: boolean                   = false;
+    protected paraCloseRequest: boolean                 = false;
 
     private readonly speedMove: number                  = 0.0;
     private readonly jumpPower: number                  = 0.0;

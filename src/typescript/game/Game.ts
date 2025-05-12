@@ -52,7 +52,7 @@ export class Game {
         this.updateAndAssignCamera();
         this.engine.matterJsSystem.startRenderer();
 
-        Main.game.startDarkenPanelFadeOut(SettingEngine.DARKEN_PANEL_TICKS_STARTUP);
+        this.startDarkenPanelFadeOut(SettingEngine.DARKEN_PANEL_TICKS_STARTUP);
 
         window.requestAnimationFrame(
             () => { this.tickGame(); }
@@ -162,7 +162,7 @@ export class Game {
         this.level.init(this.engine.matterJsSystem);
         this.engine.siteSystem.reset();
         this.resetCamera();
-        Main.game.engine.keySystem.releaseAllKeys();
+        this.engine.keySystem.releaseAllKeys();
     }
 
     public startDarkenPanelFadeOut(
@@ -226,29 +226,29 @@ export class Game {
                 this.resetAndLaunchLevel(LevelId.LEVEL_START);
             }
 
-            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_2)) {
-                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_2);
+            if (this.engine.keySystem.isPressed(KeyData.KEY_2)) {
+                this.engine.keySystem.setNeedsRelease(KeyData.KEY_2);
 
                 DebugLog.init.log('Resetting and switching to level 2');
                 this.resetAndLaunchLevel(LevelId.LEVEL_DOJO);
             }
 
-            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_3)) {
-                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_3);
+            if (this.engine.keySystem.isPressed(KeyData.KEY_3)) {
+                this.engine.keySystem.setNeedsRelease(KeyData.KEY_3);
 
                 DebugLog.init.log('Resetting and switching to level 3');
                 this.resetAndLaunchLevel(LevelId.LEVEL_GARDEN);
             }
 
-            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_4)) {
-                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_4);
+            if (this.engine.keySystem.isPressed(KeyData.KEY_4)) {
+                this.engine.keySystem.setNeedsRelease(KeyData.KEY_4);
 
                 DebugLog.init.log('Resetting and switching to level 4');
                 this.resetAndLaunchLevel(LevelId.LEVEL_TOWN);
             }
 
-            if (Main.game.engine.keySystem.isPressed(KeyData.KEY_5)) {
-                Main.game.engine.keySystem.setNeedsRelease(KeyData.KEY_5);
+            if (this.engine.keySystem.isPressed(KeyData.KEY_5)) {
+                this.engine.keySystem.setNeedsRelease(KeyData.KEY_5);
 
                 DebugLog.init.log('Resetting and switching to level 5');
                 this.resetAndLaunchLevel(LevelId.LEVEL_HARBOUR);
