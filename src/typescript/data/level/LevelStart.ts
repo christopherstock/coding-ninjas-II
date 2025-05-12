@@ -34,7 +34,7 @@ export class LevelStart extends Level {
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_MOUNT_FUJI));
 
         this.addStartingZone();
-        this.addSteps();
+        this.addStepsUp();
         this.addUpperGround();
         // this.addLowerGround();
     }
@@ -71,21 +71,7 @@ export class LevelStart extends Level {
         // enemies
         GameObjectBundleFactory.createEnemy(this, x + 4350, 2000, CharacterFacing.RIGHT, 4350, 5850, CharacterSpriteData.BLUE_NINJA_GUY, false);
         GameObjectBundleFactory.createEnemy(this, x + 5850, 2000, CharacterFacing.LEFT, 4350, 5850, CharacterSpriteData.MASKED_NINJA_GUY, false);
-
-        // lion statue with trees and grass
-        x = 1000;
-        GameObjectBundleFactory.createDecoImage(this, x + 4265, 2000, DecoPosition.BG, ImageData.STATUE_LION);
-        GameObjectBundleFactory.createDecoImage(this, x + 4580, 2000, DecoPosition.FG, ImageData.TREE_2);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4080, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4130, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4180, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4480, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4530, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4580, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createCandle(this, x + 4200, 2000, DecoPosition.FG);
-        GameObjectBundleFactory.createCandle(this, x + 4540, 2000, DecoPosition.FG);
 */
-
         /*
         // destroyable crates
         GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
@@ -96,7 +82,7 @@ export class LevelStart extends Level {
 */
     }
 
-    private addSteps(): void {
+    private addStepsUp(): void {
         const x = 6144;
 
         // boulder and bush
@@ -111,7 +97,20 @@ export class LevelStart extends Level {
 
     private addUpperGround(): void {
         const x = 8448;
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 8448, 2000 - 240, 20,  5, Slope.NONE, CapHorz.NONE);
+        const y = 2000 -240;
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 20,  5, Slope.NONE, CapHorz.NONE);
+
+        // lion statue with trees and grass
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 1265, y, DecoPosition.BG, ImageData.STATUE_LION);
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 1580, y, DecoPosition.FG, ImageData.TREE_2);
+        GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1080, y, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1130, y, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1180, y, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1480, y, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1530, y, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1580, y, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createCandle(this, x - 200 + 1200, y, DecoPosition.FG);
+        GameObjectBundleFactory.createCandle(this, x - 200 + 1540, y, DecoPosition.FG);
     }
 
     private addSeaside(): void {
