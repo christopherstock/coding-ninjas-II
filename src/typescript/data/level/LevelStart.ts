@@ -21,7 +21,7 @@ export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 18066;
     public  height: number = 2500;
-    public  playerStartX: number = 6144; // 14848; // 6000; // 250;
+    public  playerStartX: number = 11008; // 14848; // 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
@@ -132,14 +132,17 @@ export class LevelStart extends Level {
         // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
         // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
 
+        // statue shrine
+        GameObjectBundleFactory.createStatusShrine(this, x + 12 * 128 + 450, y + 2 * 120);
+
+        // masked ninja guy
+        const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
+        GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 535, CharacterSpriteData.WHITE_NINJA_GUY, false);
+
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 12,  5, Slope.DESCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, y + 2 * 120, 6,  5, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH, y + 2 * 120, 12,  5, Slope.DESCENDING, CapHorz.NONE);
-
-        // masked ninja girl
-        const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
-        GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 600, CharacterSpriteData.WHITE_NINJA_GUY, false);
     }
 
     private addSeaside(): void {

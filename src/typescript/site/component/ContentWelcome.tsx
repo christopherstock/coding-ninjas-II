@@ -25,8 +25,8 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
 
         {
             SiteContentFactory.createParagraph(
-                'Welcome to the demo of '
-                + '<span class=\'special\'>Coding Ninjas II</span><br>'
+                'Welcome to '
+                + '<span class=\'special\'>Coding Ninjas II</span>.<br>'
                 + '<br>'
                 + 'This is an interactive project portfolio<br>'
                 + 'combined with a <span class=\'special\'>Jump \'n Run</span> experience.<br>'
