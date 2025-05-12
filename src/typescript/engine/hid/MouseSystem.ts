@@ -26,52 +26,20 @@ export class MouseSystem {
         }
 
         // get the billboard object for this level
-        const relevantBillboard: Decoration = this.getRelevantBillboard();
+        const relevantBillboard: Billboard = this.getRelevantBillboard();
         if (relevantBillboard === null) {
             return;
         }
-        /*
-        const decos = Main.game.level.decosFg.concat(Main.game.level.decosBg);
 
-        for (const deco of decos) {
-            const img: string = deco.sprite.template.imageIds[0];
-            if (!img.includes('billboard')) {continue;}
-*/
         if (this.eventInsideBillboard(event, relevantBillboard)) {
             const leftHalf = event.clientX < (
                 relevantBillboard.shape.body.bounds.min.x + relevantBillboard.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
             );
 
-            switch (Main.game.level.id) {
-                case LevelId.LEVEL_START: {
-                    window.open('https://www.christopherstock.de', '_blank');
-                    break;
-                }
-
-                case LevelId.LEVEL_DOJO: {
-                    if (leftHalf) {
-                        window.open('https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/', '_blank');
-                    } else {
-                        window.open('https://www.winklerundschorn.de', '_blank');
-                    }
-                    break;
-                }
-
-                case LevelId.LEVEL_GARDEN: {
-                    window.open('https://christopherstock.github.io/OutRunMF/dist/', '_blank');
-                    break;
-                }
-
-                case LevelId.LEVEL_TOWN: {
-                    if (
-                        leftHalf
-                    ) {
-                        window.open('https://christopherstock.github.io/babylon-zero/dist/', '_blank');
-                    } else {
-                        window.open('https://github.com/christopherstock/shooter-gradle', '_blank');
-                    }
-                    break;
-                }
+            if (leftHalf) {
+                window.open(relevantBillboard.urlLeftHalf, '_blank');
+            } else {
+                window.open(relevantBillboard.urlRightHalf, '_blank');
             }
         }
     }
@@ -93,6 +61,8 @@ export class MouseSystem {
 
         document.body.style.cursor = handOverBillboard ? 'pointer' : 'default';
     }
+
+    // TODO enable multiple billboards
 
     private getRelevantBillboard(): Billboard {
         const decos = Main.game.level.decosFg.concat(Main.game.level.decosBg);

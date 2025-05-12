@@ -1,8 +1,8 @@
-# TODO List
+# TODOs
 
 ## Doing
 - 🌺🧪 multiple billboards ?
-- 🌺🧪 Complete game levels (add market to town, warehouse to DoJo?)
+- 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 
 ## Primary: MVP
 - 🧪 Add decoration particle effects on smashing objects / windows etc.
