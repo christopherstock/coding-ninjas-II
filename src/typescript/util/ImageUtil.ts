@@ -1,3 +1,5 @@
+import {MathUtil} from "./MathUtil";
+
 /** ********************************************************************************************************************
 *   Offers additional Input/Output functionality.
 ***********************************************************************************************************************/
@@ -37,7 +39,7 @@ export class ImageUtil {
     *   @return The newly created but not already loaded mirrored image.
     *******************************************************************************************************************/
     public static darkenImage(original: HTMLImageElement, onLoadCallack: ()=> void): HTMLImageElement {
-        const DARKEN_FACTOR = '95%';
+        const DARKEN_FACTOR = String(MathUtil.getRandomInt(80, 95)) + '%';
 
         const canvas: HTMLCanvasElement = document.createElement('canvas');
         canvas.width  = original.width;
