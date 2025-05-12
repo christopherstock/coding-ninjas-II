@@ -57,6 +57,7 @@ export class ImageData {
     static readonly MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_13: string     = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/13.png';
     static readonly MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_14: string     = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/14.png';
     static readonly MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_15: string     = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/attack/15.png';
+    static readonly MASKED_NINJA_GIRL_DIE_RIGHT_FRAME_1: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGirl/die/01.png';
 
     static readonly BLUE_NINJA_GUY_STAND_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blueNinjaGuy/stand/01.png';
     static readonly BLUE_NINJA_GUY_STAND_RIGHT_FRAME_2: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blueNinjaGuy/stand/02.png';
@@ -381,6 +382,7 @@ export class ImageData {
         ImageData.MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_13,
         ImageData.MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_14,
         ImageData.MASKED_NINJA_GIRL_ATTACK_RIGHT_FRAME_15,
+        ImageData.MASKED_NINJA_GIRL_DIE_RIGHT_FRAME_1,
 
         ImageData.BLUE_NINJA_GUY_STAND_RIGHT_FRAME_1,
         ImageData.BLUE_NINJA_GUY_STAND_RIGHT_FRAME_2,

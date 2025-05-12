@@ -117,6 +117,9 @@ export class LevelStart extends Level {
         // tree
         GameObjectBundleFactory.createDecoImage(this, x + 1580, y, DecoPosition.FG, ImageData.TREE_2);
 
+        // blue ninja
+        GameObjectBundleFactory.createEnemy(this, x + 1500, y, CharacterFacing.RIGHT, x + 1500, x + 2350, CharacterSpriteData.BLUE_NINJA_GUY, false);
+
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 20,  5, Slope.NONE, CapHorz.NONE);
     }
@@ -133,6 +136,10 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 12,  5, Slope.DESCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, y + 2 * 120, 6,  5, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH, y + 2 * 120, 12,  5, Slope.DESCENDING, CapHorz.NONE);
+
+        // masked ninja girl
+        const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
+        GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 600, CharacterSpriteData.MASKED_NINJA_GIRL, false);
     }
 
     private addSeaside(): void {
