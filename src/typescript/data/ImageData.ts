@@ -298,6 +298,10 @@ export class ImageData {
     static readonly BILLBOARD_3D_DEV: string                            = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard3dDev.png';
     static readonly BILLBOARD_APPLICATION_PAPER: string                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardApplicationPaper.png';
 
+    static readonly FENCE_LEFT: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
+    static readonly FENCE_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
+    static readonly FENCE_RIGHT: string                                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceRight.png';
+
     static readonly SITE_PANEL_LOGO_LEFT: string                        = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoLeft.png';
     static readonly SITE_PANEL_LOGO_RIGHT: string                       = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoRight.png';
     static readonly SITE_PANEL_BG_LEFT: string                          = SettingEngine.PATH_IMAGE_SITE_PANEL + 'bgLeft.png';
@@ -616,6 +620,10 @@ export class ImageData {
         ImageData.BILLBOARD_WEB_APPS,
         ImageData.BILLBOARD_3D_DEV,
         ImageData.BILLBOARD_APPLICATION_PAPER,
+
+        ImageData.FENCE_LEFT,
+        ImageData.FENCE_CENTER,
+        ImageData.FENCE_RIGHT,
 
         ImageData.SITE_PANEL_LOGO_LEFT,
         ImageData.SITE_PANEL_LOGO_RIGHT,

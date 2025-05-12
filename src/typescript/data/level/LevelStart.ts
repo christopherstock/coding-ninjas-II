@@ -21,8 +21,8 @@ export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 16000;
     public  height: number = 2500;
-    public  playerStartX: number = 6000; // 250;
-    public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 : 1250);
+    public  playerStartX: number = 11008; // 6000; // 250;
+    public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
 
@@ -36,7 +36,9 @@ export class LevelStart extends Level {
         this.addStartingZone();
         this.addStepsUp();
         this.addUpperGround();
-        // this.addLowerGround();
+        this.addStepsDown();
+
+        // this.addSeaside();
     }
 
     private addStartingZone(): void {
@@ -93,12 +95,16 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, 2000, 6,  5, Slope.ASCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 6 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.ASCENDING, CapHorz.NONE);
+
+        // fence ?
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, DecoPosition.FG, ImageData.FENCE_LEFT);
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
     }
 
     private addUpperGround(): void {
         const x = 8448;
-        const y = 2000 -240;
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 20,  5, Slope.NONE, CapHorz.NONE);
+        const y = 2000 - 240;
 
         // lion statue with trees and grass
         GameObjectBundleFactory.createDecoImage(this, x - 200 + 1265, y, DecoPosition.BG, ImageData.STATUE_LION);
@@ -111,6 +117,30 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoSprite(this, x - 200 + 1580, y, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createCandle(this, x - 200 + 1200, y, DecoPosition.FG);
         GameObjectBundleFactory.createCandle(this, x - 200 + 1540, y, DecoPosition.FG);
+
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 20,  5, Slope.NONE, CapHorz.NONE);
+    }
+
+    private addStepsDown(): void {
+        const x = 11008;
+        const y = 2000 - 240;
+
+        // boulder and bush
+        // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5760, 2100, DecoPosition.BG, ImageData.BUSH_2);
+        // GameObjectBundleFactory.createDecoImage(this, x - 6020 + 5920, 2100, DecoPosition.FG, ImageData.BOULDER_1);
+
+        // steps
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 6,  5, Slope.DESCENDING, CapHorz.NONE);
+/*
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 6 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, 6,  5, Slope.ASCENDING, CapHorz.NONE);
+
+        // fence ?
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH, 2000 - 120, DecoPosition.FG, ImageData.FENCE_LEFT);
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
+*/
     }
 
     private addSeaside(): void {
