@@ -44,7 +44,7 @@ export class LevelGarden extends Level {
         if (1 === 1) {return;}
 
         // billboard 'games'
-        GameObjectBundleFactory.createBillboard(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_GAMES);
+        GameObjectBundleFactory.createBillboard(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_GAMES, 'https://christopherstock.github.io/OutRunMF/dist/');
 
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 2374, 1400);

@@ -50,7 +50,7 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createStatusShrine(this, x + 2750, 2000);
 
         // billboard 'welcome' with grass
-        GameObjectBundleFactory.createBillboard(this, x + 3500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME);
+        GameObjectBundleFactory.createBillboard(this, x + 3500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
         GameObjectBundleFactory.createDecoSprite(this, x + 3500, 2000, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createDecoSprite(this, x + 3550, 2000, DecoPosition.FG, SpriteData.GRASS_1);
         GameObjectBundleFactory.createDecoSprite(this, x + 3600, 2000, DecoPosition.FG, SpriteData.GRASS_1);

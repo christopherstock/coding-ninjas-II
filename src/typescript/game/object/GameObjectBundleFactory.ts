@@ -697,7 +697,9 @@ export abstract class GameObjectBundleFactory {
         xLeft: number,
         yBottom: number,
         position: DecoPosition,
-        imageId: string
+        imageId: string,
+        urlLeftHalf: string = null,
+        urlRightHalf: string = urlLeftHalf
     ): void {
         GameObjectBundleFactory.createDecoImage(level, xLeft, yBottom, position, ImageData.BILLBOARD);
 
@@ -717,7 +719,9 @@ export abstract class GameObjectBundleFactory {
             ),
             spriteTemplate,
             xLeft,
-            (yBottom - spriteTemplate.height)
+            (yBottom - spriteTemplate.height),
+            urlLeftHalf,
+            urlRightHalf
         );
 
         switch (position) {

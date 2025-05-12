@@ -64,7 +64,7 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createCandle(this, x + 14080, y + 2100, DecoPosition.FG);
 
         // billboard 'websites'
-        GameObjectBundleFactory.createBillboard(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEBSITES);
+        GameObjectBundleFactory.createBillboard(this, 1900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEBSITES, 'https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/', 'https://www.winklerundschorn.de');
 
         // door to garden
         GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));

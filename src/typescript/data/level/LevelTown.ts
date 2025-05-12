@@ -46,7 +46,7 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createEnemy(this, 4500, 1400, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
         // billboard '3d dev'
-        GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_3D_DEV);
+        GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_3D_DEV, 'https://christopherstock.github.io/babylon-zero/dist/', 'https://github.com/christopherstock/shooter-gradle');
 
         // house with door to garden
         GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
