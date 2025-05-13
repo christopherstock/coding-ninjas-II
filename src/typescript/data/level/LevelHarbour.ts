@@ -9,8 +9,7 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
-import {MirrorImage} from "../../engine/ui/MirrorImage";
-import {GameAction, GameActionType} from "../../game/object/GameAction";
+import { GameAction, GameActionType } from '../../game/object/GameAction';
 
 export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;
