@@ -15,7 +15,7 @@ export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
     public width: number = 7680;
     public height: number = 4500;
-    public playerStartX: number = 705;
+    public playerStartX: number = 3705;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;

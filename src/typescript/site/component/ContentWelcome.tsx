@@ -31,12 +31,13 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 + 'This is an interactive project portfolio<br>'
                 + 'combined with a <span class=\'special\'>Jump \'n Run</span> experience.<br>'
                 + '<br>'
-                + 'The following <span class=\'special\'>keys</span> control your player:<br>',
+                + 'Can you reach the end of the <span class=\'special\'>CN2</span> world?<br>'
+                + '<br>'
+                + 'The following <span class=\'special\'>keys</span> control your player:'
+                + '<hr style="float: right; width: 275px">',
                 'right'
             )
         }
-
-        { SiteContentFactory.createSpacerVertical() }
 
         <table style={{ textAlign: 'right', width: '100%' }}>
             <tbody>
@@ -47,7 +48,6 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                                 '<span class=\'special\'>&#x2190; &#x2192;</span><br>'
                                 + '<span class=\'special\'>&#x2191;</span><br>'
                                 + '<span class=\'special\'>&#x2193;</span><br>'
-                                + '<span class=\'special\'>&#x2191; &#x2193;</span><br>'
                                 + '<span class=\'special\'>SPACE</span><br>',
                                 'right'
                             )
@@ -57,9 +57,8 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                         {
                             SiteContentFactory.createParagraph(
                                 'Walk<br>'
-                                + 'Jump<br>'
-                                + 'Open Doors<br>'
-                                + 'Open/Close Parachute (in Air)<br>'
+                                + 'Jump &amp; open Parachute<br>'
+                                + 'Open Doors &amp; close Parachute<br>'
                                 + 'Strike Katana<br>',
                                 'right'
                             )
@@ -88,7 +87,7 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         { SiteContentFactory.createSpacerVertical() }
         <div>
             { SiteContentFactory.createParagraph('Version 1.0.0-rc &bull; Project progress:', 'right') }
-            { SiteContentFactory.createProgress('line', 87.8) }
+            { SiteContentFactory.createProgress('line', 93.2) }
         </div>
 
         { SiteContentFactory.createSpacerVertical() }
