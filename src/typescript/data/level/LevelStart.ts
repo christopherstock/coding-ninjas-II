@@ -21,7 +21,7 @@ export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 18066;
     public  height: number = 5000;
-    public  playerStartX: number = 11008; // 14848; // 6000; // 250;
+    public  playerStartX: number = 250; // 11008; // 14848; // 6000; // 250;
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 - 240 /* 2000 */ : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
@@ -39,35 +39,37 @@ export class LevelStart extends Level {
 
     private addStartingZone(): void {
         const x = 0;
+        const y = 2000;
 
         // site trigger with tree
-        GameObjectFactory.createSiteTrigger(this, x + 0, 2000, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
-        GameObjectBundleFactory.createDecoImage(this, x + 500, 2000, DecoPosition.FG, ImageData.TREE_1);
+        GameObjectFactory.createSiteTrigger(this, x + 0, y, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
+        GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.FG, ImageData.TREE_1);
 
         // statue shrine
-        GameObjectBundleFactory.createStatusShrine(this, x + 2750, 2000);
+        GameObjectBundleFactory.createStatusShrine(this, x + 2750, y);
 
         // billboard 'welcome' with grass
-        GameObjectBundleFactory.createBillboard(this, x + 3500, 2000, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
-        GameObjectBundleFactory.createDecoSprite(this, x + 3500, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, x + 3550, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, x + 3600, 2000, DecoPosition.FG, SpriteData.GRASS_1);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4050, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4100, 2000, DecoPosition.FG, SpriteData.GRASS_2);
-        GameObjectBundleFactory.createDecoSprite(this, x + 4150, 2000, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createBillboard(this, x + 3500, y, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+        GameObjectBundleFactory.createDecoSprite(this, x + 3500, y, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 3550, y, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 3600, y, DecoPosition.FG, SpriteData.GRASS_1);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4050, y, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4100, y, DecoPosition.FG, SpriteData.GRASS_2);
+        GameObjectBundleFactory.createDecoSprite(this, x + 4150, y, DecoPosition.FG, SpriteData.GRASS_2);
 
         // tree, boulders & bushes
-        GameObjectBundleFactory.createDecoImage(this, x + 4830, 2000, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
-        GameObjectBundleFactory.createDecoImage(this, x + 5200, 2020, DecoPosition.BG, ImageData.BOULDER_1);
-        GameObjectBundleFactory.createDecoImage(this, x + 5300, 2000, DecoPosition.FG, ImageData.BOULDER_2);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 285, 2000, DecoPosition.FG, ImageData.BUSH_2);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 160, 2000 + 22, DecoPosition.BG, ImageData.BUSH_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 4830, y, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
+        GameObjectBundleFactory.createDecoImage(this, x + 5200, y + 20, DecoPosition.BG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 5300, y, DecoPosition.FG, ImageData.BOULDER_2);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 285, y, DecoPosition.FG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 160, y + 22, DecoPosition.BG, ImageData.BUSH_1);
 
         // blue ninja
-        GameObjectBundleFactory.createEnemy(this, x + 5100, 2000, CharacterFacing.RIGHT, x + 5100, x + 5100 + 758, CharacterSpriteData.BLUE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 5100, y, CharacterFacing.RIGHT, x + 5100, x + 5100 + 758, CharacterSpriteData.BLUE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 4120, y, CharacterFacing.RIGHT, x + 4120, x + 4120 + 685, CharacterSpriteData.BLACK_NINJA_GUY, false);
 
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 0, 2000, 48,  5, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x + 0, y, 48,  5, Slope.NONE, CapHorz.NONE);
     }
 
     private addStepsUp(): void {
@@ -75,7 +77,7 @@ export class LevelStart extends Level {
         const y = 2000 - 100;
 
         // billboard
-        GameObjectBundleFactory.createBillboard(this, x + 75, y + 75, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+        GameObjectBundleFactory.createBillboard(this, x - 225, y + 100, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
 
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, 2000, 6,  5, Slope.ASCENDING, CapHorz.NONE);
@@ -121,8 +123,8 @@ export class LevelStart extends Level {
         // tree
         GameObjectBundleFactory.createDecoImage(this, x + 1580, y, DecoPosition.FG, ImageData.TREE_2);
 
-        // blue ninja
-        GameObjectBundleFactory.createEnemy(this, x + 1500, y, CharacterFacing.RIGHT, x + 1500, x + 2350, CharacterSpriteData.BLACK_NINJA_GUY, false);
+        // masked ninja girl
+        GameObjectBundleFactory.createEnemy(this, x + 1500, y, CharacterFacing.RIGHT, x + 1500, x + 2350, CharacterSpriteData.MASKED_NINJA_GIRL, false);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 20,  5, Slope.NONE, CapHorz.NONE);

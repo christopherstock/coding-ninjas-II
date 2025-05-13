@@ -70,12 +70,6 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         </table>
 
         { SiteContentFactory.createSpacerVertical() }
-        <div>
-            { SiteContentFactory.createParagraph('Project progress:', 'right') }
-            { SiteContentFactory.createProgress('line', 81.6) }
-        </div>
-
-        { SiteContentFactory.createSpacerVertical() }
         { SiteContentFactory.createParagraph('Toggle background music:', 'right') }
         {
             SiteContentFactory.createSwitch(
@@ -92,7 +86,12 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
         }
 
         { SiteContentFactory.createSpacerVertical() }
+        <div>
+            { SiteContentFactory.createParagraph('Version 1.0.0-rc &bull; Project progress:', 'right') }
+            { SiteContentFactory.createProgress('line', 87.8) }
+        </div>
 
+        { SiteContentFactory.createSpacerVertical() }
         {
             SiteContentFactory.createCarousel(
                 'scrollx',

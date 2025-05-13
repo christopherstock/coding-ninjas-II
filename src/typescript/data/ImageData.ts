@@ -193,14 +193,15 @@ export class ImageData {
     static readonly STATUE_LION: string                                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statueLion.png';
     static readonly CANDELABRA: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candelabra.png';
     static readonly CHANDELIER: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
+    static readonly GOBLET: string                                      = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'goblet.png';
+    static readonly STOVE: string                                       = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'stove.png';
     static readonly CANDLE: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
     static readonly BUSH_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
     static readonly BUSH_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush2.png';
-    static readonly GOBLET_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'goblet1.png';
     static readonly FLASK_1: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask1.png';
     static readonly FLASK_2: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask2.png';
     static readonly FLASK_3: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask3.png';
-    static readonly POT_1: string                                       = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot1.png';
+    static readonly POT: string                                         = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot.png';
     static readonly DOOR_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
     static readonly DOOR_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door2.png';
     static readonly DOOR_3: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door3.png';
@@ -562,14 +563,15 @@ export class ImageData {
         ImageData.STATUE_LION,
         ImageData.CANDELABRA,
         ImageData.CHANDELIER,
+        ImageData.GOBLET,
+        ImageData.STOVE,
         ImageData.CANDLE,
         ImageData.BUSH_1,
         ImageData.BUSH_2,
-        ImageData.GOBLET_1,
         ImageData.FLASK_1,
         ImageData.FLASK_2,
         ImageData.FLASK_3,
-        ImageData.POT_1,
+        ImageData.POT,
         ImageData.DOOR_1,
         ImageData.DOOR_2,
         ImageData.DOOR_3,
