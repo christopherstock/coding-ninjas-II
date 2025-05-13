@@ -68,5 +68,8 @@ export class LevelGarden extends Level {
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, x + 3072 - 128 * 8, 1400, 8,  3, Slope.NONE, CapHorz.NONE);
     }
 }

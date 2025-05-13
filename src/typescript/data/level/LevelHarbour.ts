@@ -35,7 +35,8 @@ export class LevelHarbour extends Level {
         // site trigger 'end of game reached'
         GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_FAREWELL, SitePanelAppearance.LEFT, null);
 
-        GameObjectBundleFactory.createDecoImage(this, 6000, 1400, DecoPosition.FG, ImageData.VAN_1);
+        // new images
+        GameObjectBundleFactory.createDecoImage(this, 6000 + 200, 1400, DecoPosition.FG, ImageData.VAN_1);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 300, 1400, DecoPosition.FG, ImageData.VAN_2);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 600, 1400, DecoPosition.FG, ImageData.VAN_3);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 900, 1400, DecoPosition.FG, ImageData.SCOOTER_1);
