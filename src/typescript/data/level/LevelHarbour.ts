@@ -9,6 +9,7 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
+import {MirrorImage} from "../../engine/ui/MirrorImage";
 
 export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;
@@ -33,6 +34,12 @@ export class LevelHarbour extends Level {
 
         // site trigger 'end of game reached'
         GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_FAREWELL, SitePanelAppearance.LEFT, null);
+
+        GameObjectBundleFactory.createDecoImage(this, 6000, 1400, DecoPosition.FG, ImageData.VAN_1);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 300, 1400, DecoPosition.FG, ImageData.VAN_2);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 600, 1400, DecoPosition.FG, ImageData.VAN_3);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 900, 1400, DecoPosition.FG, ImageData.SCOOTER_1);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1200, 1400, DecoPosition.FG, ImageData.SCOOTER_2);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);

@@ -194,6 +194,11 @@ export class ImageData {
     static readonly CANDELABRA: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candelabra.png';
     static readonly CHANDELIER: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
     static readonly GOBLET: string                                      = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'goblet.png';
+    static readonly VAN_1: string                                       = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'van1.png';
+    static readonly VAN_2: string                                       = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'van2.png';
+    static readonly VAN_3: string                                       = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'van3.png';
+    static readonly SCOOTER_1: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'scooter1.png';
+    static readonly SCOOTER_2: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'scooter2.png';
     static readonly STOVE: string                                       = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'stove.png';
     static readonly CANDLE: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
     static readonly BUSH_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
@@ -567,6 +572,11 @@ export class ImageData {
         ImageData.CANDELABRA,
         ImageData.CHANDELIER,
         ImageData.GOBLET,
+        ImageData.VAN_1,
+        ImageData.VAN_2,
+        ImageData.VAN_3,
+        ImageData.SCOOTER_1,
+        ImageData.SCOOTER_2,
         ImageData.STOVE,
         ImageData.CANDLE,
         ImageData.BUSH_1,
