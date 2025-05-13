@@ -202,6 +202,9 @@ export class ImageData {
     static readonly FLASK_2: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask2.png';
     static readonly FLASK_3: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask3.png';
     static readonly POT: string                                         = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'pot.png';
+    static readonly CONCRETE_MIXER: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'concreteMixer.png';
+    static readonly GENERATOR: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'generator.png';
+    static readonly PYLONS: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'pylons.png';
     static readonly DOOR_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door1.png';
     static readonly DOOR_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door2.png';
     static readonly DOOR_3: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'door3.png';
@@ -572,6 +575,9 @@ export class ImageData {
         ImageData.FLASK_2,
         ImageData.FLASK_3,
         ImageData.POT,
+        ImageData.CONCRETE_MIXER,
+        ImageData.GENERATOR,
+        ImageData.PYLONS,
         ImageData.DOOR_1,
         ImageData.DOOR_2,
         ImageData.DOOR_3,

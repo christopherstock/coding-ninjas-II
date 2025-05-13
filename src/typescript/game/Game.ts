@@ -7,7 +7,6 @@ import { SettingEngine } from '../base/SettingEngine';
 import { SoundData } from '../data/SoundData';
 import { LevelStart } from '../data/level/LevelStart';
 import { LevelDojo } from '../data/level/LevelDojo';
-import { Main } from '../base/Main';
 import { KeyData } from '../data/KeyData';
 import { LevelGarden } from '../data/level/LevelGarden';
 import { LevelTown } from '../data/level/LevelTown';

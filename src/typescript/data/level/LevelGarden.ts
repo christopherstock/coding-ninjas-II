@@ -30,15 +30,16 @@ export class LevelGarden extends Level {
         const x: number = 6000;
 
         // door back to DoJo
-        GameObjectFactory.createDoor(this, x + 6000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 2820, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, x + 6000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 10368 - 300 + 12, playerStartY: 1400 }));
 
         // boulders
         GameObjectBundleFactory.createDecoImage(this, x + 5400, 1420, DecoPosition.BG, ImageData.BOULDER_1);
         GameObjectBundleFactory.createDecoImage(this, x + 5500, 1400, DecoPosition.FG, ImageData.BOULDER_2);
 
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        // construction tools
+        GameObjectBundleFactory.createDecoImage(this, x + 5000, 1400, DecoPosition.FG, ImageData.CONCRETE_MIXER);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500, 1400, DecoPosition.FG, ImageData.GENERATOR);
+        GameObjectBundleFactory.createDecoImage(this, x + 4000, 1400, DecoPosition.FG, ImageData.PYLONS);
 
         /*
         // billboard 'games'
@@ -64,5 +65,8 @@ export class LevelGarden extends Level {
         // bounce
         GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
 */
+        // ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
     }
 }

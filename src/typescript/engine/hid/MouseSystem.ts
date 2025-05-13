@@ -3,15 +3,7 @@ import { Main } from '../../base/Main';
 import { Decoration } from '../../game/object/deco/Decoration';
 import { Billboard } from '../../game/object/deco/Billboard';
 
-/* eslint-disable max-len */
-
-/** ********************************************************************************************************************
-*   The pointer system that manages all pointer interactions.
-***********************************************************************************************************************/
 export class MouseSystem {
-    /** ****************************************************************************************************************
-    *   Creates a new mouse system.
-    *******************************************************************************************************************/
     public constructor() {
         DebugLog.engine.log('Setup mouse system');
 
@@ -57,6 +49,7 @@ export class MouseSystem {
         document.body.style.cursor = 'default';
     }
 
+    /* eslint-disable max-len */
     private eventInsideBillboard(event: MouseEvent, billboard: Decoration): boolean {
         return (
             event.clientX >= billboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()

@@ -7,7 +7,7 @@ import { Main } from '../../base/Main';
 import { DebugLog } from '../../base/DebugLog';
 import { ImageUtil } from '../../util/ImageUtil';
 import { SettingMatter } from '../../base/SettingMatter';
-import {SettingEngine} from "../../base/SettingEngine";
+import { SettingEngine } from '../../base/SettingEngine';
 
 export enum GameObjectState {
     ALIVE,
@@ -61,7 +61,7 @@ export abstract class GameObject {
         if (this.sprite !== null) {
             if (this.state === GameObjectState.DYING) {
                 this.dyingScale += 0.0175;
-                if (this.dyingScale > 2.5) this.dyingScale = 2.5;
+                if (this.dyingScale > 2.5) {this.dyingScale = 2.5;}
 
                 this.shape.body.render.sprite.xScale = 1.0 + this.dyingScale;
                 this.shape.body.render.sprite.yScale = 1.0 + this.dyingScale;

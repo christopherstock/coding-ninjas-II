@@ -27,6 +27,7 @@ export class LevelDojo extends Level {
 
         this.addStartZone();
         this.addStoveZone();
+        this.addExit();
         this.addWalls();
     }
 
@@ -83,8 +84,8 @@ export class LevelDojo extends Level {
 
     private addExit(): void {
         // door to garden
-        GameObjectFactory.createDoor(this, 2800, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));
-/*
+        GameObjectFactory.createDoor(this, 10368 - 300, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020 + 6000, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));
+        /*
         // destroyable crates
         GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
         GameObjectBundleFactory.createObstacle(this, x + 2125, 2000, ImageData.CRATE_WOOD, Breakable.YES);
@@ -95,8 +96,6 @@ export class LevelDojo extends Level {
     }
 
     private addWalls(): void {
-        const DOJO_WIDTH = 10368 + 128;
-
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 27 * 3,  3, Slope.NONE, CapHorz.NONE);
 
@@ -105,7 +104,7 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 10368, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
     }
 
-    private addChandelier(x:number, y:number, onlyCandles:boolean = false): void {
+    private addChandelier(x: number, y: number, onlyCandles: boolean = false): void {
         if (!onlyCandles) {
             // chandelier
             GameObjectBundleFactory.createDecoImage(this, x + 13673, y + 1805, DecoPosition.FG, ImageData.CHANDELIER);
