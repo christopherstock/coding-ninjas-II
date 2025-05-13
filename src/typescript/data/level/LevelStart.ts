@@ -105,7 +105,7 @@ export class LevelStart extends Level {
 
     private addUpperGround(): void {
         const x = 8448;
-        const y = 2000 - 240;
+        const y = 1760;
 
         // boulders
         GameObjectBundleFactory.createDecoImage(this, x + 80, y, DecoPosition.BG, ImageData.BOULDER_3);

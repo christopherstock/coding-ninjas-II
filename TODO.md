@@ -4,12 +4,12 @@
 - 🌺🧪 New Billboards with all major projects
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 - 🌺🧪 Fix annoying edge block
+- 🌺🧪 Add more cool flask images?
 
 ## Primary: MVP
 - 🧪 Add decoration particle effects on smashing objects / windows etc.
 - 🧪️ Add 'katana strike' sprites in air?
 - 🧪 Add event triggers (for falling obstacles, new enemies etc.)
-- 🧪 Add more cool flask images?
 
 ## Secondary: (Possibly New Features)
 - ⛏️ Sound effects for ninja girl actions and enemies
