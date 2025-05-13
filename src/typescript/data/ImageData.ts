@@ -199,6 +199,7 @@ export class ImageData {
     static readonly VAN_3: string                                       = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'van3.png';
     static readonly SCOOTER_1: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'scooter1.png';
     static readonly SCOOTER_2: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'scooter2.png';
+    static readonly HYDRANT: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'hydrant.png';
     static readonly STOVE: string                                       = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'stove.png';
     static readonly CANDLE: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
     static readonly BUSH_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
@@ -577,6 +578,7 @@ export class ImageData {
         ImageData.VAN_3,
         ImageData.SCOOTER_1,
         ImageData.SCOOTER_2,
+        ImageData.HYDRANT,
         ImageData.STOVE,
         ImageData.CANDLE,
         ImageData.BUSH_1,

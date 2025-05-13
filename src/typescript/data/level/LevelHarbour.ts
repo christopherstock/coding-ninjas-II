@@ -40,6 +40,7 @@ export class LevelHarbour extends Level {
         GameObjectBundleFactory.createDecoImage(this, 6000 - 600, 1400, DecoPosition.FG, ImageData.VAN_3);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 900, 1400, DecoPosition.FG, ImageData.SCOOTER_1);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1200, 1400, DecoPosition.FG, ImageData.SCOOTER_2);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1500, 1400, DecoPosition.FG, ImageData.HYDRANT);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
