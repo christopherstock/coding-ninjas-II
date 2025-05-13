@@ -15,7 +15,7 @@ export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
     public width: number = 7680;
     public height: number = 4500;
-    public playerStartX: number = 250;
+    public playerStartX: number = 705;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
@@ -33,10 +33,10 @@ export class LevelTown extends Level {
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
         // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
 
-        // house
+        // house with door to harbour
         GameObjectBundleFactory.createDecoImage(this, 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, 480, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerStartX: 500, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 1400, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
@@ -48,10 +48,10 @@ export class LevelTown extends Level {
         // billboard '3d dev'
         GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_3D_DEV, 'https://christopherstock.github.io/babylon-zero/dist/', 'https://github.com/christopherstock/shooter-gradle');
 
-        // house with door to garden
+        // house with door back to garden
         GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
         GameObjectBundleFactory.createDecoImage(this, 3480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);

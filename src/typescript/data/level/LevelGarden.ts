@@ -1,19 +1,25 @@
 /* eslint-disable max-len */
 
-import { Level, LevelId } from '../../game/level/Level';
-import { CapHorz, CapVert, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
-import { GameObjectFactory } from '../../game/object/GameObjectFactory';
-import { ImageData } from '../ImageData';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { TilesetData } from '../TilesetData';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import {Level, LevelId} from '../../game/level/Level';
+import {
+    CapHorz,
+    CapVert,
+    DecoPosition,
+    GameObjectBundleFactory,
+    Slope
+} from '../../game/object/GameObjectBundleFactory';
+import {GameObjectFactory} from '../../game/object/GameObjectFactory';
+import {ImageData} from '../ImageData';
+import {GameAction, GameActionType} from '../../game/object/GameAction';
+import {TilesetData} from '../TilesetData';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {CharacterFacing} from '../../game/object/being/CharacterFacing';
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
     public width: number = 12500;
     public height: number = 12500;
-    public playerStartX: number = 12000; // 250;
+    public playerStartX: number = 12020;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
     public playerInitialFloat: boolean = false;
@@ -53,9 +59,6 @@ export class LevelGarden extends Level {
         // GameObjectBundleFactory.createMovableRect(this, -1800 + 2558, -700 + 2100, ImageData.POT_1);
         // GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
 
-        // door to town
-        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 3725, playerStartY: 1400 }));
-
         // magic items
 
         // sigsaw
@@ -65,11 +68,13 @@ export class LevelGarden extends Level {
         // bounce
         GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
 */
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 18,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        // door to town
+        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 3725, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, x + 3072 - 128 * 8, 1400, 8,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, x + 2048, 1400, 8,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, x, 1400, 16,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 6000 / 128,  3, Slope.NONE, CapHorz.NONE);
     }
 }

@@ -16,9 +16,9 @@ export class LevelDojo extends Level {
     public id: LevelId = LevelId.LEVEL_DOJO;
     public width: number = 10368 + 128;
     public height: number = 2500;
-    public playerStartX: number = 1000;
+    public playerStartX: number = 1020;
     public playerStartY: number = 1400;
-    public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
+    public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
     public playerInitialFloat: boolean = false;
 
     protected createGameObjects(): void {
@@ -84,7 +84,7 @@ export class LevelDojo extends Level {
 
     private addExit(): void {
         // door to garden
-        GameObjectFactory.createDoor(this, 10368 - 300, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 6020 + 6000, playerStartY: 1400, playerInitFacing: CharacterFacing.LEFT }));
+        GameObjectFactory.createDoor(this, 10068, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }));
         /*
         // destroyable crates
         GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
