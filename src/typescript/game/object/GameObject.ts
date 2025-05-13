@@ -7,6 +7,7 @@ import { Main } from '../../base/Main';
 import { DebugLog } from '../../base/DebugLog';
 import { ImageUtil } from '../../util/ImageUtil';
 import { SettingMatter } from '../../base/SettingMatter';
+import {SettingEngine} from "../../base/SettingEngine";
 
 export enum GameObjectState {
     ALIVE,
@@ -211,7 +212,9 @@ export abstract class GameObject {
         DebugLog.character.log('New level object energy: [' + String(this.energy) + ']');
 
         // darken img
-        this.darkenImage();
+        if (SettingEngine.DARKEN_IMAGES_FOR_HURT_OBJECTS) {
+            this.darkenImage();
+        }
 
         // check if game object breaks
         if (this.energy <= 0.0) {

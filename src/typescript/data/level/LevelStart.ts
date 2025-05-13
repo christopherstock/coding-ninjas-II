@@ -48,6 +48,11 @@ export class LevelStart extends Level {
         // statue shrine
         GameObjectBundleFactory.createStatusShrine(this, x + 2750, y);
 
+        // crate
+        GameObjectBundleFactory.createMovableRect(this, x + 3000, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3000 + 145, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3000 + 70, y - 125, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
         // billboard 'welcome' with grass
         GameObjectBundleFactory.createBillboard(this, x + 3500, y, DecoPosition.FG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
         GameObjectBundleFactory.createDecoSprite(this, x + 3500, y, DecoPosition.FG, SpriteData.GRASS_1);

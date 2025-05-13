@@ -14,6 +14,8 @@ export class SettingEngine {
     static readonly DARKEN_PANEL_TICKS_STARTUP: number          = 250;
     static readonly ENGINE_SLOW_MOTION_TICKS: number            = 0; // 150;
 
+    static readonly DARKEN_IMAGES_FOR_HURT_OBJECTS: boolean     = false;
+
     static readonly COLOR_BG_MATTER_JS_CSS: string              = '#000000';
     static readonly COLOR_BG_PRELOADER_CSS: string              = '#000000';
     static readonly COLOR_PRIMARY_CSS: string                   = '#b42157';
