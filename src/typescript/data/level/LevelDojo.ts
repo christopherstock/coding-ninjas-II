@@ -32,7 +32,7 @@ export class LevelDojo extends Level {
     }
 
     private addStartZone(): void {
-        const x = -1600;
+        const x = 0;
         const y = -700;
 
         // door back to start
@@ -42,12 +42,16 @@ export class LevelDojo extends Level {
         this.addChandelier(-11300 - 1450, -700);
 
         // table with flasks, pots and goblet
-        GameObjectBundleFactory.createMovableRect(this, x + 1920, y + 2100, ImageData.TABLE_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 1930, y + 1930, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 1962, y + 1930, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 2013, y + 1930, ImageData.FLASK_3, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 2060, y + 2100, ImageData.POT, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 2150, y + 2100, ImageData.GOBLET, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1920, y + 2100, ImageData.TABLE_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
+        GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1930, y + 1930, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1962, y + 1930, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 1600 + 2013, y + 1930, ImageData.FLASK_5, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 150, y + 2100, ImageData.FLASK_3, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 200,  y + 2100, ImageData.FLASK_4, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
+        GameObjectBundleFactory.createMovableRect(this, x - 1600 + 2060, y + 2100, ImageData.POT, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 1600 + 2150, y + 2100, ImageData.GOBLET, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // flasks on the floor ?
         // GameObjectBundleFactory.createMovableRect(this, x + 2133, y + 2100, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);

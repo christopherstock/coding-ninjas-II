@@ -21,7 +21,7 @@ export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 18066;
     public  height: number = 5000;
-    public  playerStartX: number = 250; // 11008; // 14848; // 6000; // 250;
+    public  playerStartX: number = (SettingDebug.DEBUG_MODE ? 11008 : 250);
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
@@ -152,6 +152,9 @@ export class LevelStart extends Level {
         // masked ninja guy
         const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
         GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 535, CharacterSpriteData.WHITE_NINJA_GUY, false);
+
+        // billboard
+        GameObjectBundleFactory.createBillboard(this, x + 250, y + 140, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
 
         // billboard
         GameObjectBundleFactory.createBillboard(this, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 800, y + 2 * 120 + 240, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
