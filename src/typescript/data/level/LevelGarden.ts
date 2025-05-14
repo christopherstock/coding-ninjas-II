@@ -47,10 +47,9 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 4500, 1400, DecoPosition.FG, ImageData.GENERATOR);
         GameObjectBundleFactory.createDecoImage(this, x + 4000, 1400, DecoPosition.FG, ImageData.PYLONS);
 
-        /*
-        // billboard 'games'
-        GameObjectBundleFactory.createBillboard(this, 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_GAMES, 'https://christopherstock.github.io/OutRunMF/dist/');
-
+        // billboard 'swift games workshop'
+        GameObjectBundleFactory.createBillboard(this, x + 3000, 1400, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
+/*
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 2374, 1400);
         GameObjectBundleFactory.createWaterArea(this, 2304, 1560, 6, 4, ImageData.WATER_CENTER);

@@ -701,8 +701,10 @@ export abstract class GameObjectBundleFactory {
         urlLeftHalf: string = null,
         urlRightHalf: string = urlLeftHalf
     ): void {
+        // background
         GameObjectBundleFactory.createDecoImage(level, xLeft, yBottom, position, ImageData.BILLBOARD);
 
+        // foreground
         const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
         const billboard: Billboard = new Billboard
         (
@@ -736,6 +738,11 @@ export abstract class GameObjectBundleFactory {
                 level.decosBg.push(billboard);
                 break;
             }
+        }
+
+        // 'click me' overlay
+        if (urlLeftHalf !== null) {
+            GameObjectBundleFactory.createDecoImage(level, xLeft, yBottom, position, ImageData.BILLBOARD_CLICK_ME);
         }
     }
 
