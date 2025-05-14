@@ -20,7 +20,7 @@ import { Breakable } from '../../game/object/GameObject';
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 18066;
-    public  height: number = 5000;
+    public  height: number = 2772;
     public  playerStartX: number = (SettingDebug.DEBUG_MODE ? 250 /* 11008 */ : 250);
     public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 2000 : 1250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -81,8 +81,8 @@ export class LevelStart extends Level {
         const x = 6144;
         const y = 2000 - 100;
 
-        // billboard 'Hanoi TS'
-        GameObjectBundleFactory.createBillboard(this, x - 225, y + 100, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
+        // billboard 'baur'
+        GameObjectBundleFactory.createBillboard(this, x - 225, y + 100, DecoPosition.BG, ImageData.BILLBOARD_BAUR, 'https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/');
 
         // fence
         const fenceX = x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
@@ -153,11 +153,11 @@ export class LevelStart extends Level {
         const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
         GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 535, CharacterSpriteData.WHITE_NINJA_GUY, false);
 
-        // billboard 'flash'
-        GameObjectBundleFactory.createBillboard(this, x + 250, y + 140, DecoPosition.BG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
+        // billboard 'natalie'
+        GameObjectBundleFactory.createBillboard(this, x + 250, y + 140, DecoPosition.BG, ImageData.BILLBOARD_NATALIE, 'https://fraeulein-natalie.de/index.php/de/');
 
-        // billboard 'kuhn'
-        GameObjectBundleFactory.createBillboard(this, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 800, y + 2 * 120 + 240, DecoPosition.BG, ImageData.BILLBOARD_KUHN, 'https://glaskunst-kuhn.de/index.php/de/');
+        // billboard 'winkler'
+        GameObjectBundleFactory.createBillboard(this, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 800, y + 2 * 120 + 240, DecoPosition.BG, ImageData.BILLBOARD_WINKLER, 'https://www.winklerundschorn.de/index.php/de/');
 
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 12,  5, Slope.DESCENDING, CapHorz.NONE);

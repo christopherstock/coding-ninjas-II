@@ -49,6 +49,10 @@ export class LevelGarden extends Level {
 
         // billboard 'swift games workshop'
         GameObjectBundleFactory.createBillboard(this, x + 3000, 1400, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
+
+        // billboard 'mf outrun'
+        GameObjectBundleFactory.createBillboard(this, x - 1000, 1400, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
+
         /*
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 2374, 1400);
