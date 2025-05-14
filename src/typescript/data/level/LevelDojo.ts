@@ -41,21 +41,17 @@ export class LevelDojo extends Level {
         // chandelier
         this.addChandelier(-11300 - 1450, -700);
 
-        // table with flasks, pots and goblet
+        // table with flasks
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1920, y + 2100, ImageData.TABLE_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1930, y + 1930, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1962, y + 1930, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 2013, y + 1930, ImageData.FLASK_5, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
+        // flasks, pot and goblet on the floor
         GameObjectBundleFactory.createMovableRect(this, x + 150, y + 2100, ImageData.FLASK_3, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 200,  y + 2100, ImageData.FLASK_4, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 2060, y + 2100, ImageData.POT, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 2150, y + 2100, ImageData.GOBLET, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-
-        // flasks on the floor ?
-        // GameObjectBundleFactory.createMovableRect(this, x + 2133, y + 2100, ImageData.FLASK_2, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        // GameObjectBundleFactory.createMovableRect(this, x + 2184, y + 2100, ImageData.FLASK_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
     }
 
     private addStoveZone(): void {
@@ -67,23 +63,24 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createBillboard(this, 2900, 1400, DecoPosition.BG, ImageData.BILLBOARD_WEBSITES, 'https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/', 'https://www.winklerundschorn.de');
 
         // crates
-        GameObjectBundleFactory.createMovableRect(this, 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3205, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3350, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3495, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3640, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        const x: number = 470;
+        GameObjectBundleFactory.createMovableRect(this, x + 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3205, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3350, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3495, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3640, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
-        GameObjectBundleFactory.createMovableRect(this, 3130, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 145, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 145 * 2, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 145 * 3, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145 * 2, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145 * 3, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 70, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 70 + 145, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 70 + 145 * 2, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 + 145, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 + 145 * 2, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 70 * 2, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, 3130 + 70 * 2 + 145, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 * 2, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 * 2 + 145, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
     }
 
     private addExit(): void {

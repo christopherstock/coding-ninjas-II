@@ -12,7 +12,6 @@
 
 ## Secondary: (Possibly New Features)
 - ⛏️ Sound effects for ninja girl actions and enemies
-- ⛏️ fix moving plateau?
 - ⛏️ Add canvas max width?
 - ⛏️ moving 'no entry' sign on trying to open closed door?
 - ⛏️ Friendly Bots that talk to you.
@@ -20,6 +19,7 @@
 - ⛏️ create class HUD with own paint-method.
 - ⛏️ Create HUD ( for picked items etc )?
 - ⛏️ Player shooting or throwing objects.
+- ⛏️ fix moving plateau?
 - ⛏️ Collectables.
 - ⛏️ Create item pickup HUD effect?
 - ⛏️ Add 'crouch- and crouch+slide' action.
