@@ -59,8 +59,8 @@ export class LevelDojo extends Level {
 
         GameObjectBundleFactory.createDecoImage(this, 2249, 1400, DecoPosition.FG, ImageData.STOVE);
 
-        // billboard 'websites'
-        GameObjectBundleFactory.createBillboard(this, 2900, 1400, DecoPosition.BG, ImageData.BILLBOARD_WEBSITES, 'https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/', 'https://www.winklerundschorn.de');
+        // billboard 'mf outrun'
+        GameObjectBundleFactory.createBillboard(this, 2900, 1400, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
 
         // crates
         const x: number = 470;

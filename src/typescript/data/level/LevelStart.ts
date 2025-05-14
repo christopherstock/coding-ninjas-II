@@ -153,11 +153,11 @@ export class LevelStart extends Level {
         const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
         GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 535, CharacterSpriteData.WHITE_NINJA_GUY, false);
 
-        // billboard
-        GameObjectBundleFactory.createBillboard(this, x + 250, y + 140, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+        // billboard 'flash'
+        GameObjectBundleFactory.createBillboard(this, x + 250, y + 140, DecoPosition.BG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
 
-        // billboard
-        GameObjectBundleFactory.createBillboard(this, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 800, y + 2 * 120 + 240, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+        // billboard 'kuhn'
+        GameObjectBundleFactory.createBillboard(this, x + 18 * GameObjectBundleFactory.GROUND_TILE_WIDTH + 800, y + 2 * 120 + 240, DecoPosition.BG, ImageData.BILLBOARD_KUHN, 'https://glaskunst-kuhn.de/index.php/de/');
 
         // steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, x, y, 12,  5, Slope.DESCENDING, CapHorz.NONE);
