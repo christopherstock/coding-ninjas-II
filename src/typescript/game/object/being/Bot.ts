@@ -138,6 +138,9 @@ export class Bot extends Character {
         // disable body collisions
         this.shape.body.collisionFilter = SettingMatter.COLLISION_GROUP_NON_COLLIDING_DEAD_OBJECT;
         this.shape.body.isStatic = false;
+        this.shape.body.mass = 1.0;
+        this.shape.body.friction = 1.0;
+        this.shape.body.restitution = 0.0;
 
         // bring body to foreground
         Main.game.engine.matterJsSystem.removeFromWorld(this.shape.body);
