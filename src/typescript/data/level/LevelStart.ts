@@ -81,8 +81,8 @@ export class LevelStart extends Level {
         const x = 6144;
         const y = 2000 - 100;
 
-        // billboard
-        GameObjectBundleFactory.createBillboard(this, x - 225, y + 100, DecoPosition.BG, ImageData.BILLBOARD_WELCOME, 'https://www.christopherstock.de');
+        // billboard 'Hanoi TS'
+        GameObjectBundleFactory.createBillboard(this, x - 225, y + 100, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
 
         // fence
         const fenceX = x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
