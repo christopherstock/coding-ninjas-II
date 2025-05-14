@@ -352,7 +352,6 @@ export class ImageData {
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
     static readonly BILLBOARD_CLICK_ME: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardClickMe.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
-    static readonly BILLBOARD_WEBSITES: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebsites.png';
     static readonly BILLBOARD_SWIFT: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardSwift.png';
     static readonly BILLBOARD_WEB_APPS: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebApps.png';
     static readonly BILLBOARD_APPLICATION_PAPER: string                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardApplicationPaper.png';
@@ -362,6 +361,9 @@ export class ImageData {
     static readonly BILLBOARD_KUHN: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardKuhn.png';
     static readonly BILLBOARD_WEB_GL_3D: string                         = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebGl3D.png';
     static readonly BILLBOARD_LWJGL: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardLWJGL.png';
+    static readonly BILLBOARD_WINKLER: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWinkler.png';
+    static readonly BILLBOARD_NATALIE: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardNatalie.png';
+    static readonly BILLBOARD_BAUR: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardBaur.png';
 
     static readonly FENCE_LEFT: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
     static readonly FENCE_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
@@ -740,7 +742,6 @@ export class ImageData {
         ImageData.BILLBOARD,
         ImageData.BILLBOARD_CLICK_ME,
         ImageData.BILLBOARD_WELCOME,
-        ImageData.BILLBOARD_WEBSITES,
         ImageData.BILLBOARD_SWIFT,
         ImageData.BILLBOARD_WEB_APPS,
         ImageData.BILLBOARD_APPLICATION_PAPER,
@@ -750,6 +751,9 @@ export class ImageData {
         ImageData.BILLBOARD_KUHN,
         ImageData.BILLBOARD_WEB_GL_3D,
         ImageData.BILLBOARD_LWJGL,
+        ImageData.BILLBOARD_WINKLER,
+        ImageData.BILLBOARD_NATALIE,
+        ImageData.BILLBOARD_BAUR,
 
         ImageData.FENCE_LEFT,
         ImageData.FENCE_CENTER,

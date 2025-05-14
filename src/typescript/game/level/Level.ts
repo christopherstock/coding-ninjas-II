@@ -156,12 +156,12 @@ export abstract class Level {
         }
     }
 
-    public getBillboards(): Billboard[] {
+    public getClickableBillboards(): Billboard[] {
         const decos = this.decosFg.concat(this.decosBg);
         const billboards: Billboard[] = [];
 
         for (const deco of decos) {
-            if (deco instanceof Billboard) {
+            if (deco instanceof Billboard && deco.urlLeftHalf !== null) {
                 billboards.push(deco);
             }
         }

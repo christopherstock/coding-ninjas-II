@@ -35,6 +35,18 @@ export class LevelHarbour extends Level {
         // billboard 'application paper service'
         GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);
 
+        // billboard 'winkler'
+        GameObjectBundleFactory.createBillboard(this, 3000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WINKLER, 'https://www.winklerundschorn.de/index.php/de/');
+
+        // billboard 'natalie'
+        GameObjectBundleFactory.createBillboard(this, 4000, 1400, DecoPosition.FG, ImageData.BILLBOARD_NATALIE, 'https://fraeulein-natalie.de/index.php/de/');
+
+        // billboard 'baur'
+        GameObjectBundleFactory.createBillboard(this, 5000, 1400, DecoPosition.FG, ImageData.BILLBOARD_BAUR, 'https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/');
+
+        // billboard 'web apps'
+        GameObjectBundleFactory.createBillboard(this, 6000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEB_APPS);
+
         // site trigger 'end of game reached'
         GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_FAREWELL, SitePanelAppearance.LEFT, null);
 

@@ -181,6 +181,7 @@ export class Game {
         }
 
         this.handleMenuKey();
+        this.handleMouse();
 
         if (this.slowMotionTicks === 0 || this.slowMotionTicks-- % 4 === 0) {
             this.render();
@@ -253,6 +254,10 @@ export class Game {
                 this.resetAndLaunchLevel(LevelId.LEVEL_HARBOUR);
             }
         }
+    }
+
+    private handleMouse(): void {
+        this.engine.mouseSystem.updateMouseCursor();
     }
 
     /** ****************************************************************************************************************
