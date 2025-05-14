@@ -350,6 +350,7 @@ export class ImageData {
     static readonly BG_HARBOUR: string                                  = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgHarbour.jpg';
 
     static readonly BILLBOARD: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboard.png';
+    static readonly BILLBOARD_CLICK_ME: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardClickMe.png';
     static readonly BILLBOARD_WELCOME: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWelcome.png';
     static readonly BILLBOARD_WEBSITES: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebsites.png';
     static readonly BILLBOARD_GAMES: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardGames.png';
@@ -360,6 +361,8 @@ export class ImageData {
     static readonly BILLBOARD_MF_OUTRUN: string                         = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardMfOutRun.png';
     static readonly BILLBOARD_FLASH: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardFlash.png';
     static readonly BILLBOARD_KUHN: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardKuhn.png';
+    static readonly BILLBOARD_WEB_GL_3D: string                         = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWebGl3D.png';
+    static readonly BILLBOARD_LWJGL: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardLWJGL.png';
 
     static readonly FENCE_LEFT: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
     static readonly FENCE_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
@@ -736,6 +739,7 @@ export class ImageData {
         ImageData.BG_HARBOUR,
 
         ImageData.BILLBOARD,
+        ImageData.BILLBOARD_CLICK_ME,
         ImageData.BILLBOARD_WELCOME,
         ImageData.BILLBOARD_WEBSITES,
         ImageData.BILLBOARD_GAMES,
@@ -746,6 +750,8 @@ export class ImageData {
         ImageData.BILLBOARD_MF_OUTRUN,
         ImageData.BILLBOARD_FLASH,
         ImageData.BILLBOARD_KUHN,
+        ImageData.BILLBOARD_WEB_GL_3D,
+        ImageData.BILLBOARD_LWJGL,
 
         ImageData.FENCE_LEFT,
         ImageData.FENCE_CENTER,

@@ -13,7 +13,7 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
-    public width: number = 7680;
+    public width: number = 12800;
     public height: number = 4500;
     public playerStartX: number = 3705;
     public playerStartY: number = 1400;
@@ -45,8 +45,8 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createEnemy(this, 5000, 1400, CharacterFacing.RIGHT, 3750, 5000, CharacterSpriteData.MASKED_NINJA_GUY, false);
         GameObjectBundleFactory.createEnemy(this, 4500, 1400, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
-        // billboard '3d dev'
-        GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_3D_DEV, 'https://christopherstock.github.io/babylon-zero/dist/', 'https://github.com/christopherstock/shooter-gradle');
+        // billboard 'WebGL 3d dev'
+        GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEB_GL_3D, 'https://christopherstock.github.io/babylon-zero/dist/');
 
         // house with door back to garden
         GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
@@ -78,7 +78,10 @@ export class LevelTown extends Level {
         // GameObjectBundleFactory.createDecoImage(this, 6505, 1389, DecoPosition.BG, ImageData.DOOR_4);
         // GameObjectBundleFactory.createDecoImage(this, 6505 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
+        // billboard 'LWJGL'
+        GameObjectBundleFactory.createBillboard(this, 8000, 1400, DecoPosition.FG, ImageData.BILLBOARD_LWJGL, 'https://github.com/christopherstock/shooter-gradle');
+
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 100,  3, Slope.NONE, CapHorz.NONE);
     }
 }
