@@ -5,11 +5,11 @@
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 
 ## Primary: MVP
-- 🧪 Add decoration particle effects on smashing objects / windows etc.
+- 🧪 Add decoration particle effects on smashing objects / windows etc.?
 - 🧪️ Add 'katana strike' sprites in air?
-- 🧪 Add event triggers (for falling obstacles, new enemies etc.)
 
 ## Secondary: (Possibly New Features)
+- 🧪 Add event triggers (for falling obstacles, new enemies etc.)?
 - ⛏️ Sound effects for ninja girl actions and enemies
 - ⛏️ Add canvas max width?
 - ⛏️ moving 'no entry' sign on trying to open closed door?
@@ -25,7 +25,7 @@
 - ⛏️ Improve image sequence handling in ImageData (FILE_NAMES) by class access?
 
 ## Minor
-- ⛏️ Enum 'Wearpon' with according damage values?
-- ⛏️ Remove static access on Main.game?
-- ⛏️ Add secondary attack action?
-- ⛏️ Add 'shuriken throw' action?
+- 🔻 Enum 'Wearpon' with according damage values?
+- 🔻 Remove static access on Main.game?
+- 🔻 Add secondary attack action?
+- 🔻 Add 'shuriken throw' action?
