@@ -51,11 +51,14 @@ export class MouseSystem {
 
     /* eslint-disable max-len */
     private eventInsideBillboard(event: MouseEvent, billboard: Decoration): boolean {
+        const OFFSET_UPPER_LEFT  = { x: 15, y: 81 }
+        const OFFSET_LOWER_RIGHT = { x: -16, y: -161 }
+
         return (
-            event.clientX >= billboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
-            && event.clientX < (billboard.shape.body.bounds.min.x + billboard.shape.getWidth() - Main.game.camera.getOffsetX())
-            && event.clientY >= billboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
-            && event.clientY < (billboard.shape.body.bounds.min.y + billboard.shape.getHeight() - Main.game.camera.getOffsetY())
+            event.clientX >= OFFSET_UPPER_LEFT.x + billboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
+            && event.clientX < OFFSET_LOWER_RIGHT.x + (billboard.shape.body.bounds.min.x + billboard.shape.getWidth() - Main.game.camera.getOffsetX())
+            && event.clientY >= OFFSET_UPPER_LEFT.y + billboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
+            && event.clientY < OFFSET_LOWER_RIGHT.y + (billboard.shape.body.bounds.min.y + billboard.shape.getHeight() - Main.game.camera.getOffsetY())
         );
     }
 }
