@@ -66,6 +66,9 @@ export class LevelDojo extends Level {
         // billboard 'flash'
         GameObjectBundleFactory.createBillboard(this, 3900, 1400, DecoPosition.FG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
 
+        // billboard 'J2ME'
+        GameObjectBundleFactory.createBillboard(this, 4900, 1400, DecoPosition.FG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
+
         // crates
         const x: number = 470;
         GameObjectBundleFactory.createMovableRect(this, x + 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
