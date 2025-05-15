@@ -10,9 +10,9 @@
     "bugs": "https://github.com/christopherstock/coding-ninjas-II/issues",
     "scripts": {
         "typescript:compile": "tsc",
-        "webpack:dev": "webpack --mode=development --watch",
-        "webpack:production": "webpack --mode=production --watch",
-        "webpack:devserver": "webpack-dev-server --mode=development",
+        "webpack:dev": "webpack --mode development --watch --env dev",
+        "webpack:production": "webpack --mode production --watch --env prod",
+        "webpack:devserver": "webpack-dev-server --mode development --env dev",
         "typedoc:generate": "typedoc --out doc --listInvalidSymbolLinks --name \"Coding Ninjas II - gifted with second sight, (c) 2023 Mayflower GmbH\" src/typescript",
         "eslint:check": "eslint \"src/**/*.{ts,tsx}\"",
         "eslint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",

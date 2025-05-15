@@ -2,6 +2,8 @@ const path = require('path');
 
 module.exports = ( env, argv ) =>
 {
+    console.log('Target: ', env); // dev or prod
+
     const config = {
         entry: './src/typescript/index.tsx',
         output: {
