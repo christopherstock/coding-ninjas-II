@@ -14,7 +14,7 @@ import { GameAction, GameActionType } from '../../game/object/GameAction';
 export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;
     public width: number = 7680;
-    public height: number = 4500;
+    public height: number = 2000;
     public playerStartX: number = 520;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -47,7 +47,9 @@ export class LevelHarbour extends Level {
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1500, 1400, DecoPosition.FG, ImageData.HYDRANT);
 
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 15,  2, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 15 * 128, 1400, 15,  1, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 30 * 128, 1400, 30,  1, Slope.NONE, CapHorz.NONE);
 
         // water areas
         GameObjectBundleFactory.createWaterArea(this, 6000, 1400 + 64, 14, 4, ImageData.WATER_CENTER);
