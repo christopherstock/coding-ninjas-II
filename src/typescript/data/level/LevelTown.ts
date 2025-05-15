@@ -13,9 +13,9 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
-    public width: number = 12800;
+    public width: number = 11520;
     public height: number = 4500;
-    public playerStartX: number = 3705;
+    public playerStartX: number = 720;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
@@ -29,14 +29,10 @@ export class LevelTown extends Level {
     }
 
     private addTownSetup(): void {
-        // walls
-        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 0, 1,  11, Slope.NONE, CapHorz.NONE);
-        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 2372, 0, 1,  11, Slope.NONE, CapHorz.NONE);
-
-        // house with door to harbour
+        // house with door back to garden
         GameObjectBundleFactory.createDecoImage(this, 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, 480, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
 
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 1400, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
@@ -50,11 +46,6 @@ export class LevelTown extends Level {
 
         // billboard 'Hanoi TS'
         GameObjectBundleFactory.createBillboard(this, 1300, 1400, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
-
-        // house with door back to garden
-        GameObjectBundleFactory.createDecoImage(this, 3500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
-        GameObjectBundleFactory.createDecoImage(this, 3480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 3705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
@@ -86,6 +77,11 @@ export class LevelTown extends Level {
 
         // billboard 'miner VGA'
         GameObjectBundleFactory.createBillboard(this, 9000, 1400, DecoPosition.BG, ImageData.BILLBOARD_MINER, 'https://christopherstock.github.io/MinerTS/dist/');
+
+        // house with door to harbour
+        GameObjectBundleFactory.createDecoImage(this, 10000 + 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
+        GameObjectBundleFactory.createDecoImage(this, 10000 + 480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
+        GameObjectFactory.createDoor(this, 10000 + 705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 100,  3, Slope.NONE, CapHorz.NONE);

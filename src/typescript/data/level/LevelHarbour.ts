@@ -30,7 +30,7 @@ export class LevelHarbour extends Level {
 
     private addHarbourSetup(): void {
         // door back to town
-        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_7, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 705, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_7, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 10000 + 705 + 15, playerStartY: 1400 }));
 
         // billboard 'application paper service'
         GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);

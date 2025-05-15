@@ -14,8 +14,8 @@ import { Breakable } from '../../game/object/GameObject';
 
 export class LevelDojo extends Level {
     public id: LevelId = LevelId.LEVEL_DOJO;
-    public width: number = 10368 + 128;
-    public height: number = 2500;
+    public width: number = 7680;
+    public height: number = 1784;
     public playerStartX: number = 1020;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
@@ -28,6 +28,7 @@ export class LevelDojo extends Level {
         this.addStartZone();
         this.addStoveZone();
         this.addExit();
+
         this.addWalls();
     }
 
@@ -88,15 +89,7 @@ export class LevelDojo extends Level {
 
     private addExit(): void {
         // door to garden
-        GameObjectFactory.createDoor(this, 10068, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }));
-        /*
-        // destroyable crates
-        GameObjectBundleFactory.createObstacle(this, x + 2000, 2000, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2125, 2000, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2250, 2000, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2062, 1875, ImageData.CRATE_WOOD, Breakable.YES);
-        GameObjectBundleFactory.createObstacle(this, x + 2187, 1875, ImageData.CRATE_WOOD, Breakable.YES);
-*/
+        GameObjectFactory.createDoor(this, 7200, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }));
     }
 
     private addWalls(): void {
@@ -105,7 +98,7 @@ export class LevelDojo extends Level {
 
         // walls
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 10368, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, this.width - 128, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
     }
 
     private addChandelier(x: number, y: number, onlyCandles: boolean = false): void {
