@@ -65,9 +65,6 @@ export class LevelDojo extends Level {
         // billboard 'flash'
         GameObjectBundleFactory.createBillboard(this, 3900, 1400, DecoPosition.FG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
 
-        // billboard 'kuhn'
-        GameObjectBundleFactory.createBillboard(this, 4900, 1400, DecoPosition.FG, ImageData.BILLBOARD_KUHN, 'https://glaskunst-kuhn.de/index.php/de/');
-
         // crates
         const x: number = 470;
         GameObjectBundleFactory.createMovableRect(this, x + 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);

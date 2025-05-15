@@ -53,6 +53,9 @@ export class LevelGarden extends Level {
         // billboard 'mf outrun'
         GameObjectBundleFactory.createBillboard(this, x - 1000, 1400, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
 
+        // billboard 'react clicker'
+        GameObjectBundleFactory.createBillboard(this, x, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
+
         /*
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 2374, 1400);

@@ -90,6 +90,9 @@ export class LevelStart extends Level {
         GameObjectBundleFactory.createDecoImage(this, fenceX + 256, 2000 - 120, DecoPosition.FG, ImageData.FENCE_CENTER);
         GameObjectBundleFactory.createDecoImage(this, fenceX + 256 * 2, 2000 - 120, DecoPosition.FG, ImageData.FENCE_RIGHT);
 
+        // billboard 'kuhn'
+        GameObjectBundleFactory.createBillboard(this, fenceX + 256 * 2 + 300 + 50, 2000 - 168, DecoPosition.BG, ImageData.BILLBOARD_KUHN, 'https://glaskunst-kuhn.de/index.php/de/');
+
         // boulder and bush
         GameObjectBundleFactory.createDecoImage(this, fenceX + 550 - 6020 + 5760, 2000 - 120, DecoPosition.BG, ImageData.BUSH_2);
         GameObjectBundleFactory.createDecoImage(this, fenceX + 550 - 6020 + 5920, 2000 - 120, DecoPosition.BG, ImageData.BOULDER_1);

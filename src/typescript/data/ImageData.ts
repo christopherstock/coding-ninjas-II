@@ -364,6 +364,8 @@ export class ImageData {
     static readonly BILLBOARD_WINKLER: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardWinkler.png';
     static readonly BILLBOARD_NATALIE: string                           = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardNatalie.png';
     static readonly BILLBOARD_BAUR: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardBaur.png';
+    static readonly BILLBOARD_MINER: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardMiner.png';
+    static readonly BILLBOARD_REACT_CLICKER: string                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardReactClicker.png';
 
     static readonly FENCE_LEFT: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
     static readonly FENCE_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
@@ -754,6 +756,8 @@ export class ImageData {
         ImageData.BILLBOARD_WINKLER,
         ImageData.BILLBOARD_NATALIE,
         ImageData.BILLBOARD_BAUR,
+        ImageData.BILLBOARD_MINER,
+        ImageData.BILLBOARD_REACT_CLICKER,
 
         ImageData.FENCE_LEFT,
         ImageData.FENCE_CENTER,

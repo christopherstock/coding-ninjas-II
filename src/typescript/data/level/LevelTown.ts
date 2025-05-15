@@ -84,6 +84,9 @@ export class LevelTown extends Level {
         // billboard 'LWJGL'
         GameObjectBundleFactory.createBillboard(this, 8000, 1400, DecoPosition.FG, ImageData.BILLBOARD_LWJGL, 'https://github.com/christopherstock/shooter-gradle');
 
+        // billboard 'miner VGA'
+        GameObjectBundleFactory.createBillboard(this, 9000, 1400, DecoPosition.BG, ImageData.BILLBOARD_MINER, 'https://christopherstock.github.io/MinerTS/dist/');
+
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 100,  3, Slope.NONE, CapHorz.NONE);
     }
