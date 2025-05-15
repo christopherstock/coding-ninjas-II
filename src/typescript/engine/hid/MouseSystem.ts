@@ -21,7 +21,7 @@ export class MouseSystem {
 
         const billboards: Billboard[] = Main.game.level.getClickableBillboards();
         for (const billboard of billboards) {
-            if (this.eventInsideBillboard(event.clientX, event.clientY, billboard)) {
+            if (billboard.eventInsideBillboard(event.clientX, event.clientY)) {
                 const leftHalf = event.clientX < (
                     billboard.shape.body.bounds.min.x + billboard.shape.getWidth() / 2 - Main.game.camera.getOffsetX()
                 );
@@ -48,27 +48,16 @@ export class MouseSystem {
     }
 
     public updateMouseCursor(): void {
-        const billboards: Billboard[] = Main.game.level.getClickableBillboards();
-        for (const billboard of billboards) {
-            if (this.eventInsideBillboard(this.lastMouseX, this.lastMouseY, billboard)) {
-                document.body.style.cursor = 'pointer';
-                return;
+        if (Main.game.level !== null) {
+            const billboards: Billboard[] = Main.game.level.getClickableBillboards();
+            for (const billboard of billboards) {
+                if (billboard.eventInsideBillboard(this.lastMouseX, this.lastMouseY)) {
+                    document.body.style.cursor = 'pointer';
+                    return;
+                }
             }
         }
 
         document.body.style.cursor = 'default';
-    }
-
-    /* eslint-disable max-len */
-    private eventInsideBillboard(mouseX: number, mouseY: number, billboard: Decoration): boolean {
-        const OFFSET_UPPER_LEFT  = { x: 15, y: 81 }
-        const OFFSET_LOWER_RIGHT = { x: -16, y: -161 }
-
-        return (
-            mouseX >= OFFSET_UPPER_LEFT.x + billboard.shape.body.bounds.min.x - Main.game.camera.getOffsetX()
-            && mouseX < OFFSET_LOWER_RIGHT.x + (billboard.shape.body.bounds.min.x + billboard.shape.getWidth() - Main.game.camera.getOffsetX())
-            && mouseY >= OFFSET_UPPER_LEFT.y + billboard.shape.body.bounds.min.y - Main.game.camera.getOffsetY()
-            && mouseY < OFFSET_LOWER_RIGHT.y + (billboard.shape.body.bounds.min.y + billboard.shape.getHeight() - Main.game.camera.getOffsetY())
-        );
     }
 }
