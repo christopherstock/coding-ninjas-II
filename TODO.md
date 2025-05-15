@@ -1,7 +1,9 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 New Backgrounds
+- 🌺🧪 Revise too detailed billboards? (natalie, winkler, kuhn, baur)
+- 🌺🧪 New Backgrounds (hi-res, full width)
+- 🌺🧪 Fix/prune Doors
 
 ## Primary (MVP)
 - 🧪 Fix annoying edge block
