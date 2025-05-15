@@ -1,8 +1,29 @@
 const path = require('path');
 
-module.exports = ( env, argv ) =>
+module.exports = async ( env, argv ) =>
 {
     console.log('Target: ', env); // dev or prod
+
+    const FILENAME = 'src/typescript/base/SettingDebug.ts';
+
+    const fs = require('fs').promises;
+    const settingDebug = await fs.readFile(FILENAME, 'utf8')
+        .then(
+            async (fileContent) => {
+                // console.log('> OK: ', fileContent);
+
+                let newFileContent;
+                if (env === 'prod') {
+                    newFileContent = fileContent.replace(/DEBUG_MODE: boolean\s+= true/g,  'DEBUG_MODE: boolean                      = false');
+                } else {
+                    newFileContent = fileContent.replace(/DEBUG_MODE: boolean\s+= false/g, 'DEBUG_MODE: boolean                      = true');
+                }
+                // console.log('> CHANGED: ', newFileContent);
+
+                await fs.writeFile(FILENAME, newFileContent, 'utf8');
+            }
+        )
+    ;
 
     const config = {
         entry: './src/typescript/index.tsx',
