@@ -41,10 +41,10 @@ export class MatterJsSystem {
                 canvas:  canvasSystem.getCanvas(),
                 engine:  this.engine,
                 options: {
-                    showCollisions:     (SettingDebug.MATTERJS_DEBUG_VIEWS),
-                    showAxes:           (SettingDebug.MATTERJS_DEBUG_VIEWS),
-                    showAngleIndicator: (SettingDebug.MATTERJS_DEBUG_VIEWS),
-                    showVelocity:       (SettingDebug.MATTERJS_DEBUG_VIEWS),
+                    showCollisions:     (SettingDebug.ENABLE_MATTER_DEBUG_VIEWS),
+                    showAxes:           (SettingDebug.ENABLE_MATTER_DEBUG_VIEWS),
+                    showAngleIndicator: (SettingDebug.ENABLE_MATTER_DEBUG_VIEWS),
+                    showVelocity:       (SettingDebug.ENABLE_MATTER_DEBUG_VIEWS),
 
                     background:         SettingEngine.COLOR_BG_MATTER_JS_CSS,
 

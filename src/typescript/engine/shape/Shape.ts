@@ -49,9 +49,9 @@ export abstract class Shape {
             render:
             {
                 fillStyle:   (
-                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT),
+                    SettingDebug.ENABLE_BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT),
                 strokeStyle: (
-                    SettingDebug.BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT),
+                    SettingDebug.ENABLE_BG_FOR_MATTER_BODY ? debugColor : DebugColor.COLOR_TRANSPARENT),
                 opacity:     1.0,
                 lineWidth:   1.0,
             },
