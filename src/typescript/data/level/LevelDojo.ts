@@ -35,8 +35,8 @@ export class LevelDojo extends Level {
         const x = 0;
         const y = -700;
 
-        // door back to start
-        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 15595, playerStartY: 2240 }));
+        // door back to start zone
+        GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 15595, playerStartY: 1240 }));
 
         // chandelier
         this.addChandelier(-11300 - 1450, -700);
