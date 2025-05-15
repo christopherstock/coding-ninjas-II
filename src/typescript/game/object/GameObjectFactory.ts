@@ -9,6 +9,7 @@ import { ShapeCircle } from '../../engine/shape/ShapeCircle';
 import { ShapeFreeForm } from '../../engine/shape/ShapeFreeForm';
 import { Level } from '../level/Level';
 import { SiteContent } from '../../site/SiteContentSystem';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { Item } from './primal/Item';
 import { JumpPassThrough, Obstacle } from './primal/Obstacle';
 import { CharacterSpriteSet } from './being/CharacterSpriteSet';
@@ -630,9 +631,10 @@ export abstract class GameObjectFactory {
         x: number,
         yBottom: number,
         imageId: string,
-        action: GameAction
+        action: GameAction,
+        mirror: MirrorImage = MirrorImage.NO
     ): void {
-        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId);
+        const spriteTemplate: SpriteTemplate = SpriteTemplate.createFromSingleImage(imageId, mirror);
 
         const door: Door = new Door
         (

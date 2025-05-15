@@ -14,6 +14,7 @@ import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
@@ -36,7 +37,7 @@ export class LevelGarden extends Level {
         const x: number = 6000;
 
         // door back to DoJo
-        GameObjectFactory.createDoor(this, x + 6000, 1400, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 7200 + 12, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, x + 6000, 1400, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 7200 + 12, playerStartY: 1400 }));
 
         // boulders
         GameObjectBundleFactory.createDecoImage(this, x + 5400, 1420, DecoPosition.BG, ImageData.BOULDER_1);
@@ -75,7 +76,7 @@ export class LevelGarden extends Level {
         GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
 */
         // door to town
-        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 720, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 720, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }), MirrorImage.YES);
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);

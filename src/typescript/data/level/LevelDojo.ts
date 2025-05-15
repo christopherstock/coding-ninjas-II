@@ -1,7 +1,13 @@
 /* eslint-disable max-len */
 
 import { Level, LevelId } from '../../game/level/Level';
-import { CapHorz, CapVert, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import {
+    CapHorz,
+    CapVert,
+    DecoPosition,
+    GameObjectBundleFactory,
+    Slope,
+} from '../../game/object/GameObjectBundleFactory';
 import { GameObjectFactory } from '../../game/object/GameObjectFactory';
 import { ImageData } from '../ImageData';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
@@ -11,6 +17,7 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { SpriteData } from '../SpriteData';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { Breakable } from '../../game/object/GameObject';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
 
 export class LevelDojo extends Level {
     public id: LevelId = LevelId.LEVEL_DOJO;
@@ -92,7 +99,7 @@ export class LevelDojo extends Level {
 
     private addExit(): void {
         // door to garden
-        GameObjectFactory.createDoor(this, 7200, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }));
+        GameObjectFactory.createDoor(this, 7200, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }), MirrorImage.YES);
     }
 
     private addWalls(): void {
