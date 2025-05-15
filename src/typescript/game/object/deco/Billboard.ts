@@ -1,7 +1,7 @@
 import { Shape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
+import { Main } from '../../../base/Main';
 import { Decoration } from './Decoration';
-import {Main} from "../../../base/Main";
 
 /** ********************************************************************************************************************
 *   Represents a non-colliding billboard that can be clicked.

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import {Level, LevelId} from '../../game/level/Level';
+import { Level, LevelId } from '../../game/level/Level';
 import {
     CapHorz,
     CapVert,
@@ -8,12 +8,12 @@ import {
     GameObjectBundleFactory,
     Slope,
 } from '../../game/object/GameObjectBundleFactory';
-import {GameObjectFactory} from '../../game/object/GameObjectFactory';
-import {ImageData} from '../ImageData';
-import {GameAction, GameActionType} from '../../game/object/GameAction';
-import {TilesetData} from '../TilesetData';
-import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
-import {CharacterFacing} from '../../game/object/being/CharacterFacing';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { ImageData } from '../ImageData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { TilesetData } from '../TilesetData';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;

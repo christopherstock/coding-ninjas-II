@@ -1,6 +1,5 @@
 import { DebugLog } from '../../base/DebugLog';
 import { Main } from '../../base/Main';
-import { Decoration } from '../../game/object/deco/Decoration';
 import { Billboard } from '../../game/object/deco/Billboard';
 
 export class MouseSystem {
