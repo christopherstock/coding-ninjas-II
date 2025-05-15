@@ -5,6 +5,9 @@ https://christopherstock.github.io/coding-ninjas-II/dist/
 
 ## Tech Stack
 - Node.js v.16.16.0 LTS
+- TypeScript 3.8.3
+- Webpack 5.89.0
+- Ant Design 3.26.9
 
 ---
 
