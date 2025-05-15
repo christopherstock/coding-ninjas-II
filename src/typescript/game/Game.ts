@@ -37,7 +37,7 @@ export class Game {
         // start the preloader after a short delay. this runs smoother for the user
         window.setTimeout(
             () => { this.engine.launch(); },
-            (SettingDebug.NO_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY)
+            (SettingDebug.DISABLE_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY)
         );
     }
 

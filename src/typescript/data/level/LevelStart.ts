@@ -24,9 +24,9 @@ export class LevelStart extends Level {
     public  height: number = 2772;
 
     public  playerStartX: number = (SettingDebug.DEBUG_MODE ? 250 /* 11008 */ : 250);
-    public  playerStartY: number = (SettingDebug.NO_FLOATING_STARTUP ? 1000 : 0);
+    public  playerStartY: number = (SettingDebug.DISABLE_FLOATING_STARTUP ? 1000 : 250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
-    public  playerInitialFloat: boolean = !SettingDebug.NO_FLOATING_STARTUP;
+    public  playerInitialFloat: boolean = !SettingDebug.DISABLE_FLOATING_STARTUP;
 
     protected createGameObjects(): void {
         GameObjectBundleFactory.createPlayer(this);
