@@ -1,15 +1,16 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 Fix annoying edge block
-- 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
+- 🌺🧪 New Backgrounds
 
-## Primary: MVP
+## Primary (MVP)
+- 🧪 Fix annoying edge block
+- 🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 - 🧪 Add decoration particle effects on smashing objects / windows etc.?
-- 🧪️ Add 'katana strike' sprites in air?
+- 🧪 Add 'katana strike' sprites in air?
 
-## Secondary: (Possibly New Features)
-- 🧪 Add event triggers (for falling obstacles, new enemies etc.)?
+## Secondary (Possibly New Features)
+- ⛏️Add event triggers (for falling obstacles, new enemies etc.)?
 - ⛏️ Sound effects for ninja girl actions and enemies
 - ⛏️ Add canvas max width?
 - ⛏️ moving 'no entry' sign on trying to open closed door?
