@@ -30,9 +30,9 @@ export class LevelTown extends Level {
 
     private addTownSetup(): void {
         // house with door back to garden
-        GameObjectBundleFactory.createDecoImage(this, 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
-        GameObjectBundleFactory.createDecoImage(this, 480, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_8, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
+        GameObjectBundleFactory.createDecoImage(this, 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
+        GameObjectBundleFactory.createDecoImage(this, 480, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
+        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
 
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 1400, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
@@ -79,9 +79,9 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createBillboard(this, 9000, 1400, DecoPosition.BG, ImageData.BILLBOARD_MINER, 'https://christopherstock.github.io/MinerTS/dist/');
 
         // house with door to harbour
-        GameObjectBundleFactory.createDecoImage(this, 10000 + 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
-        GameObjectBundleFactory.createDecoImage(this, 10000 + 480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 10000 + 705, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectBundleFactory.createDecoImage(this, 10000 + 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
+        GameObjectBundleFactory.createDecoImage(this, 10000 + 480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
+        GameObjectFactory.createDoor(this, 10000 + 705, 1389, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 100,  3, Slope.NONE, CapHorz.NONE);

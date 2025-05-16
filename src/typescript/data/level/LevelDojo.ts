@@ -48,7 +48,7 @@ export class LevelDojo extends Level {
         GameObjectFactory.createDoor(this, 1000, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 15595, playerStartY: 1240 }));
 
         // chandelier
-        this.addChandelier(-11300 - 1450, -700);
+        this.addChandelier(-12760, -700);
 
         // table with flasks
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1920, y + 2100, ImageData.TABLE_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
@@ -64,7 +64,7 @@ export class LevelDojo extends Level {
     }
 
     private addStoveZone(): void {
-        this.addChandelier(-10000 - 1450, -700, true);
+        this.addChandelier(-11450, -700, true);
 
         GameObjectBundleFactory.createDecoImage(this, 2249, 1400, DecoPosition.FG, ImageData.STOVE);
 
@@ -100,8 +100,8 @@ export class LevelDojo extends Level {
         const y = 1400;
 
         // bounces
-        GameObjectFactory.createBounce(this, x + 200, y - 200, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
-        GameObjectFactory.createBounce(this, x + 200 + 460 + 14 * 128, y - 200, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
+        GameObjectFactory.createBounce(this, x + 200,  y - 150, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
+        GameObjectFactory.createBounce(this, x + 2452, y - 150, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
 
         // billboard 'J2ME'
         GameObjectBundleFactory.createBillboard(this, x + 1100, y - 512, DecoPosition.FG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
@@ -109,7 +109,15 @@ export class LevelDojo extends Level {
 
     private addExit(): void {
         // chandelier
-        this.addChandelier(-11300 - 1450 + 8600, -700);
+        this.addChandelier(-4150, -700);
+
+        const x: number = 5550;
+        GameObjectBundleFactory.createMovableRect(this, x + 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3205, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3350, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // door to garden
         GameObjectFactory.createDoor(this, this.width - 640, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }), MirrorImage.YES);

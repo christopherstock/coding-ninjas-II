@@ -96,8 +96,10 @@ export class LevelGarden extends Level {
     private addExitZone(): void {
         const x: number = 0;
 
-        // door to town
-        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 720, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }), MirrorImage.YES);
+        // house with door to town
+        GameObjectBundleFactory.createDecoImage(this, 195 + 90, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
+        GameObjectBundleFactory.createDecoImage(this, 175 + 90, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
+        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_7, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 720, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }), MirrorImage.YES);
 
         // billboard 'react clicker'
         GameObjectBundleFactory.createBillboard(this, x + 1000, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');

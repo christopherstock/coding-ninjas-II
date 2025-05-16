@@ -1,10 +1,10 @@
 # TODOs
 
 ## Doing
+- 🌺🧪 Fix/prune Doors
 - 🌺🧪 Revise too detailed billboards? (natalie, winkler, kuhn, baur)
 - 🌺🧪 New Backgrounds (hi-res, full width)
 - 🌺🧪 Cracked crate images
-- 🌺🧪 Fix/prune Doors
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 
 ## Primary (MVP)

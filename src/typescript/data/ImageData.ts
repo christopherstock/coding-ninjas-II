@@ -401,6 +401,8 @@ export class ImageData {
             ImageData.TREE_2,
             ImageData.DOOR_2,
             ImageData.DOOR_3,
+            ImageData.DOOR_5,
+            ImageData.DOOR_7,
         ];
 
     /** All image filenames to load. */
