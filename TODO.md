@@ -5,10 +5,10 @@
 - 🌺🧪 New Backgrounds (hi-res, full width)
 - 🌺🧪 Cracked crate images
 - 🌺🧪 Fix/prune Doors
+- 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 
 ## Primary (MVP)
 - 🧪 Fix annoying edge block
-- 🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 - 🧪 Add decoration particle effects on smashing objects / windows etc.?
 - 🧪 Add 'katana strike' sprites in air?
 

@@ -8,6 +8,7 @@ import { DebugLog } from '../../base/DebugLog';
 import { ImageUtil } from '../../util/ImageUtil';
 import { SettingMatter } from '../../base/SettingMatter';
 import { SettingEngine } from '../../base/SettingEngine';
+import { ImageData } from '../../data/ImageData';
 
 export enum GameObjectState {
     ALIVE,
@@ -214,6 +215,21 @@ export abstract class GameObject {
         // darken img
         if (SettingEngine.DARKEN_IMAGES_FOR_HURT_OBJECTS) {
             this.darkenImage();
+        }
+
+        // change crate image
+        if (this.sprite.getCurrentFrameImageUrl().search(ImageData.CRATE_WOOD) !== -1) {
+            // this.shape.body.render.sprite.texture = ImageData.CRATE_WOOD_CRACK_1;
+            this.setSprite(SpriteTemplate.createFromSingleImage(ImageData.CRATE_WOOD_CRACK_1));
+            // this.setImageFromSprite();
+        } else if (this.sprite.getCurrentFrameImageUrl().search(ImageData.CRATE_WOOD_CRACK_1) !== -1) {
+            // this.shape.body.render.sprite.texture = ImageData.CRATE_WOOD_CRACK_1;
+            this.setSprite(SpriteTemplate.createFromSingleImage(ImageData.CRATE_WOOD_CRACK_2));
+            // this.setImageFromSprite();
+        } else if (this.sprite.getCurrentFrameImageUrl().search(ImageData.CRATE_WOOD_CRACK_2) !== -1) {
+            // this.shape.body.render.sprite.texture = ImageData.CRATE_WOOD_CRACK_1;
+            this.setSprite(SpriteTemplate.createFromSingleImage(ImageData.CRATE_WOOD_CRACK_3));
+            // this.setImageFromSprite();
         }
 
         // check if game object breaks

@@ -176,8 +176,11 @@ export class ImageData {
     static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/10.png';
     static readonly WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/die/01.png';
 
-    static readonly CRATE_WOOD: string                                  = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
     static readonly CRATE_STEEL: string                                 = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateSteel.png';
+    static readonly CRATE_WOOD: string                                  = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
+    static readonly CRATE_WOOD_CRACK_1: string                          = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWoodCrack1.png';
+    static readonly CRATE_WOOD_CRACK_2: string                          = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWoodCrack2.png';
+    static readonly CRATE_WOOD_CRACK_3: string                          = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWoodCrack3.png';
     static readonly ITEM: string                                        = SettingEngine.PATH_IMAGE_LEVEL_PICKABLE + 'item.png';
     static readonly STONE_SPHERE: string                                = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'stoneSphere.png';
     static readonly BOULDER_1: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
@@ -573,8 +576,11 @@ export class ImageData {
         ImageData.WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1,
 
         ImageData.ITEM,
-        ImageData.CRATE_WOOD,
         ImageData.CRATE_STEEL,
+        ImageData.CRATE_WOOD,
+        ImageData.CRATE_WOOD_CRACK_1,
+        ImageData.CRATE_WOOD_CRACK_2,
+        ImageData.CRATE_WOOD_CRACK_3,
         ImageData.STONE_SPHERE,
         ImageData.BOULDER_1,
         ImageData.BOULDER_2,

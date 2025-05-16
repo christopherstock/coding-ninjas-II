@@ -13,6 +13,7 @@
         "webpack:dev": "webpack --mode development --watch --env dev",
         "webpack:production": "webpack --mode production --watch --env prod",
         "webpack:devserver": "webpack-dev-server --mode development --env dev",
+        "webpack:prodserver": "webpack-dev-server --mode development --env prod",
         "typedoc:generate": "typedoc --out doc --listInvalidSymbolLinks --name \"Coding Ninjas II - gifted with second sight, (c) 2023 Mayflower GmbH\" src/typescript",
         "eslint:check": "eslint \"src/**/*.{ts,tsx}\"",
         "eslint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
