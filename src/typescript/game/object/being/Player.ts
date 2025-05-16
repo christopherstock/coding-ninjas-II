@@ -215,7 +215,7 @@ export class Player extends Character {
 
                 window.setTimeout(
                     (): void => {
-                        Main.game.resetAndLaunchLevel(LevelId.LEVEL_START);
+                        Main.game.resetAndLaunchLevel(Main.game.level.id);
                     },
                     250
                 );

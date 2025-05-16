@@ -30,10 +30,14 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createPlayer(this);
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_GARDEN));
 
-        this.addGardenSetup();
+        this.addGrassZone();
+        this.addDesertZone();
+        this.addDarkGroundZone();
+
+        this.addExitZone();
     }
 
-    private addGardenSetup(): void {
+    private addGrassZone(): void {
         const x: number = 6000;
 
         // door back to DoJo
@@ -50,13 +54,6 @@ export class LevelGarden extends Level {
 
         // billboard 'swift games workshop'
         GameObjectBundleFactory.createBillboard(this, x + 3000, 1400, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
-
-        // billboard 'mf outrun'
-        GameObjectBundleFactory.createBillboard(this, x, 1400, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
-
-        // billboard 'react clicker'
-        GameObjectBundleFactory.createBillboard(this, x - 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
-
         /*
         // bridge and blue water
         GameObjectBundleFactory.createBridge(this, 2374, 1400);
@@ -75,13 +72,37 @@ export class LevelGarden extends Level {
         // bounce
         GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
 */
+        // grass ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+    }
+
+    private addDesertZone(): void {
+        const x: number = 6000;
+
+        // desert ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, x + 2048, 1400, 8 - 2,  3, Slope.NONE, CapHorz.NONE);
+    }
+
+    private addDarkGroundZone(): void {
+        const x: number = 6000;
+
+        // billboard 'mf outrun'
+        GameObjectBundleFactory.createBillboard(this, x, 1400, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
+
+        // dark ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, x, 1400, 16 - 2,  3, Slope.NONE, CapHorz.NONE);
+    }
+
+    private addExitZone(): void {
+        const x: number = 0;
+
         // door to town
         GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 720, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }), MirrorImage.YES);
 
-        // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, x + 2048, 1400, 8,  3, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, x, 1400, 16,  3, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 6000 / 128,  3, Slope.NONE, CapHorz.NONE);
+        // billboard 'react clicker'
+        GameObjectBundleFactory.createBillboard(this, x - 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
+
+        // snow ground
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 6000 / 128 - 2,  3, Slope.NONE, CapHorz.NONE);
     }
 }
