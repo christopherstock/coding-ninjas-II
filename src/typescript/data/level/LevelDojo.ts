@@ -21,7 +21,7 @@ import { MirrorImage } from '../../engine/ui/MirrorImage';
 
 export class LevelDojo extends Level {
     public id: LevelId = LevelId.LEVEL_DOJO;
-    public width: number = 7680;
+    public width: number = 10240;
     public height: number = 1784;
     public playerStartX: number = 1020;
     public playerStartY: number = 1400;
@@ -34,6 +34,7 @@ export class LevelDojo extends Level {
 
         this.addStartZone();
         this.addStoveZone();
+        this.addObstacleZone();
         this.addExit();
 
         this.addWalls();
@@ -70,36 +71,45 @@ export class LevelDojo extends Level {
         // billboard 'web apps'
         GameObjectBundleFactory.createBillboard(this, 2900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEB_APPS);
 
-        // billboard 'flash'
-        GameObjectBundleFactory.createBillboard(this, 3900, 1400, DecoPosition.FG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
-
-        // billboard 'J2ME'
-        GameObjectBundleFactory.createBillboard(this, 4900, 1400, DecoPosition.FG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
-
         // crates
         const x: number = 470;
         GameObjectBundleFactory.createMovableRect(this, x + 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 3205, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 3350, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 3495, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 3640, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3495, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3640, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         GameObjectBundleFactory.createMovableRect(this, x + 3130, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145 * 2, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145 * 3, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145 * 2, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145 * 3, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 + 145, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 + 145 * 2, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 + 145, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 + 145 * 2, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
-        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 * 2, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
-        GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 * 2 + 145, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 * 2, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        // GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70 * 2 + 145, 1025, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
+        // billboard 'flash'
+        GameObjectBundleFactory.createBillboard(this, 3900, 1400, DecoPosition.FG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
+    }
+
+    private addObstacleZone(): void {
+        const x = 5000;
+        const y = 1400;
+
+        // bounces
+        GameObjectFactory.createBounce(this, x + 200, y - 200, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
+        GameObjectFactory.createBounce(this, x + 200 + 460 + 14 * 128, y - 200, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
+
+        // billboard 'J2ME'
+        GameObjectBundleFactory.createBillboard(this, x + 1100, y - 512, DecoPosition.FG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
     }
 
     private addExit(): void {
         // door to garden
-        GameObjectFactory.createDoor(this, 7200, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }), MirrorImage.YES);
+        GameObjectFactory.createDoor(this, this.width - 480, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }), MirrorImage.YES);
     }
 
     private addWalls(): void {
@@ -109,6 +119,9 @@ export class LevelDojo extends Level {
         // walls
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, this.width - 128, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+
+        // obstacle
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5000 + 200 + 460, 1400 - 512, 14,  6, Slope.NONE, CapHorz.NONE, CapVert.TOP);
     }
 
     private addChandelier(x: number, y: number, onlyCandles: boolean = false): void {
