@@ -35,7 +35,13 @@ export class LevelHarbour extends Level {
         GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_7, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 10000 + 705 + 15, playerStartY: 1400 }));
 
         // billboard 'application paper service'
-        GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);
+        GameObjectBundleFactory.createBillboard(this, 1000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);
+
+        // billboard 'technical paper'
+        GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_TECHNICAL_PAPER, 'https://entwickler.de/php/phpstorm-effektiv-nutzen');
+
+        // billboard 'meet ups'
+        GameObjectBundleFactory.createBillboard(this, 3000, 1400, DecoPosition.FG, ImageData.BILLBOARD_MEET_UPS, 'https://www.meetup.com/wue-tech/events/294033027');
 
         // site trigger 'end of game reached'
         GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_FAREWELL, SitePanelAppearance.LEFT, null);

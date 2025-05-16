@@ -366,6 +366,8 @@ export class ImageData {
     static readonly BILLBOARD_MINER: string                             = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardMiner.png';
     static readonly BILLBOARD_REACT_CLICKER: string                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardReactClicker.png';
     static readonly BILLBOARD_J2ME: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardJ2ME.png';
+    static readonly BILLBOARD_TECHNICAL_PAPER: string                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardTechnicalPaper.png';
+    static readonly BILLBOARD_MEET_UPS: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardMeetUps.png';
 
     static readonly FENCE_LEFT: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
     static readonly FENCE_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
@@ -760,6 +762,8 @@ export class ImageData {
         ImageData.BILLBOARD_MINER,
         ImageData.BILLBOARD_REACT_CLICKER,
         ImageData.BILLBOARD_J2ME,
+        ImageData.BILLBOARD_TECHNICAL_PAPER,
+        ImageData.BILLBOARD_MEET_UPS,
 
         ImageData.FENCE_LEFT,
         ImageData.FENCE_CENTER,
