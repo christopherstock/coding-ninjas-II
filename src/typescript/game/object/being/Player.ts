@@ -8,7 +8,6 @@ import { KeySystem } from '../../../engine/hid/KeySystem';
 import { KeyData } from '../../../data/KeyData';
 import { SettingDebug } from '../../../base/SettingDebug';
 import { DebugLog } from '../../../base/DebugLog';
-import { LevelId } from '../../level/Level';
 import { GameObjectState } from '../GameObject';
 import { Character } from './Character';
 import { CharacterFacing } from './CharacterFacing';
