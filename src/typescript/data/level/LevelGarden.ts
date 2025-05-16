@@ -100,7 +100,7 @@ export class LevelGarden extends Level {
         GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 720, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }), MirrorImage.YES);
 
         // billboard 'react clicker'
-        GameObjectBundleFactory.createBillboard(this, x - 4000, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
+        GameObjectBundleFactory.createBillboard(this, x + 1000, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
 
         // snow ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 6000 / 128 - 2,  3, Slope.NONE, CapHorz.NONE);
