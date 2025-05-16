@@ -108,8 +108,11 @@ export class LevelDojo extends Level {
     }
 
     private addExit(): void {
+        // chandelier
+        this.addChandelier(-11300 - 1450 + 8600, -700);
+
         // door to garden
-        GameObjectFactory.createDoor(this, this.width - 480, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }), MirrorImage.YES);
+        GameObjectFactory.createDoor(this, this.width - 640, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }), MirrorImage.YES);
     }
 
     private addWalls(): void {

@@ -37,7 +37,7 @@ export class LevelGarden extends Level {
         const x: number = 6000;
 
         // door back to DoJo
-        GameObjectFactory.createDoor(this, x + 6000, 1400, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 9760, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, x + 6000, 1400, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 10240 - 640 + 12, playerStartY: 1400 }));
 
         // boulders
         GameObjectBundleFactory.createDecoImage(this, x + 5400, 1420, DecoPosition.BG, ImageData.BOULDER_1);

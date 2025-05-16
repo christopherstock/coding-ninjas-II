@@ -42,10 +42,10 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createEnemy(this, 4500, 1400, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
         // billboard 'WebGL 3d dev'
-        GameObjectBundleFactory.createBillboard(this, 2300, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEB_GL_3D, 'https://christopherstock.github.io/babylon-zero/dist/');
+        GameObjectBundleFactory.createBillboard(this, 1300, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEB_GL_3D, 'https://christopherstock.github.io/babylon-zero/dist/');
 
         // billboard 'Hanoi TS'
-        GameObjectBundleFactory.createBillboard(this, 1300, 1400, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
+        GameObjectBundleFactory.createBillboard(this, 2300, 1400, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 4200, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_2);

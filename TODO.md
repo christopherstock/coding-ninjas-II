@@ -3,6 +3,7 @@
 ## Doing
 - 🌺🧪 Revise too detailed billboards? (natalie, winkler, kuhn, baur)
 - 🌺🧪 New Backgrounds (hi-res, full width)
+- 🌺🧪 Cracked crate images
 - 🌺🧪 Fix/prune Doors
 
 ## Primary (MVP)
