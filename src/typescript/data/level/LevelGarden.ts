@@ -16,6 +16,7 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
 import {Vector} from "matter-js";
+import {Platform} from "../../game/object/special/Platform";
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
@@ -57,7 +58,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createBillboard(this, x + 4300, 1400, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
 
         // platform
-        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), 3.5, [ Vector.create(x + 2700 - 600, 1310), Vector.create(x + 3700, 1310) ]);
+        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), Platform.SPEED_NORMAL, [ Vector.create(x + 2700 - 600, 1310), Vector.create(x + 3700, 1310) ]);
 
         // water
         GameObjectBundleFactory.createWaterArea(this, x + 2304, 1400, 11, 3, ImageData.WATER_CENTER);

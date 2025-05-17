@@ -5,34 +5,24 @@ import { Shape, StaticShape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { DebugColor } from '../../../base/SettingDebug';
 import { BodyDensity, BodyFriction, BodyRestitution } from '../../../base/SettingMatter';
+import {Vector} from "matter-js";
 
 /** ********************************************************************************************************************
 *   Represents a platform that moves.
 ***********************************************************************************************************************/
 export class Platform extends GameObject {
-    /** Medium moving speed. */
-    public static SPEED_NORMAL: number                      = 1.0;
-    /** Friction shape margin X. */
+    public static SPEED_NORMAL: number                      = 3.5;
     public static FRICTION_SHAPE_MARGIN_X: number           = 15.0;
+    public static DELAY_WAYPOINT_REACHED: number            = 300;
 
-    /** The friction shape that has infinite static friction. */
     public readonly frictionShape: ShapeRectangle           = null;
-
-    /** The waypoints for this platform to move. */
     private readonly waypoints: matter.Vector[]             = null;
-    /** The number of ticks till the next waypoint is reached. */
     private readonly speed: number                          = 0.0;
-    /** The current waypoint to move to. */
     private currentWaypointIndex: number                    = 0;
-
-    /** The number of animation steps till the next waypoint. */
     private stepsTillNextWaypoint: number                   = 0;
-    /** A counter for the current step to the next waypoint. */
     private currentStep: number                             = 0;
-
-    /** Step size X per tick in px. */
+    private waypointReachedDelay: number                    = 0;
     private stepSizeX: number                               = 0.0;
-    /** Step size Y per tick in px. */
     private stepSizeY: number                               = 0.0;
 
     /** ****************************************************************************************************************
@@ -87,19 +77,28 @@ export class Platform extends GameObject {
     public render(): void {
         super.render();
 
+        // delay on reached waypoints
+        if (this.waypointReachedDelay > 0) {
+            --this.waypointReachedDelay;
+            return;
+        }
+
         // check if next waypoint is reached
         ++this.currentStep;
         if (this.currentStep > this.stepsTillNextWaypoint) {
             this.assignNextWaypoint();
+            this.waypointReachedDelay = Platform.DELAY_WAYPOINT_REACHED;
+            matter.Body.setVelocity(this.shape.body, Vector.create(0, 0));
+            matter.Body.setVelocity(this.frictionShape.body, Vector.create(0, 0));
+            return;
         }
 
+        // move platform and friction shape
         const movement = matter.Vector.create(this.stepSizeX, this.stepSizeY);
 
-        // move platform
         matter.Body.setVelocity(this.shape.body, movement);
         matter.Body.translate(this.shape.body, movement);
 
-        // move friction shape
         matter.Body.setVelocity(this.frictionShape.body, movement);
         matter.Body.translate(this.frictionShape.body, movement);
     }
