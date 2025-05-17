@@ -15,11 +15,12 @@ import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
+import {Vector} from "matter-js";
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
     public width: number = 12500;
-    public height: number = 12500;
+    public height: number = 4800;
     public playerStartX: number = 12020;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
@@ -30,14 +31,14 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createPlayer(this);
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_GARDEN));
 
-        this.addGrassZone();
-        this.addDesertZone();
-        this.addDarkGroundZone();
+        this.addStartZone();
+        this.addGreenMiddleZone();
+        this.addSnowZone();
 
-        this.addExitZone();
+        this.addGrounds();
     }
 
-    private addGrassZone(): void {
+    private addStartZone(): void {
         const x: number = 6000;
 
         // door back to DoJo
@@ -53,47 +54,39 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 4000, 1400, DecoPosition.FG, ImageData.PYLONS);
 
         // billboard 'swift games workshop'
-        GameObjectBundleFactory.createBillboard(this, x + 3000, 1400, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
-        /*
-        // bridge and blue water
+        GameObjectBundleFactory.createBillboard(this, x + 4300, 1400, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
+
+        // platform
+        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), 3.5, [ Vector.create(x + 2700 - 600, 1310), Vector.create(x + 3700, 1310) ]);
+
+        // water
+        GameObjectBundleFactory.createWaterArea(this, x + 2304, 1400, 11, 3, ImageData.WATER_CENTER);
+/*
         GameObjectBundleFactory.createBridge(this, 2374, 1400);
-        GameObjectBundleFactory.createWaterArea(this, 2304, 1560, 6, 4, ImageData.WATER_CENTER);
 
         // pots and stone sphere
         // GameObjectBundleFactory.createMovableRect(this, -1800 + 2558, -700 + 2100, ImageData.POT_1);
         // GameObjectBundleFactory.createMovableCircular(this, 1600, 1400, 0.0, ImageData.STONE_SPHERE);
 
-        // magic items
+        // bounce
+        // GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
 
         // sigsaw
         GameObjectFactory.createSigsaw(this, 3200, 1250, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_SMALL), -1);
-        // platform
-        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_SMALL), 3.5, [ matter.Vector.create(4000, 1300), matter.Vector.create(5000, 1300) ]);
-        // bounce
-        GameObjectFactory.createBounce(this, 2000, 1250, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_SMALL), 0.00075);
 */
-        // grass ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, x + 3072, 1400, 31,  3, Slope.NONE, CapHorz.NONE, CapVert.TOP);
     }
 
-    private addDesertZone(): void {
+    private addGreenMiddleZone(): void {
         const x: number = 6000;
 
-        // desert ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, x + 2048, 1400, 8 - 2,  3, Slope.NONE, CapHorz.NONE);
-    }
-
-    private addDarkGroundZone(): void {
-        const x: number = 6000;
+        // pylons
+        GameObjectBundleFactory.createDecoImage(this, x + 17 * 128 - 250, 1400, DecoPosition.FG, ImageData.PYLONS);
 
         // billboard 'mf outrun'
-        GameObjectBundleFactory.createBillboard(this, x, 1400, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
-
-        // dark ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, x, 1400, 16 - 2,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createBillboard(this, x + 11 * 128 - 1000, 1400, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
     }
 
-    private addExitZone(): void {
+    private addSnowZone(): void {
         const x: number = 0;
 
         // house with door to town
@@ -104,7 +97,13 @@ export class LevelGarden extends Level {
         // billboard 'react clicker'
         GameObjectBundleFactory.createBillboard(this, x + 1000, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
 
-        // snow ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 6000 / 128 - 2,  3, Slope.NONE, CapHorz.NONE);
+        // water
+        GameObjectBundleFactory.createWaterArea(this, 43 * 128, 1400, 4, 3, ImageData.WATER_CENTER);
+    }
+
+    private addGrounds(): void {
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 6000 + 3072 + 512, 1400, 23,  3, Slope.NONE, CapHorz.LEFT, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 6000, 1400, 19,  3, Slope.NONE, CapHorz.BOTH);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 43,  3, Slope.NONE, CapHorz.RIGHT);
     }
 }

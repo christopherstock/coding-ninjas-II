@@ -392,7 +392,8 @@ export class ImageData {
     static readonly BOUNCE_SMALL: string                                = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceSmall.png';
     static readonly BOUNCE_MEDIUM: string                               = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceMedium.png';
     static readonly BOUNCE_LARGE: string                                = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceLarge.png';
-    static readonly PLATFORM_SMALL: string                              = SettingEngine.PATH_IMAGE_PLATFORM + 'platformSmall.png';
+    static readonly PLATFORM_SNOW_SMALL: string                         = SettingEngine.PATH_IMAGE_PLATFORM + 'platformSnowSmall.png';
+    static readonly PLATFORM_GRASS_SMALL: string                        = SettingEngine.PATH_IMAGE_PLATFORM + 'platformGrassSmall.png';
 
     /** All image filenames to load. */
     static readonly IMAGES_TO_MIRROR: string[]                          =
@@ -793,6 +794,7 @@ export class ImageData {
         ImageData.BOUNCE_SMALL,
         ImageData.BOUNCE_MEDIUM,
         ImageData.BOUNCE_LARGE,
-        ImageData.PLATFORM_SMALL,
+        ImageData.PLATFORM_SNOW_SMALL,
+        ImageData.PLATFORM_GRASS_SMALL,
     ];
 }
