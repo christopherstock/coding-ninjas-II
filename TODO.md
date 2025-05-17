@@ -5,7 +5,6 @@
 - 🌺🧪 Revise too detailed billboards? (natalie, winkler, kuhn, baur)
 - 🌺🧪 New Backgrounds (hi-res, full width)
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
-- 🌺🧪 Fix/prune Doors
 
 ## Primary (MVP)
 - 🧪 Fix annoying edge block

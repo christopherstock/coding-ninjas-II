@@ -5,12 +5,9 @@ import { Main } from '../../base/Main';
 *   The pointer system that manages all pointer interactions.
 ***********************************************************************************************************************/
 export class PointerSystem {
-    /** Indicates if the left canvas half is currently pointer pressed. */
-    public              leftCanvasHalfPressed: boolean            = false;
-    /** Indicates if the right canvas half is currently pointer pressed. */
-    public              rightCanvasHalfPressed: boolean            = false;
-    /** Indicates a canvas tab. */
-    public              canvasTabbed: boolean            = false;
+    public leftCanvasHalfPressed: boolean   = false;
+    public rightCanvasHalfPressed: boolean  = false;
+    public canvasTabbed: boolean            = false;
 
     /** ****************************************************************************************************************
     *   Creates a new key system.

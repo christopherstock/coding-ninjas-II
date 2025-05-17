@@ -55,11 +55,14 @@ export class LevelHarbour extends Level {
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1500, 1400, DecoPosition.FG, ImageData.HYDRANT);
 
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 15,  2, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 15 * 128, 1400, 15,  1, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 30 * 128, 1400, 30,  1, Slope.NONE, CapHorz.NONE);
+        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 15,  2, Slope.NONE, CapHorz.NONE);
+        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 15 * 128, 1400, 15,  1, Slope.NONE, CapHorz.NONE);
+        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 30 * 128, 1400, 30,  1, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  2, Slope.NONE, CapHorz.NONE);
 
         // water areas
-        GameObjectBundleFactory.createWaterArea(this, 6000, 1400 + 64, 14, 4, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createWaterArea(this, 0, 1400 + 128 - 64, 60, 4, ImageData.WATER_CENTER);
+        // GameObjectBundleFactory.createWaterArea(this, 15 * 128, 1400 + 128 - 64, 4, 4, ImageData.WATER_CENTER);
+        // GameObjectBundleFactory.createWaterArea(this, 6000, 1400 + 128 - 64, 14, 4, ImageData.WATER_CENTER);
     }
 }
