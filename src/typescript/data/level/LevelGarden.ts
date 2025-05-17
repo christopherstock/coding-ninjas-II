@@ -98,12 +98,12 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createBillboard(this, x + 1000, 1400, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
 
         // water
-        GameObjectBundleFactory.createWaterArea(this, 43 * 128, 1400, 4, 3, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createWaterArea(this, 42 * 128, 1400, 6, 3, ImageData.WATER_CENTER);
     }
 
     private addGrounds(): void {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 6000 + 3072 + 512, 1400, 23,  3, Slope.NONE, CapHorz.LEFT, CapVert.TOP);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 6000, 1400, 19,  3, Slope.NONE, CapHorz.BOTH);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 1400, 43,  3, Slope.NONE, CapHorz.RIGHT);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, 1400, 43,  3, Slope.NONE, CapHorz.RIGHT);
     }
 }
