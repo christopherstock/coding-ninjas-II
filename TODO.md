@@ -1,8 +1,9 @@
 # TODOs
 
 ## Doing
+- 🌺🧪 Flag/return 'isPlaying' for bg music and init switch
 - 🌺🧪 Offsets X for garden
-- 🌺🧪 Revise too detailed billboards? (natalie, winkler, kuhn, baur)
+- 🌺🧪 Revise too detailed billboards? (winkler, kuhn, baur, natalie)
 - 🌺🧪 New Backgrounds (hi-res, full width)
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 
