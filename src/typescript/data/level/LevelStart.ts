@@ -172,8 +172,8 @@ export class LevelStart extends Level {
         const x = 14848;
         const y = 1240;
 
-        // friend
-        GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT, this, x + 300, y, CharacterFacing.RIGHT, x + 300, x + 1144, CharacterSpriteData.RED_NINJA_GIRL, false);
+        // enemy ninja girl
+        GameObjectBundleFactory.createEnemy(this, x + 300, y, CharacterFacing.RIGHT, x + 300, x + 1144, CharacterSpriteData.RED_NINJA_GIRL, false);
 
         // house with door to DoJo
         GameObjectBundleFactory.createDecoImage(this, x + 530, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
