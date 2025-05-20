@@ -22,7 +22,7 @@ export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
     public width: number = 16000;
     public height: number = 4800;
-    public playerStartX: number = 15520;
+    public playerStartX: number = 10000; // 15520;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
     public playerInitialFloat: boolean = false;
@@ -33,8 +33,8 @@ export class LevelGarden extends Level {
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_GARDEN));
 
         this.addStartZone();
-/*
         this.addGreenMiddleZone();
+/*
         this.addSnowZone();
 */
         this.addGrounds();
@@ -59,12 +59,12 @@ export class LevelGarden extends Level {
         // billboard 'swift games workshop'
         GameObjectBundleFactory.createBillboard(this, x + 4300, y, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
 
-        // platform
+        // platform left
         GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), Platform.SPEED_NORMAL, [ Vector.create(x + 2100, y - 90), Vector.create(x + 3700, y - 90) ]);
 
         // water
         GameObjectBundleFactory.createWaterArea(this, x + 2304, y, 11, 3, ImageData.WATER_CENTER);
-        /*
+/*
         GameObjectBundleFactory.createBridge(this, 2374, y);
 
         // pots and stone sphere
@@ -80,14 +80,20 @@ export class LevelGarden extends Level {
     }
 
     private addGreenMiddleZone(): void {
-        const x: number = 6000;
+        const x: number = 9500;
         const y: number = 1400;
 
         // pylons
-        GameObjectBundleFactory.createDecoImage(this, x + 17 * 128 - 250, y, DecoPosition.FG, ImageData.PYLONS);
+        GameObjectBundleFactory.createDecoImage(this, x + 1926, y, DecoPosition.FG, ImageData.PYLONS);
 
         // billboard 'mf outrun'
-        GameObjectBundleFactory.createBillboard(this, x + 11 * 128 - 1000, y, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
+        GameObjectBundleFactory.createBillboard(this, x + 408, y, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
+
+        // platform up
+        GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), Platform.SPEED_NORMAL, [ Vector.create(x - 400 - 200, y - 8 * 128), Vector.create(x - 400 - 200, y) ]);
+
+        // water
+        GameObjectBundleFactory.createWaterArea(this, x - 7 * 128, y, 7, 3, ImageData.WATER_CENTER);
     }
 
     private addSnowZone(): void {
@@ -110,8 +116,9 @@ export class LevelGarden extends Level {
         const y: number = 1400;
 
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 13084, y, 23,  3, Slope.NONE, CapHorz.LEFT, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 9500 - 128, y, 20,  3, Slope.NONE, CapHorz.BOTH);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 9500 - 6 * 128 - 8 * 128, y - 8 * 128, 8,  8 + 3, Slope.NONE, CapHorz.BOTH);
 /*
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 6000, y, 19,  3, Slope.NONE, CapHorz.BOTH);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 0, y, 43,  3, Slope.NONE, CapHorz.RIGHT);
 */
     }

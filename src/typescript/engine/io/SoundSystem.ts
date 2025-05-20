@@ -40,7 +40,16 @@ export class SoundSystem {
             if (this.sounds[ id ] !== null) {
                 const clipClone: HTMLAudioElement = this.sounds[ id ].cloneNode(true);
                 clipClone.loop = loop;
-                clipClone.play().then(() => {console.log('playing!');}).catch((e: Error) => { console.log('NOT playing!'); return e; });
+                clipClone.play().then(
+                    () => {
+                        console.log('playing!');
+                    }
+                ).catch(
+                    (e: Error) => {
+                        console.log('NOT playing!');
+                        return e;
+                    }
+                );
 
                 return clipClone;
             }
