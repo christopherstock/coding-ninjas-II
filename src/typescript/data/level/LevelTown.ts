@@ -81,7 +81,7 @@ export class LevelTown extends Level {
         // house with door to harbour
         GameObjectBundleFactory.createDecoImage(this, 10000 + 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, 10000 + 480, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        GameObjectFactory.createDoor(this, 10000 + 705, 1389, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerStartX: 520, playerStartY: 1400, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectFactory.createDoor(this, 10000 + 705, 1389, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerInitFacing: CharacterFacing.RIGHT }));
 
         // ground
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 1400, 100,  3, Slope.NONE, CapHorz.NONE);

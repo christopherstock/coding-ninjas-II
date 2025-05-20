@@ -1,11 +1,11 @@
 import * as matter from 'matter-js';
+import { Vector } from 'matter-js';
 import { GameObject } from '../GameObject';
 import { ShapeRectangle } from '../../../engine/shape/ShapeRectangle';
 import { Shape, StaticShape } from '../../../engine/shape/Shape';
 import { SpriteTemplate } from '../../../engine/ui/SpriteTemplate';
 import { DebugColor } from '../../../base/SettingDebug';
 import { BodyDensity, BodyFriction, BodyRestitution } from '../../../base/SettingMatter';
-import {Vector} from "matter-js";
 
 /** ********************************************************************************************************************
 *   Represents a platform that moves.
