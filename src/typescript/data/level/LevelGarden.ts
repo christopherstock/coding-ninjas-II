@@ -120,6 +120,9 @@ export class LevelGarden extends Level {
         const x: number = 0;
         const y: number = 3016;
 
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 1400, y, DecoPosition.FG, ImageData.TREE_1);
+
         // house with door to town
         GameObjectBundleFactory.createDecoImage(this, x + 195 + 90, y, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
         GameObjectBundleFactory.createDecoImage(this, x + 175 + 90, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
