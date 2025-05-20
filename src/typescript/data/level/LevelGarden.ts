@@ -23,9 +23,9 @@ import { Breakable } from '../../game/object/GameObject';
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
     public width: number = 16000;
-    public height: number = 3784; // 4800;
-    public playerStartX: number = 5404; // 15520;
-    public playerStartY: number = 3400;
+    public height: number = 3784;
+    public playerStartX: number = 15520;
+    public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
     public playerInitialFloat: boolean = false;
 
@@ -38,6 +38,7 @@ export class LevelGarden extends Level {
         this.addGreenMiddleZone();
         this.addSigSawZone();
         this.addExitZone();
+
         this.addGrounds();
     }
 
