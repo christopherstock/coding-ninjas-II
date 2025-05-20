@@ -32,7 +32,7 @@ export class LevelTown extends Level {
         // house with door back to garden
         GameObjectBundleFactory.createDecoImage(this, 500, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
         GameObjectBundleFactory.createDecoImage(this, 480, 1120, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 3016 }));
 
         // friends
         GameObjectBundleFactory.createFriend(SpriteData.RED_NINJA_GIRL_STAND_LEFT,    this, 3000, 1400, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);

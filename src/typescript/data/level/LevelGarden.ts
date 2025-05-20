@@ -17,16 +17,16 @@ import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { Platform } from '../../game/object/special/Platform';
-import {BodyDensity, BodyFriction} from "../../base/SettingMatter";
-import {Breakable} from "../../game/object/GameObject";
+import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
+import { Breakable } from '../../game/object/GameObject';
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
     public width: number = 16000;
     public height: number = 3784; // 4800;
-    public playerStartX: number = 8008; // 15520;
-    public playerStartY: number = 0; // 3784 - 128;
-    public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT; // CharacterFacing.LEFT;
+    public playerStartX: number = 5404; // 15520;
+    public playerStartY: number = 3400;
+    public playerInitialFacing: CharacterFacing = CharacterFacing.LEFT;
     public playerInitialFloat: boolean = false;
 
     protected createGameObjects(): void {
@@ -65,7 +65,7 @@ export class LevelGarden extends Level {
 
         // water
         GameObjectBundleFactory.createWaterArea(this, x + 2304, y, 11, 3, ImageData.WATER_CENTER);
-/*
+        /*
         GameObjectBundleFactory.createBridge(this, 2374, y);
 
         // pot
@@ -94,9 +94,6 @@ export class LevelGarden extends Level {
         const x: number = 0;
         const y: number = 3400;
 
-        // water
-        // GameObjectBundleFactory.createWaterArea(this, 42 * 128, y, 6, 3, ImageData.WATER_CENTER);
-
         // sigsaw
         GameObjectFactory.createSigsaw(this, x + 6650, y - 125 - 48, SpriteTemplate.createFromSingleImage(ImageData.SIGSAW_LARGEST), -1);
 
@@ -113,22 +110,19 @@ export class LevelGarden extends Level {
 
         // billboard 'react clicker'
         GameObjectBundleFactory.createBillboard(this, x + 6000, y, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
+
+        // water
+        GameObjectBundleFactory.createWaterArea(this, 7708 - 18 * 128 - 5 * 128, y, 4 + 2, 3, ImageData.WATER_CENTER);
     }
 
     private addExitZone(): void {
         const x: number = 0;
-        const y: number = 3400;
+        const y: number = 3016;
 
         // house with door to town
         GameObjectBundleFactory.createDecoImage(this, x + 195 + 90, y, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
         GameObjectBundleFactory.createDecoImage(this, x + 175 + 90, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
         GameObjectFactory.createDoor(this, x + 500, y, ImageData.DOOR_7, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerInitFacing: CharacterFacing.RIGHT }), MirrorImage.YES);
-
-        // billboard 'react clicker'
-        GameObjectBundleFactory.createBillboard(this, x + 1000, y, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
-
-        // water
-        GameObjectBundleFactory.createWaterArea(this, 7708 - 18 * 128 - 4 * 128, y, 4 + 1, 3, ImageData.WATER_CENTER);
     }
 
     private addGrounds(): void {
@@ -137,7 +131,8 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 13084, y, 23,  3, Slope.NONE, CapHorz.LEFT, CapVert.TOP);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 9500 - 128, y, 20,  3, Slope.NONE, CapHorz.BOTH);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 7708, y - 8 * 128, 8,  8 + 3 + 16, Slope.NONE, CapHorz.BOTH);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 7708 - 18 * 128, y + 2000, 18 + 1,  3, Slope.NONE, CapHorz.BOTH);
-
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 5404, y + 2000, 18 + 1,  3, Slope.NONE, CapHorz.BOTH);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 5404 - 20 * 128 - 4 * 128, y + 2000 - 384, 20,  5, Slope.DESCENDING, CapHorz.RIGHT);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 28 - 128, 3016, 18 + 1,  3, Slope.NONE, CapHorz.NONE);
     }
 }
