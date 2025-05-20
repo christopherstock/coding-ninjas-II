@@ -389,6 +389,7 @@ export class ImageData {
     static readonly SIGSAW_SMALL: string                                = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsawSmall.png';
     static readonly SIGSAW_MEDIUM: string                               = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsawMedium.png';
     static readonly SIGSAW_LARGE: string                                = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsawLarge.png';
+    static readonly SIGSAW_LARGEST: string                              = SettingEngine.PATH_IMAGE_SIGSAW + 'sigsawLargest.png';
     static readonly BOUNCE_SMALL: string                                = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceSmall.png';
     static readonly BOUNCE_MEDIUM: string                               = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceMedium.png';
     static readonly BOUNCE_LARGE: string                                = SettingEngine.PATH_IMAGE_BOUNCE + 'bounceLarge.png';
@@ -791,6 +792,7 @@ export class ImageData {
         ImageData.SIGSAW_SMALL,
         ImageData.SIGSAW_MEDIUM,
         ImageData.SIGSAW_LARGE,
+        ImageData.SIGSAW_LARGEST,
         ImageData.BOUNCE_SMALL,
         ImageData.BOUNCE_MEDIUM,
         ImageData.BOUNCE_LARGE,

@@ -67,15 +67,6 @@ export abstract class Level {
         for (const siteTrigger of this.siteTriggers) {
             matterJsSystem.addToWorld(siteTrigger.shape.body);
         }
-        for (const sigsaw of this.sigsaws) {
-            matterJsSystem.addToWorld(sigsaw.shape.body);
-        }
-        for (const bounce of this.bounces) {
-            matterJsSystem.addToWorld(bounce.shape.body);
-        }
-        for (const obstacle of this.obstacles) {
-            matterJsSystem.addToWorld(obstacle.shape.body);
-        }
         for (const decoBg of this.decosBg) {
             matterJsSystem.addToWorld(decoBg.shape.body);
         }
@@ -88,6 +79,15 @@ export abstract class Level {
         for (const platform of this.platforms) {
             matterJsSystem.addToWorld(platform.shape.body);
             matterJsSystem.addToWorld(platform.frictionShape.body);
+        }
+        for (const sigsaw of this.sigsaws) {
+            matterJsSystem.addToWorld(sigsaw.shape.body);
+        }
+        for (const bounce of this.bounces) {
+            matterJsSystem.addToWorld(bounce.shape.body);
+        }
+        for (const obstacle of this.obstacles) {
+            matterJsSystem.addToWorld(obstacle.shape.body);
         }
         for (const enemy of this.enemies) {
             matterJsSystem.addToWorld(enemy.shape.body);

@@ -10,6 +10,7 @@
 ## Primary (MVP)
 - 🧪 Fix annoying edge block
 - 🧪 Add decoration particle effects on smashing objects / windows etc.?
+- 🧪 Add more enemies/friends to levels
 - 🧪 Add 'katana strike' sprites in air?
 
 ## Secondary (Possibly New Features)
