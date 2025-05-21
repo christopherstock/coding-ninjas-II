@@ -8,6 +8,7 @@
 - 🌺🧪 update npm packages
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 - 🌺🧪 Add 'katana strike' sprites in air?
+- 🌺🧪 check rapid door switch bug
 
 ## Primary (MVP)
 - 🧪 Fix annoying edge block

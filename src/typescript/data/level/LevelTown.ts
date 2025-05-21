@@ -14,7 +14,7 @@ export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
     public width: number = 14720;
     public height: number = 1400 + 128 * 4;
-    public playerStartX: number = 720;
+    public playerStartX: number = 520;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
@@ -24,17 +24,23 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createPlayer(this);
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_TOWN));
 
-        this.addTownSetup();
+        this.addStartZone();
+        // this.addTownSetup();
+
         this.addGrounds();
+    }
+
+    private addStartZone(): void {
+        const y: number = 1400;
+
+        // house with door back to garden
+        GameObjectBundleFactory.createDecoImage(this, 300, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
+        GameObjectBundleFactory.createDecoImage(this, 280, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
+        GameObjectFactory.createDoor(this, 505, 1389, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 3016 }));
     }
 
     private addTownSetup(): void {
         const y: number = 1400;
-
-        // house with door back to garden
-        GameObjectBundleFactory.createDecoImage(this, 500, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
-        GameObjectBundleFactory.createDecoImage(this, 480, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 705, 1389, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 3016 }));
 
         // friends
         GameObjectBundleFactory.createEnemy(this, 3000, y, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
