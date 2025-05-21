@@ -8,7 +8,6 @@ import { GameAction, GameActionType } from '../../game/object/GameAction';
 import { TilesetData } from '../TilesetData';
 import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
 import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { SpriteData } from '../SpriteData';
 import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelTown extends Level {
@@ -97,8 +96,6 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128, y - 20 * 5, 5,  5, Slope.ASCENDING, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128, y - 20 * 5 - 20 * 5, 15,  3, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128, y - 20 * 5 - 20 * 5, 5,  5, Slope.ASCENDING, CapHorz.NONE);
-
-
-
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128 + 5 * 128, y - 20 * 5 - 20 * 5 - 20 * 5, 20,  3, Slope.NONE, CapHorz.NONE);
     }
 }
