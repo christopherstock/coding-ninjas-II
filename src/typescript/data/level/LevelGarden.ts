@@ -68,6 +68,9 @@ export class LevelGarden extends Level {
         // platform left
         GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), Platform.SPEED_NORMAL, [ Vector.create(x + 2100, y - 90), Vector.create(x + 3700, y - 90) ]);
 
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 2300 + 11 * 128 - 300, y, DecoPosition.BG, ImageData.TREE_1, MirrorImage.NO);
+
         // water
         GameObjectBundleFactory.createWaterArea(this, x + 2304, y, 11, 3, ImageData.WATER_CENTER);
         /*
@@ -82,11 +85,23 @@ export class LevelGarden extends Level {
         const x: number = 9500;
         const y: number = 1400;
 
-        // pylons
-        GameObjectBundleFactory.createDecoImage(this, x + 1926, y, DecoPosition.FG, ImageData.PYLONS);
-
         // billboard 'mf outrun'
         GameObjectBundleFactory.createBillboard(this, x + 408, y, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
+
+        // crates
+        GameObjectBundleFactory.createMovableRect(this, x - 400 + 408, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 400 + 408 + 125, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x - 400 + 408 + 62, y - 125, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
+        // bushes
+        GameObjectBundleFactory.createDecoImage(this, x + 700 + 4830 - 4400 - 70, y, DecoPosition.FG, ImageData.TREE_1, MirrorImage.YES);
+        GameObjectBundleFactory.createDecoImage(this, x + 700 + 5200 - 4400, y + 20, DecoPosition.BG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 700 + 5300 - 4400, y, DecoPosition.FG, ImageData.BOULDER_2);
+        GameObjectBundleFactory.createDecoImage(this, x + 700 + 6000 - 285 - 4400, y, DecoPosition.FG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, x + 700 + 6000 - 160 - 4400, y + 22, DecoPosition.BG, ImageData.BUSH_1);
+
+        // pylons
+        GameObjectBundleFactory.createDecoImage(this, x + 1926, y, DecoPosition.FG, ImageData.PYLONS);
 
         // blue ninja guy
         GameObjectBundleFactory.createEnemy(this, x + 258, y, CharacterFacing.RIGHT, x + 258, x + 1258, CharacterSpriteData.BLUE_NINJA_GUY, false);
