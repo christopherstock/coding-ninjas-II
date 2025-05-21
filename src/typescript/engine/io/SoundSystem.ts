@@ -47,7 +47,6 @@ export class SoundSystem {
                 ).catch(
                     (e: Error) => {
                         console.log('NOT playing!');
-                        return e;
                     }
                 );
 

@@ -22,7 +22,7 @@ export class Game {
     public engine: Engine                           = null;
     public camera: Camera                           = null;
     public level: Level                             = null;
-    private bgMusic: HTMLAudioElement               = null;
+    public bgMusic: HTMLAudioElement               = null;
     private slowMotionTicks: number                 = 0;
 
     private readonly darkenPanel: DarkenPanel                = new DarkenPanel();
@@ -47,6 +47,9 @@ export class Game {
     public start(): void {
         DebugLog.init.log('Starting the game loop');
         this.bgMusic = this.engine.soundSystem.playSound(SoundData.BG_CHINESE, true);
+
+        console.log('bgMusic paused: ', this.bgMusic);
+
         this.resetAndLaunchLevel(LevelId.LEVEL_START);
         this.updateAndAssignCamera();
         this.engine.matterJsSystem.startRenderer();

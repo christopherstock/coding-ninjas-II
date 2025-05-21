@@ -1,12 +1,10 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 all enemies?
-- 🌺🧪 Flag/return 'isPlaying' for bg music and init switch
-- 🌺🧪 Revise too detailed billboards? (winkler, kuhn, baur, natalie)
-- 🌺🧪 New Backgrounds (hi-res, full width)
-- 🌺🧪 update npm packages
 - 🌺🧪 preloader on single image loading
+- 🌺🧪 Revise too detailed billboards? (winkler, kuhn, baur, natalie)
+- 🌺🧪 New Backgrounds (hi-res, full width, harbour)
+- 🌺🧪 update npm packages
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
 
 ## Primary (MVP)

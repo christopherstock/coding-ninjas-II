@@ -74,7 +74,8 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
             SiteContentFactory.createSwitch(
                 'notification',
                 'poweroff',
-                !StringUtil.isMac(),
+                // !StringUtil.isMac(),
+                (Main.game.bgMusic !== null && !Main.game.bgMusic.paused),
                 (checked: boolean) => {
 
                     DebugLog.sound.log('Toggle bg music to [' + String(checked) + ']');
