@@ -105,6 +105,7 @@ export class ImageData {
     static readonly RED_NINJA_GIRL_WALK_RIGHT_FRAME_8: string           = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/walk/08.png';
     static readonly RED_NINJA_GIRL_WALK_RIGHT_FRAME_9: string           = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/walk/09.png';
     static readonly RED_NINJA_GIRL_WALK_RIGHT_FRAME_10: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/walk/10.png';
+    static readonly RED_NINJA_GIRL_DIE_RIGHT_FRAME_1: string            = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'redNinjaGirl/die/01.png';
 
     static readonly MASKED_NINJA_GUY_STAND_RIGHT_FRAME_1:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/stand/01.png';
     static readonly MASKED_NINJA_GUY_STAND_RIGHT_FRAME_2:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/stand/02.png';
@@ -510,6 +511,7 @@ export class ImageData {
         ImageData.RED_NINJA_GIRL_WALK_RIGHT_FRAME_8,
         ImageData.RED_NINJA_GIRL_WALK_RIGHT_FRAME_9,
         ImageData.RED_NINJA_GIRL_WALK_RIGHT_FRAME_10,
+        ImageData.RED_NINJA_GIRL_DIE_RIGHT_FRAME_1,
 
         ImageData.MASKED_NINJA_GUY_STAND_RIGHT_FRAME_1,
         ImageData.MASKED_NINJA_GUY_STAND_RIGHT_FRAME_2,

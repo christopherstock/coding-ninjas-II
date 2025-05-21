@@ -110,8 +110,8 @@ export class LevelStart extends Level {
         const x = 8448;
         const y = 760;
 
-        // boulders
-        GameObjectBundleFactory.createDecoImage(this, x + 80, y, DecoPosition.BG, ImageData.BOULDER_3);
+        // edge mark boulder
+        GameObjectBundleFactory.createDecoImage(this, x + 15, y, DecoPosition.BG, ImageData.BOULDER_3);
 
         // crates
         GameObjectBundleFactory.createMovableRect(this, x - 800 - 5870 + 6950, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
