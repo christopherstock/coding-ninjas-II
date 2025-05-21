@@ -7,11 +7,11 @@
 - 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 - 🌺🧪 update npm packages
 - 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
+- 🌺🧪 Add 'katana strike' sprites in air?
 
 ## Primary (MVP)
 - 🧪 Fix annoying edge block
 - 🧪 Add decoration particle effects on smashing objects / windows etc.?
-- 🧪 Add 'katana strike' sprites in air?
 
 ## Secondary (Possibly New Features)
 - ⛏️Add event triggers (for falling obstacles, new enemies etc.)?
