@@ -378,6 +378,7 @@ export class ImageData {
     static readonly FENCE_LEFT: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
     static readonly FENCE_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
     static readonly FENCE_RIGHT: string                                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceRight.png';
+    static readonly FENCE_2: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence2.png';
 
     static readonly SITE_PANEL_LOGO_LEFT: string                        = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoLeft.png';
     static readonly SITE_PANEL_LOGO_RIGHT: string                       = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoRight.png';
@@ -784,6 +785,7 @@ export class ImageData {
         ImageData.FENCE_LEFT,
         ImageData.FENCE_CENTER,
         ImageData.FENCE_RIGHT,
+        ImageData.FENCE_2,
 
         ImageData.SITE_PANEL_LOGO_LEFT,
         ImageData.SITE_PANEL_LOGO_RIGHT,

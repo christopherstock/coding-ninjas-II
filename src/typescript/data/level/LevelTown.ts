@@ -36,6 +36,12 @@ export class LevelTown extends Level {
     private addStartZone(): void {
         const y: number = 1400;
 
+        // black ninja
+        GameObjectBundleFactory.createEnemy(this, 150, y, CharacterFacing.RIGHT, 150, 1150, CharacterSpriteData.BLACK_NINJA_GUY, false);
+
+        // fence
+        GameObjectBundleFactory.createDecoImage(this, 92, y + 22, DecoPosition.BG, ImageData.FENCE_2);
+
         // house with door back to garden
         GameObjectBundleFactory.createDecoImage(this, 300, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
         GameObjectBundleFactory.createDecoImage(this, 280, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
