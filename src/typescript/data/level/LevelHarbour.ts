@@ -32,7 +32,7 @@ export class LevelHarbour extends Level {
         // house with door back to town
         GameObjectBundleFactory.createDecoImage(this, 500 - 205, 1400, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
         GameObjectBundleFactory.createDecoImage(this, 500 - 225, 1105, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
-        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 10000 + 705 + 15, playerStartY: 1400 }));
+        GameObjectFactory.createDoor(this, 500, 1400, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_TOWN, playerStartX: 13220 + 720, playerStartY: 1000 }));
 
         // billboard 'application paper service'
         GameObjectBundleFactory.createBillboard(this, 1000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);

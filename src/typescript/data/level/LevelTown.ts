@@ -26,6 +26,7 @@ export class LevelTown extends Level {
 
         this.addStartZone();
         // this.addTownSetup();
+        this.addExitZone();
 
         this.addGrounds();
     }
@@ -85,11 +86,16 @@ export class LevelTown extends Level {
 
         // billboard 'miner VGA'
         GameObjectBundleFactory.createBillboard(this, 9000, y, DecoPosition.BG, ImageData.BILLBOARD_MINER, 'https://christopherstock.github.io/MinerTS/dist/');
+    }
+
+    private addExitZone(): void {
+        const x: number = this.width - 1500;
+        const y: number = 1000;
 
         // house with door to harbour
-        GameObjectBundleFactory.createDecoImage(this, 10000 + 500, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
-        GameObjectBundleFactory.createDecoImage(this, 10000 + 480, y - 295, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        GameObjectFactory.createDoor(this, 10000 + 705, y - 11, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerInitFacing: CharacterFacing.RIGHT }));
+        GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
+        GameObjectBundleFactory.createDecoImage(this, x + 480, y - 295, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
+        GameObjectFactory.createDoor(this, x + 705, y - 11, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerInitFacing: CharacterFacing.RIGHT }));
     }
 
     private addGrounds(): void {
