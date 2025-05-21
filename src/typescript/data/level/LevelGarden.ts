@@ -19,6 +19,7 @@ import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { Platform } from '../../game/object/special/Platform';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { Breakable } from '../../game/object/GameObject';
+import {CharacterSpriteData} from "../CharacterSpriteData";
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
@@ -48,6 +49,9 @@ export class LevelGarden extends Level {
 
         // door back to DoJo
         GameObjectFactory.createDoor(this, x + 6000, y, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 10240 - 640 + 12, playerStartY: 1400 }));
+
+        // masked ninja guy
+        GameObjectBundleFactory.createEnemy(this, x + 4750, y, CharacterFacing.RIGHT, x + 4250, x + 5450, CharacterSpriteData.MASKED_NINJA_GUY, false);
 
         // boulders
         GameObjectBundleFactory.createDecoImage(this, x + 5400, y + 20, DecoPosition.BG, ImageData.BOULDER_1);

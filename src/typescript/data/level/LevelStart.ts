@@ -41,9 +41,14 @@ export class LevelStart extends Level {
         const x = 0;
         const y = 1000;
 
-        // site trigger with tree
+        // site trigger
         GameObjectFactory.createSiteTrigger(this, x + 0, y, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
-        GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.FG, ImageData.TREE_1);
+
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 430, y, DecoPosition.FG, ImageData.TREE_1);
+
+        // masked ninja guy
+        GameObjectBundleFactory.createEnemy(this, x + 1900, y, CharacterFacing.LEFT, x + 900, x + 1900, CharacterSpriteData.MASKED_NINJA_GUY, false);
 
         // statue shrine
         GameObjectBundleFactory.createStatusShrine(this, x + 2750, y);
@@ -152,7 +157,7 @@ export class LevelStart extends Level {
         // statue shrine
         GameObjectBundleFactory.createStatusShrine(this, x + 12 * 128 + 450, y + 2 * 120);
 
-        // masked ninja guy
+        // white ninja
         const x2 = 50 + x + 12 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
         GameObjectBundleFactory.createEnemy(this, x2, y + 2 * 120, CharacterFacing.LEFT, x2, x2 + 535, CharacterSpriteData.WHITE_NINJA_GUY, false);
 

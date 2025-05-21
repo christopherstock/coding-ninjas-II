@@ -18,6 +18,7 @@ import { SpriteData } from '../SpriteData';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { Breakable } from '../../game/object/GameObject';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
+import {CharacterSpriteData} from "../CharacterSpriteData";
 
 export class LevelDojo extends Level {
     public id: LevelId = LevelId.LEVEL_DOJO;
@@ -49,6 +50,9 @@ export class LevelDojo extends Level {
 
         // chandelier
         this.addChandelier(-12760, -700);
+
+        // white ninja
+        GameObjectBundleFactory.createEnemy(this, x + 1750, y + 2100, CharacterFacing.LEFT, x + 1250, x + 2150, CharacterSpriteData.WHITE_NINJA_GUY, false);
 
         // table with flasks
         GameObjectBundleFactory.createMovableRect(this, x - 1600 + 1920, y + 2100, ImageData.TABLE_1, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
@@ -93,6 +97,9 @@ export class LevelDojo extends Level {
 
         // billboard 'flash'
         GameObjectBundleFactory.createBillboard(this, 3900, 1400, DecoPosition.FG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
+
+        // black ninja
+        GameObjectBundleFactory.createEnemy(this, 3840, 1400, CharacterFacing.LEFT, 3840, 4840, CharacterSpriteData.BLACK_NINJA_GUY, false);
     }
 
     private addObstacleZone(): void {
@@ -104,7 +111,10 @@ export class LevelDojo extends Level {
         GameObjectFactory.createBounce(this, x + 2452, y - 150, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
 
         // billboard 'J2ME'
-        GameObjectBundleFactory.createBillboard(this, x + 1100, y - 512, DecoPosition.FG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
+        GameObjectBundleFactory.createBillboard(this, x + 1100, y - 512, DecoPosition.BG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
+
+        // ninja girl
+        GameObjectBundleFactory.createEnemy(this, x + 1100 - 250, y - 512, CharacterFacing.LEFT, x + 1100 - 250, x + 2100, CharacterSpriteData.RED_NINJA_GIRL, false);
     }
 
     private addExit(): void {
@@ -118,6 +128,9 @@ export class LevelDojo extends Level {
         GameObjectBundleFactory.createMovableRect(this, x + 3130, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 3130 + 145, 1275, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 3130 + 70, 1150, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
+        // masked ninja girl
+        GameObjectBundleFactory.createEnemy(this, x + 3360, 1400, CharacterFacing.LEFT, x + 3360, x + 3823, CharacterSpriteData.MASKED_NINJA_GIRL, false);
 
         // door to garden
         GameObjectFactory.createDoor(this, this.width - 640, 1400, ImageData.DOOR_2, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerInitFacing: CharacterFacing.LEFT }), MirrorImage.YES);

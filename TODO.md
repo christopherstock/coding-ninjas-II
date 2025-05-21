@@ -1,6 +1,7 @@
 # TODOs
 
 ## Doing
+- 🌺🧪 Add more enemies/friends to levels
 - 🌺🧪 preloader on single image loading
 - 🌺🧪 Revise too detailed billboards? (winkler, kuhn, baur, natalie)
 - 🌺🧪 New Backgrounds (hi-res, full width, harbour)
@@ -10,7 +11,6 @@
 ## Primary (MVP)
 - 🧪 Fix annoying edge block
 - 🧪 Add decoration particle effects on smashing objects / windows etc.?
-- 🧪 Add more enemies/friends to levels
 - 🧪 Add 'katana strike' sprites in air?
 
 ## Secondary (Possibly New Features)
