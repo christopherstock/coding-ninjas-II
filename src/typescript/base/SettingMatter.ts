@@ -15,7 +15,7 @@ export class SettingMatter {
     /** The players speed in world coordinate per tick. */
     public static readonly PLAYER_SPEED_MOVE: number            = 7.5;
     /** The players gap size y of its physical body corners. */
-    public static readonly PLAYER_EDGE_GAP_Y: number            = 7.5;
+    public static readonly PLAYER_EDGE_GAP_Y: number            = 17.0; // 7.5;
     /** The enemies' moving speed X. */
     public static readonly BOT_SPEED_MOVE: number               = 3.0;
 

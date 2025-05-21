@@ -13,7 +13,7 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
     public width: number = 14720;
-    public height: number = 1400 + 128 * 4;
+    public height: number = 1400 + 128 * 2;
     public playerStartX: number = 520;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -25,6 +25,8 @@ export class LevelTown extends Level {
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_TOWN));
 
         this.addStartZone();
+        this.addFirstFloor();
+
         // this.addTownSetup();
         this.addExitZone();
 
@@ -40,18 +42,24 @@ export class LevelTown extends Level {
         GameObjectFactory.createDoor(this, 505, 1389, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 3016 }));
     }
 
-    private addTownSetup(): void {
-        const y: number = 1400;
+    private addFirstFloor(): void {
+        const x: number = 25 * 128 + 5 * 128;
+        const y: number = 1400 - 20 * 5;
 
-        // friends
-        GameObjectBundleFactory.createEnemy(this, 3000, y, CharacterFacing.RIGHT, 3000, 3750, CharacterSpriteData.RED_NINJA_GIRL, false);
-        GameObjectBundleFactory.createEnemy(this, 4000, y, CharacterFacing.RIGHT, 3250, 4000, CharacterSpriteData.MASKED_NINJA_GIRL, false);
         // enemies
-        GameObjectBundleFactory.createEnemy(this, 5000, y, CharacterFacing.RIGHT, 3750, 5000, CharacterSpriteData.MASKED_NINJA_GUY, false);
-        GameObjectBundleFactory.createEnemy(this, 4500, y, CharacterFacing.RIGHT, 4500, 5000, CharacterSpriteData.BLUE_NINJA_GUY, false);
-
+        GameObjectBundleFactory.createEnemy(this, x, y, CharacterFacing.RIGHT, x, x + 1000, CharacterSpriteData.RED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createEnemy(this, x + 1000, y, CharacterFacing.RIGHT, x + 1000, x + 2000, CharacterSpriteData.MASKED_NINJA_GIRL, false);
+/*
+        // enemies
+        GameObjectBundleFactory.createEnemy(this, x + 2000, y, CharacterFacing.RIGHT, x + 2000, x + 3000, CharacterSpriteData.MASKED_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 3000, y, CharacterFacing.RIGHT, x + 3000, x + 4000, CharacterSpriteData.BLUE_NINJA_GUY, false);
+*/
         // billboard 'WebGL 3d dev'
-        GameObjectBundleFactory.createBillboard(this, 1300, y, DecoPosition.FG, ImageData.BILLBOARD_WEB_GL_3D, 'https://christopherstock.github.io/babylon-zero/dist/');
+        GameObjectBundleFactory.createBillboard(this, x, y, DecoPosition.FG, ImageData.BILLBOARD_WEB_GL_3D, 'https://christopherstock.github.io/babylon-zero/dist/');
+    }
+
+    private addTownSetup(): void {
+        const y = 1400;
 
         // billboard 'Hanoi TS'
         GameObjectBundleFactory.createBillboard(this, 2300, y, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
