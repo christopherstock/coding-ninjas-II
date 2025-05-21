@@ -12,8 +12,8 @@ import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
-    public width: number = 11520;
-    public height: number = 4500;
+    public width: number = 14720;
+    public height: number = 1400 + 128 * 4;
     public playerStartX: number = 720;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
@@ -91,11 +91,13 @@ export class LevelTown extends Level {
 
         // ground and steps
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, y, 25,  3, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128, y, 5,  5, Slope.ASCENDING, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128, y - 20 * 5, 15,  3, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128, y - 20 * 5, 5,  5, Slope.ASCENDING, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128, y - 20 * 5 - 20 * 5, 15,  3, Slope.NONE, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128, y - 20 * 5 - 20 * 5, 5,  5, Slope.ASCENDING, CapHorz.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0 + 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128 + 5 * 128, y - 20 * 5 - 20 * 5 - 20 * 5, 20,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 25 * 128, y, 5,  5, Slope.ASCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 25 * 128 + 5 * 128, y - 20 * 5, 15,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 25 * 128 + 5 * 128 + 15 * 128, y - 20 * 5, 5,  5, Slope.ASCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128, y - 20 * 5 - 20 * 5, 15,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128, y - 20 * 5 - 20 * 5, 5,  5, Slope.ASCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128 + 5 * 128, y - 20 * 5 - 20 * 5 - 20 * 5, 15,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 25 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128 + 5 * 128 + 15 * 128, y - 20 * 5 - 20 * 5 - 20 * 5, 5,  5, Slope.ASCENDING, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 11520, y - 20 * 5 - 20 * 5 - 20 * 5 - 20 * 5, 25,  3, Slope.NONE, CapHorz.NONE);
     }
 }
