@@ -88,8 +88,14 @@ export class LevelGarden extends Level {
         // billboard 'mf outrun'
         GameObjectBundleFactory.createBillboard(this, x + 408, y, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
 
+        // blue ninja guy
+        GameObjectBundleFactory.createEnemy(this, x + 258, y, CharacterFacing.RIGHT, x + 258, x + 1258, CharacterSpriteData.BLUE_NINJA_GUY, false);
+
         // platform up
         GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), Platform.SPEED_NORMAL, [ Vector.create(x - 400 - 200, y - 8 * 128), Vector.create(x - 400 - 200, y) ]);
+
+        // masked ninja girl
+        GameObjectBundleFactory.createEnemy(this, 7850, y - 8 * 128, CharacterFacing.RIGHT, 7850, 8510, CharacterSpriteData.MASKED_NINJA_GIRL, false);
 
         // water
         GameObjectBundleFactory.createWaterArea(this, x - 7 * 128, y, 7, 3, ImageData.WATER_CENTER);
