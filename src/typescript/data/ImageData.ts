@@ -132,49 +132,49 @@ export class ImageData {
     static readonly MASKED_NINJA_GUY_DIE_RIGHT_FRAME_4: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/die/04.png';
     static readonly MASKED_NINJA_GUY_DIE_RIGHT_FRAME_5: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'maskedNinjaGuy/die/05.png';
 
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_1:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/01.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_2:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/02.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_3:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/03.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_4:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/04.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_5:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/05.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_6:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/06.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_7:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/07.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_8:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/08.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_9:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/09.png';
-    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_10: string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/10.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_1: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/01.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_2: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/02.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_3: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/03.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_4: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/04.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_5: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/05.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_6: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/06.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_7: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/07.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_8: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/08.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_9: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/09.png';
-    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/10.png';
-    static readonly BLACK_NINJA_GUY_DIE_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/die/01.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_1:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/01.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_2:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/02.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_3:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/03.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_4:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/04.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_5:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/05.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_6:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/06.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_7:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/07.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_8:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/08.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_9:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/09.png';
+    static readonly BLACK_NINJA_GUY_STAND_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/stand/10.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/01.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_2: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/02.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_3: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/03.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_4: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/04.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_5: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/05.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_6: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/06.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_7: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/07.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_8: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/08.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_9: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/09.png';
+    static readonly BLACK_NINJA_GUY_WALK_RIGHT_FRAME_10: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/walk/10.png';
+    static readonly BLACK_NINJA_GUY_DIE_RIGHT_FRAME_1: string           = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'blackNinjaGuy/die/01.png';
 
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_1:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/01.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_2:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/02.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_3:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/03.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_4:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/04.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_5:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/05.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_6:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/06.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_7:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/07.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_8:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/08.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_9:  string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/09.png';
-    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_10: string       = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/10.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_1: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/01.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_2: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/02.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_3: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/03.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_4: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/04.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_5: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/05.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_6: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/06.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_7: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/07.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_8: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/08.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_9: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/09.png';
-    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/10.png';
-    static readonly WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/die/01.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_1:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/01.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_2:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/02.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_3:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/03.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_4:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/04.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_5:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/05.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_6:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/06.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_7:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/07.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_8:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/08.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_9:  string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/09.png';
+    static readonly WHITE_NINJA_GUY_STAND_RIGHT_FRAME_10: string        = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/stand/10.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_1: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/01.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_2: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/02.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_3: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/03.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_4: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/04.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_5: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/05.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_6: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/06.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_7: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/07.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_8: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/08.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_9: string          = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/09.png';
+    static readonly WHITE_NINJA_GUY_WALK_RIGHT_FRAME_10: string         = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/walk/10.png';
+    static readonly WHITE_NINJA_GUY_DIE_RIGHT_FRAME_1: string           = SettingEngine.PATH_IMAGE_LEVEL_CHARACTER + 'whiteNinjaGuy/die/01.png';
 
     static readonly CRATE_STEEL: string                                 = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateSteel.png';
     static readonly CRATE_WOOD: string                                  = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'crateWood.png';
@@ -325,25 +325,27 @@ export class ImageData {
     static readonly GROUND_SNOW_SOLID_ASCENDING_TOP: string             = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidAscendingTop.png';
     static readonly GROUND_SNOW_SOLID_DESCENDING_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundSnow/' + 'solidDescendingTop.png';
 
-    static readonly GROUND_GRASS_SOLID_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidTop.png';
-    static readonly GROUND_GRASS_SOLID_LEFT_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeftTop.png';
-    static readonly GROUND_GRASS_SOLID_RIGHT_TOP: string           = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRightTop.png';
-    static readonly GROUND_GRASS_SOLID_CENTER: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidCenter.png';
-    static readonly GROUND_GRASS_SOLID_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidBottom.png';
-    static readonly GROUND_GRASS_SOLID_LEFT_BOTTOM: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeftBottom.png';
-    static readonly GROUND_GRASS_SOLID_RIGHT_BOTTOM: string        = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRightBottom.png';
-    static readonly GROUND_GRASS_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeft.png';
-    static readonly GROUND_GRASS_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRight.png';
+    static readonly GROUND_GRASS_SOLID_TOP: string                      = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidTop.png';
+    static readonly GROUND_GRASS_SOLID_LEFT_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeftTop.png';
+    static readonly GROUND_GRASS_SOLID_RIGHT_TOP: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRightTop.png';
+    static readonly GROUND_GRASS_SOLID_CENTER: string                   = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidCenter.png';
+    static readonly GROUND_GRASS_SOLID_BOTTOM: string                   = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidBottom.png';
+    static readonly GROUND_GRASS_SOLID_LEFT_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeftBottom.png';
+    static readonly GROUND_GRASS_SOLID_RIGHT_BOTTOM: string             = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRightBottom.png';
+    static readonly GROUND_GRASS_SOLID_LEFT: string                     = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidLeft.png';
+    static readonly GROUND_GRASS_SOLID_RIGHT: string                    = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidRight.png';
+    static readonly GROUND_GRASS_SOLID_DESCENDING_TOP: string           = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidDescendingTop.png';
+    static readonly GROUND_GRASS_SOLID_DESCENDING_RIGHT_TOP: string     = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundGrass/' + 'solidDescendingRightTop.png';
 
-    static readonly GROUND_DESERT_SOLID_TOP: string                 = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidTop.png';
-    static readonly GROUND_DESERT_SOLID_LEFT_TOP: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeftTop.png';
-    static readonly GROUND_DESERT_SOLID_RIGHT_TOP: string           = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRightTop.png';
-    static readonly GROUND_DESERT_SOLID_CENTER: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidCenter.png';
-    static readonly GROUND_DESERT_SOLID_BOTTOM: string              = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidBottom.png';
-    static readonly GROUND_DESERT_SOLID_LEFT_BOTTOM: string         = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeftBottom.png';
-    static readonly GROUND_DESERT_SOLID_RIGHT_BOTTOM: string        = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRightBottom.png';
-    static readonly GROUND_DESERT_SOLID_LEFT: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeft.png';
-    static readonly GROUND_DESERT_SOLID_RIGHT: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRight.png';
+    static readonly GROUND_DESERT_SOLID_TOP: string                     = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidTop.png';
+    static readonly GROUND_DESERT_SOLID_LEFT_TOP: string                = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeftTop.png';
+    static readonly GROUND_DESERT_SOLID_RIGHT_TOP: string               = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRightTop.png';
+    static readonly GROUND_DESERT_SOLID_CENTER: string                  = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidCenter.png';
+    static readonly GROUND_DESERT_SOLID_BOTTOM: string                  = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidBottom.png';
+    static readonly GROUND_DESERT_SOLID_LEFT_BOTTOM: string             = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeftBottom.png';
+    static readonly GROUND_DESERT_SOLID_RIGHT_BOTTOM: string            = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRightBottom.png';
+    static readonly GROUND_DESERT_SOLID_LEFT: string                    = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidLeft.png';
+    static readonly GROUND_DESERT_SOLID_RIGHT: string                   = SettingEngine.PATH_IMAGE_LEVEL_TILE + 'groundDesert/' + 'solidRight.png';
 
     static readonly BG_MOUNT_FUJI: string                               = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgMountFuji.jpg';
     static readonly BG_DOJO: string                                     = SettingEngine.PATH_IMAGE_LEVEL_BG + 'bgDojo.jpg';
@@ -737,6 +739,8 @@ export class ImageData {
         ImageData.GROUND_GRASS_SOLID_RIGHT_BOTTOM,
         ImageData.GROUND_GRASS_SOLID_LEFT,
         ImageData.GROUND_GRASS_SOLID_RIGHT,
+        ImageData.GROUND_GRASS_SOLID_DESCENDING_TOP,
+        ImageData.GROUND_GRASS_SOLID_DESCENDING_RIGHT_TOP,
 
         ImageData.GROUND_DESERT_SOLID_TOP,
         ImageData.GROUND_DESERT_SOLID_LEFT_TOP,
