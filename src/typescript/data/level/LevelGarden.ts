@@ -120,7 +120,10 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createMovableRect(this, x + 6680 + 125, y - 125 - 48 - 125 - 125, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // billboard 'react clicker'
-        GameObjectBundleFactory.createBillboard(this, x + 6000, y, DecoPosition.BG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
+        GameObjectBundleFactory.createBillboard(this, x + 6000, y, DecoPosition.FG, ImageData.BILLBOARD_REACT_CLICKER, 'https://christopherstock.github.io/ReactPrimer/dist/');
+
+        // red ninja girl
+        GameObjectBundleFactory.createEnemy(this, x + 5500, y, CharacterFacing.RIGHT, x + 5500, x + 6457, CharacterSpriteData.RED_NINJA_GIRL, false);
 
         // water
         GameObjectBundleFactory.createWaterArea(this, 7708 - 18 * 128 - 5 * 128, y, 4 + 2, 3, ImageData.WATER_CENTER);
@@ -129,6 +132,9 @@ export class LevelGarden extends Level {
     private addExitZone(): void {
         const x: number = 0;
         const y: number = 3016;
+
+        // white ninja
+        GameObjectBundleFactory.createEnemy(this, x + 1250, y, CharacterFacing.RIGHT, x + 1250, x + 2150, CharacterSpriteData.WHITE_NINJA_GUY, false);
 
         // tree
         GameObjectBundleFactory.createDecoImage(this, x + 1400, y, DecoPosition.FG, ImageData.TREE_1);
