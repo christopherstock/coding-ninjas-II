@@ -14,8 +14,8 @@ export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
     public width: number = 14720;
     public height: number = 1400 + 128 * 2;
-    public playerStartX: number = 520;
-    public playerStartY: number = 1400;
+    public playerStartX: number = 3840; // 520;
+    public playerStartY: number = 1300; // 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
 
@@ -74,17 +74,21 @@ export class LevelTown extends Level {
     }
 
     private addFirstFloor(): void {
-        const x: number = 25 * 128 + 5 * 128;
-        const y: number = 1400 - 20 * 5;
+        const x: number = 3840;
+        const y: number = 1300;
 
         // enemies
         GameObjectBundleFactory.createEnemy(this, x, y, CharacterFacing.RIGHT, x, x + 1000, CharacterSpriteData.RED_NINJA_GIRL, false);
         GameObjectBundleFactory.createEnemy(this, x + 1000, y, CharacterFacing.RIGHT, x + 1000, x + 2000, CharacterSpriteData.MASKED_NINJA_GIRL, false);
-/*
-        // enemies
-        GameObjectBundleFactory.createEnemy(this, x + 2000, y, CharacterFacing.RIGHT, x + 2000, x + 3000, CharacterSpriteData.MASKED_NINJA_GUY, false);
-        GameObjectBundleFactory.createEnemy(this, x + 3000, y, CharacterFacing.RIGHT, x + 3000, x + 4000, CharacterSpriteData.BLUE_NINJA_GUY, false);
-*/
+        GameObjectBundleFactory.createEnemy(this, x + 500, y, CharacterFacing.RIGHT, x + 500, x + 1500, CharacterSpriteData.MASKED_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 1500, y, CharacterFacing.RIGHT, x + 1500, x + 2500, CharacterSpriteData.BLUE_NINJA_GUY, false);
+
+        // red house
+        GameObjectBundleFactory.createDecoImage(this, x + 200, y, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 200 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
+
+        // fence
+
     }
 
     private addTownSetup(): void {
@@ -92,12 +96,6 @@ export class LevelTown extends Level {
 
         // billboard 'Hanoi TS'
         GameObjectBundleFactory.createBillboard(this, 2300, y, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
-
-        // house
-        GameObjectBundleFactory.createDecoImage(this, 4900, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
-        GameObjectBundleFactory.createDecoImage(this, 4880, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
-        // GameObjectBundleFactory.createDecoImage(this, 5105, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        // GameObjectBundleFactory.createDecoImage(this, 5105 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 5600, y, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
