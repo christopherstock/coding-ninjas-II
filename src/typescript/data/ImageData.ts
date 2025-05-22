@@ -196,7 +196,8 @@ export class ImageData {
     static readonly STATUE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
     static readonly STATUE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
     static readonly STATUE_3: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue3.png';
-    static readonly STATUE_LION: string                                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statueLion.png';
+    static readonly STATUE_4: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue4.png';
+    static readonly STATUE_5: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue5.png';
     static readonly CANDELABRA: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candelabra.png';
     static readonly CHANDELIER: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'chandelier.png';
     static readonly GOBLET: string                                      = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'goblet.png';
@@ -606,7 +607,8 @@ export class ImageData {
         ImageData.STATUE_1,
         ImageData.STATUE_2,
         ImageData.STATUE_3,
-        ImageData.STATUE_LION,
+        ImageData.STATUE_4,
+        ImageData.STATUE_5,
         ImageData.CANDELABRA,
         ImageData.CHANDELIER,
         ImageData.GOBLET,

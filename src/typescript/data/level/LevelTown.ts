@@ -27,6 +27,8 @@ export class LevelTown extends Level {
         this.addStartZone();
 
         this.addFirstFloor();
+        this.addSecondFloor();
+
         // this.addTownSetup();
 
         this.addExitZone();
@@ -88,6 +90,23 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 200 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
 
         // fence
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 * 2 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
+
+        // tree
+
+
+    }
+
+    private addSecondFloor(): void {
+        const x: number = 6600;
+        const y: number = 1200;
+
+        // statue
+        GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.STATUE_4);
+
+
 
     }
 
