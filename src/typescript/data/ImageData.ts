@@ -192,6 +192,7 @@ export class ImageData {
     static readonly TREE_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
     static readonly TREE_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
     static readonly TREE_3: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree3.png';
+    static readonly TREE_4: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree4.png';
     static readonly TABLE_1: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'table1.png';
     static readonly STATUE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
     static readonly STATUE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
@@ -603,6 +604,7 @@ export class ImageData {
         ImageData.TREE_1,
         ImageData.TREE_2,
         ImageData.TREE_3,
+        ImageData.TREE_4,
         ImageData.TABLE_1,
         ImageData.STATUE_1,
         ImageData.STATUE_2,

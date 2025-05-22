@@ -59,7 +59,7 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createDecoImage(this, 900, y + 22, DecoPosition.FG, ImageData.FENCE_3);
         GameObjectBundleFactory.createDecoImage(this, 900 + 216, y + 22, DecoPosition.FG, ImageData.FENCE_3);
 
-        // bushes
+        // bush
         GameObjectBundleFactory.createDecoImage(this, 305 - 180 + 75, y + 5, DecoPosition.FG, ImageData.BUSH_2);
 
         // scooter & van
@@ -80,23 +80,34 @@ export class LevelTown extends Level {
         const y: number = 1300;
 
         // enemies
-        GameObjectBundleFactory.createEnemy(this, x, y, CharacterFacing.RIGHT, x, x + 1000, CharacterSpriteData.RED_NINJA_GIRL, false);
-        GameObjectBundleFactory.createEnemy(this, x + 1000, y, CharacterFacing.RIGHT, x + 1000, x + 2000, CharacterSpriteData.MASKED_NINJA_GIRL, false);
-        GameObjectBundleFactory.createEnemy(this, x + 500, y, CharacterFacing.RIGHT, x + 500, x + 1500, CharacterSpriteData.MASKED_NINJA_GUY, false);
-        GameObjectBundleFactory.createEnemy(this, x + 1500, y, CharacterFacing.RIGHT, x + 1500, x + 2500, CharacterSpriteData.BLUE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 40, y, CharacterFacing.RIGHT, x + 40, x + 800, CharacterSpriteData.RED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createEnemy(this, x + 800, y, CharacterFacing.LEFT, x + 40, x + 800, CharacterSpriteData.MASKED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createEnemy(this, x + 680, y, CharacterFacing.RIGHT, x + 680, x + 1670, CharacterSpriteData.MASKED_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 1670, y, CharacterFacing.LEFT, x + 680, x + 1670, CharacterSpriteData.BLUE_NINJA_GUY, false);
 
         // red house
         GameObjectBundleFactory.createDecoImage(this, x + 200, y, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
         GameObjectBundleFactory.createDecoImage(this, x + 200 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
 
+        // yellow house
+        GameObjectBundleFactory.createDecoImage(this, x + 1210, y, DecoPosition.BG, ImageData.HOUSE_FRONT_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 1210 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_2);
+
         // fence
         GameObjectBundleFactory.createDecoImage(this, x + 200 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
         GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
         GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 * 2 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 * 3 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 * 4 + 600, y, DecoPosition.BG, ImageData.FENCE_4);
+
+        // bush
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 * 5 + 600 - 130, y, DecoPosition.FG, ImageData.BUSH_2);
+
+        // scooter
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 205, y, DecoPosition.FG, ImageData.SCOOTER_2);
 
         // tree
-
-
+        GameObjectBundleFactory.createDecoImage(this, x + 200 + 210 + 600 - 100, y, DecoPosition.FG, ImageData.TREE_4);
     }
 
     private addSecondFloor(): void {
@@ -104,7 +115,7 @@ export class LevelTown extends Level {
         const y: number = 1200;
 
         // statue
-        GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.STATUE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 670, y, DecoPosition.BG, ImageData.STATUE_4);
 
 
 
