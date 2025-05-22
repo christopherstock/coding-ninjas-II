@@ -45,6 +45,7 @@ export class SoundSystem {
                         // console.log('playing!');
                     }
                 ).catch(
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
                     (e: Error) => {
                         // console.log('NOT playing!');
                     }

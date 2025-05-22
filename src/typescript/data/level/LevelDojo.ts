@@ -18,7 +18,7 @@ import { SpriteData } from '../SpriteData';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { Breakable } from '../../game/object/GameObject';
 import { MirrorImage } from '../../engine/ui/MirrorImage';
-import {CharacterSpriteData} from "../CharacterSpriteData";
+import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelDojo extends Level {
     public id: LevelId = LevelId.LEVEL_DOJO;

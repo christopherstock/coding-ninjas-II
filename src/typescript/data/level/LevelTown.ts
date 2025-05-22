@@ -1,15 +1,15 @@
 /* eslint-disable max-len */
 
-import {Level, LevelId} from '../../game/level/Level';
-import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
-import {GameObjectFactory} from '../../game/object/GameObjectFactory';
-import {ImageData} from '../ImageData';
-import {GameAction, GameActionType} from '../../game/object/GameAction';
-import {TilesetData} from '../TilesetData';
-import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
-import {CharacterFacing} from '../../game/object/being/CharacterFacing';
-import {CharacterSpriteData} from '../CharacterSpriteData';
-import {MirrorImage} from "../../engine/ui/MirrorImage";
+import { Level, LevelId } from '../../game/level/Level';
+import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { ImageData } from '../ImageData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { TilesetData } from '../TilesetData';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { CharacterSpriteData } from '../CharacterSpriteData';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
 
 export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
@@ -121,42 +121,43 @@ export class LevelTown extends Level {
         // statue
         GameObjectBundleFactory.createDecoImage(this, x + 590, y, DecoPosition.BG, ImageData.STATUE_4);
 
+        // billboard 'LWJGL'
+        GameObjectBundleFactory.createBillboard(this, x + 1550, y, DecoPosition.BG, ImageData.BILLBOARD_LWJGL, 'https://github.com/christopherstock/shooter-gradle');
+
         // trees
         GameObjectBundleFactory.createDecoImage(this, x - 50, y, DecoPosition.FG, ImageData.TREE_3);
         GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
-    }
-
-    private addTownSetup(): void {
-        const y = 1400;
-
-        // house
-        GameObjectBundleFactory.createDecoImage(this, 5600, y, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
-        GameObjectBundleFactory.createDecoImage(this, 5580, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_5);
-
-        // house
-        GameObjectBundleFactory.createDecoImage(this, 6300, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
-        GameObjectBundleFactory.createDecoImage(this, 6280, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-
-        // billboard 'LWJGL'
-        GameObjectBundleFactory.createBillboard(this, 8000, y, DecoPosition.FG, ImageData.BILLBOARD_LWJGL, 'https://github.com/christopherstock/shooter-gradle');
-
-        // billboard 'miner VGA'
-        GameObjectBundleFactory.createBillboard(this, 9000, y, DecoPosition.BG, ImageData.BILLBOARD_MINER, 'https://christopherstock.github.io/MinerTS/dist/');
     }
 
     private addExitZone(): void {
         const x: number = this.width - 1500;
         const y: number = 1000;
 
+        // billboard 'miner VGA'
+        GameObjectBundleFactory.createBillboard(this, x - 2000 - 560 + 80, y + 100, DecoPosition.BG, ImageData.BILLBOARD_MINER, 'https://christopherstock.github.io/MinerTS/dist/');
+
+        // house green
+        GameObjectBundleFactory.createDecoImage(this, x - 1550, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
+        GameObjectBundleFactory.createDecoImage(this, x - 1550 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_5);
+
+        // van
+        GameObjectBundleFactory.createDecoImage(this, x - 1650, y, DecoPosition.FG, ImageData.VAN_3);
+
+        // house purple
+        GameObjectBundleFactory.createDecoImage(this, x - 1650 + 1000, y, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
+        GameObjectBundleFactory.createDecoImage(this, x - 1650 + 1000 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
+
         // house with door to harbour
         GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, x + 480, y - 295, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
         GameObjectFactory.createDoor(this, x + 705, y - 11, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerInitFacing: CharacterFacing.RIGHT }));
 
-        // tree
-        GameObjectBundleFactory.createDecoImage(this, x + 500 - 500 + 50, y, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
+        // trees
+        GameObjectBundleFactory.createDecoImage(this, x + 500 - 1000 + 15 - 180 - 356 + 40 + 20, y, DecoPosition.BG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 500 - 500 + 50, y, DecoPosition.BG, ImageData.TREE_3, MirrorImage.YES);
 
         // fence
+        GameObjectBundleFactory.createDecoImage(this, x + 500 - 1000 + 15 - 180 - 356 + 40, y, DecoPosition.FG, ImageData.FENCE_5);
         GameObjectBundleFactory.createDecoImage(this, x + 500 - 356 + 40, y, DecoPosition.FG, ImageData.FENCE_5);
     }
 

@@ -3,7 +3,6 @@ import { DebugLog } from '../../base/DebugLog';
 import { SiteContentFactory } from '../SiteContentFactory';
 import { Main } from '../../base/Main';
 import { ImageData } from '../../data/ImageData';
-import { StringUtil } from '../../util/StringUtil';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'welcome' page.

@@ -19,7 +19,7 @@ import { MirrorImage } from '../../engine/ui/MirrorImage';
 import { Platform } from '../../game/object/special/Platform';
 import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
 import { Breakable } from '../../game/object/GameObject';
-import {CharacterSpriteData} from "../CharacterSpriteData";
+import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
