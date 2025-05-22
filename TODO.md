@@ -1,16 +1,15 @@
 # TODOs
 
 ## Doing
+- 🌺🧪 Complete game levels (add section 'market' to town)
 - 🌺🧪 Add more enemies/friends to levels
+- 🌺🧪 Add 'katana strike' sprites in air?
 - 🌺🧪 preloader on single image loading
 - 🌺🧪 Revise too detailed billboards? (winkler, kuhn, baur, natalie)
 - 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 - 🌺🧪 update npm packages
-- 🌺🧪 Complete game levels (add sections 'market' to town, and 'warehouse' to DoJo)
-- 🌺🧪 Add 'katana strike' sprites in air?
 
 ## Primary (MVP)
-- 🧪 Fix annoying edge block
 - 🧪 Add decoration particle effects on smashing objects / windows etc.?
 
 ## Secondary (Possibly New Features)
