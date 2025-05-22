@@ -48,13 +48,13 @@ export class Game {
         DebugLog.init.log('Starting the game loop');
         this.bgMusic = this.engine.soundSystem.playSound(SoundData.BG_CHINESE, true);
 
-        console.log('bgMusic paused: ', this.bgMusic);
+        // console.log('bgMusic paused: ', this.bgMusic);
 
         this.resetAndLaunchLevel(LevelId.LEVEL_START);
         this.updateAndAssignCamera();
         this.engine.matterJsSystem.startRenderer();
 
-        this.startDarkenPanelFadeOut(SettingEngine.DARKEN_PANEL_TICKS_STARTUP);
+        this.startDarkenPanelFade(SettingEngine.DARKEN_PANEL_TICKS_STARTUP);
 
         window.requestAnimationFrame(
             () => { this.tickGame(); }
@@ -167,12 +167,12 @@ export class Game {
         this.engine.keySystem.releaseAllKeys();
     }
 
-    public startDarkenPanelFadeOut(
+    public startDarkenPanelFade(
         ticks: number = SettingEngine.DARKEN_PANEL_TICKS_DOOR_SWITCH,
         fadeIn: boolean = false,
         onComplete: ()=> void = (): void => { /* */ }
     ): void {
-        this.darkenPanel.startFadeOut(ticks, fadeIn, onComplete);
+        this.darkenPanel.startFade(ticks, fadeIn, onComplete);
     }
 
     /** ****************************************************************************************************************

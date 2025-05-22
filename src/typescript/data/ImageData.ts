@@ -191,6 +191,7 @@ export class ImageData {
     static readonly BRIDGE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge2.png';
     static readonly TREE_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
     static readonly TREE_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree2.png';
+    static readonly TREE_3: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree3.png';
     static readonly TABLE_1: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'table1.png';
     static readonly STATUE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue1.png';
     static readonly STATUE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'statue2.png';
@@ -375,10 +376,12 @@ export class ImageData {
     static readonly BILLBOARD_TECHNICAL_PAPER: string                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardTechnicalPaper.png';
     static readonly BILLBOARD_MEET_UPS: string                          = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'billboardMeetUps.png';
 
-    static readonly FENCE_LEFT: string                                  = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceLeft.png';
-    static readonly FENCE_CENTER: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceCenter.png';
-    static readonly FENCE_RIGHT: string                                 = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fenceRight.png';
+    static readonly FENCE_1_LEFT: string                                = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence1Left.png';
+    static readonly FENCE_1_CENTER: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence1Center.png';
+    static readonly FENCE_1_RIGHT: string                               = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence1Right.png';
     static readonly FENCE_2: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence2.png';
+    static readonly FENCE_3: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence3.png';
+    static readonly FENCE_4: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'fence4.png';
 
     static readonly SITE_PANEL_LOGO_LEFT: string                        = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoLeft.png';
     static readonly SITE_PANEL_LOGO_RIGHT: string                       = SettingEngine.PATH_IMAGE_SITE_PANEL + 'logoRight.png';
@@ -598,6 +601,7 @@ export class ImageData {
         ImageData.BRIDGE_2,
         ImageData.TREE_1,
         ImageData.TREE_2,
+        ImageData.TREE_3,
         ImageData.TABLE_1,
         ImageData.STATUE_1,
         ImageData.STATUE_2,
@@ -782,10 +786,12 @@ export class ImageData {
         ImageData.BILLBOARD_TECHNICAL_PAPER,
         ImageData.BILLBOARD_MEET_UPS,
 
-        ImageData.FENCE_LEFT,
-        ImageData.FENCE_CENTER,
-        ImageData.FENCE_RIGHT,
+        ImageData.FENCE_1_LEFT,
+        ImageData.FENCE_1_CENTER,
+        ImageData.FENCE_1_RIGHT,
         ImageData.FENCE_2,
+        ImageData.FENCE_3,
+        ImageData.FENCE_4,
 
         ImageData.SITE_PANEL_LOGO_LEFT,
         ImageData.SITE_PANEL_LOGO_RIGHT,

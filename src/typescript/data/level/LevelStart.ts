@@ -91,9 +91,9 @@ export class LevelStart extends Level {
 
         // fence
         const fenceX = x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
-        GameObjectBundleFactory.createDecoImage(this, fenceX, y - 20, DecoPosition.FG, ImageData.FENCE_LEFT);
-        GameObjectBundleFactory.createDecoImage(this, fenceX + 256, y - 20, DecoPosition.FG, ImageData.FENCE_CENTER);
-        GameObjectBundleFactory.createDecoImage(this, fenceX + 512, y - 20, DecoPosition.FG, ImageData.FENCE_RIGHT);
+        GameObjectBundleFactory.createDecoImage(this, fenceX, y - 20, DecoPosition.FG, ImageData.FENCE_1_LEFT);
+        GameObjectBundleFactory.createDecoImage(this, fenceX + 256, y - 20, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, fenceX + 512, y - 20, DecoPosition.FG, ImageData.FENCE_1_RIGHT);
 
         // billboard 'kuhn'
         GameObjectBundleFactory.createBillboard(this, fenceX + 256 * 2 + 300 + 50, y + 100 - 168, DecoPosition.BG, ImageData.BILLBOARD_KUHN, 'https://glaskunst-kuhn.de/index.php/de/');

@@ -42,11 +42,11 @@ export class SoundSystem {
                 clipClone.loop = loop;
                 clipClone.play().then(
                     () => {
-                        console.log('playing!');
+                        // console.log('playing!');
                     }
                 ).catch(
                     (e: Error) => {
-                        console.log('NOT playing!');
+                        // console.log('NOT playing!');
                     }
                 );
 

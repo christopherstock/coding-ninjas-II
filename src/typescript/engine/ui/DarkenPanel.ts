@@ -59,14 +59,13 @@ export class DarkenPanel {
         }
     }
 
-    public startFadeOut(
+    public startFade(
         ticks: number = SettingEngine.DARKEN_PANEL_TICKS_DOOR_SWITCH,
         fadeIn: boolean = false,
         onComplete: ()=> void = (): void => { /* */ }
     ): void {
         if (SettingDebug.DISABLE_DARKEN_PANEL) {
-            onComplete();
-            return;
+            ticks = 1;
         }
 
         this.currentTick = (fadeIn ? -ticks : ticks);

@@ -25,9 +25,10 @@ export class LevelTown extends Level {
         GameObjectFactory.createParallaxDeco(this, 0, 0, 1.0, DecoPosition.BG, SpriteTemplate.createFromSingleImage(ImageData.BG_TOWN));
 
         this.addStartZone();
-        this.addFirstFloor();
 
+        this.addFirstFloor();
         // this.addTownSetup();
+
         this.addExitZone();
 
         this.addGrounds();
@@ -36,16 +37,40 @@ export class LevelTown extends Level {
     private addStartZone(): void {
         const y: number = 1400;
 
-        // black ninja
-        GameObjectBundleFactory.createEnemy(this, 150, y, CharacterFacing.RIGHT, 150, 1150, CharacterSpriteData.BLACK_NINJA_GUY, false);
-
-        // fence
-        GameObjectBundleFactory.createDecoImage(this, 92, y + 22, DecoPosition.BG, ImageData.FENCE_2);
-
         // house with door back to garden
         GameObjectBundleFactory.createDecoImage(this, 300, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
         GameObjectBundleFactory.createDecoImage(this, 280, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_3);
         GameObjectFactory.createDoor(this, 505, 1389, ImageData.DOOR_6, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_GARDEN, playerStartX: 520, playerStartY: 3016 }));
+
+        // black ninja
+        GameObjectBundleFactory.createEnemy(this, 1100, y, CharacterFacing.LEFT, 340, 1100, CharacterSpriteData.BLACK_NINJA_GUY, false);
+
+        // pink house
+        GameObjectBundleFactory.createDecoImage(this, 900 + 216 * 2, y, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
+        GameObjectBundleFactory.createDecoImage(this, 900 + 216 * 2 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
+
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, 800, y, DecoPosition.BG, ImageData.TREE_3);
+
+        // fences
+        GameObjectBundleFactory.createDecoImage(this, 57, y + 22, DecoPosition.FG, ImageData.FENCE_2);
+        GameObjectBundleFactory.createDecoImage(this, 900, y + 22, DecoPosition.FG, ImageData.FENCE_3);
+        GameObjectBundleFactory.createDecoImage(this, 900 + 216, y + 22, DecoPosition.FG, ImageData.FENCE_3);
+
+        // bushes
+        GameObjectBundleFactory.createDecoImage(this, 305 - 180 + 75, y + 5, DecoPosition.FG, ImageData.BUSH_2);
+
+        // scooter & van
+        GameObjectBundleFactory.createDecoImage(this, 1480, y, DecoPosition.FG, ImageData.SCOOTER_1);
+        GameObjectBundleFactory.createDecoImage(this, 1880, y, DecoPosition.FG, ImageData.VAN_2);
+
+        // billboard 'WebGL 3d dev'
+        GameObjectBundleFactory.createBillboard(this, 2350, y, DecoPosition.FG, ImageData.BILLBOARD_WEB_GL_3D, 'https://christopherstock.github.io/babylon-zero/dist/');
+
+        // hydrant & bushes
+        GameObjectBundleFactory.createDecoImage(this, 2320, y, DecoPosition.FG, ImageData.HYDRANT);
+        GameObjectBundleFactory.createDecoImage(this, 3020 - 285, y, DecoPosition.FG, ImageData.BUSH_2);
+        GameObjectBundleFactory.createDecoImage(this, 3020 - 160, y + 22, DecoPosition.BG, ImageData.BUSH_1);
     }
 
     private addFirstFloor(): void {
@@ -60,8 +85,6 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createEnemy(this, x + 2000, y, CharacterFacing.RIGHT, x + 2000, x + 3000, CharacterSpriteData.MASKED_NINJA_GUY, false);
         GameObjectBundleFactory.createEnemy(this, x + 3000, y, CharacterFacing.RIGHT, x + 3000, x + 4000, CharacterSpriteData.BLUE_NINJA_GUY, false);
 */
-        // billboard 'WebGL 3d dev'
-        GameObjectBundleFactory.createBillboard(this, x, y, DecoPosition.FG, ImageData.BILLBOARD_WEB_GL_3D, 'https://christopherstock.github.io/babylon-zero/dist/');
     }
 
     private addTownSetup(): void {
@@ -69,13 +92,6 @@ export class LevelTown extends Level {
 
         // billboard 'Hanoi TS'
         GameObjectBundleFactory.createBillboard(this, 2300, y, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
-
-        // house
-        GameObjectBundleFactory.createDecoImage(this, 4200, y, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
-        GameObjectBundleFactory.createDecoImage(this, 4180, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_1);
-        // GameObjectBundleFactory.createDecoImage(this, 4405, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        // GameObjectBundleFactory.createDecoImage(this, 4405 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
-        // GameObjectFactory.createDoor(this, 4405, 1389, ImageData.DOOR_4, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_START, playerStartX: 250, playerStartY: 2000 }));
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 4900, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
