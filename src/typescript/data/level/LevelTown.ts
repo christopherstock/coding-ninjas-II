@@ -1,21 +1,22 @@
 /* eslint-disable max-len */
 
-import { Level, LevelId } from '../../game/level/Level';
-import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
-import { GameObjectFactory } from '../../game/object/GameObjectFactory';
-import { ImageData } from '../ImageData';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { TilesetData } from '../TilesetData';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { CharacterSpriteData } from '../CharacterSpriteData';
+import {Level, LevelId} from '../../game/level/Level';
+import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
+import {GameObjectFactory} from '../../game/object/GameObjectFactory';
+import {ImageData} from '../ImageData';
+import {GameAction, GameActionType} from '../../game/object/GameAction';
+import {TilesetData} from '../TilesetData';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {CharacterFacing} from '../../game/object/being/CharacterFacing';
+import {CharacterSpriteData} from '../CharacterSpriteData';
+import {MirrorImage} from "../../engine/ui/MirrorImage";
 
 export class LevelTown extends Level {
     public id: LevelId = LevelId.LEVEL_TOWN;
     public width: number = 14720;
     public height: number = 1400 + 128 * 2;
-    public playerStartX: number = 3840; // 520;
-    public playerStartY: number = 1300; // 1400;
+    public playerStartX: number = 3840 * 2;   // 520
+    public playerStartY: number = 1300 - 100; // 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
 
@@ -114,30 +115,27 @@ export class LevelTown extends Level {
         const x: number = 6600;
         const y: number = 1200;
 
+        // billboard 'Hanoi TS'
+        GameObjectBundleFactory.createBillboard(this, x - 840, y + 80, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
+
         // statue
-        GameObjectBundleFactory.createDecoImage(this, x + 670, y, DecoPosition.BG, ImageData.STATUE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 590, y, DecoPosition.BG, ImageData.STATUE_4);
 
-
-
+        // trees
+        GameObjectBundleFactory.createDecoImage(this, x - 50, y, DecoPosition.FG, ImageData.TREE_3);
+        GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
     }
 
     private addTownSetup(): void {
         const y = 1400;
 
-        // billboard 'Hanoi TS'
-        GameObjectBundleFactory.createBillboard(this, 2300, y, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
-
         // house
         GameObjectBundleFactory.createDecoImage(this, 5600, y, DecoPosition.BG, ImageData.HOUSE_FRONT_4);
         GameObjectBundleFactory.createDecoImage(this, 5580, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_5);
-        // GameObjectBundleFactory.createDecoImage(this, 5805, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        // GameObjectBundleFactory.createDecoImage(this, 5805 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
         // house
         GameObjectBundleFactory.createDecoImage(this, 6300, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, 6280, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
-        // GameObjectBundleFactory.createDecoImage(this, 6505, 1389, DecoPosition.BG, ImageData.DOOR_4);
-        // GameObjectBundleFactory.createDecoImage(this, 6505 + 60, 1389 - 65, DecoPosition.BG, ImageData.DOOR_NO_ENTRY);
 
         // billboard 'LWJGL'
         GameObjectBundleFactory.createBillboard(this, 8000, y, DecoPosition.FG, ImageData.BILLBOARD_LWJGL, 'https://github.com/christopherstock/shooter-gradle');
@@ -154,6 +152,12 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, x + 480, y - 295, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
         GameObjectFactory.createDoor(this, x + 705, y - 11, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerInitFacing: CharacterFacing.RIGHT }));
+
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 500 - 500 + 50, y, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
+
+        // fence
+        GameObjectBundleFactory.createDecoImage(this, x + 500 - 356 + 40, y, DecoPosition.FG, ImageData.FENCE_5);
     }
 
     private addGrounds(): void {
