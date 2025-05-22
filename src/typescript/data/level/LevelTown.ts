@@ -29,8 +29,7 @@ export class LevelTown extends Level {
 
         this.addFirstFloor();
         this.addSecondFloor();
-
-        // this.addTownSetup();
+        this.addThirdFloor();
 
         this.addExitZone();
 
@@ -129,6 +128,16 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
     }
 
+    private addThirdFloor(): void {
+        const x: number = 9360;
+        const y: number = 1100;
+
+        // new images
+        GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.BUSH_3);
+        GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.BOULDER_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.BG, ImageData.BOULDER_5);
+    }
+
     private addExitZone(): void {
         const x: number = this.width - 1500;
         const y: number = 1000;
@@ -140,12 +149,13 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createDecoImage(this, x - 1550, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
         GameObjectBundleFactory.createDecoImage(this, x - 1550 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_5);
 
-        // van
-        GameObjectBundleFactory.createDecoImage(this, x - 1650, y, DecoPosition.FG, ImageData.VAN_3);
-
         // house purple
         GameObjectBundleFactory.createDecoImage(this, x - 1650 + 1000, y, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
         GameObjectBundleFactory.createDecoImage(this, x - 1650 + 1000 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
+
+        // van & scooter
+        GameObjectBundleFactory.createDecoImage(this, x - 1650 + 70, y, DecoPosition.FG, ImageData.VAN_2);
+        GameObjectBundleFactory.createDecoImage(this, x - 1650 + 1000 + 180, y, DecoPosition.FG, ImageData.SCOOTER_2);
 
         // house with door to harbour
         GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);

@@ -187,6 +187,8 @@ export class ImageData {
     static readonly BOULDER_1: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder1.png';
     static readonly BOULDER_2: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder2.png';
     static readonly BOULDER_3: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder3.png';
+    static readonly BOULDER_4: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder4.png';
+    static readonly BOULDER_5: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder5.png';
     static readonly BRIDGE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge1.png';
     static readonly BRIDGE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge2.png';
     static readonly TREE_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
@@ -212,6 +214,7 @@ export class ImageData {
     static readonly CANDLE: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'candle.png';
     static readonly BUSH_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush1.png';
     static readonly BUSH_2: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush2.png';
+    static readonly BUSH_3: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bush3.png';
     static readonly FLASK_1: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask1.png';
     static readonly FLASK_2: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask2.png';
     static readonly FLASK_3: string                                     = SettingEngine.PATH_IMAGE_LEVEL_MOVABLE + 'flask3.png';
@@ -601,6 +604,8 @@ export class ImageData {
         ImageData.BOULDER_1,
         ImageData.BOULDER_2,
         ImageData.BOULDER_3,
+        ImageData.BOULDER_4,
+        ImageData.BOULDER_5,
         ImageData.BRIDGE_1,
         ImageData.BRIDGE_2,
         ImageData.TREE_1,
@@ -626,6 +631,7 @@ export class ImageData {
         ImageData.CANDLE,
         ImageData.BUSH_1,
         ImageData.BUSH_2,
+        ImageData.BUSH_3,
         ImageData.FLASK_1,
         ImageData.FLASK_2,
         ImageData.FLASK_3,
