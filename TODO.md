@@ -1,11 +1,11 @@
 # TODOs
 
 ## Doing
+- 🌺🧪 Add 'katana strike' sprites in air?
 - 🌺🧪 Add more deco to levels
 - 🌺🧪 Add more enemies/friends to levels
 
 ## Primary (MVP)
-- 🌺🧪 Add 'katana strike' sprites in air?
 - 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 - 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?

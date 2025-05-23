@@ -142,6 +142,46 @@ export class SpriteData {
         SettingGame.DEFAULT_SPRITE_SCALE
     );
 
+    static MASKED_NINJA_GIRL_JUMP_ATTACK_LEFT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_1,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_2,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_3,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_4,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_5,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_6,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_7,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_8,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_9,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_10,
+        ],
+        1,
+        MirrorImage.YES,
+        LoopSprite.NO,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
+    static MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT: SpriteTemplate         = new SpriteTemplate(
+        [
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_1,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_2,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_3,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_4,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_5,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_6,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_7,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_8,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_9,
+            ImageData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT_FRAME_10,
+        ],
+        1,
+        MirrorImage.NO,
+        LoopSprite.NO,
+        RandomFrames.NO,
+        SettingGame.DEFAULT_SPRITE_SCALE
+    );
+
     static MASKED_NINJA_GIRL_JUMP_LEFT: SpriteTemplate         = new SpriteTemplate(
         [
             ImageData.MASKED_NINJA_GIRL_JUMP_RIGHT_FRAME_1,
@@ -888,6 +928,8 @@ export class SpriteData {
             SpriteData.MASKED_NINJA_GIRL_WALK_RIGHT,
             SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
             SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT,
+            SpriteData.MASKED_NINJA_GIRL_JUMP_ATTACK_LEFT,
+            SpriteData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT,
             SpriteData.MASKED_NINJA_GIRL_JUMP_LEFT,
             SpriteData.MASKED_NINJA_GIRL_JUMP_RIGHT,
             SpriteData.MASKED_NINJA_GIRL_FALL_LEFT,

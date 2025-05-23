@@ -21,7 +21,9 @@ export class CharacterSpriteData {
         SpriteData.MASKED_NINJA_GIRL_DIE_LEFT,
         SpriteData.MASKED_NINJA_GIRL_DIE_RIGHT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
-        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT,
+        SpriteData.MASKED_NINJA_GIRL_JUMP_ATTACK_LEFT,
+        SpriteData.MASKED_NINJA_GIRL_JUMP_ATTACK_RIGHT
     );
 
     public static BLUE_NINJA_GUY: CharacterSpriteSet = new CharacterSpriteSet(
@@ -37,6 +39,8 @@ export class CharacterSpriteData {
         SpriteData.BLUE_NINJA_GUY_STAND_RIGHT,
         SpriteData.BLUE_NINJA_GUY_DIE_LEFT,
         SpriteData.BLUE_NINJA_GUY_DIE_RIGHT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
@@ -55,6 +59,8 @@ export class CharacterSpriteData {
         SpriteData.RED_NINJA_GIRL_DIE_LEFT,
         SpriteData.RED_NINJA_GIRL_DIE_RIGHT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
@@ -71,6 +77,8 @@ export class CharacterSpriteData {
         SpriteData.MASKED_NINJA_GIRL_JUMP_RIGHT,
         SpriteData.MASKED_NINJA_GUY_DIE_LEFT,
         SpriteData.MASKED_NINJA_GUY_DIE_RIGHT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
@@ -89,6 +97,8 @@ export class CharacterSpriteData {
         SpriteData.BLACK_NINJA_GUY_DIE_LEFT,
         SpriteData.BLACK_NINJA_GUY_DIE_RIGHT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
 
@@ -105,6 +115,8 @@ export class CharacterSpriteData {
         SpriteData.BLUE_NINJA_GUY_STAND_RIGHT,
         SpriteData.WHITE_NINJA_GUY_DIE_LEFT,
         SpriteData.WHITE_NINJA_GUY_DIE_RIGHT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
+        SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_LEFT,
         SpriteData.MASKED_NINJA_GIRL_ATTACK_RIGHT
     );
