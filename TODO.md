@@ -1,16 +1,17 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 Complete game levels (add section 'market' to town)
 - 🌺🧪 Add more enemies/friends to levels
+
+## Primary (MVP)
+- 🌺🧪 Add more deco to levels
 - 🌺🧪 Add 'katana strike' sprites in air?
 - 🌺🧪 preloader on single image loading
+- 🌺🧪 "Click to Start" button after preloader (for macOS only?)
 - 🌺🧪 Revise too detailed billboards? (winkler, kuhn, baur, natalie)
 - 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 - 🌺🧪 update npm packages
-
-## Primary (MVP)
-- 🧪 Add decoration particle effects on smashing objects / windows etc.?
+- 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 
 ## Secondary (Possibly New Features)
 - ⛏️Add event triggers (for falling obstacles, new enemies etc.)?

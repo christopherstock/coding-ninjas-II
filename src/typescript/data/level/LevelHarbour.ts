@@ -15,7 +15,7 @@ export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;
     public width: number = 7680;
     public height: number = 2000;
-    public playerStartX: number = 60*128 // 520;
+    public playerStartX: number = 60 * 128 // 520;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
@@ -52,10 +52,10 @@ export class LevelHarbour extends Level {
         // fence
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1820, 1400, DecoPosition.FG, ImageData.FENCE_1_LEFT);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*2, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*3, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*4, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*5, 1400, DecoPosition.FG, ImageData.FENCE_1_RIGHT);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256 * 2, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256 * 3, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256 * 4, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256 * 5, 1400, DecoPosition.FG, ImageData.FENCE_1_RIGHT);
 
         // scooters
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1600, 1400, DecoPosition.FG, ImageData.SCOOTER_2);

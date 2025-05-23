@@ -131,7 +131,7 @@ export class LevelTown extends Level {
     private addThirdFloor(): void {
         const x: number = 9360;
         const y: number = 1100;
-/*
+        /*
         GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.BUSH_3);
         GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.BOULDER_4);
         GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.BG, ImageData.BOULDER_5);
