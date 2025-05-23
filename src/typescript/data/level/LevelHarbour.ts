@@ -15,7 +15,7 @@ export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;
     public width: number = 7680;
     public height: number = 2000;
-    public playerStartX: number = 520;
+    public playerStartX: number = 60*128 // 520;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;
@@ -46,26 +46,32 @@ export class LevelHarbour extends Level {
         // site trigger 'end of game reached'
         GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_FAREWELL, SitePanelAppearance.LEFT, null);
 
-        // new images
+        // hydrant
         GameObjectBundleFactory.createDecoImage(this, 6000 - 2000, 1400, DecoPosition.FG, ImageData.HYDRANT);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 1500, 1400, DecoPosition.FG, ImageData.SCOOTER_2);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 1000, 1400, DecoPosition.FG, ImageData.SCOOTER_1);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 500, 1400, DecoPosition.FG, ImageData.VAN_3);
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 0, 1400, DecoPosition.FG, ImageData.VAN_2);
-        GameObjectBundleFactory.createDecoImage(this, 6000 + 850, 1400, DecoPosition.FG, ImageData.VAN_1);
 
-        // fence !
+        // fence
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820, 1400, DecoPosition.FG, ImageData.FENCE_1_LEFT);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*2, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*3, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*4, 1400, DecoPosition.FG, ImageData.FENCE_1_CENTER);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1820 + 256*5, 1400, DecoPosition.FG, ImageData.FENCE_1_RIGHT);
 
+        // scooters
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1600, 1400, DecoPosition.FG, ImageData.SCOOTER_2);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1400, 1400, DecoPosition.FG, ImageData.SCOOTER_1);
+
+        // vans
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 1050, 1400, DecoPosition.FG, ImageData.VAN_1);
+        GameObjectBundleFactory.createDecoImage(this, 6000 - 650, 1400, DecoPosition.FG, ImageData.VAN_2);
 
         // ground
-        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 15,  2, Slope.NONE, CapHorz.NONE);
-        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 15 * 128, 1400, 15,  1, Slope.NONE, CapHorz.NONE);
-        // GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 30 * 128, 1400, 30,  1, Slope.NONE, CapHorz.NONE);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  2, Slope.NONE, CapHorz.NONE);
 
+        // ship
+        GameObjectBundleFactory.createDecoImage(this, 60 * 128 - 550, 1400 + 120, DecoPosition.FG, ImageData.SHIP_1);
+
         // water areas
-        GameObjectBundleFactory.createWaterArea(this, 0, 1400 + 128 - 64, 60, 4, ImageData.WATER_CENTER);
-        // GameObjectBundleFactory.createWaterArea(this, 15 * 128, 1400 + 128 - 64, 4, 4, ImageData.WATER_CENTER);
-        // GameObjectBundleFactory.createWaterArea(this, 6000, 1400 + 128 - 64, 14, 4, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createWaterArea(this, 0, 1400 + 128 - 64, 60, 4, ImageData.WATER_CENTER, true);
     }
 }

@@ -131,17 +131,18 @@ export class LevelTown extends Level {
     private addThirdFloor(): void {
         const x: number = 9360;
         const y: number = 1100;
-
-        // new images
 /*
         GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.BUSH_3);
         GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.BOULDER_4);
         GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.BG, ImageData.BOULDER_5);
 */
-        GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.MARKET_STAND_1);
-        GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.BG, ImageData.MARKET_STAND_2);
-        GameObjectBundleFactory.createDecoImage(this, x + 2000, y, DecoPosition.BG, ImageData.MARKET_STAND_3);
-        GameObjectBundleFactory.createDecoImage(this, x + 3000, y, DecoPosition.BG, ImageData.SHIP_1);
+        // market stands
+        GameObjectBundleFactory.createDecoImage(this, x - 360, y + 20, DecoPosition.BG, ImageData.MARKET_STAND_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 220, y + 20, DecoPosition.BG, ImageData.MARKET_STAND_2);
+        GameObjectBundleFactory.createDecoImage(this, x + 750, y + 40, DecoPosition.BG, ImageData.MARKET_STAND_3);
+
+        // van
+        GameObjectBundleFactory.createDecoImage(this, x + 1310, y, DecoPosition.FG, ImageData.VAN_3);
     }
 
     private addExitZone(): void {

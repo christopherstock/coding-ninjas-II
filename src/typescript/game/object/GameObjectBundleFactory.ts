@@ -395,18 +395,20 @@ export abstract class GameObjectBundleFactory {
         yTop: number,
         length: number,
         height: number,
-        tileCenterImage: string
+        tileCenterImage: string,
+        foreground: boolean = false
     ): void {
         const tileTop: SpriteTemplate = SpriteData.WATER_TOP;
         const tileCenter: SpriteTemplate = SpriteTemplate.createFromSingleImage(tileCenterImage);
 
         // draw area
+        const stack: Decoration[] = (foreground ? level.decosFg : level.decosBg);
         for (let tileX: number = 0; tileX < length; ++tileX) {
             for (let tileY: number = 0; tileY < height; ++tileY) {
                 if (tileY === 0) {
-                    level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + GameObjectBundleFactory.GROUND_TILE_HEIGHT + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileTop));
+                    stack.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + GameObjectBundleFactory.GROUND_TILE_HEIGHT + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileTop));
                 } else {
-                    level.decosBg.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + GameObjectBundleFactory.GROUND_TILE_HEIGHT + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileCenter));
+                    stack.push(GameObjectFactory.createDecorationRect(xLeft + tileX * GameObjectBundleFactory.GROUND_TILE_WIDTH, yTop + GameObjectBundleFactory.GROUND_TILE_HEIGHT + tileY * GameObjectBundleFactory.GROUND_TILE_HEIGHT, StaticShape.YES, tileCenter));
                 }
             }
         }
