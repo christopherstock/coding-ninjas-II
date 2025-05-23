@@ -1,9 +1,8 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 Add 'katana strike' sprites in air?
-- 🌺🧪 Add more deco to levels
 - 🌺🧪 Add more enemies/friends to levels
+- 🌺🧪 Add more deco to levels
 
 ## Primary (MVP)
 - 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
