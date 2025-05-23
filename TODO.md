@@ -1,13 +1,12 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 Revise too detailed billboards? (winkler, kuhn, baur, natalie)
+- 🌺🧪 Add more deco to levels
 - 🌺🧪 Add more enemies/friends to levels
 
 ## Primary (MVP)
-- 🌺🧪 Add more deco to levels
-- 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 Add 'katana strike' sprites in air?
+- 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 - 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 - 🌺🧪 update npm packages
