@@ -189,6 +189,11 @@ export class ImageData {
     static readonly BOULDER_3: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder3.png';
     static readonly BOULDER_4: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder4.png';
     static readonly BOULDER_5: string                                   = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'boulder5.png';
+    static readonly BENCH_1: string                                     = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bench1.png';
+    static readonly MARKET_STAND_1: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'marketStand1.png';
+    static readonly MARKET_STAND_2: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'marketStand2.png';
+    static readonly MARKET_STAND_3: string                              = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'marketStand3.png';
+    static readonly SHIP_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'ship1.png';
     static readonly BRIDGE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge1.png';
     static readonly BRIDGE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'bridge2.png';
     static readonly TREE_1: string                                      = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'tree1.png';
@@ -606,6 +611,11 @@ export class ImageData {
         ImageData.BOULDER_3,
         ImageData.BOULDER_4,
         ImageData.BOULDER_5,
+        ImageData.BENCH_1,
+        ImageData.MARKET_STAND_1,
+        ImageData.MARKET_STAND_2,
+        ImageData.MARKET_STAND_3,
+        ImageData.SHIP_1,
         ImageData.BRIDGE_1,
         ImageData.BRIDGE_2,
         ImageData.TREE_1,

@@ -117,7 +117,7 @@ export class LevelTown extends Level {
         // billboard 'Hanoi TS'
         GameObjectBundleFactory.createBillboard(this, x - 840, y + 80, DecoPosition.BG, ImageData.BILLBOARD_HANOI_TS, 'https://christopherstock.github.io/HanoiTS/dist/');
 
-        // statue
+        // buddha statue
         GameObjectBundleFactory.createDecoImage(this, x + 590, y, DecoPosition.BG, ImageData.STATUE_4);
 
         // billboard 'LWJGL'
@@ -133,9 +133,15 @@ export class LevelTown extends Level {
         const y: number = 1100;
 
         // new images
+/*
         GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.BUSH_3);
         GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.BOULDER_4);
         GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.BG, ImageData.BOULDER_5);
+*/
+        GameObjectBundleFactory.createDecoImage(this, x, y, DecoPosition.BG, ImageData.MARKET_STAND_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 1000, y, DecoPosition.BG, ImageData.MARKET_STAND_2);
+        GameObjectBundleFactory.createDecoImage(this, x + 2000, y, DecoPosition.BG, ImageData.MARKET_STAND_3);
+        GameObjectBundleFactory.createDecoImage(this, x + 3000, y, DecoPosition.BG, ImageData.SHIP_1);
     }
 
     private addExitZone(): void {
@@ -161,6 +167,9 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 500, y, DecoPosition.BG, ImageData.HOUSE_FRONT_5);
         GameObjectBundleFactory.createDecoImage(this, x + 480, y - 295, DecoPosition.BG, ImageData.HOUSE_ROOF_4);
         GameObjectFactory.createDoor(this, x + 705, y - 11, ImageData.DOOR_5, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_HARBOUR, playerInitFacing: CharacterFacing.RIGHT }));
+
+        // bench
+        GameObjectBundleFactory.createDecoImage(this, x + 500 + 600 - 60, y + 10, DecoPosition.BG, ImageData.BENCH_1);
 
         // trees
         GameObjectBundleFactory.createDecoImage(this, x + 500 - 1000 + 15 - 180 - 356 + 40 + 20, y, DecoPosition.BG, ImageData.TREE_4);
