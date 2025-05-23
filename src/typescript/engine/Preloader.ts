@@ -7,29 +7,25 @@ import { Engine } from './Engine';
 *   Handles the whole preloading process for the web app.
 ***********************************************************************************************************************/
 export class Preloader {
-    /** The parent engine instance. */
-    private     readonly        engine: Engine                    = null;
-    /** The callback to invoke when the preloader is set up. */
-    private     readonly        onPreloaderSetup: ()=> void                         = null;
-
-    /**  The colorful preloader image. */
-    private                     imageLoaded: HTMLImageElement                   = null;
-    /**  The monochrome preloader image. */
-    private                     imageUnloaded: HTMLImageElement                   = null;
-    /**  A counter for the preloaded images. */
-    private                     loadedImageCount: number                             = 0;
-    /**  The percentage of all loaded game contents. */
-    private                     loadingPercentage: number                             = 0;
+    private readonly engine: Engine                     = null;
+    private readonly onPreloaderComplete: ()=> void     = null;
+    public preloadingComplete: boolean                 = false;
+    public startButtonPressed: boolean                 = false;
+    private imageLoaded: HTMLImageElement               = null;
+    private imageUnloaded: HTMLImageElement             = null;
+    private imageStartButton: HTMLImageElement          = null;
+    private loadedImageCount: number                    = 0;
+    private loadingPercentage: number                   = 0;
 
     /** ****************************************************************************************************************
     *   Creates a new preloading system.
     *
-    *   @param engine           The parent game engine.
-    *   @param onPreloaderSetup The callback to invoke when the preloading is set up.
+    *   @param engine              The parent game engine.
+    *   @param onPreloaderComplete The callback to invoke when the preloading is set up.
     *******************************************************************************************************************/
-    public constructor(engine: Engine, onPreloaderSetup: ()=> void) {
-        this.engine           = engine;
-        this.onPreloaderSetup = onPreloaderSetup;
+    public constructor(engine: Engine, onPreloaderComplete: ()=> void) {
+        this.engine              = engine;
+        this.onPreloaderComplete = onPreloaderComplete;
     }
 
     /** ****************************************************************************************************************
@@ -45,12 +41,15 @@ export class Preloader {
         // load preloader images
         this.imageLoaded  = new Image();
         this.imageUnloaded = new Image();
+        this.imageStartButton = new Image();
 
         this.imageLoaded.src  = SettingEngine.PATH_IMAGE_PRELOADER + 'loaded.png';
         this.imageUnloaded.src = SettingEngine.PATH_IMAGE_PRELOADER + 'unloaded.png';
+        this.imageStartButton.src = SettingEngine.PATH_IMAGE_PRELOADER + 'startButton.png';
 
         this.imageLoaded.onload  = (): void => { this.preloaderImageLoaded(); };
         this.imageUnloaded.onload = (): void => { this.preloaderImageLoaded(); };
+        this.imageStartButton.onload = (): void => { this.preloaderImageLoaded(); };
     }
 
     /** ****************************************************************************************************************
@@ -65,11 +64,16 @@ export class Preloader {
         this.drawPreloader();
     }
 
+    public showStartButton(): void {
+        this.preloadingComplete = true;
+        this.drawPreloader();
+    }
+
     /** ****************************************************************************************************************
     *   Being invoked when one preloader image has been loaded.
     *******************************************************************************************************************/
     private preloaderImageLoaded(): void {
-        if (++this.loadedImageCount === 2) {
+        if (++this.loadedImageCount === 3) {
             DebugLog.init.log('Init preloader images complete');
 
             this.onPreloaderImageLoadComplete();
@@ -84,7 +88,7 @@ export class Preloader {
         this.drawPreloader();
 
         // notify that the preloader is set up
-        this.onPreloaderSetup();
+        this.onPreloaderComplete();
     }
 
     /** ****************************************************************************************************************
@@ -136,5 +140,16 @@ export class Preloader {
             gayImageWidth,
             this.imageLoaded.height
         );
+
+        // draw start button
+        if (this.preloadingComplete) {
+            const MARGIN_TOP_START_BUTTON: number = 20;
+            DrawUtil.drawImage(
+                this.engine.canvasSystem.getCanvasContext(),
+                this.imageStartButton,
+                (this.engine.canvasSystem.getWidth()  - this.imageStartButton.width) / 2,
+                this.engine.canvasSystem.getHeight() / 2 + this.imageUnloaded.height / 2 + MARGIN_TOP_START_BUTTON
+            );
+        }
     }
 }

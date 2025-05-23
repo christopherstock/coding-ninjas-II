@@ -15,6 +15,15 @@ export class MouseSystem {
 
     private onClick(event: PointerEvent): void {
         if (Main.game.level === null) {
+            // lauch the game if the preloader is active
+            if (
+                Main.game.engine.preloader.preloadingComplete
+                && !Main.game.engine.preloader.startButtonPressed
+            ) {
+                Main.game.engine.preloader.startButtonPressed = true;
+                Main.game.start();
+            }
+
             return;
         }
 
@@ -36,6 +45,14 @@ export class MouseSystem {
 
     private onMove(event: PointerEvent): void {
         if (Main.game.level === null) {
+            if (
+                Main.game.engine.preloader.preloadingComplete
+                && !Main.game.engine.preloader.startButtonPressed
+            ) {
+                document.body.style.cursor = 'pointer';
+                return;
+            }
+
             document.body.style.cursor = 'default';
             return;
         }

@@ -15,7 +15,7 @@ export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;
     public width: number = 7680;
     public height: number = 2000;
-    public playerStartX: number = 60 * 128 // 520;
+    public playerStartX: number = 520;
     public playerStartY: number = 1400;
     public playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public playerInitialFloat: boolean = false;

@@ -170,11 +170,14 @@ export class Engine {
 
         this.preloader.setLoadingPercentage(100);
 
-        // start the game loop after a short delay. this runs smoother for the user
-        window.setTimeout(
-            () => { this.game.start(); },
-            (SettingDebug.DISABLE_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY)
-        );
+        if (SettingDebug.DISABLE_PRELOADER_START_BUTTON) {
+            window.setTimeout(
+                () => { this.game.start(); },
+                (SettingDebug.DISABLE_DELAY_AROUND_PRELOADER ? 0 : SettingEngine.PRELOADER_DELAY)
+            );
+        } else {
+            this.preloader.showStartButton();
+        }
     }
 
     /** ****************************************************************************************************************

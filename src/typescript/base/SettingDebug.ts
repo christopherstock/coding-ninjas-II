@@ -9,6 +9,7 @@ export class SettingDebug {
     public static readonly DISABLE_DARKEN_PANEL: boolean            = (true && SettingDebug.DEBUG_MODE);
     public static readonly DISABLE_FLOATING_STARTUP: boolean        = (true && SettingDebug.DEBUG_MODE);
     public static readonly DISABLE_DELAY_AROUND_PRELOADER: boolean  = (false && SettingDebug.DEBUG_MODE);
+    public static readonly DISABLE_PRELOADER_START_BUTTON: boolean  = (true  && SettingDebug.DEBUG_MODE);
 
     public static readonly DISABLE_SPRITES: boolean                 = (false && SettingDebug.DEBUG_MODE);
     public static readonly ENABLE_BG_FOR_MATTER_BODY: boolean       = (false && SettingDebug.DEBUG_MODE);
