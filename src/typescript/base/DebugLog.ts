@@ -7,9 +7,9 @@ import { SettingDebug } from './SettingDebug';
 export class DebugLog {
     static readonly welcome: DebugLog           = new DebugLog(true);
 
+    static readonly image: DebugLog             = new DebugLog(false);
     static readonly sound: DebugLog             = new DebugLog(false);
     static readonly init: DebugLog              = new DebugLog(false);
-    static readonly image: DebugLog             = new DebugLog(false);
     static readonly character: DebugLog         = new DebugLog(false);
     static readonly canvas: DebugLog            = new DebugLog(false);
     static readonly key: DebugLog               = new DebugLog(false);

@@ -89,6 +89,8 @@ export class LevelStart extends Level {
         // billboard 'baur'
         GameObjectBundleFactory.createBillboard(this, x - 225, y + 100, DecoPosition.BG, ImageData.BILLBOARD_BAUR, 'https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/');
 
+        // TODO crates !
+
         // fence
         const fenceX = x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
         GameObjectBundleFactory.createDecoImage(this, fenceX, y - 20, DecoPosition.FG, ImageData.FENCE_1_LEFT);
