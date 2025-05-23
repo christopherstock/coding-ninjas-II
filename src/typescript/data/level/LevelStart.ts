@@ -1,21 +1,21 @@
 /* eslint-disable max-len */
 
-import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
-import { TilesetData } from '../TilesetData';
-import { ImageData } from '../ImageData';
-import { Level, LevelId } from '../../game/level/Level';
-import { GameObjectFactory } from '../../game/object/GameObjectFactory';
-import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
-import { SpriteData } from '../SpriteData';
-import { SiteContent } from '../../site/SiteContentSystem';
-import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
-import { CharacterFacing } from '../../game/object/being/CharacterFacing';
-import { MirrorImage } from '../../engine/ui/MirrorImage';
-import { SettingDebug } from '../../base/SettingDebug';
-import { CharacterSpriteData } from '../CharacterSpriteData';
-import { GameAction, GameActionType } from '../../game/object/GameAction';
-import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
-import { Breakable } from '../../game/object/GameObject';
+import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
+import {TilesetData} from '../TilesetData';
+import {ImageData} from '../ImageData';
+import {Level, LevelId} from '../../game/level/Level';
+import {GameObjectFactory} from '../../game/object/GameObjectFactory';
+import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
+import {SpriteData} from '../SpriteData';
+import {SiteContent} from '../../site/SiteContentSystem';
+import {SitePanelAppearance} from '../../game/object/special/SiteTrigger';
+import {CharacterFacing} from '../../game/object/being/CharacterFacing';
+import {MirrorImage} from '../../engine/ui/MirrorImage';
+import {SettingDebug} from '../../base/SettingDebug';
+import {CharacterSpriteData} from '../CharacterSpriteData';
+import {GameAction, GameActionType} from '../../game/object/GameAction';
+import {BodyDensity, BodyFriction} from '../../base/SettingMatter';
+import {Breakable} from '../../game/object/GameObject';
 
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
@@ -45,10 +45,10 @@ export class LevelStart extends Level {
         GameObjectFactory.createSiteTrigger(this, x + 0, y, 1000, 500, SiteContent.CONTENT_WELCOME, SitePanelAppearance.RIGHT, null);
 
         // tree
-        GameObjectBundleFactory.createDecoImage(this, x + 430, y, DecoPosition.FG, ImageData.TREE_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 460, y, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
 
         // masked ninja guy
-        GameObjectBundleFactory.createEnemy(this, x + 1900, y, CharacterFacing.LEFT, x + 900, x + 1900, CharacterSpriteData.MASKED_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 1900, y, CharacterFacing.LEFT, x + 860, x + 1900, CharacterSpriteData.MASKED_NINJA_GUY, false);
 
         // statue shrine
         GameObjectBundleFactory.createStatusShrine(this, x + 2750, y);
@@ -89,7 +89,11 @@ export class LevelStart extends Level {
         // billboard 'baur'
         GameObjectBundleFactory.createBillboard(this, x - 225, y + 100, DecoPosition.BG, ImageData.BILLBOARD_BAUR, 'https://php8.christopherstock.de/architekt-baur/1.1/index.php/de/');
 
-        // TODO crates !
+        // crates
+        const cratesX: number = x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH - 100 + 75;
+        GameObjectBundleFactory.createMovableRect(this, cratesX - 0, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, cratesX - 0 + 125, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, cratesX - 0 + 62, y - 125, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // fence
         const fenceX = x - 200 + 8 * GameObjectBundleFactory.GROUND_TILE_WIDTH;
@@ -141,6 +145,12 @@ export class LevelStart extends Level {
         // tree
         GameObjectBundleFactory.createDecoImage(this, x + 1580, y, DecoPosition.FG, ImageData.TREE_2);
 
+        // boulder
+        GameObjectBundleFactory.createDecoImage(this, x + 2240, y, DecoPosition.BG, ImageData.BOULDER_5);
+
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 1580, y, DecoPosition.FG, ImageData.TREE_2);
+
         // masked ninja girl
         GameObjectBundleFactory.createEnemy(this, x + 1500, y, CharacterFacing.RIGHT, x + 1500, x + 2350, CharacterSpriteData.MASKED_NINJA_GIRL, false);
 
@@ -181,6 +191,10 @@ export class LevelStart extends Level {
 
         // enemy ninja girl
         GameObjectBundleFactory.createEnemy(this, x + 300, y, CharacterFacing.RIGHT, x + 300, x + 1144, CharacterSpriteData.RED_NINJA_GIRL, false);
+
+        // bush & boulder
+        GameObjectBundleFactory.createDecoImage(this, x + 50, y, DecoPosition.BG, ImageData.BUSH_3);
+        GameObjectBundleFactory.createDecoImage(this, x + 275, y, DecoPosition.BG, ImageData.BOULDER_4);
 
         // house with door to DoJo
         GameObjectBundleFactory.createDecoImage(this, x + 530, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
