@@ -1,7 +1,6 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 Add more deco to levels
 - 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 
 ## Primary (MVP)
@@ -9,11 +8,11 @@
 - 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 - 🌺🧪 update npm packages
+- 🌺🧪 Add canvas max width/scale?
 
 ## Secondary (Possibly New Features)
 - ⛏️Add event triggers (for falling obstacles, new enemies etc.)?
 - ⛏️ Sound effects for ninja girl actions and enemies
-- ⛏️ Add canvas max width?
 - ⛏️ moving 'no entry' sign on trying to open closed door?
 - ⛏️ Friendly Bots that talk to you.
 - ⛏️ Add Player 'speech' system. ('no entry', 'friend' etc)?
