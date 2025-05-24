@@ -107,6 +107,8 @@ export class LevelDojo extends Level {
         // billboard 'flash'
         GameObjectBundleFactory.createBillboard(this, 3900, 1400, DecoPosition.FG, ImageData.BILLBOARD_FLASH, 'https://christopherstock.github.io/ApacheRoyalePrimer/showcase/martinApacheRoyale0.9/index.html');
 
+        this.addChandelier(-11450 + 2500 - 20, -700, true);
+
         // black ninja
         GameObjectBundleFactory.createEnemy(this, 3840, 1400, CharacterFacing.LEFT, 3840, 4840, CharacterSpriteData.BLACK_NINJA_GUY, false);
     }

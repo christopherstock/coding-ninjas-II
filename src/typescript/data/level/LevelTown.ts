@@ -76,6 +76,10 @@ export class LevelTown extends Level {
 
         // masked ninja guy
         GameObjectBundleFactory.createEnemy(this, 2800, y, CharacterFacing.LEFT, 2060, 2800, CharacterSpriteData.MASKED_NINJA_GUY, false);
+
+        // trees
+        GameObjectBundleFactory.createDecoImage(this, 3150, y, DecoPosition.BG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, 3500, y - 50, DecoPosition.BG, ImageData.TREE_4);
     }
 
     private addFirstFloor(): void {
