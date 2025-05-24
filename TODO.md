@@ -7,8 +7,8 @@
 - 🌺🧪 Fix houses/roof problem
 - 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
-- 🌺🧪 update npm packages
 - 🌺🧪 Add canvas max width/scale?
+- 🌺🧪 update npm packages
 
 ## Secondary (Possibly New Features)
 - ⛏️Add event triggers (for falling obstacles, new enemies etc.)?
