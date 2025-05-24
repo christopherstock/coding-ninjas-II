@@ -86,8 +86,12 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
 
         { SiteContentFactory.createSpacerVertical() }
         <div>
-            { SiteContentFactory.createParagraph('Version: <span class=\'special\'>1.0.0-rc</span> (release candidate)', 'right') }
-            { /* SiteContentFactory.createParagraph('Version 1.0.0-rc (release candidate) &bull; Project progress:', 'right') */ }
+            {
+                SiteContentFactory.createParagraph(
+                    'Version: <span class=\'special\'>1.0.0-rc</span> (release candidate)',
+                    'right'
+                )
+            }
             { /* SiteContentFactory.createProgress('line', 100.00) */ }
         </div>
 

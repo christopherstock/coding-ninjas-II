@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
-import {Vector} from 'matter-js';
-import {Level, LevelId} from '../../game/level/Level';
+import { Vector } from 'matter-js';
+import { Level, LevelId } from '../../game/level/Level';
 import {
     CapHorz,
     CapVert,
@@ -9,17 +9,17 @@ import {
     GameObjectBundleFactory,
     Slope,
 } from '../../game/object/GameObjectBundleFactory';
-import {GameObjectFactory} from '../../game/object/GameObjectFactory';
-import {ImageData} from '../ImageData';
-import {GameAction, GameActionType} from '../../game/object/GameAction';
-import {TilesetData} from '../TilesetData';
-import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
-import {CharacterFacing} from '../../game/object/being/CharacterFacing';
-import {MirrorImage} from '../../engine/ui/MirrorImage';
-import {Platform} from '../../game/object/special/Platform';
-import {BodyDensity, BodyFriction} from '../../base/SettingMatter';
-import {Breakable} from '../../game/object/GameObject';
-import {CharacterSpriteData} from '../CharacterSpriteData';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { ImageData } from '../ImageData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { TilesetData } from '../TilesetData';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
+import { Platform } from '../../game/object/special/Platform';
+import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
+import { Breakable } from '../../game/object/GameObject';
+import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelGarden extends Level {
     public id: LevelId = LevelId.LEVEL_GARDEN;
@@ -82,7 +82,7 @@ export class LevelGarden extends Level {
 
         // billboard 'mf outrun'
         GameObjectBundleFactory.createBillboard(this, x + 408, y, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
-/*
+        /*
         // construction tools
         GameObjectBundleFactory.createDecoImage(this, x + 490, y, DecoPosition.FG, ImageData.CONCRETE_MIXER);
         GameObjectBundleFactory.createDecoImage(this, x + 870, y, DecoPosition.FG, ImageData.GENERATOR);
@@ -97,7 +97,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 700 + 4830 - 4400 - 70, y, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
         GameObjectBundleFactory.createDecoImage(this, x + 700 + 4830 - 4400 - 70 + 700, y, DecoPosition.FG, ImageData.BOULDER_4);
         GameObjectBundleFactory.createDecoImage(this, x + 700 + 4830 - 4400 - 70 + 1000, y, DecoPosition.FG, ImageData.BUSH_3);
-/*
+        /*
         // bushes
         GameObjectBundleFactory.createDecoImage(this, x + 700 + 5200 - 4400, y + 20, DecoPosition.BG, ImageData.BOULDER_1);
         GameObjectBundleFactory.createDecoImage(this, x + 700 + 5300 - 4400, y, DecoPosition.FG, ImageData.BOULDER_2);
@@ -120,12 +120,12 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createWaterArea(this, x - 7 * 128, y, 7, 3, ImageData.WATER_CENTER);
 
         // tree & bushes
-        GameObjectBundleFactory.createDecoImage(this, 7800 - 70, y - 8*128, DecoPosition.FG, ImageData.BOULDER_4);
-        GameObjectBundleFactory.createDecoImage(this, 8000 - 70, y - 8*128, DecoPosition.FG, ImageData.BUSH_3);
-        GameObjectBundleFactory.createDecoImage(this, 8200 - 70, y - 8*128, DecoPosition.FG, ImageData.BOULDER_4);
-        GameObjectBundleFactory.createDecoImage(this, 8400 - 70, y - 8*128, DecoPosition.FG, ImageData.BUSH_3);
-        GameObjectBundleFactory.createDecoImage(this, 8600 - 70, y - 8*128, DecoPosition.FG, ImageData.BOULDER_4);
-        GameObjectBundleFactory.createDecoImage(this, 8200 - 70 - 300, y - 8*128, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
+        GameObjectBundleFactory.createDecoImage(this, 7800 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
+        GameObjectBundleFactory.createDecoImage(this, 8000 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BUSH_3);
+        GameObjectBundleFactory.createDecoImage(this, 8200 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
+        GameObjectBundleFactory.createDecoImage(this, 8400 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BUSH_3);
+        GameObjectBundleFactory.createDecoImage(this, 8600 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
+        GameObjectBundleFactory.createDecoImage(this, 8200 - 70 - 300, y - 8 * 128, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
     }
 
     private addSigSawZone(): void {
@@ -171,14 +171,14 @@ export class LevelGarden extends Level {
 
         // trees
         GameObjectBundleFactory.createDecoImage(this, x + 4500, y + 370, DecoPosition.FG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*2, y + 370 - 20*2, DecoPosition.BG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*4, y + 370 - 20*4, DecoPosition.FG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*6, y + 370 - 20*6, DecoPosition.BG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*8, y + 370 - 20*8, DecoPosition.FG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*10, y + 370 - 20*10, DecoPosition.BG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*12, y + 370 - 20*12, DecoPosition.FG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*14, y + 370 - 20*14, DecoPosition.BG, ImageData.TREE_4);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128*16, y + 370 - 20*16, DecoPosition.FG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 2, y + 370 - 20 * 2, DecoPosition.BG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 4, y + 370 - 20 * 4, DecoPosition.FG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 6, y + 370 - 20 * 6, DecoPosition.BG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 8, y + 370 - 20 * 8, DecoPosition.FG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 10, y + 370 - 20 * 10, DecoPosition.BG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 12, y + 370 - 20 * 12, DecoPosition.FG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 14, y + 370 - 20 * 14, DecoPosition.BG, ImageData.TREE_4);
+        GameObjectBundleFactory.createDecoImage(this, x + 4500 - 128 * 16, y + 370 - 20 * 16, DecoPosition.FG, ImageData.TREE_4);
 
         // white ninja
         GameObjectBundleFactory.createEnemy(this, x + 1250, y, CharacterFacing.RIGHT, x + 1250, x + 2150, CharacterSpriteData.WHITE_NINJA_GUY, false);

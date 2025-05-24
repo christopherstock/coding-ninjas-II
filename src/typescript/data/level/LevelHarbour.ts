@@ -10,7 +10,7 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
-import {CharacterSpriteData} from "../CharacterSpriteData";
+import { CharacterSpriteData } from '../CharacterSpriteData';
 
 export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;

@@ -1,21 +1,21 @@
 /* eslint-disable max-len */
 
-import {CapHorz, DecoPosition, GameObjectBundleFactory, Slope} from '../../game/object/GameObjectBundleFactory';
-import {TilesetData} from '../TilesetData';
-import {ImageData} from '../ImageData';
-import {Level, LevelId} from '../../game/level/Level';
-import {GameObjectFactory} from '../../game/object/GameObjectFactory';
-import {SpriteTemplate} from '../../engine/ui/SpriteTemplate';
-import {SpriteData} from '../SpriteData';
-import {SiteContent} from '../../site/SiteContentSystem';
-import {SitePanelAppearance} from '../../game/object/special/SiteTrigger';
-import {CharacterFacing} from '../../game/object/being/CharacterFacing';
-import {MirrorImage} from '../../engine/ui/MirrorImage';
-import {SettingDebug} from '../../base/SettingDebug';
-import {CharacterSpriteData} from '../CharacterSpriteData';
-import {GameAction, GameActionType} from '../../game/object/GameAction';
-import {BodyDensity, BodyFriction} from '../../base/SettingMatter';
-import {Breakable} from '../../game/object/GameObject';
+import { CapHorz, DecoPosition, GameObjectBundleFactory, Slope } from '../../game/object/GameObjectBundleFactory';
+import { TilesetData } from '../TilesetData';
+import { ImageData } from '../ImageData';
+import { Level, LevelId } from '../../game/level/Level';
+import { GameObjectFactory } from '../../game/object/GameObjectFactory';
+import { SpriteTemplate } from '../../engine/ui/SpriteTemplate';
+import { SpriteData } from '../SpriteData';
+import { SiteContent } from '../../site/SiteContentSystem';
+import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
+import { CharacterFacing } from '../../game/object/being/CharacterFacing';
+import { MirrorImage } from '../../engine/ui/MirrorImage';
+import { SettingDebug } from '../../base/SettingDebug';
+import { CharacterSpriteData } from '../CharacterSpriteData';
+import { GameAction, GameActionType } from '../../game/object/GameAction';
+import { BodyDensity, BodyFriction } from '../../base/SettingMatter';
+import { Breakable } from '../../game/object/GameObject';
 
 export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
