@@ -57,7 +57,18 @@ export class PointerSystem {
 
         event.preventDefault();
 
-        if (Main.game.level !== null) {
+        if (Main.game.level === null) {
+            // lauch the game if the preloader is active
+            if (
+                Main.game.engine.preloader.preloadingComplete
+                && !Main.game.engine.preloader.startButtonPressed
+            ) {
+                Main.game.engine.preloader.startButtonPressed = true;
+                Main.game.start();
+            }
+
+            return;
+        } else {
             const playerCenterX: number = (
                 Main.game.level.player.shape.body.position.x
             ) - Main.game.camera.getOffsetX();
@@ -107,7 +118,18 @@ export class PointerSystem {
 
         event.preventDefault();
 
-        if (Main.game.level !== null) {
+        if (Main.game.level === null) {
+            // lauch the game if the preloader is active
+            if (
+                Main.game.engine.preloader.preloadingComplete
+                && !Main.game.engine.preloader.startButtonPressed
+            ) {
+                Main.game.engine.preloader.startButtonPressed = true;
+                Main.game.start();
+            }
+
+            return;
+        } else {
             const playerCenterX: number = (
                 Main.game.level.player.shape.body.position.x
             ) - Main.game.camera.getOffsetX();
