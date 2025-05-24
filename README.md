@@ -1,5 +1,7 @@
 # ![Coding Ninjas II - gifted with second sight](https://github.com/christopherstock/coding-ninjas-II/raw/master/dist/res/image/promo/badge.jpg)
 
+# Coding Ninjas II - gifted with second sight
+
 ## Online Demo
 https://christopherstock.github.io/coding-ninjas-II/dist/
 
