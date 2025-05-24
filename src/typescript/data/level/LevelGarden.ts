@@ -47,6 +47,9 @@ export class LevelGarden extends Level {
         const x: number = 9500;
         const y: number = 1400;
 
+        // tree
+        GameObjectBundleFactory.createDecoImage(this, x + 5250, y, DecoPosition.BG, ImageData.TREE_3, MirrorImage.YES);
+
         // door back to DoJo
         GameObjectFactory.createDoor(this, x + 6000, y, ImageData.DOOR_3, new GameAction(GameActionType.SWITCH_TO_LEVEL, { targetLevel: LevelId.LEVEL_DOJO, playerStartX: 10240 - 640 + 12, playerStartY: 1400 }));
 
@@ -54,13 +57,8 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createEnemy(this, x + 4750, y, CharacterFacing.RIGHT, x + 4250, x + 5450, CharacterSpriteData.MASKED_NINJA_GUY, false);
 
         // boulders
-        GameObjectBundleFactory.createDecoImage(this, x + 5400, y + 20, DecoPosition.BG, ImageData.BOULDER_1);
-        GameObjectBundleFactory.createDecoImage(this, x + 5500, y, DecoPosition.FG, ImageData.BOULDER_2);
-
-        // construction tools
-        GameObjectBundleFactory.createDecoImage(this, x + 5000, y, DecoPosition.FG, ImageData.CONCRETE_MIXER);
-        GameObjectBundleFactory.createDecoImage(this, x + 4500, y, DecoPosition.FG, ImageData.GENERATOR);
-        GameObjectBundleFactory.createDecoImage(this, x + 4000, y, DecoPosition.FG, ImageData.PYLONS);
+        GameObjectBundleFactory.createDecoImage(this, x + 5050, y + 20, DecoPosition.BG, ImageData.BOULDER_1);
+        GameObjectBundleFactory.createDecoImage(this, x + 5150, y, DecoPosition.FG, ImageData.BOULDER_2);
 
         // billboard 'swift games workshop'
         GameObjectBundleFactory.createBillboard(this, x + 4300, y, DecoPosition.BG, ImageData.BILLBOARD_SWIFT, 'https://github.com/christopherstock/DevCamp2019_SwiftSpriteKitWorkshop/tree/master');
@@ -69,7 +67,7 @@ export class LevelGarden extends Level {
         GameObjectFactory.createPlatform(this, SpriteTemplate.createFromSingleImage(ImageData.PLATFORM_GRASS_SMALL), Platform.SPEED_NORMAL, [ Vector.create(x + 2100, y - 90), Vector.create(x + 3700, y - 90) ]);
 
         // tree
-        GameObjectBundleFactory.createDecoImage(this, x + 2300 + 11 * 128 - 300, y, DecoPosition.BG, ImageData.TREE_1, MirrorImage.NO);
+        GameObjectBundleFactory.createDecoImage(this, x + 3750, y, DecoPosition.BG, ImageData.TREE_3, MirrorImage.NO);
 
         // water
         GameObjectBundleFactory.createWaterArea(this, x + 2304, y, 11, 3, ImageData.WATER_CENTER);
@@ -87,6 +85,11 @@ export class LevelGarden extends Level {
 
         // billboard 'mf outrun'
         GameObjectBundleFactory.createBillboard(this, x + 408, y, DecoPosition.BG, ImageData.BILLBOARD_MF_OUTRUN, 'https://christopherstock.github.io/OutRunMF/dist/');
+
+        // construction tools
+        GameObjectBundleFactory.createDecoImage(this, x + 490, y, DecoPosition.FG, ImageData.CONCRETE_MIXER);
+        GameObjectBundleFactory.createDecoImage(this, x + 870, y, DecoPosition.FG, ImageData.GENERATOR);
+        GameObjectBundleFactory.createDecoImage(this, x + 1330, y, DecoPosition.FG, ImageData.PYLONS);
 
         // crates
         GameObjectBundleFactory.createMovableRect(this, x - 400 + 408, y, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);

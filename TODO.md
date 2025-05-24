@@ -1,10 +1,11 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 - 🌺🧪 Add more deco to levels
+- 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 
 ## Primary (MVP)
+- 🌺🧪 Fix houses/roof problem
 - 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 - 🌺🧪 update npm packages
