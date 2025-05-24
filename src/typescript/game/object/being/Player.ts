@@ -92,7 +92,7 @@ export class Player extends Character {
         (
             keySystem.isPressed(KeyData.KEY_LEFT)
             || (
-                !SettingDebug.DISABLE_POINTER
+                SettingDebug.ENABLE_POINTER
                 && Main.game.engine.pointerSystem.leftCanvasHalfPressed
             )
         ) {
@@ -101,7 +101,7 @@ export class Player extends Character {
         (
             keySystem.isPressed(KeyData.KEY_RIGHT)
             || (
-                !SettingDebug.DISABLE_POINTER
+                SettingDebug.ENABLE_POINTER
                 && Main.game.engine.pointerSystem.rightCanvasHalfPressed
             )
         ) {
@@ -131,7 +131,7 @@ export class Player extends Character {
         }
 
         if (
-            !SettingDebug.DISABLE_POINTER
+            SettingDebug.ENABLE_POINTER
             && Main.game.engine.pointerSystem.canvasTabbed
         ) {
             Main.game.engine.pointerSystem.canvasTabbed = false;
