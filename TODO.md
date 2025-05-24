@@ -4,9 +4,9 @@
 
 ## Primary (MVP)
 - 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
-- 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 - 🌺🧪 Add canvas max width/scale?
 - 🌺🧪 update npm packages
+- 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 
 ## Secondary (Possibly New Features)
 - ⛏️Add event triggers (for falling obstacles, new enemies etc.)?
