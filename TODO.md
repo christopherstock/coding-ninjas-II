@@ -3,7 +3,6 @@
 ## Doing
 
 ## Primary (MVP)
-- 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 Add canvas max width/scale?
 - 🌺🧪 update npm packages
 - 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
