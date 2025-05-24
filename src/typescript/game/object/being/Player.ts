@@ -138,6 +138,11 @@ export class Player extends Character {
 
             if (this.collidesBottom) {
                 this.jump();
+                this.attack();
+                this.requestInteraction();
+            } else {
+                this.attack();
+                this.requestInteraction();
             }
         }
         /*
