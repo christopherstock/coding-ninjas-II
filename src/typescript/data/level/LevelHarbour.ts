@@ -88,7 +88,7 @@ export class LevelHarbour extends Level {
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DESERT, 0, 1400, 60,  2, Slope.NONE, CapHorz.NONE);
 
         // ship
-        GameObjectBundleFactory.createDecoImage(this, 60 * 128 - 550 - 800 - 200, 1400 + 120 + 50, DecoPosition.FG, ImageData.SHIP_1);
+        GameObjectBundleFactory.createDecoImage(this, 6575, 1400 + 120 + 50, DecoPosition.FG, ImageData.SHIP_1);
 
         // water areas
         GameObjectBundleFactory.createWaterArea(this, 0, 1400 + 128 - 64, 60, 4, ImageData.WATER_CENTER, true);
