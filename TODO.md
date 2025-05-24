@@ -3,7 +3,6 @@
 ## Doing
 
 ## Primary (MVP)
-- 🌺🧪 Fix houses/roof problem
 - 🌺🧪 Enable pointer controls (click low/top = action+attack+jump?)
 - 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 - 🌺🧪 Add canvas max width/scale?
