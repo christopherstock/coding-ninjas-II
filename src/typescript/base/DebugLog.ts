@@ -6,6 +6,7 @@ import { SettingDebug } from './SettingDebug';
 ***********************************************************************************************************************/
 export class DebugLog {
     static readonly welcome: DebugLog           = new DebugLog(true);
+    static readonly pointer: DebugLog           = new DebugLog(true);
 
     static readonly image: DebugLog             = new DebugLog(false);
     static readonly sound: DebugLog             = new DebugLog(false);
@@ -13,7 +14,6 @@ export class DebugLog {
     static readonly character: DebugLog         = new DebugLog(false);
     static readonly canvas: DebugLog            = new DebugLog(false);
     static readonly key: DebugLog               = new DebugLog(false);
-    static readonly pointer: DebugLog           = new DebugLog(false);
     static readonly item: DebugLog              = new DebugLog(false);
     static readonly bot: DebugLog               = new DebugLog(false);
     static readonly engine: DebugLog            = new DebugLog(false);
