@@ -1,7 +1,6 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 New Backgrounds (hi-res, full width, harbour)
 
 ## Primary (MVP)
 - 🌺🧪 Fix houses/roof problem
