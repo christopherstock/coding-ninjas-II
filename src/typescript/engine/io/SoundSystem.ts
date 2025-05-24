@@ -1,7 +1,6 @@
 import { SettingDebug } from '../../base/SettingDebug';
 import { DebugLog } from '../../base/DebugLog';
-import { ImageUtil } from '../../util/ImageUtil';
-import {StringUtil} from "../../util/StringUtil";
+import { StringUtil } from '../../util/StringUtil';
 
 /** ********************************************************************************************************************
 *   Loads and manages all desired sounds.
