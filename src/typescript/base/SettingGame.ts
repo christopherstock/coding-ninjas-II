@@ -6,7 +6,7 @@
 export class SettingGame {
     /** The applications internal name. */
     public static readonly TITLE: string                     = (
-        'Coding Ninjas II - gifted with second sight, (c) 2025 Mayflower GmbH, v1.0.0'
+        'Coding Ninjas II - gifted with second sight, (c) 2025 Mayflower GmbH, v1.0.0-rc'
     );
 
     public static readonly PLAYER_ATTACK_RANGE: number                          = 60;
