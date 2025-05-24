@@ -58,13 +58,4 @@ export class ImageUtil {
 
         return target;
     }
-
-    /** ****************************************************************************************************************
-    *   Checks if the target device is a mac.
-    *
-    *   @return <code>true</code> if the target device is a mac.
-    *******************************************************************************************************************/
-    public static isMac(): boolean {
-        return (/iPad|iPhone|iPod/.test(navigator.userAgent));
-    }
 }

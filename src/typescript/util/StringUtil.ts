@@ -37,11 +37,32 @@ export class StringUtil {
     }
 
     /** *************************************************************************************************************
-        *   Checks if the target device is a mac.
-        *
-        *   @return <code>true</code> if the target device is a mac.
-        ***************************************************************************************************************/
+    *   Checks if the target device is a mac.
+    *
+    *   @return <code>true</code> if the target device is a mac.
+    ***************************************************************************************************************/
     public static isMac(): boolean {
         return (/iPad|iPhone|iPod/.test(navigator.userAgent));
+    }
+
+    /** *************************************************************************************************************
+    *   Checks if the target device is a mac.
+    *
+    *   @return <code>true</code> if the target device is a mac.
+    ***************************************************************************************************************/
+    public static isMobile(): boolean {
+        const toMatch = [
+            /Android/i,
+            /webOS/i,
+            /iPhone/i,
+            /iPad/i,
+            /iPod/i,
+            /BlackBerry/i,
+            /Windows Phone/i,
+        ];
+
+        return toMatch.some((toMatchItem: any) => {
+            return navigator.userAgent.match(toMatchItem);
+        });
     }
 }

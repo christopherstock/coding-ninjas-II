@@ -1,6 +1,7 @@
 import { SettingDebug } from '../../base/SettingDebug';
 import { DebugLog } from '../../base/DebugLog';
 import { ImageUtil } from '../../util/ImageUtil';
+import {StringUtil} from "../../util/StringUtil";
 
 /** ********************************************************************************************************************
 *   Loads and manages all desired sounds.
@@ -75,7 +76,7 @@ export class SoundSystem {
                 this.sounds[ fileName ].onloadeddata = (): void => { this.onLoadSound(); };
                 this.sounds[ fileName ].onerror      = (): void => { this.onLoadSoundError(); };
 
-                if (ImageUtil.isMac()) {
+                if (StringUtil.isMac()) {
                     this.onLoadSound();
                 }
             } catch (e) {
