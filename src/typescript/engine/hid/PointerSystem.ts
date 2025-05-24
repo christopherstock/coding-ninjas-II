@@ -1,6 +1,8 @@
 import { DebugLog } from '../../base/DebugLog';
 import { Main } from '../../base/Main';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 /** ********************************************************************************************************************
 *   The pointer system that manages all pointer interactions.
 ***********************************************************************************************************************/
