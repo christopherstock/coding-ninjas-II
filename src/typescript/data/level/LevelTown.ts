@@ -73,6 +73,9 @@ export class LevelTown extends Level {
         GameObjectBundleFactory.createDecoImage(this, 2320, y, DecoPosition.FG, ImageData.HYDRANT);
         GameObjectBundleFactory.createDecoImage(this, 3020 - 285, y, DecoPosition.FG, ImageData.BUSH_2);
         GameObjectBundleFactory.createDecoImage(this, 3020 - 160, y + 22, DecoPosition.BG, ImageData.BUSH_1);
+
+        // masked ninja guy
+        GameObjectBundleFactory.createEnemy(this, 2800, y, CharacterFacing.LEFT, 2060, 2800, CharacterSpriteData.MASKED_NINJA_GUY, false);
     }
 
     private addFirstFloor(): void {
@@ -139,6 +142,15 @@ export class LevelTown extends Level {
 
         // van
         GameObjectBundleFactory.createDecoImage(this, x + 1310, y, DecoPosition.FG, ImageData.VAN_3);
+
+        // enemies
+        GameObjectBundleFactory.createEnemy(this, x - 420, y, CharacterFacing.RIGHT, x - 420, x + 1100, CharacterSpriteData.BLUE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x - 300, y, CharacterFacing.RIGHT, x - 300, x + 650, CharacterSpriteData.RED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createEnemy(this, x + 650, y, CharacterFacing.LEFT, x - 300, x + 650, CharacterSpriteData.MASKED_NINJA_GIRL, false);
+        GameObjectBundleFactory.createEnemy(this, x + 300, y, CharacterFacing.RIGHT, x + 300, x + 950, CharacterSpriteData.BLACK_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 1000, y, CharacterFacing.LEFT, x - 150, x + 1000, CharacterSpriteData.WHITE_NINJA_GUY, false);
+        GameObjectBundleFactory.createEnemy(this, x + 120, y, CharacterFacing.RIGHT, x + 120, x + 1050, CharacterSpriteData.MASKED_NINJA_GUY, false);
+
     }
 
     private addExitZone(): void {
@@ -151,6 +163,9 @@ export class LevelTown extends Level {
         // house green
         GameObjectBundleFactory.createDecoImage(this, x - 1550, y, DecoPosition.BG, ImageData.HOUSE_FRONT_3);
         GameObjectBundleFactory.createDecoImage(this, x - 1550 - 20, y - 280, DecoPosition.BG, ImageData.HOUSE_ROOF_5);
+
+        // white ninja
+        GameObjectBundleFactory.createEnemy(this, x - 1700, y, CharacterFacing.RIGHT, x - 1700, x - 600, CharacterSpriteData.WHITE_NINJA_GUY, false);
 
         // house purple
         GameObjectBundleFactory.createDecoImage(this, x - 1650 + 1000, y, DecoPosition.BG, ImageData.HOUSE_FRONT_2);
@@ -167,6 +182,9 @@ export class LevelTown extends Level {
 
         // bench
         GameObjectBundleFactory.createDecoImage(this, x + 500 + 600 - 60, y + 10, DecoPosition.BG, ImageData.BENCH_1);
+
+        // black ninja
+        GameObjectBundleFactory.createEnemy(this, x + 500 + 600 - 60 + 35 + 100, y, CharacterFacing.RIGHT, x + 500 + 600 - 60 + 35 + 100, x + 500 + 600 - 60 + 35 + 100, CharacterSpriteData.BLACK_NINJA_GUY, false);
 
         // trees
         GameObjectBundleFactory.createDecoImage(this, x + 500 - 1000 + 15 - 180 - 356 + 40 + 20, y, DecoPosition.BG, ImageData.TREE_4);

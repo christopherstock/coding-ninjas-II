@@ -61,6 +61,8 @@ export class LevelHarbour extends Level {
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1600, 1400, DecoPosition.FG, ImageData.SCOOTER_2);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1400, 1400, DecoPosition.FG, ImageData.SCOOTER_1);
 
+        // TODO construction tools
+
         // vans
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1050, 1400, DecoPosition.FG, ImageData.VAN_1);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 650, 1400, DecoPosition.FG, ImageData.VAN_2);
