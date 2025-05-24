@@ -2,12 +2,12 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 Add decoration particle effects on smashing objects / windows etc.?
 
 ## Primary (MVP)
+- 🏅 Complete
 
 ## Secondary (Possibly New Features)
-- ⛏️Add event triggers (for falling obstacles, new enemies etc.)?
+- ⛏️ Add event triggers (for falling obstacles, new enemies etc.)?
 - ⛏️ Sound effects for ninja girl actions and enemies
 - ⛏️ moving 'no entry' sign on trying to open closed door?
 - ⛏️ Friendly Bots that talk to you.

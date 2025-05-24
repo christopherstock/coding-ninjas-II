@@ -9,7 +9,7 @@ import { ImageUtil } from '../../util/ImageUtil';
 import { SettingMatter } from '../../base/SettingMatter';
 import { SettingEngine } from '../../base/SettingEngine';
 import { ImageData } from '../../data/ImageData';
-import {MathUtil} from "../../util/MathUtil";
+import { MathUtil } from '../../util/MathUtil';
 
 export enum GameObjectState {
     ALIVE,
