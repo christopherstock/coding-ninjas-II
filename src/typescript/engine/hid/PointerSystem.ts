@@ -44,7 +44,7 @@ export class PointerSystem {
     public onPointerMove(event: PointerEvent): void {
         DebugLog.pointer.log('pointer move');
 
-        event.preventDefault();
+        // event.preventDefault();
     }
 
     /** ****************************************************************************************************************
@@ -55,7 +55,7 @@ export class PointerSystem {
     public onPointerDown(event: PointerEvent): void {
         DebugLog.pointer.log('pointer down');
 
-        event.preventDefault();
+        // event.preventDefault();
 
         if (Main.game.level === null) {
             // lauch the game if the preloader is active
@@ -91,7 +91,7 @@ export class PointerSystem {
     public onPointerUp(event: PointerEvent): void {
         DebugLog.pointer.log('pointer up');
 
-        event.preventDefault();
+        // event.preventDefault();
 
         this.leftCanvasHalfPressed  = false;
         this.rightCanvasHalfPressed = false;
@@ -105,7 +105,7 @@ export class PointerSystem {
     public onTouchMove(event: TouchEvent): void {
         DebugLog.pointer.log('touch move');
 
-        event.preventDefault();
+        // event.preventDefault();
     }
 
     /** ****************************************************************************************************************
@@ -116,7 +116,7 @@ export class PointerSystem {
     public onTouchDown(event: TouchEvent): void {
         DebugLog.pointer.log('touch down');
 
-        event.preventDefault();
+        // event.preventDefault();
 
         if (Main.game.level === null) {
             // lauch the game if the preloader is active
@@ -152,7 +152,7 @@ export class PointerSystem {
     public onTouchUp(event: TouchEvent): void {
         DebugLog.pointer.log('touch  up');
 
-        event.preventDefault();
+        // event.preventDefault();
 
         this.leftCanvasHalfPressed  = false;
         this.rightCanvasHalfPressed = false;

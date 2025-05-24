@@ -6,7 +6,7 @@ import { StringUtil } from '../util/StringUtil';
 export class SettingDebug {
     public static readonly DEBUG_MODE: boolean                      = false;
 
-    public static readonly ENABLE_POINTER: boolean                  = true; // !StringUtil.isMobile() || SettingDebug.DEBUG_MODE;
+    public static readonly ENABLE_POINTER: boolean                  = StringUtil.isMobile() && !SettingDebug.DEBUG_MODE;
 
     public static readonly DISABLE_SOUNDS: boolean                  = (true && SettingDebug.DEBUG_MODE);
     public static readonly DISABLE_DARKEN_PANEL: boolean            = (true && SettingDebug.DEBUG_MODE);
