@@ -10,6 +10,7 @@ import { CharacterFacing } from '../../game/object/being/CharacterFacing';
 import { SiteContent } from '../../site/SiteContentSystem';
 import { SitePanelAppearance } from '../../game/object/special/SiteTrigger';
 import { GameAction, GameActionType } from '../../game/object/GameAction';
+import {CharacterSpriteData} from "../CharacterSpriteData";
 
 export class LevelHarbour extends Level {
     public id: LevelId = LevelId.LEVEL_HARBOUR;
@@ -37,17 +38,35 @@ export class LevelHarbour extends Level {
         // billboard 'application paper service'
         GameObjectBundleFactory.createBillboard(this, 1000, 1400, DecoPosition.FG, ImageData.BILLBOARD_APPLICATION_PAPER);
 
+        // masked ninja guy
+        GameObjectBundleFactory.createEnemy(this, 950, 1400, CharacterFacing.LEFT, 950, 950, CharacterSpriteData.MASKED_NINJA_GUY, false);
+
+        // construction tools
+        GameObjectBundleFactory.createDecoImage(this, 2780, 1400, DecoPosition.FG, ImageData.CONCRETE_MIXER);
+        GameObjectBundleFactory.createDecoImage(this, 3110, 1400, DecoPosition.FG, ImageData.GENERATOR);
+
         // billboard 'technical paper'
         GameObjectBundleFactory.createBillboard(this, 2000, 1400, DecoPosition.FG, ImageData.BILLBOARD_TECHNICAL_PAPER, 'https://entwickler.de/php/phpstorm-effektiv-nutzen');
 
+        // black ninja guy
+        GameObjectBundleFactory.createEnemy(this, 2550, 1400, CharacterFacing.LEFT, 2550, 2550, CharacterSpriteData.BLACK_NINJA_GUY, false);
+
         // billboard 'meet ups'
         GameObjectBundleFactory.createBillboard(this, 3000, 1400, DecoPosition.FG, ImageData.BILLBOARD_MEET_UPS, 'https://www.meetup.com/wue-tech/events/294033027');
+
+        // pylons
+        GameObjectBundleFactory.createDecoImage(this, 2370, 1400, DecoPosition.FG, ImageData.PYLONS);
+        GameObjectBundleFactory.createDecoImage(this, 3490, 1400, DecoPosition.FG, ImageData.PYLONS);
 
         // site trigger 'end of game reached'
         GameObjectFactory.createSiteTrigger(this, 6680, 1400, 1000, 500, SiteContent.CONTENT_FAREWELL, SitePanelAppearance.LEFT, null);
 
         // hydrant
-        GameObjectBundleFactory.createDecoImage(this, 6000 - 2000, 1400, DecoPosition.FG, ImageData.HYDRANT);
+        GameObjectBundleFactory.createDecoImage(this, 4000, 1400, DecoPosition.FG, ImageData.HYDRANT);
+        GameObjectBundleFactory.createDecoImage(this, 5940, 1400, DecoPosition.FG, ImageData.HYDRANT);
+
+        // ninja girl
+        GameObjectBundleFactory.createEnemy(this, 3820, 1400, CharacterFacing.LEFT, 3820, 3820, CharacterSpriteData.RED_NINJA_GIRL, false);
 
         // fence
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1820, 1400, DecoPosition.FG, ImageData.FENCE_1_LEFT);
@@ -60,8 +79,6 @@ export class LevelHarbour extends Level {
         // scooters
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1600, 1400, DecoPosition.FG, ImageData.SCOOTER_2);
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1400, 1400, DecoPosition.FG, ImageData.SCOOTER_1);
-
-        // TODO construction tools
 
         // vans
         GameObjectBundleFactory.createDecoImage(this, 6000 - 1050, 1400, DecoPosition.FG, ImageData.VAN_1);

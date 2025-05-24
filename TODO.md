@@ -1,7 +1,6 @@
 # TODOs
 
 ## Doing
-- 🌺🧪 Add more enemies/friends to levels
 - 🌺🧪 Add more deco to levels
 
 ## Primary (MVP)
