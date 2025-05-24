@@ -73,7 +73,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createDecoImage(this, x + 3740, y, DecoPosition.FG, ImageData.BOULDER_2);
 
         // water
-        GameObjectBundleFactory.createWaterArea(this, x + 2304, y, 11, 3, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createWaterArea(this, x + 2304, y, 11, 19, ImageData.WATER_CENTER);
     }
 
     private addGreenMiddleZone(): void {
@@ -117,7 +117,7 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createEnemy(this, 7850, y - 8 * 128, CharacterFacing.RIGHT, 7850, 8510, CharacterSpriteData.MASKED_NINJA_GIRL, false);
 
         // water
-        GameObjectBundleFactory.createWaterArea(this, x - 7 * 128, y, 7, 3, ImageData.WATER_CENTER);
+        GameObjectBundleFactory.createWaterArea(this, x - 7 * 128, y, 7, 19, ImageData.WATER_CENTER);
 
         // tree & bushes
         GameObjectBundleFactory.createDecoImage(this, 7800 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
@@ -200,11 +200,11 @@ export class LevelGarden extends Level {
     private addGrounds(): void {
         const y: number = 1400;
 
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 13084, y, 23,  3, Slope.NONE, CapHorz.LEFT, CapVert.TOP);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 9500 - 128, y, 20,  3, Slope.NONE, CapHorz.BOTH);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 7708, y - 8 * 128, 8,  8 + 3 + 16, Slope.NONE, CapHorz.BOTH);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 5404, y + 2000, 18 + 1,  3, Slope.NONE, CapHorz.BOTH);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 13084, y, 23,  19, Slope.NONE, CapHorz.LEFT, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 9500 - 128, y, 20,  19, Slope.NONE, CapHorz.BOTH);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 7708, y - 8 * 128, 8,  27, Slope.NONE, CapHorz.BOTH);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 5404, y + 2000, 18 + 1,  5, Slope.NONE, CapHorz.BOTH);
         GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 5404 - 20 * 128 - 4 * 128, y + 2000 - 384, 20,  5, Slope.DESCENDING, CapHorz.RIGHT);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 28 - 128, 3016, 18 + 1,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_GRASS, 28 - 128, 3016, 18 + 1,  5, Slope.NONE, CapHorz.NONE);
     }
 }
