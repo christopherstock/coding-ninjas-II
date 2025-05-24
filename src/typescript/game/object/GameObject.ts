@@ -9,6 +9,7 @@ import { ImageUtil } from '../../util/ImageUtil';
 import { SettingMatter } from '../../base/SettingMatter';
 import { SettingEngine } from '../../base/SettingEngine';
 import { ImageData } from '../../data/ImageData';
+import {MathUtil} from "../../util/MathUtil";
 
 export enum GameObjectState {
     ALIVE,
@@ -194,21 +195,32 @@ export abstract class GameObject {
 
         DebugLog.character.log('Character hits a level object (alive)');
 
+        const velocity = matter.Vector.create(damageForceX, -10.0);
+        const angularVelocity = (damageForceX < 0.0 ? -0.05 : 0.05);
+
         // apply velocity & rotation forces on non-static objects
         if (!this.shape.body.isStatic) {
             matter.Body.setVelocity(
                 this.shape.body,
-                matter.Vector.create(damageForceX, -10.0)
+                velocity
             );
 
             matter.Body.setAngularVelocity(
                 this.shape.body,
-                (damageForceX < 0.0 ? -0.05 : 0.05)
+                angularVelocity
             );
         }
 
+        // add particle effect on losing energy
+        Main.game.level.addParticleEffect(
+            MathUtil.getRandomInt(2, 4),
+            this.shape.body.position.x + this.shape.getWidth() / 2,
+            this.shape.body.position.y + this.shape.getHeight() / 2,
+            velocity,
+            angularVelocity
+        );
 
-        // TODO add particle effect / decos on hurt/smash!
+        // lower energy
         this.energy -= damage;
         DebugLog.character.log('New level object energy: [' + String(this.energy) + ']');
 
@@ -237,7 +249,14 @@ export abstract class GameObject {
             DebugLog.character.log('Game Object BREAKS!');
             this.break();
 
-            // TODO add particle effect / decos on breaking etc!
+            // add particle effect on breaking
+            Main.game.level.addParticleEffect(
+                MathUtil.getRandomInt(4, 8),
+                this.shape.body.position.x + this.shape.getWidth() / 2,
+                this.shape.body.position.y + this.shape.getHeight() / 2,
+                velocity,
+                angularVelocity
+            );
 
             // apply force on break
             matter.Body.setVelocity(

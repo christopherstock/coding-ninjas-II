@@ -21,7 +21,7 @@ export class LevelStart extends Level {
     public id: LevelId = LevelId.LEVEL_START;
     public  width: number = 18066;
     public  height: number = 1772;
-    public  playerStartX: number = (SettingDebug.DEBUG_MODE ? 250 : 250);
+    public  playerStartX: number = 6000; // (SettingDebug.DEBUG_MODE ? 250 : 250);
     public  playerStartY: number = (SettingDebug.DISABLE_FLOATING_STARTUP ? 1000 : 250);
     public  playerInitialFacing: CharacterFacing = CharacterFacing.RIGHT;
     public  playerInitialFloat: boolean = !SettingDebug.DISABLE_FLOATING_STARTUP;

@@ -424,6 +424,11 @@ export class ImageData {
     static readonly PLATFORM_SNOW_SMALL: string                         = SettingEngine.PATH_IMAGE_PLATFORM + 'platformSnowSmall.png';
     static readonly PLATFORM_GRASS_SMALL: string                        = SettingEngine.PATH_IMAGE_PLATFORM + 'platformGrassSmall.png';
 
+    static readonly RUBBLE_1: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble1.png';
+    static readonly RUBBLE_2: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble2.png';
+    static readonly RUBBLE_3: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble3.png';
+    static readonly RUBBLE_4: string                                    = SettingEngine.PATH_IMAGE_LEVEL_DECO + 'rubble4.png';
+
     /** All image filenames to load. */
     static readonly IMAGES_TO_MIRROR: string[]                          =
         [
@@ -855,5 +860,10 @@ export class ImageData {
         ImageData.BOUNCE_LARGE,
         ImageData.PLATFORM_SNOW_SMALL,
         ImageData.PLATFORM_GRASS_SMALL,
+
+        ImageData.RUBBLE_1,
+        ImageData.RUBBLE_2,
+        ImageData.RUBBLE_3,
+        ImageData.RUBBLE_4,
     ];
 }

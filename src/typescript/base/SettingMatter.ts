@@ -48,6 +48,12 @@ export class SettingMatter {
         mask:     0x0016,
         group:    0x0016,
     };
+
+    public  static  readonly    COLLISION_GROUP_NON_COLLIDING_RUBBLE: matter.ICollisionFilter    = {
+        category: 0x0032,
+        mask:     0x0032,
+        group:    0x0032,
+    };
 }
 
 /** ****************************************************************************************************************
