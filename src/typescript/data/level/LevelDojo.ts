@@ -70,7 +70,16 @@ export class LevelDojo extends Level {
     private addStoveZone(): void {
         this.addChandelier(-11450, -700, true);
 
+        // pot & goblet
+        GameObjectBundleFactory.createMovableRect(this, 1900, 1400, ImageData.POT, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, 1990, 1400, ImageData.GOBLET, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+
+        // stove
         GameObjectBundleFactory.createDecoImage(this, 2249, 1400, DecoPosition.FG, ImageData.STOVE);
+
+        // pot & goblet
+        GameObjectBundleFactory.createMovableRect(this, 2800, 1400, ImageData.GOBLET, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, 2900, 1400, ImageData.POT, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // billboard 'web apps'
         GameObjectBundleFactory.createBillboard(this, 2900, 1400, DecoPosition.FG, ImageData.BILLBOARD_WEB_APPS);
@@ -110,8 +119,17 @@ export class LevelDojo extends Level {
         GameObjectFactory.createBounce(this, x + 200,  y - 150, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
         GameObjectFactory.createBounce(this, x + 2452, y - 150, SpriteTemplate.createFromSingleImage(ImageData.BOUNCE_MEDIUM), 0.00075);
 
+        this.addChandelier(-4150 - 1350 - 2000 - 300, -700 - 200 - 400 + 90);
+        this.addChandelier(-4150 - 1350 - 2000 - 300 + 640 + 300 + 10, -700 - 200 - 400 + 90);
+
         // billboard 'J2ME'
-        GameObjectBundleFactory.createBillboard(this, x + 1100, y - 512, DecoPosition.BG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
+        GameObjectBundleFactory.createBillboard(this, x + 1100 + 17, y - 512, DecoPosition.BG, ImageData.BILLBOARD_J2ME, 'https://web.archive.org/web/20060505212355/http://airgamer.de/cms/front_content.php?idart=1540');
+
+        // pots & goblets
+        GameObjectBundleFactory.createMovableRect(this, x + 1000, y - 512, ImageData.GOBLET, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 1100, y - 512, ImageData.POT, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 2000, y - 512, ImageData.GOBLET, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
+        GameObjectBundleFactory.createMovableRect(this, x + 2100, y - 512, ImageData.POT, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
 
         // ninja girl
         GameObjectBundleFactory.createEnemy(this, x + 1100 - 250, y - 512, CharacterFacing.LEFT, x + 1100 - 250, x + 2100, CharacterSpriteData.RED_NINJA_GIRL, false);
@@ -121,6 +139,11 @@ export class LevelDojo extends Level {
         // chandelier
         this.addChandelier(-4150, -700);
 
+        // statue with candles
+        GameObjectBundleFactory.createDecoImage(this, 8250, 1400, DecoPosition.BG, ImageData.STATUE_3);
+        this.addChandelier(-4150 - 1350, -700, true);
+
+        // crates
         const x: number = 5550;
         GameObjectBundleFactory.createMovableRect(this, x + 3060, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
         GameObjectBundleFactory.createMovableRect(this, x + 3205, 1400, ImageData.CRATE_WOOD, BodyDensity.DEFAULT, BodyFriction.DEFAULT_MOVABLE, Breakable.YES);
@@ -138,14 +161,14 @@ export class LevelDojo extends Level {
 
     private addWalls(): void {
         // ground
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 128, 1400, 27 * 3,  3, Slope.NONE, CapHorz.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 128, 1400, 27 * 3,  3, Slope.NONE, CapHorz.NONE);
 
         // walls
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, this.width - 128, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 0, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, this.width - 128, 0, 1,  14, Slope.NONE, CapHorz.NONE, CapVert.NONE);
 
         // obstacle
-        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_SNOW, 5000 + 200 + 460, 1400 - 512, 14,  6, Slope.NONE, CapHorz.NONE, CapVert.TOP);
+        GameObjectBundleFactory.createSolidGround(this, TilesetData.TILESET_DARK_GROUND, 5000 + 200 + 460, 1400 - 512, 14,  6, Slope.NONE, CapHorz.BOTH, CapVert.TOP);
     }
 
     private addChandelier(x: number, y: number, onlyCandles: boolean = false): void {

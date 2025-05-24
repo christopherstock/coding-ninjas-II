@@ -27,7 +27,8 @@ export const ContentFarewell: ()=> JSX.Element = (): JSX.Element => {
                 'You have reached the end of the <span class=\'special\'>Coding Ninjas II</span> world.<br>'
                 + '<br>'
                 + 'Thanks for your interests in my project portfolio.<br>'
-                + ' Have a good day and stay safe and sound my friend! 💜 🌺',
+                + 'Have a good day and stay safe and sound my friend!<br>'
+                + '🧘🏼‍♂️&nbsp;🕉&nbsp;💜&nbsp;🌿&nbsp;🌺',
                 'left'
             )
         }
