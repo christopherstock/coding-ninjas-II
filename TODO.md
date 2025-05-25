@@ -1,12 +1,12 @@
 
 # TODOs
+- 🏅 Complete, v.1.0.0
 
 ## Doing
 
 ## Primary (MVP)
-- 🏅 Complete
 
-## Secondary (Possibly New Features)
+## CN3 Feature Proposals
 - ⛏️ Add event triggers (for falling obstacles, new enemies etc.)?
 - ⛏️ Sound effects for ninja girl actions and enemies
 - ⛏️ moving 'no entry' sign on trying to open closed door?
@@ -21,7 +21,7 @@
 - ⛏️ Add 'crouch- and crouch+slide' action.
 - ⛏️ Improve image sequence handling in ImageData (FILE_NAMES) by class access?
 
-## Minor
+## Minor Feature Requests
 - 🔻 Enum 'Wearpon' with according damage values?
 - 🔻 Remove static access on Main.game?
 - 🔻 Add secondary attack action?

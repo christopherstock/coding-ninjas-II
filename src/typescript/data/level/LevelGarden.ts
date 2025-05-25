@@ -120,12 +120,12 @@ export class LevelGarden extends Level {
         GameObjectBundleFactory.createWaterArea(this, x - 7 * 128, y, 7, 19, ImageData.WATER_CENTER);
 
         // tree & bushes
+        GameObjectBundleFactory.createDecoImage(this, 8200 - 70 - 300, y - 8 * 128, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
         GameObjectBundleFactory.createDecoImage(this, 7800 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
         GameObjectBundleFactory.createDecoImage(this, 8000 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BUSH_3);
-        GameObjectBundleFactory.createDecoImage(this, 8200 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
         GameObjectBundleFactory.createDecoImage(this, 8400 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BUSH_3);
         GameObjectBundleFactory.createDecoImage(this, 8600 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
-        GameObjectBundleFactory.createDecoImage(this, 8200 - 70 - 300, y - 8 * 128, DecoPosition.FG, ImageData.TREE_3, MirrorImage.YES);
+        GameObjectBundleFactory.createDecoImage(this, 8200 - 70, y - 8 * 128, DecoPosition.FG, ImageData.BOULDER_4);
     }
 
     private addSigSawZone(): void {
