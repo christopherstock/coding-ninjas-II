@@ -4,7 +4,7 @@ import { StringUtil } from '../util/StringUtil';
 *   All debug settings.
 ***********************************************************************************************************************/
 export class SettingDebug {
-    public static readonly DEBUG_MODE: boolean                      = false;
+    public static readonly DEBUG_MODE: boolean                      = true;
 
     public static readonly ENABLE_POINTER: boolean                  = StringUtil.isMobile() && !SettingDebug.DEBUG_MODE;
 
