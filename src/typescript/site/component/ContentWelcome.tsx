@@ -3,7 +3,7 @@ import { DebugLog } from '../../base/DebugLog';
 import { SiteContentFactory } from '../SiteContentFactory';
 import { Main } from '../../base/Main';
 import { ImageData } from '../../data/ImageData';
-import {StringUtil} from "../../util/StringUtil";
+import { StringUtil } from '../../util/StringUtil';
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'welcome' page.
@@ -96,25 +96,6 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
             { /* SiteContentFactory.createProgress('line', 100.00) */ }
         </div> }
 
-        { StringUtil.isMobile() && SiteContentFactory.createSpacerVertical() }
-        { StringUtil.isMobile() && <div>
-            {
-                SiteContentFactory.createButton(
-                    'right',
-                    'Dismiss Sider',
-                    'primary',
-                    '',
-                    () => { console.log('dismiss sider');
-                        for (const trigger of Main.game.level.siteTriggers) {
-                            trigger.dismiss = true;
-                        }
-                     },
-                    'Dismiss Sider'
-                )
-            }
-        </div>
-        }
-
         { SiteContentFactory.createSpacerVertical() }
         {
             SiteContentFactory.createCarousel(
@@ -149,6 +130,25 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                     </div>,
                 ]
             )
+        }
+
+        { StringUtil.isMobile() && SiteContentFactory.createSpacerVertical() }
+        { StringUtil.isMobile() && <div>
+            {
+                SiteContentFactory.createButton(
+                    'right',
+                    'Dismiss Sider',
+                    'primary',
+                    '',
+                    () => {
+                        for (const trigger of Main.game.level.siteTriggers) {
+                            trigger.dismiss = true;
+                        }
+                    },
+                    'Dismiss Sider'
+                )
+            }
+        </div>
         }
 
     </div>;
