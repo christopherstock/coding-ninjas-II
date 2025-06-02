@@ -3,6 +3,7 @@ import { DebugLog } from '../../base/DebugLog';
 import { SiteContentFactory } from '../SiteContentFactory';
 import { Main } from '../../base/Main';
 import { ImageData } from '../../data/ImageData';
+import {StringUtil} from "../../util/StringUtil";
 
 /** ********************************************************************************************************************
 *   A React component with the content for the 'welcome' page.
@@ -84,8 +85,8 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
             )
         }
 
-        { SiteContentFactory.createSpacerVertical() }
-        <div>
+        { false && SiteContentFactory.createSpacerVertical() }
+        { false && <div>
             {
                 SiteContentFactory.createParagraph(
                     'Version: <span class=\'special\'>1.0.0-rc</span> (release candidate)',
@@ -93,7 +94,26 @@ export const ContentWelcome: ()=> JSX.Element = (): JSX.Element => {
                 )
             }
             { /* SiteContentFactory.createProgress('line', 100.00) */ }
+        </div> }
+
+        { StringUtil.isMobile() && SiteContentFactory.createSpacerVertical() }
+        { StringUtil.isMobile() && <div>
+            {
+                SiteContentFactory.createButton(
+                    'right',
+                    'Dismiss Sider',
+                    'primary',
+                    '',
+                    () => { console.log('dismiss sider');
+                        for (const trigger of Main.game.level.siteTriggers) {
+                            trigger.dismiss = true;
+                        }
+                     },
+                    'Dismiss Sider'
+                )
+            }
         </div>
+        }
 
         { SiteContentFactory.createSpacerVertical() }
         {
